@@ -1,0 +1,40 @@
+.contact__container {
+	margin: 30px auto;
+	background-color: #eee;
+	padding: 10px 0;
+	width: 50%;
+	justify-content: center;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+.contact__form {
+	width: 90%;
+	margin: auto;
+}
+
+.contact__name,
+.contact__email {
+	border: 1px solid #fff;
+	display: inline-block;
+	width: 50%;
+}
+
+.contact__textbox {
+	border: 1px solid #fff;
+	display: inline-block;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.contact__name__input,
+.contact__email__input,
+.contact__textbox__input {
+	display: block;
+	width: 100%;
+}
+
+.contact__name__label,
+.contact__email__label {
+	
+}

@@ -1,0 +1,20 @@
+.schedule {
+	display: flex;
+	height: 10vh;
+	align-items: center;
+	justify-content: center;
+  color: #000;
+  font-size: 100px;
+}
+
+
+p {
+	width: 60%;
+	margin: auto;
+}
+
+.schedule__container {
+	margin: 2rem;
+	padding: 2rem;
+	background-color: #eef;
+}

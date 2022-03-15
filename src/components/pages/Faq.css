@@ -1,0 +1,24 @@
+.faq {
+	background-color: #eee;
+	
+	height: auto;
+	padding-bottom: 2rem;
+}
+
+.faq-title {
+	/* display: flex; */
+	/* height: auto;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem; */
+
+  color: #77f;
+	/* text-shadow: 2px 2px #000; */
+  font-size: 100px;
+}
+
+.faq-container {
+	/* display: block; */
+	/* top: 10vh; */
+
+}
