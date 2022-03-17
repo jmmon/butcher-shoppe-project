@@ -30,7 +30,7 @@ function Navbar() {
 				<div className="navbar-container">
 
 					<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-						TRVL <i className="fab fa-typo3" />
+						Northport Butcher Shoppe <i className="fa-solid fa-tractor" />
 					</Link>
 
 					<div className="menu-icon" onClick={handleClick}>

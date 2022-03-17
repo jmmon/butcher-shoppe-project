@@ -8,7 +8,7 @@ const GoogleMap = ({ placeName, zoomLevel, location }) => {
   useEffect(() => {
     const googleMapScript = document.createElement("script");
     // googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&libraries=places`;
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDBZLjSOroueTkfoVGZqLBFORmniEid2As&libraries=places`;
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_API_KEY}&libraries=places`;
     googleMapScript.async = true;
     window.document.body.appendChild(googleMapScript);
     googleMapScript.addEventListener("load", () => {

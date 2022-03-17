@@ -2,6 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import './Footer.css'
+import Map2 from './Map2.js';
+
+const location = {
+	// 48.916323, -117.781973
+	address: '412 Center Ave, Northport, WA 99157, USA',
+  lat: 48.916323,
+  lng: -117.781973,
+};
 
 function Footer() {
 	return (
@@ -20,6 +28,7 @@ function Footer() {
 					</form>
 				</div>
 			</section>
+			<Map2 placeName={"412 Center Ave, Northport, WA 99157, USA"} location={location} zoomLevel={17} />
 			<div className="footer-links">
 				<div className='footer-link-wrapper'>
           <div class='footer-link-items'>
