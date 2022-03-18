@@ -36,7 +36,7 @@ function App() {
 								<Route path="/newsletter" exact element={<Newsletter />}/>
             </Routes>
 						{/* <Map location={location} zoomLevel={17}/> */}
-						<Map2 placeName={"412 Center Ave, Northport, WA 99157, USA"} location={location} zoomLevel={17} />
+						
 						<Contact />
 						<Footer />
         </Router>
