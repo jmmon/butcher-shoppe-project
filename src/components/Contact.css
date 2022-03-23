@@ -2,7 +2,7 @@
 	margin: 30px auto;
 	background-color: #eee;
 	padding: 10px 0;
-	width: 50%;
+	width: 800px;
 	justify-content: center;
 	border: 1px solid black;
 	border-radius: 4px;
@@ -11,19 +11,21 @@
 .contact__form {
 	width: 90%;
 	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-.contact__name,
-.contact__email {
+.input__container {
 	border: 1px solid #fff;
 	display: inline-block;
-	width: 50%;
+	min-width: 300px;
 }
 
 .contact__textbox {
 	border: 1px solid #fff;
 	display: inline-block;
-	width: 100%;
+	min-width: 500px;
 	margin-top: 5px;
 }
 
@@ -37,4 +39,8 @@
 .contact__name__label,
 .contact__email__label {
 	
+}
+
+.contact__form__submit {
+	min-width: 500px;
 }

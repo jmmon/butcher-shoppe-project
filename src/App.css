@@ -14,7 +14,7 @@
 }
 
 .home,
-.services,
+/*.services,*/
 .education,
 .newsletter {
 	display: flex;

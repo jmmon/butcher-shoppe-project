@@ -12,7 +12,7 @@ function FaqItem({question, answer}) {
 	return (
 		<div className="faq-item">
 			<div className="faq-item__container">
-				<p className="faq-item__title">{question}</p>
+				<h3 className="faq-item__title">{question}</h3>
 				<div className={click ? "faq-item__text expand" : "faq-item__text"}>
 					{click ? answer : answerShort}
 				</div>

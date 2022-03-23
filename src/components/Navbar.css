@@ -8,6 +8,8 @@
   position: sticky;
   top: 0;
   z-index: 999;
+	/* padding-right: 100px;
+	padding-left: 100px; */
 }
 
 .navbar-container {
@@ -18,8 +20,11 @@
   max-width: 1500px;
 }
 
-.navbar-container .btn-mobile {
+.navbar-container .btn {
+	/* width: auto; */
 	min-width: 90px;
+	width: auto;
+  margin-right: 20px;
 }
 
 .navbar-logo {

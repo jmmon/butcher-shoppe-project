@@ -8,13 +8,15 @@
 }
 
 
-p {
+.schedule__container p {
 	width: 60%;
-	margin: auto;
+	margin: 30px 20%;
+	font-size: 20px;
 }
 
 .schedule__container {
-	margin: 2rem;
+	margin: 2rem 10vw;
 	padding: 2rem;
 	background-color: #eef;
+	border-radius: 5px;
 }
