@@ -8,6 +8,7 @@ router.route('/contact').post((req, res) => {
 	const text = req.body.contact__textbox;
 
 	console.log('name', name, 'email', email, 'text', text);
+	res.status(200).send();
 
 	// TODO: send email
 });

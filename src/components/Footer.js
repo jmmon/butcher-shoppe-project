@@ -6,17 +6,19 @@ import Map2 from './Map2.js';
 
 const location = {
 	// 48.916323, -117.781973
-	address: '412 Center Ave, Northport, WA 99157, USA',
+	address: '420 Center Ave, Northport, WA 99157, USA',
   lat: 48.916323,
   lng: -117.781973,
 };
 
 function Footer() {
+
+
 	return (
-		<div className='footer-container'>
+		<div className='footer-container' id="footer-container">
 			<section className="footer-subscription">
 				<p className="footer-subscription-heading">
-					Join the Adventure Newsletter to receive our best vacation deals
+					Join our newsletter to receive periodic updates from your Northport Butcher Shoppe!
 				</p>
 				<p className="footer-subscription-text">
 					You can unsubscripe at any time.
@@ -28,7 +30,14 @@ function Footer() {
 					</form>
 				</div>
 			</section>
-			<Map2 placeName={"412 Center Ave, Northport, WA 99157, USA"} location={location} zoomLevel={17} />
+
+			<p className="footer-map-heading">Find us in downtown Northport:</p>
+			<Map2 
+				placeName={"412 Center Ave, Northport, WA 99157, USA"} 
+				location={location} 
+				zoomLevel={17} 
+			/>
+
 			<div className="footer-links">
 				<div className='footer-link-wrapper'>
           <div class='footer-link-items'>
@@ -36,24 +45,24 @@ function Footer() {
             <Link to='/sign-up'>How it works</Link>
             <Link to='/'>Testimonials</Link>
             <Link to='/'>Careers</Link>
-            <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link>
+            {/* <Link to='/'>Investors</Link>
+            <Link to='/'>Terms of Service</Link> */}
           </div>
           <div class='footer-link-items'>
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            {/* <Link to='/'>Destinations</Link>
+            <Link to='/'>Sponsorships</Link> */}
           </div>
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
+            {/* <Link to='/'>Submit Video</Link>
             <Link to='/'>Ambassadors</Link>
             <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
+            <Link to='/'>Influencer</Link> */}
           </div>
           <div class='footer-link-items'>
             <h2>Social Media</h2>
@@ -67,11 +76,16 @@ function Footer() {
 			<section className="social-media">
 				<div className="social-media-wrap">
 					<div className="footer-logo">
-						<Link to='/' className="social-logo">
+						{/* <Link to='/' className="social-logo">
 							TRVL <i className="fab fa-typo3"></i>
+						</Link> */}
+						<Link to="/" className="social-logo" >
+						Northport Butcher Shoppe <i className="fa-solid fa-tractor" />
 						</Link>
 					</div>
-					<small className="website-rights">TRVL C 2020</small>
+
+					<small className="website-rights">NPBS C 2022</small>
+
 					<div className="social-icons">
 						<Link 
 							className="social-icon-link facebook"

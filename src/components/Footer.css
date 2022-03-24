@@ -18,11 +18,13 @@
 	color: #fff;
 }
 
-.footer-subscription > p {
+.footer-subscription > p,
+.footer-map-heading {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.footer-subscription-heading {
+.footer-subscription-heading,
+.footer-map-heading {
 	margin-bottom: 24px;
 	font-size: 24px;
 }
@@ -45,6 +47,7 @@
 }
 
 .footer-links {
+	margin-top: 48px;
 	width: 100%;
 	max-width: 1000px;
 	display: flex;
@@ -133,9 +136,18 @@
 	margin-bottom: 16px;
 }
 
+.social-logo i {
+	margin-left: 10px;
+}
+
 .website-rights {
 	color: #fff;
 	margin-bottom: 16px;
+}
+
+.footer-map-heading {
+	color: #fff;
+	margin-bottom: 12px;
 }
 
 @media screen and (max-width: 820px) {

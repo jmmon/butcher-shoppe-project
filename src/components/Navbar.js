@@ -65,13 +65,14 @@ function Navbar() {
 						</li>
 						<li className="nav-item">
 							{/* only shows up on mobile menu */}
-							<Link to="/newsletter" className='nav-links-mobile' onClick={closeMobileMenu}>
+							<a href="#footer-container" className='nav-links-mobile' onClick={closeMobileMenu}>
 								Newsletter
-							</Link>
+							</a>
 						</li>
 					</ul>
 
-					{button && <Button buttonStyle='btn--outline' url='/newsletter'>Newsletter</Button>}
+					{button && <a href="#footer-container" className="btn-mobile"><div className="btn btn--outline btn--large">Newsletter
+						</div></a>}
 
 				</div>
 			</nav>
