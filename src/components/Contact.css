@@ -19,13 +19,13 @@
 .input__container {
 	border: 1px solid #fff;
 	display: inline-block;
-	min-width: 300px;
+	width: 50%;
 }
 
 .contact__textbox {
 	border: 1px solid #fff;
 	display: inline-block;
-	min-width: 500px;
+	width: 100%;
 	margin-top: 5px;
 }
 
@@ -36,11 +36,16 @@
 	width: 100%;
 }
 
-.contact__name__label,
-.contact__email__label {
-	
+.contact__form__submit {
+width: 100%;
 }
 
-.contact__form__submit {
-	min-width: 500px;
+@media screen and (max-width: 960px) {
+	.contact__container {
+		width: 80vw;
+	}
+
+	.input__container {
+		width: 100%;
+	}
 }

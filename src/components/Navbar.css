@@ -8,8 +8,6 @@
   position: sticky;
   top: 0;
   z-index: 999;
-	/* padding-right: 100px;
-	padding-left: 100px; */
 }
 
 .navbar-container {
@@ -84,9 +82,12 @@
 }
 
 @media screen and (max-width: 960px) {
-  .NavbarItems {
+  /* .nav-item {
     position: relative;
-  }
+  } */
+	.navbar-logo i {
+		margin-left: 20px;
+	}
 
   .nav-menu {
     display: flex;
@@ -122,10 +123,14 @@
     border-radius: 0;
   }
 
+	.navbar-container {
+		width: 100%;
+	}
+
   .navbar-logo {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -7rem;
     transform: translate(25%, 50%);
   }
 

@@ -1,0 +1,21 @@
+.about-us-wrapper {
+	padding: 2rem 4rem;
+	margin: 4rem;
+	background-color: #bcf;
+	border-radius: 10px;
+	background: url('../../public/images/smithFarmPhotos/image-1-113.jpg') center center/cover no-repeat;
+	color: #fff;
+}
+
+.about-us-wrapper .title {
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+.about-us-wrapper .text {
+	margin: 0 4rem;
+	/* border: 2px solid #888;
+	border-radius: 10px; */
+	padding: 1rem;
+	font-size: 20px;
+}

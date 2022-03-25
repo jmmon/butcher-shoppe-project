@@ -1,4 +1,5 @@
 import '../../App.css'
+import AboutUs from '../AboutUs'
 import Blurb from '../Blurb'
 import Cards from '../Cards'
 import HeroSection from '../HeroSection'
@@ -9,9 +10,10 @@ function Home() {
 		<>
 			{/* seasonal image and title */}
 			<HeroSection/> 
+			<AboutUs/>
 			{/* intro text */}
-			<Blurb />
-			<Cards />
+			{/* <Blurb /> */}
+			{/* <Cards /> */}
 			{/* our story */}
 		</>
 	)

@@ -7,8 +7,7 @@
 	padding: 2rem;
 }
 
-
-.title {
+.page-title {
 	display: flex;
 	height: 10vh;
 	align-items: center;
@@ -20,6 +19,20 @@
 	margin-bottom: 2rem;
 }
 
+.title {
+	display: flex;
+	height: 10vh;
+	align-items: center;
+	justify-content: center;
+
+  color: #fff;
+  font-size: 100px;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	text-shadow: -3px 3px #000;
+
+}
+
 .services-btns-container {
 	display: flex;
 	justify-content: space-around;
@@ -29,7 +42,8 @@
 }
 
 .services-btns-container .btns {
-	width: 220px;
+	min-width: 160px;
+	max-width: 220px;
 	height: 40px;
 	font-size: 20px;
 	border: 1px solid #242424;
@@ -61,7 +75,7 @@
 .container {
 	margin: auto;
 	border: 1px solid #ccc;
-	border-radius: 2px;
+	border-radius: 5px;
 	padding: 5rem;
 	margin-top: 5rem;
 	display: flex-column;
@@ -96,7 +110,9 @@ tr {
 	margin: 2rem 0;
 	height: 100%;
 	align-self: center; 
-	font-size: 20px;
+	font-size: 30px;
+	color: #fff;
+	text-shadow: -1px 1px #000;
 
 }
 
@@ -105,4 +121,21 @@ tr {
 	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-around;
+}
+
+.blerb-wrapper {
+	margin: auto;
+	width: 80vw;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 2rem;
+	margin-top: 2rem;
+}
+
+.butchering.container {
+	background: url('../../../public/images/smithFarmPhotos/image-1-124.jpg') center center/cover no-repeat;
+}
+
+.processing.container {
+	background: url('../../../public/images/smithFarmPhotos/image-1-2.jpg') center center/cover no-repeat;
 }

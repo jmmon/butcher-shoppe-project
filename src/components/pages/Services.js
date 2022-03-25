@@ -6,12 +6,16 @@ function Services() {
 		<div className="services--container">
 			
 			<div className="title_container">
-				<h1 className="title">SERVICES</h1>
+				<h1 className="page-title">SERVICES</h1>
 			</div>
 
 			<div className="services-btns-container">
 				<a href="#butchering-link" className="btns">Butchering</a>
 				<a href="#processing-link" className="btns">Processing</a>
+			</div>
+
+			<div className="blerb-wrapper">
+				<p>Invite us to your farm with our mobile butchering service. Basic fees are outlined below. Need meat processing? We handle that too, at our store in downtown Northport!</p>
 			</div>
 
 
