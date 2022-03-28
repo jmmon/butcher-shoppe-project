@@ -58,26 +58,83 @@ function Contact() {
 		// 		console.log(response.statusText);
 		// 	}
 		// })
-	}
+	};
 
 	return (
-		<div className="contact__container">
-			<h1 className="contact__title">Contact Us!</h1>
+		<div className="contact">
+
+			<h1 className="contact__title">
+				Contact Us!
+			</h1>
+
 			<form className="contact__form" ref={form}>
-				<input type="hidden" name="contact__number" />
-				<div className="input__container">
-					<label className="contact__name__label" htmlFor="contact__name">Name</label>
-					<input type="text" className="contact__name__input" name="contact__name" placeholder="Your name" value={input.contact__name} onChange={handleChange}></input>
+
+				<input 
+					type="hidden" 
+					name="contact__number" 
+				/>
+
+				<div className="input__container input__small">
+					<label 
+						className="contact__label" 
+						htmlFor="contact__name"
+					>
+						Name:
+					</label>
+
+					<input 
+						type="text" 
+						className="contact__input contact__name" 
+						name="contact__name" 
+						placeholder="Your name" 
+						value={input.contact__name} 
+						onChange={handleChange}
+					/>
 				</div>
-				<div className="input__container">
-					<label className="contact__email__label" htmlFor="contact__email">Email</label>
-					<input type="text" className="contact__email__input" name="contact__email" placeholder="Your email" value={input.contact__email} onChange={handleChange}></input>
+
+				<div className="input__container input__small">
+					<label 
+						className="contact__label" 
+						htmlFor="contact__email"
+					>
+						Email:
+					</label>
+
+					<input 
+						type="text" 
+						className="contact__input contact__email" 
+						name="contact__email" 
+						placeholder="Your email" 
+						value={input.contact__email} 
+						onChange={handleChange}
+					/>
 				</div>
-				<div className="contact__textbox">
-					<label htmlFor="contact__textbox" className="contact__textbox__label">How can we help you?</label>
-					<textarea type="text" className="contact__textbox__input" name="contact__textbox" placeholder="Type here..." onChange={handleChange} value={input.contact__textbox} />
+
+				<div className="input__container input__large">
+					<label 
+						className="contact__label"
+						htmlFor="contact__textbox" 
+					>
+						How can we help you?
+					</label>
+
+					<textarea 
+						type="text" 
+						className="contact__input contact__textbox" name="contact__textbox" 
+						placeholder="Type here..." 
+						onChange={handleChange} 
+						value={input.contact__textbox} 
+					/>
 				</div>
-				<button type="submit" className="contact__form__submit btn" onClick={submitHandler}>Send</button>
+
+				<button 
+					type="submit" 
+					className="contact__form__submit btn" 
+					onClick={submitHandler}
+				>
+					Send
+				</button>
+
 			</form>
 		</div>
 	)

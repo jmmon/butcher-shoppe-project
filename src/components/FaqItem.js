@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './FaqItem.css'
+// import {Link} from 'react-router-dom'
 
 function FaqItem({question, answer}) {
 	const [click, setClick] = useState(false);
@@ -7,6 +8,8 @@ function FaqItem({question, answer}) {
 	const handleClick = () => setClick(!click)
 
 	const answerShort = answer.slice(0, 100) + (answer.length >= 100 ? '...' : '');
+
+	//let formattedQuestion = question.replace(`services`, `<Link to='/services'>services</Link>`)
 
 
 	return (

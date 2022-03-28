@@ -5,7 +5,7 @@ import './HeroSection.css'
 
 function HeroSection() {
 	return (
-		<div className='hero-container'>
+		<div className='hero-section'>
 			{/* <video src="/videos/video-2.mp4" autoPlay loop muted /> */}
 			<h1>The Northport Butcher Shoppe</h1>
 

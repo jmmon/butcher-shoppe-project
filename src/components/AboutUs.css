@@ -1,21 +1,28 @@
-.about-us-wrapper {
-	padding: 2rem 4rem;
-	margin: 4rem;
+.about-us {
+	width: auto;
+	margin-top: 2vh;
+	margin-bottom: 4vh;
 	background-color: #bcf;
-	border-radius: 10px;
+	border-radius: 50px;
 	background: url('../../public/images/smithFarmPhotos/image-1-113.jpg') center center/cover no-repeat;
 	color: #fff;
+	padding: 2vh 0;
 }
 
-.about-us-wrapper .title {
+.about-us--title {
 	margin-bottom: 1rem;
+	margin-top: -2vh;
 	color: #fff;
 }
 
-.about-us-wrapper .text {
-	margin: 0 4rem;
+
+
+.about-us--text-wrapper {
+	margin: 2rem 4vw;
 	/* border: 2px solid #888;
 	border-radius: 10px; */
 	padding: 1rem;
 	font-size: 20px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
 }

@@ -26,17 +26,19 @@ function App() {
     <div className="website-container">
         <Router>   
             <Navbar />
+            <div className="website-content-container">
+							<Routes>
+									<Route path="/" exact element={<Home />}/>
+									<Route path="/services" exact element={<Services />}/>
+									<Route path="/education" exact element={<Education />}/>
+									<Route path="/schedule" exact element={<Schedule />}/>
+									<Route path="/faq" exact element={<Faq />}/>
+									<Route path="/newsletter" exact element={<Newsletter />}/>
+							</Routes>
+						</div>
             
-            <Routes>
-                <Route path="/" exact element={<Home />}/>
-								<Route path="/services" exact element={<Services />}/>
-								<Route path="/education" exact element={<Education />}/>
-								<Route path="/schedule" exact element={<Schedule />}/>
-								<Route path="/faq" exact element={<Faq />}/>
-								<Route path="/newsletter" exact element={<Newsletter />}/>
-            </Routes>
 
-						<Contact />
+						{/* <Contact /> */}
 						<Footer />
         </Router>
         

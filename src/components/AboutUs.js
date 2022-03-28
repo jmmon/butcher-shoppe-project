@@ -3,9 +3,19 @@ import './AboutUs.css'
 
 function AboutUs() {
 	return (
-		<div className="about-us-wrapper">
-			<h2 className="title">About Us</h2>
-			<p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		<div className="about-us">
+			<h2 className="about-us--title card-heading">About Us</h2>
+			<div className="about-us--text-wrapper">
+				<p>The vision and talent behind The Butcher Shoppe can be found in the hearts of 2 Stevens County families that partnered up to build a business that would serve their local community. The need for meat processing has been increasing in our end of the county as more of our neighbors want to control their own food production. Both our Mobile Farm Kill Truck and The Butcher Shoppe are intended to provide service that will help you meet your goals as a grower and a buyer. Instead of loading and hauling your livestock to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Once your carcass is in our coolers, we will skillfully cut, cure, smoke and wrap your order according to your specifications. This includes wild game too! By taking the time to craft each animal into the artistic expression that will best suit your table, we hope to offer each of our customers a satisfying feeling of abundance for having chosen us to process your livestock. Our truck and our  facility are WSDA Inspected. We encourage you to take a look at our membership program as well.</p>
+			</div>
+			<div className="about-us--text-wrapper">
+				<p>Trent and Tamara Smith are longtime residents of Stevens County. They have had the pleasure of raising their 5 children, a few pigs and a couple dogs, in one of the most beautiful places on earth for almost 20 years now! They are motivated by a desire to serve their community through providing a service they actually enjoy! They believe that their business will bring new jobs and more industry to their small town that is full of potential. The future belongs to those who prepare for it and they want to build something that will sustain the following generations. 
+				</p>
+			</div>
+			<div className="about-us--text-wrapper">
+				<p>Peter Wagner and Tonye-Marie Casteneda… they need to write their part.
+				</p>
+			</div>
 		</div>
 	)
 }

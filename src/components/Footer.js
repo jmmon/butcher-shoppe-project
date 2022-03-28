@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import Contact from './Contact';
 import './Footer.css'
 import Map2 from './Map2.js';
 
@@ -16,6 +17,7 @@ function Footer() {
 
 	return (
 		<div className='footer-container' id="footer-container">
+			<Contact />
 			<section className="footer-subscription">
 				<p className="footer-subscription-heading">
 					Join our newsletter to receive periodic updates from your Northport Butcher Shoppe!
