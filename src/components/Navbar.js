@@ -30,9 +30,11 @@ function Navbar() {
 				<div className="navbar-container">
 
 					<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-						Northport Butcher Shoppe <i className="fa-solid fa-tractor" />
+						<div className="navbar-logo-text">Northport Butcher Shoppe</div>
+						 {/* <i className="fa-solid fa-tractor" /> */}
 					</Link>
 
+					{/* Hamburger icon*/}
 					<div className="menu-icon" onClick={handleClick}>
 						<i className={click ? 'fas fa-times' : 'fas fa-bars'} />
 					</div>
@@ -64,6 +66,15 @@ function Navbar() {
 							</Link>
 						</li>
 						<li className="nav-item">
+							<a 
+								href="#more-links" 
+								className='nav-links' 
+								onClick={closeMobileMenu}
+							>
+								More...
+							</a>
+						</li>
+						<li className="nav-item">
 							{/* only shows up on mobile menu */}
 							<a href="#footer-container" className='nav-links-mobile' onClick={closeMobileMenu}>
 								Newsletter
@@ -71,7 +82,7 @@ function Navbar() {
 						</li>
 					</ul>
 
-					{button && <a href="#footer-container" className="btn-mobile"><div className="btn btn--outline btn--large">Newsletter
+					{button && <a href="#footer-container" className="btn-mobile newsletter-btn"><div className="btn btn--outline btn--large">Newsletter
 						</div></a>}
 
 				</div>

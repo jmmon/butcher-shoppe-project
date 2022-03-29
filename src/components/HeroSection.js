@@ -7,7 +7,7 @@ function HeroSection() {
 	return (
 		<div className='hero-section'>
 			{/* <video src="/videos/video-2.mp4" autoPlay loop muted /> */}
-			<h1>The Northport Butcher Shoppe</h1>
+			<h1 className='card-heading card-heading-shadow card-heading-margin'>The Northport Butcher Shoppe</h1>
 
 			<p>Butchering and Meat Processing services</p>
 			<div className="hero-btns">

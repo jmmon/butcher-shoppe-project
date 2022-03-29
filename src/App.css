@@ -53,26 +53,43 @@
 
 .card-heading {
 	display: flex;
-	height: 10vh;
+	/* height: 10vh; */
 	align-items: center;
 	justify-content: center;
-
   color: #fff;
-  font-size: 100px;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+}
+
+.card-heading-shadow {
+  font-size: 90px;
 	text-shadow: -3px 3px #000;
-
 }
 
+.card-heading-margin {
+	margin-top: -100px;
+}
 @media screen and (max-width: 960px) {
-	.card-heading {
-		font-size: 70px;
+	.card-heading-shadow {
+		font-size: 60px;
+		text-shadow: -2px 2px #000;
 	}
+	.card-heading-margin {
+		margin-top: -100px;
+	}
+
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
 	.card-heading {
 		font-size: 50px;
+	}
+} */
+
+@media screen and (max-width: 480px) {
+	.card-heading-shadow {
+		font-size: 30px;
+		text-shadow: -1px 1px #000;
+	}
+	.card-heading-margin {
+		margin-top: -100px;
 	}
 }

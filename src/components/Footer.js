@@ -40,7 +40,7 @@ function Footer() {
 				zoomLevel={17} 
 			/>
 
-			<div className="footer-links">
+			<div className="footer-links" id="more-links">
 				<div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>About Us</h2>
@@ -54,8 +54,8 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
-            {/* <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link> */}
+            <Link to='/'>Feedback</Link>
+            {/* <Link to='/'>Sponsorships</Link> */}
           </div>
         </div>
         <div className='footer-link-wrapper'>
