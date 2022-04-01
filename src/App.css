@@ -5,6 +5,19 @@
 	font-family: 'PT Sans', sans-serif;
 }
 
+:root {
+	--sky-blue-bg: rgba(193, 248, 255, 0.5);
+
+	--page-title-large: 90px;
+	--page-title-medium: 60px;
+	--page-title-small: 40px;
+	--page-title-xsmall: 30px;
+
+	--page-title-bg-color: #eee;
+	--page-title-container-color: var(--sky-blue-bg);
+	--page-title-text-color: #fff;
+}
+
 .website-container {
 	position: absolute;
 	top: 0px;
@@ -14,7 +27,8 @@
 }
 
 .website-content-container {
-	padding: 0px 2vw;
+	/* padding: 2vh 2vw; */
+	background-color: var(--sky-blue-bg);
 }
 
 .home,
@@ -60,16 +74,28 @@
 }
 
 .card-heading-shadow {
-  font-size: 90px;
+  font-size: var(--page-title-large);
 	text-shadow: -3px 3px #000;
 }
 
 .card-heading-margin {
 	margin-top: -100px;
 }
+
+.card {
+	border-radius: 10px;
+	border: 1px solid black;
+	/* margin: 6rem; */
+}
+
+.white {
+	background-color: white;
+}
+
+
 @media screen and (max-width: 960px) {
 	.card-heading-shadow {
-		font-size: 60px;
+		font-size: var(--page-title-medium);
 		text-shadow: -2px 2px #000;
 	}
 	.card-heading-margin {
@@ -86,7 +112,7 @@
 
 @media screen and (max-width: 480px) {
 	.card-heading-shadow {
-		font-size: 30px;
+		font-size: var(--page-title-small);
 		text-shadow: -1px 1px #000;
 	}
 	.card-heading-margin {

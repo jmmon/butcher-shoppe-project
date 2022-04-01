@@ -1,0 +1,45 @@
+.page-title {
+	display: flex;
+	/* background-color: var(--page-title-bg-color);	 */
+	background: url('../../public/images/smithFarmPhotos/image-1-113.jpg') center center/cover no-repeat;
+	
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+
+	justify-content: center;
+	padding: 1rem 0px;
+}
+
+.page-title--container {
+	display: flex;
+	/* border: 1px solid gray; */
+	padding: 0.5rem 2vw;
+	/* border-radius: 10px; */
+	/* background-color: var(--page-title-container-color); */
+	
+}
+
+.page-title--heading {
+		display: flex;
+
+		align-items: center;
+		justify-content: center;
+	
+		color: var(--page-title-text-color);
+		font-size: var(--page-title-large);
+		text-shadow: -3px 3px black;
+		/* margin-top: 2rem;
+		margin-bottom: 2rem; */
+	
+}
+
+@media screen and (max-width: 960px) {
+	.page-title--heading {
+		font-size: var(--page-title-medium);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.page-title--heading {
+		font-size: var(--page-title-small);
+	}
+}

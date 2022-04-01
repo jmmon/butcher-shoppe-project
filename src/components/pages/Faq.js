@@ -1,6 +1,7 @@
 import React from 'react'
 import './Faq.css'
 import FaqItem from '../FaqItem';
+import PageTitle from '../PageTitle';
 
 function Faq() {
 
@@ -8,8 +9,9 @@ function Faq() {
 
 	return (
 		<>
+		<PageTitle heading="FREQUENTLY ASKED QUESTIONS" />
 		<div className="faq">
-			<h1 className="faq-title">Frequently Asked Questions</h1>
+			{/* <h1 className="faq-title">Frequently Asked Questions</h1> */}
 			<div className="faq-container">
 				{items.map(content => <FaqItem question={content.question} answer={content.answer}/>)}
 			</div>

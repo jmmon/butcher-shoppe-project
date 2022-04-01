@@ -1,10 +1,14 @@
 import React from 'react'
 import '../../App.css'
+import PageTitle from '../PageTitle'
 
 function Education() {
 	return (
 		<>
-			<h1 className="education">Education</h1>
+			<PageTitle heading="EDUCATION" />
+			<div className="education">
+				
+			</div>
 		</>
 	)
 }
