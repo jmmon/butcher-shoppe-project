@@ -1,7 +1,7 @@
 .page-title {
 	display: flex;
 	/* background-color: var(--page-title-bg-color);	 */
-	background: url('../../public/images/smithFarmPhotos/image-1-113.jpg') center center/cover no-repeat;
+	/* background: url('../../public/images/smithFarmPhotos/image-1-113.jpg') center center/cover no-repeat; */
 	
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 

@@ -2,13 +2,13 @@ import React from 'react'
 import Button from '../Button'
 import PageTitle from '../PageTitle'
 import './Services.css'
-// import {nbsp, breakline} from '../htmlCodes'
-// import {Text} from '../Text'
+import bgImage from "../../assets/images/image-1-2.jpg"
 
 function Services() {
 	return (
 		<>
-			<PageTitle heading="SERVICES"/>
+			
+			<PageTitle heading="SERVICES" bgImage={bgImage}/>
 			<div className="services--container">
 				
 				{/* <div className="title_container card white">
