@@ -1,0 +1,63 @@
+.beef-order-form-page {
+	width: 90vw;
+	margin: 0px auto;
+}
+
+.order-form {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	gap: 40px;
+	justify-content: space-around;
+	/* align-items: stretch; */
+}
+
+.order-form--heading-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.order-form--section {
+	margin: 0px;
+	padding: 0px;
+	max-width: 80vw;
+	min-width: 40vw;
+}
+
+.order-form--input,
+.order-form--select {
+	display: block;
+	width: 100%;
+}
+
+.order-form--input-left,
+.order-form--input-right {
+display: inline-block;
+}
+/* .order-form--field {
+	display: flex;
+	width: 100%;
+} */
+.order-form--section-heading {
+	display: block;
+	text-decoration: underline;
+	font-size: 24px;
+}
+
+.order-form--label {
+	display: block;
+	font-size: 18px;
+}
+
+.order-form--input-label {
+	font-size: 16px;
+}
+
+@media screen and (min-width: 960px) {
+	.order-form--section {
+		width: 40vw;
+	}
+}

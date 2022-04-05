@@ -19,12 +19,14 @@
 }
 
 .footer-subscription > p,
-.footer-map-heading {
+.footer-map-heading,
+.footer-contact-heading {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .footer-subscription-heading,
-.footer-map-heading {
+.footer-map-heading,
+.footer-contact-heading {
 	margin-bottom: 24px;
 	font-size: 24px;
 }
@@ -145,10 +147,29 @@
 	margin-bottom: 16px;
 }
 
-.footer-map-heading {
+
+.footer-contact-map-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 90vw;
+}
+
+.footer-contact-container {
+	margin: 0px auto;
+}
+.footer-map-container {
+	margin: 0px auto;
+}
+.footer-map-heading,
+.footer-contact-heading {
 	color: #fff;
 	margin-bottom: 12px;
+	text-align: center;
 }
+
+
 
 @media screen and (max-width: 820px) {
 	.footer-links {

@@ -8,7 +8,8 @@ import Newsletter from './components/pages/Newsletter.js';
 import Footer from './components/Footer.js';
 import Schedule from './components/pages/Schedule.js';
 import Faq from './components/pages/Faq.js';
-import Contact from './components/Contact.js';
+import Header from './components/Header.js';
+import BeefOrder from './components/BeefOrder.js';
 // import Map from './components/Map.js';
 // import Map2 from './components/Map2.js';
 
@@ -25,6 +26,7 @@ function App() {
   return (
     <div className="website-container">
         <Router>   
+						<Header />
             <Navbar />
             <div className="website-content-container">
 							<Routes>
@@ -34,6 +36,7 @@ function App() {
 									<Route path="/schedule" exact element={<Schedule />}/>
 									<Route path="/faq" exact element={<Faq />}/>
 									<Route path="/newsletter" exact element={<Newsletter />}/>
+									<Route path="beef-form" exact element={<BeefOrder />}/>
 							</Routes>
 						</div>
             

@@ -33,39 +33,14 @@ function Contact() {
 		emailjs.sendForm('default_service', 'contact_form', form.current, "s_lsMHoKQ1eYJ_my7")
 			.then(() => {console.log('Successfully sent email!')})
 			.catch((err) => {console.log('Failed:', err)});
-
-		// fetch('http://localhost:3002/contact', {
-		// 	method: 'POST',
-		// 	body: JSON.stringify(input),
-		// 	headers: {
-		// 		'Accept': 'application/json',
-		// 		'Content-Type': 'application/json'
-		// 	}, 
-		// }).then(response => {
-		// 	//console.log('response', response);
-		// 	if (response.status === 200) {
-		// 		console.log('Message Sent:', response.statusText);
-		// 		setInput(prevInput => {
-		// 			return {
-		// 				...prevInput,
-		// 				contact__name: '',
-		// 				contact__email: '',
-		// 				contact__textbox: '',
-		// 			};
-		// 		});
-		// 	} else {
-		// 		console.log('Message Failed:', response.status);
-		// 		console.log(response.statusText);
-		// 	}
-		// })
 	};
 
 	return (
 		<div className="contact">
 
-			<h1 className="contact__title">
+			{/* <h1 className="contact__title">
 				Contact Us!
-			</h1>
+			</h1> */}
 
 			<form className="contact__form" ref={form}>
 

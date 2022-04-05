@@ -29,6 +29,7 @@
 .website-content-container {
 	/* padding: 2vh 2vw; */
 	background-color: var(--sky-blue-bg);
+	margin-top: 40px;
 }
 
 .home,

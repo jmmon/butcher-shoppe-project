@@ -17,7 +17,6 @@ function Footer() {
 
 	return (
 		<div className='footer-container' id="footer-container">
-			<Contact />
 			<section className="footer-subscription">
 				<p className="footer-subscription-heading">
 					Join our newsletter to receive periodic updates from your Northport Butcher Shoppe!
@@ -33,12 +32,25 @@ function Footer() {
 				</div>
 			</section>
 
-			<p className="footer-map-heading">Find us in downtown Northport:</p>
-			<Map2 
-				placeName={"412 Center Ave, Northport, WA 99157, USA"} 
-				location={location} 
-				zoomLevel={17} 
-			/>
+			<section className="footer-contact-map-wrapper">
+				<div className="footer-contact-container">
+					<p className="footer-contact-heading">
+						Contact Us!
+					</p>
+					<Contact />
+				</div>
+				<div className="footer-map-container">
+					<p className="footer-map-heading">
+						Find us in downtown Northport:
+					</p>
+					<Map2 
+						placeName={"412 Center Ave, Northport, WA 99157, USA"} 
+						location={location} 
+						zoomLevel={17} 
+						/>
+				</div>
+			</section>
+			
 
 			<div className="footer-links" id="more-links">
 				<div className='footer-link-wrapper'>
@@ -60,9 +72,9 @@ function Footer() {
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            <h2>Videos</h2>
-            {/* <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
+            <h2>Order Forms</h2>
+            <Link to='/beef-form'>Beef Order Form</Link>
+            {/* <Link to='/'>Ambassadors</Link>
             <Link to='/'>Agency</Link>
             <Link to='/'>Influencer</Link> */}
           </div>

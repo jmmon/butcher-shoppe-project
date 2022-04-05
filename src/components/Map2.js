@@ -1,5 +1,7 @@
 import {useEffect, useRef} from 'react'
 
+import './Map2.css'
+
 const GoogleMap = ({ placeName, zoomLevel, location }) => {
   const googleMapRef = useRef();
   let googleMap;
@@ -58,7 +60,6 @@ const GoogleMap = ({ placeName, zoomLevel, location }) => {
     <div
       id="google-map"
       ref={googleMapRef}
-      style={{ width: "400px", height: "300px" }}
     />
   );
 };

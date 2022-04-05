@@ -6,8 +6,8 @@
   align-items: center;
   font-size: 1.1rem;
   position: sticky;
-  top: 0;
-  z-index: 999;
+  top: 40px;
+  z-index: 998;
 }
 
 .navbar-container {
@@ -60,7 +60,7 @@
 .nav-menu {
 	/* Does NOT include Logo and Icon */
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
