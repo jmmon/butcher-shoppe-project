@@ -404,7 +404,7 @@ function BeefOrder() {
 					<h3 className="order-form--before-submitting">Please Double Check Your Selections Before Submitting</h3>
 				</div>
 
-				<input type="submit" className="order-form--submit" value="Submit Form"/>
+				<input type="submit" className="order-form--submit btn btn--outline btn--large" value="Submit Form"/>
 
 			</form>
 		</div>

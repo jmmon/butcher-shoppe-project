@@ -26,8 +26,8 @@
 }
 
 .input__container {
-	/* border: 1px solid #fff; */
 	display: inline-block;
+	padding: 2px;
 }
 
 .input__small {
@@ -36,8 +36,6 @@
 
 .input__large {
 	width: 100%;
-	margin-top: 5px;
-
 }
 
 
@@ -54,20 +52,18 @@
 
 
 .contact__label {
-	font-size: 20px;
+	font-size: 18px;
 	padding-left: 20px;
 	color: #fff;
 }
 
-.contact__form__submit {
+/* .contact__form__submit {
 	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;
+	margin: 0px auto;
 	border: 1px solid #888;
 	background-color: lightblue;
 	font-size: 20px;
-}
+} */
 
 @media screen and (max-width: 960px) {
 	.contact {

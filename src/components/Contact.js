@@ -59,7 +59,7 @@ function Contact() {
 
 					<input 
 						type="text" 
-						className="contact__input contact__name" 
+						className="contact__input contact__name footer-input" 
 						name="contact__name" 
 						placeholder="Your name" 
 						value={input.contact__name} 
@@ -77,7 +77,7 @@ function Contact() {
 
 					<input 
 						type="text" 
-						className="contact__input contact__email" 
+						className="contact__input contact__email footer-input" 
 						name="contact__email" 
 						placeholder="Your email" 
 						value={input.contact__email} 
@@ -95,7 +95,7 @@ function Contact() {
 
 					<textarea 
 						type="text" 
-						className="contact__input contact__textbox" name="contact__textbox" 
+						className="contact__input contact__textbox footer-input" name="contact__textbox" 
 						placeholder="Type here..." 
 						onChange={handleChange} 
 						value={input.contact__textbox} 
@@ -104,7 +104,7 @@ function Contact() {
 
 				<button 
 					type="submit" 
-					className="contact__form__submit btn" 
+					className=" contact__form__submit btn btn--outline btn--large" 
 					onClick={submitHandler}
 				>
 					Send

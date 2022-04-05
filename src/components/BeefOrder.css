@@ -68,6 +68,11 @@ width: 50%;
 	margin-top: 40px;
 }
 
+.order-form--submit {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
 @media screen and (min-width: 768px) {
 	.order-form--section {
 		width: 40vw;
