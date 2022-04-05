@@ -17,7 +17,7 @@ function BeefOrder() {
 
 				<section className="order-form--section">
 					<h4 className="order-form--section-heading">Steak Options</h4>
-					<div className="order-form--section-subheading">Standard Steaks are Rib, T-Bone, Sirloin, Round, and Flank</div>
+					<div className="order-form--section-subheading">- Standard Steaks are Rib, T-Bone, Sirloin, Round, and Flank -</div>
 
 					<div className="order-form--field">
 						<label htmlFor="steak_thickness" className="order-form--label" >
@@ -99,7 +99,7 @@ function BeefOrder() {
 
 				<section className="order-form--section">
 					<h4 className="order-form--section-heading">Roast Options</h4>
-					<div className="order-form--section-subheading">Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin Tip and, Heel of Round</div>
+					<div className="order-form--section-subheading">- Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin Tip and, Heel of Round -</div>
 
 					<div className="order-form--field">
 						<label htmlFor="roast_size" className="order-form--label" >
@@ -159,12 +159,12 @@ function BeefOrder() {
 						<label for='remove_bone_dust__checkbox'>YES (Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks)</label>
 					</div>
 
-					<div className="order-form--field" style={{display: "none"}}>
+					<div className="order-form--field">
 						<label htmlFor="special_instructions" className="order-form--label" >
 						SPECIAL INSTRUCTIONS
 						</label>
 
-						<textarea name="special_instructions" id="special_instructions" cols="30" rows="10" className="order-form--textarea" placeholder="Enter special instructions for certain options here"></textarea>
+						<textarea name="special_instructions" id="special_instructions" className="order-form--textarea" placeholder="Enter special instructions for certain options here"></textarea>
 					</div>
 
 				</section>
@@ -173,89 +173,92 @@ function BeefOrder() {
 
 
 				<section className="order-form--section">
-					<h4 className="order-form--section-heading">Other Cut Options</h4>
+					<div className="other-cut--container">
 
-					<div className="order-form--field">
-						<label htmlFor="boneless_stew_meat" className="order-form--label" >
-						Boneless Stew Meat
-						</label>
+						<h4 className="order-form--section-heading">Other Cut Options</h4>
 
-						<select name="boneless_stew_meat" id="boneless_stew_meat" className="order-form--select" >
-							<option value='YES (standard is 6-8 packages)'>YES (standard is 6-8 packages)</option>
-							<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
-						</select>
+						<div className="order-form--field">
+							<label htmlFor="boneless_stew_meat" className="order-form--label" >
+							Boneless Stew Meat
+							</label>
+
+							<select name="boneless_stew_meat" id="boneless_stew_meat" className="order-form--select" >
+								<option value='YES (standard is 6-8 packages)'>YES (standard is 6-8 packages)</option>
+								<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
+							</select>
+						</div>
+
+						<div className="order-form--field">
+							<label htmlFor="soup_bones" className="order-form--label" >
+							Soup Bones
+							</label>
+
+							<select name="soup_bones" id="soup_bones" className="order-form--select" >
+								<option value='YES (standard is 4-5 packages)'>YES (standard is 4-5 packages)</option>
+								<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
+							</select>
+						</div>
+
+						<div className="order-form--field">
+							<label htmlFor="short_ribs" className="order-form--label" >
+								Short Ribs
+							</label>
+
+							<select name="short_ribs" id="short_ribs" className="order-form--select" >
+								<option value='YES (standard is 4-5 packages)'>YES (standard is 4-5 packages)</option>
+								<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
+							</select>
+						</div>
 					</div>
 
-					<div className="order-form--field">
-						<label htmlFor="soup_bones" className="order-form--label" >
-						Soup Bones
-						</label>
 
-						<select name="soup_bones" id="soup_bones" className="order-form--select" >
-							<option value='YES (standard is 4-5 packages)'>YES (standard is 4-5 packages)</option>
-							<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
-						</select>
-					</div>
+					<div className="ground-beef--container">
+						<h4 className="order-form--section-heading">Ground Beef Options</h4>
+						<div className="order-form--field">
+							<label htmlFor="ground_beef_package_size" className="order-form--label" >
+								Ground Beef Package Size
+							</label>
 
-					<div className="order-form--field">
-						<label htmlFor="short_ribs" className="order-form--label" >
-							Short Ribs
-						</label>
+							<select name="ground_beef_package_size" id="ground_beef_package_size" className="order-form--select" >
+								<option value='1 1/2#'>1 1/2#</option>
+								<option value='2#'>2#</option>
+								<option value='1# *Additional fee - See Price List'>1# *Additional fee - See Price List</option>
+							</select>
+						</div>
 
-						<select name="short_ribs" id="short_ribs" className="order-form--select" >
-							<option value='YES (standard is 4-5 packages)'>YES (standard is 4-5 packages)</option>
-							<option value='NO (meat goes into hamburger)'>NO (meat goes into hamburger)</option>
-						</select>
-					</div>
-				</section>
+						<div className="order-form--field">
+							<label htmlFor="ground_beef_patties" className="order-form--label" >
+								Ground Beef Patties (1/4# patties, 30# minimum) *Additional fee - See Price List
+							</label>
 
-				<section className="order-form--section">
-					<h4 className="order-form--section-heading">Ground Beef Options</h4>
+							<select name="ground_beef_patties" id="ground_beef_patties" className="order-form--select" >
+								<option value='NO'>NO</option>
+								<option value='4 patties per pkg'>4 patties per pkg</option>
+								<option value='5 patties per pkg'>5 patties per pkg</option>
+								<option value='6 patties per pkg'>6 patties per pkg</option>
+								<option value='7 patties per pkg'>7 patties per pkg</option>
+								<option value='8 patties per pkg'>8 patties per pkg</option>
+							</select>
+						</div>
 
-					<div className="order-form--field">
-						<label htmlFor="ground_beef_package_size" className="order-form--label" >
-							Ground Beef Package Size
-						</label>
+						<div className="order-form--field">
+							<label htmlFor="beef-extras" className="order-form--label" >
+								EXTRAS
+							</label>
 
-						<select name="ground_beef_package_size" id="ground_beef_package_size" className="order-form--select" >
-							<option value='1 1/2#'>1 1/2#</option>
-							<option value='2#'>2#</option>
-							<option value='1# *Additional fee - See Price List'>1# *Additional fee - See Price List</option>
-						</select>
-					</div>
+							<input className="order-form--checkbox" type='checkbox' id='extras_liver__checkbox' name='extras_liver__checkbox' />
+							<label for='extras_liver__checkbox'>LIVER</label>
+							
+							<input className="order-form--checkbox" type='checkbox' id='extras_heart__checkbox' name='extras_heart__checkbox' />
+							<label for='extras_heart__checkbox'>HEART</label>
 
-					<div className="order-form--field">
-						<label htmlFor="ground_beef_patties" className="order-form--label" >
-							Ground Beef Patties (1/4# patties, 30# minimum) *Additional fee - See Price List
-						</label>
+							<input className="order-form--checkbox" type='checkbox' id='extras_tongue__checkbox' name='extras_tongue__checkbox' />
+							<label for='extras_tongue__checkbox'>TONGUE</label>
 
-						<select name="ground_beef_patties" id="ground_beef_patties" className="order-form--select" >
-							<option value='NO'>NO</option>
-							<option value='4 patties per pkg'>4 patties per pkg</option>
-							<option value='5 patties per pkg'>5 patties per pkg</option>
-							<option value='6 patties per pkg'>6 patties per pkg</option>
-							<option value='7 patties per pkg'>7 patties per pkg</option>
-							<option value='8 patties per pkg'>8 patties per pkg</option>
-						</select>
-					</div>
+							<input className="order-form--checkbox" type='checkbox' id='extras_oxtail__checkbox' name='extras_oxtail__checkbox' />
+							<label for='extras_oxtail__checkbox'>OXTAIL</label>
 
-					<div className="order-form--field">
-						<label htmlFor="beef-extras" className="order-form--label" >
-							EXTRAS
-						</label>
-
-						<input className="order-form--checkbox" type='checkbox' id='extras_liver__checkbox' name='extras_liver__checkbox' />
-						<label for='extras_liver__checkbox'>LIVER</label>
-						
-						<input className="order-form--checkbox" type='checkbox' id='extras_heart__checkbox' name='extras_heart__checkbox' />
-						<label for='extras_heart__checkbox'>HEART</label>
-
-						<input className="order-form--checkbox" type='checkbox' id='extras_tongue__checkbox' name='extras_tongue__checkbox' />
-						<label for='extras_tongue__checkbox'>TONGUE</label>
-
-						<input className="order-form--checkbox" type='checkbox' id='extras_oxtail__checkbox' name='extras_oxtail__checkbox' />
-						<label for='extras_oxtail__checkbox'>OXTAIL</label>
-
+						</div>
 					</div>
 				</section>
 
@@ -334,7 +337,7 @@ function BeefOrder() {
 
 
 				<section className="order-form--section">
-					<h4 className="order-form--section--heading">Your Contact Info</h4>
+					<h4 className="order-form--section-heading">Your Contact Info</h4>
 
 					<div className="order-form--field">
 						<label className="order-form--label">Name <span className="form-required">*</span></label>
