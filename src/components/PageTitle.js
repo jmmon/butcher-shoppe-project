@@ -2,13 +2,13 @@ import React from 'react'
 import './PageTitle.css'
 
 
-function PageTitle({heading, bgImage}) {
+function PageTitle({heading, bgImage, position}) {
 	return (
 		<section 
 			className="page-title"
 			style={{ 
 					backgroundImage:`url(${bgImage})`,
-					backgroundPosition: "center",
+					backgroundPosition: `${position || "50% 50%"}`,
 					backgroundSize: "cover", 
 					backgroundRepeat:"no-repeat", 
 				}}

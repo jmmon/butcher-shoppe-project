@@ -33,13 +33,13 @@ function Footer() {
 			</section>
 
 			<section className="footer-contact-map-wrapper">
-				<div className="footer-contact-container">
+				<div className="footer-contact-container" id="contact-link-target">
 					<p className="footer-contact-heading">
 						Contact Us!
 					</p>
 					<Contact />
 				</div>
-				<div className="footer-map-container">
+				<div className="footer-map-container" id="map-link-target">
 					<p className="footer-map-heading">
 						Find us in downtown Northport:
 					</p>

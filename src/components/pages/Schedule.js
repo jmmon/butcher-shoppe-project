@@ -4,13 +4,14 @@ import PageTitle from '../PageTitle';
 import SchedulerInput from '../SchedulerInput';
 import './Schedule.css'
 
+import bgImage from "../../assets/images/image-1-116.jpg"
 function Schedule() {
 
 	return (
 		<>
-		<PageTitle heading="SCHEDULE" />
+		<PageTitle heading="SCHEDULE" bgImage={bgImage}/>
 		<div className="schedule__container">
-			<h1 className="schedule">Schedule</h1>
+			{/* <h1 className="schedule-heading">Schedule</h1> */}
 			<p>Ready to move forward? Schedule a phone call and we will discuss which cuts you would like, prices, timeframes, and answer any other questions you might have.</p>
 
 			<SchedulerInput />

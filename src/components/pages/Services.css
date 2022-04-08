@@ -51,7 +51,7 @@
 	text-shadow: -1px 1px #000;
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 5px;
-	padding: 5px;
+	padding: 16px;
 
 }
 
@@ -82,10 +82,13 @@ tr {
 	background-color: #fff;
 }
 
-.blerb-wrapper p {
+.blerb-wrapper > * {
 	font-size: 20px;
 	width: 60%;
 	margin: auto;
+}
+.blerb-wrapper > ul {
+	padding-left: 24px;
 }
 
 .butchering.container {

@@ -1,4 +1,4 @@
-.schedule {
+.schedule-heading {
 	display: flex;
 	height: 10vh;
 	align-items: center;
@@ -17,6 +17,6 @@
 .schedule__container {
 	margin: 2rem 10vw;
 	padding: 2rem;
-	background-color: #eef;
+	background-color: #fff;
 	border-radius: 5px;
 }

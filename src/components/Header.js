@@ -14,19 +14,19 @@ function HeaderIcon({icon}) {
 function Header() {
 	return (
 		<div className="header">
-			<div className="header-item">
+			<a className="header-link" href="#contact-link-target">
 				<HeaderIcon icon={<ClockIcon />} /> 
-				<div className="header-hours">9-5 M-F</div> 
-			</div>
-			<div className="header-item header-phone">
+				<p className="header-hours">9-5 M-F</p> 
+			</a>
+			<a className="header-link header-phone" href="#contact-link-target">
 				(509)555-5555
-			</div>
-			<div className="header-item header-contact">
+			</a>
+			<a className="header-link header-contact" href="#contact-link-target">
 				Email Us
-			</div>
-			<div className="header-item header-location">
+			</a>
+			<a className="header-link header-location" href="#map-link-target">
 				Northport, WA
-			</div>
+			</a>
 
 		</div>
 	)
