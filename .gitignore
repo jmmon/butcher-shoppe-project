@@ -24,4 +24,4 @@ yarn-error.log*
 
 .env
 
-/old
+/old_components
