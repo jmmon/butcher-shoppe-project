@@ -1,8 +1,9 @@
-.faq {
-	background-color: #eee;
-	
-	height: auto;
-	padding-bottom: 2rem;
+.faq {	
+	margin: 2rem 10vw;
+	padding: 2rem;
+	background-color: #fff;
+	border-radius: 5px;
+
 }
 
 .faq-title {
@@ -22,3 +23,6 @@
 	/* top: 10vh; */
 
 }
+
+
+

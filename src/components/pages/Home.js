@@ -1,8 +1,8 @@
 import '../../App.css'
 import AboutUs from '../AboutUs'
-import AboutUs2 from '../AboutUs2'
-import Blurb from '../Blurb'
-import Cards from '../Cards'
+// import AboutUs2 from '../AboutUs2'
+// import Blurb from '../Blurb'
+
 import HomepageTitle from '../HomepageTitle'
 
 

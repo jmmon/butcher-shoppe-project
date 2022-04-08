@@ -4,10 +4,55 @@ import FaqItem from '../FaqItem';
 import PageTitle from '../PageTitle';
 
 import bgImage from "../../assets/images/image-1-132.jpg"
+import FaqSection from '../FaqSection';
 
 function Faq() {
 
-	const items = [{question: `What services do you provide?`, answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam."}, {question: "question 2", answer: "Lacus sed viverra tellus in hac habitasse platea dictumst. Nisl nisi scelerisque eu ultrices vitae auctor. Eget dolor morbi non arcu risus quis. At tempor commodo ullamcorper a lacus vestibulum sed arcu. "}, {question: "question 3", answer: "Scelerisque purus semper eget duis. Ultricies integer quis auctor elit sed vulputate mi. Pellentesque elit eget gravida cum. Purus faucibus ornare suspendisse sed nisi lacus sed viverra. "}, {question: "question 4", answer: "Odio euismod lacinia at quis risus sed. Enim lobortis scelerisque fermentum dui faucibus in ornare. Aliquet risus feugiat in ante metus dictum at tempor. Eu turpis egestas pretium aenean pharetra magna. Orci porta non pulvinar neque laoreet. Viverra vitae congue eu consequat ac felis donec et odio. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. At in tellus integer feugiat scelerisque varius morbi enim nunc. Velit euismod in pellentesque massa placerat duis ultricies lacus sed."}];
+	const generalFAQ = [
+		{
+			question: "What services do you provide?",
+			answer: "We slaughter and process farm animals in north-eastern Washington state. Our processing store is located in downtown Northport, WA, and our mobile farmkill truck serves the greater Northport and Colville area."
+		},
+		{
+			question: "Where are you located?",
+			answer: "Right smack dab in the middle of Northport, Washington!"
+		},
+		{
+			question: "Do you sell cuts of retail meat?",
+			answer: "No. Our services are butchering and processing other people's farm animals only. We do not have a retail store or sources of meat to sell at retail."
+		},
+		{
+			question: "Do you raise animals for sale?",
+			answer: "No, we only butcher and process farm animals from other farms."
+		},
+		{
+			question: "Do you process poultry?",
+			answer: "Unfortunately, due to the time required we do not process any poultry."
+		}
+	];
+
+	const slaughteringFAQ = [
+		{
+			question: "What is the process for a farm kill look like?",
+			answer: "After initial contact and filling out the processing form for the appropriate animal(s), we will need to set a date for the harvest."
+		},
+		{
+			question: "What happens after the farm kill?",
+			answer: "From this point, it's up to you whether you would like us to process the meat for you, or whether you will process it yourself. "
+		},
+		{
+			question: "What do you need available on-site for the farm kill?",
+			answer: ""
+		},
+		{
+			question: "Do you raise animals for sale?",
+			answer: "No, we only butcher and process farm animals from other farms."
+		},
+		{
+			question: "Do you process poultry?",
+			answer: "Unfortunately, due to the time required we do not process any poultry."
+		}
+	];
 
 	return (
 		<>
@@ -15,7 +60,19 @@ function Faq() {
 		<div className="faq">
 			{/* <h1 className="faq-title">Frequently Asked Questions</h1> */}
 			<div className="faq-container">
-				{items.map(content => <FaqItem question={content.question} answer={content.answer}/>)}
+				<FaqSection 
+					sectionTitle={"General Questions"} 
+					questionList={generalFAQ}
+				/>
+				{/* <FaqSection 
+					sectionTitle={"Slaughtering"} 
+					questionList={slaughteringFAQ}
+				/>
+				<FaqSection 
+					sectionTitle={"Processing"} 
+					questionList={generalFAQ}
+				/> */}
+				{/* {items.map(content => <FaqItem question={content.question} answer={content.answer}/>)} */}
 			</div>
 		</div>
 		</>
