@@ -19,6 +19,7 @@
 	border-radius: 10px;
 	padding: 1vw;
 	transition: border 0.5s;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .faq-section h4 {

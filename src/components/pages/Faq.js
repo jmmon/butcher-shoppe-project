@@ -1,6 +1,5 @@
 import React from 'react'
 import './Faq.css'
-import FaqItem from '../FaqItem';
 import PageTitle from '../PageTitle';
 
 import bgImage from "../../assets/images/image-1-132.jpg"
@@ -56,7 +55,7 @@ function Faq() {
 
 	return (
 		<>
-		<PageTitle heading="FREQUENTLY ASKED QUESTIONS" bgImage={bgImage}/>
+		<PageTitle heading="FREQUENTLY ASKED QUESTIONS" bgImage={bgImage} smaller="true"/>
 		<div className="faq">
 			{/* <h1 className="faq-title">Frequently Asked Questions</h1> */}
 			<div className="faq-container">

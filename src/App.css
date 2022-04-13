@@ -8,15 +8,28 @@
 :root {
 	--sky-blue-bg: rgba(193, 248, 255, 0.5);
 
-	--page-title-large: 90px;
-	--page-title-medium: 60px;
-	--page-title-small: 40px;
-	--page-title-xsmall: 30px;
+	--page-title-xlarge: 90px;
+	--page-title-large: 72px;
+	--page-title-medium: 64px;
+	--page-title-small: 50px;
+	--page-title-xsmall: 25px;
 
 	--page-title-bg-color: #eee;
 	--page-title-container-color: var(--sky-blue-bg);
 	--page-title-text-color: #fff;
+
+	
+	--font--xlarge: 36px;
+	--font--large: 26px;
+	--font--normal: 20px;
+	--font--medium: 16px;
+	--font--small: 14px;
+
+	--icon--normal: 22px;
+	--icon--medium: 20px;
+	--icon--small: 18px;
 }
+
 
 .website-container {
 	position: absolute;
@@ -33,39 +46,10 @@
 	padding-bottom: 2rem;
 }
 
-.home,
-/*.services,*/
-.education,
-.newsletter {
-	display: flex;
-	height: 90vh;
-	align-items: center;
-	justify-content: center;
-	font-size: 3rem;
-}
 
-.services {
-  color: #000;
-  font-size: 100px;
-}
 
-.education {
-  background-image: url('../public/images/img-1.jpg');
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
 
-.newsletter {
-  background-image: url('../public/images/img-8.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
+
 
 .card-heading {
 	display: flex;
@@ -73,6 +57,7 @@
 	align-items: center;
 	justify-content: center;
   color: #fff;
+	text-align: center;
 }
 
 .card-heading-shadow {
@@ -92,6 +77,27 @@
 
 .white {
 	background-color: white;
+}
+
+
+
+/* Dark background around text block */
+.text-wrapper-shadow {
+	margin: 2rem auto;
+	/* border: 2px solid #888;
+	border-radius: 10px; */
+	max-width: 800px;
+	padding: 1rem;
+	font-size: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-shadow: -1px 1px #000;
+	border-radius: 5px;
+	color: #fff;
+}
+
+
+.text--large {
+	font-size: var(--font--large);
 }
 
 

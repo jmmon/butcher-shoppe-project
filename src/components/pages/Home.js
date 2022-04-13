@@ -1,16 +1,18 @@
-import '../../App.css'
-import AboutUs from '../AboutUs'
-// import AboutUs2 from '../AboutUs2'
-// import Blurb from '../Blurb'
+import './Home.css'
 
+import AboutUs from '../AboutUs'
 import HomepageTitle from '../HomepageTitle'
+import ComingSoonCard from '../ComingSoonCard'
 
 
 function Home() {
+
+
 	return (
 		<>
 			{/* seasonal image and title */}
 			<HomepageTitle/> 
+			<ComingSoonCard />
 			<AboutUs/>
 			{/* <AboutUs2 /> */}
 			{/* intro text */}

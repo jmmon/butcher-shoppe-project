@@ -12,8 +12,8 @@ const question = (question, answer, num) => {
 	const q_class = `faq_question_${num}`;
 	const a_class = `faq_answer_${num}`;
 	return (
-		<div className="faq_question__container">
-			<h4 className={q_class}><ul><li>{question}</li></ul></h4>
+		<div className="faq_question__container" key={q_class}>
+			<h4 className={q_class}>{question}</h4>
 			<p className={a_class}>{answer}</p>
 		</div>
 	);
@@ -22,12 +22,25 @@ const question = (question, answer, num) => {
 function FaqSection({sectionTitle, questionList}) {
 	const [expand, setExpand] = useState(false);
 
-	const handleExpand = () => setExpand(!expand)
+	const handleExpand = () => {
+		setExpand(!expand)
+		if (expand) {
+			let pos = 340;
+			if (window.innerWidth <= 480) {
+				pos = 80;
+			} else if (window.innerWidth <= 960) {
+				pos = 180;
+			} else if (window.innerWidth <= 1340) {
+				pos = 180
+			}
+			window.scrollTo(0, pos)
+		}
+		
+	}
 
 	// const answerShort = answer.slice(0, 100) + (answer.length >= 100 ? '...' : '');
 
 	//let formattedQuestion = question.replace(`services`, `<Link to='/services'>services</Link>`)
-	console.log(questionList);
 
 	let allQuestions = questionList.map(item => {
 		let index = questionList.indexOf(item) + 1;
@@ -48,13 +61,12 @@ function FaqSection({sectionTitle, questionList}) {
 			<div className="faq-section__container">
 				<h3 className="faq-section__title" >{sectionTitle}</h3>
 				<div 
-					className={expand ? "faq-section__text expand" : "faq-section__text"}
+					className={expand ? "faq-section__text expand " : "faq-section__text "}
 				>
 					{!expand ? question(questionList[0].question, questionList[0].answer, 1) : allQuestions}
 
 					<div 
 						className="expand-icon" 
-						// href={linkHref}
 						onClick={handleExpand}
 					>
 						<i className={expand ? 'fa fa-chevron-up' : 'fa fa-chevron-down'} />

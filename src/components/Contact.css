@@ -45,7 +45,7 @@
 	font-size: 20px;
 }
 
-.contact__textbox {
+.contact__textarea {
 	height: 100px;
 	resize: vertical;
 }
@@ -56,6 +56,29 @@
 	padding-left: 20px;
 	color: #fff;
 }
+
+.input__container > input:focus:required:invalid {
+	border: 1px solid red;
+	background-color: rgb(255, 223, 223);
+}
+
+.input__container > input:focus:required:valid {
+	border: 1px solid green;
+	background-color: rgb(223, 255, 223);
+}
+
+p.contact__form__err {
+	width: 100%;
+	border: 1px solid red;
+	border-radius: 20px;
+	background: rgb(255, 223, 223);
+	text-align: center;
+
+}
+
+/* .contact__input:focus:required:invalid {
+	border: 2px solid red;
+} */
 
 /* .contact__form__submit {
 	width: 60%;

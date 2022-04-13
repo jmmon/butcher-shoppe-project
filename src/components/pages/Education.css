@@ -1,0 +1,18 @@
+.education {
+	display: flex;
+	height: 90vh;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem;
+}
+
+.education {
+	background-image: url("../../../public/images/smithFarmPhotos/image-1-136.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+
+	margin-top: 2rem;
+}

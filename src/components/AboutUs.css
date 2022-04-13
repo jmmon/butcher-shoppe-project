@@ -21,17 +21,6 @@
 
 
 
-.about-us--text-wrapper-shadow {
-	margin: 2rem auto;
-	/* border: 2px solid #888;
-	border-radius: 10px; */
-	max-width: 800px;
-	padding: 1rem;
-	font-size: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 10px;
-}
-
 
 /* .about-us::before {
 	content: "";
@@ -65,8 +54,8 @@
 } */
 
 
-.about-us-container {
+.panel-container {
 	padding: 1rem;
-	background-color: rgba(255, 255, 255, .5);
+	/* background-color: rgba(255, 255, 255, .5); */
 	
 }

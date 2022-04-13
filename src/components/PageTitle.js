@@ -2,7 +2,8 @@ import React from 'react'
 import './PageTitle.css'
 
 
-function PageTitle({heading, bgImage, position}) {
+function PageTitle({heading, bgImage, position, smaller}) {
+
 	return (
 		<section 
 			className="page-title"
@@ -14,7 +15,7 @@ function PageTitle({heading, bgImage, position}) {
 				}}
 		>
 			<div className="page-title--container" >
-				<h1 className="page-title--heading">{heading}</h1>
+				<h1 className={(smaller === "true") ? "page-title--heading smaller" : "page-title--heading"}>{heading}</h1>
 			</div>
 		
 		</section>

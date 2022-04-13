@@ -3,21 +3,13 @@ import { Link } from 'react-router-dom'
 import Button from './Button'
 import Contact from './Contact';
 import './Footer.css'
-import Map2 from './Map2.js';
+import Map from './Map.js';
 
-const location = {
-	// 48.916323, -117.781973
-	address: '420 Center Ave, Northport, WA 99157, USA',
-  lat: 48.916323,
-  lng: -117.781973,
-};
 
 function Footer() {
-
-
 	return (
 		<div className='footer-container' id="footer-container">
-			<section className="footer-subscription">
+			{/* <section className="footer-subscription">
 				<p className="footer-subscription-heading">
 					Join our newsletter to receive periodic updates from your Northport Butcher Shoppe!
 				</p>
@@ -30,7 +22,7 @@ function Footer() {
 						<Button buttonStyle="btn--outline" url='/newsletter'>Subscribe</Button>
 					</form>
 				</div>
-			</section>
+			</section> */}
 
 			<section className="footer-contact-map-wrapper">
 				<div className="footer-contact-container" id="contact-link-target">
@@ -43,42 +35,38 @@ function Footer() {
 					<p className="footer-map-heading">
 						Find us in downtown Northport:
 					</p>
-					<Map2 
-						placeName={"412 Center Ave, Northport, WA 99157, USA"} 
-						location={location} 
-						zoomLevel={17} 
+					<Map 
+						placeName={"412 Center Ave, Northport, WA 99157, USA"}
+						zoomLevel={15} 
 						/>
 				</div>
 			</section>
 			
 
 			<div className="footer-links" id="more-links">
-				<div className='footer-link-wrapper'>
-          <div class='footer-link-items'>
+				{/* <div className='footer-link-wrapper'>
+          <div className='footer-link-items'>
             <h2>About Us</h2>
             <Link to='/'>About Us</Link>
             <Link to='/'>Testimonials</Link>
             <Link to='/'>Careers</Link>
-            {/* <Link to='/'>Investors</Link>
-            <Link to='/'>Terms of Service</Link> */}
           </div>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
             <Link to='/'>Feedback</Link>
-            {/* <Link to='/'>Sponsorships</Link> */}
           </div>
-        </div>
+        </div> */}
         <div className='footer-link-wrapper'>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>Order Forms</h2>
             <Link to='/beef-form'>Beef Order Form</Link>
             {/* <Link to='/'>Ambassadors</Link>
             <Link to='/'>Agency</Link>
             <Link to='/'>Influencer</Link> */}
           </div>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>Social Media</h2>
             <Link to='/'>Instagram</Link>
             <Link to='/'>Facebook</Link>

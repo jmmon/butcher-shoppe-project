@@ -291,7 +291,7 @@ function BeefOrder() {
 
 					<div className="order-form--field">
 						<label htmlFor="beef-amount" className="order-form--label" >
-							Choose Any <span class="form-required">*</span>
+							Choose Any <span className="form-required">*</span>
 						</label>
 
 						<input className="order-form--checkbox" type='checkbox' id='beef_whole__checkbox' name='beef_whole__checkbox' />

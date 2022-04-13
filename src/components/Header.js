@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import "./Header.css";
 
 import { ReactComponent as ClockIcon} from '../assets/icons/clock.svg'
@@ -11,15 +11,45 @@ function HeaderIcon({icon}) {
 	)
 }
 
+
+
 function Header() {
+	const [isHovered, setIsHovered] = useState(false);
+
+	const handleHover = () => {
+		setIsHovered(true);
+	};
+
+	const handleLeave = () => {
+		setIsHovered(false);
+	}
+
 	return (
 		<div className="header">
-			<a className="header-link" href="#contact-link-target">
-				<HeaderIcon icon={<ClockIcon />} /> 
+			{/* <div className="header-container"> */}
+
+			<a 
+				className={isHovered ? "header-link-special hover" : "header-link-special"} 
+				href="#contact-link-target"
+				onMouseEnter={handleHover}
+				onMouseLeave={handleLeave}
+			>
+				<HeaderIcon
+					icon={isHovered ? 
+						<ClockIcon 
+							className="clock-icon" 
+							fill="white"
+						/> 
+						: 
+						<ClockIcon 
+							className="clock-icon" 
+							fill="black"
+						/>}
+				/> 
 				<p className="header-hours">9-5 M-F</p> 
 			</a>
-			<a className="header-link header-phone" href="#contact-link-target">
-				(509)555-5555
+			<a className="header-link header-phone" href="tel:15096907214">
+				(509) 690-7214
 			</a>
 			<a className="header-link header-contact" href="#contact-link-target">
 				Email Us
@@ -28,6 +58,7 @@ function Header() {
 				Northport, WA
 			</a>
 
+			{/* </div> */}
 		</div>
 	)
 }

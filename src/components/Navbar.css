@@ -40,6 +40,8 @@
   display: flex;
   align-items: center;
 	justify-content: space-around;
+	height: 100%;
+	margin-top: 0px;
 }
 .navbar-logo-text {
 	width: 300px;
@@ -82,9 +84,10 @@
 	justify-content: center;
 }
 
-.nav-links:hover {
+.nav-links:hover,
+.navbar-logo:hover {
   border-bottom: 4px solid #fff;
-  transition: all 0.2s ease-out;
+  transition: all 0.15s ease-out;
 }
 
 .fa-bars {
@@ -152,9 +155,9 @@
 
   .navbar-logo {
     position: absolute;
-    top: 0;
-    left: -7rem;
-    transform: translate(25%, 50%);
+    top: 0px;
+    left: 0;
+    /* transform: translate(25%, 50%); */
   }
 
 	.navbar-logo-text {

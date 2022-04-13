@@ -11,18 +11,23 @@ function Navbar() {
 	const closeMobileMenu = () => setClick(false);
 
 	const showButton = () => {
-		if(window.innerWidth <= 960) {
+		if (window.innerWidth <= 960) {
 			setButton(false);
 		} else {
 			setButton(true);
 		}
-	}
+	};
 
 	useEffect(() => {
-		showButton();
+			showButton();
 	}, []);
 
-	window.addEventListener('resize', showButton);
+	window.addEventListener('resize', () => {
+		showButton();
+		if (window.innerWidth > 960) {
+			closeMobileMenu();
+		}
+	});
 
 	return (
 		<>
@@ -74,16 +79,16 @@ function Navbar() {
 								More...
 							</a>
 						</li>
-						<li className="nav-item">
-							{/* only shows up on mobile menu */}
+						{/* only shows up on mobile menu */}
+						{/* <li className="nav-item">
 							<a href="#footer-container" className='nav-links-mobile' onClick={closeMobileMenu}>
 								Newsletter
 							</a>
-						</li>
+						</li> */}
 					</ul>
 
-					{button && <a href="#footer-container" className="btn-mobile newsletter-btn"><div className="btn btn--outline btn--large">Newsletter
-						</div></a>}
+					{/* {button && <a href="#footer-container" className="btn-mobile newsletter-btn"><div className="btn btn--outline btn--large">Newsletter
+						</div></a>} */}
 
 				</div>
 			</nav>

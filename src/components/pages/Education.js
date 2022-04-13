@@ -1,4 +1,5 @@
 import React from 'react'
+import './Education.css'
 import '../../App.css'
 import PageTitle from '../PageTitle'
 

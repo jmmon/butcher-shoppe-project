@@ -56,3 +56,26 @@
 	color: #242424;
 	transition: all 0.3s ease-out;
 }
+
+
+.btn--pending {
+	background-color: rgb(255, 207, 48);
+	color: #242424;
+}
+
+.btn--pending:hover {
+	background-color: rgb(255, 255, 207);
+	color: #242424;
+
+}
+
+.btn--complete {
+	background-color: rgb(48, 192, 32);
+	color: #242424;
+}
+
+.btn--complete:hover {
+	background-color: rgb(192, 255, 192);
+	color: #242424;
+
+}
