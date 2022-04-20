@@ -11,6 +11,7 @@ import Faq from './components/pages/Faq.js';
 import Header from './components/Header.js';
 import BeefOrder from './components/BeefOrder.js';
 import ScrollToTop from "./components/ScrollToTop";
+import PageNotFound from "./components/pages/PageNotFound";
 
 
 
@@ -32,6 +33,8 @@ function App() {
 									<Route path="/schedule" exact element={<Schedule />}/>
 									<Route path="/faq" exact element={<Faq />}/>
 									<Route path="/beef-form" exact element={<BeefOrder />}/>
+									
+        					<Route path="*" element={<PageNotFound />} />
 							</Routes>
 						</div>
             

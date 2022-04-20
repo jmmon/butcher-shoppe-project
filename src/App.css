@@ -79,7 +79,14 @@
 	background-color: white;
 }
 
+.center-text {
+	text-align: center;
+}
 
+.width-400 {
+	margin: auto;
+	max-width: 400px;
+}
 
 /* Dark background around text block */
 .text-wrapper-shadow {
@@ -127,3 +134,5 @@
 		margin-top: -100px;
 	}
 }
+
+

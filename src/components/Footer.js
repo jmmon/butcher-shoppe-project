@@ -86,7 +86,7 @@ function Footer() {
 						</Link>
 					</div>
 
-					<small className="website-rights">NPBS C 2022</small>
+					<small className="website-rights">C 2022</small>
 
 					<div className="social-icons">
 						<Link 

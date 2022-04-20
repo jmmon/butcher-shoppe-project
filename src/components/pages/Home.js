@@ -3,6 +3,7 @@ import './Home.css'
 import AboutUs from '../AboutUs'
 import HomepageTitle from '../HomepageTitle'
 import ComingSoonCard from '../ComingSoonCard'
+import LazyLoad from 'react-lazyload';
 
 
 function Home() {
@@ -12,13 +13,14 @@ function Home() {
 		<>
 			{/* seasonal image and title */}
 			<HomepageTitle/> 
-			<ComingSoonCard />
-			<AboutUs/>
-			{/* <AboutUs2 /> */}
-			{/* intro text */}
-			{/* <Blurb /> */}
-			{/* <Cards /> */}
-			{/* our story */}
+
+			<LazyLoad height={370} once offset={200}>
+				<ComingSoonCard />
+			</LazyLoad>
+			
+			<LazyLoad height={810} once offset={200}>
+				<AboutUs/>
+			</LazyLoad>
 		</>
 	)
 }

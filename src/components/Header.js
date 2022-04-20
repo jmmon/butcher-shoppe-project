@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import "./Header.css";
 
+import { isMobile } from 'react-device-detect';
+
 import { ReactComponent as ClockIcon} from '../assets/icons/clock.svg'
 
 function HeaderIcon({icon}) {
@@ -29,13 +31,13 @@ function Header() {
 			{/* <div className="header-container"> */}
 
 			<a 
-				className={isHovered ? "header-link-special hover" : "header-link-special"} 
+				className={(isHovered || isMobile) ? "header-link-special hover" : "header-link-special"} 
 				href="#contact-link-target"
 				onMouseEnter={handleHover}
 				onMouseLeave={handleLeave}
 			>
 				<HeaderIcon
-					icon={isHovered ? 
+					icon={(isHovered || isMobile) ? 
 						<ClockIcon 
 							className="clock-icon" 
 							fill="white"
