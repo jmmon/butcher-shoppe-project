@@ -1,15 +1,18 @@
-.beef-order-form-page {
-	width: 90vw;
-	margin: 0px auto;
-}
+/* .beef-order-form--container {
+	margin: 2rem 10vw;
+	padding: 2rem;
+	background-color: #fff;
+} */
 
 .order-form {
-	width: 100%;
+	width: 90vw;
+	margin: 20px auto;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	gap: 40px;
 	justify-content: space-around;
+	background-color: #fff;
 	/* align-items: stretch; */
 }
 
@@ -27,6 +30,96 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
+	/* transition: all 0.15s ease; */
+}
+
+/* Accordion styling */
+/* Accordion item contains item-title and item-body, item-body holds children*/
+.react-sanfona {
+	padding: 10px;
+	background-color: #fff;
+	border-radius: var(--card-border-radius);
+}
+
+/* whole item container, expands and shrinks */
+.react-sanfona-item {
+	/* padding: 10px; */
+
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+/* section title inside container */
+.react-sanfona-item-title {
+	background-color: #fff;
+	padding: 10px;
+	font-size: 20px;
+	text-align: left;
+	transition: all 0.3s ease-out;
+	/* width: 400px; */
+	/* border: 1px solid grey; */
+}
+
+/* when item expanded, section title */
+.react-sanfona-item-expanded .react-sanfona-item-title {
+	text-decoration: underline;
+	font-size: 26px;
+	text-align: center;
+	/* color: #000; */
+	background-color: #f3f3f3;
+	transition: all 0.15s ease-out;
+}
+.react-sanfona-item-expanded {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: all 0.15s;
+}
+
+/* grabs first item container -> title inside it*/
+/* .react-sanfona-item:first-child .react-sanfona-item-title {
+  border-left: none;
+  border-top: none;
+} */
+
+/* wrapper around the content body*/
+
+.react-sanfona-item-body-wrapper {
+	color: #000;
+	padding: 12px;
+	padding-top: 0px;
+	position: relative;
+	background-color: #fff;
+	transition: all 0.3s ease-out;
+}
+
+.react-sanfona-item-expanded .react-sanfona-item-body-wrapper {
+	background-color: #f3f3f3;
+	transition: all 0.3s ease-out;
+}
+/* END  Accordion styling */
+:root {
+	--subheading-gray: #444;
+}
+.order-form--section-subheading {
+	width: calc(100% - 14px);
+	margin-left: 14px;
+	font-size: 16px;
+	color: var(--subheading-gray);
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.order-form--section-subheading-container {
+	margin-bottom: 12px;
+}
+
+.dot {
+	height: 6px;
+	width: 6px;
+	background-color: var(--subheading-gray);
+	border-radius: 50%;
+	display: inline-block;
+	margin: 3px;
 }
 
 .order-form--input,
@@ -37,17 +130,8 @@
 
 .order-form--input-left,
 .order-form--input-right {
-display: inline-block;
-width: 50%;
-}
-/* .order-form--field {
-	display: flex;
-	width: 100%;
-} */
-.order-form--section-heading {
-	display: block;
-	text-decoration: underline;
-	font-size: 24px;
+	display: inline-block;
+	width: 50%;
 }
 
 .order-form--label {
@@ -64,13 +148,14 @@ width: 50%;
 	height: 200px;
 }
 
-.ground-beef--container {
-	margin-top: 40px;
+.order-form--submit {
+	margin: 20px;
+	font-size: 20px;
 }
 
-.order-form--submit {
-	margin-bottom: 20px;
-	font-size: 20px;
+.form-required {
+	margin-left: 4px;
+	color: red;
 }
 
 @media screen and (min-width: 768px) {

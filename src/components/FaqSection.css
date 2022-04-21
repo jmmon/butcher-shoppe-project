@@ -22,26 +22,20 @@
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* .faq-section__text.expand {
-	height: auto;
-} */
 
 .faq-section__text__slider {
 	overflow-y: hidden;
-	max-height: 2000px;
-	/* position: absolute;
-	bottom: 100%; */
+	max-height: 500px; /* approx max height*/
 	transition-property: all;
-	transition-duration: .5s;
+	transition-duration: .3s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	margin-bottom: 40px;
 }
 
 .faq-section__text__slider.closed{
 	max-height: 0;
 }
-/* .container:hover .overlay {
 
-} */
 .faq-section h4 {
 	padding-left: 25px;
 	margin-bottom: 10px;
@@ -63,7 +57,7 @@
 	display: flex;
 	justify-content: space-between;
 	width: 80px;
-	margin-top: 40px;;
+	/* margin-top: 40px; */
 }
 
 .expand-icon:hover {

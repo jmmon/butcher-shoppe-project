@@ -2,7 +2,8 @@
 	width: auto;
 	margin-top: 2vh;
 	margin-bottom: 4vh;
-	/* background: url('../../public/images/smithFarmPhotos/image-1-137.jpg') center center/cover no-repeat; */
+	
+	/* transform: translateY(-50%); */
 	color: #fff;
 	padding: 2vh 4vw;
 }

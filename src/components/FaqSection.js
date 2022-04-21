@@ -67,7 +67,7 @@ function FaqSection({sectionTitle, questionList}) {
 				<h3 className="faq-section__title" >{sectionTitle}</h3>
 
 				<div 
-					className={expand ? "faq-section__text card panel--shadow expand " : "faq-section__text panel--shadow card"}
+					className="faq-section__text panel--shadow card"
 				>
 					{question(questionList[0].question, questionList[0].answer, 1)}
 

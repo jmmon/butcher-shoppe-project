@@ -13,13 +13,6 @@
 	align-items: center;
 }
 
-
-
-
-/* .header div{
-	display: inline-flex;
-} */
-
 .header-link,
 .header-link-special {
 	display: flex;
@@ -34,7 +27,6 @@
 	transition: all 0.16s ease-out;
 }
 
-
 .header-link-special.hover {
 	color: #fff;
 	transition: all 0.15s ease-out;
@@ -46,7 +38,6 @@
 	padding-top: 2px;
 }
 
-
 .header-link:first-child {
 	padding-top: 6px;
 }
@@ -54,11 +45,6 @@
 .header-link:hover {
 	color: #fff;
 }
-
-
-
-
-
 
 /* medium screens */
 @media screen and (max-width: 960px) {
