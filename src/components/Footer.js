@@ -1,14 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Button from './Button'
-import Contact from './Contact';
-import './Footer.css'
-import Map from './Map.js';
-
+import React from "react";
+import { Link } from "react-router-dom";
+// import Button from './Button'
+import Contact from "./Contact";
+import "./Footer.css";
+import Map from "./Map.js";
 
 function Footer() {
 	return (
-		<div className='footer-container' id="footer-container">
+		<div className="footer-container" id="footer-container">
 			{/* <section className="footer-subscription">
 				<p className="footer-subscription-heading">
 					Join our newsletter to receive periodic updates from your Northport Butcher Shoppe!
@@ -25,10 +24,11 @@ function Footer() {
 			</section> */}
 
 			<section className="footer-contact-map-wrapper">
-				<div className="footer-contact-container" id="contact-link-target">
-					<h2 className="footer-contact-heading">
-						Contact Us!
-					</h2>
+				<div
+					className="footer-contact-container"
+					id="contact-link-target"
+				>
+					<h2 className="footer-contact-heading">Contact Us!</h2>
 					<Contact />
 				</div>
 
@@ -36,13 +36,12 @@ function Footer() {
 					<h2 className="footer-map-heading">
 						Find us in downtown Northport:
 					</h2>
-					<Map 
+					<Map
 						placeName={"412 Center Ave, Northport, WA 99157, USA"}
-						zoomLevel={15} 
-						/>
+						zoomLevel={15}
+					/>
 				</div>
 			</section>
-			
 
 			<section className="footer-links" id="more-links">
 				{/* <div className='footer-link-wrapper'>
@@ -59,22 +58,22 @@ function Footer() {
             <Link to='/'>Feedback</Link>
           </div>
         </div> */}
-        <div className='footer-link-wrapper'>
-          <div className='footer-link-items'>
-            <h2>Order Forms</h2>
-            <Link to='/beef-form'>Beef Order Form</Link>
-            {/* <Link to='/'>Ambassadors</Link>
+				<div className="footer-link-wrapper">
+					<div className="footer-link-items">
+						<h2>Order Forms</h2>
+						<Link to="/beef-form">Beef Order Form</Link>
+						{/* <Link to='/'>Ambassadors</Link>
             <Link to='/'>Agency</Link>
             <Link to='/'>Influencer</Link> */}
-          </div>
-          <div className='footer-link-items'>
-            <h2>Social Media</h2>
-            <Link to='/'>Instagram</Link>
-            <Link to='/'>Facebook</Link>
-            <Link to='/'>Youtube</Link>
-            <Link to='/'>Twitter</Link>
-          </div>
-        </div>
+					</div>
+					<div className="footer-link-items">
+						<h2>Social Media</h2>
+						<Link to="/">Instagram</Link>
+						<Link to="/">Facebook</Link>
+						<Link to="/">Youtube</Link>
+						<Link to="/">Twitter</Link>
+					</div>
+				</div>
 			</section>
 			<section className="social-media">
 				<div className="social-media-wrap">
@@ -82,49 +81,50 @@ function Footer() {
 						{/* <Link to='/' className="social-logo">
 							TRVL <i className="fab fa-typo3"></i>
 						</Link> */}
-						<Link to="/" className="social-logo" >
-						Northport Butcher Shoppe <i className="fa-solid fa-tractor" />
+						<Link to="/" className="social-logo">
+							Northport Butcher Shoppe{" "}
+							<i className="fa-solid fa-tractor" />
 						</Link>
 					</div>
 
 					<small className="website-rights">C 2022</small>
 
 					<div className="social-icons">
-						<Link 
+						<Link
 							className="social-icon-link facebook"
-							to='/' 
+							to="/"
 							target="_blank"
 							aria-label="Facebook"
 						>
 							<i className="fab fa-facebook-f"></i>
 						</Link>
-						<Link 
+						<Link
 							className="social-icon-link instagram"
-							to='/' 
+							to="/"
 							target="_blank"
 							aria-label="Instagram"
 						>
 							<i className="fab fa-instagram"></i>
 						</Link>
-						<Link 
+						<Link
 							className="social-icon-link youtube"
-							to='/' 
+							to="/"
 							target="_blank"
 							aria-label="Youtube"
 						>
 							<i className="fab fa-youtube"></i>
 						</Link>
-						<Link 
-							className="social-icon-link twitter" 
-							to='/' 
+						<Link
+							className="social-icon-link twitter"
+							to="/"
 							target="_blank"
 							aria-label="Twitter"
 						>
 							<i className="fab fa-twitter"></i>
 						</Link>
-						<Link 
+						<Link
 							className="social-icon-link linkedin"
-							to='/' 
+							to="/"
 							target="_blank"
 							aria-label="LinkedIn"
 						>
@@ -134,7 +134,7 @@ function Footer() {
 				</div>
 			</section>
 		</div>
-	)
+	);
 }
 
-export default Footer
+export default Footer;

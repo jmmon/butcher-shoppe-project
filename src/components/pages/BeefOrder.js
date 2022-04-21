@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./BeefOrder.css";
-import PageTitle from "./PageTitle.js";
+import PageTitle from "../PageTitle.js";
+
+import bgImage from "../../assets/images/image-1-3.jpg";
 
 import { Accordion, AccordionItem } from "react-sanfona";
 
@@ -46,7 +48,12 @@ function BeefOrder() {
 
 	return (
 		<>
-			<PageTitle heading="Select Your Beef Cut Options" />
+			<PageTitle
+				heading="Select Your Beef Cut Options"
+				bgImage={bgImage}
+				smaller="true"
+				position="50% 50%"
+			/>
 
 			{/* <div className="order-form--heading-container">
 				<h3 className="order-form--title">
@@ -334,18 +341,21 @@ function BeefOrder() {
 										Remove Bone Dust *Additional fee - See
 										Price List
 									</label>
-
-									<input
-										type="checkbox"
-										id="remove_bone_dust__checkbox"
-										name="remove_bone_dust__checkbox"
-									/>
-									<label for="remove_bone_dust__checkbox">
-										YES (Bone dust is a residue left from
-										bone and fat when meat is run through
-										the saw [like saw dust], it has no
-										effect on the meat other than looks)
-									</label>
+									<div className="order-form--checkbox-container">
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="remove_bone_dust__checkbox"
+											name="remove_bone_dust__checkbox"
+										/>
+										<label for="remove_bone_dust__checkbox">
+											YES (Bone dust is a residue left
+											from bone and fat when meat is run
+											through the saw [like saw dust], it
+											has no effect on the meat other than
+											looks)
+										</label>
+									</div>
 								</div>
 
 								<div className="order-form--field">
@@ -441,46 +451,47 @@ function BeefOrder() {
 									>
 										EXTRAS
 									</label>
+									<div className="order-form--checkbox-container">
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="extras_liver__checkbox"
+											name="extras_liver__checkbox"
+										/>
+										<label for="extras_liver__checkbox">
+											LIVER
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="extras_liver__checkbox"
-										name="extras_liver__checkbox"
-									/>
-									<label for="extras_liver__checkbox">
-										LIVER
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="extras_heart__checkbox"
+											name="extras_heart__checkbox"
+										/>
+										<label for="extras_heart__checkbox">
+											HEART
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="extras_heart__checkbox"
-										name="extras_heart__checkbox"
-									/>
-									<label for="extras_heart__checkbox">
-										HEART
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="extras_tongue__checkbox"
+											name="extras_tongue__checkbox"
+										/>
+										<label for="extras_tongue__checkbox">
+											TONGUE
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="extras_tongue__checkbox"
-										name="extras_tongue__checkbox"
-									/>
-									<label for="extras_tongue__checkbox">
-										TONGUE
-									</label>
-
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="extras_oxtail__checkbox"
-										name="extras_oxtail__checkbox"
-									/>
-									<label for="extras_oxtail__checkbox">
-										OXTAIL
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="extras_oxtail__checkbox"
+											name="extras_oxtail__checkbox"
+										/>
+										<label for="extras_oxtail__checkbox">
+											OXTAIL
+										</label>
+									</div>
 								</div>
 							</section>
 						</AccordionItem>
@@ -635,60 +646,61 @@ function BeefOrder() {
 										Choose Any
 										<span className="form-required">*</span>
 									</label>
+									<div className="order-form--checkbox-container">
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="beef_whole__checkbox"
+											name="beef_whole__checkbox"
+										/>
+										<label for="beef_whole__checkbox">
+											WHOLE BEEF
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="beef_whole__checkbox"
-										name="beef_whole__checkbox"
-									/>
-									<label for="beef_whole__checkbox">
-										WHOLE BEEF
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="beef_half__checkbox"
+											name="beef_half__checkbox"
+										/>
+										<label for="beef_half__checkbox">
+											HALF BEEF
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="beef_half__checkbox"
-										name="beef_half__checkbox"
-									/>
-									<label for="beef_half__checkbox">
-										HALF BEEF
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="hind_quarter__checkbox"
+											name="hind_quarter__checkbox"
+										/>
+										<label for="hind_quarter__checkbox">
+											HIND QUARTER
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="hind_quarter__checkbox"
-										name="hind_quarter__checkbox"
-									/>
-									<label for="hind_quarter__checkbox">
-										HIND QUARTER
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="front_quarter__checkbox"
+											name="front_quarter__checkbox"
+										/>
+										<label for="front_quarter__checkbox">
+											FRONT QUARTER
+										</label>
 
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="front_quarter__checkbox"
-										name="front_quarter__checkbox"
-									/>
-									<label for="front_quarter__checkbox">
-										FRONT QUARTER
-									</label>
-
-									<input
-										className="order-form--checkbox"
-										type="checkbox"
-										id="split_half__checkbox"
-										name="split_half__checkbox"
-										value={split}
-										// checked={split}
-										onChange={handleSplit}
-									/>
-									<label for="split_half__checkbox">
-										SPLIT HALF *Additional fee-See price
-										list
-									</label>
+										<input
+											className="order-form--checkbox"
+											type="checkbox"
+											id="split_half__checkbox"
+											name="split_half__checkbox"
+											value={split}
+											// checked={split}
+											onChange={handleSplit}
+										/>
+										<label for="split_half__checkbox">
+											SPLIT HALF *Additional fee-See price
+											list
+										</label>
+									</div>
 								</div>
 							</section>
 							{split && (

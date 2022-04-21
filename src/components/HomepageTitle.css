@@ -7,7 +7,6 @@
 } */
 
 .homepage-title {
-	
 	height: 60vh;
 	min-height: 500px;
 	width: auto;
@@ -16,16 +15,14 @@
 	justify-content: center;
 	align-items: center;
 	object-fit: contain;
-
 }
-
-
 
 .homepage-title > p {
 	margin-top: 8px;
 	color: #fff;
 	font-size: 32px;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
 	text-shadow: -2px 2px #000;
 	text-align: center;
 }
@@ -42,7 +39,6 @@
 	margin-left: 4px;
 }
 
-
 @media screen and (max-width: 960px) {
 	.homepage-title > p {
 		font-size: 30px;
@@ -53,31 +49,16 @@
 		text-decoration: none;
 	}
 
-	.btn {
+	.hero-btns .btn {
 		width: 100%;
 	}
 }
 
-
 @media screen and (max-width: 768px) {
-
-
-
 }
 
 @media screen and (max-width: 480px) {
-
-
 	.homepage-title > p {
 		font-size: 20px;
 	}
-
-	/* .btn-mobile {
-		display: block;
-		text-decoration: none;
-	}
-
-	.btn {
-		width: 100%;
-	} */
 }

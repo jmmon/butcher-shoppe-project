@@ -6,7 +6,6 @@
 	/* height: 100%; */
 	height: 300px;
 	padding-bottom: 10px;
-	
 }
 
 .contact__form {
@@ -32,7 +31,6 @@
 	width: 100%;
 }
 
-
 .contact__input {
 	display: block;
 	width: 100%;
@@ -44,11 +42,14 @@
 	resize: vertical;
 }
 
-
 .contact__label {
 	font-size: 18px;
 	padding-left: 20px;
 	color: #fff;
+}
+
+.contact__form__submit {
+	width: 100%;
 }
 
 .input__container > input:focus:required:invalid {
@@ -67,7 +68,6 @@ p.contact__form__err {
 	border-radius: 20px;
 	background: rgb(255, 223, 223);
 	text-align: center;
-
 }
 
 /* .contact__input:focus:required:invalid {
@@ -95,7 +95,7 @@ p.contact__form__err {
 		font-size: 40px;
 	}
 
-	.contact__input, 
+	.contact__input,
 	.contact__label {
 		font-size: 18px;
 	}
