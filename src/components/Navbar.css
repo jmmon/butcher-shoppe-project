@@ -1,10 +1,10 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(50, 50, 50) 0%, rgb(100, 100, 100) 100%);
+  background: linear-gradient(270deg, rgb(50, 50, 50) 0%, rgb(100, 100, 100) 100%);
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   position: sticky;
   top: 40px;
   z-index: 998;
@@ -45,6 +45,7 @@
 }
 .navbar-logo-text {
 	width: 300px;
+	padding-left: 10px;
 	
 	/* text-align: center; */
 }
@@ -62,7 +63,7 @@
 .nav-menu {
 	/* Does NOT include Logo and Icon */
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -101,6 +102,19 @@
 .menu-icon {
 	/* hamburger icon */
   display: none;
+}
+
+
+.nav-logo {
+	left: 0px;
+	height: 80px;
+	width: 200px;
+	background-size: cover;
+	background-position: center;
+	/* transform: scale(1.2); */
+	/* transform: translateY(-50%); */
+	justify-self: start;
+	padding: 2px;
 }
 
 @media screen and (max-width: 960px) {

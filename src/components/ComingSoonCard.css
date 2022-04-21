@@ -1,13 +1,9 @@
-.coming-soon {
+.homepage--card {
 	width: auto;
 	margin-top: 2vh;
 	margin-bottom: 4vh;
-	/* background-color: #bcf; */
-	/* border-radius: 50px; */
-	background: url('../../public/images/smithFarmPhotos/image-1-137.jpg') center center/cover no-repeat;
+	/* background: url('../../public/images/smithFarmPhotos/image-1-137.jpg') center center/cover no-repeat; */
 	color: #fff;
 	padding: 2vh 4vw;
-	z-index: 1;
-
-	/* border: 1px solid #333; */
 }
+

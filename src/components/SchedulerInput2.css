@@ -15,8 +15,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0px auto;
-	border: 1px solid black;
-	border-radius: 5px;
+	/* border: 1px solid black; */
 	padding: 16px 0px;
 	background-color: rgb(239,204,172);
 }

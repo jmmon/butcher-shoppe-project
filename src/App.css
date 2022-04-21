@@ -28,6 +28,8 @@
 	--icon--normal: 22px;
 	--icon--medium: 20px;
 	--icon--small: 18px;
+
+	--card-border-radius: 4px;
 }
 
 
@@ -48,7 +50,13 @@
 
 
 
+.inset-box-shadow {
+	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+}
 
+.panel--shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 .card-heading {
@@ -68,10 +76,15 @@
 .card-heading-margin {
 	margin-top: -100px;
 }
+.panel-container {
+	padding: 2rem;
+	/* background-color: rgba(255, 255, 255, .5); */
+	
+}
 
 .card {
-	border-radius: 10px;
-	border: 1px solid black;
+	border-radius: var(--card-border-radius);
+	/* border: 1px solid black; */
 	/* margin: 6rem; */
 }
 

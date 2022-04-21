@@ -26,15 +26,16 @@ function Footer() {
 
 			<section className="footer-contact-map-wrapper">
 				<div className="footer-contact-container" id="contact-link-target">
-					<p className="footer-contact-heading">
+					<h2 className="footer-contact-heading">
 						Contact Us!
-					</p>
+					</h2>
 					<Contact />
 				</div>
+
 				<div className="footer-map-container" id="map-link-target">
-					<p className="footer-map-heading">
+					<h2 className="footer-map-heading">
 						Find us in downtown Northport:
-					</p>
+					</h2>
 					<Map 
 						placeName={"412 Center Ave, Northport, WA 99157, USA"}
 						zoomLevel={15} 
@@ -43,7 +44,7 @@ function Footer() {
 			</section>
 			
 
-			<div className="footer-links" id="more-links">
+			<section className="footer-links" id="more-links">
 				{/* <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
@@ -74,7 +75,7 @@ function Footer() {
             <Link to='/'>Twitter</Link>
           </div>
         </div>
-			</div>
+			</section>
 			<section className="social-media">
 				<div className="social-media-wrap">
 					<div className="footer-logo">

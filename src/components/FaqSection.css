@@ -1,9 +1,8 @@
 .faq-section {
-	padding: 2vw;
+	padding: 2rem 2rem 4rem 2rem;
 	margin: 4vh 4vw;
 	background-color: #bcf;
-	border-radius: 10px;
-	
+	transition: all 0.5s;
 }
 
 .faq-section__title {
@@ -14,14 +13,35 @@
 }
 
 .faq-section__text {
-	margin: 0 4vw ;
+	margin: 0 4vw;
+	height: auto;
 	border: 2px solid #888;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	padding: 1vw;
-	transition: border 0.5s;
+	transition: all 0.5s;
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
+/* .faq-section__text.expand {
+	height: auto;
+} */
+
+.faq-section__text__slider {
+	overflow-y: hidden;
+	max-height: 2000px;
+	/* position: absolute;
+	bottom: 100%; */
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.faq-section__text__slider.closed{
+	max-height: 0;
+}
+/* .container:hover .overlay {
+
+} */
 .faq-section h4 {
 	padding-left: 25px;
 	margin-bottom: 10px;

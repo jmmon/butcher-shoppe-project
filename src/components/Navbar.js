@@ -3,6 +3,17 @@ import {Link} from "react-router-dom"
 import Button from './Button';
 import "./Navbar.css"
 
+import Logo from '../assets/logo/logo_00001.svg';
+
+// function NavLogo({icon}) {
+// 	return (
+// 		<div className="nav-logo" background-image={{icon}}
+// 		>
+			
+// 		</div>
+// 	)
+// }
+
 function Navbar() {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
@@ -32,11 +43,19 @@ function Navbar() {
 	return (
 		<>
 			<nav className="navbar">
+			
 				<div className="navbar-container">
+					
+					{/* <img src={Logo} alt="logo" className="nav-logo" /> */}
 
-					<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+					<Link 
+						to="/" 
+						className="navbar-logo" 
+						onClick={closeMobileMenu}
+					>
+						<div className="nav-logo" style={{ backgroundImage: `url(${Logo})`}} ></div>
 						<div className="navbar-logo-text">Northport Butcher Shoppe</div>
-						 {/* <i className="fa-solid fa-tractor" /> */}
+						{/* <i className="fa-solid fa-tractor" /> */}
 					</Link>
 
 					{/* Hamburger icon*/}
@@ -55,11 +74,11 @@ function Navbar() {
 								Services
 							</Link>
 						</li>
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<Link to="/education" className='nav-links' onClick={closeMobileMenu}>
 								Education
 							</Link>
-						</li>
+						</li> */}
 						<li className="nav-item">
 							<Link to="/schedule" className='nav-links' onClick={closeMobileMenu}>
 								Schedule

@@ -49,21 +49,31 @@ function FaqSection({sectionTitle, questionList}) {
 			)
 	});
 
+	let remainingQuestions = [];
+	for (let i = 1; i < questionList.length; i++) {
+		remainingQuestions.push(question(questionList[i].question, questionList[i].answer, i + 1))
+	}
+
 	// let linkDestination = `link-${sectionTitle.split(" ")[0]}`;
 	// let linkHref = `#${linkDestination}`;
 
 
 	return (
 		<section 
-			className="faq-section" 
+			className="faq-section card panel--shadow" 
 			// id={linkDestination}
 		>
 			<div className="faq-section__container">
 				<h3 className="faq-section__title" >{sectionTitle}</h3>
+
 				<div 
-					className={expand ? "faq-section__text expand " : "faq-section__text "}
+					className={expand ? "faq-section__text card panel--shadow expand " : "faq-section__text panel--shadow card"}
 				>
-					{!expand ? question(questionList[0].question, questionList[0].answer, 1) : allQuestions}
+					{question(questionList[0].question, questionList[0].answer, 1)}
+
+					<div className={expand ? "faq-section__text__slider" : "faq-section__text__slider closed"}>
+						{remainingQuestions}
+					</div>
 
 					<div 
 						className="expand-icon" 

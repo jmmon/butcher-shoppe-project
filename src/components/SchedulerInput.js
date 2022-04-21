@@ -55,7 +55,7 @@ const DateTimePicker = ({selectHandler}) => {
 	}
 
   return (
-		<div className="form-container">
+		<div className="form-container panel--shadow card">
 			<form>
 				<div className="date input-container">
 					<label htmlFor="date-time-picker" className="date-time-picker schedule--label">Select a date and time</label>

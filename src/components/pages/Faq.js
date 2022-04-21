@@ -56,9 +56,9 @@ function Faq() {
 	return (
 		<>
 		<PageTitle heading="FREQUENTLY ASKED QUESTIONS" bgImage={bgImage} smaller="true"/>
-		<div className="faq">
-			{/* <h1 className="faq-title">Frequently Asked Questions</h1> */}
-			<div className="faq-container">
+
+		<div className="faq card panel--shadow">
+			{/* <div className="faq-container"> */}
 				<FaqSection 
 					sectionTitle={"General Questions"} 
 					questionList={generalFAQ}
@@ -72,7 +72,7 @@ function Faq() {
 					questionList={generalFAQ}
 				/> */}
 				{/* {items.map(content => <FaqItem question={content.question} answer={content.answer}/>)} */}
-			</div>
+			{/* </div> */}
 		</div>
 		</>
 	)
