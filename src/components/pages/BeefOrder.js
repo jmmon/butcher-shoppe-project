@@ -19,18 +19,7 @@ function OrderFormSectionSubheading({ text }) {
 }
 
 function BeefOrder() {
-	const [input, setInput] = useState({
-		steak_thickness: "",
-		steak_thickness: "",
-	});
-
 	const [split, setSplit] = useState(false);
-
-	// const [expand, setExpand] = useState({
-	// 	steakOptions: true,
-	// 	roastOptions: false,
-
-	// })
 
 	const handleSplit = (e) => {
 		// e.preventDefault();
@@ -38,13 +27,6 @@ function BeefOrder() {
 	};
 
 	const [activeClickedItems, setActiveClickItems] = useState([]);
-
-	const handleExpand = (e) => {
-		e.preventDefault();
-		console.log(e.target.name);
-	};
-
-	const handleClick = () => {};
 
 	return (
 		<>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Contact from "./Contact";
 import "./Footer.css";
 import Map from "./Map.js";
+import { ReactComponent as NewLogo } from "../assets/logo/logo_tiny.svg";
 
 function Footer() {
 	return (
@@ -68,22 +69,21 @@ function Footer() {
 					</div>
 					<div className="footer-link-items">
 						<h2>Social Media</h2>
-						<Link to="/">Instagram</Link>
+						<p>Coming soon!</p>
+						{/* <Link to="/">Instagram</Link>
 						<Link to="/">Facebook</Link>
 						<Link to="/">Youtube</Link>
-						<Link to="/">Twitter</Link>
+						<Link to="/">Twitter</Link> */}
 					</div>
 				</div>
 			</section>
+
+			<NewLogo fill="white" className="footer-banner" />
 			<section className="social-media">
 				<div className="social-media-wrap">
 					<div className="footer-logo">
-						{/* <Link to='/' className="social-logo">
-							TRVL <i className="fab fa-typo3"></i>
-						</Link> */}
 						<Link to="/" className="social-logo">
-							Northport Butcher Shoppe{" "}
-							<i className="fa-solid fa-tractor" />
+							Northport Butcher Shoppe
 						</Link>
 					</div>
 

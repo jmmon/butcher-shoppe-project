@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+// import Button from "./Button";
 import "./Navbar.css";
 
-import Logo from "../assets/logo/logo_00001.svg";
+// import Logo from "../assets/logo/logo_tiny.svg";
+import { ReactComponent as NewLogo } from "../assets/logo/logo_tiny.svg";
 
 // function NavLogo({icon}) {
 // 	return (
@@ -48,13 +49,14 @@ function Navbar() {
 
 					<Link
 						to="/"
-						className="navbar-logo"
+						className="navbar-home"
 						onClick={closeMobileMenu}
 					>
-						<div
+						{/* <div
 							className="nav-logo"
 							style={{ backgroundImage: `url(${Logo})` }}
-						></div>
+						></div> */}
+						<NewLogo fill="white" className="nav-logo" />
 						<div className="navbar-logo-text">
 							Northport Butcher Shoppe
 						</div>

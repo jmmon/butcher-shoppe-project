@@ -12,6 +12,7 @@ import Header from "./components/Header.js";
 import BeefOrder from "./components/pages/BeefOrder.js";
 import ScrollToTop from "./components/ScrollToTop";
 import PageNotFound from "./components/pages/PageNotFound";
+import LazyLoad from "react-lazyload";
 
 function App() {
 	return (
@@ -45,7 +46,9 @@ function App() {
 						</Routes>
 					</div>
 
-					<Footer />
+					<LazyLoad height={1243} once offset={400}>
+						<Footer />
+					</LazyLoad>
 				</ScrollToTop>
 			</Router>
 		</div>
