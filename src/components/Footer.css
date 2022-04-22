@@ -102,7 +102,7 @@
 
 .social-icon-link {
 	color: #fff;
-	font-size: 24px;
+	font-size: 16px;
 }
 
 .social-media {
@@ -112,7 +112,7 @@
 
 .social-media-wrap {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	width: 90%;
 	max-width: 1000px;
@@ -124,6 +124,7 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 240px;
+	padding-bottom: 16px;
 }
 
 .social-logo {
@@ -132,7 +133,7 @@
 	margin-left: 20px;
 	cursor: pointer;
 	text-decoration: none;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	display: flex;
 	align-self: center;
 	margin-bottom: 16px;
@@ -145,6 +146,7 @@
 .website-rights {
 	color: #fff;
 	margin-bottom: 16px;
+	font-size: 0.8rem;
 }
 
 .footer-contact-map-wrapper {

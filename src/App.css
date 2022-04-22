@@ -8,6 +8,11 @@
 :root {
 	--sky-blue-bg: rgba(193, 248, 255, 0.5);
 
+	/* header orange */
+	--orange-bg--r: 223;
+	--orange-bg--g: 120;
+	--orange-bg--b: 36;
+
 	--page-title-xlarge: 90px;
 	--page-title-large: 72px;
 	--page-title-medium: 64px;

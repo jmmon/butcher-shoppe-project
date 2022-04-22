@@ -5,7 +5,11 @@
 	flex-direction: row;
 	justify-content: space-around;
 	gap: 20px;
-	background-color: rgb(223, 120, 36);
+	background-color: rgb(
+		var(--orange-bg--r),
+		var(--orange-bg--g),
+		var(--orange-bg--b)
+	);
 	padding: 5px;
 	position: fixed;
 	z-index: 999;

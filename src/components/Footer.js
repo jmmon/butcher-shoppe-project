@@ -79,6 +79,7 @@ function Footer() {
 			</section>
 
 			<NewLogo fill="white" className="footer-banner" />
+
 			<section className="social-media">
 				<div className="social-media-wrap">
 					<div className="footer-logo">

@@ -39,7 +39,6 @@ const GoogleMap = ({ placeName, zoomLevel }) => {
 					new window.google.maps.Marker({
 						position: { lat, lng },
 						map: googleMap,
-						animation: window.google.maps.Animation.DROP,
 						title: `${placeName}`,
 					});
 				} else {
