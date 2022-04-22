@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import "./Footer.css";
 import Map from "./Map.js";
 import { ReactComponent as NewLogo } from "../assets/logo/logo_tiny.svg";
+import LazyLoad from "react-lazyload";
 
 function Footer() {
 	return (
@@ -30,17 +31,25 @@ function Footer() {
 					id="contact-link-target"
 				>
 					<h2 className="footer-contact-heading">Contact Us!</h2>
-					<Contact />
+
+					<LazyLoad height={400} once offset={400}>
+						<Contact />
+					</LazyLoad>
 				</div>
 
 				<div className="footer-map-container" id="map-link-target">
 					<h2 className="footer-map-heading">
 						Find us in downtown Northport:
 					</h2>
-					<Map
-						placeName={"412 Center Ave, Northport, WA 99157, USA"}
-						zoomLevel={15}
-					/>
+
+					<LazyLoad height={400} once offset={400}>
+						<Map
+							placeName={
+								"412 Center Ave, Northport, WA 99157, USA"
+							}
+							zoomLevel={15}
+						/>
+					</LazyLoad>
 				</div>
 			</section>
 
@@ -78,7 +87,9 @@ function Footer() {
 				</div>
 			</section>
 
-			<NewLogo fill="white" className="footer-banner" />
+			<LazyLoad height={400} once offset={400}>
+				<NewLogo fill="white" className="footer-banner" />
+			</LazyLoad>
 
 			<section className="social-media">
 				<div className="social-media-wrap">
