@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../App.css";
-import PageTitle from "../../PageTitle/PageTitle";
-import SchedulerInput from "../../SchedulerInput/SchedulerInput";
+import PageTitle from "../../src/components/PageTitle/PageTitle";
+import SchedulerInput from "../../src/components/SchedulerInput/SchedulerInput";
 import "./Schedule.css";
 
 import bgTitle from "../../../assets/images/image-1-116.jpg";

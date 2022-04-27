@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 // import Button from './Button'
 import "./Footer.css";
 
-const MapPromise = import("../Map/Map.js");
+const MapPromise = import("../../src/components/Map/Map.js");
 const Map = Lazy(() => MapPromise);
 
-const ContactPromise = import("../Contact/Contact.js");
+const ContactPromise = import("../../src/components/Contact/Contact.js");
 const Contact = Lazy(() => ContactPromise);
 
 const LogoComponentPromise = import("../../assets/logo/LogoComponent.js");

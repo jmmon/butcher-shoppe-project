@@ -1,9 +1,9 @@
 import React from "react";
 import "./Faq.css";
-import PageTitle from "../../PageTitle/PageTitle.js";
+import PageTitle from "../../src/components/PageTitle/PageTitle.js";
 
 import bgImage from "../../../assets/images/image-1-132.jpg";
-import FaqSection from "../../FaqSection/FaqSection";
+import FaqSection from "../../src/components/FaqSection/FaqSection";
 
 function Faq() {
 	const generalFAQ = [

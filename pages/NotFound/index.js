@@ -1,5 +1,5 @@
 import React from "react";
-import PageTitle from "../../PageTitle/PageTitle";
+import PageTitle from "../../src/components/PageTitle/PageTitle";
 
 function PageNotFound() {
 	return (

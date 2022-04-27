@@ -1,8 +1,8 @@
 import "./Home.css";
 
-import AboutUs from "../../AboutUs/AboutUs";
-import HomepageTitle from "../../HomepageTitle/HomepageTitle";
-import ComingSoonCard from "../../ComingSoonCard/ComingSoonCard";
+import AboutUs from "../../src/components/AboutUs/AboutUs";
+import HomepageTitle from "../../src/components/HomepageTitle/HomepageTitle";
+import ComingSoonCard from "../../src/components/ComingSoonCard/ComingSoonCard";
 import LazyLoad from "react-lazyload";
 
 function Home() {
