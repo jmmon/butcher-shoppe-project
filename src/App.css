@@ -6,6 +6,13 @@
 }
 
 :root {
+	--subheading-gray: #444;
+	--input-placeholder--light: #b1b1b1;
+	--footer-content--width: 1000px;
+	--schedule--item-height: 380px;
+	--card-border-radius: 4px;
+	--min-page-width: 375px;
+
 	--sky-blue-bg: rgba(193, 248, 255, 0.5);
 
 	/* header orange */
@@ -32,8 +39,6 @@
 	--icon--normal: 22px;
 	--icon--medium: 20px;
 	--icon--small: 18px;
-
-	--card-border-radius: 4px;
 }
 
 .website-container {

@@ -1,0 +1,27 @@
+- Could combine servicesButchering and ServicesProcessing into a single card component which takes the info as props
+
+- Could combine AboutUs and ComingSoon cards
+
+- Could combine pageTitle and homepageTitle into single component
+	- Could move the new title component into the app so it doesn't need to be listed in every page component
+
+- could improve Button to also use a tag or whatever else needed for the different buttons
+
+- Could break out form inputs into different components: Select component, text-input component, etc
+	- select component,
+	- textarea component,
+	- input component,
+	- (halfwidth input component?)
+	- checkbox area component?
+	- (individual checkboxes components?)
+
+
+
+
+- TODO: Switch over to Amazon email sending service, 1 cent per 100 emails!
+
+
+
+
+
+
