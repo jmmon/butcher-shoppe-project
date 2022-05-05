@@ -60,13 +60,14 @@ function Faq() {
 				smaller="true"
 			/>
 
-			<div className="faq card panel--shadow">
-				{/* <div className="faq-container"> */}
-				<FaqSection
-					sectionTitle={"General Questions"}
-					questionList={generalFAQ}
-				/>
-				{/* <FaqSection 
+			<div className="home--content-container">
+				<div className="faq card panel--shadow">
+					{/* <div className="faq-container"> */}
+					<FaqSection
+						sectionTitle={"General Questions"}
+						questionList={generalFAQ}
+					/>
+					{/* <FaqSection 
 					sectionTitle={"Slaughtering"} 
 					questionList={slaughteringFAQ}
 				/>
@@ -74,8 +75,9 @@ function Faq() {
 					sectionTitle={"Processing"} 
 					questionList={generalFAQ}
 				/> */}
-				{/* {items.map(content => <FaqItem question={content.question} answer={content.answer}/>)} */}
-				{/* </div> */}
+					{/* {items.map(content => <FaqItem question={content.question} answer={content.answer}/>)} */}
+					{/* </div> */}
+				</div>
 			</div>
 		</>
 	);

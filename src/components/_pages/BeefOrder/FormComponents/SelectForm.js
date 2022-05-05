@@ -1,23 +1,29 @@
 import React from "react";
 
+function Option({ label, value }) {
+	return <option key={value}>{label}</option>;
+}
+
 function SelectForm({ label, name, options, register }) {
 	//options == array of {value, text} objects
-	options.map((option) => {
-		return <option value={option.value}>{option.text}</option>;
+	let allOptions = options.map((option) => {
+		return Option({ label: option.label, value: option.value });
 	});
+
 	return (
-		<>
-			<label>{label}</label>
+		<div className="order-form--field">
+			<label htmlFor={name} className="order-form--label">
+				{label}
+			</label>
 			<select
-				{...register(label)}
+				{...register(name)}
 				name={name}
-				className="order-form--label"
+				id={name}
+				className="order-form--select"
 			>
-				{options.map((option) => (
-					<option value={option.value}>{option.text}</option>
-				))}
+				{allOptions}
 			</select>
-		</>
+		</div>
 	);
 }
 

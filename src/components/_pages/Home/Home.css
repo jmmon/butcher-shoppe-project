@@ -1,0 +1,13 @@
+.home--content-container {
+	padding: 40px 0;
+	display: grid;
+	grid-row-gap: 40px;
+}
+
+.homepage--card {
+	width: auto;
+
+	/* transform: translateY(-50%); */
+	color: #fff;
+	padding: 2vh 4vw;
+}

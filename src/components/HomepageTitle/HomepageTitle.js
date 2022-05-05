@@ -14,10 +14,10 @@ function HomepageTitle() {
 				}}
 			>
 				<h1 className="card-heading card-heading-shadow card-heading-margin">
-					The Northport Butcher Shoppe
+					The Butcher Shoppe
 				</h1>
 
-				<p>Butchering and Meat Processing services</p>
+				<p>Serving Northeast Washington State</p>
 				<div className="hero-btns">
 					<Button
 						className="btns"

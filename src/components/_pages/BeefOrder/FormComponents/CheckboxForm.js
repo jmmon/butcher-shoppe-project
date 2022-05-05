@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputForm = ({
+const CheckboxForm = ({
 	label,
 	name,
 	type,
@@ -12,7 +12,7 @@ const InputForm = ({
 	<div
 		className={
 			small
-				? "order-form--input-container order-form--input-container-small"
+				? "order-form--input-container order-form--input--small"
 				: "order-form--input-container"
 		}
 	>
@@ -26,11 +26,11 @@ const InputForm = ({
 			name={name}
 			id={name}
 			className="order-form--input"
-			type="text"
+			type="checkbox"
 			placeholder={placeholder}
 			{...register(name, { required })}
 		/>
 	</div>
 );
 
-export default InputForm;
+export default CheckboxForm;

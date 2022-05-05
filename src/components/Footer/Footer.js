@@ -50,7 +50,7 @@ function Footer() {
 
 				<div className="footer-map-container" id="map-link-target">
 					<h2 className="footer-map-heading">
-						Find us in downtown Northport:
+						Find us in downtown Northport!
 					</h2>
 
 					<Suspense
@@ -118,7 +118,7 @@ function Footer() {
 				<div className="social-media-wrap">
 					<div className="footer-logo">
 						<Link to="/" className="social-logo">
-							Northport Butcher Shoppe
+							The Butcher Shoppe
 						</Link>
 					</div>
 

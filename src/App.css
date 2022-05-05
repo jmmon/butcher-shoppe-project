@@ -52,8 +52,8 @@
 .website-content-container {
 	/* padding: 2vh 2vw; */
 	background-color: var(--sky-blue-bg);
-	margin-top: 40px;
-	padding-bottom: 2rem;
+	margin-top: 40px; /* sets it below the header */
+	/* padding-bottom: 2rem; */
 }
 
 .inset-box-shadow {

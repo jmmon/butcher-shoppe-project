@@ -1,4 +1,4 @@
-import "./AboutUs.css";
+//import "./AboutUs.css";
 
 import bg from "../../assets/images/image-1-113.jpg";
 
@@ -7,7 +7,7 @@ function AboutUs() {
 		<section className="panel-container">
 			<div className="panel--shadow card">
 				<div
-					className="about-us--content card-shadow card inset-box-shadow"
+					className="homepage--card card-shadow card inset-box-shadow"
 					style={{
 						background: `url(${bg}) center center/cover no-repeat`,
 					}}

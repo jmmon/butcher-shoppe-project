@@ -48,7 +48,7 @@ function Navbar() {
 						></div> */}
 						<NewLogo fill="white" className="nav-logo" />
 						<div className="navbar-logo-text">
-							Northport Butcher Shoppe
+							The Butcher Shoppe
 						</div>
 						{/* <i className="fa-solid fa-tractor" /> */}
 					</Link>
