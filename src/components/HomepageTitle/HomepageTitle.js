@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import "./HomepageTitle.css";
 import bg from "../../assets/images/image-1-117.jpg";
 
-function HomepageTitle() {
+function HomepageTitle({ simple = false, title, subtitle }) {
 	return (
 		<div className="panel--shadow">
 			<div
@@ -14,29 +14,31 @@ function HomepageTitle() {
 				}}
 			>
 				<h1 className="card-heading card-heading-shadow card-heading-margin">
-					The Butcher Shoppe
+					{title}
 				</h1>
 
-				<p>Serving Northeast Washington State</p>
-				<div className="hero-btns">
-					<Button
-						className="btns"
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
-						url="/services"
-					>
-						Services
-					</Button>
+				<p>{subtitle}</p>
+				{!simple && (
+					<div className="hero-btns">
+						<Button
+							className="btns"
+							buttonStyle="btn--outline"
+							buttonSize="btn--large"
+							url="/services"
+						>
+							Services
+						</Button>
 
-					<Button
-						className="btns"
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
-						url="/education"
-					>
-						Education
-					</Button>
-				</div>
+						<Button
+							className="btns"
+							buttonStyle="btn--outline"
+							buttonSize="btn--large"
+							url="/education"
+						>
+							Education
+						</Button>
+					</div>
+				)}
 			</div>
 		</div>
 	);

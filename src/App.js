@@ -11,17 +11,26 @@ import Schedule from "./components/_pages/Schedule/Schedule.js";
 import Faq from "./components/_pages/Faq/Faq.js";
 import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
 import NotFound from "./components/_pages/NotFound/NotFound";
+import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 
 function App() {
 	return (
 		<div className="website-container" id="link-destination-top">
 			<Router>
 				<ScrollToTop>
+					<Routes>
+						<Route path="*" exact element={<ComingSoon />} />
+					</Routes>
+				</ScrollToTop>
+			</Router>
+			{/* <Router>
+				<ScrollToTop>
 					<Header />
 					<Navbar />
 					<div className="website-content-container">
 						<Routes>
 							<Route path="/" exact element={<Home />} />
+
 							<Route
 								path="/services"
 								exact
@@ -46,7 +55,7 @@ function App() {
 
 					<Footer />
 				</ScrollToTop>
-			</Router>
+			</Router> */}
 		</div>
 	);
 }

@@ -8,6 +8,7 @@
 :root {
 	--subheading-gray: #444;
 	--input-placeholder--light: #b1b1b1;
+	--footer-background-color: #242424;
 	--footer-content--width: 1000px;
 	--schedule--item-height: 380px;
 	--card-border-radius: 4px;
@@ -121,6 +122,14 @@
 
 .text--large {
 	font-size: var(--font--large);
+}
+
+.homepage--card {
+	width: auto;
+
+	/* transform: translateY(-50%); */
+	color: #fff;
+	padding: 2vh 4vw;
 }
 
 @media screen and (max-width: 960px) {
