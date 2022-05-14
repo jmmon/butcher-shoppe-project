@@ -229,10 +229,10 @@
 	} */
 
 	.nav-logo {
-		/* height: 90px;
-		width: 160px; */
+		height: 80px;
+		width: 160px;
 
-		padding: 5px;
+		padding: 2px;
 	}
 	.navbar-home {
 		margin-left: 0;

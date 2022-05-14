@@ -24,16 +24,16 @@
 	align-content: center;
 	text-decoration: none;
 	color: #000;
-	transition: all 0.15s ease-out;
+	transition: var(--transition);
 }
 
 .clock-icon {
-	transition: all 0.16s ease-out;
+	transition: var(--transition);
 }
 
 .header-link-special.hover {
 	color: #fff;
-	transition: all 0.15s ease-out;
+	transition: var(--transition);
 }
 
 .header-icon {
