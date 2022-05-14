@@ -1,7 +1,10 @@
-import { Suspense, lazy as Lazy } from "react";
-import { Link } from "react-router-dom";
+import { Suspense, lazy as Lazy, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
+import axios from "axios";
 import "./Footer.css";
+import Subscribe from "../Subscribe.js/Subscribe";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 const MapPromise = import("../Map/Map.js");
 const Map = Lazy(() => MapPromise);
@@ -13,31 +16,120 @@ const LogoComponentPromise = import("../../assets/logo/LogoComponent.js");
 const LogoComponent = Lazy(() => LogoComponentPromise);
 
 function Footer({ simple = false }) {
+	const [subscribeStatus, setSubscribeStatus] = useState({
+		status: "WAITING",
+		errMsg: null,
+	});
+
+	const [showSubscribeNextStep, setShowSubscribeNextStep] = useState(false);
+
+	let timer = null;
+
+	const resetButtonWithSetTimeout = () => {
+		timer = setTimeout(() => {
+			// reset button timer
+			setSubscribeStatus((prevState) => ({
+				...prevState,
+				status: "WAITING",
+			}));
+		}, 4000);
+	};
+
+	useEffect(() => {
+		return () => {
+			// componentWillUnmount
+			if (timer) {
+				clearTimeout(timer);
+				console.log("timer cleared");
+			}
+		};
+	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("handleSubscribe works");
+
+		setSubscribeStatus((prevState) => ({
+			...prevState,
+			status: "PENDING",
+			errMsg: null,
+		}));
+
+		const subscribeData = { email: e.target[0].value };
+		console.log("entered email address:", subscribeData);
+
+		axios
+			.post("http://localhost:3001/subscribe", subscribeData)
+			.then((res) => {
+				console.log("response status:", res.status);
+				if (res.status === 200) {
+					console.log("Success at subscribe email request!");
+				} else if (res.status === 500) {
+					console.log(
+						"Error with sending the subscribe email! Check server for info."
+					);
+				}
+
+				setSubscribeStatus((prevState) => ({
+					...prevState,
+					status: "COMPLETE",
+				}));
+
+				setShowSubscribeNextStep(true);
+
+				resetButtonWithSetTimeout();
+			})
+			.catch((e) => {
+				setSubscribeStatus((prevState) => ({
+					...prevState,
+					status: "ERROR",
+				}));
+
+				resetButtonWithSetTimeout();
+
+				console.log("axios post error:", e);
+			});
+	};
+
+	const { pathname } = useLocation();
+	const scrollToTop = () => {
+		window.scrollTo(0, 0);
+	};
+
 	return (
 		<div className="footer-container" id="footer-container">
 			<section className="footer-subscription">
-				<p className="footer-subscription-heading">
-					Join our newsletter to receive periodic updates!
-				</p>
+				<h2 className="footer-subscription-heading">
+					Join our{" "}
+					<Link className="footer-subscribe-link" to="/newsletter/">
+						newsletter
+					</Link>{" "}
+					to receive periodic updates!
+				</h2>
 				<p className="footer-subscription-text">
-					You can unsubscribe at any time.
+					You can{" "}
+					{pathname === "/newsletter/unsubscribe" ? (
+						<div
+							className="footer-subscribe-link"
+							onClick={scrollToTop}
+						>
+							unsubscribe
+						</div>
+					) : (
+						<Link
+							className="footer-subscribe-link"
+							to="/newsletter/unsubscribe"
+						>
+							unsubscribe
+						</Link>
+					)}{" "}
+					at any time.
 				</p>
-				<div className="input-areas">
-					<form className="footer-email-form">
-						<input
-							type="email"
-							name="email"
-							placeholder="Your Email"
-							className="footer-input"
-						/>
-						<Button buttonStyle="btn--outline" url="/newsletter">
-							Subscribe
-						</Button>
-					</form>
-				</div>
+
+				<Subscribe />
 			</section>
 
-			<section className="footer-contact-map-wrapper">
+			<section className="footer-contact-map-container">
 				<div
 					className="footer-contact-container"
 					id="contact-link-target"

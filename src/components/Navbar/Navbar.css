@@ -1,8 +1,8 @@
 .navbar {
 	background: linear-gradient(
-		270deg,
-		rgb(50, 50, 50) 0%,
-		rgb(100, 100, 100) 100%
+		90deg,
+		var(--navbar-gradient--light) 0%,
+		var(--navbar-gradient--dark) 100%
 	);
 	height: 80px;
 	display: flex;
@@ -16,9 +16,10 @@
 
 .navbar-container {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	height: 80px;
+	width: 100vw;
 	max-width: 1500px;
 }
 
@@ -30,8 +31,7 @@
 }
 
 .newsletter-btn {
-	/* margin-left: 20px; */
-	/* display: inline-block; */
+	text-decoration: none;
 }
 
 .navbar-home {
@@ -49,7 +49,7 @@
 }
 
 .navbar-logo-text {
-	width: 320px;
+	width: 280px;
 	padding-left: 10px;
 
 	/* text-align: center; */
@@ -61,13 +61,13 @@
 }
 
 .nav-menu {
-	/* Does NOT include Logo and Icon */
+	/* Does NOT include Logo or Newsletter-btn */
 	display: grid;
 	grid-template-columns: repeat(5, auto);
 	grid-gap: 10px;
 	list-style: none;
 	text-align: center;
-	width: 50vw;
+	width: 55vw;
 	margin-right: 2rem;
 }
 
@@ -108,7 +108,7 @@
 	height: 90px;
 	width: 180px;
 
-	padding: 2px;
+	padding: 2px 0 4px 0;
 }
 
 @media screen and (min-width: 1600px) {
@@ -118,14 +118,6 @@
 }
 
 @media screen and (max-width: 960px) {
-	/* for medium and small screens! */
-	/* .nav-item {
-    position: relative;
-  } */
-	/* .navbar-home > i {
-		margin-left: 20px;
-	} */
-
 	.nav-menu {
 		display: flex;
 		flex-direction: column;
@@ -167,20 +159,25 @@
 	}
 
 	.navbar-home {
-		position: absolute;
+		margin-left: 10px;
+		/* 
+		enabled above for SIMPLE
+		disabled below for SIMPLE 
+		*/
+
+		/* position: absolute;
 		top: 0px;
 		left: 0;
 		width: auto;
-		margin-left: 2vw;
+		margin-left: 2vw; */
 	}
 
 	.nav-logo {
-		/* transform: translateX(0%); */
-
+		/* 
 		height: 90px;
 		width: 160px;
 
-		padding: 10px;
+		padding: 10px; */
 	}
 
 	.navbar-logo-text {
@@ -227,18 +224,18 @@
 }
 
 @media screen and (max-width: 480px) {
-	.navbar-home {
+	/* .navbar-home {
 		width: 320px;
-	}
+	} */
 
 	.nav-logo {
-		/* transform: translateX(-20px); */
-		/* margin-left: 20px; */
+		/* height: 90px;
+		width: 160px; */
 
-		height: 90px;
-		width: 160px;
-
-		padding: 10px;
+		padding: 5px;
+	}
+	.navbar-home {
+		margin-left: 0;
 	}
 
 	.navbar-logo-text {

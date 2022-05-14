@@ -33,9 +33,9 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 							className="btns"
 							buttonStyle="btn--outline"
 							buttonSize="btn--large"
-							url="/education"
+							url="/how-to-order"
 						>
-							Education
+							How to Order
 						</Button>
 					</div>
 				)}

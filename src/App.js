@@ -12,15 +12,33 @@ import Faq from "./components/_pages/Faq/Faq.js";
 import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
 import NotFound from "./components/_pages/NotFound/NotFound";
 import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
+import SubscribeSuccess from "./components/_pages/SubscribeSuccess";
+import Newsletter from "./components/_pages/Newsletter/Newsletter";
+import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 
 function App() {
 	return (
 		<div className="website-container" id="link-destination-top">
 			<Router>
 				<ScrollToTop>
-					<Routes>
-						<Route path="*" exact element={<ComingSoon />} />
-					</Routes>
+					<Header />
+					<Navbar simple={true} />
+					<div className="website-content-container">
+						<Routes>
+							<Route
+								path="/newsletter"
+								exact
+								element={<Newsletter />}
+							/>
+							<Route
+								path="/newsletter/unsubscribe"
+								exact
+								element={<Unsubscribe />}
+							/>
+							<Route path="*" element={<ComingSoon />} />
+						</Routes>
+						<Footer simple={true} />
+					</div>
 				</ScrollToTop>
 			</Router>
 			{/* <Router>
@@ -48,12 +66,32 @@ function App() {
 								exact
 								element={<BeefOrder />}
 							/>
+							<Route
+								path="/construction"
+								exact
+								element={<ComingSoon />}
+							/>
+							<Route
+								path="/newsletter"
+								exact
+								element={<Newsletter />}
+							/>
 
+							<Route
+								path="/newsletter/unsubscribe"
+								exact
+								element={<Unsubscribe />}
+							/>
+
+							<Route
+								path="/subscribe/success"
+								exact
+								element={<SubscribeSuccess />}
+							/>
 							<Route path="*" element={<NotFound />} />
 						</Routes>
+						<Footer />
 					</div>
-
-					<Footer />
 				</ScrollToTop>
 			</Router> */}
 		</div>

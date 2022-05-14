@@ -11,7 +11,6 @@ function ComingSoon() {
 				title="The Butcher Shoppe"
 				subtitle={`Site under construction. Coming Soon to Northeast Washington State!`}
 			/>
-			<Footer simple={true} />
 		</>
 	);
 }

@@ -1,0 +1,51 @@
+.subscribe--container {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.subscribe--input::placeholder {
+	color: var(--input-placeholder--light);
+}
+
+.subscribe--input {
+	max-width: 50vw;
+	padding: 6px 14px;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	font-size: 18px;
+	border: 1px solid #fff;
+	margin-right: 2px;
+}
+
+.subscribe--input:focus:required:invalid {
+	border: 1px solid red;
+	background-color: var(--input-required--invalid);
+}
+
+.subscribe--input:focus:required:valid {
+	border: 1px solid green;
+	background-color: var(--input-required--valid);
+}
+
+/* .subscribe--text {
+} */
+
+.subscribe--text.notification {
+	margin: 24px auto 24px auto;
+	/* margin-bottom: 24px; */
+	font-size: 20px;
+	color: #fff;
+	/* margin-top: 24px; */
+	border: 1px solid green;
+	border-radius: 5px;
+	padding: 8px;
+	background-color: rgba(223, 255, 223, 0.1);
+}
+
+.subscribe--email-form {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+}

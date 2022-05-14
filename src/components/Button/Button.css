@@ -29,7 +29,7 @@
 	color: #fff;
 	padding: 8px 20px;
 	border: 1px solid var(--primary);
-	transition: all 0.3s ease-out;
+	transition: var(--transition);
 }
 
 .btn--outline--secondary {
@@ -37,7 +37,7 @@
 	color: var(--sencondary);
 	padding: 8px 20px;
 	border: 1px solid var(--secondary);
-	transition: all 0.3s ease-out;
+	transition: var(--transition);
 }
 
 .btn--medium {
@@ -54,25 +54,41 @@
 .btn--large:hover {
 	background: #fff;
 	color: #242424;
-	transition: all 0.3s ease-out;
+	transition: var(--transition);
+	border: 1px solid #242424;
 }
 
 .btn--pending {
 	background-color: rgb(255, 207, 48);
 	color: #242424;
 }
-
-.btn--pending:hover {
-	background-color: rgb(255, 255, 207);
-	color: #242424;
-}
-
 .btn--complete {
 	background-color: rgb(48, 192, 32);
 	color: #242424;
 }
+.btn--error {
+	background-color: rgb(196, 96, 72);
+	color: #242424;
+}
 
+.btn--pending:hover {
+	background-color: rgb(255, 255, 207);
+	color: #242424;
+	transition: var(--transition);
+}
 .btn--complete:hover {
 	background-color: rgb(192, 255, 192);
 	color: #242424;
+	transition: var(--transition);
+}
+.btn--error:hover {
+	background-color: rgb(255, 192, 192);
+	color: #242424;
+	transition: var(--transition);
+}
+
+@media screen and (max-width: 820px) {
+	.btn {
+		width: 100%;
+	}
 }

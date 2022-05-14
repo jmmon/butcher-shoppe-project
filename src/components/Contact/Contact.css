@@ -1,7 +1,6 @@
 .contact {
 	margin-top: auto;
 	justify-content: center;
-	width: 90vw;
 	max-width: 400px;
 	/* height: 100%; */
 	height: 300px;
@@ -32,9 +31,12 @@
 }
 
 .contact__input {
+	border: 1px solid #fff;
 	display: block;
 	width: 100%;
 	font-size: 20px;
+	margin-top: 4px;
+	padding: 5px;
 }
 
 .contact__textarea {
@@ -49,25 +51,42 @@
 }
 
 .contact__form__submit {
+	margin-top: 5px;
 	width: 100%;
 }
 
-.input__container > input:focus:required:invalid {
+.contact__input:focus:required:invalid {
 	border: 1px solid red;
-	background-color: rgb(255, 223, 223);
+	background-color: var(--input-required--invalid);
+	outline: none;
 }
 
-.input__container > input:focus:required:valid {
+.contact__input:focus:required:valid {
 	border: 1px solid green;
-	background-color: rgb(223, 255, 223);
+	background-color: var(--input-required--valid);
+	outline: none;
 }
 
-p.contact__form__err {
+.contact__form__err {
+	/* base (hidden) */
 	width: 100%;
-	border: 1px solid red;
-	border-radius: 20px;
-	background: rgb(255, 223, 223);
+	/* height: 0;
+	transition: height 0.2s ease; */
+	border-radius: 6px;
 	text-align: center;
+	border: 1px solid red;
+	background: rgb(255, 223, 223);
+	height: 30px;
+}
+.contact__form__notification.err {
+	border: 1px solid red;
+	background: var(--input-required--invalid);
+	height: 30px;
+}
+.contact__form__notification.success {
+	border: 1px solid green;
+	background: var(--input-required--valid);
+	height: 30px;
 }
 
 /* .contact__input:focus:required:invalid {
@@ -83,10 +102,6 @@ p.contact__form__err {
 } */
 
 @media screen and (max-width: 960px) {
-	.contact {
-		width: 80vw;
-	}
-
 	.input__container {
 		width: 100%;
 	}
