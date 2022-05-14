@@ -1,6 +1,6 @@
 import "./PageTitle.css";
 
-function PageTitle({ heading, bgImage, position, smaller }) {
+function PageTitle({ heading, bgImage, position, smaller, subtitle }) {
 	return (
 		<div className="panel--shadow">
 			<section
@@ -22,6 +22,7 @@ function PageTitle({ heading, bgImage, position, smaller }) {
 					>
 						{heading}
 					</h1>
+					{subtitle && <h2 className="page-subtitle">{subtitle}</h2>}
 				</div>
 			</section>
 		</div>

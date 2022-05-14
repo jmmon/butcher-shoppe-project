@@ -3,7 +3,7 @@ import React from "react";
 function SubscribeSuccess() {
 	return (
 		<>
-			<h1>Thank you for subscribing!</h1>
+			<h2>Thank you for subscribing!</h2>
 			<p>
 				Your subscription to our newsletter was successful. You may
 				unsubscribe at any time. (how?)

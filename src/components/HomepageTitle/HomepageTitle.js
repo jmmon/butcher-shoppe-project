@@ -10,14 +10,14 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 				className="homepage-title inset-box-shadow"
 				style={{
 					background: `url(${bg}) center center/cover no-repeat`,
-					backgroundPosition: `50% 40%`,
+					backgroundPosition: `25% 40%`,
 				}}
 			>
-				<h1 className="card-heading card-heading-shadow card-heading-margin">
+				<h1 className="homepage-title--heading card-heading card-heading-shadow card-heading-margin">
 					{title}
 				</h1>
 
-				<p>{subtitle}</p>
+				<p className="homepage-title--subheading">{subtitle}</p>
 				{!simple && (
 					<div className="hero-btns">
 						<Button

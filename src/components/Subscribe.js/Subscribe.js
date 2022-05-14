@@ -18,6 +18,7 @@ function Subscribe({ unsubscribe }) {
 			setSubscribeStatus((prevState) => ({
 				...prevState,
 				status: "WAITING",
+				errMsg: null,
 			}));
 		}, 4000);
 	};

@@ -26,10 +26,6 @@ function Services() {
 			/>
 			<div className="home--content-container">
 				<div className="panel-container">
-					{/* <div className="title_container card white">
-					<h1 className="page-title-h1">SERVICES</h1>
-				</div> */}
-
 					<div className="services-btns-container">
 						<Button
 							className="btns"
@@ -47,8 +43,6 @@ function Services() {
 						>
 							Processing
 						</Button>
-						{/* <a href="#butchering-link" className="btns">Butchering</a> */}
-						{/* <a href="#processing-link" className="btns">Processing</a> */}
 					</div>
 
 					<div className="blerb-wrapper panel--shadow card">
@@ -83,10 +77,6 @@ function Services() {
 							downtown Northport store.{" "}
 							<a href="#map-link-target">(See map down below)</a>
 						</p>
-						{/* <br />
-					<p>
-						
-					</p> */}
 					</div>
 					<Suspense
 						fallback={

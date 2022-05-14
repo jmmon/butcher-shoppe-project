@@ -93,6 +93,7 @@ const Contact = () => {
 			setSentToUs((prevState) => ({
 				...prevState,
 				status: "WAITING",
+				errMsg: null,
 			}));
 		}, 4000);
 	};
@@ -183,38 +184,9 @@ const Contact = () => {
 						: "Send Email"}
 				</button>
 
-				{/* {(sentToUs.status === "WAITING" ||
-					sentToUs.status === "ERROR") && (
-					<button
-						type="submit"
-						className=" contact__form__submit btn btn--outline btn--large"
-					>
-						Send Email
-					</button>
-				)}
-
-				{sentToUs.status === "PENDING" && (
-					<button
-						type="submit"
-						className="contact__form__submit btn btn--outline btn--large btn--pending"
-						disabled
-					>
-						Sending...
-					</button>
-				)}
-
-				{sentToUs.status === "COMPLETE" && (
-					<button
-						type="submit"
-						className=" contact__form__submit btn btn--outline btn--large btn--complete"
-					>
-						Email Sent!
-					</button>
-				)}
-
 				{sentToUs.errMsg && (
 					<p className="contact__form__err">{sentToUs.errMsg}</p>
-				)} */}
+				)}
 			</form>
 		</div>
 	);

@@ -7,6 +7,8 @@ app.use(cors());
 app.use(express.json());
 require("dotenv").config();
 
+app.use(express.static("public"));
+
 //connect to mongoose
 // mongoose
 // 	.connect(process.env.DB_URI, {
