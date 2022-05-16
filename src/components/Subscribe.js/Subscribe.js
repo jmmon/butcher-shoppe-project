@@ -8,7 +8,7 @@ function Subscribe({ unsubscribe }) {
 		errMsg: null,
 	});
 
-	const [showSubscribeNextStep, setShowSubscribeNextStep] = useState(false);
+	// const [showSubscribeNextStep, setShowSubscribeNextStep] = useState(false);
 
 	let timer = null;
 
@@ -20,7 +20,7 @@ function Subscribe({ unsubscribe }) {
 				status: "WAITING",
 				errMsg: null,
 			}));
-		}, 4000);
+		}, 6000);
 	};
 
 	useEffect(() => {
@@ -48,10 +48,11 @@ function Subscribe({ unsubscribe }) {
 
 		await axios
 			.post(
-				`http://localhost:3001/${
+				`https://thenorthportbutchershoppe.com/server/${
 					unsubscribe ? "unsubscribe" : "subscribe"
 				}`,
-				subscribeData
+				subscribeData,
+				{ headers: { "Content-Type": "text/plain" } }
 			)
 			.then((res) => {
 				// console.log("response status:", res.status);
@@ -67,14 +68,16 @@ function Subscribe({ unsubscribe }) {
 				setSubscribeStatus((prevState) => ({
 					...prevState,
 					status: "COMPLETE",
+					errMsg: null,
 				}));
 
-				setShowSubscribeNextStep(true);
+				// setShowSubscribeNextStep(true);
 			})
 			.catch((e) => {
 				setSubscribeStatus((prevState) => ({
 					...prevState,
 					status: "ERROR",
+					errMsg: e.message,
 				}));
 
 				console.log("axios post error:", e);
@@ -94,7 +97,17 @@ function Subscribe({ unsubscribe }) {
 						className="subscribe--input"
 						required
 					/>
-					<button className=" btn btn--medium btn--outline">
+					<button
+						className={`btn btn--medium btn--outline ${
+							subscribeStatus.status === "PENDING"
+								? "btn--pending"
+								: subscribeStatus.status === "COMPLETE"
+								? "btn--complete"
+								: subscribeStatus.status === "ERROR"
+								? "btn--error"
+								: ""
+						}`}
+					>
 						{subscribeStatus.status === "WAITING" &&
 							(unsubscribe ? "Unsubscribe" : "Subscribe")}
 						{subscribeStatus.status === "PENDING" &&
@@ -105,16 +118,31 @@ function Subscribe({ unsubscribe }) {
 									? "Check your email!"
 									: "Check your email!"
 							}`}
+						{subscribeStatus.status === "ERROR" &&
+							`${"Oops, try again!"}`}
 					</button>
 				</form>
 			</div>
-			{showSubscribeNextStep && (
-				<p className="subscribe--text notification">
+			{/* {subscribeStatus.status === "COMPLETE" && (
+				<p className="subscribe--notification">
 					{unsubscribe
 						? "Unsubscribe request sent! To confirm, please click the link in the email."
 						: "Subscribe request sent! To confirm, please click the link in the email."}
 				</p>
-			)}
+			)} */}
+
+			<p
+				className={`subscribe--notification ${
+					subscribeStatus.status === "ERROR" && "error"
+				} ${subscribeStatus.status === "COMPLETE" && "success"}`}
+			>
+				{subscribeStatus.status === "COMPLETE" &&
+					(unsubscribe
+						? "Unsubscribe request sent! To confirm, please click the link in the email."
+						: "Subscribe request sent! To confirm, please click the link in the email.")}
+				{subscribeStatus.status === "ERROR" &&
+					`Error: ${subscribeStatus.errMsg}`}
+			</p>
 		</>
 	);
 }

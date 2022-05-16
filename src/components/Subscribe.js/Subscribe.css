@@ -32,16 +32,32 @@
 /* .subscribe--text {
 } */
 
-.subscribe--text.notification {
-	margin: 24px auto 24px auto;
-	/* margin-bottom: 24px; */
+.subscribe--notification {
+	margin: 0;
+	padding: 0;
 	font-size: 20px;
 	color: #fff;
-	/* margin-top: 24px; */
-	border: 1px solid green;
+	text-align: center;
 	border-radius: 5px;
+	max-height: 0;
+	width: 86%;
+	transition: all 0.2s ease;
+}
+
+.subscribe--notification.success {
+	margin: 24px auto 24px auto;
 	padding: 8px;
+	border: 1px solid green;
 	background-color: rgba(223, 255, 223, 0.1);
+	max-height: 100px;
+}
+
+.subscribe--notification.error {
+	margin: 24px auto 24px auto;
+	padding: 8px;
+	border: 1px solid red;
+	background-color: rgba(255, 223, 223, 0.1);
+	max-height: 100px;
 }
 
 .subscribe--email-form {

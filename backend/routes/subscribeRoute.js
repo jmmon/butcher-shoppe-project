@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const axios = require("axios");
 
 let subscribe__transporter = nodemailer.createTransport({
 	host: process.env.EMAIL_HOST,
@@ -14,15 +13,14 @@ let subscribe__transporter = nodemailer.createTransport({
 	},
 });
 
-router.route("/subscribe").post(async (req, res) => {
-	// console.log(
-	// 	"env data",
-	// 	process.env.EMAIL_HOST,
-	// 	process.env.EMAIL_PORT,
-	// 	process.env.CONTACT_EMAIL_USERNAME,
-	// 	process.env.CONTACT_EMAIL_PASSWORD
-	// );
+router.route("/subscribe").get((req, res) => {
+	res.send("subscribe get works!");
+});
+router.route("/unsubscribe").get((req, res) => {
+	res.send("unsubscribe get works!");
+});
 
+router.route("/subscribe").post(async (req, res) => {
 	// Email to send requests to: newsletter-request@thenorthportbutchershopppe.com
 
 	// Email to send requests from: noreply@thenorthportbutchershopppe.com
@@ -36,10 +34,10 @@ router.route("/subscribe").post(async (req, res) => {
 
 	// TODO: use noreply@ email to send our commands to our newsletter-request@ email
 
-	// console.log("subscribe post route working:");
+	console.log("subscribe post route working:");
 	const subscribe_userEmail = req.body.email;
 
-	// console.log("email to subscribe:", subscribe_userEmail);
+	console.log("email to subscribe:", subscribe_userEmail);
 
 	try {
 		// send us the email from the user
@@ -58,22 +56,6 @@ router.route("/subscribe").post(async (req, res) => {
 				)
 			)
 			.catch((e) => console.error("Subscribe ERROR:", e));
-
-		// pull request list so I can confirm the request?
-		// axios
-		// 	.get(
-		// 		`https://thenorthportbutchershoppe.com/mailman/admindb/newsletter_thenorthportbutchershoppe.com/requests`,
-		// 		{
-		// 			auth: {
-		// 				username: process.env.MAILMAN_AUTH_USERNAME,
-		// 				password: process.env.MAILMAN_AUTH_PASSWORD,
-		// 			},
-		// 		}
-		// 	)
-		// 	.then((res) => {
-		// 		console.log(`res:`, res);
-		// 	})
-		// 	.catch((e) => console.log("err:", e));
 	} catch (e) {
 		console.error("Error sending subscribe email:");
 		console.error(e);

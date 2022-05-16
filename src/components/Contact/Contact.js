@@ -55,12 +55,17 @@ const Contact = () => {
 		console.log("message data:", contactMessageData);
 		console.log("posting axios request");
 		axios
-			.post("http://localhost:3001/contact", contactMessageData)
+			.post(
+				"https://thenorthportbutchershoppe.com/server/contact",
+				contactMessageData,
+				{ headers: { "Content-Type": "text/plain" } }
+			)
 			.then((res) => {
 				console.log("response status:", res.status);
 				setSentToUs((prevState) => ({
 					...prevState,
 					status: "COMPLETE",
+					errMsg: null,
 				}));
 
 				setInput((prevInput) => {
@@ -79,6 +84,7 @@ const Contact = () => {
 				setSentToUs((prevState) => ({
 					...prevState,
 					status: "ERROR",
+					errMsg: e.message,
 				}));
 
 				resetButtonWithSetTimeout();
@@ -95,7 +101,7 @@ const Contact = () => {
 				status: "WAITING",
 				errMsg: null,
 			}));
-		}, 4000);
+		}, 6000);
 	};
 
 	useEffect(() => {
@@ -184,9 +190,23 @@ const Contact = () => {
 						: "Send Email"}
 				</button>
 
-				{sentToUs.errMsg && (
-					<p className="contact__form__err">{sentToUs.errMsg}</p>
-				)}
+				<p
+					className={`contact__form__notification ${
+						sentToUs.status === "ERROR" && "error"
+					} ${sentToUs.status === "COMPLETE" && "success"}`}
+				>
+					{sentToUs.status === "COMPLETE"
+						? "Message sent!"
+						: sentToUs.errMsg}
+				</p>
+				{/* {sentToUs.status === "COMPLETE" && (
+					
+				)} */}
+				{/* {sentToUs.status === "ERROR" && (
+					<p className="contact__form__notification error">
+						{sentToUs.errMsg}
+					</p>
+				)} */}
 			</form>
 		</div>
 	);

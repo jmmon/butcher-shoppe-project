@@ -13,6 +13,10 @@ let contact_form__transporter = nodemailer.createTransport({
 	},
 });
 
+router.route("/contact").get((req, res) => {
+	res.send("Contact get works!");
+});
+
 router.route("/contact").post((req, res) => {
 	// console.log(
 	// 	"env data",
@@ -65,48 +69,6 @@ router.route("/contact").post((req, res) => {
 			console.log("send mail error:", e);
 			res.status(500).send();
 		});
-
-	// try {
-	// 	// send us the email from the user
-	// 	// (from "userEmail" (from our internal email so as not to access the user's email), to our info@thenorthport)
-	// 	contact_form__transporter
-	// 		.sendMail({
-	// 			from: `"Contact_Form(Internal)" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
-	// 			to: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`, // string list of receiver(s)
-	// 			replyTo: `"${contact__name}" <${contact__userEmail}>`,
-	// 			subject: `New message from ${contact__name} - Contact #${contact__number}`, // subject line
-	// 			text: `Hello, Northport Butcher Shoppe,\n\nYou received a new mesage from ${contact__name}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})`, // plain text body
-	// 			html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new mesage from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
-	// 		})
-	// 		.then((res) =>
-	// 			console.log("Message { to us } sent:", res.messageId)
-	// 		)
-	// 		.catch((e) => console.log("error { to us }:", e));
-	// 	// console.log("Message { to us } sent:", toUs_response.messageId);
-
-	// 	// send the user the "copy" email
-	// 	// (from contact_form@thenorthport, to userEmail)
-	// 	contact_form__transporter
-	// 		.sendMail({
-	// 			from: `"Northport Butcher Shoppe Contact Form" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
-	// 			to: `"${contact__name}" <${contact__userEmail}>`, // string list of receiver(s)
-	// 			replyTo: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
-	// 			subject: `Northport Butcher Shoppe Message from ${contact__name} - Contact #${contact__number}`, // subject line
-	// 			text: `Hello ${contact__name},\n\nThank you for reaching out to us at the Northport Butcher Shoppe!\nWe will get back to you as soon as we are able.\nHere's a copy of the message you sent us:\n\n"\n${text}\n"\n\n(Replies to this email get sent to ${process.env.INFO_EMAIL_USERNAME})`, // plain text body
-	// 			html: `<h1>Hello ${contact__name},</h1><h3>Thank you for reaching out to us at the Northport Butcher Shoppe!<br>We will get back to you as soon as we are able.</h3><br><i>Here's a copy of the message you sent us:</i><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies to this email get sent to ${process.env.INFO_EMAIL_USERNAME})</i>`,
-	// 		})
-	// 		.then((res) =>
-	// 			console.log("Message { to them } sent:", res.messageId)
-	// 		)
-	// 		.catch((e) => console.log("error { to them }:", e));
-	// } catch (e) {
-	// 	console.log("Error sending emails:");
-	// 	console.log(e);
-	// 	res.status(500).send();
-	// } finally {
-	// 	console.log("finally finished, res.status(200).send()");
-	// 	res.status(200).send();
-	// }
 });
 
 module.exports = router;
