@@ -3,16 +3,18 @@ const app = express();
 const cors = require("cors");
 // const mongoose = require("mongoose");
 
-const corsOptions = {
-	origin: "https://thenorthportbutchershoppe.com",
-	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+// const corsOptions = {
+// 	origin: "https://thenorthportbutchershoppe.com",
+// 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors());
 app.use(express.json());
 require("dotenv").config();
 
-app.use(express.static("public"));
+app.use("/server", express.static("public"));
 
 //connect to mongoose
 // mongoose
@@ -32,12 +34,15 @@ app.use(express.static("public"));
 // 		console.log("Error:", err);
 // 	});
 
-app.use("/", require("./routes/subscribeRoute"));
-app.use("/", require("./routes/contactRoute"));
-
+// thenorthportbutchershoppe.com/server/...
 //require route
+app.use("/server", require("./routes/subscribeRoute"));
+app.use("/server", require("./routes/contactRoute"));
 
-app.listen();
+app.listen(3001, () => {
+	console.log("Server started. Listening...");
+});
+
 // app.listen(process.env.PORT, function () {
 // 	console.log("express running on " + process.env.PORT);
 // });

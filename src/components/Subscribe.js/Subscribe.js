@@ -2,85 +2,94 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Subscribe.css";
 
+const headers = { "Content-Type": "application/json" };
+
 function Subscribe({ unsubscribe }) {
-	const [subscribeStatus, setSubscribeStatus] = useState({
-		status: "WAITING",
-		errMsg: null,
+	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
+		unsubscribe ? "unsubscribe" : "subscribe"
+	}`;
+	// const subscribeBackendUri = `localhost:3001/server/${
+	// 	unsubscribe ? "unsubscribe" : "subscribe"
+	// }`;
+	let timer = null;
+
+	const [responseFromSubscribeBox, setResponseFromSubscribeBox] = useState({
+		data: null,
+		error: null,
+		isLoading: false,
 	});
 
-	// const [showSubscribeNextStep, setShowSubscribeNextStep] = useState(false);
-
-	let timer = null;
+	const [email, setEmail] = useState("");
 
 	const resetButtonWithSetTimeout = () => {
 		timer = setTimeout(() => {
 			// reset button timer
-			setSubscribeStatus((prevState) => ({
+
+			setResponseFromSubscribeBox((prevState) => ({
 				...prevState,
-				status: "WAITING",
-				errMsg: null,
+				isLoading: false,
+				data: null,
+				error: null,
 			}));
 		}, 6000);
 	};
 
 	useEffect(() => {
+		// componentWillUnmount
 		return () => {
-			// componentWillUnmount
-			if (timer) {
-				clearTimeout(timer);
-				//console.log("timer cleared");
-			}
+			timer && clearTimeout(timer);
 		};
 	});
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
 		// console.log("handleSubmit works");
 
-		setSubscribeStatus((prevState) => ({
+		setResponseFromSubscribeBox((prevState) => ({
 			...prevState,
-			status: "PENDING",
-			errMsg: null,
+			isLoading: true,
+			data: null,
+			error: null,
 		}));
 
-		const subscribeData = { email: e.target[0].value };
-		// console.log("entered email address:", subscribeData);
+		console.log("entered email address:", email);
+		console.log("attempt axios post to:", subscribeBackendUri);
 
 		await axios
-			.post(
-				`https://thenorthportbutchershoppe.com/server/${
-					unsubscribe ? "unsubscribe" : "subscribe"
-				}`,
-				subscribeData,
-				{ headers: { "Content-Type": "text/plain" } }
-			)
+			.post(subscribeBackendUri, { email: email }, { headers: headers })
 			.then((res) => {
 				// console.log("response status:", res.status);
 				if (res.status === 200) {
-					console.log("Success at subscribe email request!");
+					setResponseFromSubscribeBox((prevState) => ({
+						...prevState,
+						isLoading: false,
+						data: email,
+						error: null,
+					}));
+
+					setEmail("");
+					// console.log("Success at subscribe email request!");
 				} else if (res.status === 500) {
-					console.log(
-						"Error with sending the subscribe email! Check server for info."
-					);
-					console.log("res json", res.json);
+					setResponseFromSubscribeBox((prevState) => ({
+						...prevState,
+						isLoading: false,
+						data: null,
+						error: res.status,
+					}));
 				}
-
-				setSubscribeStatus((prevState) => ({
-					...prevState,
-					status: "COMPLETE",
-					errMsg: null,
-				}));
-
-				// setShowSubscribeNextStep(true);
 			})
 			.catch((e) => {
-				setSubscribeStatus((prevState) => ({
-					...prevState,
-					status: "ERROR",
-					errMsg: e.message,
-				}));
-
 				console.log("axios post error:", e);
+				console.log("entered email address:", email);
+				console.log("attempt axios post to:", subscribeBackendUri);
+
+				setResponseFromSubscribeBox((prevState) => ({
+					...prevState,
+					isLoading: false,
+					data: null,
+					error: e,
+				}));
 			});
 
 		resetButtonWithSetTimeout();
@@ -96,52 +105,58 @@ function Subscribe({ unsubscribe }) {
 						placeholder="Your Email"
 						className="subscribe--input"
 						required
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 					<button
 						className={`btn btn--medium btn--outline ${
-							subscribeStatus.status === "PENDING"
+							responseFromSubscribeBox.isLoading
 								? "btn--pending"
-								: subscribeStatus.status === "COMPLETE"
+								: responseFromSubscribeBox.data
 								? "btn--complete"
-								: subscribeStatus.status === "ERROR"
+								: responseFromSubscribeBox.error
 								? "btn--error"
 								: ""
 						}`}
 					>
-						{subscribeStatus.status === "WAITING" &&
-							(unsubscribe ? "Unsubscribe" : "Subscribe")}
-						{subscribeStatus.status === "PENDING" &&
-							"Processing..."}
-						{subscribeStatus.status === "COMPLETE" &&
-							`${
-								unsubscribe
-									? "Check your email!"
-									: "Check your email!"
-							}`}
-						{subscribeStatus.status === "ERROR" &&
-							`${"Oops, try again!"}`}
+						{responseFromSubscribeBox.isLoading
+							? "Processing..."
+							: responseFromSubscribeBox.data
+							? `${
+									unsubscribe
+										? "Check your email!"
+										: "Check your email!"
+							  }`
+							: responseFromSubscribeBox.error
+							? `${"Oops, try again!"}`
+							: unsubscribe
+							? "Unsubscribe"
+							: "Subscribe"}
 					</button>
 				</form>
 			</div>
-			{/* {subscribeStatus.status === "COMPLETE" && (
-				<p className="subscribe--notification">
-					{unsubscribe
-						? "Unsubscribe request sent! To confirm, please click the link in the email."
-						: "Subscribe request sent! To confirm, please click the link in the email."}
-				</p>
-			)} */}
 
 			<p
 				className={`subscribe--notification ${
-					subscribeStatus.status === "ERROR" && "error"
-				} ${subscribeStatus.status === "COMPLETE" && "success"}`}
+					responseFromSubscribeBox.error
+						? "error"
+						: responseFromSubscribeBox.data
+						? "success"
+						: ""
+				}`}
 			>
-				{subscribeStatus.status === "COMPLETE" &&
-					(unsubscribe
-						? "Unsubscribe request sent! To confirm, please click the link in the email."
-						: "Subscribe request sent! To confirm, please click the link in the email.")}
-				{subscribeStatus.status === "ERROR" &&
-					`Error: ${subscribeStatus.errMsg}`}
+				{responseFromSubscribeBox.error?.status === 500
+					? `Server error: ${JSON.stringify(
+							responseFromSubscribeBox.error
+					  )}`
+					: responseFromSubscribeBox.error
+					? `Error: ${responseFromSubscribeBox.error.message}`
+					: responseFromSubscribeBox.data
+					? `${
+							unsubscribe ? "Unsubscribe" : "Subscribe"
+					  } request sent to ${
+							responseFromSubscribeBox.data
+					  }! To confirm, please click the link in the email.`
+					: ""}
 			</p>
 		</>
 	);

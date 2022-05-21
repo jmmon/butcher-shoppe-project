@@ -1,33 +1,30 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./Contact.css";
-
-// import useForm from '../utils/useForm';
-
-// import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 
-// const emailJs = {
-// 	userId: "s_lsMHoKQ1eYJ_my7",
-// 	service_toUs: "service_9s7s7i9",
-// 	service_toThem: "service_x2o8oyf",
-// };
+const contactBoxBackendUri =
+	"https://thenorthportbutchershoppe.com/server/contact";
+// const contactBoxBackendUri = "localhost:3001/server/contact";
+const headers = { "Content-Type": "application/json" };
 
 const Contact = () => {
-	const form = useRef();
+	// const form = useRef();
 	const [input, setInput] = useState({
 		contact__name: "",
 		contact__email: "",
 		contact__textarea: "",
 	});
-	const [sentToUs, setSentToUs] = useState({
-		status: "WAITING",
-		errMsg: null,
+
+	const [responseFromContactBox, setResponseFromContactBox] = useState({
+		data: null,
+		error: null,
+		isLoading: false,
 	});
 
 	let timer = null;
 
-	const handleChange = (e) => {
+	const inputHandleChange = (e) => {
 		setInput((prevInput) => {
 			return {
 				...prevInput,
@@ -36,40 +33,76 @@ const Contact = () => {
 		});
 	};
 
-	const handleSubmit = (e) => {
+	const resetButtonWithSetTimeout = () => {
+		timer = setTimeout(() => {
+			// reset button timer
+			setResponseFromContactBox((prevState) => ({
+				...prevState,
+				data: null,
+				error: null,
+				isLoading: false,
+			}));
+		}, 6000);
+	};
+
+	useEffect(() => {
+		// componentWillUnmount
+		return () => {
+			if (timer) {
+				clearTimeout(timer);
+				// console.log("timer cleared");
+			}
+		};
+	});
+
+	const formHandleSubmit = (e) => {
 		e.preventDefault();
 
-		setSentToUs((prevState) => ({
+		setResponseFromContactBox((prevState) => ({
 			...prevState,
-			status: "PENDING",
-			errMsg: null,
+			isLoading: true,
+			data: null,
+			error: null,
 		}));
 
-		const contactMessageData = {
+		// setSentToUs((prevState) => ({
+		// 	...prevState,
+		// 	status: "PENDING",
+		// 	errMsg: null,
+		// }));
+
+		const dataFromContactBox = {
 			contact__name: input.contact__name,
-			contact__number: (Math.random() * 100000) | 0,
 			contact__email: input.contact__email,
 			contact__textarea: input.contact__textarea,
+			contact__number: (Math.random() * 100000) | 0,
 		};
 
-		console.log("message data:", contactMessageData);
-		console.log("posting axios request");
+		console.log("message data:", dataFromContactBox);
+		console.log("attempt axios post to:", contactBoxBackendUri);
+
 		axios
-			.post(
-				"https://thenorthportbutchershoppe.com/server/contact",
-				contactMessageData,
-				{ headers: { "Content-Type": "text/plain" } }
-			)
+			.post(contactBoxBackendUri, dataFromContactBox, {
+				headers: headers,
+			})
 			.then((res) => {
 				console.log("response status:", res.status);
-				setSentToUs((prevState) => ({
+
+				setResponseFromContactBox((prevState) => ({
 					...prevState,
-					status: "COMPLETE",
-					errMsg: null,
+					data: res.data,
+					error: null,
+					isLoading: false,
 				}));
 
+				// setSentToUs((prevState) => ({
+				// 	...prevState,
+				// 	status: "COMPLETE",
+				// 	errMsg: null,
+				// }));
+
+				// clear input boxes
 				setInput((prevInput) => {
-					// clear input boxes
 					return {
 						...prevInput,
 						contact__name: "",
@@ -77,46 +110,31 @@ const Contact = () => {
 						contact__textarea: "",
 					};
 				});
-
-				resetButtonWithSetTimeout();
 			})
 			.catch((e) => {
-				setSentToUs((prevState) => ({
+				console.log("axios post error:", e);
+
+				setResponseFromContactBox((prevState) => ({
 					...prevState,
-					status: "ERROR",
-					errMsg: e.message,
+					data: null,
+					error: e,
+					isLoading: false,
 				}));
 
+				// setSentToUs((prevState) => ({
+				// 	...prevState,
+				// 	status: "ERROR",
+				// 	errMsg: `Error: ${e.message}`,
+				// }));
+			})
+			.finally(() => {
 				resetButtonWithSetTimeout();
-
-				console.log("axios post error:", e);
 			});
 	};
 
-	const resetButtonWithSetTimeout = () => {
-		timer = setTimeout(() => {
-			// reset button timer
-			setSentToUs((prevState) => ({
-				...prevState,
-				status: "WAITING",
-				errMsg: null,
-			}));
-		}, 6000);
-	};
-
-	useEffect(() => {
-		return () => {
-			// componentWillUnmount
-			if (timer) {
-				clearTimeout(timer);
-				console.log("timer cleared");
-			}
-		};
-	});
-
 	return (
 		<div className="contact">
-			<form className="contact__form" onSubmit={handleSubmit}>
+			<form className="contact__form" onSubmit={formHandleSubmit}>
 				<div className="input__container input__small">
 					<label className="contact__label" htmlFor="contact__name">
 						Name:
@@ -128,7 +146,7 @@ const Contact = () => {
 						name="contact__name"
 						placeholder="Your name"
 						value={input.contact__name}
-						onChange={handleChange}
+						onChange={inputHandleChange}
 						required
 					/>
 				</div>
@@ -144,7 +162,7 @@ const Contact = () => {
 						name="contact__email"
 						placeholder="Your email"
 						value={input.contact__email}
-						onChange={handleChange}
+						onChange={inputHandleChange}
 						required
 					/>
 				</div>
@@ -162,13 +180,35 @@ const Contact = () => {
 						className="contact__input contact__textarea"
 						name="contact__textarea"
 						placeholder="Type here..."
-						onChange={handleChange}
+						onChange={inputHandleChange}
 						value={input.contact__textarea}
 						required
 					/>
 				</div>
 
 				<button
+					type="submit"
+					className={`contact__form__submit btn btn--outline btn--large ${
+						responseFromContactBox.isLoading
+							? "btn--pending"
+							: responseFromContactBox.data
+							? "btn--complete"
+							: responseFromContactBox.error
+							? "btn--error"
+							: ""
+					}`}
+					disabled={responseFromContactBox.isLoading}
+				>
+					{responseFromContactBox.isLoading
+						? "Sending..."
+						: responseFromContactBox.data
+						? "Email Sent!"
+						: responseFromContactBox.error
+						? "Sending Error!"
+						: "Send Email"}
+				</button>
+
+				{/* <button
 					type="submit"
 					className={`contact__form__submit btn btn--outline btn--large ${
 						sentToUs.status === "PENDING"
@@ -188,25 +228,33 @@ const Contact = () => {
 						: sentToUs.status === "ERROR"
 						? "Sending Error!"
 						: "Send Email"}
-				</button>
+				</button> */}
 
 				<p
+					className={`contact__form__notification ${
+						responseFromContactBox.error
+							? "error"
+							: responseFromContactBox.data
+							? "success"
+							: ""
+					}`}
+				>
+					{responseFromContactBox.data
+						? "Message sent! A copy will be sent to your provided email address."
+						: responseFromContactBox.error
+						? `Error: ${responseFromContactBox.error.message}`
+						: ""}
+				</p>
+
+				{/* <p
 					className={`contact__form__notification ${
 						sentToUs.status === "ERROR" && "error"
 					} ${sentToUs.status === "COMPLETE" && "success"}`}
 				>
 					{sentToUs.status === "COMPLETE"
-						? "Message sent!"
+						? "Message sent! A copy will be sent to your provided email address."
 						: sentToUs.errMsg}
-				</p>
-				{/* {sentToUs.status === "COMPLETE" && (
-					
-				)} */}
-				{/* {sentToUs.status === "ERROR" && (
-					<p className="contact__form__notification error">
-						{sentToUs.errMsg}
-					</p>
-				)} */}
+				</p> */}
 			</form>
 		</div>
 	);

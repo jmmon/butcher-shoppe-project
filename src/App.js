@@ -17,31 +17,37 @@ import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 
 function App() {
-	return (
-		<div className="website-container" id="link-destination-top">
-			<Router>
-				<ScrollToTop>
-					<Header />
-					<Navbar simple={true} />
-					<div className="website-content-container">
-						<Routes>
-							<Route
-								path="/newsletter"
-								exact
-								element={<Newsletter />}
-							/>
-							<Route
-								path="/newsletter/unsubscribe"
-								exact
-								element={<Unsubscribe />}
-							/>
-							<Route path="*" element={<ComingSoon />} />
-						</Routes>
-						<Footer simple={true} />
-					</div>
-				</ScrollToTop>
-			</Router>
-			{/* <Router>
+	const api_regex = /^\/api\/.*/;
+	// if using "/api/" in the pathname, don't use React Router
+	if (api_regex.test(window.location.pathname)) {
+		return <div />; // must return at least an empty div
+	} else {
+		// use React Router
+		return (
+			<div className="website-container" id="link-destination-top">
+				<Router>
+					<ScrollToTop>
+						<Header />
+						<Navbar simple={true} />
+						<div className="website-content-container">
+							<Routes>
+								<Route
+									path="/newsletter"
+									exact
+									element={<Newsletter />}
+								/>
+								<Route
+									path="/newsletter/unsubscribe"
+									exact
+									element={<Unsubscribe />}
+								/>
+								<Route path="*" element={<ComingSoon />} />
+							</Routes>
+							<Footer simple={true} />
+						</div>
+					</ScrollToTop>
+				</Router>
+				{/* <Router>
 				<ScrollToTop>
 					<Header />
 					<Navbar />
@@ -94,8 +100,9 @@ function App() {
 					</div>
 				</ScrollToTop>
 			</Router> */}
-		</div>
-	);
+			</div>
+		);
+	}
 }
 
 export default App;
