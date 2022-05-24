@@ -26,7 +26,7 @@ function NewsletterPage() {
 					bgImage={bgImage}
 					smaller={true}
 				/>
-				<div className="newsletter">
+				<section className="newsletter">
 					<div className="newsletter--container panel--shadow">
 						<h2 className="newsletter--heading">
 							Get all our updates delivered straight to your
@@ -70,7 +70,7 @@ function NewsletterPage() {
 							Click here
 						</Button>
 					</div>
-				</div>
+				</section>
 			</main>
 		</>
 	);

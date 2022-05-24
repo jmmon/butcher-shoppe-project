@@ -19,7 +19,7 @@ function NewsletterPage() {
 			</Helmet>
 			<main>
 				<PageTitle heading="UNSUBSCRIBE" bgImage={bgImage} />
-				<div className="newsletter">
+				<section className="newsletter">
 					<div
 						id="unsubscribe"
 						className="newsletter--container panel--shadow"
@@ -44,7 +44,7 @@ function NewsletterPage() {
 							</div>
 						</div>
 					</div>
-				</div>
+				</section>
 			</main>
 		</>
 	);
