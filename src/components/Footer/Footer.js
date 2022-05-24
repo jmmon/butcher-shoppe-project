@@ -16,81 +16,6 @@ const LogoComponentPromise = import("../../assets/logo/LogoComponent.js");
 const LogoComponent = Lazy(() => LogoComponentPromise);
 
 function Footer({ simple = false }) {
-	const [subscribeStatus, setSubscribeStatus] = useState({
-		status: "WAITING",
-		errMsg: null,
-	});
-
-	const [showSubscribeNextStep, setShowSubscribeNextStep] = useState(false);
-
-	let timer = null;
-
-	const resetButtonWithSetTimeout = () => {
-		timer = setTimeout(() => {
-			// reset button timer
-			setSubscribeStatus((prevState) => ({
-				...prevState,
-				status: "WAITING",
-			}));
-		}, 4000);
-	};
-
-	useEffect(() => {
-		return () => {
-			// componentWillUnmount
-			if (timer) {
-				clearTimeout(timer);
-				console.log("timer cleared");
-			}
-		};
-	});
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("handleSubscribe works");
-
-		setSubscribeStatus((prevState) => ({
-			...prevState,
-			status: "PENDING",
-			errMsg: null,
-		}));
-
-		const subscribeData = { email: e.target[0].value };
-		console.log("entered email address:", subscribeData);
-
-		axios
-			.post("http://localhost:3001/subscribe", subscribeData)
-			.then((res) => {
-				console.log("response status:", res.status);
-				if (res.status === 200) {
-					console.log("Success at subscribe email request!");
-				} else if (res.status === 500) {
-					console.log(
-						"Error with sending the subscribe email! Check server for info."
-					);
-				}
-
-				setSubscribeStatus((prevState) => ({
-					...prevState,
-					status: "COMPLETE",
-				}));
-
-				setShowSubscribeNextStep(true);
-
-				resetButtonWithSetTimeout();
-			})
-			.catch((e) => {
-				setSubscribeStatus((prevState) => ({
-					...prevState,
-					status: "ERROR",
-				}));
-
-				resetButtonWithSetTimeout();
-
-				console.log("axios post error:", e);
-			});
-	};
-
 	const { pathname } = useLocation();
 	const scrollToTop = () => {
 		window.scrollTo(0, 0);
@@ -176,12 +101,9 @@ function Footer({ simple = false }) {
             <h2>About Us</h2>
             <Link to='/'>About Us</Link>
             <Link to='/'>Testimonials</Link>
-            <Link to='/'>Careers</Link>
           </div>
           <div className='footer-link-items'>
             <h2>Contact Us</h2>
-            <Link to='/'>Contact</Link>
-            <Link to='/'>Support</Link>
             <Link to='/'>Feedback</Link>
           </div>
         </div> */}
@@ -189,32 +111,27 @@ function Footer({ simple = false }) {
 						<div className="footer-link-items">
 							<h2>Order Forms</h2>
 							<Link to="/beef-form">Beef Order Form</Link>
-							{/* <Link to='/'>Ambassadors</Link>
-            <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link> */}
 						</div>
 						<div className="footer-link-items">
 							<h2>Social Media</h2>
 							<p>Coming soon!</p>
 							{/* <Link to="/">Instagram</Link>
-						<Link to="/">Facebook</Link>
-						<Link to="/">Youtube</Link>
-						<Link to="/">Twitter</Link> */}
+						<Link to="/">Facebook</Link>*/}
 						</div>
 					</div>
 				</section>
 			)}
-
-			<Suspense
-				fallback={
-					<div className="footer--loading-fallback">
-						Loading Banner...
-					</div>
-				}
-			>
-				<LogoComponent fill="white" className="footer-banner" />
-			</Suspense>
-
+			<section>
+				<Suspense
+					fallback={
+						<div className="footer--loading-fallback">
+							Loading Banner...
+						</div>
+					}
+				>
+					<LogoComponent fill="white" className="footer-banner" />
+				</Suspense>
+			</section>
 			<section className="social-media">
 				<div className="social-media-wrap">
 					<div className="footer-logo">
@@ -243,30 +160,30 @@ function Footer({ simple = false }) {
 							>
 								<i className="fab fa-instagram"></i>
 							</Link>
-							<Link
+							{/* <Link
 								className="social-icon-link youtube"
 								to="/"
 								target="_blank"
 								aria-label="Youtube"
 							>
 								<i className="fab fa-youtube"></i>
-							</Link>
-							<Link
+							</Link> */}
+							{/* <Link
 								className="social-icon-link twitter"
 								to="/"
 								target="_blank"
 								aria-label="Twitter"
 							>
 								<i className="fab fa-twitter"></i>
-							</Link>
-							<Link
+							</Link> */}
+							{/* <Link
 								className="social-icon-link linkedin"
 								to="/"
 								target="_blank"
 								aria-label="LinkedIn"
 							>
 								<i className="fab fa-linkedin"></i>
-							</Link>
+							</Link> */}
 						</div>
 					)}
 				</div>

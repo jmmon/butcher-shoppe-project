@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./Header.css";
 
-// import { isMobile } from "react-device-detect";
-
 import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
 
 function HeaderIcon({ icon }) {

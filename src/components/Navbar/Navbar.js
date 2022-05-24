@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-import { ReactComponent as NewLogo } from "../../assets/logo/logo_tiny.svg";
-import Button from "../Button/Button";
+// import { ReactComponent as NewLogo } from "../../assets/logo/logo_tiny.svg";
+import LogoComponent from "../../assets/logo/LogoComponent.js";
 
 function Navbar({ simple }) {
 	const [click, setClick] = useState(false);
@@ -42,7 +42,8 @@ function Navbar({ simple }) {
 						className="navbar-home"
 						onClick={closeMobileMenu}
 					>
-						<NewLogo fill="white" className="nav-logo" />
+						{/* <NewLogo fill="white" className="nav-logo" /> */}
+						<LogoComponent fill="white" className="nav-logo" />
 						{/* <div className="navbar-logo-text">
 							The Butcher Shoppe
 						</div> */}

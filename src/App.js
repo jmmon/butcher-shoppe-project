@@ -12,7 +12,6 @@ import Faq from "./components/_pages/Faq/Faq.js";
 import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
 import NotFound from "./components/_pages/NotFound/NotFound";
 import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
-import SubscribeSuccess from "./components/_pages/SubscribeSuccess";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 

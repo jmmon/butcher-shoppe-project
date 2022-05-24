@@ -3,7 +3,6 @@ import PageTitle from "../../PageTitle/PageTitle";
 import bgImage from "../../../assets/images/image-1-136.jpg";
 import "./Newsletter.css";
 import Subscribe from "../../Subscribe.js/Subscribe";
-import { Link } from "react-router-dom";
 import Button from "../../Button/Button";
 
 import Helmet from "react-helmet";

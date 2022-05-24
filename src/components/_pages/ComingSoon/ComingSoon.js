@@ -1,7 +1,6 @@
 import React from "react";
 import "./ComingSoon.css";
 import HomepageTitle from "../../HomepageTitle/HomepageTitle";
-import Footer from "../../Footer/Footer";
 import Helmet from "react-helmet";
 
 function ComingSoon() {
