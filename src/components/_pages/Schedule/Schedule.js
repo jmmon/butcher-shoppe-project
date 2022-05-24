@@ -10,7 +10,7 @@ function Schedule() {
 	return (
 		<>
 			<PageTitle heading="SCHEDULE" bgImage={bgTitle} />
-			<div className="home--content-container">
+			<div className="grid--column--gap">
 				<div className="panel-container">
 					<div className="schedule__container panel--shadow card">
 						<div className="schedule-item__container">

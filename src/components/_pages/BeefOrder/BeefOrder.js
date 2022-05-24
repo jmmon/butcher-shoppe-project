@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 
 import SelectForm from "./FormComponents/SelectForm";
 import InputForm from "./FormComponents/InputForm";
+import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 
 function OrderFormSectionSubheading({ text }) {
 	return (
@@ -88,13 +89,102 @@ function BeefOrder() {
 				position="50% 50%"
 			/>
 
-			<div className="home--content-container">
+			<WhitePageBackground>
 				<form
-					className="order-form card panel--shadow
-					"
+					className="form--center"
 					onSubmit={handleSubmit(onSubmit)}
 				>
-					<div className="accordion-wrapper card">
+					<article className="order--instructions panel--shadow">
+						<h2 className="center-text">
+							Ready to schedule your order?
+						</h2>
+						<p>
+							Scheduling for our services is easy! Just fill out
+							the information below and sumbit it. Then, we will
+							contact you to finalize the scheduling date and
+							time. After the mobile dispatch, we will give you an
+							estimate for when the meat will be processed and
+							ready for pickup. Finally, come visit us in
+							Northport to pick up your meat!
+						</p>
+						<br />
+						<h3>Steps for ordering:</h3>
+						<ol className="order--steps">
+							<li>
+								<details>
+									<summary>
+										Start with your contact information
+									</summary>
+									<p>
+										The first section is your basic
+										information and your location. Give us
+										contact information we can reach you at,
+										and choose a preference for method of
+										contact. Then enter your location, so we
+										can optimize our route, keeping your
+										costs down and saving you time!
+									</p>
+									<p>
+										Once finished with your contact info,
+										next is the info about each animal you
+										would like processed.
+									</p>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Next, add an animal</summary>
+									<p>
+										Select an aminal for processing, then
+										fill out the cut form for that animal.
+									</p>
+									<h4>
+										Unsure about the cuts you would like?
+									</h4>
+									<p>
+										Check out the default cut selections, or
+										customize the cuts to fit your needs.
+									</p>
+									<p>
+										Do you have more animals you'd like
+										processed? Next you can add additional
+										animals.
+									</p>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>
+										Add any additional animals
+									</summary>
+									<p>
+										You may add multiple animals of the same
+										type or different types. We offer custom
+										cut forms for all the animals you would
+										like processed.
+									</p>
+									<p>
+										Select the cut options, use our default
+										selections, or copy the selections you
+										made for a previous similar animal.
+									</p>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Double-check and submit!</summary>
+									<p>
+										Done filling out the form? Check to make
+										sure all your info is correct, and
+										submit your order using the Submit Order
+										button below the form.
+									</p>
+								</details>
+							</li>
+						</ol>
+					</article>
+
+					<div className="accordion--buttons-wrapper card">
 						<Accordion allowMultiple className="">
 							<AccordionItem
 								titleClassName="card"
@@ -184,12 +274,18 @@ function BeefOrder() {
 												value: "3/4",
 											},
 											{ label: "1", value: "1" },
-											{ label: "1 1/4", value: "1 1/4" },
+											{
+												label: "1 1/4",
+												value: "1 1/4",
+											},
 											{
 												label: "OTHER (List in special instructions)",
 												value: "OTHER",
 											},
-											{ label: "NONE)", value: "NONE" },
+											{
+												label: "NONE)",
+												value: "NONE",
+											},
 										]}
 										register={register}
 									/>
@@ -201,8 +297,14 @@ function BeefOrder() {
 												label: "TWO (Standard)",
 												value: "TWO",
 											},
-											{ label: "THREE", value: "THREE" },
-											{ label: "FOUR", value: "FOUR" },
+											{
+												label: "THREE",
+												value: "THREE",
+											},
+											{
+												label: "FOUR",
+												value: "FOUR",
+											},
 											{
 												label: "OTHER (List in special instructions)",
 												value: "OTHER",
@@ -1104,7 +1206,7 @@ function BeefOrder() {
 						value="Submit Form"
 					/>
 				</form>
-			</div>
+			</WhitePageBackground>
 		</>
 	);
 }

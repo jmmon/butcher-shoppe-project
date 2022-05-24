@@ -24,7 +24,7 @@ function Services() {
 				bgImage={bgTitle}
 				position="50% 40%"
 			/>
-			<div className="home--content-container">
+			<div className="grid--column--gap">
 				<div className="panel-container">
 					<div className="services-btns-container">
 						<Button

@@ -60,7 +60,7 @@ function Faq() {
 				smaller="true"
 			/>
 
-			<div className="home--content-container">
+			<div className="grid--column--gap">
 				<div className="faq card panel--shadow">
 					{/* <div className="faq-container"> */}
 					<FaqSection

@@ -24,10 +24,10 @@ function App() {
 		// use React Router
 		return (
 			<div className="website-container" id="link-destination-top">
-				<Router>
+				{/* <Router>
 					<ScrollToTop>
 						<Header />
-						<Navbar simple={true} />
+						<Navbar />
 						<div className="website-content-container">
 							<Routes>
 								<Route
@@ -42,63 +42,58 @@ function App() {
 								/>
 								<Route path="*" element={<ComingSoon />} />
 							</Routes>
-							<Footer simple={true} />
+							<Footer/>
+						</div>
+					</ScrollToTop>
+				</Router> */}
+				<Router>
+					<ScrollToTop>
+						<Header />
+						<Navbar />
+						<div className="website-content-container">
+							<Routes>
+								<Route path="/" exact element={<Home />} />
+
+								<Route
+									path="/services"
+									exact
+									element={<Services />}
+								/>
+
+								<Route
+									path="/schedule"
+									exact
+									element={<Schedule />}
+								/>
+								<Route path="/faq" exact element={<Faq />} />
+								<Route
+									path="/beef-form"
+									exact
+									element={<BeefOrder />}
+								/>
+								<Route
+									path="/construction"
+									exact
+									element={<ComingSoon />}
+								/>
+								<Route
+									path="/newsletter"
+									exact
+									element={<Newsletter />}
+								/>
+
+								<Route
+									path="/newsletter/unsubscribe"
+									exact
+									element={<Unsubscribe />}
+								/>
+
+								<Route path="*" element={<NotFound />} />
+							</Routes>
+							<Footer />
 						</div>
 					</ScrollToTop>
 				</Router>
-				{/* <Router>
-				<ScrollToTop>
-					<Header />
-					<Navbar />
-					<div className="website-content-container">
-						<Routes>
-							<Route path="/" exact element={<Home />} />
-
-							<Route
-								path="/services"
-								exact
-								element={<Services />}
-							/>
-
-							<Route
-								path="/schedule"
-								exact
-								element={<Schedule />}
-							/>
-							<Route path="/faq" exact element={<Faq />} />
-							<Route
-								path="/beef-form"
-								exact
-								element={<BeefOrder />}
-							/>
-							<Route
-								path="/construction"
-								exact
-								element={<ComingSoon />}
-							/>
-							<Route
-								path="/newsletter"
-								exact
-								element={<Newsletter />}
-							/>
-
-							<Route
-								path="/newsletter/unsubscribe"
-								exact
-								element={<Unsubscribe />}
-							/>
-
-							<Route
-								path="/subscribe/success"
-								exact
-								element={<SubscribeSuccess />}
-							/>
-							<Route path="*" element={<NotFound />} />
-						</Routes>
-						<Footer />
-					</div>
-				</ScrollToTop>
-			</Router> */}
 			</div>
 		);
 	}

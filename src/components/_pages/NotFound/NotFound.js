@@ -5,7 +5,7 @@ function PageNotFound() {
 	return (
 		<>
 			<PageTitle heading="Page Not Found!" />
-			<div className="home--content-container">
+			<div className="grid--column--gap">
 				<div className="panel-container ">
 					<div className="text-wrapper-shadow">
 						<br />

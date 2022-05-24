@@ -1,26 +1,33 @@
-.order-form {
-	width: 80vw;
-	min-width: 420px;
-	margin: 20px auto;
-	padding: 2rem 10px;
+.form--center {
+	width: 96%;
+	max-width: 1000px;
+	min-width: 400px;
+	margin: 0 auto;
+	/* padding: 0 10px; */
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	gap: 40px;
 	justify-content: space-around;
-	background-color: #fff;
-	/* align-items: stretch; */
 }
 
-.accordion-wrapper {
+.order--instructions {
+	padding: 40px;
 	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	font-size: 1.2rem;
+}
+
+.order--steps {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.accordion--buttons-wrapper {
+	display: flex;
+	width: 100%;
 	flex-direction: row;
-	/* justify-content: center; */
-	/* display: grid;
-	grid-template-columns: auto 15%; */
-	/* margin: 2rem 2rem; */
-	width: 60vw;
-	min-width: 400px;
 	border: 1px solid #ccc;
 	background-color: rgba(
 		var(--orange-bg--r),
@@ -328,7 +335,7 @@
 		min-width: 80vw;
 	}
 
-	.home--content-container {
+	.grid--column--gap {
 		padding: 0;
 	}
 

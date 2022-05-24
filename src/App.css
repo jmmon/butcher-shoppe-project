@@ -96,8 +96,6 @@
 
 .card {
 	border-radius: var(--card-border-radius);
-	/* border: 1px solid black; */
-	/* margin: 6rem; */
 }
 
 .white {
@@ -137,6 +135,13 @@
 	/* transform: translateY(-50%); */
 	color: #fff;
 	padding: 2vh 4vw;
+}
+
+.grid--column--gap {
+	padding: 40px 0;
+	display: grid;
+	grid-row-gap: 40px;
+	justify-content: center;
 }
 
 @media screen and (max-width: 960px) {

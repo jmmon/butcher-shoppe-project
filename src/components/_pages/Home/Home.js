@@ -31,7 +31,7 @@ function Home() {
 					title="The Butcher Shoppe"
 					subtitle="Serving Northeast Washington State"
 				/>
-				<div className="home--content-container">
+				<div className="grid--column--gap">
 					{/* <LazyLoad height={370} once offset={200}> */}
 					<Suspense
 						fallback={
