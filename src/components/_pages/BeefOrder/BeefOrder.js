@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import "./BeefOrder.css";
-import PageTitle from "../../PageTitle/PageTitle.js";
-
-import bgImage from "../../../assets/images/image-1-3.jpg";
-
 import { Accordion, AccordionItem } from "react-sanfona";
-import { useEffect } from "react";
-
+import Collapsible from "react-collapsible";
 import { useForm } from "react-hook-form";
+import useFormPersist from "react-hook-form-persist";
 
+import "./BeefOrder.css";
+import bgImage from "../../../assets/images/image-1-3.jpg";
+import PageTitle from "../../PageTitle/PageTitle.js";
 import SelectForm from "./FormComponents/SelectForm";
 import InputForm from "./FormComponents/InputForm";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
+import BeefSection from "./animals/BeefSection";
 
 function OrderFormSectionSubheading({ text }) {
 	return (
@@ -48,16 +47,31 @@ function OrderFormLabelAndSubtext({ text, subtext, name, extra }) {
 }
 
 function BeefOrder() {
-	const { register, handleSubmit } = useForm();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		setValue,
+		formState: { errors },
+	} = useForm({
+		mode: "all",
+	});
+
+	console.log("local storage", window.localStorage.getItem("orderForm"));
+
+	const clearLocalStorage = () => {
+		window.localStorage.removeItem("orderForm");
+		console.log("local storage", window.localStorage.getItem("orderForm"));
+	};
+
+	useFormPersist("orderForm", {
+		watch,
+		setValue,
+		storage: window.localStorage,
+		// exclude: ["special_instructions"],
+	});
 
 	const onSubmit = (data) => console.log(data);
-
-	const [split, setSplit] = useState(false);
-
-	const handleSplit = (e) => {
-		// e.preventDefault();
-		setSplit(!split);
-	};
 
 	const [activeClickedItems, setActiveClickedItems] = useState([]);
 
@@ -79,6 +93,7 @@ function BeefOrder() {
 			activeClickedItems.filter((_, i) => i !== remove)
 		);
 	};
+	console.log("errors", errors);
 
 	return (
 		<>
@@ -90,11 +105,12 @@ function BeefOrder() {
 			/>
 
 			<WhitePageBackground>
+				<button onClick={clearLocalStorage}>Clear</button>
 				<form
 					className="form--center"
 					onSubmit={handleSubmit(onSubmit)}
 				>
-					<article className="order--instructions panel--shadow">
+					<article className="form--instructions panel--shadow">
 						<h2 className="center-text">
 							Ready to schedule your order?
 						</h2>
@@ -109,7 +125,7 @@ function BeefOrder() {
 						</p>
 						<br />
 						<h3>Steps for ordering:</h3>
-						<ol className="order--steps">
+						<ol className="form--steps">
 							<li>
 								<details>
 									<summary>
@@ -183,10 +199,280 @@ function BeefOrder() {
 							</li>
 						</ol>
 					</article>
+					<div className="form--container">
+						<h3 className="form--title">Order Form</h3>
+						<Collapsible trigger="Contact Info">
+							<section className="order-form--section">
+								<div className="order-form--field">
+									<label className="order-form--label">
+										Name
+										<span className="form-required">*</span>
+									</label>
+
+									<InputForm
+										label="First"
+										name="buyer_name_first"
+										placeholder="First name"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your first name",
+											},
+											pattern: {
+												value: /^[a-zA-Z]+$/,
+												message:
+													"Only letters for your name, please",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+
+									<InputForm
+										label="Last"
+										name="buyer_name_last"
+										placeholder="Last name"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your last name",
+											},
+											pattern: {
+												value: /^[a-zA-Z]+$/,
+												message:
+													"Only letters for your name, please",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+								</div>
+
+								<div className="form-field">
+									<label className="order-form--label">
+										Contact
+										<span className="form-required">*</span>
+									</label>
+									<InputForm
+										label="Phone Number"
+										name="buyer_phone_number"
+										placeholder="10 digit phone number"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"A phone number is required",
+											},
+											pattern: {
+												value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+												message:
+													"Please use a valid phone number",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+									<InputForm
+										label="Email Address"
+										name="buyer_email_address"
+										placeholder="Enter your email address"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"An email address is required",
+											},
+											pattern: {
+												value: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
+												message:
+													"Please use a valid email address",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+								</div>
+
+								<div className="order-form--field">
+									<label className="order-form--label">
+										Address
+										<span className="form-required">*</span>
+									</label>
+
+									<InputForm
+										label="Line 1"
+										name="buyer_address_line_1"
+										placeholder="Address Line 1"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your address",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+									<InputForm
+										label="Line 2"
+										name="buyer_address_line_2"
+										placeholder="Address Line 2"
+										register={register}
+										small={true}
+										errors={errors}
+									/>
+
+									<InputForm
+										label="City"
+										name="buyer_address_city"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your city",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+									<InputForm
+										label="State"
+										name="buyer_address_state"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your state",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+
+									<InputForm
+										label="Zip Code"
+										name="buyer_address_zip_code"
+										register={register}
+										required={{
+											required: {
+												value: true,
+												message:
+													"Please enter your zip code",
+											},
+											pattern: {
+												value: /^\d{5}(?:[-\s]\d{4})?$/,
+												message:
+													"Please enter a valid zip code",
+											},
+										}}
+										small={true}
+										errors={errors}
+									/>
+								</div>
+							</section>
+						</Collapsible>
+						<Collapsible trigger="Animal Info">
+							Example layouts:
+							<br />
+							case(no animals):
+							<br />
+							<select>
+								<option value="beef">Beef</option>
+								<option value="lamb">Lamb</option>
+								<option value="hog">Hog</option>
+							</select>
+							<button>Add an animal</button>
+							<br />
+							<br />
+							<hr />
+							<br />
+							case(starting first animal):
+							<br />
+							<select>
+								<option value="beef">Beef</option>
+								<option value="lamb">Lamb</option>
+								<option value="hog">Hog</option>
+							</select>
+							<button>Add another animal</button>
+							<br />
+							<BeefSection
+								register={register}
+								errors={errors}
+								setValue={setValue}
+							/>
+							<br />
+							<br />
+							<hr />
+							<br />
+							case(one animal):
+							<br />
+							<select>
+								<option value="beef">Beef</option>
+								<option value="lamb">Lamb</option>
+								<option value="hog">Hog</option>
+							</select>
+							<button>Add another animal</button>
+							<br />
+							<BeefSection
+								register={register}
+								errors={errors}
+								setValue={setValue}
+							/>
+							<br />
+							<Collapsible trigger="Your Animals">
+								<BeefSection
+									register={register}
+									errors={errors}
+									setValue={setValue}
+								/>
+							</Collapsible>
+							<br />
+							<br />
+							<hr />
+							<br />
+							case(multiple animals):
+							<br />
+							<select>
+								<option value="beef">Beef</option>
+								<option value="lamb">Lamb</option>
+								<option value="hog">Hog</option>
+							</select>
+							<button>Add another animal</button>
+							<br />
+							<Collapsible trigger="Your Animals">
+								<BeefSection
+									register={register}
+									errors={errors}
+									setValue={setValue}
+								/>
+
+								<BeefSection
+									register={register}
+									errors={errors}
+									setValue={setValue}
+								/>
+
+								<BeefSection
+									register={register}
+									errors={errors}
+									setValue={setValue}
+								/>
+							</Collapsible>
+						</Collapsible>
+					</div>
 
 					<div className="accordion--buttons-wrapper card">
 						<Accordion allowMultiple className="">
-							<AccordionItem
+							{/* <AccordionItem
 								titleClassName="card"
 								className="steak-options panel--shadow"
 								key={0}
@@ -201,70 +487,6 @@ function BeefOrder() {
 											"Standard Steaks are Rib, T-Bone, Sirloin, Round, and Flank"
 										}
 									/>
-
-									{/* <div className="order-form--field order-form--field-flex">
-										<label className="order-form--label">
-											Steaks:
-										</label>
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="steak_thickness"
-												className="order-form--label-small"
-											>
-												Thickness
-											</label>
-
-											<select
-												name="steak_thickness"
-												id="steak_thickness"
-												className="order-form--select"
-											>
-												<option value="3/4">
-													3/4" (Standard)
-												</option>
-												<option value="1">1"</option>
-												<option value="1 1/4">
-													1 1/4"
-												</option>
-												<option value="OTHER">
-													OTHER (List in special
-													instructions)
-												</option>
-												<option value="NONE">
-													NONE
-												</option>
-											</select>
-										</div>
-
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="steaks_per_package"
-												className="order-form--label-small"
-											>
-												Number Per Package
-											</label>
-
-											<select
-												name="steaks_per_package"
-												id="steaks_per_package"
-												className="order-form--select"
-											>
-												<option value="TWO">
-													TWO (Standard)
-												</option>
-												<option value="THREE">
-													THREE
-												</option>
-												<option value="FOUR">
-													FOUR
-												</option>
-												<option value="OTHER">
-													OTHER (List in special
-													instructions)
-												</option>
-											</select>
-										</div>
-									</div> */}
 									<SelectForm
 										label="Steak Thickness"
 										name="steak_thickness"
@@ -288,6 +510,7 @@ function BeefOrder() {
 											},
 										]}
 										register={register}
+										errors={errors}
 									/>
 									<SelectForm
 										label="Number of Steaks Per Package"
@@ -311,6 +534,7 @@ function BeefOrder() {
 											},
 										]}
 										register={register}
+										errors={errors}
 									/>
 
 									<div className="order-form--field">
@@ -406,9 +630,9 @@ function BeefOrder() {
 										</select>
 									</div>
 								</section>
-							</AccordionItem>
+							</AccordionItem> */}
 
-							<AccordionItem
+							{/* <AccordionItem
 								titleClassName="card"
 								className="roast-options panel--shadow"
 								key={1}
@@ -557,9 +781,9 @@ function BeefOrder() {
 										></textarea>
 									</div>
 								</section>
-							</AccordionItem>
+							</AccordionItem> */}
 
-							<AccordionItem
+							{/* <AccordionItem
 								titleClassName="card"
 								className="ground-beef-options panel--shadow"
 								key={2}
@@ -680,9 +904,9 @@ function BeefOrder() {
 										</div>
 									</div>
 								</section>
-							</AccordionItem>
+							</AccordionItem> */}
 
-							<AccordionItem
+							{/* <AccordionItem
 								titleClassName="card"
 								className="other-cut-options panel--shadow"
 								key={3}
@@ -762,9 +986,9 @@ function BeefOrder() {
 										</select>
 									</div>
 								</section>
-							</AccordionItem>
+							</AccordionItem> */}
 
-							<AccordionItem
+							{/* <AccordionItem
 								titleClassName="card"
 								className="cow-info panel--shadow"
 								key={4}
@@ -969,7 +1193,7 @@ function BeefOrder() {
 										</div>
 									</section>
 								)}
-							</AccordionItem>
+							</AccordionItem> */}
 
 							<AccordionItem
 								titleClassName="card"
@@ -979,187 +1203,7 @@ function BeefOrder() {
 								expanded={activeClickedItems.includes(5)}
 								onExpand={(e) => onExpand(e, 5)}
 								onClose={(e) => onClose(e, 5)}
-							>
-								<section className="order-form--section">
-									<div className="order-form--field">
-										<label className="order-form--label">
-											Name
-											<span className="form-required">
-												*
-											</span>
-										</label>
-										<InputForm
-											label="First"
-											name="buyer_name_first"
-											type="text"
-											placeholder="First name"
-											register={register}
-											required={{
-												required: true,
-												pattern: /^[a-zA-Z]+$/,
-											}}
-											small={true}
-										/>
-
-										<InputForm
-											label="Last"
-											name="buyer_name_last"
-											type="text"
-											placeholder="Last name"
-											register={register}
-											required={{
-												required: true,
-												pattern: /^[a-zA-Z]+$/,
-											}}
-											small={true}
-										/>
-									</div>
-
-									<div className="order-form--field">
-										<label className="order-form--label">
-											Address
-											<span className="form-required">
-												*
-											</span>
-										</label>
-
-										<div className="order-form--input-container">
-											<label
-												htmlFor="buyer_address_line_1"
-												className="order-form--label-small"
-											>
-												Line 1
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_line_1"
-												name="buyer_address_line_1"
-												placeholder="Line 1"
-											/>
-										</div>
-
-										<div className="order-form--input-container">
-											<label
-												htmlFor="buyer_address_line_2"
-												className="order-form--label-small"
-											>
-												Line 2
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_line_2"
-												name="buyer_address_line_2"
-												placeholder="Line 2"
-											/>
-										</div>
-
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="buyer_address_city"
-												className="order-form--label-small"
-											>
-												City
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_city"
-												name="buyer_address_city"
-												placeholder="City"
-											/>
-										</div>
-
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="buyer_address_state"
-												className="order-form--label-small"
-											>
-												State
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_state"
-												name="buyer_address_state"
-												placeholder="State"
-											/>
-										</div>
-
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="buyer_address_zip"
-												className="order-form--label-small"
-											>
-												Zip Code
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_zip"
-												name="buyer_address_zip"
-												placeholder="Zip Code"
-											/>
-										</div>
-
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="buyer_address_country"
-												className="order-form--label-small"
-											>
-												Country
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_address_country"
-												name="buyer_address_country"
-												placeholder="Country"
-											/>
-										</div>
-									</div>
-									<div className="form-field">
-										<label className="order-form--label">
-											Other Info
-											<span className="form-required">
-												*
-											</span>
-										</label>
-										<div className="order-form--input-container order-form--input-container-small">
-											<label
-												htmlFor="buyer_phone_number"
-												className="order-form--label-small"
-											>
-												Phone Number
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_phone_number"
-												name="buyer_phone_number"
-												placeholder="Phone Number"
-											/>
-										</div>
-
-										<div className="order-form--input-container">
-											<label
-												htmlFor="buyer_email_address"
-												className="order-form--label-small"
-											>
-												Email Address
-											</label>
-											<input
-												type="text"
-												className="order-form--input"
-												id="buyer_email_address"
-												name="buyer_email_address"
-												placeholder="Email Address"
-											/>
-										</div>
-									</div>
-								</section>
-							</AccordionItem>
+							></AccordionItem>
 						</Accordion>
 						<div
 							className={
@@ -1176,22 +1220,7 @@ function BeefOrder() {
 							</span>
 						</div>
 					</div>
-
-					{/* <div className="togglers">
-						{[0, 1, 2, 3, 4, 5].map((item) => {
-							return (
-								<button
-									className="button"
-									onClick={(e) => {
-										toggleActive(e, item);
-									}}
-									key={item}
-								>
-									{`Toggle item ${item} active`}
-								</button>
-							);
-						})}
-					</div> */}
+					{/* end Accordion with button wrapper */}
 
 					<div className="order-form--heading-container">
 						<h3 className="order-form--before-submitting">
@@ -1199,7 +1228,6 @@ function BeefOrder() {
 							Submitting!
 						</h3>
 					</div>
-
 					<input
 						type="submit"
 						className="order-form--submit btn btn--outline btn--large"

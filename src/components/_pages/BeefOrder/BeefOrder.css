@@ -11,7 +11,7 @@
 	justify-content: space-around;
 }
 
-.order--instructions {
+.form--instructions {
 	padding: 40px;
 	display: flex;
 	flex-direction: column;
@@ -19,7 +19,7 @@
 	font-size: 1.2rem;
 }
 
-.order--steps {
+.form--steps {
 	width: 80%;
 	margin: 0 auto;
 }
@@ -275,6 +275,10 @@
 }
 
 .order-form--input-container {
+}
+
+.form--validation-error {
+	color: red;
 }
 
 @media screen and (max-width: 960px) {

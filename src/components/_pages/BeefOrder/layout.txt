@@ -1,0 +1,26 @@
+Layout: 
+
+Order Form container with title {
+	Contact info (collapseable box)
+	Animal(s) (collapseable box) {
+			Add animal button collapseable box{
+					Select type of animal
+					basic animal info
+					Copy Cuts from animal 
+					- (select already-entered animal form)
+					- creates cuts form autofilled from origin form
+			}
+
+			Animals (collapseable box){
+					show list of animal forms
+			}
+	}
+	Order Summary (collapseable box) {
+		types of animals {
+			number of animals
+			Costs?
+		}
+		Total Cost?
+	}
+	Submit Order button
+}
