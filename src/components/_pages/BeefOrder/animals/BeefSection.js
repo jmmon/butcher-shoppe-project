@@ -1,66 +1,201 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
 import CheckboxForm from "../FormComponents/CheckboxForm";
+import FormLabel from "../FormComponents/FormLabel";
 import InputForm from "../FormComponents/InputForm";
 import SelectForm from "../FormComponents/SelectForm";
 
-function OrderFormSectionSubheading({ text }) {
+function OrderFormSectionSubheading({ children }) {
 	return (
 		<div className="order-form--section-subheading-container">
 			<ul className="order-form--section-subheading">
 				{/* <span class="dot" /> */}
-				<li>{text}</li>
+				<li>{children}</li>
 			</ul>
 			<hr />
 		</div>
 	);
 }
 
-function OrderFormLabelAndSubtext({ text, subtext, name, extra }) {
-	return (
-		<label htmlFor={name} className="order-form--label">
-			{text} {extra && <span className="form-special-extra">*</span>}
-			{extra && (
-				<>
-					<br />
-					<span className="form-special-extra">
-						* Additional Fee - See Price List
-					</span>
-				</>
-			)}
-			{subtext && (
-				<>
-					<br />
-					<span className="order-form--label-subtext">{subtext}</span>
-				</>
-			)}
-		</label>
+function BeefSection({ id, deleteAnimal }) {
+	const animalInfo = { id: id, type: "beef" };
+
+	const storage = window.localStorage.getItem("orderForm");
+	const findSplitHalf = "beef_" + id + "_split_half_beef__checkbox";
+
+	const [splitHalf, setSplitHalf] = useState(
+		storage ? JSON.parse(storage)[findSplitHalf] : false
 	);
-}
 
-function BeefSection({ register, errors, setValue }) {
-	const [split, setSplit] = useState(false);
-
-	const handleSplit = (e) => {
-		// e.preventDefault();
-		setSplit(!split);
+	const handleSplitHalf = (e) => {
+		// console.log("event.target", e);
+		setSplitHalf(e.target.checked);
 	};
 
 	return (
-		<Collapsible trigger="Beef Cut Sheet">
+		<Collapsible trigger={`Beef Cut Sheet #${id}`}>
+			{/* TODO: */}
 			<select>
 				<option value="beef">Beef 1</option>
 			</select>
 			<button>Copy from previous added animal</button>
+
+			<button {...animalInfo} onClick={(e) => deleteAnimal(e)}>
+				Delete this beef (should have confirmation just in case)
+			</button>
+			{/* END TODO */}
+
+			<Collapsible trigger="Cow Information">
+				<section className="order-form--section">
+					<div className="order-form--field">
+						<FormLabel>Grower Name</FormLabel>
+						<InputForm
+							name="grower_name_first"
+							placeholder="First name"
+							small={true}
+							animalInfo={animalInfo}
+						>
+							First
+						</InputForm>
+						<InputForm
+							name="grower_name_last"
+							placeholder="Last name"
+							small={true}
+							animalInfo={animalInfo}
+						>
+							Last
+						</InputForm>
+					</div>
+
+					<InputForm
+						name="grower_ear_tag_number"
+						placeholder="Ear tag number"
+						animalInfo={animalInfo}
+					>
+						Ear Tag Number (if applicable)
+					</InputForm>
+
+					<CheckboxForm
+						name="beef-amount"
+						required={true}
+						individual={true}
+						options={[
+							{
+								name: "whole_beef__checkbox",
+								label: "WHOLE BEEF",
+							},
+							{
+								name: "half_beef__checkbox",
+								label: "HALF BEEF",
+							},
+							{
+								name: "hind_quarter_beef__checkbox",
+								label: "HIND QUARTER",
+							},
+							{
+								name: "front_quarter_beef__checkbox",
+								label: "FRONT QUARTER",
+							},
+							{
+								name: "split_half_beef__checkbox",
+								label: "SPLIT HALF *Additional fee-See price list",
+								handleSplitHalf: handleSplitHalf,
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						Choose One
+					</CheckboxForm>
+				</section>
+
+				{splitHalf && (
+					<section
+						className="order-form--section"
+						id="split-half--contact-info"
+					>
+						<div className="order-form--field">
+							<h3 className="order-form--title">Contact Info</h3>
+							<OrderFormSectionSubheading>
+								for the other person, if splitting half
+							</OrderFormSectionSubheading>
+
+							<FormLabel>Name</FormLabel>
+							<InputForm
+								name="split_half_name_first"
+								placeholder="First name"
+								required={
+									splitHalf && {
+										required: {
+											value: true,
+											message:
+												"Please enter the other person's first name",
+										},
+										pattern: {
+											value: /^[a-zA-Z]+$/,
+											message:
+												"Only letters for names, please",
+										},
+									}
+								}
+								small={true}
+								animalInfo={animalInfo}
+							>
+								First
+							</InputForm>
+							<InputForm
+								name="split_half_name_last"
+								placeholder="Last name"
+								required={
+									splitHalf && {
+										required: {
+											value: true,
+											message:
+												"Please enter the other person's last name",
+										},
+										pattern: {
+											value: /^[a-zA-Z]+$/,
+											message:
+												"Only letters for names, please",
+										},
+									}
+								}
+								small={true}
+								animalInfo={animalInfo}
+							>
+								Last
+							</InputForm>
+						</div>
+
+						<InputForm
+							name="split_half_phone"
+							placeholder="10 digit phone number"
+							required={
+								splitHalf && {
+									required: {
+										value: true,
+										message: "A phone number is required",
+									},
+									pattern: {
+										value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+										message:
+											"Please use a valid phone number",
+									},
+								}
+							}
+							small={true}
+						>
+							Phone Number
+						</InputForm>
+					</section>
+				)}
+			</Collapsible>
 			<Collapsible trigger="Steak Options">
 				<section className="order-form--section">
-					<OrderFormSectionSubheading
-						text={
-							"Standard Steaks are Rib, T-Bone, Sirloin, Round, and Flank"
-						}
-					/>
+					<OrderFormSectionSubheading>
+						Standard Steaks are Rib, T-Bone, Sirloin, Round, and
+						Flank
+					</OrderFormSectionSubheading>
 					<SelectForm
-						label="Steak Thickness"
 						name="steak_thickness"
 						options={[
 							{
@@ -81,11 +216,11 @@ function BeefSection({ register, errors, setValue }) {
 								value: "NONE",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Steak Thickness
+					</SelectForm>
 					<SelectForm
-						label="Number of Steaks Per Package"
 						name="steaks_per_package"
 						options={[
 							{
@@ -105,12 +240,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "OTHER",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Number of Steaks Per Package
+					</SelectForm>
 
 					<SelectForm
-						label="Tenderized Round Steaks"
 						name="tenderized_round_steaks"
 						subtext="Steaks are run through the cuber
 					(similar to pounding them)"
@@ -129,12 +264,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "ALL",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Tenderized Round Steaks
+					</SelectForm>
 
 					<SelectForm
-						label="Other Round Steak Options"
 						name="round_steaks_extra"
 						subtext="Round steaks can also be put
 					into hamburger, made into roasts
@@ -162,12 +297,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "ROASTS",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Other Round Steak Options
+					</SelectForm>
 
 					<SelectForm
-						label="Tenderloin"
 						name="tenderloin_extra"
 						subtext={`The eye of the loin taken out
 					separately from the T-Bone and
@@ -188,12 +323,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "ROASTS",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Tenderloin
+					</SelectForm>
 
 					<SelectForm
-						label="Flank Steak"
 						name="flank_steak"
 						subtext={`One flank steak per
 					half-lengthwise grain-sliced and
@@ -209,21 +344,20 @@ function BeefSection({ register, errors, setValue }) {
 								value: "NO",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Flank Steak
+					</SelectForm>
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Roast Options">
 				<section className="order-form--section">
-					<OrderFormSectionSubheading
-						text={
-							"Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin Tip and, Heel of Round"
-						}
-					/>
+					<OrderFormSectionSubheading>
+						Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin
+						Tip and, Heel of Round
+					</OrderFormSectionSubheading>
 
 					<SelectForm
-						label="Roast Size"
 						name="roast_size"
 						subtext="We suggest a 3-4# roast
 						for a family of 2-4"
@@ -242,12 +376,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "NONE",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Roast Size
+					</SelectForm>
 
 					<SelectForm
-						label="Boneless Roasts"
 						name="roast_boneless"
 						subtext="5-7 of the better
 						roasts per half beef are boned,
@@ -262,11 +396,11 @@ function BeefSection({ register, errors, setValue }) {
 							},
 							{ label: "YES", value: "YES" },
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Boneless Roasts
+					</SelectForm>
 					<SelectForm
-						label="Rib Options"
 						name="rib_options"
 						options={[
 							{
@@ -282,12 +416,12 @@ function BeefSection({ register, errors, setValue }) {
 								value: "HALF ROASTS HALF STEAKS",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Rib Options
+					</SelectForm>
 
 					<SelectForm
-						label="Chuck Options"
 						name="chuck_options"
 						options={[
 							{
@@ -307,408 +441,183 @@ function BeefSection({ register, errors, setValue }) {
 								value: "GRIND",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Chuck Options
+					</SelectForm>
 
 					<CheckboxForm
-						label="Remove Bone Dust"
-						fieldName="remove_bone_dust"
+						name="remove_bone_dust"
 						subtext="Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks"
 						extra
 						options={[
 							{
 								name: "remove_bone_dust__checkbox",
-								value: "YES Remove Bone Dust",
+								label: "YES Remove Bone Dust",
 							},
 						]}
-						register={register}
-						errors={errors}
-					/>
+						animalInfo={animalInfo}
+					>
+						Remove Bone Dust
+					</CheckboxForm>
 
 					<InputForm
-						textarea={true}
-						label="SPECIAL INSTRUCTIONS"
 						name="special_instructions"
 						placeholder="Enter special instructions for certain options here"
-						errors={errors}
-						setValue={setValue}
+						animalInfo={animalInfo}
+						textarea={true}
+
 						// setValue because plain register seems to block text from being entered for some reason
-					/>
+					>
+						SPECIAL INSTRUCTIONS
+					</InputForm>
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Ground Beef Options">
 				<section className="order-form--section">
-					<OrderFormSectionSubheading
-						text={"Choose your ground beef options"}
-					/>
-					<div className="order-form--field">
-						<label
-							htmlFor="ground_beef_package_size"
-							className="order-form--label"
-						>
-							Ground Beef Package Size
-						</label>
+					<OrderFormSectionSubheading>
+						Choose your ground beef options
+					</OrderFormSectionSubheading>
 
-						<select
-							name="ground_beef_package_size"
-							id="ground_beef_package_size"
-							className="order-form--select"
-						>
-							<option value="1 1/2#">1 1/2#</option>
-							<option value="2#">2#</option>
-							<option value="1# *Additional fee - See Price List">
-								1# *Additional fee - See Price List
-							</option>
-						</select>
-					</div>
+					<SelectForm
+						name="ground_beef_package_size"
+						options={[
+							{
+								label: "1 1/2#",
+								value: "1 1/2#",
+							},
+							{
+								label: "2#",
+								value: "2#",
+							},
+							{
+								label: "1# *Additional fee - See Price List",
+								value: "1# *Additional fee - See Price List",
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						Ground Beef Package Size
+					</SelectForm>
 
-					<div className="order-form--field">
-						<OrderFormLabelAndSubtext
-							name="ground_beef_pattiest"
-							text="Ground Beef Patties"
-							subtext="1/4# patties,
-											30# minimum"
-							extra
-						/>
+					<SelectForm
+						name="ground_beef_patties"
+						subtext="1/4# patties, 30# minimum"
+						extra
+						options={[
+							{
+								label: "NO",
+								value: "NO",
+							},
+							{
+								label: "4 patties per pkg",
+								value: "4 patties per pkg",
+							},
+							{
+								label: "5 patties per pkg",
+								value: "5 patties per pkg",
+							},
+							{
+								label: "6 patties per pkg",
+								value: "6 patties per pkg",
+							},
+							{
+								label: "7 patties per pkg",
+								value: "7 patties per pkg",
+							},
+							{
+								label: "8 patties per pkg",
+								value: "8 patties per pkg",
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						Ground Beef Patties
+					</SelectForm>
 
-						<select
-							name="ground_beef_patties"
-							id="ground_beef_patties"
-							className="order-form--select"
-						>
-							<option value="NO">NO</option>
-							<option value="4 patties per pkg">
-								4 patties per pkg
-							</option>
-							<option value="5 patties per pkg">
-								5 patties per pkg
-							</option>
-							<option value="6 patties per pkg">
-								6 patties per pkg
-							</option>
-							<option value="7 patties per pkg">
-								7 patties per pkg
-							</option>
-							<option value="8 patties per pkg">
-								8 patties per pkg
-							</option>
-						</select>
-					</div>
-
-					<div className="order-form--field">
-						<label
-							htmlFor="beef-extras"
-							className="order-form--label"
-						>
-							EXTRAS
-						</label>
-
-						<div className="order-form--checkbox-container">
-							<input
-								className="order-form--checkbox"
-								type="checkbox"
-								id="extras_liver__checkbox"
-								name="extras_liver__checkbox"
-							/>
-							<label htmlFor="extras_liver__checkbox">
-								LIVER
-							</label>
-
-							<input
-								className="order-form--checkbox"
-								type="checkbox"
-								id="extras_heart__checkbox"
-								name="extras_heart__checkbox"
-							/>
-							<label htmlFor="extras_heart__checkbox">
-								HEART
-							</label>
-
-							<input
-								className="order-form--checkbox"
-								type="checkbox"
-								id="extras_tongue__checkbox"
-								name="extras_tongue__checkbox"
-							/>
-							<label htmlFor="extras_tongue__checkbox">
-								TONGUE
-							</label>
-
-							<input
-								className="order-form--checkbox"
-								type="checkbox"
-								id="extras_oxtail__checkbox"
-								name="extras_oxtail__checkbox"
-							/>
-							<label htmlFor="extras_oxtail__checkbox">
-								OXTAIL
-							</label>
-						</div>
-					</div>
+					<CheckboxForm
+						name="beef-extras"
+						options={[
+							{
+								name: "extras_liver__checkbox",
+								label: "LIVER",
+							},
+							{
+								name: "extras_heart__checkbox",
+								label: "HEART",
+							},
+							{
+								name: "extras_tongue__checkbox",
+								label: "TONGUE",
+							},
+							{
+								name: "extras_oxtail__checkbox",
+								label: "OXTAIL",
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						EXTRAS
+					</CheckboxForm>
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">
 				<section className="order-form--section">
-					<OrderFormSectionSubheading
-						text={"More options for your cuts"}
-					/>
+					<OrderFormSectionSubheading>
+						More options for your cuts
+					</OrderFormSectionSubheading>
 
-					<div className="order-form--field">
-						<label
-							htmlFor="boneless_stew_meat"
-							className="order-form--label"
-						>
-							Boneless Stew Meat
-						</label>
-
-						<select
-							name="boneless_stew_meat"
-							id="boneless_stew_meat"
-							className="order-form--select"
-						>
-							<option value="YES (standard is 6-8 packages)">
-								YES (standard is 6-8 packages)
-							</option>
-							<option value="NO (meat goes into hamburger)">
-								NO (meat goes into hamburger)
-							</option>
-						</select>
-					</div>
-
-					<div className="order-form--field">
-						<label
-							htmlFor="soup_bones"
-							className="order-form--label"
-						>
-							Soup Bones
-						</label>
-
-						<select
-							name="soup_bones"
-							id="soup_bones"
-							className="order-form--select"
-						>
-							<option value="YES (standard is 4-5 packages)">
-								YES (standard is 4-5 packages)
-							</option>
-							<option value="NO (meat goes into hamburger)">
-								NO (meat goes into hamburger)
-							</option>
-						</select>
-					</div>
-
-					<div className="order-form--field">
-						<label
-							htmlFor="short_ribs"
-							className="order-form--label"
-						>
-							Short Ribs
-						</label>
-
-						<select
-							name="short_ribs"
-							id="short_ribs"
-							className="order-form--select"
-						>
-							<option value="YES (standard is 4-5 packages)">
-								YES (standard is 4-5 packages)
-							</option>
-							<option value="NO (meat goes into hamburger)">
-								NO (meat goes into hamburger)
-							</option>
-						</select>
-					</div>
-				</section>
-			</Collapsible>
-			<Collapsible trigger="Cow Information">
-				<section className="order-form--section">
-					<div className="order-form--field">
-						<label className="order-form--label">Grower Name</label>
-
-						<div className="order-form--input-container order-form--input-container-small">
-							<label
-								htmlFor="grower_name_first"
-								className="order-form--label-small"
-							>
-								First
-							</label>
-							<input
-								type="text"
-								className="order-form--input"
-								id="grower_name_first"
-								name="grower_name_first"
-								placeholder="First name"
-							/>
-						</div>
-
-						<div className="order-form--input-container order-form--input-container-small">
-							<label
-								htmlFor="grower_name_last"
-								className="order-form--label-small"
-							>
-								Last
-							</label>
-							<input
-								type="text"
-								className="order-form--input"
-								id="grower_name_last"
-								name="grower_name_last"
-								placeholder="Last name"
-							/>
-						</div>
-					</div>
-
-					<div className="order-form--field">
-						<label className="order-form--label">
-							Ear Tag Number (if applicable)
-						</label>
-
-						<input
-							type="text"
-							className="order-form--input"
-							id="ear_tag_number"
-							name="ear_tag_number"
-							placeholder="Ear tag number"
-						/>
-					</div>
-
-					<div className="order-form--field">
-						<label
-							htmlFor="beef-amount"
-							className="order-form--label"
-						>
-							Choose Any
-							<span className="form-required">*</span>
-						</label>
-						<div className="order-form--checkbox-wrapper">
-							<div className="order-form--checkbox-container">
-								<input
-									className="order-form--checkbox"
-									type="checkbox"
-									id="beef_whole__checkbox"
-									name="beef_whole__checkbox"
-								/>
-								<label htmlFor="beef_whole__checkbox">
-									WHOLE BEEF
-								</label>
-							</div>
-
-							<div className="order-form--checkbox-container">
-								<input
-									className="order-form--checkbox"
-									type="checkbox"
-									id="beef_half__checkbox"
-									name="beef_half__checkbox"
-								/>
-								<label htmlFor="beef_half__checkbox">
-									HALF BEEF
-								</label>
-							</div>
-
-							<div className="order-form--checkbox-container">
-								<input
-									className="order-form--checkbox"
-									type="checkbox"
-									id="hind_quarter__checkbox"
-									name="hind_quarter__checkbox"
-								/>
-								<label htmlFor="hind_quarter__checkbox">
-									HIND QUARTER
-								</label>
-							</div>
-
-							<div className="order-form--checkbox-container">
-								<input
-									className="order-form--checkbox"
-									type="checkbox"
-									id="front_quarter__checkbox"
-									name="front_quarter__checkbox"
-								/>
-								<label htmlFor="front_quarter__checkbox">
-									FRONT QUARTER
-								</label>
-							</div>
-
-							<div className="order-form--checkbox-container">
-								<input
-									className="order-form--checkbox"
-									type="checkbox"
-									id="split_half__checkbox"
-									name="split_half__checkbox"
-									value={split}
-									// checked={split}
-									onChange={handleSplit}
-								/>
-								<label htmlFor="split_half__checkbox">
-									SPLIT HALF *Additional fee-See price list
-								</label>
-							</div>
-						</div>
-					</div>
-				</section>
-				{split && (
-					<section
-						className="order-form--section"
-						id="split-half--contact-info"
+					<SelectForm
+						name="boneless_stew_meat"
+						options={[
+							{
+								label: "YES (standard is 6-8 packages)",
+								value: "YES (standard is 6-8 packages)",
+							},
+							{
+								label: "NO (meat goes into hamburger)",
+								value: "NO (meat goes into hamburger)",
+							},
+						]}
+						animalInfo={animalInfo}
 					>
-						<div className="order-form--field">
-							<h3 className="order-form--title">Contact Info</h3>
-							<OrderFormSectionSubheading text="for the other person, if splitting half" />
+						Boneless Stew Meat
+					</SelectForm>
 
-							<label className="order-form--label">Name</label>
+					<SelectForm
+						name="soup_bones"
+						options={[
+							{
+								label: "YES (standard is 4-5 packages)",
+								value: "YES (standard is 4-5 packages)",
+							},
+							{
+								label: "NO (meat goes into hamburger)",
+								value: "NO (meat goes into hamburger)",
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						Soup Bones
+					</SelectForm>
 
-							<div className="order-form--input-container order-form--input-container-small">
-								<label
-									htmlFor="split_half_first"
-									className="order-form--label-small"
-								>
-									First
-								</label>
-								<input
-									type="text"
-									className="order-form--input"
-									id="split_half_first"
-									name="split_half_first"
-									placeholder="First name"
-								/>
-							</div>
-
-							<div className="order-form--input-container order-form--input-container-small">
-								<label
-									htmlFor="split_half_last"
-									className="order-form--label-small"
-								>
-									Last
-								</label>
-								<input
-									type="text"
-									className="order-form--input"
-									id="split_half_last"
-									name="split_half_last"
-									placeholder="Last name"
-								/>
-							</div>
-						</div>
-
-						<div className="order-form--field">
-							<label
-								htmlFor="split_half_phone"
-								className="order-form--label"
-							>
-								Phone Number
-							</label>
-
-							<input
-								type="text"
-								className="order-form--input"
-								id="split_half_phone"
-								name="split_half_phone"
-								placeholder="Phone number"
-							/>
-						</div>
-					</section>
-				)}
+					<SelectForm
+						name="short_ribs"
+						options={[
+							{
+								label: "YES (standard is 4-5 packages)",
+								value: "YES (standard is 4-5 packages)",
+							},
+							{
+								label: "NO (meat goes into hamburger)",
+								value: "NO (meat goes into hamburger)",
+							},
+						]}
+						animalInfo={animalInfo}
+					>
+						Short Ribs
+					</SelectForm>
+				</section>
 			</Collapsible>
 		</Collapsible>
 	);

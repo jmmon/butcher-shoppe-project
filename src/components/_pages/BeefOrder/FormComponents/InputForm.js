@@ -1,44 +1,51 @@
 import React from "react";
+import InputLabel from "./InputLabel";
+import { useFormContext } from "react-hook-form";
 
 const InputForm = ({
-	label,
+	children,
 	name,
 	placeholder,
-	register,
 	required,
 	small,
-	errors,
 	textarea,
-	setValue,
+	animalInfo,
 }) => {
+	const {
+		register,
+		formState: { errors },
+	} = useFormContext();
+
+	if (animalInfo) {
+		const { id, type } = animalInfo;
+		name = id ? `${id}_${name}` : name; // prepend animal number (id)
+		name = type ? `${type}_${name}` : name; // prepend animalType
+	}
+
+	const inputAttributes = {
+		name: name,
+		id: name,
+		placeholder: placeholder || children,
+	};
+
 	return (
 		<div
-			className={
-				small
-					? "order-form--input-container order-form--input-container-small"
-					: "order-form--input-container"
-			}
+			className={`order-form--input-container${
+				small ? " order-form--input-container-small" : ""
+			}`}
 		>
-			<label
-				htmlFor={name}
-				className={
-					small ? "order-form--label-small" : "order-form--label"
-				}
-			>
-				{label}
-			</label>
+			<InputLabel name={name} small={small}>
+				{children}
+			</InputLabel>
 			<span className="form--validation-error">
 				{" "}
 				{errors?.[name] && `(${errors[name].message})`}
 			</span>
 			{textarea ? (
 				<textarea
-					onChange={(e) => setValue(name, e.target.value)}
-					// {...register(name)}
-					name={name}
-					id={name}
+					{...register(name)}
 					className="order-form--textarea"
-					placeholder={placeholder || ""}
+					{...inputAttributes}
 				/>
 			) : (
 				<input
@@ -49,11 +56,9 @@ const InputForm = ({
 							pattern: required.pattern,
 						}
 					)}
-					name={name}
-					id={name}
-					className="order-form--input"
 					type="text"
-					placeholder={placeholder || label}
+					className="order-form--input"
+					{...inputAttributes}
 				/>
 			)}
 		</div>

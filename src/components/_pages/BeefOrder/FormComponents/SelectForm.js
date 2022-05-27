@@ -1,39 +1,32 @@
 import React from "react";
+import InputLabel from "./InputLabel";
+import { useFormContext } from "react-hook-form";
 
 function Option({ label, value }) {
 	return <option key={value}>{label}</option>;
 }
 
-function SelectForm({
-	label,
-	name,
-	options,
-	subtext,
-	extra,
-	register,
-	errors,
-}) {
-	//options == array of {value, text} objects
-	let allOptions = options.map((option) => {
-		return Option({ label: option.label, value: option.value });
+function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
+	const {
+		register,
+		formState: { errors },
+	} = useFormContext();
+
+	if (animalInfo) {
+		const { id, type } = animalInfo;
+		name = id ? `${id}_${name}` : name; // prepend animal number (id)
+		name = type ? `${type}_${name}` : name; // prepend animalType
+	}
+
+	let allOptions = options.map(({ label, value }) => {
+		return Option({ label, value });
 	});
 
 	return (
 		<div className="order-form--field">
-			<label htmlFor={name} className="order-form--label">
-				{label}
-				{extra && (
-					<>
-						<span className="form-special-extra">
-							*
-							<br />* Additional Fee - See Price List
-						</span>
-					</>
-				)}
-				{subtext && (
-					<p className="order-form--label-subtext">{subtext}</p>
-				)}
-			</label>
+			<InputLabel name={name} extra={extra} subtext={subtext}>
+				{children}
+			</InputLabel>
 			<span className="form--validation-error">
 				{" "}
 				{errors?.[name] && `(${errors[name].message})`}
