@@ -1,6 +1,8 @@
 import React from "react";
-import InputLabel from "./InputLabel";
 import { useFormContext } from "react-hook-form";
+import LabelInput from "./LabelInput";
+import FormErrors from "./FormErrors";
+import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 function Option({ label, value }) {
 	return <option key={value}>{label}</option>;
@@ -13,10 +15,14 @@ function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
 	} = useFormContext();
 
 	if (animalInfo) {
-		const { id, type } = animalInfo;
-		name = id ? `${id}_${name}` : name; // prepend animal number (id)
-		name = type ? `${type}_${name}` : name; // prepend animalType
+		name = splitAnimalInfo(name, animalInfo);
 	}
+
+	// if (animalInfo) {
+	// 	const { id, animal } = animalInfo;
+	// 	name = id ? `${id}_${name}` : name; // prepend animal number (id)
+	// 	name = animal ? `${animal}_${name}` : name; // prepend animalType
+	// }
 
 	let allOptions = options.map(({ label, value }) => {
 		return Option({ label, value });
@@ -24,13 +30,13 @@ function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
 
 	return (
 		<div className="order-form--field">
-			<InputLabel name={name} extra={extra} subtext={subtext}>
-				{children}
-			</InputLabel>
-			<span className="form--validation-error">
-				{" "}
-				{errors?.[name] && `(${errors[name].message})`}
-			</span>
+			<LabelInput
+				name={name}
+				extra={extra}
+				subtext={subtext}
+				title={children}
+			/>
+			<FormErrors name={name} />
 			<select
 				{...register(name)}
 				name={name}

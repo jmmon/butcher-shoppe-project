@@ -2,7 +2,7 @@ import React from "react";
 import Collapsible from "react-collapsible";
 
 function LambSection({ id, deleteAnimal }) {
-	const animalInfo = { id: id, type: "lamb" };
+	const animalInfo = { id: id, animal: "lamb" };
 	return (
 		<Collapsible trigger={`Lamb Cut Sheet #${id}`}>
 			<p>Form for lamb goes here!</p>

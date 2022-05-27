@@ -1,6 +1,8 @@
 import React from "react";
-import InputLabel from "./InputLabel";
+import LabelInput from "./LabelInput";
 import { useFormContext } from "react-hook-form";
+import FormErrors from "./FormErrors";
+import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const InputForm = ({
 	children,
@@ -17,10 +19,14 @@ const InputForm = ({
 	} = useFormContext();
 
 	if (animalInfo) {
-		const { id, type } = animalInfo;
-		name = id ? `${id}_${name}` : name; // prepend animal number (id)
-		name = type ? `${type}_${name}` : name; // prepend animalType
+		name = splitAnimalInfo(name, animalInfo);
 	}
+
+	// if (animalInfo) {
+	// 	const { id, animal } = animalInfo;
+	// 	name = id ? `${id}_${name}` : name; // prepend animal number (id)
+	// 	name = animal ? `${animal}_${name}` : name; // prepend animalType
+	// }
 
 	const inputAttributes = {
 		name: name,
@@ -34,13 +40,8 @@ const InputForm = ({
 				small ? " order-form--input-container-small" : ""
 			}`}
 		>
-			<InputLabel name={name} small={small}>
-				{children}
-			</InputLabel>
-			<span className="form--validation-error">
-				{" "}
-				{errors?.[name] && `(${errors[name].message})`}
-			</span>
+			<LabelInput name={name} small={small} title={children} />
+			<FormErrors name={name} />
 			{textarea ? (
 				<textarea
 					{...register(name)}

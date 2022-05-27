@@ -2,7 +2,7 @@ import React from "react";
 import Collapsible from "react-collapsible";
 
 function HogSection({ id, deleteAnimal }) {
-	const animalInfo = { id: id, type: "lamb" };
+	const animalInfo = { id: id, animal: "lamb" };
 	return (
 		<Collapsible trigger={`Hog Cut Sheet #${id}`}>
 			<p>Form for hog goes here!</p>

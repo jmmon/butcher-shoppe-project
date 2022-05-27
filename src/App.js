@@ -9,7 +9,7 @@ import Home from "./components/_pages/Home/Home.js";
 import Services from "./components/_pages/Services/Services.js";
 import Schedule from "./components/_pages/Schedule/Schedule.js";
 import Faq from "./components/_pages/Faq/Faq.js";
-import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
+import OrderPage from "./components/_pages/OrderPage/OrderPage.js";
 import NotFound from "./components/_pages/NotFound/NotFound";
 import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
@@ -67,9 +67,9 @@ function App() {
 								/>
 								<Route path="/faq" exact element={<Faq />} />
 								<Route
-									path="/beef-form"
+									path="/order"
 									exact
-									element={<BeefOrder />}
+									element={<OrderPage />}
 								/>
 								<Route
 									path="/construction"

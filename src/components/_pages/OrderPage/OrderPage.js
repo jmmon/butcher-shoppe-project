@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from "react";
-// import { Accordion, AccordionItem } from "react-sanfona";
 import Collapsible from "react-collapsible";
 import { useForm, FormProvider } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";
 
-import "./BeefOrder.css";
+import "./OrderPage.css";
 import bgImage from "../../../assets/images/image-1-3.jpg";
 import PageTitle from "../../PageTitle/PageTitle.js";
-// import SelectForm from "./FormComponents/SelectForm";
 import InputForm from "./FormComponents/InputForm";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import BeefSection from "./animals/BeefSection";
-import FormLabel from "./FormComponents/FormLabel";
+import LabelForm from "./FormComponents/LabelForm";
 import LambSection from "./animals/LambSection";
 import HogSection from "./animals/HogSection";
 
-function BeefOrder() {
+function OrderPage() {
 	const methods = useForm({
 		mode: "all",
 	});
@@ -93,27 +91,33 @@ function BeefOrder() {
 		console.log(`Next id for the new animal will be: ${newAnimalId}`);
 
 		chosenAnimalType_IdArray.push(newAnimalId);
-		console.log(
-			`Old collection of animals: ${idCollectionOfAnimalsByType}`
+
+		testingDisplayObjOfArrs(
+			idCollectionOfAnimalsByType,
+			"`Old collection of animals: "
 		);
+
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,
-			beef: [...chosenAnimalType_IdArray],
+			[newAnimalChosenType]: [...chosenAnimalType_IdArray],
 		});
 	};
 
-	useEffect(() => {
-		console.log("(useEffect) updated collection of animals:");
-		console.log(idCollectionOfAnimalsByType);
-	}, [idCollectionOfAnimalsByType]);
+	const testingDisplayObjOfArrs = (obj, msg) => {
+		console.log(
+			`${msg} ${Object.keys(obj).forEach((arr) =>
+				obj[arr].forEach((item) => console.log(`${arr} - ${item}`))
+			)}`
+		);
+	};
 
 	const deleteAnimal = (e) => {
 		e.preventDefault();
 		console.log(`Deleting animal from button ${e.target}`);
-		const typeOfAnimal = e.target.type;
-		const idOfAnimal = e.target.id;
+		const typeOfAnimal = e.target.getAttribute("animal");
+		const idOfAnimal = e.target.getAttribute("id");
 
-		console.log("type:", typeOfAnimal, "\nId:", idOfAnimal);
+		console.log("animal:", typeOfAnimal, "\nId:", idOfAnimal);
 
 		let chosenAnimalType_IdArray =
 			idCollectionOfAnimalsByType[typeOfAnimal];
@@ -127,83 +131,29 @@ function BeefOrder() {
 		console.log(
 			`NEW ID array after removing the ID: ${chosenAnimalType_IdArray}`
 		);
-
-		console.log(
-			`Old collection of animals: ${idCollectionOfAnimalsByType}`
+		testingDisplayObjOfArrs(
+			idCollectionOfAnimalsByType,
+			"`Old collection of animals: "
 		);
+
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,
-			beef: [...chosenAnimalType_IdArray],
+			[typeOfAnimal]: [...chosenAnimalType_IdArray],
 		});
 
 		//delete first beef
 		//indexOf(idToDelete); splice it out or whatever
 	};
 
-	/*
+	useEffect(() => {
+		testingDisplayObjOfArrs(
+			idCollectionOfAnimalsByType,
+			"(useEffect) updated collection of animals: "
+		);
+		// console.log("(useEffect) updated collection of animals:");
+		// console.log(idCollectionOfAnimalsByType);
+	}, [idCollectionOfAnimalsByType]);
 
-	//Add an aminal:
-	//push new "animal" onto array of proper animal
-	//create new form from that animal
-
-	//initial state
-	animalIds = { 
-		beef: [],
-		lamb: [],
-		hog: [],
-	}
-
-	//add a beef
-	idOfLastSpotInArray = [beef].length == 0 
-		? 0 
-		: [beef][[beef].length-1];
-
-	newAnimalId = idOfLastSpotInArray + 1;
-
-	animalIds = { 
-		beef: [1],
-		lamb: [],
-		hog: [],
-	}
-
- 	//add another beef
-	idOfLastSpotInArray = [beef].length == 0 
-		? 0 
-		: [beef][[beef].length-1]; <== [beef][0] == 1 == id
-
-	newAnimalId = idOfLastSpotInArray + 1; <== 1+1==2
-
-	animalIds = {
-		beef: [1, 2],
-		lamb: [],
-		hog: [],
-	}
-
-	//delete first beef
-	indexOf(idToDelete); splice it out or whatever
-
-	animalIds = { 
-		beef: [2],
-		lamb: [],
-		hog: [],
-	}
-
-
- 	//add another beef
-	idOfLastSpotInArray = [beef].length == 0 
-		? 0 
-		: [beef][[beef].length-1]; <== [beef][0] == 2 == id
-
-	newAnimalId = idOfLastSpotInArray + 1; <== 2+1==3
-
-	animalIds = {
-		beef: [2, 3],
-		lamb: [],
-		hog: [],
-	}
-
-
-*/
 	return (
 		<>
 			<PageTitle
@@ -321,9 +271,10 @@ function BeefOrder() {
 							<Collapsible trigger="Contact Info">
 								<section className="order-form--section">
 									<div className="order-form--field">
-										<FormLabel required={true}>
-											Name
-										</FormLabel>
+										<LabelForm
+											required={true}
+											title="Name"
+										/>
 
 										<InputForm
 											name="buyer_name_first"
@@ -367,9 +318,10 @@ function BeefOrder() {
 									</div>
 
 									<div className="form-field">
-										<FormLabel required={true}>
-											Contact
-										</FormLabel>
+										<LabelForm
+											required={true}
+											title="Contact"
+										/>
 
 										<InputForm
 											name="buyer_phone_number"
@@ -412,9 +364,10 @@ function BeefOrder() {
 									</div>
 
 									<div className="order-form--field">
-										<FormLabel required={true}>
-											Address
-										</FormLabel>
+										<LabelForm
+											required={true}
+											title="Address"
+										/>
 
 										<InputForm
 											name="buyer_address_line_1"
@@ -577,4 +530,4 @@ function BeefOrder() {
 	);
 }
 
-export default BeefOrder;
+export default OrderPage;

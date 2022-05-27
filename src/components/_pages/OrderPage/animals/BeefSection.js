@@ -1,24 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Collapsible from "react-collapsible";
 import CheckboxForm from "../FormComponents/CheckboxForm";
-import FormLabel from "../FormComponents/FormLabel";
+import LabelForm from "../FormComponents/LabelForm";
 import InputForm from "../FormComponents/InputForm";
+import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import SelectForm from "../FormComponents/SelectForm";
-
-function OrderFormSectionSubheading({ children }) {
-	return (
-		<div className="order-form--section-subheading-container">
-			<ul className="order-form--section-subheading">
-				{/* <span class="dot" /> */}
-				<li>{children}</li>
-			</ul>
-			<hr />
-		</div>
-	);
-}
+import RadioForm from "../FormComponents/RadioForm";
 
 function BeefSection({ id, deleteAnimal }) {
-	const animalInfo = { id: id, type: "beef" };
+	const animalInfo = { id: id, animal: "beef" };
 
 	const storage = window.localStorage.getItem("orderForm");
 	const findSplitHalf = "beef_" + id + "_split_half_beef__checkbox";
@@ -28,9 +18,13 @@ function BeefSection({ id, deleteAnimal }) {
 	);
 
 	const handleSplitHalf = (e) => {
-		// console.log("event.target", e);
-		setSplitHalf(e.target.checked);
+		const { id } = e.target;
+		setSplitHalf(id === "split_half_beef__checkbox");
 	};
+
+	useEffect(() => {
+		console.log("splitHalf:", splitHalf);
+	}, [splitHalf]);
 
 	return (
 		<Collapsible trigger={`Beef Cut Sheet #${id}`}>
@@ -48,7 +42,7 @@ function BeefSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Cow Information">
 				<section className="order-form--section">
 					<div className="order-form--field">
-						<FormLabel>Grower Name</FormLabel>
+						<LabelForm title="Grower Name" />
 						<InputForm
 							name="grower_name_first"
 							placeholder="First name"
@@ -75,7 +69,8 @@ function BeefSection({ id, deleteAnimal }) {
 						Ear Tag Number (if applicable)
 					</InputForm>
 
-					<CheckboxForm
+					{/* <CheckboxForm
+						title="Choose One"
 						name="beef-amount"
 						required={true}
 						individual={true}
@@ -103,9 +98,37 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Choose One
-					</CheckboxForm>
+					/> */}
+
+					<RadioForm
+						title="Choose One"
+						name="beef-amount-2"
+						required={true}
+						options={[
+							{
+								inputId: "whole_beef__checkbox",
+								label: "WHOLE BEEF",
+							},
+							{
+								inputId: "half_beef__checkbox",
+								label: "HALF BEEF",
+							},
+							{
+								inputId: "hind_quarter_beef__checkbox",
+								label: "HIND QUARTER",
+							},
+							{
+								inputId: "front_quarter_beef__checkbox",
+								label: "FRONT QUARTER",
+							},
+							{
+								inputId: "split_half_beef__checkbox",
+								label: "SPLIT HALF *Additional fee-See price list",
+							},
+						]}
+						animalInfo={animalInfo}
+						handleSplitHalf={handleSplitHalf}
+					/>
 				</section>
 
 				{splitHalf && (
@@ -119,7 +142,7 @@ function BeefSection({ id, deleteAnimal }) {
 								for the other person, if splitting half
 							</OrderFormSectionSubheading>
 
-							<FormLabel>Name</FormLabel>
+							<LabelForm title="Name" />
 							<InputForm
 								name="split_half_name_first"
 								placeholder="First name"
@@ -447,6 +470,7 @@ function BeefSection({ id, deleteAnimal }) {
 					</SelectForm>
 
 					<CheckboxForm
+						title="Remove Bone Dust"
 						name="remove_bone_dust"
 						subtext="Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks"
 						extra
@@ -457,9 +481,7 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Remove Bone Dust
-					</CheckboxForm>
+					/>
 
 					<InputForm
 						name="special_instructions"
@@ -536,6 +558,7 @@ function BeefSection({ id, deleteAnimal }) {
 					</SelectForm>
 
 					<CheckboxForm
+						title="EXTRAS"
 						name="beef-extras"
 						options={[
 							{
@@ -556,9 +579,7 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						EXTRAS
-					</CheckboxForm>
+					/>
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">

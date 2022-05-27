@@ -110,7 +110,7 @@ function Footer({ simple = false }) {
 					<div className="footer-link-wrapper">
 						<div className="footer-link-items">
 							<h2>Order Forms</h2>
-							<Link to="/beef-form">Beef Order Form</Link>
+							<Link to="/order">Order Form</Link>
 						</div>
 						<div className="footer-link-items">
 							<h2>Social Media</h2>
