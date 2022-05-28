@@ -291,7 +291,8 @@
 }
 
 .beef--split-half-section--show {
-	height: auto;
+	height: 274px;
+	/* height: 300px; */
 	max-height: 1000px;
 	padding: 16px 4px;
 	transition: all 0.4s ease;

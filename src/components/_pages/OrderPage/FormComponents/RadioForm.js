@@ -13,12 +13,12 @@ const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 	return (
 		<label
 			htmlFor={inputId}
-			className="order-form--checkbox-container"
+			className="order-form--radio-container"
 			key={inputId}
 		>
 			<input
 				{...register(name)}
-				className="order-form--checkbox"
+				className="order-form--radio"
 				type="radio"
 				id={inputId}
 				name={name}
@@ -68,7 +68,7 @@ const RadioForm = ({
 				subtext={subtext}
 				required={required}
 			/>
-			<div className={`order-form--checkbox-wrapper`}>{allOptions}</div>
+			<div className={`order-form--radio-wrapper`}>{allOptions}</div>
 		</div>
 	);
 };

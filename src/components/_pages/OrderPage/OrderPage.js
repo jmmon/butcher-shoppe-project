@@ -27,11 +27,6 @@ function OrderPage() {
 			hog: [],
 		});
 
-	console.log(
-		"TESTING - local storage",
-		window.localStorage.getItem("orderForm")
-	);
-
 	const clearLocalStorage = () => {
 		window.localStorage.removeItem("orderForm");
 		console.log(
@@ -49,53 +44,33 @@ function OrderPage() {
 
 	const onSubmit = (data) => console.log(data);
 
-	// const [activeClickedItems, setActiveClickedItems] = useState([]);
-
-	// const closeAll = (e) => {
-	// 	e.preventDefault();
-	// 	setActiveClickedItems([]);
-	// };
-
-	// const onExpand = (index) => {
-	// 	const position = activeClickedItems.indexOf(index);
-	// 	if (position === -1) {
-	// 		setActiveClickedItems([...activeClickedItems, index]);
-	// 	}
-	// };
-
-	// const onClose = (index) => {
-	// 	let remove = activeClickedItems.indexOf(index);
-	// 	setActiveClickedItems(
-	// 		activeClickedItems.filter((_, i) => i !== remove)
-	// 	);
-	// };
-	console.log("errors", methods.formState.errors);
-
 	const addAnimal = (e) => {
-		// register of inputs is automatic when component is loaded
 		e.preventDefault();
 		console.log("chosen animal:", newAnimalChosenType);
 
-		let chosenAnimalType_IdArray =
-			idCollectionOfAnimalsByType[newAnimalChosenType];
+		let chosenAnimalType_IdArray = [
+			...idCollectionOfAnimalsByType[newAnimalChosenType],
+		];
 		console.log(
 			`Chosen animal's existing ID array: ${chosenAnimalType_IdArray}`
 		);
 
 		const idOfLastSpotInArray =
 			chosenAnimalType_IdArray.length === 0
-				? 0
+				? -1
 				: chosenAnimalType_IdArray[chosenAnimalType_IdArray.length - 1];
-		console.log(`last spot in array had id of: ${idOfLastSpotInArray}`);
 
 		const newAnimalId = idOfLastSpotInArray + 1;
-		console.log(`Next id for the new animal will be: ${newAnimalId}`);
+
+		console.log(
+			`last spot in array had id of: ${idOfLastSpotInArray}; Next id for the new animal will be: ${newAnimalId}`
+		);
 
 		chosenAnimalType_IdArray.push(newAnimalId);
 
 		testingDisplayObjOfArrs(
 			idCollectionOfAnimalsByType,
-			"`Old collection of animals: "
+			"Old collection of animals: "
 		);
 
 		setIdCollectionOfAnimalsByType({
@@ -105,11 +80,12 @@ function OrderPage() {
 	};
 
 	const testingDisplayObjOfArrs = (obj, msg) => {
-		console.log(
-			`${msg} ${Object.keys(obj).forEach((arr) =>
-				obj[arr].forEach((item) => console.log(`${arr} - ${item}`))
-			)}`
+		let string = "";
+		Object.keys(obj).forEach(
+			(arr) =>
+				obj[arr].length > 0 && (string += `\n - ${arr}: ${obj[arr]}`)
 		);
+		string !== "" && console.log(`${msg}${string}`);
 	};
 
 	const deleteAnimal = (e) => {
@@ -132,6 +108,7 @@ function OrderPage() {
 		console.log(
 			`NEW ID array after removing the ID: ${chosenAnimalType_IdArray}`
 		);
+
 		testingDisplayObjOfArrs(
 			idCollectionOfAnimalsByType,
 			"`Old collection of animals: "
@@ -142,8 +119,7 @@ function OrderPage() {
 			[typeOfAnimal]: [...chosenAnimalType_IdArray],
 		});
 
-		//delete first beef
-		//indexOf(idToDelete); splice it out or whatever
+		// TODO: unregister section
 	};
 
 	useEffect(() => {
@@ -151,9 +127,20 @@ function OrderPage() {
 			idCollectionOfAnimalsByType,
 			"(useEffect) updated collection of animals: "
 		);
-		// console.log("(useEffect) updated collection of animals:");
-		// console.log(idCollectionOfAnimalsByType);
 	}, [idCollectionOfAnimalsByType]);
+
+	useEffect(() => {
+		Object.keys(methods.formState.errors).length > 0 &&
+			console.log("errors", methods.formState.errors);
+	}, [methods.formState.errors]);
+
+	useEffect(() => {
+		window.localStorage.getItem("orderForm") !== null &&
+			console.log(
+				"TESTING - local storage",
+				JSON.parse(window.localStorage.getItem("orderForm"))
+			);
+	}, [window.localStorage.getItem("orderForm")]);
 
 	return (
 		<>

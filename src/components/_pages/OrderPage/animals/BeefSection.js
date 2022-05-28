@@ -10,11 +10,12 @@ import RadioForm from "../FormComponents/RadioForm";
 function BeefSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: "beef" };
 
-	const storage = window.localStorage.getItem("orderForm");
-	const findSplitHalf = "beef_" + id + "_split_half_beef__checkbox";
-
 	const [splitHalf, setSplitHalf] = useState(
-		storage ? JSON.parse(storage)[findSplitHalf] : false
+		window.localStorage.getItem("orderForm")
+			? window.localStorage.getItem("orderForm")?.["beef"]?.[id]["info"][
+					"beef-amount"
+			  ] === "split_half_beef__checkbox"
+			: false
 	);
 
 	const handleSplitHalf = (e) => {
@@ -22,12 +23,12 @@ function BeefSection({ id, deleteAnimal }) {
 		setSplitHalf(id === "split_half_beef__checkbox");
 	};
 
-	useEffect(() => {
-		console.log("splitHalf:", splitHalf);
-	}, [splitHalf]);
+	// useEffect(() => {
+	// 	console.log("splitHalf:", splitHalf);
+	// }, [splitHalf]);
 
 	return (
-		<Collapsible trigger={`Beef Cut Sheet #${id}`}>
+		<Collapsible trigger={`Beef Cut Sheet #${id + 1}`}>
 			{/* TODO: */}
 			<select>
 				<option value="beef">Beef 1</option>
@@ -50,14 +51,14 @@ function BeefSection({ id, deleteAnimal }) {
 						<LabelForm title="Grower Name" />
 						<InputForm
 							title="First"
-							name="grower.name.first"
+							name="info.grower.name.first"
 							placeholder="First name"
 							small={true}
 							animalInfo={animalInfo}
 						/>
 						<InputForm
 							title="Last"
-							name="grower.name.last"
+							name="info.grower.name.last"
 							placeholder="Last name"
 							small={true}
 							animalInfo={animalInfo}
@@ -66,34 +67,34 @@ function BeefSection({ id, deleteAnimal }) {
 
 					<InputForm
 						title="Ear Tag Number (if applicable)"
-						name="grower.ear_tag_number"
+						name="info.grower.ear_tag_number"
 						placeholder="Ear tag number"
 						animalInfo={animalInfo}
 					/>
 
 					<RadioForm
 						title="Choose One"
-						name="beef-amount-2"
+						name="info.beef-amount"
 						required={true}
 						options={[
 							{
-								inputId: "whole_beef__checkbox",
+								inputId: "whole",
 								label: "WHOLE BEEF",
 							},
 							{
-								inputId: "half_beef__checkbox",
+								inputId: "half",
 								label: "HALF BEEF",
 							},
 							{
-								inputId: "hind_quarter_beef__checkbox",
+								inputId: "hind_quarter",
 								label: "HIND QUARTER",
 							},
 							{
-								inputId: "front_quarter_beef__checkbox",
+								inputId: "front_quarter",
 								label: "FRONT QUARTER",
 							},
 							{
-								inputId: "split_half_beef__checkbox",
+								inputId: "split_half",
 								label: "SPLIT HALF *Additional fee-See price list",
 							},
 						]}
@@ -110,75 +111,83 @@ function BeefSection({ id, deleteAnimal }) {
 					}`}
 					id="split-half--contact-info"
 				>
-					<div className="order-form--field">
-						<h3 className="order-form--title">Contact Info</h3>
-						<OrderFormSectionSubheading>
-							for the other person, if splitting half
-						</OrderFormSectionSubheading>
+					{splitHalf && (
+						<>
+							<div className="order-form--field">
+								<h3 className="order-form--title">
+									Contact Info
+								</h3>
+								<OrderFormSectionSubheading>
+									for the other person, if splitting half
+								</OrderFormSectionSubheading>
 
-						<LabelForm title="Name" />
-						<InputForm
-							title="First"
-							name="split_half.name.first"
-							placeholder="First name"
-							required={
-								splitHalf && {
-									required: {
-										value: true,
-										message:
-											"Please enter the other person's first name",
-									},
-									pattern: {
-										value: /^[a-zA-Z]+$/,
-										message:
-											"Only letters for names, please",
-									},
-								}
-							}
-							small={true}
-							animalInfo={animalInfo}
-						/>
-						<InputForm
-							title="Last"
-							name="split_half.name.last"
-							placeholder="Last name"
-							required={
-								splitHalf && {
-									required: {
-										value: true,
-										message:
-											"Please enter the other person's last name",
-									},
-									pattern: {
-										value: /^[a-zA-Z]+$/,
-										message:
-											"Only letters for names, please",
-									},
-								}
-							}
-							small={true}
-							animalInfo={animalInfo}
-						/>
-					</div>
+								<LabelForm title="Name" />
+								<InputForm
+									title="First"
+									name="beef.split_half.name.first"
+									placeholder="First name"
+									required={
+										splitHalf && {
+											required: {
+												value: true,
+												message:
+													"Please enter the other person's first name",
+											},
+											pattern: {
+												value: /^[a-zA-Z]+$/,
+												message:
+													"Only letters for names, please",
+											},
+										}
+									}
+									small={true}
+									animalInfo={animalInfo}
+								/>
+								<InputForm
+									title="Last"
+									name="beef.split_half.name.last"
+									placeholder="Last name"
+									required={
+										splitHalf && {
+											required: {
+												value: true,
+												message:
+													"Please enter the other person's last name",
+											},
+											pattern: {
+												value: /^[a-zA-Z]+$/,
+												message:
+													"Only letters for names, please",
+											},
+										}
+									}
+									small={true}
+									animalInfo={animalInfo}
+								/>
+							</div>
 
-					<InputForm
-						title="Phone Number"
-						name="split_half.phone_number"
-						placeholder="10 digit phone number"
-						required={
-							splitHalf && {
-								required: {
-									value: true,
-									message: "A phone number is required",
-								},
-								pattern: {
-									value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
-									message: "Please use a valid phone number",
-								},
-							}
-						}
-						small={true}
-					/>
+							<InputForm
+								title="Phone Number"
+								name="beef.split_half.phone_number"
+								placeholder="10 digit phone number"
+								required={
+									splitHalf && {
+										required: {
+											value: true,
+											message:
+												"A phone number is required",
+										},
+										pattern: {
+											value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+											message:
+												"Please use a valid phone number",
+										},
+									}
+								}
+								small={true}
+							/>
+						</>
+					)}
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Steak Options">
@@ -292,7 +301,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Tenderloin"
-						name="steaks.extra.tenderloin"
+						name="steak.extra.tenderloin"
 						subtext={`The eye of the loin taken out
 					separately from the T-Bone and
 					Sirloin steaks and cut 1 1/2"
@@ -435,7 +444,7 @@ function BeefSection({ id, deleteAnimal }) {
 						extra
 						options={[
 							{
-								name: "remove_bone_dust__checkbox",
+								name: "roast.remove_bone_dust__checkbox",
 								label: "YES Remove Bone Dust",
 							},
 						]}
@@ -516,19 +525,19 @@ function BeefSection({ id, deleteAnimal }) {
 						name="beef-extras"
 						options={[
 							{
-								name: "extras_liver__checkbox",
+								name: "extras.liver__checkbox",
 								label: "LIVER",
 							},
 							{
-								name: "extras_heart__checkbox",
+								name: "extras.heart__checkbox",
 								label: "HEART",
 							},
 							{
-								name: "extras_tongue__checkbox",
+								name: "extras.tongue__checkbox",
 								label: "TONGUE",
 							},
 							{
-								name: "extras_oxtail__checkbox",
+								name: "extras.oxtail__checkbox",
 								label: "OXTAIL",
 							},
 						]}
@@ -544,7 +553,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Boneless Stew Meat"
-						name="boneless_stew_meat"
+						name="other.boneless_stew_meat"
 						options={[
 							{
 								label: "YES (standard is 6-8 packages)",
@@ -560,7 +569,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Soup Bones"
-						name="soup_bones"
+						name="other.soup_bones"
 						options={[
 							{
 								label: "YES (standard is 4-5 packages)",
@@ -576,7 +585,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Short Ribs"
-						name="short_ribs"
+						name="other.short_ribs"
 						options={[
 							{
 								label: "YES (standard is 4-5 packages)",

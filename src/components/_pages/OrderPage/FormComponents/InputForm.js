@@ -29,8 +29,8 @@ const InputForm = ({
 
 	let thisError = errors;
 	name.split(".").forEach((key) => (thisError = thisError?.[key]));
-	thisError && console.log("thisName:", name);
-	thisError && console.log("thisError:", thisError);
+	// thisError && console.log("thisName:", name);
+	// thisError && console.log("thisError:", thisError);
 
 	return (
 		<p
@@ -42,8 +42,7 @@ const InputForm = ({
 
 			{thisError && (
 				<span role="alert" className="form--validation-error">
-					{" "}
-					{`(${thisError.message})`}
+					{` (${thisError.message})`}
 				</span>
 			)}
 
