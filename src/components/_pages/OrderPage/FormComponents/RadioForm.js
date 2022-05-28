@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
@@ -69,9 +68,6 @@ const RadioForm = ({
 				subtext={subtext}
 				required={required}
 			/>
-
-			<FormErrors name={name} />
-
 			<div className={`order-form--checkbox-wrapper`}>{allOptions}</div>
 		</div>
 	);

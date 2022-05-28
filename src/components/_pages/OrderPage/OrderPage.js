@@ -282,7 +282,7 @@ function OrderPage() {
 
 										<InputForm
 											title="First"
-											name="buyer_name_first"
+											name="buyer.name.first"
 											placeholder="First name"
 											required={{
 												required: {
@@ -301,7 +301,7 @@ function OrderPage() {
 
 										<InputForm
 											title="Last"
-											name="buyer_name_last"
+											name="buyer.name.last"
 											placeholder="Last name"
 											required={{
 												required: {
@@ -327,7 +327,7 @@ function OrderPage() {
 
 										<InputForm
 											title="Phone Number"
-											name="buyer_phone_number"
+											name="buyer.phone_number"
 											placeholder="10 digit phone number"
 											required={{
 												required: {
@@ -345,7 +345,7 @@ function OrderPage() {
 										/>
 										<InputForm
 											title="Email Address"
-											name="buyer_email_address"
+											name="buyer.email_address"
 											placeholder="Enter your email address"
 											required={{
 												required: {
@@ -371,7 +371,7 @@ function OrderPage() {
 
 										<InputForm
 											title="Line 1"
-											name="buyer_address_line_1"
+											name="buyer.address.line_1"
 											placeholder="Address Line 1"
 											required={{
 												required: {
@@ -384,14 +384,14 @@ function OrderPage() {
 										/>
 										<InputForm
 											title="Line 2"
-											name="buyer_address_line_2"
+											name="buyer.address.line_2"
 											placeholder="Address Line 2"
 											small={true}
 										/>
 
 										<InputForm
 											title="City"
-											name="buyer_address_city"
+											name="buyer.address.city"
 											required={{
 												required: {
 													value: true,
@@ -403,7 +403,7 @@ function OrderPage() {
 										/>
 										<InputForm
 											title="State"
-											name="buyer_address_state"
+											name="buyer.address.state"
 											required={{
 												required: {
 													value: true,
@@ -416,7 +416,7 @@ function OrderPage() {
 
 										<InputForm
 											title="Zip Code"
-											name="buyer_address_zip_code"
+											name="buyer.address.zip_code"
 											required={{
 												required: {
 													value: true,
@@ -434,7 +434,7 @@ function OrderPage() {
 									</div>
 								</div>
 							</Collapsible>
-							<Collapsible trigger="Animal Info">
+							<Collapsible trigger="Animal Info" open>
 								<h4>Select and add an animal cuts form:</h4>
 								<select
 									onChange={(e) =>

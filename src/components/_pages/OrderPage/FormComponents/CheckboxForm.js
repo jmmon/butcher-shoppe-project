@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const EachCheckbox = ({ animalInfo, name, label }) => {
@@ -45,9 +44,6 @@ const CheckboxForm = ({ title, name, subtext, extra, options, animalInfo }) => {
 				extra={extra}
 				subtext={subtext}
 			/>
-
-			<FormErrors name={name} />
-
 			<div className={`order-form--checkbox-container`}>{allOptions}</div>
 		</div>
 	);

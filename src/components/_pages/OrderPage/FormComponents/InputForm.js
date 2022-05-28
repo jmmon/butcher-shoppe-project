@@ -1,7 +1,6 @@
 import React from "react";
 import LabelInput from "./LabelInput";
 import { useFormContext } from "react-hook-form";
-import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const InputForm = ({
@@ -28,6 +27,11 @@ const InputForm = ({
 		placeholder: placeholder || title,
 	};
 
+	let thisError = errors;
+	name.split(".").forEach((key) => (thisError = thisError?.[key]));
+	thisError && console.log("thisName:", name);
+	thisError && console.log("thisError:", thisError);
+
 	return (
 		<p
 			className={`order-form--input-container${
@@ -36,7 +40,13 @@ const InputForm = ({
 		>
 			<LabelInput name={name} small={small} title={title} />
 
-			<FormErrors name={name} />
+			{thisError && (
+				<span role="alert" className="form--validation-error">
+					{" "}
+					{`(${thisError.message})`}
+				</span>
+			)}
+
 			{textarea ? (
 				<textarea
 					{...register(name)}

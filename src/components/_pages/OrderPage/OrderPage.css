@@ -271,14 +271,85 @@
 	padding: 20px;
 }
 
-.order-form--field {
+/* .order-form--field {
 }
 
 .order-form--input-container {
-}
+} */
 
 .form--validation-error {
 	color: red;
+}
+
+.beef--split-half-section {
+	height: 0;
+	color: rgba(0, 0, 0, 0);
+	max-height: 0;
+	margin-top: 40px;
+	padding: 0px 4px;
+	transition: all 0.4s ease;
+}
+
+.beef--split-half-section--show {
+	height: auto;
+	max-height: 1000px;
+	padding: 16px 4px;
+	transition: all 0.4s ease;
+}
+
+/* .cut_sheet__section {
+	max-width: 1000px;
+	width: 90%;
+	background-color: aqua;
+}
+
+.cut_sheet__section__trigger {
+	width: 100%;
+	text-align: center;
+	background-color: rgb(224, 224, 224);
+	font-size: 2rem;
+} */
+
+.Collapsible {
+	background-color: #f1f1f1;
+}
+.Collapsible__contentInner {
+	padding: 10px;
+	border: 1px solid lightGrey;
+	border-top: 0;
+}
+.Collapsible__trigger {
+	display: block;
+	font-weight: 400;
+	text-align: center;
+	font-size: 2em;
+	text-decoration: none;
+	position: relative;
+	border: 1px solid white;
+	padding: 10px;
+	background: rgb(
+		var(--orange-bg--r),
+		var(--orange-bg--g),
+		var(--orange-bg--b)
+	);
+	color: black;
+}
+/* .Collapsible__trigger:after {
+	font-family: "FontAwesome";
+	content: "\f107";
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	display: block;
+	transition: transform 300ms;
+} */
+
+.Collapsible__trigger:is-open:after {
+	transform: rotateZ(180deg);
+}
+.Collapsible__trigger:is-disabled {
+	opacity: 0.5;
+	background-color: grey;
 }
 
 @media screen and (max-width: 960px) {

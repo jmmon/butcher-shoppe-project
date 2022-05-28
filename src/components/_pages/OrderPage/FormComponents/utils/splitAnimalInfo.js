@@ -1,6 +1,6 @@
 const splitAnimalInfo = (name, { id, animal }) => {
-	const parent = (animal ? `${animal}_` : "") + (id ? `${id}` : "");
-	name = `${parent}.${name}`;
+	const animalInfo = (`${animal && animal}.${id && id}`);
+	name = `${animalInfo}.${name}`;
 	// name = id ? `${id}_${name}` : name; // prepend animal number (id)
 	// name = animal ? `${animal}_${name}` : name; // prepend animalType
 	return name;

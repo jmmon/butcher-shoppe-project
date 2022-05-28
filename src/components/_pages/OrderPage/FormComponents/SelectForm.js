@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 function Option({ label, value }) {
@@ -29,8 +28,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 				extra={extra}
 				subtext={subtext}
 				title={title}
-			/>
-			<FormErrors name={name} />
+			/>{" "}
 			<select
 				{...register(name)}
 				name={name}
