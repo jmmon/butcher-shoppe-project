@@ -5,7 +5,7 @@ import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const InputForm = ({
-	children,
+	title,
 	name,
 	placeholder,
 	required,
@@ -22,25 +22,20 @@ const InputForm = ({
 		name = splitAnimalInfo(name, animalInfo);
 	}
 
-	// if (animalInfo) {
-	// 	const { id, animal } = animalInfo;
-	// 	name = id ? `${id}_${name}` : name; // prepend animal number (id)
-	// 	name = animal ? `${animal}_${name}` : name; // prepend animalType
-	// }
-
 	const inputAttributes = {
 		name: name,
 		id: name,
-		placeholder: placeholder || children,
+		placeholder: placeholder || title,
 	};
 
 	return (
-		<div
+		<p
 			className={`order-form--input-container${
 				small ? " order-form--input-container-small" : ""
 			}`}
 		>
-			<LabelInput name={name} small={small} title={children} />
+			<LabelInput name={name} small={small} title={title} />
+
 			<FormErrors name={name} />
 			{textarea ? (
 				<textarea
@@ -60,9 +55,10 @@ const InputForm = ({
 					type="text"
 					className="order-form--input"
 					{...inputAttributes}
+					area-invalid={errors?.[name]}
 				/>
 			)}
-		</div>
+		</p>
 	);
 };
 

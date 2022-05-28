@@ -72,6 +72,7 @@ function OrderPage() {
 	console.log("errors", methods.formState.errors);
 
 	const addAnimal = (e) => {
+		// register of inputs is automatic when component is loaded
 		e.preventDefault();
 		console.log("chosen animal:", newAnimalChosenType);
 
@@ -269,7 +270,10 @@ function OrderPage() {
 						<div className="form--container">
 							<h3 className="form--title">Order Form</h3>
 							<Collapsible trigger="Contact Info">
-								<section className="order-form--section">
+								<div
+									name="contact_info"
+									className="order-form--section"
+								>
 									<div className="order-form--field">
 										<LabelForm
 											required={true}
@@ -277,6 +281,7 @@ function OrderPage() {
 										/>
 
 										<InputForm
+											title="First"
 											name="buyer_name_first"
 											placeholder="First name"
 											required={{
@@ -292,11 +297,10 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											First
-										</InputForm>
+										/>
 
 										<InputForm
+											title="Last"
 											name="buyer_name_last"
 											placeholder="Last name"
 											required={{
@@ -312,9 +316,7 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											Last
-										</InputForm>
+										/>
 									</div>
 
 									<div className="form-field">
@@ -324,6 +326,7 @@ function OrderPage() {
 										/>
 
 										<InputForm
+											title="Phone Number"
 											name="buyer_phone_number"
 											placeholder="10 digit phone number"
 											required={{
@@ -339,10 +342,9 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											Phone Number
-										</InputForm>
+										/>
 										<InputForm
+											title="Email Address"
 											name="buyer_email_address"
 											placeholder="Enter your email address"
 											required={{
@@ -358,9 +360,7 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											Email Address
-										</InputForm>
+										/>
 									</div>
 
 									<div className="order-form--field">
@@ -370,6 +370,7 @@ function OrderPage() {
 										/>
 
 										<InputForm
+											title="Line 1"
 											name="buyer_address_line_1"
 											placeholder="Address Line 1"
 											required={{
@@ -380,18 +381,16 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											Line 1
-										</InputForm>
+										/>
 										<InputForm
+											title="Line 2"
 											name="buyer_address_line_2"
 											placeholder="Address Line 2"
 											small={true}
-										>
-											Line 2
-										</InputForm>
+										/>
 
 										<InputForm
+											title="City"
 											name="buyer_address_city"
 											required={{
 												required: {
@@ -401,10 +400,9 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											City
-										</InputForm>
+										/>
 										<InputForm
+											title="State"
 											name="buyer_address_state"
 											required={{
 												required: {
@@ -414,11 +412,10 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											State
-										</InputForm>
+										/>
 
 										<InputForm
+											title="Zip Code"
 											name="buyer_address_zip_code"
 											required={{
 												required: {
@@ -433,11 +430,9 @@ function OrderPage() {
 												},
 											}}
 											small={true}
-										>
-											Zip Code
-										</InputForm>
+										/>
 									</div>
-								</section>
+								</div>
 							</Collapsible>
 							<Collapsible trigger="Animal Info">
 								<h4>Select and add an animal cuts form:</h4>
@@ -458,7 +453,8 @@ function OrderPage() {
 										0 ||
 									idCollectionOfAnimalsByType.hog.length >
 										0) && (
-									<Collapsible trigger="Animals">
+									<div>
+										<h4>Animals</h4>
 										{idCollectionOfAnimalsByType.beef
 											.length > 0 && (
 											<Collapsible trigger="Your Beef">
@@ -507,7 +503,7 @@ function OrderPage() {
 												)}
 											</Collapsible>
 										)}
-									</Collapsible>
+									</div>
 								)}
 							</Collapsible>
 						</div>

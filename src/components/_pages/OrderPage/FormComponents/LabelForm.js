@@ -14,18 +14,3 @@ function LabelForm({ title, htmlFor, required, small, children }) {
 }
 
 export default LabelForm;
-
-/* 
-old:
-<FormLabel required={required} small={true}>
-First Name
-</FormLabel>
-
-new:
-<FormLabel title="First Name" required={required} small={true} />
-
-<FormLabel title="First Name" required={required} small={true}>
-First Name
-</FormLabel>
-
-*/

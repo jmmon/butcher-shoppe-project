@@ -8,7 +8,7 @@ function Option({ label, value }) {
 	return <option key={value}>{label}</option>;
 }
 
-function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
+function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 	const {
 		register,
 		formState: { errors },
@@ -17,12 +17,6 @@ function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
 	if (animalInfo) {
 		name = splitAnimalInfo(name, animalInfo);
 	}
-
-	// if (animalInfo) {
-	// 	const { id, animal } = animalInfo;
-	// 	name = id ? `${id}_${name}` : name; // prepend animal number (id)
-	// 	name = animal ? `${animal}_${name}` : name; // prepend animalType
-	// }
 
 	let allOptions = options.map(({ label, value }) => {
 		return Option({ label, value });
@@ -34,7 +28,7 @@ function SelectForm({ children, name, subtext, extra, options, animalInfo }) {
 				name={name}
 				extra={extra}
 				subtext={subtext}
-				title={children}
+				title={title}
 			/>
 			<FormErrors name={name} />
 			<select

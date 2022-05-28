@@ -4,46 +4,36 @@ import LabelInput from "./LabelInput";
 import FormErrors from "./FormErrors";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
-const EachCheckbox = ({ animalInfo, name, label, handleSplitHalf }) => {
+const EachCheckbox = ({ animalInfo, name, label }) => {
 	const { register } = useFormContext();
 
 	if (animalInfo) {
 		name = splitAnimalInfo(name, animalInfo);
 	}
 	return (
-		<React.Fragment key={name}>
+		<label htmlFor={name} key={name}>
 			<input
 				className="order-form--checkbox"
 				type="checkbox"
 				id={name}
 				name={name}
-				onClick={handleSplitHalf ? (e) => handleSplitHalf(e) : null}
 				{...register(name)}
 			/>
-			<label htmlFor={name}>{label}</label>
-		</React.Fragment>
+			{label}
+		</label>
 	);
 };
 
-const CheckboxForm = ({
-	title,
-	name,
-	subtext,
-	extra,
-	required,
-	options,
-	animalInfo,
-}) => {
+const CheckboxForm = ({ title, name, subtext, extra, options, animalInfo }) => {
 	const {
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ name, label, handleSplitHalf }) => {
+	const allOptions = options.map(({ name, label }) => {
 		return EachCheckbox({
 			animalInfo,
 			name,
 			label,
-			handleSplitHalf,
 		});
 	});
 
@@ -54,9 +44,10 @@ const CheckboxForm = ({
 				name={name}
 				extra={extra}
 				subtext={subtext}
-				required={required}
 			/>
+
 			<FormErrors name={name} />
+
 			<div className={`order-form--checkbox-container`}>{allOptions}</div>
 		</div>
 	);

@@ -1,7 +1,15 @@
 import React from "react";
 import LabelForm from "./LabelForm";
 
-function LabelInput({ title, htmlFor, subtext, extra, small, required }) {
+function LabelInput({
+	title,
+	htmlFor,
+	subtext,
+	extra,
+	small,
+	required,
+	children,
+}) {
 	return (
 		<LabelForm
 			title={title}
@@ -17,22 +25,12 @@ function LabelInput({ title, htmlFor, subtext, extra, small, required }) {
 					</span>
 				</>
 			)}
+
 			{subtext && <p className="order-form--label-subtext">{subtext}</p>}
+
+			{children}
 		</LabelForm>
 	);
 }
 
 export default LabelInput;
-
-/*
-<InputLabel name="first_name" subtext="Enter your first name" extra={false} small={true} required={required}>
-		First Name
-	</InputLabel>
-
-
-	new:
-	<InputLabel title="First Name" 		name="first_name" subtext="Enter your first name" extra={false} small={true} required={required}>
-		
-	</InputLabel>
-
-*/

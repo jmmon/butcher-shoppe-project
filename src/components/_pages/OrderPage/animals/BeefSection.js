@@ -44,61 +44,27 @@ function BeefSection({ id, deleteAnimal }) {
 					<div className="order-form--field">
 						<LabelForm title="Grower Name" />
 						<InputForm
+							title="First"
 							name="grower_name_first"
 							placeholder="First name"
 							small={true}
 							animalInfo={animalInfo}
-						>
-							First
-						</InputForm>
+						/>
 						<InputForm
+							title="Last"
 							name="grower_name_last"
 							placeholder="Last name"
 							small={true}
 							animalInfo={animalInfo}
-						>
-							Last
-						</InputForm>
+						/>
 					</div>
 
 					<InputForm
+						title="Ear Tag Number (if applicable)"
 						name="grower_ear_tag_number"
 						placeholder="Ear tag number"
 						animalInfo={animalInfo}
-					>
-						Ear Tag Number (if applicable)
-					</InputForm>
-
-					{/* <CheckboxForm
-						title="Choose One"
-						name="beef-amount"
-						required={true}
-						individual={true}
-						options={[
-							{
-								name: "whole_beef__checkbox",
-								label: "WHOLE BEEF",
-							},
-							{
-								name: "half_beef__checkbox",
-								label: "HALF BEEF",
-							},
-							{
-								name: "hind_quarter_beef__checkbox",
-								label: "HIND QUARTER",
-							},
-							{
-								name: "front_quarter_beef__checkbox",
-								label: "FRONT QUARTER",
-							},
-							{
-								name: "split_half_beef__checkbox",
-								label: "SPLIT HALF *Additional fee-See price list",
-								handleSplitHalf: handleSplitHalf,
-							},
-						]}
-						animalInfo={animalInfo}
-					/> */}
+					/>
 
 					<RadioForm
 						title="Choose One"
@@ -144,6 +110,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 							<LabelForm title="Name" />
 							<InputForm
+								title="First"
 								name="split_half_name_first"
 								placeholder="First name"
 								required={
@@ -162,10 +129,9 @@ function BeefSection({ id, deleteAnimal }) {
 								}
 								small={true}
 								animalInfo={animalInfo}
-							>
-								First
-							</InputForm>
+							/>
 							<InputForm
+								title="Last"
 								name="split_half_name_last"
 								placeholder="Last name"
 								required={
@@ -184,12 +150,11 @@ function BeefSection({ id, deleteAnimal }) {
 								}
 								small={true}
 								animalInfo={animalInfo}
-							>
-								Last
-							</InputForm>
+							/>
 						</div>
 
 						<InputForm
+							title="Phone Number"
 							name="split_half_phone"
 							placeholder="10 digit phone number"
 							required={
@@ -206,19 +171,18 @@ function BeefSection({ id, deleteAnimal }) {
 								}
 							}
 							small={true}
-						>
-							Phone Number
-						</InputForm>
+						/>
 					</section>
 				)}
 			</Collapsible>
 			<Collapsible trigger="Steak Options">
-				<section className="order-form--section">
+				<div className="order-form--section">
 					<OrderFormSectionSubheading>
 						Standard Steaks are Rib, T-Bone, Sirloin, Round, and
 						Flank
 					</OrderFormSectionSubheading>
 					<SelectForm
+						title="Steak Thickness"
 						name="steak_thickness"
 						options={[
 							{
@@ -240,10 +204,9 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Steak Thickness
-					</SelectForm>
+					/>
 					<SelectForm
+						title="Number of Steaks Per Package"
 						name="steaks_per_package"
 						options={[
 							{
@@ -264,11 +227,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Number of Steaks Per Package
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Tenderized Round Steaks"
 						name="tenderized_round_steaks"
 						subtext="Steaks are run through the cuber
 					(similar to pounding them)"
@@ -288,11 +250,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Tenderized Round Steaks
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Other Round Steak Options"
 						name="round_steaks_extra"
 						subtext="Round steaks can also be put
 					into hamburger, made into roasts
@@ -321,11 +282,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Other Round Steak Options
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Tenderloin"
 						name="tenderloin_extra"
 						subtext={`The eye of the loin taken out
 					separately from the T-Bone and
@@ -347,11 +307,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Tenderloin
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Flank Steak"
 						name="flank_steak"
 						subtext={`One flank steak per
 					half-lengthwise grain-sliced and
@@ -368,19 +327,18 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Flank Steak
-					</SelectForm>
-				</section>
+					/>
+				</div>
 			</Collapsible>
 			<Collapsible trigger="Roast Options">
-				<section className="order-form--section">
+				<div className="order-form--section">
 					<OrderFormSectionSubheading>
 						Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin
 						Tip and, Heel of Round
 					</OrderFormSectionSubheading>
 
 					<SelectForm
+						title="Roast Size"
 						name="roast_size"
 						subtext="We suggest a 3-4# roast
 						for a family of 2-4"
@@ -400,11 +358,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Roast Size
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Boneless Roasts"
 						name="roast_boneless"
 						subtext="5-7 of the better
 						roasts per half beef are boned,
@@ -420,10 +377,9 @@ function BeefSection({ id, deleteAnimal }) {
 							{ label: "YES", value: "YES" },
 						]}
 						animalInfo={animalInfo}
-					>
-						Boneless Roasts
-					</SelectForm>
+					/>
 					<SelectForm
+						title="Rib Options"
 						name="rib_options"
 						options={[
 							{
@@ -440,11 +396,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Rib Options
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Chuck Options"
 						name="chuck_options"
 						options={[
 							{
@@ -465,9 +420,7 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Chuck Options
-					</SelectForm>
+					/>
 
 					<CheckboxForm
 						title="Remove Bone Dust"
@@ -484,24 +437,22 @@ function BeefSection({ id, deleteAnimal }) {
 					/>
 
 					<InputForm
+						title="SPECIAL INSTRUCTIONS"
 						name="special_instructions"
 						placeholder="Enter special instructions for certain options here"
 						animalInfo={animalInfo}
 						textarea={true}
-
-						// setValue because plain register seems to block text from being entered for some reason
-					>
-						SPECIAL INSTRUCTIONS
-					</InputForm>
-				</section>
+					/>
+				</div>
 			</Collapsible>
 			<Collapsible trigger="Ground Beef Options">
-				<section className="order-form--section">
+				<div className="order-form--section">
 					<OrderFormSectionSubheading>
 						Choose your ground beef options
 					</OrderFormSectionSubheading>
 
 					<SelectForm
+						title="Ground Beef Package Size"
 						name="ground_beef_package_size"
 						options={[
 							{
@@ -518,11 +469,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Ground Beef Package Size
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Ground Beef Patties"
 						name="ground_beef_patties"
 						subtext="1/4# patties, 30# minimum"
 						extra
@@ -553,9 +503,7 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Ground Beef Patties
-					</SelectForm>
+					/>
 
 					<CheckboxForm
 						title="EXTRAS"
@@ -580,15 +528,16 @@ function BeefSection({ id, deleteAnimal }) {
 						]}
 						animalInfo={animalInfo}
 					/>
-				</section>
+				</div>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">
-				<section className="order-form--section">
+				<div className="order-form--section">
 					<OrderFormSectionSubheading>
 						More options for your cuts
 					</OrderFormSectionSubheading>
 
 					<SelectForm
+						title="Boneless Stew Meat"
 						name="boneless_stew_meat"
 						options={[
 							{
@@ -601,11 +550,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Boneless Stew Meat
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Soup Bones"
 						name="soup_bones"
 						options={[
 							{
@@ -618,11 +566,10 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Soup Bones
-					</SelectForm>
+					/>
 
 					<SelectForm
+						title="Short Ribs"
 						name="short_ribs"
 						options={[
 							{
@@ -635,10 +582,8 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-					>
-						Short Ribs
-					</SelectForm>
-				</section>
+					/>
+				</div>
 			</Collapsible>
 		</Collapsible>
 	);

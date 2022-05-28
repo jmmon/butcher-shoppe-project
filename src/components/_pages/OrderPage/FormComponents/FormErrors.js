@@ -5,11 +5,16 @@ function FormErrors({ name }) {
 	const {
 		formState: { errors },
 	} = useFormContext();
+
 	return (
-		<span className="form--validation-error">
-			{" "}
-			{errors?.[name] && `(${errors[name].message})`}
-		</span>
+		<>
+			{errors?.[name] && (
+				<span role="alert" className="form--validation-error">
+					{" "}
+					{errors?.[name] && `(${errors[name].message})`}
+				</span>
+			)}
+		</>
 	);
 }
 

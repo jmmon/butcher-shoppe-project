@@ -12,7 +12,11 @@ const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 	}
 
 	return (
-		<div className="order-form--checkbox-container" key={inputId}>
+		<label
+			htmlFor={inputId}
+			className="order-form--checkbox-container"
+			key={inputId}
+		>
 			<input
 				{...register(name)}
 				className="order-form--checkbox"
@@ -22,11 +26,9 @@ const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 				onClick={handleSplitHalf ? (e) => handleSplitHalf(e) : null}
 				value={inputId}
 			/>
-			<label htmlFor={inputId}>{label}</label>
-		</div>
+			{label}
+		</label>
 	);
-
-	// return <React.Fragment key={name}>{contents}</React.Fragment>;
 };
 
 /*
@@ -76,100 +78,3 @@ const RadioForm = ({
 };
 
 export default RadioForm;
-
-/* 
-<div className="order-form--field">
-
-
-	<label
-		htmlFor="beef-amount"
-		className="order-form--label"
-	>
-		Choose One
-		<span className="form-required">
-			*
-		</span>
-	</label>
-
-
-
-	<div className="order-form--checkbox-wrapper">
-
-
-		<div className="order-form--checkbox-container">
-			<input
-				className="order-form--checkbox"
-				type="checkbox"
-				id="beef_whole__radio"
-				name="beef-amount"
-			/>
-			<label htmlFor="beef_whole__radio">
-				WHOLE BEEF
-			</label>
-		</div>
-
-
-
-		<div className="order-form--checkbox-container">
-			<input
-				className="order-form--checkbox"
-				type="checkbox"
-				id="beef_half__radio"
-				name="beef-amount"
-			/>
-			<label htmlFor="beef_half__radio">
-				HALF BEEF
-			</label>
-		</div>
-
-
-
-		<div className="order-form--checkbox-container">
-			<input
-				className="order-form--checkbox"
-				type="checkbox"
-				id="hind_quarter__radio"
-				name="beef-amount"
-			/>
-			<label htmlFor="hind_quarter__radio">
-				HIND QUARTER
-			</label>
-		</div>
-
-
-
-		<div className="order-form--checkbox-container">
-			<input
-				className="order-form--checkbox"
-				type="checkbox"
-				id="front_quarter__radio"
-				name="beef-amount"
-			/>
-			<label htmlFor="front_quarter__radio">
-				FRONT QUARTER
-			</label>
-		</div>
-
-
-
-		<div className="order-form--checkbox-container">
-			<input
-				className="order-form--checkbox"
-				type="checkbox"
-				id="split_half__radio"
-				name="beef-amount"
-				value={split}
-				// checked={split}
-				onChange={handleSplit}
-			/>
-			<label htmlFor="split_half__radio">
-				SPLIT HALF *Additional
-				fee-See price list
-			</label>
-		</div>
-
-
-	</div> END wrapper
-
-</div>
-*/
