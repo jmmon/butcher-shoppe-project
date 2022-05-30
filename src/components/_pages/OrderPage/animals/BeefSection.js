@@ -9,6 +9,7 @@ import RadioForm from "../FormComponents/RadioForm";
 import ConfirmButton from "../../../Button/ConfirmButton";
 
 function BeefSection({ id, deleteAnimal }) {
+	id = +id;
 	const animalInfo = { id: id, animal: "beef" };
 
 	const [splitHalf, setSplitHalf] = useState(
@@ -38,11 +39,8 @@ function BeefSection({ id, deleteAnimal }) {
 			<button>Copy from previous added animal</button>
 			{/* END TODO */}
 
-			<button {...animalInfo} onClick={(e) => deleteAnimal(e)}>
-				Delete this beef (should have confirmation just in case)
-			</button>
 			<ConfirmButton {...animalInfo} onClick={(e) => deleteAnimal(e)}>
-				Delete Animal
+				{`Delete this ${animalInfo.animal}`}
 			</ConfirmButton>
 
 			<Collapsible

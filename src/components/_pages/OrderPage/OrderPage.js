@@ -12,6 +12,7 @@ import BeefSection from "./animals/BeefSection";
 import LabelForm from "./FormComponents/LabelForm";
 import LambSection from "./animals/LambSection";
 import HogSection from "./animals/HogSection";
+import Button from "../../Button/Button";
 
 function OrderPage() {
 	const methods = useForm({
@@ -19,12 +20,13 @@ function OrderPage() {
 	});
 
 	const [newAnimalChosenType, setNewAnimalChosenType] = useState("beef");
+	const [animalToUnregister, setAnimalToUnregister] = useState("");
 
 	const [idCollectionOfAnimalsByType, setIdCollectionOfAnimalsByType] =
 		useState({
-			beef: [],
-			lamb: [],
-			hog: [],
+			beef: { thisId: 0, idArray: [] },
+			lamb: { thisId: 0, idArray: [] },
+			hog: { thisId: 0, idArray: [] },
 		});
 
 	const clearLocalStorage = () => {
@@ -46,39 +48,27 @@ function OrderPage() {
 
 	const addAnimal = (e) => {
 		e.preventDefault();
-		// console.log("chosen animal:", newAnimalChosenType);
 
-		//grab old array
 		let copy_chosenAnimalType_IdArray = [
-			...idCollectionOfAnimalsByType[newAnimalChosenType],
+			...idCollectionOfAnimalsByType[newAnimalChosenType].idArray,
 		];
-		console.log(
-			`${newAnimalChosenType} - pre-existing array of IDs: ${copy_chosenAnimalType_IdArray}`
-		);
 
-		const idOfLastSpotInArray =
-			copy_chosenAnimalType_IdArray.length === 0
-				? -1
-				: copy_chosenAnimalType_IdArray[
-						copy_chosenAnimalType_IdArray.length - 1
-				  ];
-
-		const newAnimalId = idOfLastSpotInArray + 1;
+		const thisId = idCollectionOfAnimalsByType[newAnimalChosenType].thisId;
 
 		console.log(
-			`last spot in array had id of: ${idOfLastSpotInArray}; Next id for the new animal will be: ${newAnimalId}`
+			`${newAnimalChosenType} - pre-existing array of IDs: ${copy_chosenAnimalType_IdArray}\nNext id for the new animal will be: ${thisId}`
 		);
 
-		copy_chosenAnimalType_IdArray.push(newAnimalId);
+		copy_chosenAnimalType_IdArray.push(thisId);
 
-		testing__displayObjOfArrs(
-			idCollectionOfAnimalsByType,
-			"Old collection of animals: "
-		);
+		const nextId = thisId + 1;
 
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,
-			[newAnimalChosenType]: [...copy_chosenAnimalType_IdArray],
+			[newAnimalChosenType]: {
+				thisId: nextId,
+				idArray: [...copy_chosenAnimalType_IdArray],
+			},
 		});
 	};
 
@@ -87,18 +77,23 @@ function OrderPage() {
 		// console.log(`Deleting animal from button ${e.target}`);
 
 		const typeOfAnimal = e.target.getAttribute("animal");
-		const idOfAnimal = e.target.getAttribute("id");
+		const idOfAnimal = +e.target.getAttribute("id");
 
 		console.log(`animal: ${typeOfAnimal}, ID: ${idOfAnimal}`);
 
-		let copy_chosenAnimalType_IdArray =
-			idCollectionOfAnimalsByType[typeOfAnimal];
+		let copy_chosenAnimalType_IdArray = [
+			...idCollectionOfAnimalsByType[typeOfAnimal].idArray,
+		];
 
 		console.log(
 			`Chosen animal's existing ID array: ${copy_chosenAnimalType_IdArray}`
 		);
 
 		const index = copy_chosenAnimalType_IdArray.indexOf(idOfAnimal);
+
+		console.log(
+			`Removing item ${copy_chosenAnimalType_IdArray[index]} at index ${index}`
+		);
 
 		copy_chosenAnimalType_IdArray.splice(index, 1);
 
@@ -111,20 +106,27 @@ function OrderPage() {
 			"Old collection of animals: "
 		);
 
+		// const string = `beef[${index}]`;
+		// methods.unregister([string]);
+
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,
-			[typeOfAnimal]: [copy_chosenAnimalType_IdArray],
+			[typeOfAnimal]: {
+				thisId: idCollectionOfAnimalsByType[typeOfAnimal].thisId,
+				idArray: [...copy_chosenAnimalType_IdArray],
+			},
 		});
-		// const string = `beef.[${index}]`;
-		// methods.unregister(string);
-		let orderForm = JSON.parse(window.localStorage.getItem("orderForm"));
-		console.log("--orderForm before removal:", orderForm);
-		orderForm[typeOfAnimal].splice(index, 1);
-		console.log("--orderForm after removal:", orderForm);
-		window.localStorage.setItem("orderForm", orderForm);
 
-		// TODO: unregister the section
+		setAnimalToUnregister(`${typeOfAnimal}_${idOfAnimal}`);
 	};
+
+	useEffect(() => {
+		if (animalToUnregister !== "") {
+			// const string = `${animalToUnregister.animal}_${animalToUnregister.id}`;
+			setAnimalToUnregister("");
+			methods.unregister(animalToUnregister);
+		}
+	}, [animalToUnregister, methods.unregister]);
 
 	const testing__displayObjOfArrs = (obj, msg) => {
 		let string = "";
@@ -158,7 +160,7 @@ function OrderPage() {
 	return (
 		<>
 			<PageTitle
-				heading="Select Your Beef Cut Options"
+				heading="Schedule For Our Service"
 				bgImage={bgImage}
 				smaller="true"
 				position="50% 50%"
@@ -457,24 +459,25 @@ function OrderPage() {
 									<option value="lamb">Lamb</option>
 									<option value="hog">Hog</option>
 								</select>
-								<button onClick={addAnimal}>
+								<Button onClick={addAnimal}>
 									Add an animal
-								</button>
-								{(idCollectionOfAnimalsByType.beef.length > 0 ||
-									idCollectionOfAnimalsByType.lamb.length >
-										0 ||
-									idCollectionOfAnimalsByType.hog.length >
-										0) && (
+								</Button>
+								{(idCollectionOfAnimalsByType.beef.idArray
+									.length > 0 ||
+									idCollectionOfAnimalsByType.lamb.idArray
+										.length > 0 ||
+									idCollectionOfAnimalsByType.hog.idArray
+										.length > 0) && (
 									<div>
 										<h4>Animals</h4>
 										{idCollectionOfAnimalsByType.beef
-											.length > 0 && (
+											.idArray.length > 0 && (
 											<Collapsible
 												trigger="Your Beef"
 												transitionTime={200}
 												easing="ease"
 											>
-												{idCollectionOfAnimalsByType.beef.map(
+												{idCollectionOfAnimalsByType.beef.idArray.map(
 													(id) => (
 														<BeefSection
 															key={id}
@@ -488,13 +491,13 @@ function OrderPage() {
 											</Collapsible>
 										)}
 										{idCollectionOfAnimalsByType.lamb
-											.length > 0 && (
+											.idArray.length > 0 && (
 											<Collapsible
 												trigger="Your Lamb"
 												transitionTime={200}
 												easing="ease"
 											>
-												{idCollectionOfAnimalsByType.lamb.map(
+												{idCollectionOfAnimalsByType.lamb.idArray.map(
 													(id) => (
 														<LambSection
 															key={id}
@@ -507,14 +510,14 @@ function OrderPage() {
 												)}
 											</Collapsible>
 										)}
-										{idCollectionOfAnimalsByType.hog
+										{idCollectionOfAnimalsByType.hog.idArray
 											.length > 0 && (
 											<Collapsible
 												trigger="Your Hog"
 												transitionTime={200}
 												easing="ease"
 											>
-												{idCollectionOfAnimalsByType.hog.map(
+												{idCollectionOfAnimalsByType.hog.idArray.map(
 													(id) => (
 														<HogSection
 															key={id}

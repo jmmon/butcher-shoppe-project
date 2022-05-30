@@ -21,12 +21,12 @@ function ConfirmButton({
 	};
 	return (
 		<Button
+			{...buttonProps}
 			type={type}
 			onClick={handleClick}
 			buttonStyle={buttonStyle}
 			buttonSize={buttonSize}
 			url={url}
-			{...buttonProps}
 		>
 			{confirmed ? "Are you sure?" : children}
 		</Button>
