@@ -7,16 +7,19 @@ import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubhea
 import SelectForm from "../FormComponents/SelectForm";
 import RadioForm from "../FormComponents/RadioForm";
 import ConfirmButton from "../../../Button/ConfirmButton";
+import Button from "../../../Button/Button";
 
 function BeefSection({ id, deleteAnimal }) {
+	const animal = "beef";
 	id = +id;
-	const animalInfo = { id: id, animal: "beef" };
+	const animalInfo = { id: id, animal: animal };
+	const stringId = `${animal}_${id}}`;
 
 	const [splitHalf, setSplitHalf] = useState(
 		window.localStorage.getItem("orderForm")
-			? window.localStorage.getItem("orderForm")?.["beef"]?.[id]?.[
-					"info"
-			  ]?.["beef-amount"] === "split_half"
+			? window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
+					"beef-amount"
+			  ] === "split_half"
 			: false
 	);
 
@@ -29,14 +32,19 @@ function BeefSection({ id, deleteAnimal }) {
 	// 	console.log("splitHalf:", splitHalf);
 	// }, [splitHalf]);
 
+	// const options = window.localStorage.getItem("orderForm")
+
+	// TODO: build options from other animals of same type
+
 	return (
 		<Collapsible trigger={`Beef Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			{/* TODO: */}
+			<h4>Copy From Another Animal:</h4>
 			<select>
 				{/* TODO: display all OTHER this type of animal for copying from*/}
 				<option value="beef">Beef 1</option>
 			</select>
-			<button>Copy from previous added animal</button>
+			<Button>Copy from previous added animal</Button>
 			{/* END TODO */}
 
 			<ConfirmButton {...animalInfo} onClick={(e) => deleteAnimal(e)}>
