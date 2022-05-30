@@ -203,11 +203,14 @@
 		calc(var(--orange-bg--b) - 0)
 	);
 }
+
+.order-form--radio-container,
 .order-form--checkbox-container {
 	border-top: 1px solid gray;
 	padding-top: 10px;
 	display: grid;
-	grid-template-columns: 40px 200px;
+	gap: 10px;
+	grid-template-columns: 40px auto;
 }
 
 .order-form--title {
@@ -220,16 +223,18 @@
 	/* margin: 20px 0; */
 }
 
-.order-form--subtitle {
-}
+/* .order-form--subtitle {
+} */
 
-.order-form--checkbox-wrapper {
+.order-form--radio-wrapper {
 	/* border-top: 1px solid gray; */
 	padding-top: 10px;
 	margin-left: 2vw;
 	display: grid;
 	grid-row-gap: 6px;
 }
+
+.order-form--radio,
 .order-form--checkbox {
 	height: 20px;
 }
@@ -314,11 +319,13 @@
 .Collapsible {
 	background-color: #f1f1f1;
 }
+
 .Collapsible__contentInner {
 	padding: 10px;
 	border: 1px solid lightGrey;
 	border-top: 0;
 }
+
 .Collapsible__trigger {
 	display: block;
 	font-weight: 400;
@@ -335,6 +342,7 @@
 	);
 	color: black;
 }
+
 /* .Collapsible__trigger:after {
 	font-family: "FontAwesome";
 	content: "\f107";
@@ -348,6 +356,7 @@
 .Collapsible__trigger:is-open:after {
 	transform: rotateZ(180deg);
 }
+
 .Collapsible__trigger:is-disabled {
 	opacity: 0.5;
 	background-color: grey;

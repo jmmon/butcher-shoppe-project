@@ -6,21 +6,22 @@ import InputForm from "../FormComponents/InputForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import SelectForm from "../FormComponents/SelectForm";
 import RadioForm from "../FormComponents/RadioForm";
+import ConfirmButton from "../../../Button/ConfirmButton";
 
 function BeefSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: "beef" };
 
 	const [splitHalf, setSplitHalf] = useState(
 		window.localStorage.getItem("orderForm")
-			? window.localStorage.getItem("orderForm")?.["beef"]?.[id]["info"][
-					"beef-amount"
-			  ] === "split_half_beef__checkbox"
+			? window.localStorage.getItem("orderForm")?.["beef"]?.[id]?.[
+					"info"
+			  ]?.["beef-amount"] === "split_half"
 			: false
 	);
 
 	const handleSplitHalf = (e) => {
 		const { id } = e.target;
-		setSplitHalf(id === "split_half_beef__checkbox");
+		setSplitHalf(id === "split_half");
 	};
 
 	// useEffect(() => {
@@ -28,17 +29,21 @@ function BeefSection({ id, deleteAnimal }) {
 	// }, [splitHalf]);
 
 	return (
-		<Collapsible trigger={`Beef Cut Sheet #${id + 1}`}>
+		<Collapsible trigger={`Beef Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			{/* TODO: */}
 			<select>
+				{/* TODO: display all OTHER this type of animal for copying from*/}
 				<option value="beef">Beef 1</option>
 			</select>
 			<button>Copy from previous added animal</button>
+			{/* END TODO */}
 
 			<button {...animalInfo} onClick={(e) => deleteAnimal(e)}>
 				Delete this beef (should have confirmation just in case)
 			</button>
-			{/* END TODO */}
+			<ConfirmButton {...animalInfo} onClick={(e) => deleteAnimal(e)}>
+				Delete Animal
+			</ConfirmButton>
 
 			<Collapsible
 				trigger="Cow Information"
@@ -450,14 +455,6 @@ function BeefSection({ id, deleteAnimal }) {
 						]}
 						animalInfo={animalInfo}
 					/>
-
-					<InputForm
-						title="SPECIAL INSTRUCTIONS"
-						name="special_instructions"
-						placeholder="Enter special instructions for certain options here"
-						animalInfo={animalInfo}
-						textarea={true}
-					/>
 				</div>
 			</Collapsible>
 			<Collapsible trigger="Ground Beef Options">
@@ -519,30 +516,6 @@ function BeefSection({ id, deleteAnimal }) {
 						]}
 						animalInfo={animalInfo}
 					/>
-
-					<CheckboxForm
-						title="EXTRAS"
-						name="beef-extras"
-						options={[
-							{
-								name: "extras.liver__checkbox",
-								label: "LIVER",
-							},
-							{
-								name: "extras.heart__checkbox",
-								label: "HEART",
-							},
-							{
-								name: "extras.tongue__checkbox",
-								label: "TONGUE",
-							},
-							{
-								name: "extras.oxtail__checkbox",
-								label: "OXTAIL",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
 				</div>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">
@@ -597,6 +570,38 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
+					/>
+
+					<CheckboxForm
+						title="EXTRAS"
+						name="beef-extras"
+						options={[
+							{
+								name: "extras.liver__checkbox",
+								label: "LIVER",
+							},
+							{
+								name: "extras.heart__checkbox",
+								label: "HEART",
+							},
+							{
+								name: "extras.tongue__checkbox",
+								label: "TONGUE",
+							},
+							{
+								name: "extras.oxtail__checkbox",
+								label: "OXTAIL",
+							},
+						]}
+						animalInfo={animalInfo}
+					/>
+
+					<InputForm
+						title="SPECIAL INSTRUCTIONS"
+						name="special_instructions"
+						placeholder="Enter special instructions for certain options here"
+						animalInfo={animalInfo}
+						textarea={true}
 					/>
 				</div>
 			</Collapsible>

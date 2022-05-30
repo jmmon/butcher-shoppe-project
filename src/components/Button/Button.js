@@ -5,35 +5,38 @@ const STYLES = ["btn--primary", "btn--outline"];
 
 const SIZES = ["btn--medium", "btn--large"];
 
-function Button({ children, type, onClick, buttonStyle, buttonSize, url }) {
+function Button({
+	children,
+	type,
+	onClick,
+	buttonStyle,
+	buttonSize,
+	url = "",
+	...buttonProps
+}) {
 	const checkButtonStyle = STYLES.includes(buttonStyle)
 		? buttonStyle
 		: STYLES[0];
 	const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0];
 
-	if (url.includes("#")) {
-		return (
-			<a href={url} className="btn-mobile">
-				<button
-					className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-					onClick={onClick}
-					type={type}
-				>
-					{children}
-				</button>
-			</a>
-		);
-	}
+	const button = (
+		<button
+			className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+			onClick={onClick}
+			type={type}
+			{...buttonProps}
+		>
+			{children}
+		</button>
+	);
 
-	return (
+	return url.includes("#") ? (
+		<a href={url} className="btn-mobile">
+			{button}
+		</a>
+	) : (
 		<Link to={url} className="btn-mobile">
-			<button
-				className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-				onClick={onClick}
-				type={type}
-			>
-				{children}
-			</button>
+			{button}
 		</Link>
 	);
 }

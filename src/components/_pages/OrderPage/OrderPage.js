@@ -46,19 +46,22 @@ function OrderPage() {
 
 	const addAnimal = (e) => {
 		e.preventDefault();
-		console.log("chosen animal:", newAnimalChosenType);
+		// console.log("chosen animal:", newAnimalChosenType);
 
-		let chosenAnimalType_IdArray = [
+		//grab old array
+		let copy_chosenAnimalType_IdArray = [
 			...idCollectionOfAnimalsByType[newAnimalChosenType],
 		];
 		console.log(
-			`Chosen animal's existing ID array: ${chosenAnimalType_IdArray}`
+			`${newAnimalChosenType} - pre-existing array of IDs: ${copy_chosenAnimalType_IdArray}`
 		);
 
 		const idOfLastSpotInArray =
-			chosenAnimalType_IdArray.length === 0
+			copy_chosenAnimalType_IdArray.length === 0
 				? -1
-				: chosenAnimalType_IdArray[chosenAnimalType_IdArray.length - 1];
+				: copy_chosenAnimalType_IdArray[
+						copy_chosenAnimalType_IdArray.length - 1
+				  ];
 
 		const newAnimalId = idOfLastSpotInArray + 1;
 
@@ -66,20 +69,64 @@ function OrderPage() {
 			`last spot in array had id of: ${idOfLastSpotInArray}; Next id for the new animal will be: ${newAnimalId}`
 		);
 
-		chosenAnimalType_IdArray.push(newAnimalId);
+		copy_chosenAnimalType_IdArray.push(newAnimalId);
 
-		testingDisplayObjOfArrs(
+		testing__displayObjOfArrs(
 			idCollectionOfAnimalsByType,
 			"Old collection of animals: "
 		);
 
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,
-			[newAnimalChosenType]: [...chosenAnimalType_IdArray],
+			[newAnimalChosenType]: [...copy_chosenAnimalType_IdArray],
 		});
 	};
 
-	const testingDisplayObjOfArrs = (obj, msg) => {
+	const deleteAnimal = (e) => {
+		e.preventDefault();
+		// console.log(`Deleting animal from button ${e.target}`);
+
+		const typeOfAnimal = e.target.getAttribute("animal");
+		const idOfAnimal = e.target.getAttribute("id");
+
+		console.log(`animal: ${typeOfAnimal}, ID: ${idOfAnimal}`);
+
+		let copy_chosenAnimalType_IdArray =
+			idCollectionOfAnimalsByType[typeOfAnimal];
+
+		console.log(
+			`Chosen animal's existing ID array: ${copy_chosenAnimalType_IdArray}`
+		);
+
+		const index = copy_chosenAnimalType_IdArray.indexOf(idOfAnimal);
+
+		copy_chosenAnimalType_IdArray.splice(index, 1);
+
+		console.log(
+			`NEW ID array after removing the ID: ${copy_chosenAnimalType_IdArray}`
+		);
+
+		testing__displayObjOfArrs(
+			idCollectionOfAnimalsByType,
+			"Old collection of animals: "
+		);
+
+		setIdCollectionOfAnimalsByType({
+			...idCollectionOfAnimalsByType,
+			[typeOfAnimal]: [copy_chosenAnimalType_IdArray],
+		});
+		// const string = `beef.[${index}]`;
+		// methods.unregister(string);
+		let orderForm = JSON.parse(window.localStorage.getItem("orderForm"));
+		console.log("--orderForm before removal:", orderForm);
+		orderForm[typeOfAnimal].splice(index, 1);
+		console.log("--orderForm after removal:", orderForm);
+		window.localStorage.setItem("orderForm", orderForm);
+
+		// TODO: unregister the section
+	};
+
+	const testing__displayObjOfArrs = (obj, msg) => {
 		let string = "";
 		Object.keys(obj).forEach(
 			(arr) =>
@@ -88,42 +135,8 @@ function OrderPage() {
 		string !== "" && console.log(`${msg}${string}`);
 	};
 
-	const deleteAnimal = (e) => {
-		e.preventDefault();
-		console.log(`Deleting animal from button ${e.target}`);
-		const typeOfAnimal = e.target.getAttribute("animal");
-		const idOfAnimal = e.target.getAttribute("id");
-
-		console.log("animal:", typeOfAnimal, "\nId:", idOfAnimal);
-
-		let chosenAnimalType_IdArray =
-			idCollectionOfAnimalsByType[typeOfAnimal];
-		console.log(
-			`Chosen animal's existing ID array: ${chosenAnimalType_IdArray}`
-		);
-
-		const index = chosenAnimalType_IdArray.indexOf(idOfAnimal);
-
-		chosenAnimalType_IdArray.splice(index, 1);
-		console.log(
-			`NEW ID array after removing the ID: ${chosenAnimalType_IdArray}`
-		);
-
-		testingDisplayObjOfArrs(
-			idCollectionOfAnimalsByType,
-			"`Old collection of animals: "
-		);
-
-		setIdCollectionOfAnimalsByType({
-			...idCollectionOfAnimalsByType,
-			[typeOfAnimal]: [...chosenAnimalType_IdArray],
-		});
-
-		// TODO: unregister section
-	};
-
 	useEffect(() => {
-		testingDisplayObjOfArrs(
+		testing__displayObjOfArrs(
 			idCollectionOfAnimalsByType,
 			"(useEffect) updated collection of animals: "
 		);
@@ -256,7 +269,13 @@ function OrderPage() {
 						</article>
 						<div className="form--container">
 							<h3 className="form--title">Order Form</h3>
-							<Collapsible trigger="Contact Info">
+							<Collapsible
+								trigger="Contact Info"
+								open
+								// triggerDisabled={true}
+								transitionTime={200}
+								easing="ease"
+							>
 								<div
 									name="contact_info"
 									className="order-form--section"
@@ -421,7 +440,13 @@ function OrderPage() {
 									</div>
 								</div>
 							</Collapsible>
-							<Collapsible trigger="Animal Info" open>
+							<Collapsible
+								trigger="Animal Info"
+								open
+								// triggerDisabled={true}
+								transitionTime={200}
+								easing="ease"
+							>
 								<h4>Select and add an animal cuts form:</h4>
 								<select
 									onChange={(e) =>
@@ -444,7 +469,11 @@ function OrderPage() {
 										<h4>Animals</h4>
 										{idCollectionOfAnimalsByType.beef
 											.length > 0 && (
-											<Collapsible trigger="Your Beef">
+											<Collapsible
+												trigger="Your Beef"
+												transitionTime={200}
+												easing="ease"
+											>
 												{idCollectionOfAnimalsByType.beef.map(
 													(id) => (
 														<BeefSection
@@ -460,7 +489,11 @@ function OrderPage() {
 										)}
 										{idCollectionOfAnimalsByType.lamb
 											.length > 0 && (
-											<Collapsible trigger="Your Lamb">
+											<Collapsible
+												trigger="Your Lamb"
+												transitionTime={200}
+												easing="ease"
+											>
 												{idCollectionOfAnimalsByType.lamb.map(
 													(id) => (
 														<LambSection
@@ -476,7 +509,11 @@ function OrderPage() {
 										)}
 										{idCollectionOfAnimalsByType.hog
 											.length > 0 && (
-											<Collapsible trigger="Your Hog">
+											<Collapsible
+												trigger="Your Hog"
+												transitionTime={200}
+												easing="ease"
+											>
 												{idCollectionOfAnimalsByType.hog.map(
 													(id) => (
 														<HogSection

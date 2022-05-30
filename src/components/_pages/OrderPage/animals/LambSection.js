@@ -4,7 +4,7 @@ import Collapsible from "react-collapsible";
 function LambSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: "lamb" };
 	return (
-		<Collapsible trigger={`Lamb Cut Sheet #${id}`}>
+		<Collapsible trigger={`Lamb Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			<p>Form for lamb goes here!</p>
 			<button {...animalInfo} onClick={(e) => deleteAnimal(e)}>
 				Delete this lamb (should have confirmation just in case)

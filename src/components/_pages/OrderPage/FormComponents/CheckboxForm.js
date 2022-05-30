@@ -10,7 +10,7 @@ const EachCheckbox = ({ animalInfo, name, label }) => {
 		name = splitAnimalInfo(name, animalInfo);
 	}
 	return (
-		<label htmlFor={name} key={name}>
+		<React.Fragment key={name}>
 			<input
 				className="order-form--checkbox"
 				type="checkbox"
@@ -18,8 +18,10 @@ const EachCheckbox = ({ animalInfo, name, label }) => {
 				name={name}
 				{...register(name)}
 			/>
-			{label}
-		</label>
+			<label htmlFor={name} key={name}>
+				{label}
+			</label>
+		</React.Fragment>
 	);
 };
 
