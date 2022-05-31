@@ -29,8 +29,6 @@ const InputForm = ({
 
 	let thisError = errors;
 	name.split(".").forEach((key) => (thisError = thisError?.[key]));
-	// thisError && console.log("thisName:", name);
-	// thisError && console.log("thisError:", thisError);
 
 	return (
 		<p

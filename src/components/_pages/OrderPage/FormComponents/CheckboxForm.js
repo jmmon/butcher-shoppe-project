@@ -46,7 +46,7 @@ const CheckboxForm = ({ title, name, subtext, extra, options, animalInfo }) => {
 				extra={extra}
 				subtext={subtext}
 			/>
-			<div className={`order-form--checkbox-container`}>{allOptions}</div>
+			<p className={`order-form--checkbox-container`}>{allOptions}</p>
 		</div>
 	);
 };

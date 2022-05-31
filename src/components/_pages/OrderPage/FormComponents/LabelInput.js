@@ -19,6 +19,7 @@ function LabelInput({
 		>
 			{extra && (
 				<>
+					{" "}
 					<span className="form-special-extra">
 						*
 						<br />* Additional Fee - See Price List
@@ -26,7 +27,12 @@ function LabelInput({
 				</>
 			)}
 
-			{subtext && <p className="order-form--label-subtext">{subtext}</p>}
+			{subtext && (
+				<>
+					<br />
+					<span className="order-form--label-subtext">{subtext}</span>
+				</>
+			)}
 
 			{children}
 		</LabelForm>

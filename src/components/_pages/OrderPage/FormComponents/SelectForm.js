@@ -26,7 +26,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 	});
 
 	return (
-		<div className="order-form--field order-form--input-container-small order-form--input-container">
+		<p className="order-form--field order-form--input-container-small order-form--input-container">
 			<LabelInput
 				name={name}
 				extra={extra}
@@ -41,7 +41,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 			>
 				{allOptions}
 			</select>
-		</div>
+		</p>
 	);
 }
 
