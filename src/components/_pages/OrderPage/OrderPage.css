@@ -151,24 +151,24 @@
 }
 
 .order-form--section {
-	margin: 0px;
+	margin: 0px auto;
 	padding: 16px 4px;
 	width: 100%;
 	display: grid;
-	gap: 20px;
+	gap: 1.5em;
 }
 
 .order-form--section-subheading {
 	width: calc(100% - 14px);
-	margin-left: 14px;
+	padding-left: 24px;
 	font-size: 20px;
 	color: var(--subheading-gray);
-	margin-bottom: 12px;
+	margin: 0 auto 12px auto;
 	text-align: center;
 }
 
 .order-form--section-subheading-container {
-	margin-bottom: 12px;
+	margin: 0 auto 12px auto;
 }
 
 .dot {
@@ -184,19 +184,25 @@
 .order-form--select {
 	display: block;
 	width: 100%;
-	font-size: 18px;
+	font-size: 1.2em;
+	padding: 0.4em;
+}
+
+.order-form--select,
+.order-form--select-option {
+	cursor: pointer;
 }
 
 .order-form--label-subtext {
 	display: block;
-	font-size: 0.9rem;
+	font-size: 1.3rem;
 	/* padding-left: 10px; */
 	margin-bottom: 6px;
 	color: var(--subheading-gray);
 }
 
 .form-special-extra {
-	font-size: 0.9rem;
+	font-size: 1.2rem;
 	color: rgb(
 		calc(var(--orange-bg--r) - 20),
 		calc(var(--orange-bg--g) - 20),
@@ -237,11 +243,25 @@
 .order-form--radio,
 .order-form--checkbox {
 	height: 20px;
+	cursor: pointer;
+}
+
+.order-form--input-container {
+	margin: 0 auto;
+	padding: 0.5em;
+	max-width: 520px;
+	width: 50%;
+
+	min-width: 300px;
+	/* width: clamp(400, 46vw, 500); */
 }
 
 .order-form--input-container-small {
 	display: inline-block;
+	/* max-width: 520;
 	width: 50%;
+
+	min-width: 300px; */
 }
 
 .order-form--label {
@@ -276,11 +296,11 @@
 	padding: 20px;
 }
 
-/* .order-form--field {
+.order-form--field {
+	/* max-width: 800px;
+	min-width: 200px;
+	margin: auto; */
 }
-
-.order-form--input-container {
-} */
 
 .form--validation-error {
 	color: red;
@@ -341,6 +361,7 @@
 		var(--orange-bg--b)
 	);
 	color: black;
+	cursor: pointer;
 }
 
 /* .Collapsible__trigger:after {
@@ -361,15 +382,19 @@
 	opacity: 0.5;
 	background-color: grey;
 }
+.order-form {
+	/* width: 90vw;
+	min-width: 480px; */
+	width: clamp(480px, 90vw, 1200px);
+}
 
 @media screen and (max-width: 960px) {
 	/* .react-sanfona {
 		width: 80%;
 	} */
-
-	.order-form {
-		width: 90vw;
-		min-width: 480px;
+	.order-form--input-container-small {
+		display: inline-block;
+		width: 50%;
 	}
 
 	.accordion-wrapper {
@@ -393,7 +418,7 @@
 	.order-form--select {
 		display: block;
 		width: 100%;
-		font-size: 16px;
+		font-size: 1.2em;
 	}
 	.order-form--checkbox {
 		height: 16px;
@@ -406,7 +431,7 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 658px) {
 	/* .react-sanfona {
 		width: 90%;
 	} */

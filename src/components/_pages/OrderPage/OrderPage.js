@@ -327,7 +327,7 @@ function OrderPage() {
 										/>
 									</div>
 
-									<div className="form-field">
+									<div className="order-form--field">
 										<LabelForm
 											required={true}
 											title="Contact"

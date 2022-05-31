@@ -4,7 +4,11 @@ import LabelInput from "./LabelInput";
 import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 function Option({ label, value }) {
-	return <option key={value}>{label}</option>;
+	return (
+		<option className="order-form--select-option" key={value}>
+			{label}
+		</option>
+	);
 }
 
 function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
@@ -22,7 +26,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 	});
 
 	return (
-		<div className="order-form--field">
+		<div className="order-form--field order-form--input-container-small order-form--input-container">
 			<LabelInput
 				name={name}
 				extra={extra}
