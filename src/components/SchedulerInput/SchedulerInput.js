@@ -64,7 +64,7 @@ const DateTimePicker = ({ selectHandler }) => {
 	};
 
 	return (
-		<div className="form-container panel--shadow card">
+		<div className="form-container panel-shadow--dark card">
 			<form className="scheduler-form">
 				<h3 className="scheduler--heading">What works best?</h3>
 				<div className="date input-container">

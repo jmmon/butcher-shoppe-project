@@ -446,9 +446,9 @@
 		min-width: 80vw;
 	}
 
-	.grid--column--gap {
+	/* .grid--col-md {
 		padding: 0;
-	}
+	} */
 
 	.order-form {
 		box-shadow: none;

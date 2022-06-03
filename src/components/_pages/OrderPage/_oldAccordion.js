@@ -2,7 +2,7 @@
 	<Accordion allowMultiple className="">
 		<AccordionItem
 			titleClassName="card"
-			className="steak-options panel--shadow"
+			className="steak-options panel-shadow--dark"
 			key={0}
 			title="Steak Options"
 			expanded={activeClickedItems.includes(0)}
@@ -158,7 +158,7 @@
 
 		<AccordionItem
 			titleClassName="card"
-			className="roast-options panel--shadow"
+			className="roast-options panel-shadow--dark"
 			key={1}
 			title="Roast Options"
 			expanded={activeClickedItems.includes(1)}
@@ -302,7 +302,7 @@
 
 		<AccordionItem
 			titleClassName="card"
-			className="ground-beef-options panel--shadow"
+			className="ground-beef-options panel-shadow--dark"
 			key={2}
 			title="Ground Beef Options"
 			expanded={activeClickedItems.includes(2)}
@@ -411,7 +411,7 @@
 
 		<AccordionItem
 			titleClassName="card"
-			className="other-cut-options panel--shadow"
+			className="other-cut-options panel-shadow--dark"
 			key={3}
 			title="Other Cut Options"
 			expanded={activeClickedItems.includes(3)}
@@ -487,7 +487,7 @@
 
 		<AccordionItem
 			titleClassName="card"
-			className="cow-info panel--shadow"
+			className="cow-info panel-shadow--dark"
 			key={4}
 			title="Cow Information"
 			expanded={activeClickedItems.includes(4)}
@@ -682,7 +682,7 @@
 
 		<AccordionItem
 			titleClassName="card"
-			className="customer-contact-info panel--shadow"
+			className="customer-contact-info panel-shadow--dark"
 			key={5}
 			title="Your Contact Info"
 			expanded={activeClickedItems.includes(5)}
@@ -693,8 +693,8 @@
 	<div
 		className={
 			activeClickedItems.length === 0
-				? `card panel--shadow accordion-close-all-wrapper-hidden`
-				: `card panel--shadow accordion-close-all-wrapper`
+				? `card panel-shadow--dark accordion-close-all-wrapper-hidden`
+				: `card panel-shadow--dark accordion-close-all-wrapper`
 		}
 		onClick={(e) => {
 			closeAll(e);

@@ -55,13 +55,13 @@ function FaqSection({ sectionTitle, questionList }) {
 
 	return (
 		<section
-			className="faq-section card panel--shadow"
+			className="faq-section card panel-shadow--dark"
 			// id={linkDestination}
 		>
 			<div className="faq-section__container">
 				<h3 className="faq-section__title">{sectionTitle}</h3>
 
-				<div className="faq-section__text panel--shadow card">
+				<div className="faq-section__text panel-shadow--dark card">
 					{question(
 						questionList[0].question,
 						questionList[0].answer,

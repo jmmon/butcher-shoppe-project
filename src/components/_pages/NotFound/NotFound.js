@@ -4,9 +4,9 @@ import PageTitle from "../../PageTitle/PageTitle";
 function PageNotFound() {
 	return (
 		<>
-			<PageTitle heading="Page Not Found!" />
-			<div className="grid--column--gap">
-				<div className="panel-container ">
+			<PageTitle title="Page Not Found!" />
+			<div className="grid--col-md">
+				<div className="card--width ">
 					<div className="text-wrapper-shadow">
 						<br />
 						<br />

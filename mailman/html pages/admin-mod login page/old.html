@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>%(listname)s %(who)s Authentication</title>
+		<script>
+			function sf() {
+				document.f.adminpw.focus();
+			}
+		</script>
+	</head>
+	<body bgcolor="#ffffff" onLoad="sf()">
+		<form method="POST" action="%(path)s" name="f">
+			%(message)s
+			<table width="100%%" border="0" cellspacing="4" cellpadding="5">
+				<tr>
+					<td
+						colspan="2"
+						width="100%%"
+						bgcolor="#99CCFF"
+						align="CENTER"
+					>
+						<b
+							><font color="#000000" size="+1"
+								>%(listname)s %(who)s Authentication</font
+							></b
+						>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>If you have mailman %(who)s access:</b>
+					</td>
+				</tr>
+				<tr>
+					<td><div align="Right">List %(who)s Password:</div></td>
+					<td>
+						<input type="password" name="adminpw" size="30" />
+						<input
+							type="SUBMIT"
+							name="admlogin"
+							value="Let me in..."
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b
+							>If you have been delegated access and have a
+							username and password:</b
+						>
+					</td>
+				</tr>
+				<tr>
+					<td align="right">cPanel Webmail Access</td>
+					<td><a href="%(cpanel_url)s">Login here</a></td>
+				</tr>
+			</table>
+			<p>
+				<strong><em>Important:</em></strong> From this point on, you
+				must have cookies enabled in your browser, otherwise no
+				administrative changes will take effect.
+			</p>
+
+			<p>
+				Session cookies are used in Mailman's administrative interface
+				so that you don't need to re-authenticate with every
+				administrative operation. This cookie will expire automatically
+				when you exit your browser, or you can explicitly expire the
+				cookie by hitting the <em>Logout</em> link under
+				<em>Other Administrative Activities</em> (which you'll see once
+				you successfully log in).
+			</p>
+		</form>
+	</body>
+</html>

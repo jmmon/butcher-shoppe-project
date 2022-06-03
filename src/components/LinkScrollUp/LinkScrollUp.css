@@ -1,0 +1,18 @@
+.footer-link-scroll {
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
+.footer-link-scroll:hover {
+	color: rgba(var(--sky-blue), 0.9);
+	transition: 0.3 ease-out;
+}
+
+.footer-link--underline {
+	cursor: pointer;
+	display: inline;
+	text-decoration: underline;
+	color: #fff;
+}

@@ -4,6 +4,7 @@ import PageTitle from "../../PageTitle/PageTitle.js";
 
 import bgImage from "../../../assets/images/image-1-132.jpg";
 import FaqSection from "../../FaqSection/FaqSection";
+import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 
 function Faq() {
 	const generalFAQ = [
@@ -55,30 +56,16 @@ function Faq() {
 	return (
 		<>
 			<PageTitle
-				heading="FREQUENTLY ASKED QUESTIONS"
+				title="FREQUENTLY ASKED QUESTIONS"
 				bgImage={bgImage}
 				smaller="true"
 			/>
-
-			<div className="grid--column--gap">
-				<div className="faq card panel--shadow">
-					{/* <div className="faq-container"> */}
-					<FaqSection
-						sectionTitle={"General Questions"}
-						questionList={generalFAQ}
-					/>
-					{/* <FaqSection 
-					sectionTitle={"Slaughtering"} 
-					questionList={slaughteringFAQ}
-				/>
-				<FaqSection 
-					sectionTitle={"Processing"} 
+			<WhitePageBackground>
+				<FaqSection
+					sectionTitle={"General Questions"}
 					questionList={generalFAQ}
-				/> */}
-					{/* {items.map(content => <FaqItem question={content.question} answer={content.answer}/>)} */}
-					{/* </div> */}
-				</div>
-			</div>
+				/>
+			</WhitePageBackground>
 		</>
 	);
 }

@@ -1,31 +1,30 @@
 import "./PageTitle.css";
 
-function PageTitle({ heading, bgImage, position, smaller, subtitle }) {
+function PageTitle({ title, bgImage, position, smaller, subtitle, children }) {
 	return (
-		<div className="panel--shadow">
-			<section
-				className="page-title"
+		<section className="panel-shadow--dark">
+			<div
+				className="page-title inset-box-shadow--dark"
 				style={{
-					backgroundImage: `url(${bgImage})`,
+					background: `url(${bgImage}) center center/cover no-repeat`,
 					backgroundPosition: `${position || "50% 50%"}`,
-					backgroundSize: "cover",
-					backgroundRepeat: "no-repeat",
 				}}
 			>
 				<div className="page-title--container">
 					<h1
 						className={
 							smaller === "true" || smaller === true
-								? "page-title--heading smaller"
-								: "page-title--heading"
+								? "text-shadow--lg page-title--heading smaller"
+								: "text-shadow--lg page-title--heading"
 						}
 					>
-						{heading}
+						{title}
 					</h1>
-					{subtitle && <h2 className="page-subtitle">{subtitle}</h2>}
+					{subtitle && <p className="page-subtitle">{subtitle}</p>}
+					{children}
 				</div>
-			</section>
-		</div>
+			</div>
+		</section>
 	);
 }
 

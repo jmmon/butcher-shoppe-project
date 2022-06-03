@@ -2,15 +2,20 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Subscribe.css";
 
-const headers = { "Content-Type": "application/json" };
+const headers = {
+	"Content-Type": "application/json",
+	// "Access-Control-Allow-Origin": "*",
+};
 
 function Subscribe({ unsubscribe }) {
 	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
-	// const subscribeBackendUri = `localhost:3001/server/${
+
+	// const subscribeBackendUri = `https://localhost:3001/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
 	// }`;
+
 	let timer = null;
 
 	const [responseFromSubscribeBox, setResponseFromSubscribeBox] = useState({
@@ -69,7 +74,11 @@ function Subscribe({ unsubscribe }) {
 					}));
 
 					setEmail("");
-					// console.log("Success at subscribe email request!");
+					console.log(
+						`Success at ${
+							unsubscribe ? "unsubscribe" : "subscribe"
+						} email request!`
+					);
 				} else if (res.status === 500) {
 					setResponseFromSubscribeBox((prevState) => ({
 						...prevState,
@@ -96,7 +105,7 @@ function Subscribe({ unsubscribe }) {
 	};
 
 	return (
-		<>
+		<div className="subscribe--wrapper card panel-shadow--light">
 			<div className="subscribe--container">
 				<form className="subscribe--email-form" onSubmit={handleSubmit}>
 					<input
@@ -158,7 +167,7 @@ function Subscribe({ unsubscribe }) {
 					  }! To confirm, please click the link in the email.`
 					: ""}
 			</p>
-		</>
+		</div>
 	);
 }
 

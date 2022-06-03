@@ -1,14 +1,14 @@
 function ServicesProcessing({ bg }) {
 	return (
 		<div className="card-wrapper" id="processing-link">
-			<div className="panel--shadow card">
+			<div className="panel-shadow--dark card">
 				<div
 					className="container inset-box-shadow card"
 					style={{
 						background: `url(${bg}) center center/cover no-repeat`,
 					}}
 				>
-					<h2 className="card-heading card-heading-shadow">
+					<h2 className="card--heading text-shadow--lg">
 						The Shoppe
 					</h2>
 

@@ -6,6 +6,7 @@ import Subscribe from "../../Subscribe.js/Subscribe";
 import Button from "../../Button/Button";
 
 import Helmet from "react-helmet";
+import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 
 function NewsletterPage() {
 	return (
@@ -21,19 +22,19 @@ function NewsletterPage() {
 			</Helmet>
 			<main>
 				<PageTitle
-					heading="SUBSCRIBE TO OUR NEWSLETTER"
+					title="SUBSCRIBE TO OUR NEWSLETTER"
 					bgImage={bgImage}
 					smaller={true}
 				/>
-				<section className="newsletter">
-					<div className="newsletter--container panel--shadow">
-						<h2 className="newsletter--heading">
-							Get all our updates delivered straight to your
-							inbox!
+				<WhitePageBackground>
+					<section className="">
+						<h2 className="page--subheading">
+							Get All Our Updates Delivered Straight To Your
+							Inbox!
 						</h2>
 						<div className="newsletter--container--content-wrapper">
-							<p className="newsletter--blerb card panel--shadow">
-								<em>What's happening at The Butcher Shoppe?</em>{" "}
+							<p className="newsletter--blerb card panel-shadow--light">
+								<em>What's happening at The Butcher Shoppe?</em>
 								<br />
 								<br />
 								For our neighbors and our community, we like to
@@ -51,13 +52,13 @@ function NewsletterPage() {
 								confirm your newsletter subscription!
 							</p>
 
-							<div className="subscribe--wrapper card panel--shadow">
-								<Subscribe />
-							</div>
+							<Subscribe />
 						</div>
-					</div>
-					<div className="newsletter--container unsubscribe panel--shadow">
-						<h3 className="newsletter--subheading unsubscribe">
+					</section>
+				</WhitePageBackground>
+				<WhitePageBackground separate={true}>
+					<div className="padding-lg--bot">
+						<h3 className="margin-lg--top">
 							Looking to unsubscribe?
 						</h3>
 						<Button
@@ -69,7 +70,7 @@ function NewsletterPage() {
 							Click here
 						</Button>
 					</div>
-				</section>
+				</WhitePageBackground>
 			</main>
 		</>
 	);

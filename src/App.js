@@ -14,89 +14,86 @@ import NotFound from "./components/_pages/NotFound/NotFound";
 import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
+import SubscribeConfirm from "./components/_pages/Newsletter/Confirm/SubscribeConfirm";
+import MeetTheTeam from "./components/_pages/MeetTheTeam/MeetTheTeam";
+import Prices from "./components/_pages/Prices/Prices";
 
 function App() {
-	const api_regex = /^\/api\/.*/;
-	// if using "/api/" in the pathname, don't use React Router
-	if (api_regex.test(window.location.pathname)) {
-		return <div />; // must return at least an empty div
-	} else {
-		// use React Router
-		return (
-			<div className="website-container" id="link-destination-top">
-				{/* <Router>
-					<ScrollToTop>
-						<Header />
-						<Navbar />
-						<div className="website-content-container">
-							<Routes>
-								<Route
-									path="/newsletter"
-									exact
-									element={<Newsletter />}
-								/>
-								<Route
-									path="/newsletter/unsubscribe"
-									exact
-									element={<Unsubscribe />}
-								/>
-								<Route path="*" element={<ComingSoon />} />
-							</Routes>
-							<Footer/>
-						</div>
-					</ScrollToTop>
-				</Router> */}
-				<Router>
-					<ScrollToTop>
-						<Header />
-						<Navbar />
-						<div className="website-content-container">
-							<Routes>
-								<Route path="/" exact element={<Home />} />
+	return (
+		<div className="website-container" id="link-destination-top">
+			<Router>
+				<ScrollToTop>
+					<Header />
+					<Navbar />
+					<div className="website-content-container">
+						<Routes>
+							<Route path="/" exact element={<Home />} />
 
-								<Route
-									path="/services"
-									exact
-									element={<Services />}
-								/>
+							<Route
+								path="/services"
+								exact
+								element={<Services />}
+							/>
 
-								<Route
-									path="/schedule"
-									exact
-									element={<Schedule />}
-								/>
-								<Route path="/faq" exact element={<Faq />} />
-								<Route
-									path="/order"
-									exact
-									element={<OrderPage />}
-								/>
-								<Route
-									path="/construction"
-									exact
-									element={<ComingSoon />}
-								/>
-								<Route
-									path="/newsletter"
-									exact
-									element={<Newsletter />}
-								/>
+							{/* <Route
+								path="/schedule"
+								exact
+								element={<Schedule />}
+							/> */}
 
-								<Route
-									path="/newsletter/unsubscribe"
-									exact
-									element={<Unsubscribe />}
-								/>
+							<Route path="/faq" exact element={<Faq />} />
 
-								<Route path="*" element={<NotFound />} />
-							</Routes>
-							<Footer />
-						</div>
-					</ScrollToTop>
-				</Router>
-			</div>
-		);
-	}
+							<Route
+								path="/how-to-order"
+								exact
+								element={<OrderPage />}
+							/>
+							{/* <Route
+								path="/construction"
+								exact
+								element={<ComingSoon />}
+							/> */}
+							<Route
+								path="/newsletter"
+								exact
+								element={<Newsletter />}
+							/>
+
+							<Route
+								path="/meet-the-team"
+								exact
+								element={<MeetTheTeam />}
+							/>
+
+							<Route path="/prices" exact element={<Prices />} />
+
+							<Route
+								path="/newsletter/unsubscribe"
+								exact
+								element={<Unsubscribe />}
+							/>
+
+							<Route
+								path="/newsletter/subscribe/confirm"
+								exact
+								element={<SubscribeConfirm subscribe={true} />}
+							/>
+
+							<Route
+								path="/newsletter/unsubscribe/confirm"
+								exact
+								element={<SubscribeConfirm subscribe={false} />}
+							/>
+
+							<Route path="*" element={<NotFound />} />
+						</Routes>
+						<Footer />
+					</div>
+				</ScrollToTop>
+			</Router>
+		</div>
+	);
+	// }
 }
 
 export default App;

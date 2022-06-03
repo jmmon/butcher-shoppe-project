@@ -4,6 +4,7 @@ import bgImage from "../../../assets/images/image-1-136.jpg";
 import "./Newsletter.css";
 import Subscribe from "../../Subscribe.js/Subscribe";
 import Helmet from "react-helmet";
+import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 
 function NewsletterPage() {
 	return (
@@ -18,17 +19,14 @@ function NewsletterPage() {
 				/>
 			</Helmet>
 			<main>
-				<PageTitle heading="UNSUBSCRIBE" bgImage={bgImage} />
-				<section className="newsletter">
-					<div
-						id="unsubscribe"
-						className="newsletter--container panel--shadow"
-					>
-						<h2 className="newsletter--subheading">
-							Looking to Unsubscribe from our Newsletter?
+				<PageTitle title="UNSUBSCRIBE" bgImage={bgImage} />
+				<WhitePageBackground>
+					<section>
+						<h2 className="page--subheading">
+							Looking To Unsubscribe From Our Newsletter?
 						</h2>
 						<div className="newsletter--container--content-wrapper">
-							<p className="newsletter--blerb card panel--shadow">
+							<p className="newsletter--blerb card panel-shadow--light">
 								We hope you enjoy our newsletters! If you are
 								already a newsletter subscriber and wish to
 								unsubscribe, you can do that here. <br />
@@ -39,12 +37,10 @@ function NewsletterPage() {
 								the link in the email and you will be
 								unsubscribed!
 							</p>
-							<div className="subscribe--wrapper unsubscribe card panel--shadow">
-								<Subscribe unsubscribe={true} />
-							</div>
+							<Subscribe unsubscribe={true} />
 						</div>
-					</div>
-				</section>
+					</section>
+				</WhitePageBackground>
 			</main>
 		</>
 	);

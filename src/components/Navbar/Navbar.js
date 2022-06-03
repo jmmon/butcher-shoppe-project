@@ -48,66 +48,67 @@ function Navbar({ simple }) {
 					</Link>
 
 					{/* Hamburger icon*/}
-					{!simple && (
-						<div className="menu-icon" onClick={handleClick}>
-							<i
-								className={
-									click ? "fas fa-times" : "fas fa-bars"
-								}
-							/>
-						</div>
-					)}
+					<div className="menu-icon" onClick={handleClick}>
+						<i className={click ? "fas fa-times" : "fas fa-bars"} />
+					</div>
 
-					{!simple && (
-						<ul className={click ? "nav-menu active" : "nav-menu"}>
-							<li className="nav-item">
-								<Link
-									to="/services"
-									className="nav-links"
-									onClick={closeMobileMenu}
-								>
-									Services
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link
-									to="/schedule"
-									className="nav-links"
-									onClick={closeMobileMenu}
-								>
-									Schedule
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link
-									to="/FAQ"
-									className="nav-links"
-									onClick={closeMobileMenu}
-								>
-									FAQ
-								</Link>
-							</li>
-							<li className="nav-item">
-								<a
-									href="#more-links"
-									className="nav-links"
-									onClick={closeMobileMenu}
-								>
-									More...
-								</a>
-							</li>
+					<ul className={click ? "nav-menu active" : "nav-menu"}>
+						<li className="nav-item">
+							<Link
+								to="/services"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								Services
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								to="/meet-the-team"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								Meet The Team
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								to="/how-to-order"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								How To Order
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								to="/FAQ"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								FAQ
+							</Link>
+						</li>
+						<li className="nav-item">
+							<a
+								href="#more-links"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								More...
+							</a>
+						</li>
 
-							<li className="nav-item">
-								<Link
-									to="/newsletter"
-									className="nav-links-mobile"
-									onClick={closeMobileMenu}
-								>
-									Newsletter
-								</Link>
-							</li>
-						</ul>
-					)}
+						<li className="nav-item">
+							<Link
+								to="/newsletter"
+								className="nav-links-mobile"
+								onClick={closeMobileMenu}
+							>
+								Newsletter
+							</Link>
+						</li>
+					</ul>
 
 					{button && (
 						<Link

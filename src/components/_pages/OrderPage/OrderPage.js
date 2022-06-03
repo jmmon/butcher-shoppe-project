@@ -160,7 +160,7 @@ function OrderPage() {
 	return (
 		<>
 			<PageTitle
-				heading="Schedule For Our Service"
+				title="Schedule For Our Service"
 				bgImage={bgImage}
 				smaller="true"
 				position="50% 50%"
@@ -173,7 +173,7 @@ function OrderPage() {
 						className="form--center"
 						onSubmit={methods.handleSubmit(onSubmit)}
 					>
-						<article className="form--instructions panel--shadow">
+						<article className="form--instructions panel-shadow--dark">
 							<h2 className="center-text">
 								Ready to schedule your order?
 							</h2>

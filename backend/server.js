@@ -4,7 +4,7 @@ const cors = require("cors");
 // const mongoose = require("mongoose");
 
 // const corsOptions = {
-// 	origin: "https://thenorthportbutchershoppe.com",
+// 	origin: "localhost:3000/",
 // 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 // };
 
@@ -39,10 +39,16 @@ app.use("/server", express.static("public"));
 app.use("/server", require("./routes/subscribeRoute"));
 app.use("/server", require("./routes/contactRoute"));
 
-app.listen(3001, () => {
-	console.log("Server started. Listening...");
-});
+// live
 
-// app.listen(process.env.PORT, function () {
-// 	console.log("express running on " + process.env.PORT);
+// app.listen(() => {
+// 	console.log("Server started. Listening...");
 // });
+
+// dev
+
+const port = 3001;
+
+app.listen(port, () => {
+	console.log(`Server started. Listening (Port ${port} )`);
+});

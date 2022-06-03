@@ -24,3 +24,12 @@ Order Form container with title {
 	}
 	Submit Order button
 }
+
+
+
+
+
+NOTE:
+Might have localStorage hold an array of each animal that has been created, so we can pull up each customization by id. This
+Then, have localStorage hold a reference to each of those individual customizations for submission of the data.
+Finally, have a way to wipe the animal customizations from localStorage if they are not customized.

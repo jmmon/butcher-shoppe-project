@@ -1,9 +1,9 @@
 .page-title {
 	display: flex;
-	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 	justify-content: center;
-	padding: 10vh 0px;
-	min-height: 20vh;
+	flex-direction: column;
+	align-items: center;
+	min-height: 30vh;
 }
 
 .page-title--container {
@@ -17,7 +17,6 @@
 	justify-content: center;
 	color: var(--page-title-text-color);
 	font-size: var(--page-title-xlarge);
-	text-shadow: -3px 3px black;
 	text-align: center;
 }
 

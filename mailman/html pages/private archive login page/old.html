@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<title>%(realname)s Private Archives Authentication</title>
+		<script>
+			function sf() {
+				document.f.username.focus();
+			}
+		</script>
+	</head>
+	<body bgcolor="#ffffff" onLoad="sf()">
+		<form method="POST" action="%(action)s" name="f">
+			%(message)s
+			<table width="100%%" border="0" cellspacing="4" cellpadding="5">
+				<tr>
+					<td
+						colspan="2"
+						width="100%%"
+						bgcolor="#99CCFF"
+						align="CENTER"
+					>
+						<b
+							><font color="#000000" size="+1"
+								>%(realname)s Private Archives
+								Authentication</font
+							></b
+						>
+					</td>
+				</tr>
+				<tr>
+					<td><div align="Right">Email address:</div></td>
+					<td><input type="text" name="username" size="30" /></td>
+				</tr>
+				<tr>
+					<td><div align="Right">Password:</div></td>
+					<td><input type="password" name="password" size="30" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="middle">
+						<input
+							type="SUBMIT"
+							name="submit"
+							value="Let me in..."
+						/>
+					</td>
+				</tr>
+			</table>
+			<p>
+				<strong><em>Important:</em></strong> From this point on, you
+				must have cookies enabled in your browser, otherwise you will
+				have to re-authenticate with every operation.
+			</p>
+
+			<p>
+				Session cookies are used in Mailman's private archive interface
+				so that you don't need to re-authenticate with every operation.
+				This cookie will expire automatically when you exit your
+				browser, or you can explicitly expire the cookie by visiting
+				your member options page and clicking the
+				<em>Log out</em> button.
+			</p>
+
+			<p></p>
+			<table width="100%%" border="0" cellspacing="4" cellpadding="5">
+				<tr>
+					<td
+						colspan="2"
+						width="100%%"
+						bgcolor="#99CCFF"
+						align="CENTER"
+					>
+						<b
+							><font color="#000000" size="+1"
+								>Password Reminder</font
+							></b
+						>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						If you don't remember your password, enter your email
+						address above and click the <em>Remind</em> button and
+						your password will be emailed to you.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<center>
+							<input
+								name="login-remind"
+								type="SUBMIT"
+								value="Remind"
+							/>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

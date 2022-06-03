@@ -1,10 +1,16 @@
 import React from "react";
 import "./WhitePageBackground.css";
 
-function WhitePageBackground(props) {
+function WhitePageBackground({ separate, children }) {
 	return (
-		<section className="white-page-background panel--shadow">
-			{props.children}
+		<section
+			className={`panel-shadow--dark ${
+				separate
+					? "white-page-background separate"
+					: "white-page-background "
+			}`}
+		>
+			{children}
 		</section>
 	);
 }

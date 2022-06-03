@@ -1,20 +1,25 @@
 .white-page-background {
 	max-width: 1200px;
-	width: 85vw;
-	background-color: #fff;
-	margin: 0 auto;
+	/* background-color: #fff; */
+	background-color: var(--white-page-background);
+	margin: -2rem auto 4em auto;
 	display: grid;
 	justify-content: center;
 	padding: 4rem 0;
-	margin-bottom: 40px;
-	margin-top: -2rem;
+	z-index: 2;
 }
 
-@media screen and (max-width: 960px) {
+.white-page-background.separate {
+	margin: 4em auto 4em auto;
+}
+
+@media screen and (max-width: 1250px) {
 	.white-page-background {
-		/* max-width: 800px; */
-		width: auto;
 		padding: 2rem 0;
-		margin-top: 1rem;
+		margin: 1rem auto 1rem auto;
+	}
+
+	.white-page-background.separate {
+		margin: 1rem auto 1rem auto;
 	}
 }

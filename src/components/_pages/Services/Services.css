@@ -40,7 +40,8 @@
 }
 
 .skinny-blerb {
-	width: 400px;
+	min-width: 400px;
+	max-width: 50%;
 }
 
 table {
@@ -59,20 +60,20 @@ tr {
 	border: 1px solid black;
 }
 
-.blerb-wrapper {
+/* .blerb-wrapper {
 	margin: auto;
 	padding: 4vh 4vw;
 	margin-top: 2rem;
 	background-color: #fff;
-}
+} */
 
-.blerb-wrapper > * {
+/* .blerb-wrapper > * {
 	font-size: 20px;
 	width: 80%;
 	margin: auto;
-}
-.blerb-wrapper > ul {
-	padding-left: 24px;
+} */
+.services--blerb > ul {
+	padding-left: 2em;
 }
 
 @media screen and (max-width: 960px) {

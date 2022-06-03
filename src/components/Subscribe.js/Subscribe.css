@@ -4,6 +4,16 @@
 	justify-content: center;
 }
 
+.subscribe--wrapper {
+	background-color: var(--navbar-gradient--light);
+	border: 1px solid black;
+	justify-content: center;
+	padding: 30px;
+	max-width: 600px;
+	width: 96vw;
+	margin: 0 auto;
+}
+
 .subscribe--input::placeholder {
 	color: var(--input-placeholder--light);
 }

@@ -1,14 +1,14 @@
-import React from 'react'
-import PageTitle from '../PageTitle'
-import './AboutUsPage.css'
+import React from "react";
+import PageTitle from "../PageTitle";
+import "./AboutUsPage.css";
 
 function AboutUsPage() {
 	return (
 		<>
-		<PageTitle heading="About Us" />
-		<div>AboutUsPage</div>
+			<PageTitle title="About Us" />
+			<div>AboutUsPage</div>
 		</>
-	)
+	);
 }
 
-export default AboutUsPage
+export default AboutUsPage;

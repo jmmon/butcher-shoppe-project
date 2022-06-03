@@ -3,15 +3,15 @@ import bg from "../../assets/images/image-1-134.jpg";
 
 function ComingSoonCard() {
 	return (
-		<section className="panel-container">
-			<div className="panel--shadow card">
+		<section className="card--width">
+			<div className="panel-shadow--dark card">
 				<div
 					className="homepage--card card inset-box-shadow"
 					style={{
 						background: `url(${bg}) 0% 30%/cover no-repeat`,
 					}}
 				>
-					<h2 className="card-heading card-heading-shadow">
+					<h2 className="card--heading text-shadow--lg">
 						Coming Soon To The Greater Northport Area
 					</h2>
 

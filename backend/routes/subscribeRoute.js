@@ -21,19 +21,6 @@ router.route("/unsubscribe").get((req, res) => {
 });
 
 router.route("/subscribe").post(async (req, res) => {
-	// Email to send requests to: newsletter-request@thenorthportbutchershopppe.com
-
-	// Email to send requests from: noreply@thenorthportbutchershopppe.com
-
-	// Use commands in the subject line or body of the message, each command on a different line.
-	// put 'end' on line after commands just in case there's a signature or other text below.
-
-	// Commands: (no quotes or brackets!)
-	//	subscribe [password] [nodigest|digest] [address=theiremail@example.com]
-	//	confirm [confirmation-string]
-
-	// TODO: use noreply@ email to send our commands to our newsletter-request@ email
-
 	console.log("req.body:", req.body);
 
 	console.log("subscribe post route working:");
@@ -105,3 +92,16 @@ router.route("/unsubscribe").post((req, res) => {
 });
 
 module.exports = router;
+
+// Email to send requests to: newsletter-request@thenorthportbutchershopppe.com
+
+// Email to send requests from: noreply@thenorthportbutchershopppe.com
+
+// Use commands in the subject line or body of the message, each command on a different line.
+// put 'end' on line after commands just in case there's a signature or other text below.
+
+// Commands: (no quotes or brackets!)
+//	subscribe [password] [nodigest|digest] [address=theiremail@example.com]
+//	confirm [confirmation-string]
+
+// TODO: use noreply@ email to send our commands to our newsletter-request@ email
