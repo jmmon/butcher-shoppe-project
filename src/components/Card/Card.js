@@ -10,12 +10,10 @@ function Card({ title, paragraphs, bg }) {
 		//panel-shadow--dark removed from section
 		<section className="white card--width  card--font-size">
 			{bg && <ImageHeading bg={bg} title={title} />}
-			<div className="">
-				<div className="grid--col-sm card--content-width padding-lg">
-					{!bg && <h3 className="center-text">{title}</h3>}
+			<div className="grid--col-sm card--content-width padding-md--horizontal">
+				{!bg && <h3 className="center-text">{title}</h3>}
 
-					{content && content}
-				</div>
+				{content && content}
 			</div>
 		</section>
 	);

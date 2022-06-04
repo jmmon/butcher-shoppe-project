@@ -89,10 +89,6 @@
 	padding: 1em;
 }
 
-.padding-md {
-	padding: 2em;
-}
-
 .padding-lg {
 	padding: 4vh 4vw;
 }
@@ -101,7 +97,10 @@
 }
 
 .padding-md--horizontal {
-	padding: 0 2vw;
+	padding: 0 2em;
+}
+.padding-md--vertical {
+	padding: 2em;
 }
 
 .margin-lg--top {
@@ -204,8 +203,11 @@
 }
 
 @media screen and (max-width: 960px) {
-	.text-shadow--lg {
+	.card--heading {
 		font-size: var(--page-title-medium);
+	}
+
+	.text-shadow--lg {
 		text-shadow: -2px 2px #000;
 	}
 	.card--heading-margin {

@@ -2,17 +2,25 @@
 	height: 60vh;
 }
 
+.homepage-title--heading {
+	font-size: 4.5em;
+	margin-top: 0;
+}
+
 .homepage-title--subtitle {
 	margin-top: 8px;
 	color: #fff;
-	font-size: 32px;
+	font-size: 2em;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
 	text-align: center;
 }
 
 .hero-btns {
-	margin-top: 32px;
+	margin-top: 3%;
+	width: 90%;
+	display: flex;
+	justify-content: center;
 }
 
 .hero-btns .btn {
@@ -27,26 +35,40 @@
 	.homepage-title {
 		height: 40vh;
 	}
+
+	.homepage-title--heading {
+		/* font-size: var(--page-title-small); */
+		font-size: 3em;
+	}
 	.homepage-title--subtitle {
-		font-size: 30px;
+		font-size: 1.6em;
 	}
 
-	.btn-mobile {
+	/* .btn-mobile {
 		display: block;
 		text-decoration: none;
-	}
+	} */
 
 	.hero-btns .btn {
-		width: 100%;
+		width: 160px;
+		margin: 6px 4px;
 	}
+
+	/* .hero-btns .btn {
+		width: 100%;
+	} */
 }
 
 @media screen and (max-width: 480px) {
 	.homepage-title {
 		height: 28vh;
 	}
+	.homepage-title--heading {
+		/* font-size: var(--page-title-small); */
+		font-size: 2.3em;
+	}
 
 	.homepage-title--subtitle {
-		font-size: 20px;
+		font-size: 1.2em;
 	}
 }

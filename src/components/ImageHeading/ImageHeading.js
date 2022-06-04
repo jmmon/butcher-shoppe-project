@@ -4,7 +4,7 @@ import "./ImageHeading.css";
 function ImageHeading({ bg, title }) {
 	return (
 		<div
-			className="padding-md inset-box-shadow"
+			className="padding-md--horizontal padding-md--vertical inset-box-shadow"
 			style={
 				bg && {
 					background: `url(${bg}) center center/cover no-repeat`,
