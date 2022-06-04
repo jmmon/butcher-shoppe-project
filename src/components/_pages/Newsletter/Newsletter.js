@@ -33,22 +33,20 @@ function NewsletterPage() {
 						</h2>
 						<div className="newsletter--container--content-wrapper">
 							<p className="newsletter--blerb card panel--shadow">
-								<em>What's happening at The Butcher Shoppe?</em>{" "}
+								<em>What's happening at The Butcher Shoppe?</em>
 								<br />
 								<br />
-								For our neighbors and our community, we like to
-								keep everyone up to date on all things related
-								to The Butcher Shoppe. We send out a
-								twice-monthly newsletter with all the info!
-								<br /> <br />
-								Want to stay informed? Take part in our
-								newsletter to stay up to date on all the Shoppe
-								information: news, updates, and more!
+								Interested in the services our shop and mobile
+								slaughter truck provide? Live in or around the
+								beautiful little town of Northport? Just curious
+								about what we are up to? Subscribe to our
+								bi-monthly newsletter and I'll be sure to keep
+								the updates, photos and news coming your way.
 								<br />
 								<br />
-								Enter your email address below and click
-								"Subscribe" to receive instructions on how to
-								confirm your newsletter subscription!
+								Enter your email and click “subscribe” to
+								receive instructions on how to confirm your
+								subscription to The Butcher Shoppe Newsletter.
 							</p>
 
 							<div className="subscribe--wrapper card panel--shadow">

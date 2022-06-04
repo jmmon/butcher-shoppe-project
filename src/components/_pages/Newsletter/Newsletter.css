@@ -37,13 +37,13 @@
 }
 
 .newsletter--blerb {
-	font-size: 20px;
+	font-size: 1.25em;
 	margin: 0 auto;
 	padding: 40px;
 }
 
 .newsletter--blerb em {
-	font-size: 1.5rem;
+	font-size: 1.3em;
 }
 
 .subscribe--wrapper {
