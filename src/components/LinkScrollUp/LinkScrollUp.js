@@ -13,7 +13,7 @@ function LinkScrollUp({ path, cName, children }) {
 
 	return (
 		<>
-			{pathname === path ? (
+			{pathname === path || path === undefined ? (
 				<span
 					className={`${cName} footer-link-scroll`}
 					onClick={() => scrollToTop()}

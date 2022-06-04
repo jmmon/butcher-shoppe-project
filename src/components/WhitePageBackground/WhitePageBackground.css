@@ -2,7 +2,7 @@
 	max-width: 1200px;
 	/* background-color: #fff; */
 	background-color: var(--white-page-background);
-	margin: -2rem auto 4em auto;
+	margin: calc(-2em - 0vh) auto 4em auto;
 	display: grid;
 	justify-content: center;
 	padding: 4rem 0;

@@ -11,6 +11,7 @@ function Button({
 	buttonStyle,
 	buttonSize,
 	url = "",
+	center = null,
 	...buttonProps
 }) {
 	const checkButtonStyle = STYLES.includes(buttonStyle)
