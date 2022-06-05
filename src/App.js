@@ -5,48 +5,42 @@ import Header from "./components/Header/Header.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Footer from "./components/Footer/Footer.js";
 
-import Home from "./components/_pages/Home/Home.js";
-import Services from "./components/_pages/Services/Services.js";
-import Schedule from "./components/_pages/Schedule/Schedule.js";
-import Faq from "./components/_pages/Faq/Faq.js";
-import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
-import NotFound from "./components/_pages/NotFound/NotFound";
+// import Home from "./components/_pages/Home/Home.js";
+// import Services from "./components/_pages/Services/Services.js";
+// import Schedule from "./components/_pages/Schedule/Schedule.js";
+// import Faq from "./components/_pages/Faq/Faq.js";
+// import BeefOrder from "./components/_pages/BeefOrder/BeefOrder.js";
+// import NotFound from "./components/_pages/NotFound/NotFound";
 import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 
 function App() {
-	const api_regex = /^\/api\/.*/;
-	// if using "/api/" in the pathname, don't use React Router
-	if (api_regex.test(window.location.pathname)) {
-		return <div />; // must return at least an empty div
-	} else {
-		// use React Router
-		return (
-			<div className="website-container" id="link-destination-top">
-				<Router>
-					<ScrollToTop>
-						<Header />
-						<Navbar simple={true} />
-						<div className="website-content-container">
-							<Routes>
-								<Route
-									path="/newsletter"
-									exact
-									element={<Newsletter />}
-								/>
-								<Route
-									path="/newsletter/unsubscribe"
-									exact
-									element={<Unsubscribe />}
-								/>
-								<Route path="*" element={<ComingSoon />} />
-							</Routes>
-							<Footer simple={true} />
-						</div>
-					</ScrollToTop>
-				</Router>
-				{/* <Router>
+	return (
+		<div className="website-container" id="link-destination-top">
+			<Router>
+				<ScrollToTop>
+					<Header />
+					<Navbar simple={true} />
+					<div className="website-content-container">
+						<Routes>
+							<Route
+								path="/newsletter"
+								exact
+								element={<Newsletter />}
+							/>
+							<Route
+								path="/newsletter/unsubscribe"
+								exact
+								element={<Unsubscribe />}
+							/>
+							<Route path="*" element={<ComingSoon />} />
+						</Routes>
+						<Footer simple={true} />
+					</div>
+				</ScrollToTop>
+			</Router>
+			{/* <Router>
 				<ScrollToTop>
 					<Header />
 					<Navbar />
@@ -99,9 +93,8 @@ function App() {
 					</div>
 				</ScrollToTop>
 			</Router> */}
-			</div>
-		);
-	}
+		</div>
+	);
 }
 
 export default App;

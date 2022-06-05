@@ -1,0 +1,13 @@
+START: TOTAL
+8.8MB MIN
+2MB MIN + GZIP
+69.14s 2G EDGE
+41.48s SLOW 3G
+
+
+
+Copying improvements made on master branch, and removing extra dependencies not used in the under-construction branch: TOTAL
+416.6kB MIN
+108.9kB MIN + GZIP
+3.63s 2G EDGE
+2.18s SLOW 3G
