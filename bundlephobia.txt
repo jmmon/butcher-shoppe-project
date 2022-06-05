@@ -1,0 +1,15 @@
+original:
+TOTAL
+8.8MB MIN
+2MB MIN + GZIP
+69.61s 2G EDGE
+41.77s SLOW 3G
+
+after:
+TOTAL
+2.7MB MIN
+871.2kB MIN + GZIP
+29.04s 2G EDGE
+17.42s SLOW 3G
+
+Another:

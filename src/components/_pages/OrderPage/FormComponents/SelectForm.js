@@ -5,7 +5,7 @@ import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 function Option({ label, value }) {
 	return (
-		<option className="order-form--select-option" key={value}>
+		<option className="order-form--select-option" key={value} value={value}>
 			{label}
 		</option>
 	);

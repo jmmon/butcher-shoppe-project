@@ -5,12 +5,14 @@ import splitAnimalInfo from "./utils/splitAnimalInfo";
 
 const InputForm = ({
 	title,
+	subtext,
 	name,
 	placeholder,
 	required,
 	small,
 	textarea,
 	animalInfo,
+	number,
 }) => {
 	const {
 		register,
@@ -27,6 +29,13 @@ const InputForm = ({
 		placeholder: placeholder || title,
 	};
 
+	const numberAttributes = number
+		? {
+				// value: number.value,
+				min: number?.min || 0,
+		  }
+		: null;
+
 	let thisError = errors;
 	name.split(".").forEach((key) => (thisError = thisError?.[key]));
 
@@ -36,7 +45,12 @@ const InputForm = ({
 				small ? " order-form--input-container-small" : ""
 			}`}
 		>
-			<LabelInput name={name} small={small} title={title} />
+			<LabelInput
+				name={name}
+				small={small}
+				title={title}
+				subtext={subtext}
+			/>
 
 			{thisError && (
 				<span role="alert" className="form--validation-error">
@@ -59,10 +73,11 @@ const InputForm = ({
 							pattern: required.pattern,
 						}
 					)}
-					type="text"
+					type={number ? "number" : "text"}
 					className="order-form--input"
 					{...inputAttributes}
 					area-invalid={errors?.[name]}
+					{...numberAttributes}
 				/>
 			)}
 		</p>

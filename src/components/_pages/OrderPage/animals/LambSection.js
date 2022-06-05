@@ -146,265 +146,169 @@ function LambSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Shoulder Chops Per Package"
-						name="options.shoulder_chops_count"
-						subtext="One chop per adult serving"
-						extra
+						name="options.shoulder_chops.number_per_package"
+						subtext="Plan one chop per adult serving"
 						options={[
 							{
-								label: "NONE",
-								value: "NONE",
+								label: "TWO (Standard)",
+								value: "TWO",
 							},
 							{
-								label: "WHOLE ROUND into Jerky",
-								value: "WHOLE ROUND into Jerky",
+								label: "THREE",
+								value: "THREE",
 							},
 							{
-								label: "HALF ROUND into Jerky",
-								value: "HALF ROUND into Jerky",
+								label: "FOUR",
+								value: "FOUR",
 							},
 							{
-								label: "GRIND",
-								value: "GRIND",
+								label: "OTHER (List in special instructions)",
+								value: "OTHER",
+							},
+						]}
+						animalInfo={animalInfo}
+					/>
+					<SelectForm
+						title="Shoulder Chop Thickness"
+						subtext="(inches)"
+						name="options.shoulder_chops.thickness"
+						options={[
+							{
+								label: `1 (Standard)`,
+								value: `1`,
 							},
 							{
-								label: "ROASTS",
-								value: "ROASTS",
+								label: `3/4`,
+								value: `3/4`,
 							},
 						]}
 						animalInfo={animalInfo}
 					/>
 
+					{/* loin */}
+
 					<SelectForm
-						title="Tenderloin"
-						name="steak.extra.tenderloin"
-						subtext={`The eye of the loin taken out
-					separately from the T-Bone and
-					Sirloin steaks and cut 1 1/2"
-					thick or made into Roast`}
-						extra
+						title="Loin Cuts"
+						name="options.loin_cuts"
 						options={[
 							{
-								label: "NONE",
-								value: "NONE",
+								label: "All Lamb Chops",
+								value: "All Lamb Chops",
 							},
 							{
-								label: "STEAKS",
-								value: "STEAKS",
-							},
-							{
-								label: "ROASTS",
-								value: "ROASTS",
+								label: "Half Rack of Lamb, Half Lamb Chops",
+								value: "Half Rack of Lamb, Half Lamb Chops",
 							},
 						]}
 						animalInfo={animalInfo}
 					/>
 
-					<SelectForm
-						title="Flank Steak"
-						name="steak.flank_steak"
-						subtext={`One flank steak per
-					half-lengthwise grain-sliced and
-					used in stir fry or fajitas; may be
-					put into hamburger instead`}
-						options={[
-							{
-								label: "YES",
-								value: "YES",
-							},
-							{
-								label: "NO",
-								value: "NO",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
+					<div className="order-form--field">
+						<SelectForm
+							title="Lamb Chops Per Package"
+							name="options.lamb_chops.number_per_package"
+							subtext="We do not split the lamb down the back bone so you get butterflied lamb chops - plan one per adult serving"
+							options={[
+								{
+									label: "TWO (Standard)",
+									value: "TWO",
+								},
+								{
+									label: "THREE",
+									value: "THREE",
+								},
+								{
+									label: "FOUR",
+									value: "FOUR",
+								},
+								{
+									label: "OTHER (List in special instructions)",
+									value: "OTHER",
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+						<SelectForm
+							title="Lamb Chop Thickness"
+							subtext="(inches)"
+							name="options.lamb_chops.thickness"
+							options={[
+								{
+									label: `1 (Standard)`,
+									value: `1`,
+								},
+								{
+									label: `3/4`,
+									value: `3/4`,
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+					</div>
+
+					<div className="order-form--field">
+						<SelectForm
+							title="Trim"
+							// subtext="(inches)"
+							name="options.trim"
+							options={[
+								{
+									label: `Ground Lamb (includes a few packages of bone in lamb stew)`,
+									value: `Ground Lamb (includes a few packages of bone in lamb stew)`,
+								},
+								{
+									label: `Lamb Stew (includes a few packages of bone in lamb stew, the rest will be boneless)`,
+									value: `Lamb Stew (includes a few packages of bone in lamb stew, the rest will be boneless)`,
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+
+						<SelectForm
+							title="Lamb Shanks"
+							// subtext="(inches)"
+							name="options.shanks"
+							options={[
+								{
+									label: `Whole`,
+									value: `Whole`,
+								},
+								{
+									label: `Put into the Ground/Lamb Stew`,
+									value: `Put into the Ground/Lamb Stew`,
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+					</div>
+
+					<div className="order-form--field">
+						<CheckboxForm
+							title="EXTRAS"
+							name="options.extras"
+							options={[
+								{
+									name: "extras.liver__checkbox",
+									label: "LIVER",
+								},
+								{
+									name: "extras.heart__checkbox",
+									label: "HEART",
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+					</div>
 				</div>
 			</Collapsible>
-			<Collapsible trigger="Roast Options">
-				<div className="order-form--section">
-					<OrderFormSectionSubheading>
-						Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin
-						Tip and, Heel of Round
-					</OrderFormSectionSubheading>
-
-					<SelectForm
-						title="Roast Size"
-						name="roast.size"
-						subtext="We suggest a 3-4# roast
-						for a family of 2-4"
-						options={[
-							{
-								label: "3-4#",
-								value: "3-4#",
-							},
-							{ label: "4-5#", value: "4-5#" },
-							{
-								label: "5-6#",
-								value: "5-6#",
-							},
-							{
-								label: "NONE",
-								value: "NONE",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<SelectForm
-						title="Boneless Roasts"
-						name="roast.boneless"
-						subtext="5-7 of the better
-						roasts per half beef are boned,
-						rolled and tied - otherwise you get
-						the same roasts with the bone left
-						in"
-						extra
-						options={[
-							{
-								label: "NO",
-								value: "NO",
-							},
-							{ label: "YES", value: "YES" },
-						]}
-						animalInfo={animalInfo}
-					/>
-					<SelectForm
-						title="Rib Options"
-						name="roast.rib_options"
-						options={[
-							{
-								label: "ALL RIB STEAKS",
-								value: "ALL RIB STEAKS",
-							},
-							{
-								label: "ALL RIB ROASTS",
-								value: "ALL RIB ROASTS",
-							},
-							{
-								label: "HALF ROASTS HALF STEAKS",
-								value: "HALF ROASTS HALF STEAKS",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<SelectForm
-						title="Chuck Options"
-						name="roast.chuck_options"
-						options={[
-							{
-								label: "ALL CHUCK ROASTS (pot roasts)",
-								value: "ALL CHUCK ROASTS (pot roasts)",
-							},
-							{
-								label: "ALL CHUCK STEAKS",
-								value: "ALL CHUCK STEAKS",
-							},
-							{
-								label: "HALF CHUCK ROASTS HALF STEAKS",
-								value: "HALF CHUCK ROASTS HALF STEAKS",
-							},
-							{
-								label: "GRIND",
-								value: "GRIND",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<CheckboxForm
-						title="Remove Bone Dust"
-						name="remove_bone_dust"
-						subtext="Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks"
-						extra
-						options={[
-							{
-								name: "roast.remove_bone_dust__checkbox",
-								label: "YES Remove Bone Dust",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-				</div>
-			</Collapsible>
-			<Collapsible trigger="Other Cut Options">
-				<div className="order-form--section">
-					<OrderFormSectionSubheading>
-						More options for your cuts
-					</OrderFormSectionSubheading>
-
-					<SelectForm
-						title="Boneless Stew Meat"
-						name="other.boneless_stew_meat"
-						options={[
-							{
-								label: "YES (standard is 6-8 packages)",
-								value: "YES (standard is 6-8 packages)",
-							},
-							{
-								label: "NO (meat goes into hamburger)",
-								value: "NO (meat goes into hamburger)",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<SelectForm
-						title="Soup Bones"
-						name="other.soup_bones"
-						options={[
-							{
-								label: "YES (standard is 4-5 packages)",
-								value: "YES (standard is 4-5 packages)",
-							},
-							{
-								label: "NO (meat goes into hamburger)",
-								value: "NO (meat goes into hamburger)",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<SelectForm
-						title="Short Ribs"
-						name="other.short_ribs"
-						options={[
-							{
-								label: "YES (standard is 4-5 packages)",
-								value: "YES (standard is 4-5 packages)",
-							},
-							{
-								label: "NO (meat goes into hamburger)",
-								value: "NO (meat goes into hamburger)",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<CheckboxForm
-						title="EXTRAS"
-						name="options.extras"
-						options={[
-							{
-								name: "extras.liver__checkbox",
-								label: "LIVER",
-							},
-							{
-								name: "extras.heart__checkbox",
-								label: "HEART",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-
-					<InputForm
-						title="SPECIAL INSTRUCTIONS"
-						name="special_instructions"
-						placeholder="Enter special instructions for certain options here"
-						animalInfo={animalInfo}
-						textarea={true}
-					/>
-				</div>
+			<Collapsible trigger="Special Instructions">
+				<InputForm
+					title="SPECIAL INSTRUCTIONS"
+					name="special_instructions"
+					placeholder="Enter special instructions for certain options here"
+					animalInfo={animalInfo}
+					textarea={true}
+				/>
 			</Collapsible>
 		</Collapsible>
 	);

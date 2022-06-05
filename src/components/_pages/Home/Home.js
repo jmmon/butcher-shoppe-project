@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 
 import AboutUs from "../../AboutUs/AboutUs";
 import HomepageTitle from "../../HomepageTitle/HomepageTitle";
+import HomepageTitle2 from "../../HomepageTitle/HomepageTitle-2";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import Card from "../../Card/Card";
 import BottomNavButtons from "../../BottomNavButtons/BottomNavButtons";
@@ -36,6 +37,11 @@ function Home() {
 					subtitle="Serving Northeast Washington State"
 					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
 				/>
+				{/* <HomepageTitle2
+					title="The Butcher Shoppe"
+					subtitle="Serving Northeast Washington State"
+					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
+				/> */}
 				<WhitePageBackground>
 					<div className="grid--col-md">
 						<Card

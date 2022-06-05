@@ -211,6 +211,7 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Steak Thickness"
 							name="steak.thickness"
+							subtext="(inches)"
 							options={[
 								{
 									label: "3/4 (Standard)",
