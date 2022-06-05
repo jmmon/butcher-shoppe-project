@@ -1,15 +1,44 @@
-original:
-TOTAL
+original: TOTAL
 8.8MB MIN
 2MB MIN + GZIP
 69.61s 2G EDGE
 41.77s SLOW 3G
 
-after:
-TOTAL
+after: TOTAL
 2.7MB MIN
 871.2kB MIN + GZIP
 29.04s 2G EDGE
 17.42s SLOW 3G
 
-Another:
+Another: TOTAL
+2.7MB MIN
+864.4kB MIN + GZIP
+28.81s 2G EDGE
+17.29s SLOW 3G
+
+Finally: TOTAL
+	2.4MB MIN
+	779.4kB MIN + GZIP
+	25.98s 2G EDGE
+	15.59s SLOW 3G
+(with highest being:
+1. react-snap v1.23.0
+	1.5MB MIN
+	552.3kB MIN + GZIP
+	11.05s SLOW 3G
+	0.63s EMERGING 4G
+)
+
+
+FINAL Final (react-snap to devDependencies): TOTAL
+	889.5kB MIN
+	227.1kB MIN + GZIP
+	7.57s 2G EDGE
+	4.54s SLOW 3G
+(With the highest being: 
+1. react-phone-number-input v3.1.51
+	174.6kB MIN
+	43kB MIN + GZIP
+	0.86s SLOW 3G
+	49ms EMERGING 4G
+)
