@@ -34,12 +34,12 @@ function Footer({ simple = false }) {
 				<p className="footer-subscription-text">
 					You can{" "}
 					{pathname === "/newsletter/unsubscribe" ? (
-						<div
+						<span
 							className="footer-subscribe-link"
 							onClick={scrollToTop}
 						>
 							unsubscribe
-						</div>
+						</span>
 					) : (
 						<Link
 							className="footer-subscribe-link"
