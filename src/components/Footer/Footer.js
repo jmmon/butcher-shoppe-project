@@ -1,4 +1,4 @@
-import { Suspense, lazy as Lazy, useState, useEffect } from "react";
+import React, { Suspense, lazy as Lazy, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 import axios from "axios";

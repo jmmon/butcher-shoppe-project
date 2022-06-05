@@ -11,3 +11,10 @@ Copying improvements made on master branch, and removing extra dependencies not 
 108.9kB MIN + GZIP
 3.63s 2G EDGE
 2.18s SLOW 3G
+
+
+Finally:TOTAL
+419.8kB MIN
+110.2kB MIN + GZIP
+3.67s 2G EDGE
+2.2s SLOW 3G
