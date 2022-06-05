@@ -14,11 +14,13 @@ function HomepageTitle({ simple = false, title, subtitle, position }) {
 					backgroundPosition: `${position || "25% 40%"}`,
 				}}
 			>
-				<h1 className=" homepage-title--heading card--heading text-shadow--lg card--heading-margin">
+				<h1
+					className={`white-font homepage-title--heading card--heading text-shadow--lg card--heading-margin`}
+				>
 					{title}
 				</h1>
 
-				<p className=" homepage-title--subtitle text-shadow--sm">
+				<p className="white-font homepage-title--subtitle text-shadow--sm">
 					{subtitle}
 				</p>
 				{!simple && (

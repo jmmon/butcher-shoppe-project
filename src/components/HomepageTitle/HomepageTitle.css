@@ -1,16 +1,16 @@
 .homepage-title {
-	height: 60vh;
+	height: clamp(20vw, 20em, 60vw);
 }
 
 .homepage-title--heading {
-	font-size: 4.5em;
+	font-size: clamp(1.8em, 9vw, 4.5em);
 	margin-top: 0;
 }
 
 .homepage-title--subtitle {
 	margin-top: 8px;
-	color: #fff;
-	font-size: 2em;
+	/* color: #fff; */
+	font-size: clamp(0.85em, 4vw, 2em);
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
 	text-align: center;
@@ -24,6 +24,8 @@
 }
 
 .hero-btns .btn {
+	width: clamp(140px, 18vw, 20vw);
+	font-size: clamp(15px, 2vw, 26px);
 	margin: 6px;
 }
 
@@ -32,43 +34,18 @@
 }
 
 @media screen and (max-width: 960px) {
-	.homepage-title {
+	/* .homepage-title {
 		height: 40vh;
-	}
-
-	.homepage-title--heading {
-		/* font-size: var(--page-title-small); */
-		font-size: 3em;
-	}
-	.homepage-title--subtitle {
-		font-size: 1.6em;
-	}
-
-	/* .btn-mobile {
-		display: block;
-		text-decoration: none;
 	} */
 
-	.hero-btns .btn {
+	/* .hero-btns .btn {
 		width: 160px;
 		margin: 6px 4px;
-	}
-
-	/* .hero-btns .btn {
-		width: 100%;
 	} */
 }
 
 @media screen and (max-width: 480px) {
-	.homepage-title {
+	/* .homepage-title {
 		height: 28vh;
-	}
-	.homepage-title--heading {
-		/* font-size: var(--page-title-small); */
-		font-size: 2.3em;
-	}
-
-	.homepage-title--subtitle {
-		font-size: 1.2em;
-	}
+	} */
 }

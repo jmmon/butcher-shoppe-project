@@ -4,14 +4,16 @@ import "./Card.css";
 
 function Card({ title, paragraphs, bg }) {
 	const content = paragraphs?.map((item) => (
-		<p key={paragraphs.indexOf(item)}>{item}</p>
+		<p className="card--paragraph" key={paragraphs.indexOf(item)}>
+			{item}
+		</p>
 	));
 	return (
 		//panel-shadow--dark removed from section
 		<section className="white card--width  card--font-size">
 			{bg && <ImageHeading bg={bg} title={title} />}
 			<div className="grid--col-sm card--content-width padding-md--horizontal">
-				{!bg && <h3 className="center-text">{title}</h3>}
+				{!bg && <h3 className="card--heading center-text">{title}</h3>}
 
 				{content && content}
 			</div>

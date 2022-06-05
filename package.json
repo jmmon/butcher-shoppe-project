@@ -25,6 +25,7 @@
 		"react-router-dom": "^6.3.0",
 		"react-sanfona": "^1.5.0",
 		"react-scripts": "5.0.0",
+		"react-slideshow-image": "^3.7.5",
 		"react-snap": "^1.23.0",
 		"reactjs-google-calendar": "^2.1.4",
 		"typescript": "^4.6.3",

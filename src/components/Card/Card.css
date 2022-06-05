@@ -1,1 +1,31 @@
+.card {
+	border-radius: var(--card-border-radius);
+}
 
+.card--heading {
+	display: flex;
+	/* height: 10vh; */
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	/* font-size: var(--page-title-large); */
+	font-size: 2rem;
+}
+
+.card--heading-margin {
+	margin-top: -100px;
+}
+
+.card--font-size {
+	/* font-size: 8rem; */
+}
+
+.card--width {
+	width: 92%;
+	margin: auto;
+}
+
+.card--content-width {
+	max-width: 92%;
+	margin: auto;
+}

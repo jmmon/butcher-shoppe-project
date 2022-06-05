@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: "PT Sans", sans-serif;
-	/* font-size: 2em; */
+	font-size: 20px;
 }
 
 :root {
@@ -121,46 +121,22 @@
 .text-shadow--lg {
 	text-shadow: -3px 3px 8px #000;
 }
-
-.card {
-	border-radius: var(--card-border-radius);
-}
-.card--font-size {
-	font-size: 2rem;
-}
-
 .page--subheading {
 	padding-top: 10px;
 	text-align: center;
 	font-size: 2em;
 }
 
-.card--width {
-	width: 92%;
-	margin: auto;
-}
-
-.card--content-width {
-	max-width: 92%;
-	margin: auto;
-}
-
-.card--heading {
-	display: flex;
-	/* height: 10vh; */
-	align-items: center;
-	justify-content: center;
-	color: #fff;
-	text-align: center;
-	font-size: var(--page-title-large);
-}
-
-.card--heading-margin {
-	margin-top: -100px;
-}
+/* .card--paragraph {
+	width: clamp(45ch, 50%, 75ch);
+} */
 
 .white {
 	background-color: white;
+}
+
+.white-font {
+	color: #fff;
 }
 
 .center-text {

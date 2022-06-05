@@ -19,40 +19,51 @@ function Header() {
 	};
 
 	return (
-		<div className="header">
-			<a
-				className={
-					isHovered
-						? "header-link-special hover"
-						: "header-link-special"
-				}
-				href="#contact-link-target"
-				onMouseEnter={handleHover}
-				onMouseLeave={handleLeave}
-			>
-				<HeaderIcon
-					icon={
-						isHovered ? (
-							<ClockIcon className="clock-icon" fill="white" />
-						) : (
-							<ClockIcon className="clock-icon" fill="black" />
-						)
+		<div className="header-container">
+			<div className="header">
+				<a
+					className={
+						isHovered
+							? "header-link-special hover"
+							: "header-link-special"
 					}
-				/>
-				<p className="header-hours">9-5 M-F</p>
-			</a>
-			<a className="header-link header-phone" href="tel:15096907214">
-				(509) 690-7214
-			</a>
-			<a
-				className="header-link header-contact"
-				href="#contact-link-target"
-			>
-				Email Us
-			</a>
-			<a className="header-link header-location" href="#map-link-target">
-				Northport, WA
-			</a>
+					href="#contact-link-target"
+					onMouseEnter={handleHover}
+					onMouseLeave={handleLeave}
+				>
+					<HeaderIcon
+						icon={
+							isHovered ? (
+								<ClockIcon
+									className="clock-icon"
+									fill="white"
+								/>
+							) : (
+								<ClockIcon
+									className="clock-icon"
+									fill="black"
+								/>
+							)
+						}
+					/>
+					<p className="header-hours">9-5 M-F</p>
+				</a>
+				<a className="header-link header-phone" href="tel:15096907214">
+					(509) 690-7214
+				</a>
+				<a
+					className="header-link header-contact"
+					href="#contact-link-target"
+				>
+					Email Us
+				</a>
+				<a
+					className="header-link header-location"
+					href="#map-link-target"
+				>
+					Northport, WA
+				</a>
+			</div>
 		</div>
 	);
 }

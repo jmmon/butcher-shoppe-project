@@ -11,7 +11,13 @@ function ImageHeading({ bg, title }) {
 				}
 			}
 		>
-			<h3 className="card--heading text-shadow--lg">{title}</h3>
+			<h3
+				className={`${
+					bg && "white-font"
+				} card--heading text-shadow--lg`}
+			>
+				{title}
+			</h3>
 		</div>
 	);
 }

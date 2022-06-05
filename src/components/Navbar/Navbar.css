@@ -21,13 +21,12 @@
 	height: 80px;
 	width: 100vw;
 	max-width: 1500px;
+	padding: 0 10px;
 }
 
 .navbar-container .btn {
-	/* width: auto; */
 	min-width: 90px;
 	width: auto;
-	margin-right: 20px;
 }
 
 .newsletter-btn {
@@ -37,7 +36,7 @@
 .navbar-home {
 	color: #fff;
 	justify-self: start;
-	margin-left: 40px;
+	/* margin-left: 40px; */
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 1.7rem;
@@ -102,7 +101,11 @@
 .menu-icon {
 	/* hamburger icon */
 	display: none;
+	/* font-size: 24px; */
 }
+/* .fas.fa-bars {
+	font-size: 2em;
+} */
 
 .nav-logo {
 	height: 90px;
@@ -158,28 +161,6 @@
 		width: 100%;
 	}
 
-	.navbar-home {
-		margin-left: 10px;
-		/* 
-		enabled above for SIMPLE
-		disabled below for SIMPLE 
-		*/
-
-		/* position: absolute;
-		top: 0px;
-		left: 0;
-		width: auto;
-		margin-left: 2vw; */
-	}
-
-	.nav-logo {
-		/* 
-		height: 90px;
-		width: 160px;
-
-		padding: 10px; */
-	}
-
 	.navbar-logo-text {
 		width: 220px;
 		/* padding-left: -6px; */
@@ -187,18 +168,29 @@
 	}
 
 	.menu-icon {
-		display: block;
+		/* display: block; */
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		position: absolute;
 		top: 0;
 		right: 0;
 		transform: translate(-100%, 60%);
-		font-size: 1.8rem;
+		font-size: 0.8rem;
 		cursor: pointer;
+		width: 35px;
+	}
+
+	.fa-bars {
+		margin: auto;
+		font-size: 2rem;
 	}
 
 	.fa-times {
+		margin: auto;
+		margin-top: -8px;
 		color: #fff;
-		font-size: 2rem;
+		font-size: 2.6rem;
 	}
 
 	.nav-links-mobile {
