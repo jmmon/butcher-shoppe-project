@@ -24,6 +24,71 @@ function LambSection({ id, deleteAnimal }) {
 				{`Delete this ${animalInfo.animal}`}
 			</ConfirmButton>
 
+			{/* Lamb Options:
+			
+					Leg of Lamb: {
+						Whole
+						Cut in Half,
+						One of Each (Whole Orders Only!)
+					}
+
+					Shoulder: {
+						Roasts
+						Chops
+						Half/Half
+						Grind
+					}:
+						(IF ROASTS): { 
+							Size: {
+								Whole
+								Cut in Half,
+								One of Each (Whole Orders Only!)
+							}
+						}
+						(IF CHOPS): { 
+							NumPerPackage: {
+								2+
+							},
+							ChopThickness: {
+								1", or 3/4"
+							}
+						}
+
+
+			*/}
+
+			{/* Loin Options 
+			
+					Loin Cut: {
+						All Lamb Chops
+						Half Rack of Lamb, Half Chops
+					}
+					Chops Per Package:{
+						2+
+					}
+					Chop Thickness: {
+
+					}
+
+			*/}
+
+			{/* Other Options
+			
+					Trim: {
+						Ground Lamb (with few packages of bone-in lamb stew)
+						Lamb Stew (with few packages of bone-in stew, the rest is boneless stew)
+
+					}
+					Lamb Shanks: {
+						Whole
+						Put into the Ground/Lamb Stew
+					}
+					Extras: {
+						Liver?
+						Heart?
+					}
+			*/}
+
 			<Collapsible
 				trigger="Lamb Information"
 				// classParentString="cut_sheet__section"
@@ -122,7 +187,7 @@ function LambSection({ id, deleteAnimal }) {
 					<SelectForm
 						title="Shoulder Roast Size"
 						name="options.shoulder_roast_size"
-						subtext="Each Shoulder makes one larger roast or two smaller ones"
+						subtitle="Each Shoulder makes one larger roast or two smaller ones"
 						options={[
 							{
 								label: "Whole",
@@ -147,7 +212,7 @@ function LambSection({ id, deleteAnimal }) {
 					<SelectForm
 						title="Shoulder Chops Per Package"
 						name="options.shoulder_chops.number_per_package"
-						subtext="Plan one chop per adult serving"
+						subtitle="Plan one chop per adult serving"
 						options={[
 							{
 								label: "TWO (Standard)",
@@ -170,7 +235,7 @@ function LambSection({ id, deleteAnimal }) {
 					/>
 					<SelectForm
 						title="Shoulder Chop Thickness"
-						subtext="(inches)"
+						subtitle="(inches)"
 						name="options.shoulder_chops.thickness"
 						options={[
 							{
@@ -207,7 +272,7 @@ function LambSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Lamb Chops Per Package"
 							name="options.lamb_chops.number_per_package"
-							subtext="We do not split the lamb down the back bone so you get butterflied lamb chops - plan one per adult serving"
+							subtitle="We do not split the lamb down the back bone so you get butterflied lamb chops - plan one per adult serving"
 							options={[
 								{
 									label: "TWO (Standard)",
@@ -230,7 +295,7 @@ function LambSection({ id, deleteAnimal }) {
 						/>
 						<SelectForm
 							title="Lamb Chop Thickness"
-							subtext="(inches)"
+							subtitle="(inches)"
 							name="options.lamb_chops.thickness"
 							options={[
 								{
@@ -249,7 +314,7 @@ function LambSection({ id, deleteAnimal }) {
 					<div className="order-form--field">
 						<SelectForm
 							title="Trim"
-							// subtext="(inches)"
+							// subtitle="(inches)"
 							name="options.trim"
 							options={[
 								{
@@ -266,7 +331,7 @@ function LambSection({ id, deleteAnimal }) {
 
 						<SelectForm
 							title="Lamb Shanks"
-							// subtext="(inches)"
+							// subtitle="(inches)"
 							name="options.shanks"
 							options={[
 								{

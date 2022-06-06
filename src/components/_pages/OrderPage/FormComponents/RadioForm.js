@@ -3,12 +3,19 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
 import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
-const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
+const EachRadio = ({
+	name,
+	animalInfo,
+	inputId,
+	label,
+	handleChangeOption,
+}) => {
 	const { register } = useFormContext();
 
-	if (animalInfo) {
-		name = getSplitAnimalInfo(name, animalInfo);
-	}
+	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
+	// if (animalInfo) {
+	// 	name = getSplitAnimalInfo(name, animalInfo);
+	// }
 
 	return (
 		<label
@@ -22,7 +29,7 @@ const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 				type="radio"
 				id={inputId}
 				name={name}
-				onClick={handleSplitHalf && ((e) => handleSplitHalf(e))}
+				onClick={handleChangeOption && ((e) => handleChangeOption(e))}
 				value={inputId}
 			/>
 			{label}
@@ -39,33 +46,33 @@ register the name on all inputs (registering the same name)
 const RadioForm = ({
 	title,
 	name,
-	subtext,
-	extra,
+	subtitle,
+	costsExtra,
 	required,
 	options,
 	animalInfo,
-	handleSplitHalf,
+	handleChangeOption,
 }) => {
 	const {
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ inputId, label }) => {
-		return EachRadio({
+	const allOptions = options.map(({ inputId, label }) =>
+		EachRadio({
 			inputId,
 			label,
 			name,
 			animalInfo,
-			handleSplitHalf,
-		});
-	});
+			handleChangeOption,
+		})
+	);
 
 	return (
 		<div className="order-form--field">
 			<LabelInput
 				title={title}
-				extra={extra}
-				subtext={subtext}
+				costsExtra={costsExtra}
+				subtitle={subtitle}
 				required={required}
 			/>
 			<div className={`order-form--radio-wrapper`}>{allOptions}</div>

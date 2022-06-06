@@ -110,7 +110,7 @@ function BeefSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-						handleSplitHalf={handleSplitHalf}
+						handleChangeOption={handleSplitHalf}
 					/>
 				</section>
 
@@ -211,7 +211,7 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Steak Thickness"
 							name="steak.thickness"
-							subtext="(inches)"
+							subtitle="(inches)"
 							options={[
 								{
 									label: "3/4 (Standard)",
@@ -263,9 +263,9 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Tenderized Round Steaks"
 							name="steak.extra.tenderized_round_steaks"
-							subtext="Steaks are run through the cuber
+							subtitle="Steaks are run through the cuber
 					(similar to pounding them)"
-							extra
+							costsExtra
 							options={[
 								{
 									label: "NONE",
@@ -286,10 +286,10 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Other Round Steak Options"
 							name="steak.extra.round_steaks"
-							subtext="Round steaks can also be put
+							subtitle="Round steaks can also be put
 					into hamburger, made into roasts
 					or or made into Jerky"
-							extra
+							costsExtra
 							options={[
 								{
 									label: "NONE",
@@ -320,11 +320,11 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Tenderloin"
 							name="steak.extra.tenderloin"
-							subtext={`The eye of the loin taken out
+							subtitle={`The eye of the loin taken out
 					separately from the T-Bone and
 					Sirloin steaks and cut 1 1/2"
 					thick or made into Roast`}
-							extra
+							costsExtra
 							options={[
 								{
 									label: "NONE",
@@ -345,7 +345,7 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Flank Steak"
 							name="steak.flank_steak"
-							subtext={`One flank steak per
+							subtitle={`One flank steak per
 					half-lengthwise grain-sliced and
 					used in stir fry or fajitas; may be
 					put into hamburger instead`}
@@ -375,12 +375,12 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Boneless Roasts"
 							name="roast.boneless"
-							subtext="5-7 of the better
+							subtitle="5-7 of the better
 						roasts per half beef are boned,
 						rolled and tied - otherwise you get
 						the same roasts with the bone left
 						in"
-							extra
+							costsExtra
 							options={[
 								{
 									label: "NO",
@@ -393,7 +393,7 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Roast Size"
 							name="roast.size"
-							subtext="We suggest a 3-4# roast
+							subtitle="We suggest a 3-4# roast
 						for a family of 2-4"
 							options={[
 								{
@@ -461,8 +461,8 @@ function BeefSection({ id, deleteAnimal }) {
 					<CheckboxForm
 						title="Remove Bone Dust"
 						name="remove_bone_dust"
-						subtext="Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks"
-						extra
+						subtitle="Bone dust is a residue left from bone and fat when meat is run through the saw [like saw dust], it has no effect on the meat other than looks"
+						costsExtra
 						options={[
 							{
 								name: "roast.remove_bone_dust__checkbox",
@@ -503,8 +503,8 @@ function BeefSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Ground Beef Patties"
 							name="ground_beef.patties"
-							subtext="1/4# patties, 30# minimum"
-							extra
+							subtitle="1/4# patties, 30# minimum"
+							costsExtra
 							options={[
 								{
 									label: "NO",

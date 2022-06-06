@@ -15,10 +15,10 @@ function HogSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: animal };
 	const stringId = `${animal}_${id}}`;
 
-	const [halfHog, setHalfHog] = useState(
+	const [wholeHog, setWholeHog] = useState(
 		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
 			"hog-amount"
-		] === "half_hog" || false
+		] === "whole_hog" || true
 	);
 
 	const [hamSelected, setHamSelected] = useState(
@@ -52,9 +52,19 @@ function HogSection({ id, deleteAnimal }) {
 			  ]?.["all_or_split"] === "split"
 			? "split"
 			: "all"
+
+		// window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
+		// 	"hog-amount"
+		// ] === "whole_hog"
+		// 	? window.localStorage.getItem("orderForm")?.[stringId]?.[
+		// 			"shoulder"
+		// 	  ]?.["all_or_split"] === "split"
+		// 		? "split"
+		// 		: "all"
+		// 	: "all"
 	);
 
-	const handleShoulderCuts = (e) => {
+	const handleChangeShoulderCuts = (e) => {
 		const { id } = e.target;
 		setShoulderCuts(id);
 	};
@@ -97,7 +107,7 @@ function HogSection({ id, deleteAnimal }) {
 			value: `ground`,
 	*/
 
-	const handleShoulderCutsSelected = (e) => {
+	const handleSetShoulderCutsSelectedOptions = (e) => {
 		const { name, value } = e.target;
 		setShoulderCutsSelected((prevSelected) => ({
 			...prevSelected,
@@ -105,15 +115,15 @@ function HogSection({ id, deleteAnimal }) {
 		}));
 	};
 
-	const handleHalfHog = (e) => {
+	const handleSetWholeHog = (e) => {
 		const { id } = e.target;
-		const value = id === "half_hog";
-		setHalfHog(value);
-		if (value) {
-			// if true (if half_hog), make sure "half_hams/roasts_half_steaks" is not selected for hamSelected
-			if (hamSelected == "half_hams/roasts_half_steaks") {
-				setHamSelected(false);
-			}
+		const isPurchasingWholeHog = id === "whole_hog";
+		setWholeHog(isPurchasingWholeHog);
+		if (
+			isPurchasingWholeHog &&
+			hamSelected === "half_hams/roasts_half_steaks"
+		) {
+			setHamSelected(false); //reset this option
 		}
 	};
 
@@ -121,7 +131,7 @@ function HogSection({ id, deleteAnimal }) {
 		<Collapsible trigger={`Hog Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			<select>
 				{/* TODO: display all OTHER this type of animal for copying from*/}
-				<option value="beef">Hog 1</option>
+				<option value="hog">Hog 1</option>
 			</select>
 			<button>Copy from previous added animal</button>
 			<ConfirmButton {...animalInfo} onClick={(e) => deleteAnimal(e)}>
@@ -170,7 +180,7 @@ function HogSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-						handleSplitHalf={handleHalfHog}
+						handleChangeOption={handleSetWholeHog}
 					/>
 				</section>
 			</Collapsible>
@@ -184,16 +194,16 @@ function HogSection({ id, deleteAnimal }) {
 						name="ham.cut"
 						options={[
 							{
-								label: `${!halfHog && "All "}Hams/Roasts`,
+								label: `${wholeHog && "All "}Hams/Roasts`,
 								value: "hams/roasts",
 							},
 							{
 								label: `${
-									!halfHog && "All "
+									wholeHog && "All "
 								}Steaks (Specify package size below)`,
 								value: "steaks",
 							},
-							!halfHog && {
+							wholeHog && {
 								label: "Half Hams/Roasts, Half Steaks (Specify package size below)",
 								value: "half_hams/roasts_half_steaks",
 							},
@@ -203,7 +213,7 @@ function HogSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-						handleSelect={handleHamSelection}
+						handleChangeOption={handleHamSelection}
 					/>
 				</div>
 
@@ -213,9 +223,9 @@ function HogSection({ id, deleteAnimal }) {
 						<SelectForm
 							title="Smoked Or Fresh"
 							subtitle={`${
-								halfHog
-									? "Half Hog orders may choose either cured and smoked OR fresh."
-									: "Whole Hog orders may choose one of each, or all of one or the other."
+								wholeHog
+									? "Whole Hog orders may choose one of each, or all of one or the other."
+									: "Half Hog orders may choose either cured and smoked OR fresh."
 							} `}
 							name="ham.smoked_or_fresh"
 							options={[
@@ -224,7 +234,7 @@ function HogSection({ id, deleteAnimal }) {
 									value: "smoked",
 								},
 								{ label: "Fresh", value: "fFresh" },
-								!halfHog && {
+								wholeHog && {
 									label: "Both (Whole Hog Orders Only)",
 									value: "both",
 								},
@@ -295,12 +305,12 @@ function HogSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Bacon / Side Pork">
 				<SelectForm
 					title={
-						halfHog ? "Bacon Or Side Pork" : "Bacon And Side Pork"
+						wholeHog ? "Bacon And Side Pork" : "Bacon Or Side Pork"
 					}
 					subtitle={`${
-						halfHog
-							? "Half Hog orders may choose either bacon or side pork."
-							: "Whole Hog orders may choose some of each bacon and side pork, or all of one or the other."
+						wholeHog
+							? "Whole Hog orders may choose some of each bacon and side pork, or all of one or the other."
+							: "Half Hog orders may choose either bacon or side pork."
 					} `}
 					name="bacon.select"
 					options={[
@@ -312,7 +322,7 @@ function HogSection({ id, deleteAnimal }) {
 							label: "Fresh Side Pork",
 							value: "side_pork",
 						},
-						!halfHog && {
+						wholeHog && {
 							label: "Half Bacon, Half Side Pork",
 							value: "half_bacon_half_side_pork",
 						},
@@ -322,7 +332,7 @@ function HogSection({ id, deleteAnimal }) {
 						},
 					]}
 					animalInfo={animalInfo}
-					// handleSelect={handleSideBaconPorkSelection}
+					// handleChangeOption={handleSideBaconPorkSelection}
 				/>
 
 				<div className="order-form--field">
@@ -367,7 +377,7 @@ function HogSection({ id, deleteAnimal }) {
 				<OrderFormSectionSubheading>
 					Front Shoulder
 				</OrderFormSectionSubheading>
-				{!halfHog && (
+				{wholeHog && (
 					<RadioForm
 						title="One or Two Choices"
 						subtitle="Whole orders may choose one or two options for the shoulder"
@@ -383,14 +393,14 @@ function HogSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-						handleSplitHalf={handleShoulderCuts}
+						handleSelectOption={handleChangeShoulderCuts}
 					/>
 				)}
 				<div className="order-form--field">
 					<SelectForm
 						title="Shoulder Options"
 						subtitle={`Choose your ${
-							!halfHog && shoulderCuts === "split" && "first "
+							wholeHog && shoulderCuts === "split" && "first "
 						}shoulder cut option. For Kansas City Bacon, it's made from the eye of the shoulder and packaged the same as your bacon - any remaining meat goes into sausage, and the arm portion goes into a roast.`}
 						name="shoulder.option"
 						options={[
@@ -412,7 +422,9 @@ function HogSection({ id, deleteAnimal }) {
 							},
 						]}
 						animalInfo={animalInfo}
-						handleSelect={handleShoulderCutsSelected}
+						handleChangeOption={
+							handleSetShoulderCutsSelectedOptions
+						}
 					/>
 
 					{shoulderCuts === "split" && (
@@ -439,7 +451,9 @@ function HogSection({ id, deleteAnimal }) {
 								},
 							]}
 							animalInfo={animalInfo}
-							handleSelect={handleShoulderCutsSelected}
+							handleChangeOption={
+								handleSetShoulderCutsSelectedOptions
+							}
 						/>
 					)}
 				</div>
@@ -468,11 +482,169 @@ function HogSection({ id, deleteAnimal }) {
 								},
 							]}
 							animalInfo={animalInfo}
-							handleSelect={handleShoulderCutsSelected}
+							handleChangeOption={
+								handleSetShoulderCutsSelectedOptions
+							}
 						/>
 					)}
 				</div>
 			</Collapsible>
+
+			{/* Ham options:
+
+						Ham Cut: {
+							All Roasts/Hams
+							All Steaks
+							Half/Half
+							Other
+						} :
+			
+							(IF HAMS/ROASTS): 
+								TYPE (whole orders choose up to 2, half choose up to 1): {
+									Smoked
+									Fresh
+									Other
+								},
+{
+								Ham/Roast Size {
+									...
+								}
+							}
+
+							(IF STEAKS): {
+								NumberPerPackage
+							}
+
+			*/}
+
+			{/* Bacon / Side Pork
+			
+				(whole orders choose up to 2, half choose up to 1): { 
+					Bacon (cured and smoked)
+					Fresh Side Pork
+					Other
+				} :
+					(IF BACON OR FRESH SIDE PORK): {
+						Cut: {
+							Sliced
+							Slab
+						} :
+							(IF SLICED): {
+								Standard
+								Thin
+								Thick
+							}
+					}
+			
+			*/}
+
+			{/* 
+				Shoulder options:
+				Half hog orders: choose one type of cut
+				Whole hog orders: choose one or two types of cuts
+				(checkbox state idea: could be array of 2 items, and each change a new one is pushed on and the oldest one is removed)
+				
+				Fresh Pork Roasts/Steaks: {
+					{(Roasts/Steaks)
+						All Fresh SHoulder Roasts
+						All Fresh Shoulder Steaks
+						Half Roasts Half Steaks
+						Other
+					}:
+					 	IF ROASTS:
+							{(Roast size)
+								3-4
+								4-5
+								5-6
+								other
+							}
+						IF STEAKS:
+							{
+								Thickness: {
+									...
+								},
+								SteaksPerPackage: {
+									...
+								}
+							}
+				},
+				Kansas City Bacon: {
+					(NO EXTRA OPTIONS)
+				},
+				Smoked Picnic Ham: {
+					{(Roasts/Steaks)
+						All Picnic Roasts
+						All Picnic Steaks
+						Half Roasts Half Steaks
+						Other
+					}:
+					 	IF ROASTS:
+							{(Roast size)
+								3-4
+								4-5
+								5-6
+								other
+							}
+						IF STEAKS:
+							{
+								Thickness: {
+									...
+								},
+								SteaksPerPackage: {
+									...
+								}
+							}
+				},
+				GRIND: {
+					Choose One: {
+						Breakfast Sausage (seasoned)
+						Ground Pork (unseasoned)
+					}
+				}
+
+
+			*/}
+
+			{/*  Loin options:
+				
+				Loin Cut: {
+						All Chops
+						All Roasts (Usually 3)
+						One Roast, remaining Chops
+						Other
+					}:
+						IF CHOPS: {
+							Thickness of Chops: {
+								...
+							},
+							ChopsPerPackage: {
+								...
+							},
+						}
+
+						IF ROAST(S): {
+							Roast Size: {
+								...
+							}
+						}
+			*/}
+
+			{/* Spare Rib Options:
+
+					Country Spare Ribs (from some pork chops/steaks)? Yes/No
+					
+
+			*/}
+
+			{/* Other Options:
+
+					Lard (raw fat, not rendered)?
+
+					Extras: {
+						Liver?
+						Heart?
+					}
+			*/}
 
 			<Collapsible trigger="Special Instructions">
 				<InputForm

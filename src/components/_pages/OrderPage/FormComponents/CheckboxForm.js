@@ -3,12 +3,15 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
 import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
-const EachCheckbox = ({ animalInfo, name, label }) => {
+const EachCheckbox = ({ animalInfo, name, label, handleChooseOption }) => {
 	const { register } = useFormContext();
 
-	if (animalInfo) {
-		name = getSplitAnimalInfo(name, animalInfo);
-	}
+	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
+
+	// if (animalInfo) {
+	// 	name = getSplitAnimalInfo(name, animalInfo);
+	// }
+
 	return (
 		<React.Fragment key={name}>
 			<input
@@ -16,6 +19,8 @@ const EachCheckbox = ({ animalInfo, name, label }) => {
 				type="checkbox"
 				id={name}
 				name={name}
+				value={name}
+				onClick={handleChooseOption && ((e) => handleChooseOption(e))}
 				{...register(name)}
 			/>
 			<label htmlFor={name} key={name}>
@@ -25,28 +30,37 @@ const EachCheckbox = ({ animalInfo, name, label }) => {
 	);
 };
 
-const CheckboxForm = ({ title, name, subtext, extra, options, animalInfo }) => {
+const CheckboxForm = ({
+	title,
+	name,
+	subtitle,
+	costsExtra,
+	options,
+	animalInfo,
+	handleChooseOption,
+}) => {
 	const {
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ name, label }) => {
-		return EachCheckbox({
+	const allOptions = options.map(({ name, label }) =>
+		EachCheckbox({
 			animalInfo,
 			name,
 			label,
-		});
-	});
+			handleChooseOption,
+		})
+	);
 
 	return (
 		<div className="order-form--field">
 			<LabelInput
 				title={title}
 				name={name}
-				extra={extra}
-				subtext={subtext}
+				costsExtra={costsExtra}
+				subtitle={subtitle}
 			/>
-			<p className={`order-form--checkbox-container`}>{allOptions}</p>
+			<p className="order-form--checkbox-container">{allOptions}</p>
 		</div>
 	);
 };

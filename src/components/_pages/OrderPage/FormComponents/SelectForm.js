@@ -15,29 +15,30 @@ function SelectForm({
 	title,
 	name,
 	subtitle,
-	extra,
+	costsExtra,
 	options,
 	animalInfo,
-	handleSelect,
+	handleChangeOption,
 }) {
 	const {
 		register,
 		formState: { errors },
 	} = useFormContext();
 
-	if (animalInfo) {
-		name = getSplitAnimalInfo(name, animalInfo);
-	}
+	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
+	// if (animalInfo) {
+	// 	name = getSplitAnimalInfo(name, animalInfo);
+	// }
 
-	let allOptions = options.map(({ label, value }) => {
-		return Option({ label, value });
-	});
+	let allOptions = options.map(({ label, value }) =>
+		Option({ label, value })
+	);
 
 	return (
 		<p className="order-form--field order-form--input-container-small order-form--input-container">
 			<LabelInput
 				name={name}
-				extra={extra}
+				costsExtra={costsExtra}
 				subtitle={subtitle}
 				title={title}
 			/>{" "}
@@ -46,7 +47,7 @@ function SelectForm({
 				name={name}
 				id={name}
 				className="order-form--select"
-				onChange={handleSelect && ((e) => handleSelect(e))}
+				onChange={handleChangeOption && ((e) => handleChangeOption(e))}
 			>
 				{allOptions}
 			</select>

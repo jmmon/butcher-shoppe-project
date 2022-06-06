@@ -5,9 +5,10 @@ import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
 const InputForm = ({
 	title,
-	subtext,
+	subtitle,
 	name,
 	placeholder,
+	costsExtra,
 	required,
 	small,
 	textarea,
@@ -19,9 +20,10 @@ const InputForm = ({
 		formState: { errors },
 	} = useFormContext();
 
-	if (animalInfo) {
-		name = getSplitAnimalInfo(name, animalInfo);
-	}
+	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
+	// if (animalInfo) {
+	// 	name = getSplitAnimalInfo(name, animalInfo);
+	// }
 
 	const inputAttributes = {
 		name: name,
@@ -31,7 +33,6 @@ const InputForm = ({
 
 	const numberAttributes = number
 		? {
-				// value: number.value,
 				min: number?.min || 0,
 		  }
 		: null;
@@ -49,7 +50,8 @@ const InputForm = ({
 				name={name}
 				small={small}
 				title={title}
-				subtext={subtext}
+				subtitle={subtitle}
+				costsExtra={costsExtra}
 			/>
 
 			{thisError && (

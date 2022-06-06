@@ -167,7 +167,6 @@ function OrderPage() {
 			/>
 
 			<WhitePageBackground>
-				<button onClick={clearLocalStorage}>Clear</button>
 				<FormProvider {...methods}>
 					<form
 						className="form--center"
@@ -271,6 +270,8 @@ function OrderPage() {
 						</article>
 						<div className="form--container">
 							<h3 className="form--title">Order Form</h3>
+
+							<Button onClick={clearLocalStorage}>Clear</Button>
 							<Collapsible
 								trigger="Contact Info"
 								open

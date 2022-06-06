@@ -5,7 +5,7 @@ function LabelInput({
 	title,
 	htmlFor,
 	subtitle,
-	extra,
+	costsExtra,
 	small,
 	required,
 	children,
@@ -17,7 +17,7 @@ function LabelInput({
 			required={required}
 			small={small}
 		>
-			{extra && (
+			{costsExtra && (
 				<>
 					{" "}
 					<span className="form-special-extra">
