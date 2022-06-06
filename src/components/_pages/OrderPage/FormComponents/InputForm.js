@@ -1,7 +1,7 @@
 import React from "react";
 import LabelInput from "./LabelInput";
 import { useFormContext } from "react-hook-form";
-import splitAnimalInfo from "./utils/splitAnimalInfo";
+import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
 const InputForm = ({
 	title,
@@ -20,7 +20,7 @@ const InputForm = ({
 	} = useFormContext();
 
 	if (animalInfo) {
-		name = splitAnimalInfo(name, animalInfo);
+		name = getSplitAnimalInfo(name, animalInfo);
 	}
 
 	const inputAttributes = {

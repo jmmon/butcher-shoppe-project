@@ -1,13 +1,13 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import splitAnimalInfo from "./utils/splitAnimalInfo";
+import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
 const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 	const { register } = useFormContext();
 
 	if (animalInfo) {
-		name = splitAnimalInfo(name, animalInfo);
+		name = getSplitAnimalInfo(name, animalInfo);
 	}
 
 	return (
@@ -22,7 +22,7 @@ const EachRadio = ({ name, animalInfo, inputId, label, handleSplitHalf }) => {
 				type="radio"
 				id={inputId}
 				name={name}
-				onClick={handleSplitHalf ? (e) => handleSplitHalf(e) : null}
+				onClick={handleSplitHalf && ((e) => handleSplitHalf(e))}
 				value={inputId}
 			/>
 			{label}

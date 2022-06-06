@@ -1,13 +1,13 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import splitAnimalInfo from "./utils/splitAnimalInfo";
+import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
 const EachCheckbox = ({ animalInfo, name, label }) => {
 	const { register } = useFormContext();
 
 	if (animalInfo) {
-		name = splitAnimalInfo(name, animalInfo);
+		name = getSplitAnimalInfo(name, animalInfo);
 	}
 	return (
 		<React.Fragment key={name}>

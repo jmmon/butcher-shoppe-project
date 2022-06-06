@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
-import splitAnimalInfo from "./utils/splitAnimalInfo";
+import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
 function Option({ label, value }) {
 	return (
@@ -11,14 +11,22 @@ function Option({ label, value }) {
 	);
 }
 
-function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
+function SelectForm({
+	title,
+	name,
+	subtitle,
+	extra,
+	options,
+	animalInfo,
+	handleSelect,
+}) {
 	const {
 		register,
 		formState: { errors },
 	} = useFormContext();
 
 	if (animalInfo) {
-		name = splitAnimalInfo(name, animalInfo);
+		name = getSplitAnimalInfo(name, animalInfo);
 	}
 
 	let allOptions = options.map(({ label, value }) => {
@@ -30,7 +38,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 			<LabelInput
 				name={name}
 				extra={extra}
-				subtext={subtext}
+				subtitle={subtitle}
 				title={title}
 			/>{" "}
 			<select
@@ -38,6 +46,7 @@ function SelectForm({ title, name, subtext, extra, options, animalInfo }) {
 				name={name}
 				id={name}
 				className="order-form--select"
+				onChange={handleSelect && ((e) => handleSelect(e))}
 			>
 				{allOptions}
 			</select>

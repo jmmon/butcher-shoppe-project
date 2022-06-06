@@ -4,7 +4,7 @@ import LabelForm from "./LabelForm";
 function LabelInput({
 	title,
 	htmlFor,
-	subtext,
+	subtitle,
 	extra,
 	small,
 	required,
@@ -27,10 +27,12 @@ function LabelInput({
 				</>
 			)}
 
-			{subtext && (
+			{subtitle && (
 				<>
 					<br />
-					<span className="order-form--label-subtext">{subtext}</span>
+					<span className="order-form--label-subtext">
+						{subtitle}
+					</span>
 				</>
 			)}
 

@@ -15,7 +15,7 @@ function LambSection({ id, deleteAnimal }) {
 			{/* TODO: */}
 			<select>
 				{/* TODO: display all OTHER this type of animal for copying from*/}
-				<option value="beef">Lamb 1</option>
+				<option value="lamb">Lamb 1</option>
 			</select>
 			<button>Copy from previous added animal</button>
 			{/* END TODO */}
