@@ -38,11 +38,25 @@ function OrderPage() {
 	};
 
 	useFormPersist("orderForm", {
-		watch: methods.watch,
-		setValue: methods.setValue,
+		watch: methods.watch, // to watch the value to save into storage
+		setValue: methods.setValue, // to set the value when loading up the page
 		storage: window.localStorage,
-		// exclude: ["special_instructions"],
+		// exclude: ["animals"],
+		// could exclude the animals here, then would need to watch them separately to add them separately to localStorage
 	});
+
+	useEffect(() => {
+		Object.keys(methods.formState.errors).length > 0 &&
+			console.log("errors", methods.formState.errors);
+	}, [methods.formState.errors]);
+
+	useEffect(() => {
+		window.localStorage.getItem("orderForm") !== null &&
+			console.log(
+				"TESTING - local storage",
+				JSON.parse(window.localStorage.getItem("orderForm"))
+			);
+	}, [window.localStorage.getItem("orderForm")]);
 
 	const onSubmit = (data) => console.log(data);
 
@@ -117,16 +131,17 @@ function OrderPage() {
 			},
 		});
 
-		setAnimalToUnregister(`${typeOfAnimal}_${idOfAnimal}`);
+		// trying unregister here instead of separately
+		methods.unregister(`${typeOfAnimal}_${idOfAnimal}`);
+		//setAnimalToUnregister(`${typeOfAnimal}_${idOfAnimal}`);
 	};
 
-	useEffect(() => {
-		if (animalToUnregister !== "") {
-			// const string = `${animalToUnregister.animal}_${animalToUnregister.id}`;
-			setAnimalToUnregister("");
-			methods.unregister(animalToUnregister);
-		}
-	}, [animalToUnregister, methods.unregister]);
+	// useEffect(() => {
+	// 	if (animalToUnregister !== "") {
+	// 		setAnimalToUnregister("");
+	// 		methods.unregister(animalToUnregister);
+	// 	}
+	// }, [animalToUnregister, methods.unregister]);
 
 	const testing__displayObjOfArrs = (obj, msg) => {
 		let string = "";
@@ -143,19 +158,6 @@ function OrderPage() {
 			"(useEffect) updated collection of animals: "
 		);
 	}, [idCollectionOfAnimalsByType]);
-
-	useEffect(() => {
-		Object.keys(methods.formState.errors).length > 0 &&
-			console.log("errors", methods.formState.errors);
-	}, [methods.formState.errors]);
-
-	useEffect(() => {
-		window.localStorage.getItem("orderForm") !== null &&
-			console.log(
-				"TESTING - local storage",
-				JSON.parse(window.localStorage.getItem("orderForm"))
-			);
-	}, [window.localStorage.getItem("orderForm")]);
 
 	return (
 		<>

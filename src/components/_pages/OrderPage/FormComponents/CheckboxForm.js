@@ -53,15 +53,17 @@ const CheckboxForm = ({
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ label, name }) =>
-		EachCheckbox({
-			label,
-			name,
-			animalInfo,
-			handleChooseOption,
-			previousCheckedOptionsArray,
-		})
-	);
+	const allOptions = options
+		? options.map(({ label, name }) =>
+				EachCheckbox({
+					label,
+					name,
+					animalInfo,
+					handleChooseOption,
+					previousCheckedOptionsArray,
+				})
+		  )
+		: "Err: No options were provided!";
 
 	return (
 		<div className="order-form--field">

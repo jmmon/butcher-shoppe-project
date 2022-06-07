@@ -30,9 +30,9 @@ function SelectForm({
 	// 	name = getSplitAnimalInfo(name, animalInfo);
 	// }
 
-	let allOptions = options.map(({ label, value }) =>
-		Option({ label, value })
-	);
+	let allOptions = options
+		? options.map(({ label, value }) => Option({ label, value }))
+		: "Err: No options were provided for this select box";
 
 	return (
 		<p className="order-form--field order-form--input-container-small order-form--input-container">

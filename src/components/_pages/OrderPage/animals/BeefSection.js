@@ -17,9 +17,9 @@ function BeefSection({ id, deleteAnimal }) {
 	const stringId = `${animal}_${id}}`;
 
 	const [splitHalf, setSplitHalf] = useState(
-		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"beef_amount"
-		] === "split_half" || false
+		window.localStorage.getItem("orderForm")?.animals?.[stringId]?.[
+			"info"
+		]?.["beef_amount"] === "split_half" || false
 	);
 
 	const handleSplitHalf = (e) => {

@@ -12,6 +12,7 @@ const animal = "lamb";
 
 function LambSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: animal };
+	// const stringId = `${animal}_${id}}`;
 
 	return (
 		<Collapsible trigger={`Lamb Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>

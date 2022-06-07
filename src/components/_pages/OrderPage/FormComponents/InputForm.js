@@ -21,9 +21,7 @@ const InputForm = ({
 	} = useFormContext();
 
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
-	// if (animalInfo) {
-	// 	name = getSplitAnimalInfo(name, animalInfo);
-	// }
+	//returns "animals.[type]_[#id].[name]"
 
 	const inputAttributes = {
 		name: name,

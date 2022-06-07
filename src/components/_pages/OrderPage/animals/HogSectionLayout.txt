@@ -88,10 +88,41 @@
 	Half hog orders: choose one type of cut
 	Whole hog orders: choose one or two types of cuts
 	(checkbox state idea: could be array of 2 items, and each change a new one is pushed on and the oldest one is removed)
+
+	Select two: {
+		Fresh Pork Roasts/Steaks
+		Kansas City Bacon
+		Smoked (picnic ham)
+		Grind
+	}
+
+	if we have first option, we need to ask:
+		first: do we want all roasts, all steaks, or half/half?
+			-if we choose all roasts or half/half, we need to ask about the roasts:
+				{Roast Size}
+			-if we choose all steaks or half/half, we need to ask about the steaks:
+				{Steak thickness
+				SteaksPerPackage}
+
+	if we have the third option, we need to ask:
+		first: do we want all roasts, all steaks, or half/half?
+			-if all roasts or half/half, we need to ask:
+				{Roast Size}
+			-if all steaks or half/half, we need to ask:
+				{Steak thickness
+				SteaksPerPackage}
 	
-	Fresh Pork Roasts/Steaks: {
-		{(Roasts/Steaks)
-			All Fresh SHoulder Roasts
+	if we have the second option, nothing to do;
+	
+	if we have the fourth option:
+		we need to CHOOSE ONE:
+			{Breakfast Sausage (seasoned)
+			Ground Pork (unseasoned)}
+				
+	
+	(Fresh Pork Roasts/Steaks): {
+		(Roasts/Steaks)
+			All Fresh Shoulder Roasts
 			All Fresh Shoulder Steaks
 			Half Roasts Half Steaks
 			Other
