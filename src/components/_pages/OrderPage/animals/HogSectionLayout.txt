@@ -1,0 +1,192 @@
+{/* Ham options:
+
+			Ham Cut: {
+				All Roasts/Hams
+				All Steaks
+				(Half/Half)
+				Other
+			} :
+
+				(IF WHOLE_HOG): {
+					(IF ALL HAMS/ROASTS): 
+						TYPE (whole_hog orders choose UP TO 2): {
+							Smoked
+							Fresh
+							Other
+						},
+						Ham/Roast Size {
+							...
+						}
+					}
+
+					(IF HALF HAMS/ROASTS AND HALF STEAKS): {
+						(HAMS/ROASTS): {
+							TYPE (whole_hog orders choose 1): {
+								Smoked
+								Fresh
+								Other
+							},
+							Ham/Roast Size {
+								...
+							}
+						}
+
+						(STEAKS): {
+							NumberPerPackage
+						}
+					}
+
+					(IF ALL STEAKS): {
+						NumberPerPackage
+					}
+						
+				}
+
+				(IF HALF_HOG): {
+					(IF HAMS/ROASTS): {
+						TYPE (half_hog orders choose 1): {
+							Smoked
+							Fresh
+							Other
+						},
+						Ham/Roast Size {
+							...
+						}
+					}
+
+					(IF STEAKS): {
+						NumberPerPackage
+					}
+
+				}
+					
+*/}
+
+{/* Bacon / Side Pork
+
+	(whole orders choose up to 2, half choose up to 1): { 
+		Bacon (cured and smoked)
+		Fresh Side Pork
+		Other
+	} :
+		(IF BACON OR FRESH SIDE PORK): {
+			Cut: {
+				Sliced
+				Slab
+			} :
+				(IF SLICED): {
+					Standard
+					Thin
+					Thick
+				}
+		}
+
+*/}
+
+{/* 
+	Shoulder options:
+	Half hog orders: choose one type of cut
+	Whole hog orders: choose one or two types of cuts
+	(checkbox state idea: could be array of 2 items, and each change a new one is pushed on and the oldest one is removed)
+	
+	Fresh Pork Roasts/Steaks: {
+		{(Roasts/Steaks)
+			All Fresh SHoulder Roasts
+			All Fresh Shoulder Steaks
+			Half Roasts Half Steaks
+			Other
+		}:
+			IF ROASTS:
+				{(Roast size)
+					3-4
+					4-5
+					5-6
+					other
+				}
+			IF STEAKS:
+				{
+					Thickness: {
+						...
+					},
+					SteaksPerPackage: {
+						...
+					}
+				}
+	},
+	Kansas City Bacon: {
+		(NO EXTRA OPTIONS)
+	},
+	Smoked Picnic Ham: {
+		{(Roasts/Steaks)
+			All Picnic Roasts
+			All Picnic Steaks
+			Half Roasts Half Steaks
+			Other
+		}:
+			IF ROASTS:
+				{(Roast size)
+					3-4
+					4-5
+					5-6
+					other
+				}
+			IF STEAKS:
+				{
+					Thickness: {
+						...
+					},
+					SteaksPerPackage: {
+						...
+					}
+				}
+	},
+	GRIND: {
+		Choose One: {
+			Breakfast Sausage (seasoned)
+			Ground Pork (unseasoned)
+		}
+	}
+
+
+*/}
+
+{/*  Loin options:
+	
+	Loin Cut: {
+			All Chops
+			All Roasts (Usually 3)
+			One Roast, remaining Chops
+			Other
+		}:
+			IF CHOPS: {
+				Thickness of Chops: {
+					...
+				},
+				ChopsPerPackage: {
+					...
+				},
+			}
+
+			IF ROAST(S): {
+				Roast Size: {
+					...
+				}
+			}
+*/}
+
+{/* Spare Rib Options:
+
+		Country Spare Ribs (from some pork chops/steaks)? Yes/No
+		
+
+*/}
+
+{/* Other Options:
+
+		Lard (raw fat, not rendered)?
+
+		Extras: {
+			Liver?
+			Heart?
+		}
+*/}

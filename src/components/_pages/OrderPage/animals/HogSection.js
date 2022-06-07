@@ -16,16 +16,40 @@ function HogSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: animal };
 	const stringId = `${animal}_${id}`;
 
-	const [wholeHog, setWholeHog] = useState(
-		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-			"info"
-		]?.["hog_amount"] === "whole_hog" || undefined
+	const storageFormObjectOrEmptyObject = JSON.parse(
+		window.localStorage.getItem("orderForm") || "{}"
+	);
+	console.log(
+		"localStorage parsed object (or empty object):",
+		storageFormObjectOrEmptyObject
 	);
 
-	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
-		// get previous state OR use empty array
-		[]
+	const [wholeHog, setWholeHog] = useState(
+		storageFormObjectOrEmptyObject?.[stringId]?.["info"]?.["hog_amount"] ===
+			"whole_hog" || undefined
 	);
+
+	// get previous object and turn it into an array OR use empty array
+	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
+		storageFormObjectOrEmptyObject?.[stringId]?.["shoulder"]?.[
+			"new_shoulder_choices"
+		]
+			? Object.keys(
+					storageFormObjectOrEmptyObject?.[stringId]?.["shoulder"]?.[
+						"new_shoulder_choices"
+					]
+			  ).filter(
+					(shoulderChoiceKeys) =>
+						storageFormObjectOrEmptyObject?.[stringId]?.[
+							"shoulder"
+						]?.["new_shoulder_choices"]?.[shoulderChoiceKeys] ===
+						true
+			  ) || []
+			: []
+	);
+	// useEffect(() => {
+	// 	console.log({ saveTwoShoulderChoices });
+	// }, [saveTwoShoulderChoices]);
 
 	const handleUpdateSaveUpToTwoShoulderChoices = (e) => {
 		const isNotChecked = !e.target.checked;
@@ -135,47 +159,28 @@ function HogSection({ id, deleteAnimal }) {
 
 	const handleSetWholeHog = (e) => {
 		const { id } = e.target;
-		const isPurchasingWholeHog = id === "whole_hog";
-		console.log("handleSetWholeHog firing:", isPurchasingWholeHog);
-		setWholeHog(isPurchasingWholeHog);
-		if (
-			isPurchasingWholeHog &&
-			hamSelected === "half_hams/roasts_half_steaks"
-		) {
-			setHamSelected(false); //reset this option
+		const isNowWholeHog = id === "whole_hog";
+
+		// console.log("handleSetWholeHog firing:", isNowWholeHog);
+
+		setWholeHog(isNowWholeHog);
+
+		//reset other states which depend on this:
+		if (isNowWholeHog) {
+			// hamSelected
+			if (hamSelected === "half_hams/roasts_half_steaks") {
+				setHamSelected(false); //reset this option
+			}
+		} else {
+			// need to adjust shoulder options when we get a half_hog
+			if (saveTwoShoulderChoices.length > 1) {
+				// save only the last choice
+				const lastShoulderChoice =
+					saveTwoShoulderChoices[saveTwoShoulderChoices.length - 1];
+				setSaveTwoShoulderChoices([lastShoulderChoice]);
+			}
 		}
 	};
-
-	// useEffect(() => {
-	// 	console.log(
-	// 		"testing wholeHog initial state check: localStorage says it should be set to:",
-	// 		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-	// 			"hog_amount"
-	// 		] === "whole_hog"
-	// 	);
-	// 	console.log("The tree:");
-	// 	console.log(" ", JSON.parse(window.localStorage.getItem("orderForm")));
-	// 	console.log(
-	// 		" ",
-	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]
-	// 	);
-	// 	console.log(
-	// 		" ",
-	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-	// 			"info"
-	// 		]
-	// 	);
-	// 	console.log(
-	// 		" ",
-	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-	// 			"info"
-	// 		]?.["hog_amount"]
-	// 	);
-	// }, [
-	// 	JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-	// 		"info"
-	// 	]?.["hog_amount"],
-	// ]);
 
 	return (
 		<Collapsible trigger={`Hog Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
@@ -537,7 +542,7 @@ function HogSection({ id, deleteAnimal }) {
 							previousCheckedOptionsArray={saveTwoShoulderChoices}
 						/>
 
-						{wholeHog && (
+						{/* {wholeHog && (
 							<RadioForm
 								title="One or Two Choices"
 								subtitle="Whole orders may choose one or two options for the shoulder"
@@ -555,7 +560,7 @@ function HogSection({ id, deleteAnimal }) {
 								animalInfo={animalInfo}
 								handleSelectOption={handleChangeShoulderCuts}
 							/>
-						)}
+						)} */}
 						<div className="order-form--field">
 							<SelectForm
 								title="Shoulder Options"
@@ -662,199 +667,6 @@ function HogSection({ id, deleteAnimal }) {
 					</Collapsible>
 				</>
 			)}
-
-			{/* Ham options:
-
-						Ham Cut: {
-							All Roasts/Hams
-							All Steaks
-							(Half/Half)
-							Other
-						} :
-			
-							(IF WHOLE_HOG): {
-								(IF ALL HAMS/ROASTS): 
-									TYPE (whole_hog orders choose UP TO 2): {
-										Smoked
-										Fresh
-										Other
-									},
-									Ham/Roast Size {
-										...
-									}
-								}
-
-								(IF HALF HAMS/ROASTS AND HALF STEAKS): {
-									(HAMS/ROASTS): {
-										TYPE (whole_hog orders choose 1): {
-											Smoked
-											Fresh
-											Other
-										},
-										Ham/Roast Size {
-											...
-										}
-									}
-
-									(STEAKS): {
-										NumberPerPackage
-									}
-								}
-
-								(IF ALL STEAKS): {
-									NumberPerPackage
-								}
-									
-							}
-
-							(IF HALF_HOG): {
-								(IF HAMS/ROASTS): {
-									TYPE (half_hog orders choose 1): {
-										Smoked
-										Fresh
-										Other
-									},
-									Ham/Roast Size {
-										...
-									}
-								}
-
-								(IF STEAKS): {
-									NumberPerPackage
-								}
-
-							}
-								
-			*/}
-
-			{/* Bacon / Side Pork
-			
-				(whole orders choose up to 2, half choose up to 1): { 
-					Bacon (cured and smoked)
-					Fresh Side Pork
-					Other
-				} :
-					(IF BACON OR FRESH SIDE PORK): {
-						Cut: {
-							Sliced
-							Slab
-						} :
-							(IF SLICED): {
-								Standard
-								Thin
-								Thick
-							}
-					}
-			
-			*/}
-
-			{/* 
-				Shoulder options:
-				Half hog orders: choose one type of cut
-				Whole hog orders: choose one or two types of cuts
-				(checkbox state idea: could be array of 2 items, and each change a new one is pushed on and the oldest one is removed)
-				
-				Fresh Pork Roasts/Steaks: {
-					{(Roasts/Steaks)
-						All Fresh SHoulder Roasts
-						All Fresh Shoulder Steaks
-						Half Roasts Half Steaks
-						Other
-					}:
-					 	IF ROASTS:
-							{(Roast size)
-								3-4
-								4-5
-								5-6
-								other
-							}
-						IF STEAKS:
-							{
-								Thickness: {
-									...
-								},
-								SteaksPerPackage: {
-									...
-								}
-							}
-				},
-				Kansas City Bacon: {
-					(NO EXTRA OPTIONS)
-				},
-				Smoked Picnic Ham: {
-					{(Roasts/Steaks)
-						All Picnic Roasts
-						All Picnic Steaks
-						Half Roasts Half Steaks
-						Other
-					}:
-					 	IF ROASTS:
-							{(Roast size)
-								3-4
-								4-5
-								5-6
-								other
-							}
-						IF STEAKS:
-							{
-								Thickness: {
-									...
-								},
-								SteaksPerPackage: {
-									...
-								}
-							}
-				},
-				GRIND: {
-					Choose One: {
-						Breakfast Sausage (seasoned)
-						Ground Pork (unseasoned)
-					}
-				}
-
-
-			*/}
-
-			{/*  Loin options:
-				
-				Loin Cut: {
-						All Chops
-						All Roasts (Usually 3)
-						One Roast, remaining Chops
-						Other
-					}:
-						IF CHOPS: {
-							Thickness of Chops: {
-								...
-							},
-							ChopsPerPackage: {
-								...
-							},
-						}
-
-						IF ROAST(S): {
-							Roast Size: {
-								...
-							}
-						}
-			*/}
-
-			{/* Spare Rib Options:
-
-					Country Spare Ribs (from some pork chops/steaks)? Yes/No
-					
-
-			*/}
-
-			{/* Other Options:
-
-					Lard (raw fat, not rendered)?
-
-					Extras: {
-						Liver?
-						Heart?
-					}
-			*/}
 		</Collapsible>
 	);
 }
