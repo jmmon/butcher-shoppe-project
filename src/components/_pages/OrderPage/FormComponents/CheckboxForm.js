@@ -3,7 +3,13 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
 import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
-const EachCheckbox = ({ animalInfo, name, label, handleChooseOption }) => {
+const EachCheckbox = ({
+	label,
+	name,
+	animalInfo,
+	handleChooseOption,
+	previousCheckedOptionsArray,
+}) => {
 	const { register } = useFormContext();
 
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
@@ -19,8 +25,11 @@ const EachCheckbox = ({ animalInfo, name, label, handleChooseOption }) => {
 				type="checkbox"
 				id={name}
 				name={name}
-				value={name}
 				onClick={handleChooseOption && ((e) => handleChooseOption(e))}
+				checked={
+					previousCheckedOptionsArray &&
+					previousCheckedOptionsArray.includes(name)
+				}
 				{...register(name)}
 			/>
 			<label htmlFor={name} key={name}>
@@ -38,17 +47,19 @@ const CheckboxForm = ({
 	options,
 	animalInfo,
 	handleChooseOption,
+	previousCheckedOptionsArray,
 }) => {
 	const {
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ name, label }) =>
+	const allOptions = options.map(({ label, name }) =>
 		EachCheckbox({
-			animalInfo,
-			name,
 			label,
+			name,
+			animalInfo,
 			handleChooseOption,
+			previousCheckedOptionsArray,
 		})
 	);
 

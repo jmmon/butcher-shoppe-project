@@ -9,8 +9,9 @@ import RadioForm from "../FormComponents/RadioForm";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import Button from "../../../Button/Button";
 
+const animal = "beef";
+
 function BeefSection({ id, deleteAnimal }) {
-	const animal = "beef";
 	id = +id;
 	const animalInfo = { id: id, animal: animal };
 	const stringId = `${animal}_${id}}`;
@@ -55,152 +56,151 @@ function BeefSection({ id, deleteAnimal }) {
 				// triggerClassName="cut_sheet__section__trigger"
 				// contentOuterClassName="cut_sheet__section__content_outer"
 			>
-				<section className="order-form--section">
-					<div className="order-form--field">
-						<LabelForm title="Grower Name" />
-						<InputForm
-							title="First"
-							name="info.grower.name.first"
-							placeholder="First name"
-							small={true}
-							animalInfo={animalInfo}
-						/>
-						<InputForm
-							title="Last"
-							name="info.grower.name.last"
-							placeholder="Last name"
-							small={true}
-							animalInfo={animalInfo}
-						/>
-					</div>
-					<div className="order-form--field">
-						<LabelForm title="Ear Tag Number (if applicable)" />
-						<InputForm
-							// title="Ear Tag Number (if applicable)"
-							name="info.grower.ear_tag_number"
-							placeholder="Ear tag number"
-							animalInfo={animalInfo}
-						/>
-					</div>
-
-					<RadioForm
-						title="Choose One"
-						name="info.beef-amount"
-						required={true}
-						options={[
-							{
-								inputId: "whole",
-								label: "WHOLE BEEF",
-							},
-							{
-								inputId: "half",
-								label: "HALF BEEF",
-							},
-							{
-								inputId: "hind_quarter",
-								label: "HIND QUARTER",
-							},
-							{
-								inputId: "front_quarter",
-								label: "FRONT QUARTER",
-							},
-							{
-								inputId: "split_half",
-								label: "SPLIT HALF *Additional fee-See price list",
-							},
-						]}
+				TODO: header^^ banner
+			</Collapsible>
+			<section className="order-form--section">
+				<div className="order-form--field">
+					<LabelForm title="Grower Name" />
+					<InputForm
+						title="First"
+						name="info.grower.name.first"
+						placeholder="First name"
+						small={true}
 						animalInfo={animalInfo}
-						handleChangeOption={handleSplitHalf}
 					/>
-				</section>
+					<InputForm
+						title="Last"
+						name="info.grower.name.last"
+						placeholder="Last name"
+						small={true}
+						animalInfo={animalInfo}
+					/>
+				</div>
+				<div className="order-form--field">
+					<LabelForm title="Ear Tag Number (if applicable)" />
+					<InputForm
+						// title="Ear Tag Number (if applicable)"
+						name="info.grower.ear_tag_number"
+						placeholder="Ear tag number"
+						animalInfo={animalInfo}
+					/>
+				</div>
 
-				<section
-					className={`order-form--section  ${
-						splitHalf
-							? "beef--split-half-section--show"
-							: "beef--split-half-section"
-					}`}
-					id="split-half--contact-info"
-				>
-					{splitHalf && (
-						<>
-							<div className="order-form--field">
-								<h3 className="order-form--title">
-									Contact Info
-								</h3>
-								<OrderFormSectionSubheading>
-									for the other person, if splitting half
-								</OrderFormSectionSubheading>
+				<RadioForm
+					title="Choose One"
+					name="info.beef-amount"
+					required={true}
+					options={[
+						{
+							inputId: "whole",
+							label: "WHOLE BEEF",
+						},
+						{
+							inputId: "half",
+							label: "HALF BEEF",
+						},
+						{
+							inputId: "hind_quarter",
+							label: "HIND QUARTER",
+						},
+						{
+							inputId: "front_quarter",
+							label: "FRONT QUARTER",
+						},
+						{
+							inputId: "split_half",
+							label: "SPLIT HALF *Additional fee-See price list",
+						},
+					]}
+					animalInfo={animalInfo}
+					handleChangeOption={handleSplitHalf}
+				/>
+			</section>
 
-								<LabelForm title="Name" />
-								<InputForm
-									title="First"
-									name="beef.split_half.name.first"
-									placeholder="First name"
-									required={
-										splitHalf && {
-											required: {
-												value: true,
-												message:
-													"Please enter the other person's first name",
-											},
-											pattern: {
-												value: /^[a-zA-Z]+$/,
-												message:
-													"Only letters for names, please",
-											},
-										}
-									}
-									small={true}
-									animalInfo={animalInfo}
-								/>
-								<InputForm
-									title="Last"
-									name="beef.split_half.name.last"
-									placeholder="Last name"
-									required={
-										splitHalf && {
-											required: {
-												value: true,
-												message:
-													"Please enter the other person's last name",
-											},
-											pattern: {
-												value: /^[a-zA-Z]+$/,
-												message:
-													"Only letters for names, please",
-											},
-										}
-									}
-									small={true}
-									animalInfo={animalInfo}
-								/>
-							</div>
+			<section
+				className={`order-form--section  ${
+					splitHalf
+						? "beef--split-half-section--show"
+						: "beef--split-half-section"
+				}`}
+				id="split-half--contact-info"
+			>
+				{splitHalf && (
+					<>
+						<div className="order-form--field">
+							<h3 className="order-form--title">Contact Info</h3>
+							<OrderFormSectionSubheading>
+								for the other person, if splitting half
+							</OrderFormSectionSubheading>
 
+							<LabelForm title="Name" />
 							<InputForm
-								title="Phone Number"
-								name="beef.split_half.phone_number"
-								placeholder="10 digit phone number"
+								title="First"
+								name="beef.split_half.name.first"
+								placeholder="First name"
 								required={
 									splitHalf && {
 										required: {
 											value: true,
 											message:
-												"A phone number is required",
+												"Please enter the other person's first name",
 										},
 										pattern: {
-											value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+											value: /^[a-zA-Z]+$/,
 											message:
-												"Please use a valid phone number",
+												"Only letters for names, please",
 										},
 									}
 								}
 								small={true}
+								animalInfo={animalInfo}
 							/>
-						</>
-					)}
-				</section>
-			</Collapsible>
+							<InputForm
+								title="Last"
+								name="beef.split_half.name.last"
+								placeholder="Last name"
+								required={
+									splitHalf && {
+										required: {
+											value: true,
+											message:
+												"Please enter the other person's last name",
+										},
+										pattern: {
+											value: /^[a-zA-Z]+$/,
+											message:
+												"Only letters for names, please",
+										},
+									}
+								}
+								small={true}
+								animalInfo={animalInfo}
+							/>
+						</div>
+
+						<InputForm
+							title="Phone Number"
+							name="beef.split_half.phone_number"
+							placeholder="10 digit phone number"
+							required={
+								splitHalf && {
+									required: {
+										value: true,
+										message: "A phone number is required",
+									},
+									pattern: {
+										value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+										message:
+											"Please use a valid phone number",
+									},
+								}
+							}
+							small={true}
+						/>
+					</>
+				)}
+			</section>
+
 			<Collapsible trigger="Steak Options">
 				<section className="order-form--section">
 					<OrderFormSectionSubheading>

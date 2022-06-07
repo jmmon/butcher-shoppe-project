@@ -8,8 +8,11 @@ import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubhea
 import RadioForm from "../FormComponents/RadioForm";
 import SelectForm from "../FormComponents/SelectForm";
 
+const animal = "lamb";
+
 function LambSection({ id, deleteAnimal }) {
-	const animalInfo = { id: id, animal: "lamb" };
+	const animalInfo = { id: id, animal: animal };
+
 	return (
 		<Collapsible trigger={`Lamb Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			{/* TODO: */}
@@ -95,50 +98,53 @@ function LambSection({ id, deleteAnimal }) {
 				// triggerClassName="cut_sheet__section__trigger"
 				// contentOuterClassName="cut_sheet__section__content_outer"
 			>
-				<section className="order-form--section">
-					<div className="order-form--field">
-						<LabelForm title="Grower Name" />
-						<InputForm
-							title="First"
-							name="info.grower.name.first"
-							placeholder="First name"
-							small={true}
-							animalInfo={animalInfo}
-						/>
-						<InputForm
-							title="Last"
-							name="info.grower.name.last"
-							placeholder="Last name"
-							small={true}
-							animalInfo={animalInfo}
-						/>
-					</div>
-
-					<InputForm
-						title="Ear Tag Number (if applicable)"
-						name="info.grower.ear_tag_number"
-						placeholder="Ear tag number"
-						animalInfo={animalInfo}
-					/>
-
-					<RadioForm
-						title="Choose One"
-						name="info.lamb-amount"
-						required={true}
-						options={[
-							{
-								inputId: "whole",
-								label: "Whole Lamb",
-							},
-							{
-								inputId: "half",
-								label: "Half Lamb",
-							},
-						]}
-						animalInfo={animalInfo}
-					/>
-				</section>
+				{" "}
+				TODO: header^^ banner{" "}
 			</Collapsible>
+			<section className="order-form--section">
+				<div className="order-form--field">
+					<LabelForm title="Grower Name" />
+					<InputForm
+						title="First"
+						name="info.grower.name.first"
+						placeholder="First name"
+						small={true}
+						animalInfo={animalInfo}
+					/>
+					<InputForm
+						title="Last"
+						name="info.grower.name.last"
+						placeholder="Last name"
+						small={true}
+						animalInfo={animalInfo}
+					/>
+				</div>
+
+				<InputForm
+					title="Ear Tag Number (if applicable)"
+					name="info.grower.ear_tag_number"
+					placeholder="Ear tag number"
+					animalInfo={animalInfo}
+				/>
+
+				<RadioForm
+					title="Choose One"
+					name="info.lamb-amount"
+					required={true}
+					options={[
+						{
+							inputId: "whole",
+							label: "Whole Lamb",
+						},
+						{
+							inputId: "half",
+							label: "Half Lamb",
+						},
+					]}
+					animalInfo={animalInfo}
+				/>
+			</section>
+
 			<Collapsible trigger="Lamb Options">
 				<div className="order-form--section">
 					<OrderFormSectionSubheading>

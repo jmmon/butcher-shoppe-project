@@ -271,7 +271,13 @@ function OrderPage() {
 						<div className="form--container">
 							<h3 className="form--title">Order Form</h3>
 
-							<Button onClick={clearLocalStorage}>Clear</Button>
+							<Button
+								buttonStyle="btn--outline"
+								onClick={clearLocalStorage}
+							>
+								Clear
+							</Button>
+
 							<Collapsible
 								trigger="Contact Info"
 								open
