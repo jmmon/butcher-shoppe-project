@@ -28,93 +28,24 @@ function HogSection({ id, deleteAnimal }) {
 	);
 
 	const handleUpdateSaveUpToTwoShoulderChoices = (e) => {
-		//JUST KIDDING, half hog works!
-		//WHOLE HOG: it's saving [characters] in the array, instead ofthe end value
+		const isNotChecked = !e.target.checked;
+		const currentHamType = e.target.name;
 
-		// First: check if not undefined...
-		// if (
-		// 	JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-		// 		"shoulder"
-		// 	]?.["new_shoulder_choices"] !== undefined
-		// ) {
-
-		// 	// Second: get item
-
-		// 	const previousWholeOrderFormObject = JSON.parse(
-		// 		window.localStorage.getItem("orderForm")
-		// 	);
-		// 	console.log({ previousWholeOrderFormObject });
-
-		// 	// Third: Format nextDataObject...
-
-		// 	// const nextDataObject = {
-		// 	// 	...previousWholeOrderFormObject,
-		// 	// 	[stringId]: (prevThisHogData) => ({
-		// 	// 		...prevThisHogData,
-		// 	// 		shoulder: (prevShoulderData) => ({
-		// 	// 			...prevShoulderData,
-		// 	// 			new_shoulder_choices: undefined,
-		// 	// 		}),
-		// 	// 	}),
-		// 	// };
-		// 	// console.log({ nextDataObject }); // returning wrong object:
-		// 	/* {
-		// 		buyer: {...},
-		// 		hog_0: function((prev) => {})
-
-		// 	} */
-		// 	const previousThisHogObject = {
-		// 		...previousWholeOrderFormObject[stringId]
-		// 	}
-		// 	const previousThisHogShoulderObject = {
-		// 		...previousThisHogObject.shoulder
-		// 	}
-		// 	const newShoulderChoicesObject = {
-
-		// 	}
-		// 	const nextDataObject = {
-		// 		...previousWholeOrderFormObject,
-		// 		[stringId]: {
-		// 			...prevHogObject,
-		// 			shoulder: {
-		// 				...prevShoulderObject,
-		// 				new_shoulder_choices: newShoulderChoicesObject
-		// 			}
-		// 		}
-		// 	};
-
-		// 	window.localStorage.setItem(
-		// 		"orderForm",
-		// 		JSON.stringify(nextDataObject)
-		// 	);
-
-		// 	// else we break it out futher:
-
-		// 	// const previousThisHogData = previousWholeOrderFormObject[stringId];
-		// 	// const nextThisHogData = {
-		// 	// 	...previousThisHogData,
-		// 	// 	shoulder: (prevShoulder) => ({
-		// 	// 		...prevShoulder,
-		// 	// 		new_shoulder_choices: undefined,
-		// 	// 	}),
-		// 	// };
-		// }
-
-		// This function: saves last element in the array, and adds new element
-
-		// save last existing element...
-		const lastSavedChoice =
-			saveTwoShoulderChoices[saveTwoShoulderChoices.length - 1] ||
-			undefined;
-
-		const lastChoiceExists = lastSavedChoice !== undefined;
-		// save new element...
-		const newHamType = e.target.name;
-
-		if (wholeHog && lastChoiceExists) {
-			setSaveTwoShoulderChoices([lastSavedChoice, newHamType]);
+		if (isNotChecked) {
+			setSaveTwoShoulderChoices(
+				saveTwoShoulderChoices.filter((item) => item !== currentHamType)
+			);
 		} else {
-			setSaveTwoShoulderChoices([newHamType]);
+			const lastSavedChoice =
+				saveTwoShoulderChoices[saveTwoShoulderChoices.length - 1] ||
+				undefined;
+			const lastChoiceExists = lastSavedChoice !== undefined;
+
+			if (wholeHog && lastChoiceExists) {
+				setSaveTwoShoulderChoices([lastSavedChoice, currentHamType]);
+			} else {
+				setSaveTwoShoulderChoices([currentHamType]);
+			}
 		}
 	};
 
@@ -149,16 +80,6 @@ function HogSection({ id, deleteAnimal }) {
 			  ]?.["shoulder"]?.["all_or_split"] === "split"
 			? "split"
 			: "all"
-
-		// JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.["info"]?.[
-		// 	"hog_amount"
-		// ] === "whole_hog"
-		// 	? JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-		// 			"shoulder"
-		// 	  ]?.["all_or_split"] === "split"
-		// 		? "split"
-		// 		: "all"
-		// 	: "all"
 	);
 
 	const handleChangeShoulderCuts = (e) => {
