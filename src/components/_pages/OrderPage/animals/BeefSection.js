@@ -18,7 +18,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 	const [splitHalf, setSplitHalf] = useState(
 		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"beef-amount"
+			"beef_amount"
 		] === "split_half" || false
 	);
 
@@ -88,7 +88,7 @@ function BeefSection({ id, deleteAnimal }) {
 
 				<RadioForm
 					title="Choose One"
-					name="info.beef-amount"
+					name="info.beef_amount"
 					required={true}
 					options={[
 						{

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Collapsible from "react-collapsible";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import CheckboxForm from "../FormComponents/CheckboxForm";
@@ -13,9 +13,14 @@ const animal = "hog";
 
 function HogSection({ id, deleteAnimal }) {
 	id = +id;
-
 	const animalInfo = { id: id, animal: animal };
-	const stringId = `${animal}_${id}}`;
+	const stringId = `${animal}_${id}`;
+
+	const [wholeHog, setWholeHog] = useState(
+		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
+			"hog_amount"
+		] === "whole_hog" || undefined
+	);
 
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
 		// get previous state OR use empty array
@@ -25,6 +30,12 @@ function HogSection({ id, deleteAnimal }) {
 	const handleUpdateSaveUpToTwoShoulderChoices = (e) => {
 		// TODO: reset localStorage for this setting because it doesn't change when another option is selected ??
 		// ORRRRRR: NEEDS ONCHANGE INSTEAD OF ONCLICK, event is INVALID
+
+		//now activates onChange, so need to adjust the checked property of the element
+
+		// steps:\
+		console.log("e.target.checked:", e.target.checked);
+
 		if (
 			window.localStorage.getItem("orderForm")?.[stringId]?.[
 				"shoulder"
@@ -84,12 +95,6 @@ function HogSection({ id, deleteAnimal }) {
 		}
 	};
 
-	const [wholeHog, setWholeHog] = useState(
-		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"hog-amount"
-		] === "whole_hog" || undefined
-	);
-
 	const [hamSelected, setHamSelected] = useState(
 		window.localStorage.getItem("orderForm")?.[stringId]?.["ham"]?.[
 			"cut"
@@ -113,7 +118,7 @@ function HogSection({ id, deleteAnimal }) {
 
 	const [shoulderCuts, setShoulderCuts] = useState(
 		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"hog-amount"
+			"hog_amount"
 		] === "half_hog"
 			? "all"
 			: window.localStorage.getItem("orderForm")?.[stringId]?.[
@@ -123,7 +128,7 @@ function HogSection({ id, deleteAnimal }) {
 			: "all"
 
 		// window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-		// 	"hog-amount"
+		// 	"hog_amount"
 		// ] === "whole_hog"
 		// 	? window.localStorage.getItem("orderForm")?.[stringId]?.[
 		// 			"shoulder"
@@ -187,6 +192,7 @@ function HogSection({ id, deleteAnimal }) {
 	const handleSetWholeHog = (e) => {
 		const { id } = e.target;
 		const isPurchasingWholeHog = id === "whole_hog";
+		console.log("handleSetWholeHog firing:", isPurchasingWholeHog);
 		setWholeHog(isPurchasingWholeHog);
 		if (
 			isPurchasingWholeHog &&
@@ -195,6 +201,37 @@ function HogSection({ id, deleteAnimal }) {
 			setHamSelected(false); //reset this option
 		}
 	};
+
+	// useEffect(() => {
+	// 	console.log(
+	// 		"testing wholeHog initial state check: localStorage says it should be set to:",
+	// 		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
+	// 			"hog_amount"
+	// 		] === "whole_hog"
+	// 	);
+	// 	console.log("The tree:");
+	// 	console.log(" ", JSON.parse(window.localStorage.getItem("orderForm")));
+	// 	console.log(
+	// 		" ",
+	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]
+	// 	);
+	// 	console.log(
+	// 		" ",
+	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+	// 			"info"
+	// 		]
+	// 	);
+	// 	console.log(
+	// 		" ",
+	// 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+	// 			"info"
+	// 		]?.["hog_amount"]
+	// 	);
+	// }, [
+	// 	JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+	// 		"info"
+	// 	]?.["hog_amount"],
+	// ]);
 
 	return (
 		<Collapsible trigger={`Hog Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
@@ -237,8 +274,7 @@ function HogSection({ id, deleteAnimal }) {
 
 				<RadioForm
 					title="Choose One"
-					name="info.hog-amount"
-					required={true}
+					name="info.hog_amount"
 					options={[
 						{
 							label: "Whole Hog",
