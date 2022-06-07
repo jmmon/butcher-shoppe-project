@@ -17,9 +17,9 @@ function HogSection({ id, deleteAnimal }) {
 	const stringId = `${animal}_${id}`;
 
 	const [wholeHog, setWholeHog] = useState(
-		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"hog_amount"
-		] === "whole_hog" || undefined
+		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+			"info"
+		]?.["hog_amount"] === "whole_hog"
 	);
 
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
@@ -33,11 +33,11 @@ function HogSection({ id, deleteAnimal }) {
 
 		//now activates onChange, so need to adjust the checked property of the element
 
-		// steps:\
+		// steps:
 		console.log("e.target.checked:", e.target.checked);
 
 		if (
-			window.localStorage.getItem("orderForm")?.[stringId]?.[
+			JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
 				"shoulder"
 			]?.["new_shoulder_choices"] !== undefined
 		) {
@@ -96,17 +96,17 @@ function HogSection({ id, deleteAnimal }) {
 	};
 
 	const [hamSelected, setHamSelected] = useState(
-		window.localStorage.getItem("orderForm")?.[stringId]?.["ham"]?.[
-			"cut"
-		] === "steaks"
+		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+			"ham"
+		]?.["cut"] === "steaks"
 			? "steaks"
-			: window.localStorage.getItem("orderForm")?.[stringId]?.["ham"]?.[
-					"cut"
-			  ] === "half_hams/roasts_half_steaks"
+			: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+					stringId
+			  ]?.["ham"]?.["cut"] === "half_hams/roasts_half_steaks"
 			? "half_hams/roasts_half_steaks"
-			: window.localStorage.getItem("orderForm")?.[stringId]?.["ham"]?.[
-					"cut"
-			  ] === "other"
+			: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+					stringId
+			  ]?.["ham"]?.["cut"] === "other"
 			? "other"
 			: "hams/roasts"
 	);
@@ -117,20 +117,20 @@ function HogSection({ id, deleteAnimal }) {
 	};
 
 	const [shoulderCuts, setShoulderCuts] = useState(
-		window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
-			"hog_amount"
-		] === "half_hog"
+		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+			"info"
+		]?.["hog_amount"] === "half_hog"
 			? "all"
-			: window.localStorage.getItem("orderForm")?.[stringId]?.[
-					"shoulder"
-			  ]?.["all_or_split"] === "split"
+			: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+					stringId
+			  ]?.["shoulder"]?.["all_or_split"] === "split"
 			? "split"
 			: "all"
 
-		// window.localStorage.getItem("orderForm")?.[stringId]?.["info"]?.[
+		// JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.["info"]?.[
 		// 	"hog_amount"
 		// ] === "whole_hog"
-		// 	? window.localStorage.getItem("orderForm")?.[stringId]?.[
+		// 	? JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
 		// 			"shoulder"
 		// 	  ]?.["all_or_split"] === "split"
 		// 		? "split"
@@ -145,31 +145,31 @@ function HogSection({ id, deleteAnimal }) {
 
 	const [shoulderCutsSelected, setShoulderCutsSelected] = useState({
 		option1:
-			window.localStorage.getItem("orderForm")?.[stringId]?.[
+			JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
 				"shoulder"
 			]?.["option"] === "kansas_city_bacon"
 				? "kansas_city_bacon"
-				: window.localStorage.getItem("orderForm")?.[stringId]?.[
-						"shoulder"
-				  ]?.["option"] === "smoked"
+				: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+						stringId
+				  ]?.["shoulder"]?.["option"] === "smoked"
 				? "smoked"
-				: window.localStorage.getItem("orderForm")?.[stringId]?.[
-						"shoulder"
-				  ]?.["option"] === "ground"
+				: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+						stringId
+				  ]?.["shoulder"]?.["option"] === "ground"
 				? "ground"
 				: "roasts/steaks",
 		option2:
-			window.localStorage.getItem("orderForm")?.[stringId]?.[
+			JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
 				"shoulder"
 			]?.["option_2"] === "kansas_city_bacon"
 				? "kansas_city_bacon"
-				: window.localStorage.getItem("orderForm")?.[stringId]?.[
-						"shoulder"
-				  ]?.["option_2"] === "smoked"
+				: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+						stringId
+				  ]?.["shoulder"]?.["option_2"] === "smoked"
 				? "smoked"
-				: window.localStorage.getItem("orderForm")?.[stringId]?.[
-						"shoulder"
-				  ]?.["option_2"] === "ground"
+				: JSON.parse(window.localStorage.getItem("orderForm"))?.[
+						stringId
+				  ]?.["shoulder"]?.["option_2"] === "ground"
 				? "ground"
 				: "roasts/steaks",
 	});
