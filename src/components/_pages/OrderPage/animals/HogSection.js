@@ -19,7 +19,7 @@ function HogSection({ id, deleteAnimal }) {
 	const [wholeHog, setWholeHog] = useState(
 		JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
 			"info"
-		]?.["hog_amount"] === "whole_hog"
+		]?.["hog_amount"] === "whole_hog" || undefined
 	);
 
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
@@ -28,69 +28,92 @@ function HogSection({ id, deleteAnimal }) {
 	);
 
 	const handleUpdateSaveUpToTwoShoulderChoices = (e) => {
-		// TODO: reset localStorage for this setting because it doesn't change when another option is selected ??
-		// ORRRRRR: NEEDS ONCHANGE INSTEAD OF ONCLICK, event is INVALID
+		//JUST KIDDING, half hog works!
+		//WHOLE HOG: it's saving [characters] in the array, instead ofthe end value
 
-		//now activates onChange, so need to adjust the checked property of the element
+		// First: check if not undefined...
+		// if (
+		// 	JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
+		// 		"shoulder"
+		// 	]?.["new_shoulder_choices"] !== undefined
+		// ) {
 
-		// steps:
-		console.log("e.target.checked:", e.target.checked);
+		// 	// Second: get item
 
-		if (
-			JSON.parse(window.localStorage.getItem("orderForm"))?.[stringId]?.[
-				"shoulder"
-			]?.["new_shoulder_choices"] !== undefined
-		) {
-			const previousWholeOrderFormObject = JSON.parse(
-				window.localStorage.getItem("orderForm")
-			);
-			console.log({ previousWholeOrderFormObject });
-			const nextDataObject = {
-				...previousWholeOrderFormObject,
-				[stringId]: (prevThisHogData) => ({
-					...prevThisHogData,
-					shoulder: (prevShoulderData) => ({
-						...prevShoulderData,
-						new_shoulder_choices: undefined,
-					}),
-				}),
-			};
-			console.log({ nextDataObject });
+		// 	const previousWholeOrderFormObject = JSON.parse(
+		// 		window.localStorage.getItem("orderForm")
+		// 	);
+		// 	console.log({ previousWholeOrderFormObject });
 
-			window.localStorage.setItem(
-				"orderForm",
-				JSON.stringify(nextDataObject)
-			);
+		// 	// Third: Format nextDataObject...
 
-			// else we break it out futher:
+		// 	// const nextDataObject = {
+		// 	// 	...previousWholeOrderFormObject,
+		// 	// 	[stringId]: (prevThisHogData) => ({
+		// 	// 		...prevThisHogData,
+		// 	// 		shoulder: (prevShoulderData) => ({
+		// 	// 			...prevShoulderData,
+		// 	// 			new_shoulder_choices: undefined,
+		// 	// 		}),
+		// 	// 	}),
+		// 	// };
+		// 	// console.log({ nextDataObject }); // returning wrong object:
+		// 	/* {
+		// 		buyer: {...},
+		// 		hog_0: function((prev) => {})
 
-			// const previousThisHogData = previousWholeOrderFormObject[stringId];
-			// const nextThisHogData = {
-			// 	...previousThisHogData,
-			// 	shoulder: (prevShoulder) => ({
-			// 		...prevShoulder,
-			// 		new_shoulder_choices: undefined,
-			// 	}),
-			// };
-		}
+		// 	} */
+		// 	const previousThisHogObject = {
+		// 		...previousWholeOrderFormObject[stringId]
+		// 	}
+		// 	const previousThisHogShoulderObject = {
+		// 		...previousThisHogObject.shoulder
+		// 	}
+		// 	const newShoulderChoicesObject = {
 
+		// 	}
+		// 	const nextDataObject = {
+		// 		...previousWholeOrderFormObject,
+		// 		[stringId]: {
+		// 			...prevHogObject,
+		// 			shoulder: {
+		// 				...prevShoulderObject,
+		// 				new_shoulder_choices: newShoulderChoicesObject
+		// 			}
+		// 		}
+		// 	};
+
+		// 	window.localStorage.setItem(
+		// 		"orderForm",
+		// 		JSON.stringify(nextDataObject)
+		// 	);
+
+		// 	// else we break it out futher:
+
+		// 	// const previousThisHogData = previousWholeOrderFormObject[stringId];
+		// 	// const nextThisHogData = {
+		// 	// 	...previousThisHogData,
+		// 	// 	shoulder: (prevShoulder) => ({
+		// 	// 		...prevShoulder,
+		// 	// 		new_shoulder_choices: undefined,
+		// 	// 	}),
+		// 	// };
+		// }
+
+		// This function: saves last element in the array, and adds new element
+
+		// save last existing element...
+		const lastSavedChoice =
+			saveTwoShoulderChoices[saveTwoShoulderChoices.length - 1] ||
+			undefined;
+
+		const lastChoiceExists = lastSavedChoice !== undefined;
+		// save new element...
 		const newHamType = e.target.name;
-		if (wholeHog) {
-			// save last element in the array, and add new element
-			const lastSavedChoice =
-				saveTwoShoulderChoices[saveTwoShoulderChoices.length - 1] ||
-				undefined;
 
-			if (lastSavedChoice === undefined) {
-				setSaveTwoShoulderChoices([newHamType]);
-			} else {
-				setSaveTwoShoulderChoices((prevInput) => [
-					...prevInput[prevInput.length - 1],
-					newHamType,
-				]);
-			}
+		if (wholeHog && lastChoiceExists) {
+			setSaveTwoShoulderChoices([lastSavedChoice, newHamType]);
 		} else {
-			// save only the new element
 			setSaveTwoShoulderChoices([newHamType]);
 		}
 	};

@@ -25,11 +25,11 @@ const EachCheckbox = ({
 				type="checkbox"
 				id={name}
 				name={name}
-				onChange={handleChooseOption && ((e) => handleChooseOption(e))}
-				// checked={
-				// 	previousCheckedOptionsArray &&
-				// 	previousCheckedOptionsArray.includes(name)
-				// }
+				onClick={handleChooseOption && ((e) => handleChooseOption(e))}
+				checked={
+					previousCheckedOptionsArray &&
+					previousCheckedOptionsArray.includes(name)
+				}
 				{...register(name)}
 			/>
 			<label htmlFor={name} key={name}>
