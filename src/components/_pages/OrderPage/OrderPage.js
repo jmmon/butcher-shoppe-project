@@ -45,10 +45,10 @@ function OrderPage() {
 		// could exclude the animals here, then would need to watch them separately to add them separately to localStorage
 	});
 
-	useEffect(() => {
-		Object.keys(methods.formState.errors).length > 0 &&
-			console.log("errors", methods.formState.errors);
-	}, [methods.formState.errors]);
+	// useEffect(() => {
+	// 	Object.keys(methods.formState.errors).length > 0 &&
+	// 		console.log("errors", methods.formState.errors);
+	// }, [methods.formState.errors]);
 
 	useEffect(() => {
 		window.localStorage.getItem("orderForm") !== null &&

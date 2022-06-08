@@ -1,4 +1,3 @@
-// import  from "react";
 import React, { useState, useEffect } from "react";
 import Collapsible from "react-collapsible";
 import ConfirmButton from "../../../Button/ConfirmButton";
@@ -8,9 +7,7 @@ import LabelForm from "../FormComponents/LabelForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import RadioForm from "../FormComponents/RadioForm";
 import SelectForm from "../FormComponents/SelectForm";
-import getSplitAnimalInfo from "../FormComponents/utils/getSplitAnimalInfo";
 
-// import useFormPersist from "react-hook-form-persist";
 import { useFormContext } from "react-hook-form";
 import ShoulderChoices from "./HogSection/ShoulderChoices/ShoulderChoices";
 
@@ -27,16 +24,22 @@ function HogSection({ id, deleteAnimal }) {
 		window.localStorage.getItem("orderForm") || "{}"
 	);
 
-	console.log(
-		"localStorage parsed object (or empty object):",
-		storageFormObjectOrEmptyObject
-	);
-
 	const [wholeHog, setWholeHog] = useState(
 		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["info"]?.[
 			"hog_amount"
 		] === "whole_hog" || undefined
 	);
+
+	const [loinCut, setLoinCut] = useState(
+		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["loin"]?.[
+			"options"
+		] || "all_chops"
+	);
+
+	const handleSetLoinCut = (e) => {
+		const { value } = e.target;
+		setLoinCut(value);
+	};
 
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
 		// get previous object and turn it into an array OR use empty array
@@ -87,11 +90,9 @@ function HogSection({ id, deleteAnimal }) {
 					]?.["choices"]
 				);
 
-				// go through the choices object (in local storage) and grab the keys
 				shoulderChoicesKeysArrayFromLocalStorage.forEach((keyName) => {
-					//for each of our options in our choices object, set the value in react-hook-form to what the state says it should be;
-					// this should force a localStorage update
 					const thisFieldName = `animals.${stringId}.shoulder.choices.${keyName}`;
+					// force a localStorage update
 					setValue(
 						thisFieldName,
 						[lastSavedChoice, currentHamType].includes(
@@ -501,6 +502,12 @@ function HogSection({ id, deleteAnimal }) {
 
 						{saveTwoShoulderChoices.length > 0 && (
 							<ShoulderChoices
+								// allChoices={[
+								// 	`shoulder.choices.fresh`,
+								// 	`shoulder.choices.kansas_city_bacon`,
+								// 	`shoulder.choices.smoked`,
+								// 	`shoulder.choices.ground`,
+								// ]}
 								chosenChoicesArray={saveTwoShoulderChoices}
 								animalInfo={animalInfo}
 							/>
@@ -526,6 +533,127 @@ function HogSection({ id, deleteAnimal }) {
 								{
 									label: `Other (Specify In Special Instructions)`,
 									value: `other`,
+								},
+							]}
+							animalInfo={animalInfo}
+							handleChangeOption={handleSetLoinCut}
+						/>
+
+						{loinCut.includes("chops") && (
+							<div className="order-form--field">
+								<SelectForm
+									title="Loin Chops Thickness"
+									name="loin.chops.thickness"
+									subtitle="In inches"
+									options={[
+										{
+											label: "3/4",
+											value: "3/4",
+										},
+										{
+											label: "1",
+											value: "1",
+										},
+										{
+											label: `Other (Specify in Special Instructions)`,
+											value: `other`,
+										},
+									]}
+									animalInfo={animalInfo}
+								/>
+
+								<SelectForm
+									title="Loin Chops Per Package"
+									name="loin.chops.number_per_package"
+									options={[
+										{
+											label: "Two",
+											value: "two",
+										},
+										{
+											label: "Three",
+											value: "three",
+										},
+										{
+											label: "Four",
+											value: "four",
+										},
+										{
+											label: "Five",
+											value: "five",
+										},
+										{
+											label: "Six",
+											value: "six",
+										},
+										{
+											label: `Other (Specify in Special Instructions)`,
+											value: `other`,
+										},
+									]}
+									animalInfo={animalInfo}
+								/>
+							</div>
+						)}
+
+						{loinCut.includes("roast") && (
+							<div className="order-form--field">
+								<SelectForm
+									title="Loin Roast Size"
+									subtitle="Roast size in pounds"
+									name="loin.roast.size"
+									options={[
+										{
+											label: "#3-4 (We suggest #3-4 for a family of 2-4)",
+											value: "#3-4",
+										},
+										{
+											label: "#4-5",
+											value: "#4-5",
+										},
+										{
+											label: `#5-6`,
+											value: `#5-6`,
+										},
+										{
+											label: `Other (Specify in Special Instructions)`,
+											value: `other`,
+										},
+									]}
+									animalInfo={animalInfo}
+								/>
+							</div>
+						)}
+					</Collapsible>
+					<Collapsible trigger="Extras">
+						<OrderFormSectionSubheading>
+							Two or three packages of Spare Ribs come with each
+							pig
+						</OrderFormSectionSubheading>
+						<CheckboxForm
+							title="Country Spare Ribs"
+							subtitle="Made from some pork chops/steaks"
+							name="spare_ribs"
+							options={[
+								{
+									label: "Yes, I want some Country Spare Ribs",
+									name: "YES",
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+						<CheckboxForm
+							title="Extras"
+							subtitle="Organ Meats"
+							name="organ_meats"
+							options={[
+								{
+									label: "Liver",
+									name: "liver",
+								},
+								{
+									label: "Heart",
+									name: "heart",
 								},
 							]}
 							animalInfo={animalInfo}
