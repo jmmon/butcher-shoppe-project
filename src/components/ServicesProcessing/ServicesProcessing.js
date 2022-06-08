@@ -1,3 +1,5 @@
+import React from "react";
+
 function ServicesProcessing({ bg }) {
 	return (
 		<div className="card-wrapper" id="processing-link">
@@ -8,7 +10,7 @@ function ServicesProcessing({ bg }) {
 						background: `url(${bg}) center center/cover no-repeat`,
 					}}
 				>
-					<h2 className="card--heading text-shadow--lg">
+					<h2 className="card--heading text-shadow--lg white-font">
 						The Shoppe
 					</h2>
 

@@ -17,6 +17,7 @@ import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "./components/_pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "./components/_pages/MeetTheTeam/MeetTheTeam";
 import Prices from "./components/_pages/Prices/Prices";
+import React from "react";
 
 function App() {
 	return (
@@ -35,11 +36,11 @@ function App() {
 								element={<Services />}
 							/>
 
-							{/* <Route
+							<Route
 								path="/schedule"
 								exact
 								element={<Schedule />}
-							/> */}
+							/>
 
 							<Route path="/faq" exact element={<Faq />} />
 

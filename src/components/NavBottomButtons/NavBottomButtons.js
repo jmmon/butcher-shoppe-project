@@ -1,14 +1,14 @@
 import React from "react";
 import Button from "../Button/Button";
 import WhitePageBackground from "../WhitePageBackground/WhitePageBackground";
-import "./BottomNavButtons.css";
+import "./NavBottomButtons.css";
 
-function BottomNavButtons({ prev, next }) {
+function NavBottomButtons({ prev, next }) {
 	return (
 		<WhitePageBackground separate={true}>
-			<div className="bottomNavButtons white-background--container">
+			<div className="nav-bottom-buttons white-background--container">
 				<h4 className="center-text">Next:</h4>
-				<div className="bottom-nav-container">
+				<div className="nav-bottom-container">
 					<Button
 						className="btns"
 						buttonStyle="btn--outline"
@@ -32,4 +32,4 @@ function BottomNavButtons({ prev, next }) {
 	);
 }
 
-export default BottomNavButtons;
+export default NavBottomButtons;

@@ -1,3 +1,4 @@
+import React from "react";
 import "./ServicesButchering.css";
 function ServicesButchering({ bg }) {
 	const BasePrices = {
@@ -6,6 +7,25 @@ function ServicesButchering({ bg }) {
 		lamb: 75,
 		bison: 200,
 	};
+
+	const PriceData = [
+		{
+			title: "Beef",
+			price: 160,
+		},
+		{
+			title: "Hog",
+			price: 120,
+		},
+		{
+			title: "Lamb",
+			price: 75,
+		},
+		{
+			title: "Bison",
+			price: 200,
+		},
+	];
 	return (
 		<div className="card-wrapper" id="butchering-link">
 			<div className="panel-shadow--dark card">
@@ -15,7 +35,9 @@ function ServicesButchering({ bg }) {
 						background: `url(${bg}) center center/cover no-repeat`,
 					}}
 				>
-					<h2 className="card--heading text-shadow--lg">Farm Kill</h2>
+					<h2 className="card--heading text-shadow--lg white-font">
+						Farm Kill
+					</h2>
 					<div className="card-content-wrapper">
 						<div className="skinny-blerb text-wrapper-shadow">
 							<p>
@@ -41,7 +63,21 @@ function ServicesButchering({ bg }) {
 								Base Prices:
 							</h4>
 							<div className="butchering-grid">
-								<div className="butchering-grid--key">Beef</div>
+								{PriceData.map((animalDataObject) => (
+									<React.Fragment
+										key={PriceData.indexOf(
+											animalDataObject
+										)}
+									>
+										<div className="butchering-grid--key">
+											{animalDataObject.title}
+										</div>
+										<div className="butchering-grid--value">
+											${animalDataObject.price}
+										</div>
+									</React.Fragment>
+								))}
+								{/* <div className="butchering-grid--key">Beef</div>
 								<div className="butchering-grid--value">
 									{BasePrices.beef}
 								</div>
@@ -56,7 +92,7 @@ function ServicesButchering({ bg }) {
 								<div className="butchering-grid-key">Bison</div>
 								<div className="butchering-grid-value">
 									{BasePrices.bison}
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

@@ -2,6 +2,16 @@
 	height: clamp(20vw, 20em, 60vw);
 }
 
+/* .homepage-title--blend {
+	height: clamp(20vw, 20em, 60vw);
+	position: absolute;
+	background-image: url("../../assets/logo/logo_tiny.svg");
+	background-position: "center";
+	background-size: "cover";
+	background-repeat: "no-repeat";
+	mix-blend-mode: "multiply";
+} */
+
 .homepage-title--heading {
 	font-size: clamp(1.8em, 9vw, 4.5em);
 	margin-top: 0;

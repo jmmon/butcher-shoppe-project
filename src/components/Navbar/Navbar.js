@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 import LogoComponent from "../../assets/logo/LogoComponent.js";
 
-function Navbar({ simple }) {
+function Navbar({ simple = false }) {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
 

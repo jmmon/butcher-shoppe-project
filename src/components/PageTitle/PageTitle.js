@@ -1,13 +1,20 @@
 import "./PageTitle.css";
 
-function PageTitle({ title, bgImage, position, smaller, subtitle, children }) {
+function PageTitle({
+	title,
+	bgImage,
+	position = "50% 50%",
+	smaller = false,
+	subtitle = null,
+	children = null,
+}) {
 	return (
 		<section className="panel-shadow--dark">
 			<div
 				className="page-title inset-box-shadow--dark"
 				style={{
 					background: `url(${bgImage}) center center/cover no-repeat`,
-					backgroundPosition: `${position || "50% 50%"}`,
+					backgroundPosition: `${position}`,
 				}}
 			>
 				<div className="page-title--container">

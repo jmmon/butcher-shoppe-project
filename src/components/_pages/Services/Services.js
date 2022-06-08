@@ -8,7 +8,7 @@ import bgProcessing from "../../../assets/images/image-1-2.jpg";
 
 import { Suspense, lazy } from "react";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
-import BottomNavButtons from "../../BottomNavButtons/BottomNavButtons";
+import NavBottomButtons from "../../NavBottomButtons/NavBottomButtons";
 import Card from "../../Card/Card";
 const ServicesButcheringPromise = import(
 	"../../ServicesButchering/ServicesButchering"
@@ -109,7 +109,7 @@ function Services() {
 					</div>
 				</div>
 			</WhitePageBackground>
-			<BottomNavButtons
+			<NavBottomButtons
 				prev={{ title: "FAQ", link: "/faq" }}
 				next={{ title: "How To Order", link: "/how-to-order" }}
 			/>

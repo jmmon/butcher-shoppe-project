@@ -33,6 +33,17 @@
 	font-size: 20px;
 }
 
+.date-time-picker--container {
+	padding: 4px;
+	background: #216ba5;
+	color: #fff;
+	/* border-radius: 5px; */
+}
+
+.react-datepicker {
+	border-radius: 0px;
+}
+
 .scheduler--input {
 	display: block;
 	width: 100%;

@@ -52,8 +52,6 @@ function HogSection({ id, deleteAnimal }) {
 		] === "whole_hog" || undefined
 	);
 
-	//we have a  glitch! when 2 selected: refresh, change selection: refresh, submit: 3 selected in localStorage but only 2 selected in state --- FIXED
-
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
 		// get previous object and turn it into an array OR use empty array
 		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["shoulder"]?.[
@@ -96,28 +94,6 @@ function HogSection({ id, deleteAnimal }) {
 			if (wholeHog && lastChoiceExists) {
 				const newShoulderChoices = [lastSavedChoice, currentHamType];
 				setSaveTwoShoulderChoices([...newShoulderChoices]);
-				// state updates, DOM updates, but the localStorage still thinks there are 3 selected.
-				// TODO: go through localStorage and set-false any names not in the array
-
-				// const correctArray = Object.keys(
-				// 	storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
-				// 		"shoulder"
-				// 	]?.["new_shoulder_choices"]
-				// )
-				// 	.filter(
-				// 		(shoulderChoiceKeys) =>
-				// 		[lastSavedChoice, currentHamType].includes(shoulderChoiceKeys)
-				// 	)
-				// 	.map(
-				// 		(incompleteName) =>
-				// 			`animals.${stringId}.shoulder.new_shoulder_choices.${incompleteName}`
-				// 	);
-
-				// 	console.log('correct array', correctArray);
-
-				// correctArray.forEach(shoulderChoices => {
-				// 	setValue()
-				// })
 
 				const shoulderChoicesKeysArrayFromLocalStorage = Object.keys(
 					storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
@@ -237,9 +213,9 @@ function HogSection({ id, deleteAnimal }) {
 
 		//reset other states which depend on this:
 		if (isNowWholeHog) {
-			// hamSelected
+			// hamSelected  //reset this option
 			if (hamSelected === "half_hams_and_roasts_and_half_steaks") {
-				setHamSelected(false); //reset this option
+				setHamSelected(false);
 			}
 		} else {
 			// need to adjust shoulder options when we get a half_hog

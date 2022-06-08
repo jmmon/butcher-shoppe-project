@@ -2,18 +2,45 @@ import "../../App.css"; // eliminate?
 import Button from "../Button/Button";
 import "./HomepageTitle.css";
 import bgImage from "../../assets/images/image-1-117.jpg";
-import PageTitle from "../PageTitle/PageTitle";
+import Logo from "../../assets/logo/logo_tiny.svg";
 
-function HomepageTitle({ simple = false, title, subtitle, position }) {
+function HomepageTitle({
+	simple = false,
+	title,
+	subtitle,
+	position = "25% 40%",
+}) {
 	return (
 		<section className="panel-shadow--dark">
 			<div
 				className="page-title homepage-title inset-box-shadow"
 				style={{
-					background: `url(${bgImage}) center center/cover no-repeat`,
-					backgroundPosition: `${position || "25% 40%"}`,
+					background: `url(${bgImage}) center/cover no-repeat`,
+					backgroundPosition: `${position}`,
+					// backgroundBlendMode: "multiply",
+					// opacity: "0.5",
+					// backgroundImage: `url(${bgImage}), url(${Logo})`,
+					// // backgroundOrigin: `center, center`,
+					// backgroundPosition: `${position || "25% 40%"}, center`,
+					// backgroundSize: `cover, cover`,
+					// backgroundRepeat: `no-repeat, no-repeat`,
+					// backgroundBlendMode: "multiply",
 				}}
 			>
+				{/* <div
+					className=""
+					style={{
+						height: "clamp(20vw, 20em, 60vw)",
+						width: "100%",
+						opacity: "0.5",
+						fill: "white",
+						position: "absolute",
+						background: `url(${Logo}) center center/cover no-repeat`,
+						backgroundPosition: "center center/cover",
+						mixBlendMode: "multiply",
+						zIndex: "999",
+					}}
+				></div> */}
 				<h1
 					className={`white-font homepage-title--heading card--heading text-shadow--lg card--heading-margin`}
 				>

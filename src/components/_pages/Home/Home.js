@@ -1,3 +1,4 @@
+import React from "react";
 import { Suspense, lazy as Lazy } from "react";
 import "./Home.css";
 import Helmet from "react-helmet";
@@ -7,7 +8,7 @@ import HomepageTitle from "../../HomepageTitle/HomepageTitle";
 import HomepageTitle2 from "../../HomepageTitle/HomepageTitle-2";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import Card from "../../Card/Card";
-import BottomNavButtons from "../../BottomNavButtons/BottomNavButtons";
+import NavBottomButtons from "../../NavBottomButtons/NavBottomButtons";
 // import ComingSoonCard from "../../ComingSoonCard/ComingSoonCard";
 // import LazyLoad from "react-lazyload";
 
@@ -68,7 +69,7 @@ function Home() {
 					</div>
 				</WhitePageBackground>
 
-				<BottomNavButtons
+				<NavBottomButtons
 					prev={{ title: "Services", link: "/services" }}
 					next={{ title: "How To Order", link: "/how-to-order" }}
 				/>

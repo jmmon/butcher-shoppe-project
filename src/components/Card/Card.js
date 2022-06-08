@@ -2,7 +2,7 @@ import React from "react";
 import ImageHeading from "../ImageHeading/ImageHeading";
 import "./Card.css";
 
-function Card({ title, paragraphs, bg }) {
+function Card({ title, paragraphs, bg = null }) {
 	const content = paragraphs?.map((item) => (
 		<p className="card--paragraph" key={paragraphs.indexOf(item)}>
 			{item}

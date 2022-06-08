@@ -1,18 +1,18 @@
-.bottomNavButtons {
+.nav-bottom-buttons {
 	display: grid;
 	justify-content: center;
 	gap: 2em;
 	width: 100%;
 }
 
-.bottom-nav-container {
+.nav-bottom-container {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	justify-content: center;
 	gap: 2em;
 }
 
-.bottomNavButtons h4 {
+.nav-bottom-buttons h4 {
 	font-size: 1.8em;
 	color: var(--subheading-gray);
 }

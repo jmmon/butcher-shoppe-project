@@ -33,8 +33,10 @@
 	--orange-bg--b: 36;
 
 	--page-title-xlarge: 90px;
-	--page-title-large: 72px;
-	--page-title-medium: 64px;
+	/* --page-title-large: 72px; */
+	--page-title-large: 2em;
+	/* --page-title-medium: 64px; */
+	--page-title-medium: 1.8px;
 	--page-title-small: 50px;
 	--page-title-xsmall: 25px;
 

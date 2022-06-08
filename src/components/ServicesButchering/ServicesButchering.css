@@ -3,12 +3,12 @@
 	max-width: 50%;
 	background-color: rgba(255, 255, 255, 0.5);
 	padding: 0.5em;
-	font-size: 1.4em;
+	font-size: 1.6em;
 }
 
 .butchering-grid--title {
 	height: 10%;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 .butchering-grid {
@@ -20,8 +20,10 @@
 }
 
 .butchering-grid--key {
+	font-size: 2em;
 	grid-column: 1;
 }
 .butchering-grid--value {
+	font-size: 2em;
 	grid-column: 2;
 }

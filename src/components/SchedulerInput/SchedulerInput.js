@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import { CalendarContainer } from "react-datepicker";
 import PhoneInput from "react-phone-number-input/input";
@@ -11,11 +11,11 @@ const DateTimePicker = ({ selectHandler }) => {
 	const today = new Date();
 
 	const [startDate, setStartDate] = useState(today);
-	const [phone, setPhone] = useState();
+	const [phone, setPhone] = useState("");
 	// const [inputName, setInputName] = useState();
 	const [input, setInput] = useState({
 		name: "",
-		//number: '',
+		// phone: "",
 	});
 
 	const isWeekday = (date) => {
@@ -25,16 +25,9 @@ const DateTimePicker = ({ selectHandler }) => {
 
 	const MyContainer = ({ className, children }) => {
 		return (
-			<div
-				style={{
-					padding: "12px",
-					background: "#216ba5",
-					color: "#fff",
-					borderRadius: "5px",
-				}}
-			>
+			<div className="date-time-picker--container">
 				<CalendarContainer className={className}>
-					<div style={{ background: "#f0f0f0", fontSize: "20px" }}>
+					<div style={{ background: "#eee", fontSize: "20px" }}>
 						Pick a date for your call:
 					</div>
 					<div style={{ position: "relative" }}>{children}</div>
@@ -96,12 +89,12 @@ const DateTimePicker = ({ selectHandler }) => {
 						Your Name
 					</label>
 					<input
-						id="name"
-						type="text"
 						className="name scheduler--input"
+						type="text"
+						id="name"
 						name="name"
 						placeholder="Enter your name"
-						onChange={handleChange}
+						onChange={(e) => handleChange(e)}
 						value={input.name}
 					/>
 				</div>
@@ -111,13 +104,22 @@ const DateTimePicker = ({ selectHandler }) => {
 					</label>
 					<PhoneInput
 						className="scheduler--input"
-						country="US"
-						name="phone"
 						id="phone"
-						value={phone}
+						name="phone"
+						country="US"
 						onChange={setPhone}
+						value={phone}
 						placeholder="Enter your phone number"
 					/>
+					{/* <PhoneInput
+						className="scheduler--input"
+						id="phone"
+						name="phone"
+						country="US"
+						onChange={(e) => console.log(e)} // e == the actual value
+						value={input.phone}
+						placeholder="Enter your phone number"
+					/> */}
 				</div>
 				<div className="input-container btn-container">
 					<button
