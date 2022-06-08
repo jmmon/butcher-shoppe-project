@@ -14,21 +14,15 @@ function Option({ label, value }) {
 function SelectForm({
 	title,
 	name,
-	subtitle,
-	costsExtra,
+	subtitle = null,
+	costsExtra = false,
 	options,
 	animalInfo,
-	handleChangeOption,
+	handleChangeOption = null,
 }) {
-	const {
-		register,
-		formState: { errors },
-	} = useFormContext();
+	const { register } = useFormContext();
 
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
-	// if (animalInfo) {
-	// 	name = getSplitAnimalInfo(name, animalInfo);
-	// }
 
 	let allOptions = options
 		? options.map(({ label, value }) => Option({ label, value }))
@@ -41,7 +35,7 @@ function SelectForm({
 				costsExtra={costsExtra}
 				subtitle={subtitle}
 				title={title}
-			/>{" "}
+			/>
 			<select
 				{...register(name)}
 				name={name}

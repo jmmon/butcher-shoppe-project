@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+// import  from "react";
+import React, { useState, useEffect } from "react";
 import Collapsible from "react-collapsible";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import CheckboxForm from "../FormComponents/CheckboxForm";
@@ -12,6 +12,7 @@ import getSplitAnimalInfo from "../FormComponents/utils/getSplitAnimalInfo";
 
 // import useFormPersist from "react-hook-form-persist";
 import { useFormContext } from "react-hook-form";
+import ShoulderChoices from "./HogSection/ShoulderChoices/ShoulderChoices";
 
 const animal = "hog";
 
@@ -22,25 +23,10 @@ function HogSection({ id, deleteAnimal }) {
 
 	const { setValue } = useFormContext();
 
-	// useFormPersist(`${stringId}`, {
-	// 	watch: watch, // to watch the value to save into storage
-	// 	setValue: setValue, // to set the value when loading up the page
-	// 	storage: window.localStorage,
-	// 	exclude: ["buyer"],
-	// 	// could exclude the animals here, then would need to watch them separately to add them separately to localStorage
-	// });
-
-	// useEffect(() => {
-	// 	window.localStorage.getItem(`${stringId}`) !== null &&
-	// 		console.log(
-	// 			`TESTING - ${stringId} storage:`,
-	// 			JSON.parse(window.localStorage.getItem(`${stringId}`))
-	// 		);
-	// }, [window.localStorage.getItem(`${stringId}`)]);
-
 	const storageFormObjectOrEmptyObject = JSON.parse(
 		window.localStorage.getItem("orderForm") || "{}"
 	);
+
 	console.log(
 		"localStorage parsed object (or empty object):",
 		storageFormObjectOrEmptyObject
@@ -55,24 +41,24 @@ function HogSection({ id, deleteAnimal }) {
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
 		// get previous object and turn it into an array OR use empty array
 		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["shoulder"]?.[
-			"new_shoulder_choices"
+			"choices"
 		]
 			? Object.keys(
 					storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
 						"shoulder"
-					]?.["new_shoulder_choices"]
+					]?.["choices"]
 			  )
 					.filter(
 						(shoulderChoiceKeys) =>
 							storageFormObjectOrEmptyObject?.animals?.[
 								stringId
-							]?.["shoulder"]?.["new_shoulder_choices"]?.[
+							]?.["shoulder"]?.["choices"]?.[
 								shoulderChoiceKeys
 							] === true
 					)
 					.map(
 						(incompleteName) =>
-							`animals.${stringId}.shoulder.new_shoulder_choices.${incompleteName}`
+							`animals.${stringId}.shoulder.choices.${incompleteName}`
 					) || []
 			: []
 	);
@@ -98,14 +84,14 @@ function HogSection({ id, deleteAnimal }) {
 				const shoulderChoicesKeysArrayFromLocalStorage = Object.keys(
 					storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
 						"shoulder"
-					]?.["new_shoulder_choices"]
+					]?.["choices"]
 				);
 
-				// go through the new_shoulder_choices object (in local storage) and grab the keys
+				// go through the choices object (in local storage) and grab the keys
 				shoulderChoicesKeysArrayFromLocalStorage.forEach((keyName) => {
-					//for each of our options in our new_shoulder_choices object, set the value in react-hook-form to what the state says it should be;
+					//for each of our options in our choices object, set the value in react-hook-form to what the state says it should be;
 					// this should force a localStorage update
-					const thisFieldName = `animals.${stringId}.shoulder.new_shoulder_choices.${keyName}`;
+					const thisFieldName = `animals.${stringId}.shoulder.choices.${keyName}`;
 					setValue(
 						thisFieldName,
 						[lastSavedChoice, currentHamType].includes(
@@ -140,68 +126,12 @@ function HogSection({ id, deleteAnimal }) {
 		setHamSelected(value !== "other" ? value : false);
 	};
 
-	const [shoulderCuts, setShoulderCuts] = useState(
-		JSON.parse(window.localStorage.getItem("orderForm"))?.animals?.[
-			stringId
-		]?.["info"]?.["hog_amount"] === "half_hog"
-			? "all"
-			: JSON.parse(window.localStorage.getItem("orderForm"))?.animals?.[
-					stringId
-			  ]?.["shoulder"]?.["all_or_split"] === "split"
-			? "split"
-			: "all"
-	);
-
-	const handleChangeShoulderCuts = (e) => {
-		const { id } = e.target;
-		setShoulderCuts(id);
-	};
-
-	const [shoulderCutsSelected, setShoulderCutsSelected] = useState({
-		option1:
-			JSON.parse(window.localStorage.getItem("orderForm"))?.animals?.[
-				stringId
-			]?.["shoulder"]?.["option"] === "kansas_city_bacon"
-				? "kansas_city_bacon"
-				: JSON.parse(window.localStorage.getItem("orderForm"))
-						?.animals?.[stringId]?.["shoulder"]?.["option"] ===
-				  "smoked"
-				? "smoked"
-				: JSON.parse(window.localStorage.getItem("orderForm"))
-						?.animals?.[stringId]?.["shoulder"]?.["option"] ===
-				  "ground"
-				? "ground"
-				: "roasts_and_steaks",
-		option2:
-			JSON.parse(window.localStorage.getItem("orderForm"))?.animals?.[
-				stringId
-			]?.["shoulder"]?.["option_2"] === "kansas_city_bacon"
-				? "kansas_city_bacon"
-				: JSON.parse(window.localStorage.getItem("orderForm"))
-						?.animals?.[stringId]?.["shoulder"]?.["option_2"] ===
-				  "smoked"
-				? "smoked"
-				: JSON.parse(window.localStorage.getItem("orderForm"))
-						?.animals?.[stringId]?.["shoulder"]?.["option_2"] ===
-				  "ground"
-				? "ground"
-				: "roasts_and_steaks",
-	});
-
 	/* 
 			value: "roasts_and_steaks",
 			value: "kansas_city_bacon",
 			value: `smoked`,
 			value: `ground`,
 	*/
-
-	const handleSetShoulderCutsSelectedOptions = (e) => {
-		const { name, value } = e.target;
-		setShoulderCutsSelected((prevSelected) => ({
-			...prevSelected,
-			[name]: value,
-		}));
-	};
 
 	const handleSetWholeHog = (e) => {
 		const { id } = e.target;
@@ -543,24 +473,24 @@ function HogSection({ id, deleteAnimal }) {
 						<CheckboxForm
 							title="Front Shoulder Choices"
 							subtitle="Whole orders may choose up to 2 options; half orders may choose 1 option."
-							name="shoulder.new_shoulder_choices"
+							name="shoulder.choices"
 							animalInfo={animalInfo}
 							options={[
 								{
-									label: "Fresh Pork roasts_and_steaks",
-									name: "shoulder.new_shoulder_choices.roasts_and_steaks",
+									label: "Fresh Pork Roasts / Steaks",
+									name: "shoulder.choices.fresh",
 								},
 								{
 									label: "Kansas City Bacon",
-									name: "shoulder.new_shoulder_choices.kansas_city_bacon",
+									name: "shoulder.choices.kansas_city_bacon",
 								},
 								{
 									label: "Smoke It! (Picnic Ham)",
-									name: "shoulder.new_shoulder_choices.smoked",
+									name: "shoulder.choices.smoked",
 								},
 								{
 									label: "Grind it!",
-									name: "shoulder.new_shoulder_choices.ground",
+									name: "shoulder.choices.ground",
 								},
 							]}
 							handleChooseOption={
@@ -569,146 +499,39 @@ function HogSection({ id, deleteAnimal }) {
 							previousCheckedOptionsArray={saveTwoShoulderChoices}
 						/>
 
-						{wholeHog ? (
-							<>
-								<h4>whole hog - break out by length</h4>
-								{saveTwoShoulderChoices.lenth === 1 && (
-									<>
-										<div>first half</div>
-										<div>second half</div>
-									</>
-								)}
-								{saveTwoShoulderChoices.lenth === 2 && (
-									<>
-										<div>first option</div>
-										<div>second option</div>
-									</>
-								)}
-							</>
-						) : (
-							<>
-								<h4>whole hog - break out by length</h4>
-								<div>first option</div>
-							</>
+						{saveTwoShoulderChoices.length > 0 && (
+							<ShoulderChoices
+								chosenChoicesArray={saveTwoShoulderChoices}
+								animalInfo={animalInfo}
+							/>
 						)}
-
-						{saveTwoShoulderChoices.includes(
-							getSplitAnimalInfo(
-								"shoulder.new_shoulder_choices.roasts_and_steaks",
-								animalInfo
-							)
-						) && (
-							<div className="order-form--field">
-								This field is to ask about fresh
-								roasts_and_steaks:
-								<br />
-								{/* <SelectForm /> */}
-								first: do we want all roasts, all steaks, or
-								half/half?
-								<br />
-								-if we choose all roasts or half/half, we need
-								to ask about the roasts:
-								<br />
-								{"{Roast Size}"}
-								<br />
-								<br />
-								-if we choose all steaks or half/half, we need
-								to ask about the steaks:
-								<br />
-								{"{Steak thickness"}
-								<br />
-								{"SteaksPerPackage}"}
-							</div>
-						)}
-
-						{saveTwoShoulderChoices.includes(
-							getSplitAnimalInfo(
-								"shoulder.new_shoulder_choices.smoked",
-								animalInfo
-							)
-						) && (
-							<div className="order-form--field">
-								This field is to ask about smoked{" "}
-								{"(picnic ham)"}:
-								<br />
-								first: do we want all roasts, all steaks, or
-								half/half?
-								<br />
-								-if we choose all roasts or half/half, we need
-								to ask about the roasts:
-								<br />
-								{"{Roast Size}"}
-								<br />
-								<br />
-								-if we choose all steaks or half/half, we need
-								to ask about the steaks:
-								<br />
-								{"{Steak thickness"}
-								<br />
-								{"SteaksPerPackage}"}
-							</div>
-						)}
-
-						{saveTwoShoulderChoices.includes(
-							getSplitAnimalInfo(
-								"shoulder.new_shoulder_choices.kansas_city_bacon",
-								animalInfo
-							)
-						) && (
-							<div className="order-form--field">
-								{
-									"(no additional options, don't need to show this)"
-								}
-							</div>
-						)}
-
-						{saveTwoShoulderChoices.includes(
-							getSplitAnimalInfo(
-								"shoulder.new_shoulder_choices.ground",
-								animalInfo
-							)
-						) && (
-							<div className="order-form--field">
-								we need to CHOOSE ONE:
-								<br />
-								{"{Breakfast Sausage (seasoned)"}
-								<br />
-								{"Ground Pork (unseasoned)}"}
-							</div>
-						)}
-
-						<div className="order-form--field">
-							{(shoulderCutsSelected.option1 === "smoked" ||
-								shoulderCutsSelected.option2 === "smoked") && (
-								<SelectForm
-									title="Picnic / Shoulder Cut"
-									name="shoulder.smoked"
-									options={[
-										{
-											label: "All Picnic / Fresh Shoulder Roasts",
-											value: "roasts_and_steaks",
-										},
-										{
-											label: "Kansas City Bacon",
-											value: "kansas_city_bacon",
-										},
-										{
-											label: `Smoked (Picnic Ham)`,
-											value: `smoked`,
-										},
-										{
-											label: `Ground Pork`,
-											value: `ground`,
-										},
-									]}
-									animalInfo={animalInfo}
-									handleChangeOption={
-										handleSetShoulderCutsSelectedOptions
-									}
-								/>
-							)}
-						</div>
 					</Collapsible>
+					<Collapsible trigger="Loin Options">
+						<SelectForm
+							title="Loin Cut"
+							name="loin.options"
+							options={[
+								{
+									label: `All Chops`,
+									value: `all_chops`,
+								},
+								{
+									label: `All Roasts (Usually 3)`,
+									value: `all_roasts`,
+								},
+								{
+									label: `One Roast - Chops for the remainder`,
+									value: `one_roast_rest_chops`,
+								},
+								{
+									label: `Other (Specify In Special Instructions)`,
+									value: `other`,
+								},
+							]}
+							animalInfo={animalInfo}
+						/>
+					</Collapsible>
+
 					<Collapsible trigger="Special Instructions">
 						<InputForm
 							title="SPECIAL INSTRUCTIONS"
