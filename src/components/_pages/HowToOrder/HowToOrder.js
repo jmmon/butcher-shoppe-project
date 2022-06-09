@@ -4,10 +4,12 @@ import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import React from "react";
 import "./HowToOrder.css";
 
+import bgTitle from "../../../assets/images/image-1-116.jpg";
+
 function HowToOrder() {
 	return (
 		<>
-			<PageTitle title="How To Order" />
+			<PageTitle title="How To Order" bgImage={bgTitle} />
 			<WhitePageBackground>
 				<article className="form--instructions">
 					<h2 className="center-text">

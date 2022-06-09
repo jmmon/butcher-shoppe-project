@@ -98,8 +98,8 @@ function Footer() {
 								<LinkScrollUp path="/how-to-order">
 									How To Order
 								</LinkScrollUp>
-								<LinkScrollUp path="/schedule">
-									Schedule Your Order
+								<LinkScrollUp path="/order">
+									Submit Your Order
 								</LinkScrollUp>
 							</div>
 						</div>
