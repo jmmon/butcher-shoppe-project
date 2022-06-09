@@ -93,22 +93,19 @@ function Order() {
 
 	const deleteAnimal = (e) => {
 		e.preventDefault();
-		// console.log(`Deleting animal from button ${e.target}`);
-
 		const typeOfAnimal = e.target.getAttribute("animal");
 		const idOfAnimal = +e.target.getAttribute("id");
-
-		console.log(`animal: ${typeOfAnimal}, ID: ${idOfAnimal}`);
 
 		let copy_chosenAnimalType_IdArray = [
 			...idCollectionOfAnimalsByType[typeOfAnimal].idArray,
 		];
-
-		console.log(
-			`Chosen animal's existing ID array: ${copy_chosenAnimalType_IdArray}`
-		);
-
 		const index = copy_chosenAnimalType_IdArray.indexOf(idOfAnimal);
+
+		console.log({
+			typeOfAnimal,
+			idOfAnimal,
+			copy_chosenAnimalType_IdArray,
+		});
 
 		console.log(
 			`Removing item ${copy_chosenAnimalType_IdArray[index]} at index ${index}`
@@ -124,9 +121,6 @@ function Order() {
 			idCollectionOfAnimalsByType,
 			"Old collection of animals: "
 		);
-
-		// const string = `beef[${index}]`;
-		// methods.unregister([string]);
 
 		setIdCollectionOfAnimalsByType({
 			...idCollectionOfAnimalsByType,

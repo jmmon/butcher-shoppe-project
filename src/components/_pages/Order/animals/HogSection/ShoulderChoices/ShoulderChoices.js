@@ -1,17 +1,14 @@
 import React from "react";
+import { useState } from "react";
+
 import RadioForm from "../../../FormComponents/RadioForm";
 import SelectForm from "../../../FormComponents/SelectForm";
-// import { useEffect } from "react";
-import { useState } from "react";
-// import { useFormContext } from "react-hook-form";
 
-function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
-	// const { unregister } = useFormContext();
+function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 	const newChosenChoicesArray = chosenChoicesArray.map(
 		(selectedOptionString) => selectedOptionString.split(".").reverse()[0]
 	);
 	console.log({ newChosenChoicesArray });
-	// const stringId = `${animalInfo.animal}_${animalInfo.id}`;
 
 	const [freshRoastsAndOrSteaks, setFreshRoastsAndOrSteaks] =
 		useState("roasts");
@@ -29,15 +26,6 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 		setSmokedRoastsAndOrSteaks(value);
 	};
 
-	// useEffect(() => {
-	// 	allChoices.forEach((choice) => {
-	// 		const fullName = `animals.${stringId}.${choice}`;
-	// 		const isNotChosen = !chosenChoicesArray.includes(fullName);
-	// 		if (isNotChosen) {
-	// 			unregister(fullName);
-	// 		}
-	// 	});
-	// }, [chosenChoicesArray]);
 	return (
 		<>
 			{newChosenChoicesArray.includes("fresh_pork") && (

@@ -13,7 +13,8 @@ const EachCheckbox = ({
 }) => {
 	const { register } = useFormContext();
 
-	parentName && (name = `${parentName}.${name}`);
+	name = `${parentName}.${name}`;
+
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
 
 	return (

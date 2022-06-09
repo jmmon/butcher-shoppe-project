@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import Collapsible from "react-collapsible";
 import { useFormContext } from "react-hook-form";
+
 import ConfirmButton from "../../../Button/ConfirmButton";
 import CheckboxForm from "../FormComponents/CheckboxForm";
 import GrowerInfo from "../FormComponents/GrowerInfo";
 import InputForm from "../FormComponents/InputForm";
-import LabelForm from "../FormComponents/LabelForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import RadioForm from "../FormComponents/RadioForm";
 import SelectForm from "../FormComponents/SelectForm";
@@ -39,11 +39,6 @@ function LambSection({ id, deleteAnimal }) {
 		if (isNowWholeLamb) {
 			//reset this option
 		} else {
-			// reset options.shoulder_roast_size
-			// reset options.leg if not applicable
-			// detect it from localStorage ? or from the value of the component
-			// reset it with setValue() so localStorage will update
-
 			if (
 				getValues(`animals.${stringId}.options.shoulder_roast_size`) ===
 				"one_of_each"
@@ -80,30 +75,6 @@ function LambSection({ id, deleteAnimal }) {
 			</Collapsible>
 			<section className="order-form--section">
 				<GrowerInfo animalInfo={animalInfo} />
-				{/* <div className="order-form--field">
-					<LabelForm title="Grower Name" />
-					<InputForm
-						title="First"
-						name="info.grower.name.first"
-						placeholder="First name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-					<InputForm
-						title="Last"
-						name="info.grower.name.last"
-						placeholder="Last name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-				</div>
-
-				<InputForm
-					title="Ear Tag Number (if applicable)"
-					name="info.grower.ear_tag_number"
-					placeholder="Ear tag number"
-					animalInfo={animalInfo}
-				/> */}
 
 				<RadioForm
 					title="Choose One"

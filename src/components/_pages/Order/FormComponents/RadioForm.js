@@ -7,9 +7,6 @@ const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	const { register } = useFormContext();
 
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
-	// if (animalInfo) {
-	// 	name = getSplitAnimalInfo(name, animalInfo);
-	// }
 
 	return (
 		<label

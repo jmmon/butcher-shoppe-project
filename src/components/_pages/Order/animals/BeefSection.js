@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Collapsible from "react-collapsible";
 import CheckboxForm from "../FormComponents/CheckboxForm";
 import LabelForm from "../FormComponents/LabelForm";
@@ -28,14 +28,6 @@ function BeefSection({ id, deleteAnimal }) {
 		setSplitHalf(id === "split_half");
 	};
 
-	// useEffect(() => {
-	// 	console.log("splitHalf:", splitHalf);
-	// }, [splitHalf]);
-
-	// const options = window.localStorage.getItem("orderForm")
-
-	// TODO: build options from other animals of same type
-
 	return (
 		<Collapsible trigger={`Beef Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
 			{/* TODO: */}
@@ -51,12 +43,7 @@ function BeefSection({ id, deleteAnimal }) {
 				{`Delete this ${animalInfo.animal}`}
 			</ConfirmButton>
 
-			<Collapsible
-				trigger="Cow Information"
-				// classParentString="cut_sheet__section"
-				// triggerClassName="cut_sheet__section__trigger"
-				// contentOuterClassName="cut_sheet__section__content_outer"
-			>
+			<Collapsible trigger="Cow Information">
 				TODO: header^^ banner
 			</Collapsible>
 			<section className="order-form--section">
