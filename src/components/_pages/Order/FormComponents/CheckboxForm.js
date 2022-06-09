@@ -6,17 +6,15 @@ import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 const EachCheckbox = ({
 	label,
 	name,
+	parentName,
 	animalInfo,
 	handleChooseOption,
 	previousCheckedOptionsArray,
 }) => {
 	const { register } = useFormContext();
 
+	parentName && (name = `${parentName}.${name}`);
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
-
-	// if (animalInfo) {
-	// 	name = getSplitAnimalInfo(name, animalInfo);
-	// }
 
 	return (
 		<React.Fragment key={name}>
@@ -52,12 +50,14 @@ const CheckboxForm = ({
 	const {
 		formState: { errors },
 	} = useFormContext();
+	const parentName = name;
 
 	const allOptions = options
 		? options.map(({ label, name }) =>
 				EachCheckbox({
 					label,
 					name,
+					parentName,
 					animalInfo,
 					handleChooseOption,
 					previousCheckedOptionsArray,

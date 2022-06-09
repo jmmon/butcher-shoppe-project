@@ -1,6 +1,6 @@
 import React from "react";
-import RadioForm from "components/_pages/OrderPage/FormComponents/RadioForm";
-import SelectForm from "components/_pages/OrderPage/FormComponents/SelectForm";
+import RadioForm from "../../../FormComponents/RadioForm";
+import SelectForm from "../../../FormComponents/SelectForm";
 // import { useEffect } from "react";
 import { useState } from "react";
 // import { useFormContext } from "react-hook-form";
@@ -40,11 +40,11 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 	// }, [chosenChoicesArray]);
 	return (
 		<>
-			{newChosenChoicesArray.includes("fresh") && (
+			{newChosenChoicesArray.includes("fresh_pork") && (
 				<>
 					<SelectForm
 						title="Fresh Pork Cut"
-						name="shoulder.fresh.choice"
+						name="shoulder.fresh_pork.choice"
 						options={[
 							{
 								label: "All Fresh Shoulder Roasts",
@@ -69,9 +69,9 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 					{freshRoastsAndOrSteaks.includes("roasts") && (
 						<div className="order-form--field">
 							<SelectForm
-								title="Roast Size1"
+								title="Fresh Pork Roast Size"
 								subtitle="Roast size in pounds"
-								name="shoulder.fresh.roasts_and_steaks.roast_size"
+								name="shoulder.fresh_pork.roasts.roast_size"
 								options={[
 									{
 										label: "#3-4 (We suggest #3-4 for a family of 2-4)",
@@ -99,7 +99,7 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 							<SelectForm
 								title="Steak Thickness"
 								subtitle="Steak thickness in inches"
-								name="shoulder.fresh.roasts_and_steaks.steak_thickness"
+								name="shoulder.fresh_pork.steaks.steak_thickness"
 								options={[
 									{
 										label: "3/4",
@@ -118,7 +118,7 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 							/>
 							<SelectForm
 								title="Steaks Per Package"
-								name="shoulder.fresh.roasts_and_steaks.steaks_per_package"
+								name="shoulder.fresh_pork.steaks.steaks_per_package"
 								options={[
 									{
 										label: "Two",
@@ -152,11 +152,11 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 				</>
 			)}
 
-			{newChosenChoicesArray.includes("smoked") && (
+			{newChosenChoicesArray.includes("smoked_ham") && (
 				<>
 					<SelectForm
 						title="Smoked Ham Cut (Picnic Ham)"
-						name="shoulder.smoked.choice"
+						name="shoulder.smoked_ham.choice"
 						options={[
 							{
 								label: "All Picnic Roasts",
@@ -183,9 +183,9 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 					{smokedRoastsAndOrSteaks.includes("roasts") && (
 						<div className="order-form--field">
 							<SelectForm
-								title="Roast Size2"
+								title="Smoked Ham Roast Size"
 								subtitle="Roast size in pounds"
-								name="shoulder.smoked.roasts_and_steaks.roast_size"
+								name="shoulder.smoked_ham.roasts.roast_size"
 								options={[
 									{
 										label: `3-4# (We suggest 3-4# for a family of 2-4)`,
@@ -213,7 +213,7 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 							<SelectForm
 								title="Steak Thickness"
 								subtitle="Steak thickness in inches"
-								name="shoulder.smoked.roasts_and_steaks.steak_thickness"
+								name="shoulder.smoked_ham.steaks.steak_thickness"
 								options={[
 									{
 										label: "3/4",
@@ -232,7 +232,7 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 							/>
 							<SelectForm
 								title="Steaks Per Package"
-								name="shoulder.smoked.roasts_and_steaks.steaks_per_package"
+								name="shoulder.smoked_ham.steaks.steaks_per_package"
 								options={[
 									{
 										label: "Two",
@@ -275,12 +275,12 @@ function ShoulderChoices({ allChoices, chosenChoicesArray, animalInfo }) {
 				</>
 			)}
 
-			{newChosenChoicesArray.includes("ground") && (
+			{newChosenChoicesArray.includes("ground_pork") && (
 				<>
 					<RadioForm
 						title="Ground Meat Options"
 						subtitle="Comes wrapped in 1# packages"
-						name="shoulder.ground"
+						name="shoulder.ground_pork"
 						options={[
 							{
 								label: "Breakfast Sausage (Seasoned)",

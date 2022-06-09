@@ -706,3 +706,119 @@
 {
 	/* end Accordion with button wrapper */
 }
+
+/* .accordion--buttons-wrapper {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	border: 1px solid #ccc;
+	background-color: rgba(
+		var(--orange-bg--r),
+		var(--orange-bg--g),
+		var(--orange-bg--b),
+		0.7
+	);
+} */
+
+/* Accordion styling */
+/* Accordion item contains item-title and item-body, item-body holds children*/
+/* .react-sanfona {
+	border-radius: var(--card-border-radius);
+	width: 100%;
+	min-width: 311px;
+	display: inline-block;
+	padding: 2px;
+	z-index: 1;
+	background-color: rgb(224, 224, 224);
+	transition: all 0.5s ease;
+} */
+
+/* whole item container, expands and shrinks */
+/* .react-sanfona-item {
+	padding: 10px;
+
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+} */
+
+/* section title inside container */
+/* .react-sanfona-item-title {
+	background-color: #fff;
+	padding: 10px;
+	font-size: 30px;
+	text-align: left;
+	transition: all 0.3s ease-out;
+	width: 100%;
+} */
+
+/* :not(.react-sanfona-item-expanded) > .react-sanfona-item-title::after {
+	text-align: right;
+	content: "...";
+	display: inline;
+}
+.react-sanfona-item-expanded.react-sanfona-item-title::after {
+	text-align: right;
+	content: "";
+	display: inline;
+} */
+
+/* when item expanded, section title */
+/* .react-sanfona-item-expanded .react-sanfona-item-title {
+	text-decoration: underline;
+	font-size: 26px;
+	text-align: center;
+	background-color: #f3f3f3;
+	transition: all 0.15s ease-out;
+}
+.react-sanfona-item-expanded {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: all 0.15s;
+} */
+
+/* grabs first item container -> title inside it*/
+/* .react-sanfona-item:first-child .react-sanfona-item-title {
+  border-left: none;
+  border-top: none;
+} */
+
+/* wrapper around the content body*/
+
+/* .react-sanfona-item-body-wrapper {
+	color: #000;
+	padding: 12px;
+	padding-top: 0px;
+	position: relative;
+	background-color: #fff;
+	transition: all 0.3s ease-out;
+} */
+
+/* .react-sanfona-item-expanded .react-sanfona-item-body-wrapper {
+	background-color: #f3f3f3;
+	transition: all 0.3s ease-out;
+} */
+/* END  Accordion styling */
+
+/* .accordion-close-all-wrapper-hidden {
+	overflow: hidden;
+	width: 0;
+	max-width: 200px;
+	transition: all 0.5s ease;
+} */
+
+/* .accordion-close-all-wrapper {
+	display: flex;
+	justify-content: center;
+	height: auto;
+	min-width: 60px;
+	width: 10%;
+	cursor: pointer;
+	transition: all 0.5s ease;
+} */
+
+/* .accordion-close-all-title {
+	font-size: 1.2rem;
+	text-align: center;
+	margin: auto;
+	height: auto;
+} */

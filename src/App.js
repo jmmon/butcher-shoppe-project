@@ -9,9 +9,10 @@ import Home from "./components/_pages/Home/Home.js";
 import Services from "./components/_pages/Services/Services.js";
 import Schedule from "./components/_pages/Schedule/Schedule.js";
 import Faq from "./components/_pages/Faq/Faq.js";
-import OrderPage from "./components/_pages/OrderPage/OrderPage.js";
+import Order from "./components/_pages/Order/Order.js";
+import HowToOrder from "./components/_pages/HowToOrder/HowToOrder.js";
 import NotFound from "./components/_pages/NotFound/NotFound";
-import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
+// import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "./components/_pages/Newsletter/Confirm/SubscribeConfirm";
@@ -47,13 +48,9 @@ function App() {
 							<Route
 								path="/how-to-order"
 								exact
-								element={<OrderPage />}
+								element={<HowToOrder />}
 							/>
-							{/* <Route
-								path="/construction"
-								exact
-								element={<ComingSoon />}
-							/> */}
+							<Route path="/order" exact element={<Order />} />
 							<Route
 								path="/newsletter"
 								exact

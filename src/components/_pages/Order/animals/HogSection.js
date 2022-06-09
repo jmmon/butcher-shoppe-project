@@ -10,6 +10,7 @@ import SelectForm from "../FormComponents/SelectForm";
 
 import { useFormContext } from "react-hook-form";
 import ShoulderChoices from "./HogSection/ShoulderChoices/ShoulderChoices";
+import GrowerInfo from "../FormComponents/GrowerInfo";
 
 const animal = "hog";
 
@@ -21,7 +22,7 @@ function HogSection({ id, deleteAnimal }) {
 	const { setValue } = useFormContext();
 
 	const storageFormObjectOrEmptyObject = JSON.parse(
-		window.localStorage.getItem("orderForm") || "{}"
+		window.localStorage.getItem("orderForm") || {}
 	);
 
 	const [wholeHog, setWholeHog] = useState(
@@ -44,24 +45,24 @@ function HogSection({ id, deleteAnimal }) {
 	const [saveTwoShoulderChoices, setSaveTwoShoulderChoices] = useState(
 		// get previous object and turn it into an array OR use empty array
 		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["shoulder"]?.[
-			"choices"
+			"cuts_selected"
 		]
 			? Object.keys(
 					storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
 						"shoulder"
-					]?.["choices"]
+					]?.["cuts_selected"]
 			  )
 					.filter(
 						(shoulderChoiceKeys) =>
 							storageFormObjectOrEmptyObject?.animals?.[
 								stringId
-							]?.["shoulder"]?.["choices"]?.[
+							]?.["shoulder"]?.["cuts_selected"]?.[
 								shoulderChoiceKeys
 							] === true
 					)
 					.map(
 						(incompleteName) =>
-							`animals.${stringId}.shoulder.choices.${incompleteName}`
+							`animals.${stringId}.shoulder.cuts_selected.${incompleteName}`
 					) || []
 			: []
 	);
@@ -87,7 +88,7 @@ function HogSection({ id, deleteAnimal }) {
 				const shoulderChoicesKeysArrayFromLocalStorage = Object.keys(
 					storageFormObjectOrEmptyObject?.animals?.[stringId]?.[
 						"shoulder"
-					]?.["choices"]
+					]?.["cuts_selected"]
 				);
 
 				shoulderChoicesKeysArrayFromLocalStorage.forEach((keyName) => {
@@ -138,8 +139,6 @@ function HogSection({ id, deleteAnimal }) {
 		const { id } = e.target;
 		const isNowWholeHog = id === "whole_hog";
 
-		// console.log("handleSetWholeHog firing:", isNowWholeHog);
-
 		setWholeHog(isNowWholeHog);
 
 		//reset other states which depend on this:
@@ -173,30 +172,7 @@ function HogSection({ id, deleteAnimal }) {
 				TODO: Create a matching banner for this^ header
 			</Collapsible>
 			<section className="order-form--section">
-				<div className="order-form--field">
-					<LabelForm title="Grower Name" />
-					<InputForm
-						title="First"
-						name="info.grower.name.first"
-						placeholder="First name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-					<InputForm
-						title="Last"
-						name="info.grower.name.last"
-						placeholder="Last name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-				</div>
-
-				<InputForm
-					title="Ear Tag Number (if applicable)"
-					name="info.grower.ear_tag_number"
-					placeholder="Ear tag number"
-					animalInfo={animalInfo}
-				/>
+				<GrowerInfo animalInfo={animalInfo} />
 
 				<RadioForm
 					title="Choose One"
@@ -204,11 +180,11 @@ function HogSection({ id, deleteAnimal }) {
 					options={[
 						{
 							label: "Whole Hog",
-							inputId: "whole_hog",
+							value: "whole_hog",
 						},
 						{
 							label: "Half Hog",
-							inputId: "half_hog",
+							value: "half_hog",
 						},
 					]}
 					animalInfo={animalInfo}
@@ -474,24 +450,24 @@ function HogSection({ id, deleteAnimal }) {
 						<CheckboxForm
 							title="Front Shoulder Choices"
 							subtitle="Whole orders may choose up to 2 options; half orders may choose 1 option."
-							name="shoulder.choices"
+							name="shoulder.cuts_selected"
 							animalInfo={animalInfo}
 							options={[
 								{
 									label: "Fresh Pork Roasts / Steaks",
-									name: "shoulder.choices.fresh",
+									name: "shoulder.cuts_selected.fresh_pork",
 								},
 								{
 									label: "Kansas City Bacon",
-									name: "shoulder.choices.kansas_city_bacon",
+									name: "shoulder.cuts_selected.kansas_city_bacon",
 								},
 								{
 									label: "Smoke It! (Picnic Ham)",
-									name: "shoulder.choices.smoked",
+									name: "shoulder.cuts_selected.smoked_ham",
 								},
 								{
 									label: "Grind it!",
-									name: "shoulder.choices.ground",
+									name: "shoulder.cuts_selected.ground_pork",
 								},
 							]}
 							handleChooseOption={
@@ -502,12 +478,6 @@ function HogSection({ id, deleteAnimal }) {
 
 						{saveTwoShoulderChoices.length > 0 && (
 							<ShoulderChoices
-								// allChoices={[
-								// 	`shoulder.choices.fresh`,
-								// 	`shoulder.choices.kansas_city_bacon`,
-								// 	`shoulder.choices.smoked`,
-								// 	`shoulder.choices.ground`,
-								// ]}
 								chosenChoicesArray={saveTwoShoulderChoices}
 								animalInfo={animalInfo}
 							/>

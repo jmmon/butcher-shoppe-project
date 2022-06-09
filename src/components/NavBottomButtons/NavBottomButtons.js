@@ -7,7 +7,7 @@ function NavBottomButtons({ prev, next }) {
 	return (
 		<WhitePageBackground separate={true}>
 			<div className="nav-bottom-buttons white-background--container">
-				<h4 className="center-text">Next:</h4>
+				<h4 className="center-text">Helpful Links:</h4>
 				<div className="nav-bottom-container">
 					<Button
 						className="btns"

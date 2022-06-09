@@ -8,6 +8,7 @@ import SelectForm from "../FormComponents/SelectForm";
 import RadioForm from "../FormComponents/RadioForm";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import Button from "../../../Button/Button";
+import GrowerInfo from "../FormComponents/GrowerInfo";
 
 const animal = "beef";
 
@@ -59,32 +60,7 @@ function BeefSection({ id, deleteAnimal }) {
 				TODO: header^^ banner
 			</Collapsible>
 			<section className="order-form--section">
-				<div className="order-form--field">
-					<LabelForm title="Grower Name" />
-					<InputForm
-						title="First"
-						name="info.grower.name.first"
-						placeholder="First name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-					<InputForm
-						title="Last"
-						name="info.grower.name.last"
-						placeholder="Last name"
-						small={true}
-						animalInfo={animalInfo}
-					/>
-				</div>
-				<div className="order-form--field">
-					<LabelForm title="Ear Tag Number (if applicable)" />
-					<InputForm
-						// title="Ear Tag Number (if applicable)"
-						name="info.grower.ear_tag_number"
-						placeholder="Ear tag number"
-						animalInfo={animalInfo}
-					/>
-				</div>
+				<GrowerInfo animalInfo={animalInfo} />
 
 				<RadioForm
 					title="Choose One"
@@ -92,24 +68,24 @@ function BeefSection({ id, deleteAnimal }) {
 					required={true}
 					options={[
 						{
-							inputId: "whole",
 							label: "WHOLE BEEF",
+							value: "whole",
 						},
 						{
-							inputId: "half",
 							label: "HALF BEEF",
+							value: "half",
 						},
 						{
-							inputId: "hind_quarter",
 							label: "HIND QUARTER",
+							value: "hind_quarter",
 						},
 						{
-							inputId: "front_quarter",
 							label: "FRONT QUARTER",
+							value: "front_quarter",
 						},
 						{
-							inputId: "split_half",
 							label: "SPLIT HALF *Additional fee-See price list",
+							value: "split_half",
 						},
 					]}
 					animalInfo={animalInfo}

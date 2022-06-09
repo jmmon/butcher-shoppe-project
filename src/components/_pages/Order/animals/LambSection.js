@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import Collapsible from "react-collapsible";
+import { useFormContext } from "react-hook-form";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import CheckboxForm from "../FormComponents/CheckboxForm";
+import GrowerInfo from "../FormComponents/GrowerInfo";
 import InputForm from "../FormComponents/InputForm";
 import LabelForm from "../FormComponents/LabelForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
@@ -12,7 +15,51 @@ const animal = "lamb";
 
 function LambSection({ id, deleteAnimal }) {
 	const animalInfo = { id: id, animal: animal };
-	// const stringId = `${animal}_${id}}`;
+	const stringId = `${animal}_${id}`;
+
+	const { getValues, setValue } = useFormContext();
+
+	const storageFormObjectOrEmptyObject = JSON.parse(
+		window.localStorage.getItem("orderForm") || {}
+	);
+
+	const [wholeLamb, setWholeLamb] = useState(
+		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["info"]?.[
+			"lamb_amount"
+		] === "whole_lamb" || undefined
+	);
+
+	const handleSetWholeLamb = (e) => {
+		const { id } = e.target;
+		const isNowWholeLamb = id === "whole_lamb";
+
+		setWholeLamb(isNowWholeLamb);
+
+		//reset other states which depend on this:
+		if (isNowWholeLamb) {
+			//reset this option
+		} else {
+			// reset options.shoulder_roast_size
+			// reset options.leg if not applicable
+			// detect it from localStorage ? or from the value of the component
+			// reset it with setValue() so localStorage will update
+
+			if (
+				getValues(`animals.${stringId}.options.shoulder_roast_size`) ===
+				"one_of_each"
+			) {
+				setValue(
+					`animals.${stringId}.options.shoulder_roast_size`,
+					"whole"
+				);
+			}
+			if (
+				getValues(`animals.${stringId}.options.leg`) === "one_of_each"
+			) {
+				setValue(`animals.${stringId}.options.leg`, "whole");
+			}
+		}
+	};
 
 	return (
 		<Collapsible trigger={`Lamb Cut Sheet${id === 0 ? "" : ` #${id + 1}`}`}>
@@ -28,17 +75,12 @@ function LambSection({ id, deleteAnimal }) {
 				{`Delete this ${animalInfo.animal}`}
 			</ConfirmButton>
 
-			<Collapsible
-				trigger="Lamb Information"
-				// classParentString="cut_sheet__section"
-				// triggerClassName="cut_sheet__section__trigger"
-				// contentOuterClassName="cut_sheet__section__content_outer"
-			>
-				{" "}
-				TODO: header^^ banner{" "}
+			<Collapsible trigger="Lamb Information">
+				TODO: header^^ banner
 			</Collapsible>
 			<section className="order-form--section">
-				<div className="order-form--field">
+				<GrowerInfo animalInfo={animalInfo} />
+				{/* <div className="order-form--field">
 					<LabelForm title="Grower Name" />
 					<InputForm
 						title="First"
@@ -61,7 +103,7 @@ function LambSection({ id, deleteAnimal }) {
 					name="info.grower.ear_tag_number"
 					placeholder="Ear tag number"
 					animalInfo={animalInfo}
-				/>
+				/> */}
 
 				<RadioForm
 					title="Choose One"
@@ -69,15 +111,16 @@ function LambSection({ id, deleteAnimal }) {
 					required={true}
 					options={[
 						{
-							inputId: "whole",
 							label: "Whole Lamb",
+							value: "whole_lamb",
 						},
 						{
-							inputId: "half",
 							label: "Half Lamb",
+							value: "half_lamb",
 						},
 					]}
 					animalInfo={animalInfo}
+					handleChangeOption={handleSetWholeLamb}
 				/>
 			</section>
 
@@ -89,17 +132,33 @@ function LambSection({ id, deleteAnimal }) {
 					<SelectForm
 						title="Leg of Lamb"
 						name="options.leg"
-						options={[
-							{
-								label: "Whole",
-								value: "Whole",
-							},
-							{ label: "Cut in Half", value: "Cut in Half" },
-							{
-								label: `One of each (Whole Lamb Orders Only)`,
-								value: `One of each (Whole Lamb Orders Only)`,
-							},
-						]}
+						options={
+							wholeLamb
+								? [
+										{
+											label: "Whole",
+											value: "whole",
+										},
+										{
+											label: "Cut in Half",
+											value: "cut_in_half",
+										},
+										{
+											label: `One of each (Whole Lamb Orders Only)`,
+											value: `one_of_each`,
+										},
+								  ]
+								: [
+										{
+											label: "Whole",
+											value: "whole",
+										},
+										{
+											label: "Cut in Half",
+											value: "cut_in_half",
+										},
+								  ]
+						}
 						animalInfo={animalInfo}
 					/>
 					<SelectForm
@@ -108,19 +167,19 @@ function LambSection({ id, deleteAnimal }) {
 						options={[
 							{
 								label: "All Roasts",
-								value: "All Roasts",
+								value: "all_roasts",
 							},
 							{
 								label: "All Shoulder Chops",
-								value: "All Shoulder Chops",
+								value: "all_chops",
 							},
 							{
 								label: "Half and Half",
-								value: "Half and Half",
+								value: "half_roasts_half_chops",
 							},
 							{
-								label: "Grind",
-								value: "Grind",
+								label: "Grind It",
+								value: "ground",
 							},
 						]}
 						animalInfo={animalInfo}
@@ -128,26 +187,43 @@ function LambSection({ id, deleteAnimal }) {
 
 					<SelectForm
 						title="Shoulder Roast Size"
-						name="options.shoulder_roast_size"
 						subtitle="Each Shoulder makes one larger roast or two smaller ones"
-						options={[
-							{
-								label: "Whole",
-								value: "Whole",
-							},
-							{
-								label: "Cut in Half",
-								value: "Cut in Half",
-							},
-							{
-								label: "One of Each (Whole Lamb Orders Only)",
-								value: "One of Each (Whole Lamb Orders Only)",
-							},
-							{
-								label: "NONE",
-								value: "NONE",
-							},
-						]}
+						name="options.shoulder_roast_size"
+						options={
+							wholeLamb
+								? [
+										{
+											label: "Whole",
+											value: "whole",
+										},
+										{
+											label: "Cut in Half",
+											value: "cut_in_half",
+										},
+										{
+											label: "One of Each (Whole Lamb Orders Only)",
+											value: "one_of_each",
+										},
+										{
+											label: "None",
+											value: "none",
+										},
+								  ]
+								: [
+										{
+											label: "Whole",
+											value: "whole",
+										},
+										{
+											label: "Cut in Half",
+											value: "cut_in_half",
+										},
+										{
+											label: "None",
+											value: "none",
+										},
+								  ]
+						}
 						animalInfo={animalInfo}
 					/>
 
@@ -157,20 +233,20 @@ function LambSection({ id, deleteAnimal }) {
 						subtitle="Plan one chop per adult serving"
 						options={[
 							{
-								label: "TWO (Standard)",
-								value: "TWO",
+								label: "Two (Standard)",
+								value: "two",
 							},
 							{
-								label: "THREE",
-								value: "THREE",
+								label: "Three",
+								value: "three",
 							},
 							{
-								label: "FOUR",
-								value: "FOUR",
+								label: "Four",
+								value: "four",
 							},
 							{
-								label: "OTHER (List in special instructions)",
-								value: "OTHER",
+								label: "Other (List in special instructions)",
+								value: "other",
 							},
 						]}
 						animalInfo={animalInfo}
@@ -200,11 +276,11 @@ function LambSection({ id, deleteAnimal }) {
 						options={[
 							{
 								label: "All Lamb Chops",
-								value: "All Lamb Chops",
+								value: "all_chops",
 							},
 							{
 								label: "Half Rack of Lamb, Half Lamb Chops",
-								value: "Half Rack of Lamb, Half Lamb Chops",
+								value: "half_rack_lamb_half_chops",
 							},
 						]}
 						animalInfo={animalInfo}
@@ -217,20 +293,20 @@ function LambSection({ id, deleteAnimal }) {
 							subtitle="We do not split the lamb down the back bone so you get butterflied lamb chops - plan one per adult serving"
 							options={[
 								{
-									label: "TWO (Standard)",
-									value: "TWO",
+									label: "Two (Standard)",
+									value: "two",
 								},
 								{
-									label: "THREE",
-									value: "THREE",
+									label: "Three",
+									value: "three",
 								},
 								{
-									label: "FOUR",
-									value: "FOUR",
+									label: "Four",
+									value: "four",
 								},
 								{
-									label: "OTHER (List in special instructions)",
-									value: "OTHER",
+									label: "Other (List in special instructions)",
+									value: "other",
 								},
 							]}
 							animalInfo={animalInfo}
@@ -261,11 +337,11 @@ function LambSection({ id, deleteAnimal }) {
 							options={[
 								{
 									label: `Ground Lamb (includes a few packages of bone in lamb stew)`,
-									value: `Ground Lamb (includes a few packages of bone in lamb stew)`,
+									value: `ground`,
 								},
 								{
 									label: `Lamb Stew (includes a few packages of bone in lamb stew, the rest will be boneless)`,
-									value: `Lamb Stew (includes a few packages of bone in lamb stew, the rest will be boneless)`,
+									value: `lamb_stew`,
 								},
 							]}
 							animalInfo={animalInfo}
@@ -278,11 +354,11 @@ function LambSection({ id, deleteAnimal }) {
 							options={[
 								{
 									label: `Whole`,
-									value: `Whole`,
+									value: `whole`,
 								},
 								{
 									label: `Put into the Ground/Lamb Stew`,
-									value: `Put into the Ground/Lamb Stew`,
+									value: `into_ground`,
 								},
 							]}
 							animalInfo={animalInfo}
@@ -292,15 +368,15 @@ function LambSection({ id, deleteAnimal }) {
 					<div className="order-form--field">
 						<CheckboxForm
 							title="EXTRAS"
-							name="options.extras"
+							name="organ_meats"
 							options={[
 								{
-									name: "extras.liver__checkbox",
 									label: "LIVER",
+									name: "liver",
 								},
 								{
-									name: "extras.heart__checkbox",
 									label: "HEART",
+									name: "heart",
 								},
 							]}
 							animalInfo={animalInfo}

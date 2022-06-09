@@ -3,13 +3,7 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "./LabelInput";
 import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
 
-const EachRadio = ({
-	name,
-	animalInfo,
-	inputId,
-	label,
-	handleChangeOption,
-}) => {
+const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	const { register } = useFormContext();
 
 	animalInfo && (name = getSplitAnimalInfo(name, animalInfo));
@@ -19,29 +13,23 @@ const EachRadio = ({
 
 	return (
 		<label
-			htmlFor={inputId}
+			htmlFor={value}
 			className="order-form--radio-container"
-			key={inputId}
+			key={value}
 		>
 			<input
 				{...register(name)}
 				className="order-form--radio"
 				type="radio"
-				id={inputId}
+				id={value}
 				name={name}
 				onClick={handleChangeOption && ((e) => handleChangeOption(e))}
-				value={inputId}
+				value={value}
 			/>
 			{label}
 		</label>
 	);
 };
-
-/*
-radios: names should be the same amongst the group
-ids should be different, and match the label htmlFor
-register the name on all inputs (registering the same name)
-*/
 
 const RadioForm = ({
 	title,
@@ -57,9 +45,9 @@ const RadioForm = ({
 		formState: { errors },
 	} = useFormContext();
 
-	const allOptions = options.map(({ inputId, label }) =>
+	const allOptions = options.map(({ value, label }) =>
 		EachRadio({
-			inputId,
+			value,
 			label,
 			name,
 			animalInfo,
