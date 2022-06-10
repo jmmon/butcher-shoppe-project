@@ -36,7 +36,7 @@ function SelectForm({
 
 	return (
 		<p
-			className={`${styles.order_form__field} ${styles.order_form__input_container} ${styles.order_form__input_container_small}`}
+			className={`${formStyles.order_form__field} ${formStyles.order_form__input_container} ${formStyles.order_form__input_container_small}`}
 		>
 			<LabelInput
 				name={name}

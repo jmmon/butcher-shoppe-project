@@ -4,8 +4,9 @@ import formStyles from "../../FormComponents.module.css";
 
 import LabelForm from "../../Labels/LabelForm/LabelForm";
 
-import PhoneInput from "react-phone-number-input/input";
+// import PhoneInput from "react-phone-number-input/input";
 import InputForm from "../../InputForm/InputForm";
+import PhoneInputForm from "../../InputForm/PhoneInputForm";
 
 function ContactInfoSection() {
 	return (
@@ -55,7 +56,7 @@ function ContactInfoSection() {
 				<div className={formStyles.order_form__field}>
 					<LabelForm required={true} title="Contact" />
 
-					<div className="phone input-container">
+					{/* <div className="phone input-container">
 						<label
 							htmlFor="phone"
 							className="phone scheduler--label"
@@ -70,9 +71,15 @@ function ContactInfoSection() {
 							required={true}
 							placeholder="Enter your 10 digit phone number"
 						/>
-					</div>
+					</div> */}
+					<PhoneInputForm
+						title="Phone Number"
+						name="buyer.phone_number"
+						placeholder="10 digit phone number"
+						small={true}
+					/>
 
-					<InputForm
+					{/* <InputForm
 						title="Phone Number"
 						name="buyer.phone_number"
 						placeholder="10 digit phone number"
@@ -87,7 +94,7 @@ function ContactInfoSection() {
 							},
 						}}
 						small={true}
-					/>
+					/> */}
 					<InputForm
 						title="Email Address"
 						name="buyer.email_address"
