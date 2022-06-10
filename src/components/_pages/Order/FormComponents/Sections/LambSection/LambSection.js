@@ -3,13 +3,16 @@ import { useState } from "react";
 import Collapsible from "react-collapsible";
 import { useFormContext } from "react-hook-form";
 
-import ConfirmButton from "../../../Button/ConfirmButton";
-import CheckboxForm from "../FormComponents/CheckboxForm/CheckboxForm";
-import GrowerInfo from "../FormComponents/GrowerInfo";
-import InputForm from "../FormComponents/InputForm/InputForm";
-import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import RadioForm from "../FormComponents/RadioForm/RadioForm";
-import SelectForm from "../FormComponents/SelectForm/SelectForm";
+import ConfirmButton from "../../../../../Button/ConfirmButton";
+import CheckboxForm from "../../CheckboxForm/CheckboxForm";
+import GrowerInfoSection from "../GrowerInfoSection/GrowerInfoSection";
+import InputForm from "../../InputForm/InputForm";
+import OrderFormSectionSubheading from "../../OrderFormSectionSubheading/OrderFormSectionSubheading";
+import RadioForm from "../../RadioForm/RadioForm";
+import SelectForm from "../../SelectForm/SelectForm";
+
+import sectionStyles from "../FormSections.module.css";
+import formStyles from "../../FormComponents.module.css";
 
 const animal = "lamb";
 
@@ -73,8 +76,8 @@ function LambSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Lamb Information">
 				TODO: header^^ banner
 			</Collapsible>
-			<section className="order-form--section">
-				<GrowerInfo animalInfo={animalInfo} />
+			<section className={sectionStyles.order_form__section}>
+				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
 					title="Choose One"
@@ -96,7 +99,7 @@ function LambSection({ id, deleteAnimal }) {
 			</section>
 
 			<Collapsible trigger="Lamb Options">
-				<div className="order-form--section">
+				<div className={sectionStyles.order_form__section}>
 					<OrderFormSectionSubheading>
 						Leg of Lamb
 					</OrderFormSectionSubheading>
@@ -257,7 +260,7 @@ function LambSection({ id, deleteAnimal }) {
 						animalInfo={animalInfo}
 					/>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Lamb Chops Per Package"
 							name="options.lamb_chops.number_per_package"
@@ -300,7 +303,7 @@ function LambSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Trim"
 							// subtitle="(inches)"
@@ -336,7 +339,7 @@ function LambSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<CheckboxForm
 							title="EXTRAS"
 							name="organ_meats"

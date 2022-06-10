@@ -6,17 +6,17 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import "./Order.css";
+import styles from "./Order.module.css";
+
 import bgImage from "../../../assets/images/image-1-3.jpg";
 import PageTitle from "../../PageTitle/PageTitle.js";
-import InputForm from "./FormComponents/InputForm/InputForm";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
-import BeefSection from "./animals/BeefSection";
-import LabelForm from "./FormComponents/Labels/LabelForm/LabelForm";
-import LambSection from "./animals/LambSection";
-import HogSection from "./animals/HogSection";
+import BeefSection from "./FormComponents/Sections/BeefSection/BeefSection";
+import LambSection from "./FormComponents/Sections/LambSection/LambSection";
+import HogSection from "./FormComponents/Sections/HogSection/HogSection";
 import Button from "../../Button/Button";
 import SchedulerInput from "../../SchedulerInput/SchedulerInput";
-import PhoneInput from "react-phone-number-input/input";
+import ContactInfoSection from "./FormComponents/Sections/ContactInfoSection/ContactInfoSection";
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -27,8 +27,6 @@ function Order() {
 	const methods = useForm({
 		mode: "all",
 	});
-
-	const [phone, setPhone] = useState("");
 
 	const [newAnimalChosenType, setNewAnimalChosenType] = useState("beef");
 	const [animalToUnregister, setAnimalToUnregister] = useState("");
@@ -176,7 +174,7 @@ function Order() {
 			<WhitePageBackground>
 				<FormProvider {...methods}>
 					<form
-						className="form--center"
+						className={styles.form__center}
 						onSubmit={methods.handleSubmit(onSubmit)}
 					>
 						<Button
@@ -185,7 +183,7 @@ function Order() {
 						>
 							TESTING - Clear LocalStorage
 						</Button>
-						<div className="form--container">
+						<div className={styles.form__container}>
 							<Tabs forceRenderTabPanel>
 								<TabList>
 									<Tab>Basic Info</Tab>
@@ -199,187 +197,7 @@ function Order() {
 										transitionTime={200}
 										easing="ease"
 									>
-										<div
-											name="contact_info"
-											className="order-form--section"
-										>
-											<div className="order-form--field">
-												<LabelForm
-													required={true}
-													title="Name"
-												/>
-
-												<InputForm
-													title="First"
-													name="buyer.name.first"
-													placeholder="First name"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your first name",
-														},
-														pattern: {
-															value: /^[a-zA-Z]+$/,
-															message:
-																"Only letters for your name, please",
-														},
-													}}
-													small={true}
-												/>
-
-												<InputForm
-													title="Last"
-													name="buyer.name.last"
-													placeholder="Last name"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your last name",
-														},
-														pattern: {
-															value: /^[a-zA-Z]+$/,
-															message:
-																"Only letters for your name, please",
-														},
-													}}
-													small={true}
-												/>
-											</div>
-
-											<div className="order-form--field">
-												<LabelForm
-													required={true}
-													title="Contact"
-												/>
-
-												<div className="phone input-container">
-													<label
-														htmlFor="phone"
-														className="phone scheduler--label"
-													>
-														Your Phone Number
-													</label>
-													<PhoneInput
-														className="scheduler--input"
-														id="phone"
-														name="buyer.phone_number_component"
-														country="US"
-														onChange={setPhone}
-														value={phone}
-														placeholder="Enter your 10 digit phone number"
-													/>
-												</div>
-
-												<InputForm
-													title="Phone Number"
-													name="buyer.phone_number"
-													placeholder="10 digit phone number"
-													required={{
-														required: {
-															value: true,
-															message:
-																"A phone number is required",
-														},
-														pattern: {
-															value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
-															message:
-																"Please use a valid phone number",
-														},
-													}}
-													small={true}
-												/>
-												<InputForm
-													title="Email Address"
-													name="buyer.email_address"
-													placeholder="Enter your email address"
-													required={{
-														required: {
-															value: true,
-															message:
-																"An email address is required",
-														},
-														pattern: {
-															value: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
-															message:
-																"Please use a valid email address",
-														},
-													}}
-													small={true}
-												/>
-											</div>
-
-											<div className="order-form--field">
-												<LabelForm
-													required={true}
-													title="Address"
-												/>
-
-												<InputForm
-													title="Line 1"
-													name="buyer.address.line_1"
-													placeholder="Address Line 1"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your address",
-														},
-													}}
-													small={true}
-												/>
-												<InputForm
-													title="Line 2"
-													name="buyer.address.line_2"
-													placeholder="Address Line 2"
-													small={true}
-												/>
-
-												<InputForm
-													title="City"
-													name="buyer.address.city"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your city",
-														},
-													}}
-													small={true}
-												/>
-												<InputForm
-													title="State"
-													name="buyer.address.state"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your state",
-														},
-													}}
-													small={true}
-												/>
-
-												<InputForm
-													title="Zip Code"
-													name="buyer.address.zip_code"
-													required={{
-														required: {
-															value: true,
-															message:
-																"Please enter your zip code",
-														},
-														pattern: {
-															value: /^\d{5}(?:[-\s]\d{4})?$/,
-															message:
-																"Please enter a valid zip code",
-														},
-													}}
-													small={true}
-												/>
-											</div>
-										</div>
+										<ContactInfoSection />
 									</Collapsible>
 									<Collapsible
 										trigger="Choose Your Date And Time"
@@ -493,7 +311,7 @@ function Order() {
 							</Tabs>
 						</div>
 
-						<div className="order-form--heading-container">
+						<div className={styles.order_form__heading_container}>
 							<h3 className="order-form--before-submitting">
 								Please Double Check Your Selections Before
 								Submitting!
@@ -501,7 +319,7 @@ function Order() {
 						</div>
 						<input
 							type="submit"
-							className="order-form--submit btn btn--outline btn--large"
+							className={`${styles.order_form__submit} btn btn--outline btn--large`}
 							value="Submit Form"
 						/>
 					</form>

@@ -1,88 +1,6 @@
-.form--center {
-	width: 96%;
-	max-width: 1000px;
-	/* min-width: 300px; */
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-	align-items: center;
-}
-
 .react-tabs {
 	width: 100%;
 }
-
-.order-form--section {
-	margin: 0px auto;
-	padding: 16px 4px;
-	width: 100%;
-	display: grid;
-	gap: 1.5em;
-}
-
-.order-form--title {
-	text-decoration: underline;
-	font-size: 26px;
-	text-align: center;
-	/* color: #000; */
-	background-color: #f3f3f3;
-	transition: all 0.15s ease-out;
-	/* margin: 20px 0; */
-}
-
-/* .order-form--subtitle {
-} */
-
-.order-form--input-container {
-	margin: 0 auto;
-	padding: 0.5em;
-	max-width: 520px;
-	width: 50%;
-
-	min-width: 300px;
-}
-
-.order-form--input-container-small {
-	display: inline-block;
-}
-
-.order-form--submit {
-	/* margin: 20px; */
-	font-size: 20px;
-}
-
-.order-form--heading-container {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding: 20px;
-}
-
-.order-form--field {
-}
-
-.form--validation-error {
-	color: red;
-}
-
-.beef--split-half-section {
-	height: 0;
-	color: rgba(0, 0, 0, 0);
-	max-height: 0;
-	margin-top: 40px;
-	padding: 0px 4px;
-	transition: all 0.4s ease;
-}
-
-.beef--split-half-section--show {
-	height: 274px;
-	/* height: 300px; */
-	max-height: 1000px;
-	padding: 16px 4px;
-	transition: all 0.4s ease;
-}
-
 .Collapsible {
 	background-color: #f1f1f1;
 }
@@ -114,16 +32,6 @@
 	cursor: pointer;
 }
 
-/* .Collapsible__trigger:after {
-	font-family: "FontAwesome";
-	content: "\f107";
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	display: block;
-	transition: transform 300ms;
-} */
-
 .Collapsible__trigger:is-open:after {
 	transform: rotateZ(180deg);
 }
@@ -131,40 +39,4 @@
 .Collapsible__trigger:is-disabled {
 	opacity: 0.5;
 	background-color: grey;
-}
-.order-form {
-	width: clamp(480px, 90vw, 1200px);
-}
-
-@media (max-width: 960px) {
-	.order-form--input-container-small {
-		display: inline-block;
-		width: 50%;
-	}
-
-	.accordion-wrapper {
-		min-width: 476px;
-	}
-}
-
-@media (max-width: 658px) {
-	.order-form--input-container-small {
-		display: inline-block;
-		width: 100%;
-	}
-
-	.accordion-wrapper {
-		width: 100vw;
-		min-width: 80vw;
-	}
-
-	.order-form {
-		box-shadow: none;
-		margin: 0px;
-		/* padding-bottom: 2vh; */
-		padding: 2px;
-		max-width: 100%;
-		min-width: 100%;
-		padding-bottom: 2rem;
-	}
 }

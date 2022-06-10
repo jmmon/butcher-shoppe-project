@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
 import { useFormContext } from "react-hook-form";
+import sectionStyles from "../FormSections.module.css";
+import formStyles from "../../FormComponents.module.css";
 
-import ConfirmButton from "../../../Button/ConfirmButton";
-import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import CheckboxForm from "../FormComponents/CheckboxForm/CheckboxForm";
-import InputForm from "../FormComponents/InputForm/InputForm";
-import RadioForm from "../FormComponents/RadioForm/RadioForm";
-import SelectForm from "../FormComponents/SelectForm/SelectForm";
-import ShoulderChoices from "./HogSection/ShoulderChoices/ShoulderChoices";
-import GrowerInfo from "../FormComponents/GrowerInfo";
+import ConfirmButton from "components/Button/ConfirmButton";
+import OrderFormSectionSubheading from "../../OrderFormSectionSubheading/OrderFormSectionSubheading";
+import GrowerInfoSection from "../GrowerInfoSection/GrowerInfoSection";
+import ShoulderChoices from "./ShoulderChoices/ShoulderChoices";
+
+import CheckboxForm from "../../CheckboxForm/CheckboxForm";
+import InputForm from "../../InputForm/InputForm";
+import RadioForm from "../../RadioForm/RadioForm";
+import SelectForm from "../../SelectForm/SelectForm";
 
 const animal = "hog";
 
@@ -170,8 +173,8 @@ function HogSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Hog Information">
 				TODO: Create a matching banner for this^ header
 			</Collapsible>
-			<section className="order-form--section">
-				<GrowerInfo animalInfo={animalInfo} />
+			<section className={sectionStyles.order_form__section}>
+				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
 					title="Choose One"
@@ -193,7 +196,7 @@ function HogSection({ id, deleteAnimal }) {
 			{wholeHog !== undefined && (
 				<>
 					<Collapsible trigger="Ham Options">
-						<div className="order-form--section">
+						<div className={sectionStyles.order_form__section}>
 							<OrderFormSectionSubheading>
 								Options for your ham
 							</OrderFormSectionSubheading>
@@ -244,7 +247,7 @@ function HogSection({ id, deleteAnimal }) {
 						{(hamSelected === "hams_and_roasts" ||
 							hamSelected ===
 								"half_hams_and_roasts_and_half_steaks") && (
-							<div className="order-form--field">
+							<div className={formStyles.order_form__field}>
 								<SelectForm
 									title="Smoked Or Fresh"
 									// subtitle={`${
@@ -327,7 +330,7 @@ function HogSection({ id, deleteAnimal }) {
 						{(hamSelected === "steaks" ||
 							hamSelected ===
 								"half_hams_and_roasts_and_half_steaks") && (
-							<div className="order-form--field">
+							<div className={formStyles.order_form__field}>
 								<SelectForm
 									title="Steaks Per Package"
 									name="ham.steak.number_per_package"
@@ -403,7 +406,7 @@ function HogSection({ id, deleteAnimal }) {
 							// handleChangeOption={handleSideBaconPorkSelection}
 						/>
 
-						<div className="order-form--field">
+						<div className={formStyles.order_form__field}>
 							<SelectForm
 								title="Bacon / Side Pork Cut Style"
 								name="bacon.cut_style"
@@ -509,7 +512,7 @@ function HogSection({ id, deleteAnimal }) {
 						/>
 
 						{loinCut.includes("chops") && (
-							<div className="order-form--field">
+							<div className={formStyles.order_form__field}>
 								<SelectForm
 									title="Loin Chops Thickness"
 									name="loin.chops.thickness"
@@ -566,7 +569,7 @@ function HogSection({ id, deleteAnimal }) {
 						)}
 
 						{loinCut.includes("roast") && (
-							<div className="order-form--field">
+							<div className={formStyles.order_form__field}>
 								<SelectForm
 									title="Loin Roast Size"
 									subtitle="Roast size in pounds"

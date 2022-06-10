@@ -1,0 +1,37 @@
+.order_form__input_container {
+	margin: 0 auto;
+	padding: 0.5em;
+	max-width: 520px;
+	width: 50%;
+
+	min-width: 300px;
+}
+
+.order_form__input_container_small {
+	display: inline-block;
+}
+
+.order_form__field {
+}
+
+@media (max-width: 960px) {
+	.order_form__input_container_small {
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+@media (max-width: 658px) {
+	.order_form__input_container_small {
+		display: inline-block;
+		width: 100%;
+	}
+	/* .order_form {
+		box-shadow: none;
+		margin: 0px;
+		padding: 2px;
+		max-width: 100%;
+		min-width: 100%;
+		padding-bottom: 2rem;
+	} */
+}

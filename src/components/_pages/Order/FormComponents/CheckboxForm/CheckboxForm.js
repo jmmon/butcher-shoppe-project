@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import styles from "./CheckboxForm.module.css";
+import formStyles from "../FormComponents.module.css";
 
 const EachCheckbox = ({
 	label,
@@ -68,7 +69,7 @@ const CheckboxForm = ({
 		: "Err: No options were provided!";
 
 	return (
-		<div className="order-form--field">
+		<div className={formStyles.order_form__field}>
 			<LabelInput
 				title={title}
 				name={name}

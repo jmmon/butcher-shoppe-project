@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import styles from "./SelectForm.module.css";
+import formStyles from "../FormComponents.module.css";
 
 function Option({ label, value }) {
 	return (
@@ -34,7 +35,9 @@ function SelectForm({
 		: "Err: No options were provided for this select box";
 
 	return (
-		<p className="order-form--field order-form--input-container-small order-form--input-container">
+		<p
+			className={`${styles.order_form__field} ${styles.order_form__input_container} ${styles.order_form__input_container_small}`}
+		>
 			<LabelInput
 				name={name}
 				costsExtra={costsExtra}

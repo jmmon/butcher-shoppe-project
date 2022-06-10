@@ -1,0 +1,24 @@
+.form__center {
+	width: 96%;
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+}
+.order_form__heading_container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+.order_form__submit {
+	font-size: 20px;
+}
+
+/* .order-form--before-submitting{} */
+/* .form--container{} */
+/* .order-form {
+	width: clamp(480px, 90vw, 1200px);
+} */

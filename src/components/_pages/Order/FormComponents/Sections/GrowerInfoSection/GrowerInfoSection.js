@@ -1,12 +1,13 @@
 import React from "react";
+import formStyles from "../../FormComponents.module.css";
 
-import LabelForm from "./Labels/LabelForm/LabelForm";
-import InputForm from "./InputForm/InputForm";
+import LabelForm from "../../Labels/LabelForm/LabelForm";
+import InputForm from "../../InputForm/InputForm";
 
-function GrowerInfo({ animalInfo }) {
+function GrowerInfoSection({ animalInfo }) {
 	return (
 		<>
-			<div className="order-form--field">
+			<div className={formStyles.order_form__field}>
 				<LabelForm title="Grower Name" />
 				<InputForm
 					title="First"
@@ -24,7 +25,7 @@ function GrowerInfo({ animalInfo }) {
 				/>
 			</div>
 
-			<div className="order-form--field">
+			<div className={formStyles.order_form__field}>
 				<LabelForm title="Ear Tag Number (if applicable)" />
 				<InputForm
 					title="Ear Tag Number (if applicable)"
@@ -37,4 +38,4 @@ function GrowerInfo({ animalInfo }) {
 	);
 }
 
-export default GrowerInfo;
+export default GrowerInfoSection;

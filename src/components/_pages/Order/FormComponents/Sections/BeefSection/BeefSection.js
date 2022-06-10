@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
-import CheckboxForm from "../FormComponents/CheckboxForm/CheckboxForm";
-import LabelForm from "../FormComponents/Labels/LabelForm/LabelForm";
-import InputForm from "../FormComponents/InputForm/InputForm";
-import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import SelectForm from "../FormComponents/SelectForm/SelectForm";
-import RadioForm from "../FormComponents/RadioForm/RadioForm";
-import ConfirmButton from "../../../Button/ConfirmButton";
-import Button from "../../../Button/Button";
-import GrowerInfo from "../FormComponents/GrowerInfo";
+import CheckboxForm from "../../CheckboxForm/CheckboxForm";
+import LabelForm from "../../Labels/LabelForm/LabelForm";
+import InputForm from "../../InputForm/InputForm";
+import OrderFormSectionSubheading from "../../OrderFormSectionSubheading/OrderFormSectionSubheading";
+import SelectForm from "../../SelectForm/SelectForm";
+import RadioForm from "../../RadioForm/RadioForm";
+import GrowerInfoSection from "../GrowerInfoSection/GrowerInfoSection";
+
+import sectionStyles from "../FormSections.module.css";
+import formStyles from "../../FormComponents.module.css";
+import styles from "./BeefSection.module.css";
+import Button from "components/Button/Button";
+import ConfirmButton from "components/Button/ConfirmButton";
 
 const animal = "beef";
 
@@ -46,8 +50,8 @@ function BeefSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Cow Information">
 				TODO: header^^ banner
 			</Collapsible>
-			<section className="order-form--section">
-				<GrowerInfo animalInfo={animalInfo} />
+			<section className={sectionStyles.order_form__section}>
+				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
 					title="Choose One"
@@ -81,17 +85,19 @@ function BeefSection({ id, deleteAnimal }) {
 			</section>
 
 			<section
-				className={`order-form--section  ${
+				className={`${sectionStyles.order_form__section}  ${
 					splitHalf
-						? "beef--split-half-section--show"
-						: "beef--split-half-section"
+						? styles.beef__split_half_section__show
+						: styles.beef__split_half_section
 				}`}
 				id="split-half--contact-info"
 			>
 				{splitHalf && (
 					<>
-						<div className="order-form--field">
-							<h3 className="order-form--title">Contact Info</h3>
+						<div className={formStyles.order_form__field}>
+							<h3 className={sectionStyles.order_form__title}>
+								Contact Info
+							</h3>
 							<OrderFormSectionSubheading>
 								for the other person, if splitting half
 							</OrderFormSectionSubheading>
@@ -165,12 +171,12 @@ function BeefSection({ id, deleteAnimal }) {
 			</section>
 
 			<Collapsible trigger="Steak Options">
-				<section className="order-form--section">
+				<section className={sectionStyles.order_form__section}>
 					<OrderFormSectionSubheading>
 						Standard Steaks are Rib, T-Bone, Sirloin, Round, and
 						Flank
 					</OrderFormSectionSubheading>
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Steak Thickness"
 							name="steak.thickness"
@@ -195,7 +201,7 @@ function BeefSection({ id, deleteAnimal }) {
 								},
 							]}
 							animalInfo={animalInfo}
-							// className="order-form--field"
+							// className={formStyles.order_form__field}
 						/>
 						<SelectForm
 							title="Number of Steaks Per Package"
@@ -222,7 +228,7 @@ function BeefSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Tenderized Round Steaks"
 							name="steak.extra.tenderized_round_steaks"
@@ -279,7 +285,7 @@ function BeefSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Tenderloin"
 							name="steak.extra.tenderloin"
@@ -328,13 +334,13 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Roast Options">
-				<section className="order-form--section">
+				<section className={sectionStyles.order_form__section}>
 					<OrderFormSectionSubheading>
 						Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin
 						Tip and, Heel of Round
 					</OrderFormSectionSubheading>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Boneless Roasts"
 							name="roast.boneless"
@@ -376,7 +382,7 @@ function BeefSection({ id, deleteAnimal }) {
 							animalInfo={animalInfo}
 						/>
 					</div>
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Rib Options"
 							name="roast.rib_options"
@@ -437,12 +443,12 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Ground Beef Options">
-				<section className="order-form--section">
+				<section className={sectionStyles.order_form__section}>
 					<OrderFormSectionSubheading>
 						Choose your ground beef options
 					</OrderFormSectionSubheading>
 
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Ground Beef Package Size"
 							name="ground_beef.package_size"
@@ -500,11 +506,11 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">
-				<section className="order-form--section">
+				<section className={sectionStyles.order_form__section}>
 					<OrderFormSectionSubheading>
 						More options for your cuts
 					</OrderFormSectionSubheading>
-					<div className="order-form--field">
+					<div className={formStyles.order_form__field}>
 						<SelectForm
 							title="Boneless Stew Meat"
 							name="other.boneless_stew_meat"

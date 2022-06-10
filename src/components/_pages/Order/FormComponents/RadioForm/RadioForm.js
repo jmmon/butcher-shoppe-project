@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import styles from "./RadioForm.module.css";
+import formStyles from "../FormComponents.module.css";
 
 const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	const { register } = useFormContext();
@@ -54,7 +55,7 @@ const RadioForm = ({
 	);
 
 	return (
-		<div className="order-form--field">
+		<div className={formStyles.order_form__field}>
 			<LabelInput
 				title={title}
 				costsExtra={costsExtra}
