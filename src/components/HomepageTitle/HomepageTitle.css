@@ -1,5 +1,5 @@
 .homepage-title {
-	height: clamp(20vw, 20em, 60vw);
+	height: clamp(20vw, 30rem, 60vw);
 }
 
 /* .homepage-title--blend {
