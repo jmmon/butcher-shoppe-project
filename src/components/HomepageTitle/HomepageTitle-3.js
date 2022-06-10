@@ -2,11 +2,12 @@ import "../../App.css"; // eliminate?
 import Button from "../Button/Button";
 import "./HomepageTitle.css";
 import { Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 import slideImages from "./Images.js";
 
-function HomepageTitle2({ simple = false, title, subtitle, position }) {
+function HomepageTitle3({ simple = false, title, subtitle, position }) {
 	const properties = {
 		duration: 8000,
 		transitionDuration: 800,
@@ -20,17 +21,15 @@ function HomepageTitle2({ simple = false, title, subtitle, position }) {
 			style={{
 				position: "relative",
 				textAlign: "center",
+				// color: "var(--offwhite)",
 				color: "white",
+				backgroundColor: "var(--footer-background-color)",
 				// display: "flex",
 			}}
 		>
-			<Slide {...properties}>
+			<Fade {...properties}>
 				{slideImages.map((slideImage, index) => (
-					<div
-						className="each-slide"
-						key={index}
-						// style={{ height: "60vh" }}
-					>
+					<div className="each-fade" key={index}>
 						<div
 							style={{
 								height: "60vh",
@@ -41,12 +40,10 @@ function HomepageTitle2({ simple = false, title, subtitle, position }) {
 									slideImage.position || "50% 50%"
 								}`,
 							}}
-						>
-							{/* <span>example text</span> */}
-						</div>
+						></div>
 					</div>
 				))}
-			</Slide>
+			</Fade>
 			<div
 				style={{
 					position: "absolute",
@@ -58,6 +55,7 @@ function HomepageTitle2({ simple = false, title, subtitle, position }) {
 					justifyContent: "center",
 					alignItems: "center",
 					// fontSize: "2em",
+					zIndex: "2",
 				}}
 			>
 				<h1 className="homepage-title--heading text-shadow--lg">
@@ -90,4 +88,4 @@ function HomepageTitle2({ simple = false, title, subtitle, position }) {
 	);
 }
 
-export default HomepageTitle2;
+export default HomepageTitle3;

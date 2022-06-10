@@ -1,8 +1,7 @@
 import "../../App.css"; // eliminate?
 import Button from "../Button/Button";
 import "./HomepageTitle.css";
-import bgImage from "../../assets/images/image-1-117.jpg";
-import Logo from "../../assets/logo/logo_tiny.svg";
+import bgImage from "assets/images/image-1-117.jpg";
 
 function HomepageTitle({
 	simple = false,

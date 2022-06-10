@@ -9,14 +9,16 @@ html {
 }
 
 :root {
+	--footer-background-color: #242424;
 	--subheading-gray: #444;
 	--input-placeholder--light: #aaa;
-	--footer-background-color: #242424;
+	--white-page-background: #fff;
+	--offwhite: rgb(236, 229, 229);
+
 	--footer-content--width: 1000px;
 	--schedule--item-height: 380px;
 	--card-border-radius: 4px;
 	--min-page-width: 375px;
-	--white-page-background: #fff;
 
 	--input-required--valid: rgb(231, 255, 231);
 	--input-required--invalid: rgb(255, 231, 231);

@@ -38,11 +38,11 @@ function Home() {
 					subtitle="Serving Northeast Washington State"
 					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
 				/>
-				{/* <HomepageTitle2
+				<HomepageTitle2
 					title="The Butcher Shoppe"
 					subtitle="Serving Northeast Washington State"
 					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
-				/> */}
+				/>
 				<WhitePageBackground>
 					<div className="grid--col-md">
 						<Card

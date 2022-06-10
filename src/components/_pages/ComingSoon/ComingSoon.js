@@ -1,6 +1,6 @@
 import React from "react";
 import "./ComingSoon.css";
-import HomepageTitle from "../../HomepageTitle/HomepageTitle";
+import HomepageTitle3 from "../../HomepageTitle/HomepageTitle-3";
 import Helmet from "react-helmet";
 
 function ComingSoon() {
@@ -17,10 +17,10 @@ function ComingSoon() {
 				/>
 			</Helmet>
 			<main>
-				<HomepageTitle
-					simple={true}
+				<HomepageTitle3
+					// simple={true}
 					title="The Butcher Shoppe"
-					subtitle={`Site under construction. Coming Soon to Northeast Washington State!`}
+					subtitle={`Serving Northeast Washington State`}
 				/>
 			</main>
 		</>
