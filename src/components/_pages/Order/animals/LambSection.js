@@ -6,7 +6,7 @@ import { useFormContext } from "react-hook-form";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import CheckboxForm from "../FormComponents/CheckboxForm";
 import GrowerInfo from "../FormComponents/GrowerInfo";
-import InputForm from "../FormComponents/InputForm";
+import InputForm from "../FormComponents/InputForm/InputForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import RadioForm from "../FormComponents/RadioForm";
 import SelectForm from "../FormComponents/SelectForm";

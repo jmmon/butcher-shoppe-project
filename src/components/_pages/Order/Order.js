@@ -2,17 +2,21 @@ import React, { useEffect, useState } from "react";
 import Collapsible from "react-collapsible";
 import { useForm, FormProvider } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 import "./Order.css";
 import bgImage from "../../../assets/images/image-1-3.jpg";
 import PageTitle from "../../PageTitle/PageTitle.js";
-import InputForm from "./FormComponents/InputForm";
+import InputForm from "./FormComponents/InputForm/InputForm";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import BeefSection from "./animals/BeefSection";
 import LabelForm from "./FormComponents/LabelForm";
 import LambSection from "./animals/LambSection";
 import HogSection from "./animals/HogSection";
 import Button from "../../Button/Button";
+import SchedulerInput from "../../SchedulerInput/SchedulerInput";
+import PhoneInput from "react-phone-number-input/input";
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -23,6 +27,8 @@ function Order() {
 	const methods = useForm({
 		mode: "all",
 	});
+
+	const [phone, setPhone] = useState("");
 
 	const [newAnimalChosenType, setNewAnimalChosenType] = useState("beef");
 	const [animalToUnregister, setAnimalToUnregister] = useState("");
@@ -177,271 +183,314 @@ function Order() {
 							buttonStyle="btn--outline"
 							onClick={clearLocalStorage}
 						>
-							Clear
+							TESTING - Clear LocalStorage
 						</Button>
 						<div className="form--container">
-							<Collapsible
-								trigger="Contact Info"
-								open
-								// triggerDisabled={true}
-								transitionTime={200}
-								easing="ease"
-							>
-								<div
-									name="contact_info"
-									className="order-form--section"
-								>
-									<div className="order-form--field">
-										<LabelForm
-											required={true}
-											title="Name"
-										/>
+							<Tabs forceRenderTabPanel>
+								<TabList>
+									<Tab>Basic Info</Tab>
+									<Tab>Animal Cut Sheets</Tab>
+								</TabList>
+								<TabPanel>
+									<Collapsible
+										trigger="Contact Info"
+										open
+										triggerDisabled={true}
+										transitionTime={200}
+										easing="ease"
+									>
+										<div
+											name="contact_info"
+											className="order-form--section"
+										>
+											<div className="order-form--field">
+												<LabelForm
+													required={true}
+													title="Name"
+												/>
 
-										<InputForm
-											title="First"
-											name="buyer.name.first"
-											placeholder="First name"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your first name",
-												},
-												pattern: {
-													value: /^[a-zA-Z]+$/,
-													message:
-														"Only letters for your name, please",
-												},
-											}}
-											small={true}
-										/>
+												<InputForm
+													title="First"
+													name="buyer.name.first"
+													placeholder="First name"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your first name",
+														},
+														pattern: {
+															value: /^[a-zA-Z]+$/,
+															message:
+																"Only letters for your name, please",
+														},
+													}}
+													small={true}
+												/>
 
-										<InputForm
-											title="Last"
-											name="buyer.name.last"
-											placeholder="Last name"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your last name",
-												},
-												pattern: {
-													value: /^[a-zA-Z]+$/,
-													message:
-														"Only letters for your name, please",
-												},
-											}}
-											small={true}
-										/>
-									</div>
+												<InputForm
+													title="Last"
+													name="buyer.name.last"
+													placeholder="Last name"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your last name",
+														},
+														pattern: {
+															value: /^[a-zA-Z]+$/,
+															message:
+																"Only letters for your name, please",
+														},
+													}}
+													small={true}
+												/>
+											</div>
 
-									<div className="order-form--field">
-										<LabelForm
-											required={true}
-											title="Contact"
-										/>
+											<div className="order-form--field">
+												<LabelForm
+													required={true}
+													title="Contact"
+												/>
 
-										<InputForm
-											title="Phone Number"
-											name="buyer.phone_number"
-											placeholder="10 digit phone number"
-											required={{
-												required: {
-													value: true,
-													message:
-														"A phone number is required",
-												},
-												pattern: {
-													value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
-													message:
-														"Please use a valid phone number",
-												},
-											}}
-											small={true}
-										/>
-										<InputForm
-											title="Email Address"
-											name="buyer.email_address"
-											placeholder="Enter your email address"
-											required={{
-												required: {
-													value: true,
-													message:
-														"An email address is required",
-												},
-												pattern: {
-													value: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
-													message:
-														"Please use a valid email address",
-												},
-											}}
-											small={true}
-										/>
-									</div>
+												<div className="phone input-container">
+													<label
+														htmlFor="phone"
+														className="phone scheduler--label"
+													>
+														Your Phone Number
+													</label>
+													<PhoneInput
+														className="scheduler--input"
+														id="phone"
+														name="buyer.phone_number_component"
+														country="US"
+														onChange={setPhone}
+														value={phone}
+														placeholder="Enter your 10 digit phone number"
+													/>
+												</div>
 
-									<div className="order-form--field">
-										<LabelForm
-											required={true}
-											title="Address"
-										/>
+												<InputForm
+													title="Phone Number"
+													name="buyer.phone_number"
+													placeholder="10 digit phone number"
+													required={{
+														required: {
+															value: true,
+															message:
+																"A phone number is required",
+														},
+														pattern: {
+															value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+															message:
+																"Please use a valid phone number",
+														},
+													}}
+													small={true}
+												/>
+												<InputForm
+													title="Email Address"
+													name="buyer.email_address"
+													placeholder="Enter your email address"
+													required={{
+														required: {
+															value: true,
+															message:
+																"An email address is required",
+														},
+														pattern: {
+															value: /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/,
+															message:
+																"Please use a valid email address",
+														},
+													}}
+													small={true}
+												/>
+											</div>
 
-										<InputForm
-											title="Line 1"
-											name="buyer.address.line_1"
-											placeholder="Address Line 1"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your address",
-												},
-											}}
-											small={true}
-										/>
-										<InputForm
-											title="Line 2"
-											name="buyer.address.line_2"
-											placeholder="Address Line 2"
-											small={true}
-										/>
+											<div className="order-form--field">
+												<LabelForm
+													required={true}
+													title="Address"
+												/>
 
-										<InputForm
-											title="City"
-											name="buyer.address.city"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your city",
-												},
-											}}
-											small={true}
-										/>
-										<InputForm
-											title="State"
-											name="buyer.address.state"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your state",
-												},
-											}}
-											small={true}
-										/>
+												<InputForm
+													title="Line 1"
+													name="buyer.address.line_1"
+													placeholder="Address Line 1"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your address",
+														},
+													}}
+													small={true}
+												/>
+												<InputForm
+													title="Line 2"
+													name="buyer.address.line_2"
+													placeholder="Address Line 2"
+													small={true}
+												/>
 
-										<InputForm
-											title="Zip Code"
-											name="buyer.address.zip_code"
-											required={{
-												required: {
-													value: true,
-													message:
-														"Please enter your zip code",
-												},
-												pattern: {
-													value: /^\d{5}(?:[-\s]\d{4})?$/,
-													message:
-														"Please enter a valid zip code",
-												},
-											}}
-											small={true}
-										/>
-									</div>
-								</div>
-							</Collapsible>
-							<Collapsible
-								trigger="Animal Info"
-								open
-								// triggerDisabled={true}
-								transitionTime={200}
-								easing="ease"
-							>
-								<h4>Select and add an animal cuts form:</h4>
-								<select
-									onChange={(e) =>
-										setNewAnimalChosenType(e.target.value)
-									}
-								>
-									<option value="beef">Beef</option>
-									<option value="lamb">Lamb</option>
-									<option value="hog">Hog</option>
-								</select>
-								<Button onClick={addAnimal}>
-									Add an animal
-								</Button>
-								{(idCollectionOfAnimalsByType.beef.idArray
-									.length > 0 ||
-									idCollectionOfAnimalsByType.lamb.idArray
-										.length > 0 ||
-									idCollectionOfAnimalsByType.hog.idArray
-										.length > 0) && (
-									<div>
-										<h4>Animals</h4>
-										{idCollectionOfAnimalsByType.beef
-											.idArray.length > 0 && (
-											<Collapsible
-												trigger="Your Beef"
-												transitionTime={200}
-												easing="ease"
-											>
-												{idCollectionOfAnimalsByType.beef.idArray.map(
-													(id) => (
-														<BeefSection
-															key={id}
-															id={id}
-															deleteAnimal={
-																deleteAnimal
-															}
-														/>
-													)
+												<InputForm
+													title="City"
+													name="buyer.address.city"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your city",
+														},
+													}}
+													small={true}
+												/>
+												<InputForm
+													title="State"
+													name="buyer.address.state"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your state",
+														},
+													}}
+													small={true}
+												/>
+
+												<InputForm
+													title="Zip Code"
+													name="buyer.address.zip_code"
+													required={{
+														required: {
+															value: true,
+															message:
+																"Please enter your zip code",
+														},
+														pattern: {
+															value: /^\d{5}(?:[-\s]\d{4})?$/,
+															message:
+																"Please enter a valid zip code",
+														},
+													}}
+													small={true}
+												/>
+											</div>
+										</div>
+									</Collapsible>
+									<Collapsible
+										trigger="Choose Your Date And Time"
+										open
+										triggerDisabled={true}
+										transitionTime={200}
+										easing="ease"
+									>
+										<SchedulerInput />
+									</Collapsible>
+								</TabPanel>
+								<TabPanel>
+									<Collapsible
+										trigger="Animal Info"
+										open
+										// triggerDisabled={true}
+										transitionTime={200}
+										easing="ease"
+									>
+										<h4>
+											Select and add an animal cuts form:
+										</h4>
+										<select
+											onChange={(e) =>
+												setNewAnimalChosenType(
+													e.target.value
+												)
+											}
+										>
+											<option value="beef">Beef</option>
+											<option value="lamb">Lamb</option>
+											<option value="hog">Hog</option>
+										</select>
+										<Button onClick={addAnimal}>
+											Add an animal
+										</Button>
+										{(idCollectionOfAnimalsByType.beef
+											.idArray.length > 0 ||
+											idCollectionOfAnimalsByType.lamb
+												.idArray.length > 0 ||
+											idCollectionOfAnimalsByType.hog
+												.idArray.length > 0) && (
+											<div>
+												<h4>Animals</h4>
+												{idCollectionOfAnimalsByType
+													.beef.idArray.length >
+													0 && (
+													<Collapsible
+														trigger="Your Beef"
+														transitionTime={200}
+														easing="ease"
+													>
+														{idCollectionOfAnimalsByType.beef.idArray.map(
+															(id) => (
+																<BeefSection
+																	key={id}
+																	id={id}
+																	deleteAnimal={
+																		deleteAnimal
+																	}
+																/>
+															)
+														)}
+													</Collapsible>
 												)}
-											</Collapsible>
-										)}
-										{idCollectionOfAnimalsByType.lamb
-											.idArray.length > 0 && (
-											<Collapsible
-												trigger="Your Lamb"
-												transitionTime={200}
-												easing="ease"
-											>
-												{idCollectionOfAnimalsByType.lamb.idArray.map(
-													(id) => (
-														<LambSection
-															key={id}
-															id={id}
-															deleteAnimal={
-																deleteAnimal
-															}
-														/>
-													)
+												{idCollectionOfAnimalsByType
+													.lamb.idArray.length >
+													0 && (
+													<Collapsible
+														trigger="Your Lamb"
+														transitionTime={200}
+														easing="ease"
+													>
+														{idCollectionOfAnimalsByType.lamb.idArray.map(
+															(id) => (
+																<LambSection
+																	key={id}
+																	id={id}
+																	deleteAnimal={
+																		deleteAnimal
+																	}
+																/>
+															)
+														)}
+													</Collapsible>
 												)}
-											</Collapsible>
-										)}
-										{idCollectionOfAnimalsByType.hog.idArray
-											.length > 0 && (
-											<Collapsible
-												trigger="Your Hog"
-												transitionTime={200}
-												easing="ease"
-											>
-												{idCollectionOfAnimalsByType.hog.idArray.map(
-													(id) => (
-														<HogSection
-															key={id}
-															id={id}
-															deleteAnimal={
-																deleteAnimal
-															}
-														/>
-													)
+												{idCollectionOfAnimalsByType.hog
+													.idArray.length > 0 && (
+													<Collapsible
+														trigger="Your Hog"
+														transitionTime={200}
+														easing="ease"
+													>
+														{idCollectionOfAnimalsByType.hog.idArray.map(
+															(id) => (
+																<HogSection
+																	key={id}
+																	id={id}
+																	deleteAnimal={
+																		deleteAnimal
+																	}
+																/>
+															)
+														)}
+													</Collapsible>
 												)}
-											</Collapsible>
+											</div>
 										)}
-									</div>
-								)}
-							</Collapsible>
+									</Collapsible>
+								</TabPanel>
+							</Tabs>
 						</div>
 
 						<div className="order-form--heading-container">

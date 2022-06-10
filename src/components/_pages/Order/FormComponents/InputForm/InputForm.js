@@ -1,7 +1,8 @@
 import React from "react";
-import LabelInput from "./LabelInput";
+import LabelInput from "../LabelInput";
 import { useFormContext } from "react-hook-form";
-import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
+import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
+import styles from "./InputForm.module.css";
 
 const InputForm = ({
 	title,
@@ -61,7 +62,7 @@ const InputForm = ({
 			{textarea ? (
 				<textarea
 					{...register(name)}
-					className="order-form--textarea"
+					className={styles.order_form__textarea}
 					{...inputAttributes}
 				/>
 			) : (
@@ -74,7 +75,7 @@ const InputForm = ({
 						}
 					)}
 					type={number ? "number" : "text"}
-					className="order-form--input"
+					className={styles.order_form__input}
 					{...inputAttributes}
 					area-invalid={errors?.[name]}
 					{...numberAttributes}

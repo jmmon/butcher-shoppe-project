@@ -1,11 +1,14 @@
 .header-container {
 	background-color: rgb(
-		var(--orange-bg--r),
+		/* var(--orange-bg--r),
 		var(--orange-bg--g),
-		var(--orange-bg--b)
+		var(--orange-bg--b) */
+			var(--harvest-gold--r),
+		var(--harvest-gold--g),
+		var(--harvest-gold--b)
 	);
 	display: flex;
-	justify-content: center;
+	align-items: center;
 	width: 100vw;
 	height: 40px;
 	position: fixed;
@@ -13,15 +16,11 @@
 }
 
 .header {
+	margin: 0 auto;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	/* display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	justify-content: center; */
 	gap: 20px;
 	padding: 0 20px;
-	/* font-size: var(--font--normal); */
 	align-items: center;
 	width: 100vw;
 	max-width: 1500px;

@@ -29,34 +29,16 @@
 	.page-title {
 		padding: 4vh 0px;
 	}
-	/* .page-title--heading {
-		font-size: var(--page-title-large);
-	}
-	.smaller {
-		font-size: var(--page-title-medium);
-	} */
 }
 
 @media screen and (max-width: 960px) {
 	.page-title {
 		padding: 4vh 0px;
 	}
-	/* .page-title--heading {
-		font-size: var(--page-title-medium);
-	}
-	.smaller {
-		font-size: var(--page-title-small);
-	} */
 }
 
 @media screen and (max-width: 480px) {
 	.page-title {
 		padding: 1vh 0px;
 	}
-	/* .page-title--heading {
-		font-size: var(--page-title-small);
-	}
-	.smaller {
-		font-size: var(--page-title-xsmall);
-	} */
 }

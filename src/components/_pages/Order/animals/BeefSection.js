@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Collapsible from "react-collapsible";
 import CheckboxForm from "../FormComponents/CheckboxForm";
 import LabelForm from "../FormComponents/LabelForm";
-import InputForm from "../FormComponents/InputForm";
+import InputForm from "../FormComponents/InputForm/InputForm";
 import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
 import SelectForm from "../FormComponents/SelectForm";
 import RadioForm from "../FormComponents/RadioForm";

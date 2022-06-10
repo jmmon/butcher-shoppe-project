@@ -1,7 +1,7 @@
 import React from "react";
 
 import LabelForm from "./LabelForm";
-import InputForm from "./InputForm";
+import InputForm from "./InputForm/InputForm";
 
 function GrowerInfo({ animalInfo }) {
 	return (
