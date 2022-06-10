@@ -1,0 +1,14 @@
+1 contrast / color
+
+2 whitespace (space between components)
+
+3 scale
+
+4 visual (importance) hierarchy
+
+5 typography
+
+	font: readable, scale hierarchy, line spacing
+	consistency: icons, fonts, pages, line spacing
+
+iconfinder.com
