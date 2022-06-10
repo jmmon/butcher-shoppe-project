@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
-import CheckboxForm from "../FormComponents/CheckboxForm";
-import LabelForm from "../FormComponents/LabelForm";
+import CheckboxForm from "../FormComponents/CheckboxForm/CheckboxForm";
+import LabelForm from "../FormComponents/Labels/LabelForm/LabelForm";
 import InputForm from "../FormComponents/InputForm/InputForm";
-import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
-import SelectForm from "../FormComponents/SelectForm";
-import RadioForm from "../FormComponents/RadioForm";
+import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
+import SelectForm from "../FormComponents/SelectForm/SelectForm";
+import RadioForm from "../FormComponents/RadioForm/RadioForm";
 import ConfirmButton from "../../../Button/ConfirmButton";
 import Button from "../../../Button/Button";
 import GrowerInfo from "../FormComponents/GrowerInfo";

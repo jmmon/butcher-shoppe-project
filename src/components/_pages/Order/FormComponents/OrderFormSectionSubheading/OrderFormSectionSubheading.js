@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "./OrderFormSectionSubheading.module.css";
 
 function OrderFormSectionSubheading({ children }) {
 	return (
-		<div className="order-form--section-subheading-container">
-			<ul className="order-form--section-subheading">
-				{/* <span class="dot" /> */}
+		<div className={styles.order_form__section__subheading_container}>
+			<ul className={styles.order_form__section__subheading}>
 				<li>{children}</li>
 			</ul>
 			<hr />

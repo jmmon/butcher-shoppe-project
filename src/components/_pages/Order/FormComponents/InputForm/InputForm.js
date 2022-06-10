@@ -1,5 +1,5 @@
 import React from "react";
-import LabelInput from "../LabelInput";
+import LabelInput from "../Labels/LabelInput/LabelInput";
 import { useFormContext } from "react-hook-form";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import styles from "./InputForm.module.css";

@@ -1,11 +1,16 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import LabelInput from "./LabelInput";
-import getSplitAnimalInfo from "./utils/getSplitAnimalInfo";
+import LabelInput from "../Labels/LabelInput/LabelInput";
+import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
+import styles from "./SelectForm.module.css";
 
 function Option({ label, value }) {
 	return (
-		<option className="order-form--select-option" key={value} value={value}>
+		<option
+			className={styles.order_form__select_option}
+			key={value}
+			value={value}
+		>
 			{label}
 		</option>
 	);
@@ -40,7 +45,7 @@ function SelectForm({
 				{...register(name)}
 				name={name}
 				id={name}
-				className="order-form--select"
+				className={styles.order_form__select}
 				onChange={handleChangeOption && ((e) => handleChangeOption(e))}
 			>
 				{allOptions}

@@ -1,0 +1,39 @@
+.order_form__label_subtext {
+	display: block;
+	font-size: 1.3rem;
+	/* padding-left: 10px; */
+	margin-bottom: 6px;
+	color: var(--subheading-gray);
+}
+
+.order_form__label {
+	display: block;
+	font-size: 24px;
+	width: 100%;
+}
+
+.order_form__label_small {
+	font-size: 20px;
+}
+
+@media (max-width: 960px) {
+	.order_form__label {
+		display: block;
+		font-size: 20px;
+	}
+
+	.order_form__label_small {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 658px) {
+	.order_form__label {
+		display: block;
+		font-size: 18px;
+	}
+
+	.order_form__label_small {
+		font-size: 16px;
+	}
+}

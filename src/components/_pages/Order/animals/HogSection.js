@@ -3,11 +3,11 @@ import Collapsible from "react-collapsible";
 import { useFormContext } from "react-hook-form";
 
 import ConfirmButton from "../../../Button/ConfirmButton";
-import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading";
-import CheckboxForm from "../FormComponents/CheckboxForm";
+import OrderFormSectionSubheading from "../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
+import CheckboxForm from "../FormComponents/CheckboxForm/CheckboxForm";
 import InputForm from "../FormComponents/InputForm/InputForm";
-import RadioForm from "../FormComponents/RadioForm";
-import SelectForm from "../FormComponents/SelectForm";
+import RadioForm from "../FormComponents/RadioForm/RadioForm";
+import SelectForm from "../FormComponents/SelectForm/SelectForm";
 import ShoulderChoices from "./HogSection/ShoulderChoices/ShoulderChoices";
 import GrowerInfo from "../FormComponents/GrowerInfo";
 

@@ -11,7 +11,7 @@ import PageTitle from "../../PageTitle/PageTitle.js";
 import InputForm from "./FormComponents/InputForm/InputForm";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import BeefSection from "./animals/BeefSection";
-import LabelForm from "./FormComponents/LabelForm";
+import LabelForm from "./FormComponents/Labels/LabelForm/LabelForm";
 import LambSection from "./animals/LambSection";
 import HogSection from "./animals/HogSection";
 import Button from "../../Button/Button";

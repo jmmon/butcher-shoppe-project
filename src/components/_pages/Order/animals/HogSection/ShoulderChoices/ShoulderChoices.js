@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-import RadioForm from "../../../FormComponents/RadioForm";
-import SelectForm from "../../../FormComponents/SelectForm";
+import RadioForm from "../../../FormComponents/RadioForm/RadioForm";
+import SelectForm from "../../../FormComponents/SelectForm/SelectForm";
 
 function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 	const newChosenChoicesArray = chosenChoicesArray.map(
