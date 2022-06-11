@@ -9,7 +9,7 @@ export default [
 	},
 	{
 		url: require("assets/images/image-1-111.jpg"),
-		position: "50% 40%",
+		position: "40% 40%",
 	},
 	{
 		url: require("assets/images/image-1-117.jpg"),

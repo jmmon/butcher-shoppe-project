@@ -10,23 +10,27 @@ import slideImages from "./Images.js";
 function HomepageTitle3({ simple = false, title, subtitle, position }) {
 	const properties = {
 		duration: 8000,
-		transitionDuration: 800,
+		transitionDuration: 100,
 		infinite: true,
 		arrows: false,
 		easing: "ease",
+		indicators: true,
+    // scale: 0.4,
+    // indicators: i => (<div className="indicator">{i + 1}</div>)
+    indicators: i => (<div className="indicator">{i + 1}</div>)
 	};
 	return (
 		<div
 			className="slide-container"
 			style={{
 				position: "relative",
-				textAlign: "center",
 				// color: "var(--offwhite)",
 				color: "white",
 				backgroundColor: "var(--footer-background-color)",
 				// display: "flex",
 			}}
 		>
+
 			<Fade {...properties}>
 				{slideImages.map((slideImage, index) => (
 					<div className="each-fade" key={index}>
@@ -56,15 +60,19 @@ function HomepageTitle3({ simple = false, title, subtitle, position }) {
 					alignItems: "center",
 					// fontSize: "2em",
 					zIndex: "2",
+					border: "2px solid red",
 				}}
 			>
-				<h1 className="homepage-title--heading text-shadow--lg">
+				<h1 style={{
+					border: "2px solid lightblue",}} className="homepage-title--heading text-shadow--lg">
 					{title}
 				</h1>
-				<p className="homepage-title--subtitle text-shadow--sm">
+				<p  style={{
+					border: "2px solid lightblue",}}  className="homepage-title--subtitle text-shadow--sm">
 					{subtitle}
 				</p>
-				<div className="hero-btns">
+				<div  style={{
+					border: "2px solid lightblue",}}  className="hero-btns">
 					<Button
 						className="btns"
 						buttonStyle="btn--outline"
