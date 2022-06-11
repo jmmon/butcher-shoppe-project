@@ -58,7 +58,7 @@ function HomepageTitle3({ simple = false, title, subtitle, position }) {
 					className="hero_btns"
 				>
 					<Button
-						className="btns"
+						className="hero_btn"
 						buttonStyle="btn--outline"
 						buttonSize="btn--large"
 						url="/services"
@@ -67,7 +67,7 @@ function HomepageTitle3({ simple = false, title, subtitle, position }) {
 					</Button>
 
 					<Button
-						className="btns"
+						className="hero_btn"
 						buttonStyle="btn--outline"
 						buttonSize="btn--large"
 						url="/how-to-order"

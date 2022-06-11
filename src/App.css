@@ -215,6 +215,13 @@ html {
 	.card--heading-margin {
 		margin-top: -100px;
 	}
+
+	.text-shadow--lg {
+		text-shadow: -3px 3px 10px #000;
+	}
+	.text-shadow--sm {
+		text-shadow: -2px 2px 6px #000;
+	}
 }
 
 /* @media screen and (max-width: 768px) {
@@ -224,10 +231,17 @@ html {
 } */
 
 @media screen and (max-width: 480px) {
+
+
+	
 	.text-shadow--lg {
-		font-size: var(--page-title-small);
-		text-shadow: -1px 1px #000;
+		text-shadow: -1px 1px 8px #000;
 	}
+	.text-shadow--sm {
+		text-shadow: -1px 1px 8px #000;
+	}
+
+
 	.card--heading-margin {
 		margin-top: -100px;
 	}

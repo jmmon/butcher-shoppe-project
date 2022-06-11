@@ -12,6 +12,7 @@ function Button({
 	buttonSize,
 	url = "",
 	center = null,
+	className = "",
 	...buttonProps
 }) {
 	const checkButtonStyle = STYLES.includes(buttonStyle)
@@ -21,10 +22,10 @@ function Button({
 
 	const button = (
 		<button
-			{...buttonProps}
-			className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+			className={`${className} btn ${checkButtonStyle} ${checkButtonSize}`}
 			onClick={onClick}
 			type={type}
+			{...buttonProps}
 		>
 			{children}
 		</button>
