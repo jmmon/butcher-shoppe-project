@@ -1,6 +1,7 @@
 import React from "react";
-import Button from "../Button/Button";
-import WhitePageBackground from "../WhitePageBackground/WhitePageBackground";
+import Button from "components/Button/Button";
+import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
+
 import "./NavBottomButtons.css";
 
 function NavBottomButtons({ prev, next }) {

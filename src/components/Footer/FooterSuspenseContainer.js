@@ -1,4 +1,4 @@
-import { Suspense, lazy as Lazy } from "react";
+import React, { Suspense, lazy as Lazy } from "react";
 import "./FooterSuspenseContainer.css";
 
 function FooterSuspenseContainer({

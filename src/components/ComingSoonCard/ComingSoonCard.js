@@ -1,5 +1,4 @@
-//import "./ComingSoonCard.css";
-import bg from "../../assets/images/image-1-134.jpg";
+import bg from "assets/images/image-1-134.jpg";
 
 function ComingSoonCard() {
 	return (

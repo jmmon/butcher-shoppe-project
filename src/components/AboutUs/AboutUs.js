@@ -1,7 +1,7 @@
 //import "./AboutUs.css";
 
-import bg from "../../assets/images/image-1-113.jpg";
-import Card from "../Card/Card";
+import bg from "assets/images/image-1-113.jpg";
+import Card from "components/Card/Card";
 
 function AboutUs() {
 	return (

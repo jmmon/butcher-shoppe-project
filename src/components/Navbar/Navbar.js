@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-import LogoComponent from "../../assets/logo/LogoComponent.js";
+import LogoComponent from "assets/logo/LogoComponent.js";
 
 function Navbar({ simple = false }) {
 	const [click, setClick] = useState(false);

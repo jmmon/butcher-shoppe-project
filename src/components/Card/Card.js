@@ -1,6 +1,7 @@
 import React from "react";
-import ImageHeading from "../ImageHeading/ImageHeading";
 import "./Card.css";
+
+import ImageHeading from "components/ImageHeading/ImageHeading";
 
 function Card({ title, paragraphs, bg = null }) {
 	const content = paragraphs?.map((item) => (

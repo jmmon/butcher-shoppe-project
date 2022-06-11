@@ -1,24 +1,24 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
-import Header from "./components/Header/Header.js";
-import Navbar from "./components/Navbar/Navbar.js";
-import Footer from "./components/Footer/Footer.js";
 
-import Home from "./components/_pages/Home/Home.js";
-import Services from "./components/_pages/Services/Services.js";
-import Schedule from "./components/_pages/Schedule/Schedule.js";
-import Faq from "./components/_pages/Faq/Faq.js";
-import Order from "./components/_pages/Order/Order.js";
-import HowToOrder from "./components/_pages/HowToOrder/HowToOrder.js";
-import NotFound from "./components/_pages/NotFound/NotFound";
-import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
-import Newsletter from "./components/_pages/Newsletter/Newsletter";
-import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
-import SubscribeConfirm from "./components/_pages/Newsletter/Confirm/SubscribeConfirm";
-import MeetTheTeam from "./components/_pages/MeetTheTeam/MeetTheTeam";
-import Prices from "./components/_pages/Prices/Prices";
-import React from "react";
+import Header from "components/Header/Header.js";
+import Navbar from "components/Navbar/Navbar.js";
+import Footer from "components/Footer/Footer.js";
+
+import Home from "pages/Home/Home.js";
+import Services from "pages/Services/Services.js";
+import Faq from "pages/Faq/Faq.js";
+import Order from "pages/Order/Order.js";
+import HowToOrder from "pages/HowToOrder/HowToOrder.js";
+import NotFound from "pages/NotFound/NotFound";
+import ComingSoon from "pages/ComingSoon/ComingSoon";
+import Newsletter from "pages/Newsletter/Newsletter";
+import Unsubscribe from "pages/Newsletter/Unsubscribe";
+// import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
+import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
+import Prices from "pages/Prices/Prices";
 
 function App() {
 	return (
@@ -35,12 +35,6 @@ function App() {
 								path="/services"
 								exact
 								element={<Services />}
-							/>
-
-							<Route
-								path="/schedule"
-								exact
-								element={<Schedule />}
 							/>
 
 							<Route
@@ -77,7 +71,7 @@ function App() {
 								element={<Unsubscribe />}
 							/>
 
-							<Route
+							{/* <Route
 								path="/newsletter/subscribe/confirm"
 								exact
 								element={<SubscribeConfirm subscribe={true} />}
@@ -87,7 +81,7 @@ function App() {
 								path="/newsletter/unsubscribe/confirm"
 								exact
 								element={<SubscribeConfirm subscribe={false} />}
-							/>
+							/> */}
 
 							<Route path="*" element={<NotFound />} />
 						</Routes>

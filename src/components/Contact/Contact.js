@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Contact.css";
-import { useEffect } from "react";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";

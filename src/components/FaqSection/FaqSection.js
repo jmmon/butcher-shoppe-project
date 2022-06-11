@@ -1,7 +1,5 @@
-import { useState } from "react";
-// import {scrollTo} from 'react-scroll-to';
+import React, { useState } from "react";
 import "./FaqSection.css";
-// import {Link} from 'react-router-dom'
 
 const question = (question, answer, num) => {
 	const q_class = `faq_question_${num}`;

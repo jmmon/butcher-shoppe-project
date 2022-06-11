@@ -1,12 +1,12 @@
-import { Suspense, lazy as Lazy, useState, useEffect, useMemo } from "react";
+import React, { Suspense, lazy as Lazy, useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import Subscribe from "../Subscribe.js/Subscribe";
+import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "./FooterSuspenseContainer";
-import LinkScrollUp from "../LinkScrollUp/LinkScrollUp";
-import Button from "../Button/Button";
+import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
+import Button from "components/Button/Button";
 
-const LogoComponentPromise = import("../../assets/logo/LogoComponent.js");
+const LogoComponentPromise = import("assets/logo/LogoComponent.js");
 const LogoComponent = Lazy(() => LogoComponentPromise);
 
 function Footer() {

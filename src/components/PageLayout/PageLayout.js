@@ -1,6 +1,8 @@
-import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 import React from "react";
+
 import "./PageLayout.css";
+
+import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 
 function PageLayout() {
 	return (

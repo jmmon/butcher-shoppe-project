@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
-import { ReactComponent as ClockIcon } from "../../assets/icons/clock.svg";
+import { ReactComponent as ClockIcon } from "assets/icons/clock.svg";
 
 function HeaderIcon({ icon }) {
 	return <div className="header-icon">{icon}</div>;

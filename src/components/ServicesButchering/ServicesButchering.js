@@ -1,31 +1,27 @@
 import React from "react";
-import "./ServicesButchering.css";
-function ServicesButchering({ bg }) {
-	const BasePrices = {
-		beef: 160,
-		hog: 120,
-		lamb: 75,
-		bison: 200,
-	};
 
-	const PriceData = [
-		{
-			title: "Beef",
-			price: 160,
-		},
-		{
-			title: "Hog",
-			price: 120,
-		},
-		{
-			title: "Lamb",
-			price: 75,
-		},
-		{
-			title: "Bison",
-			price: 200,
-		},
-	];
+import "./ServicesButchering.css";
+
+const PriceData = [
+	{
+		title: "Beef",
+		price: 160,
+	},
+	{
+		title: "Hog",
+		price: 120,
+	},
+	{
+		title: "Lamb",
+		price: 75,
+	},
+	{
+		title: "Bison",
+		price: 200,
+	},
+];
+
+function ServicesButchering({ bg }) {
 	return (
 		<div className="card-wrapper" id="butchering-link">
 			<div className="panel-shadow--dark card">
