@@ -28,7 +28,7 @@ function HomepageTitle3({ simple = false, title, subtitle, position }) {
 			<Fade {...properties}>
 				{slideImages.map((slideImage, index) => (
 						<div key={index}
-						className={`${styles.height} inset-box-shadow`}
+						className={`${styles.height} inset-box-shadow--dark`}
 							style={{
 								backgroundImage: `url(${slideImage.url})`,
 								backgroundSize: `cover`,

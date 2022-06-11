@@ -118,7 +118,7 @@ html {
 .padding-lg {
 	padding: 4vh 4vw;
 }
-.padding-lg--bot {
+.padding-bot--lg {
 	padding-bottom: 4em;
 }
 
@@ -129,7 +129,7 @@ html {
 	padding: 2em;
 }
 
-.margin-lg--top {
+.margin-top--lg {
 	margin-top: 4em;
 }
 /* .margin-auto {
