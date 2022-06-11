@@ -35,7 +35,7 @@ function ServicesButchering({ bg }) {
 						background: `url(${bg}) center center/cover no-repeat`,
 					}}
 				>
-					<h2 className="card--heading text-shadow--lg white-font">
+					<h2 className="card--heading text-shadow--lg text-white">
 						Farm Kill
 					</h2>
 					<div className="card-content-wrapper">

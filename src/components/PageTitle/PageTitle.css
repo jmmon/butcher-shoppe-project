@@ -1,10 +1,8 @@
-.page-title {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+.page-title--height {
 	min-height: 30vh;
 }
+
+
 
 .page-title--container {
 	display: flex;
@@ -26,19 +24,19 @@
 }
 
 @media screen and (max-width: 1280px) {
-	.page-title {
+	.page-title--height {
 		padding: 4vh 0px;
 	}
 }
 
 @media screen and (max-width: 960px) {
-	.page-title {
+	.page-title--height {
 		padding: 4vh 0px;
 	}
 }
 
 @media screen and (max-width: 480px) {
-	.page-title {
+	.page-title--height {
 		padding: 1vh 0px;
 	}
 }

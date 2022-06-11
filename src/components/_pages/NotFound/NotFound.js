@@ -10,7 +10,7 @@ function PageNotFound() {
 					<div className="text-wrapper-shadow">
 						<br />
 						<br />
-						<div className="center-text width-400">
+						<div className="text-center width-400">
 							Oops, this page was not found! Try another page? Or
 							report a broken link in the contact section!
 						</div>

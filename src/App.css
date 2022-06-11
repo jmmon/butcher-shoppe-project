@@ -3,6 +3,8 @@
 	margin: 0;
 	padding: 0;
 	font-family: "PT Sans", sans-serif;
+	/* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+	"Lucida Sans", Arial, sans-serif; */
 }
 html {
 	font-size: 20px;
@@ -60,6 +62,21 @@ html {
 	--icon--normal: 22px;
 	--icon--medium: 20px;
 	--icon--small: 18px;
+	
+	--homepage-title--height: clamp(20vw, 30rem, 60vw);
+}
+
+[class*="flex"] {
+	display: flex;
+}
+
+[class*="col"] {
+	flex-direction: column;
+}
+
+[class*="center"] {
+	justify-content: center;
+	align-items: center;
 }
 
 .website-container {
@@ -141,14 +158,14 @@ html {
 } */
 
 .white {
-	background-color: white;
+	background-color: #fff;
 }
 
-.white-font {
+.text-white {
 	color: #fff;
 }
 
-.center-text {
+.text-center {
 	text-align: center;
 }
 

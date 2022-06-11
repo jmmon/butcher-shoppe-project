@@ -9,6 +9,7 @@ import HomepageTitle2 from "../../HomepageTitle/HomepageTitle-2";
 import WhitePageBackground from "../../WhitePageBackground/WhitePageBackground";
 import Card from "../../Card/Card";
 import NavBottomButtons from "../../NavBottomButtons/NavBottomButtons";
+import HomepageTitle3 from "components/HomepageTitle/HomepageTitle-3";
 // import ComingSoonCard from "../../ComingSoonCard/ComingSoonCard";
 // import LazyLoad from "react-lazyload";
 
@@ -33,12 +34,17 @@ function Home() {
 			</Helmet>
 
 			<main>
-				<HomepageTitle
+				{/* <HomepageTitle
 					title="The Butcher Shoppe"
 					subtitle="Serving Northeast Washington State"
 					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
 				/>
 				<HomepageTitle2
+					title="The Butcher Shoppe"
+					subtitle="Serving Northeast Washington State"
+					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"
+				/> */}
+				<HomepageTitle3
 					title="The Butcher Shoppe"
 					subtitle="Serving Northeast Washington State"
 					// subtitle="Mobile Animal Dispatch, and Meat Processing at our"

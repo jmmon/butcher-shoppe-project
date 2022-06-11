@@ -13,7 +13,7 @@ function Card({ title, paragraphs, bg = null }) {
 		<section className="white card--width  card--font-size">
 			{bg && <ImageHeading bg={bg} title={title} />}
 			<div className="grid--col-sm card--content-width padding-md--horizontal">
-				{!bg && <h3 className="card--heading center-text">{title}</h3>}
+				{!bg && <h3 className="card--heading text-center">{title}</h3>}
 
 				{content && content}
 			</div>

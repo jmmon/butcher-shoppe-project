@@ -12,7 +12,7 @@ function HowToOrder() {
 			<PageTitle title="How To Order" bgImage={bgTitle} />
 			<WhitePageBackground>
 				<article className="form--instructions">
-					<h2 className="center-text">
+					<h2 className="text-center">
 						Ready to schedule your order?
 					</h2>
 					<p>

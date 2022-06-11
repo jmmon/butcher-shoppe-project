@@ -47,7 +47,7 @@ function Services() {
 					</div>
 					<div className="card--width panel-shadow--dark card--font-size">
 						<div className="grid--col-sm card--content-width padding-lg services--blerb">
-							<h3 className="center-text">What We Offer</h3>
+							<h3 className="text-center">What We Offer</h3>
 							<p>
 								We cover the tri-county area with our mobile
 								farmkill truck, and we process that meat in our

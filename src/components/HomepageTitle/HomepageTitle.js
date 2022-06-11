@@ -10,9 +10,8 @@ function HomepageTitle({
 	position = "25% 40%",
 }) {
 	return (
-		<section className="panel-shadow--dark">
-			<div
-				className="page-title homepage-title inset-box-shadow"
+			<section
+				className="page-title homepage-title panel-shadow--dark inset-box-shadow"
 				style={{
 					background: `url(${bgImage}) center/cover no-repeat`,
 					backgroundPosition: `${position}`,
@@ -41,12 +40,12 @@ function HomepageTitle({
 					}}
 				></div> */}
 				<h1
-					className={`white-font homepage-title--heading card--heading text-shadow--lg card--heading-margin`}
+					className={`text-white homepage-title--heading card--heading text-shadow--lg card--heading-margin`}
 				>
 					{title}
 				</h1>
 
-				<p className="white-font homepage-title--subtitle text-shadow--sm">
+				<p className="text-white homepage-title--subtitle text-shadow--sm">
 					{subtitle}
 				</p>
 				{!simple && (
@@ -70,7 +69,6 @@ function HomepageTitle({
 						</Button>
 					</div>
 				)}
-			</div>
 		</section>
 	);
 }

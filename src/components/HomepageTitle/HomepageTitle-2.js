@@ -7,12 +7,15 @@ import "react-slideshow-image/dist/styles.css";
 import slideImages from "./Images.js";
 
 function HomepageTitle2({ simple = false, title, subtitle, position }) {
+
 	const properties = {
 		duration: 8000,
 		transitionDuration: 800,
 		infinite: true,
 		arrows: false,
-		easing: "ease",
+		easing: "cubic-in",
+		indicators: (i) => <div className="indicator">{i + 1}</div>,
+
 	};
 	return (
 		<div
@@ -21,7 +24,6 @@ function HomepageTitle2({ simple = false, title, subtitle, position }) {
 				position: "relative",
 				textAlign: "center",
 				color: "white",
-				// display: "flex",
 			}}
 		>
 			<Slide {...properties}>
