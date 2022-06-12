@@ -8,9 +8,7 @@ import styles from "./HomepageTitle.module.css";
 import Button from "components/Button/Button";
 import slideImages from "./Images.js";
 
-
-function HomepageTitle({ simple = false, title, subtitle, position }) {
-
+function HomepageTitle({ simple = false, title, subtitle }) {
 	const properties = {
 		duration: 8000,
 		transitionDuration: 800,
@@ -18,7 +16,6 @@ function HomepageTitle({ simple = false, title, subtitle, position }) {
 		arrows: false,
 		easing: "cubic-in",
 		indicators: (i) => <div className="indicator">{i + 1}</div>,
-
 	};
 	return (
 		<section
@@ -26,38 +23,33 @@ function HomepageTitle({ simple = false, title, subtitle, position }) {
 		>
 			<Fade {...properties}>
 				{slideImages.map((slideImage, index) => (
-						<div key={index}
-						className={`${styles.height} inset-box-shadow--dark`}
-							style={{
-								backgroundImage: `url(${slideImage.url})`,
-								backgroundSize: `cover`,
-								backgroundRepeat: `no-repeat`,
-								backgroundPosition: `${
-									slideImage.position || "50% 50%"
-								}`,
-							}}
-						></div>
+					<div className={styles.image_wrapper}>
+					<div
+						key={index}
+						className={`${styles.image} inset-box-shadow--dark`}
+						style={{
+							backgroundImage: `url(${slideImage.url})`,
+							backgroundSize: `cover`,
+							backgroundRepeat: `no-repeat`,
+							backgroundPosition: `${
+								slideImage.position || "50% 50%"
+							}`,
+						}}
+					></div>
+					</div>
 				))}
 			</Fade>
 
-			<div
-				className={`${styles.content_container} flex-col-center `}
-			>
-				<h1
-					className={`${styles.title_font} text-shadow--lg`}
-				>
-					{title}
-				</h1>
-				<p
-					className={`${styles.subtitle_font} text-shadow--sm`}
-				>
-					{subtitle}
-				</p>
-				<div
-					className="hero_btns"
-				>
+			<div className={`flex-center ${styles.content_wrapper}`}>
+				<div className={`flex-center-wrap ${styles.content_container}`}>
+					<h1 className={`${styles.title} text-shadow--lg`}>
+						{title}
+					</h1>
+					<p className={`${styles.subtitle} text-shadow--sm`}>
+						{subtitle}
+					</p>
 					<Button
-						className="hero_btn"
+						className={`${styles.hero_btn}`}
 						buttonStyle="btn--outline"
 						buttonSize="btn--large"
 						url="/services"
@@ -66,7 +58,7 @@ function HomepageTitle({ simple = false, title, subtitle, position }) {
 					</Button>
 
 					<Button
-						className="hero_btn"
+						className={`${styles.hero_btn}`}
 						buttonStyle="btn--outline"
 						buttonSize="btn--large"
 						url="/how-to-order"
