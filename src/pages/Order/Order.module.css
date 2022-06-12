@@ -1,27 +1,18 @@
-.form__center {
-	width: 96%;
-	max-width: 1000px;
-	margin: 0 auto;
-	
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
-	align-items: center;
-}
 
-.form__center {
-	border: 1px solid red;
+
+/* .form__center {
+	border: 3px solid purple;
 }
-.form__center > *{
+.form__center > * {
 	border: 1px solid green;
 }
 .form__center > * > *{
 	border: 2px solid red;
 }
-.form__center > * > * > *{
+.form__center > * > * > * {
 	border: 2px solid green;
 }
-.form__center > * > * > * > *{
+.form__center > * > * > * > * {
 	border: 2px solid red;
 }
 .form__center > * > * > * > * > *{
@@ -38,9 +29,24 @@
 }
 .form__center > * > * > * > * > * > * > * > * > *{
 	border: 2px solid green;
-}
-.form__center > * > * > * > * > * > * > * > * > * > *{
+} */
+/* .form__center > * > * > * > * > * > * > * > * > * > *{
 	border: 2px solid red;
+} */
+
+.form__center {
+
+	width: min(1000px, 96%);
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	align-items: center;
+}
+
+.form__center > div {
+	width: 100%;
 }
 
 .order_form__heading_container {

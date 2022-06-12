@@ -7,7 +7,7 @@ import styles from "./NavBottomButtons.module.css";
 function NavBottomButtons({ prev, next }) {
 	return (
 		<WhitePageBackground separate={true}>
-			<div className={`flex-evenly-wrap ${styles.container}`}>
+			<div className={`flex-jevenly-acenter-wrap ${styles.container}`}>
 				<h4 className={`text-center ${styles.heading}`}>Helpful Links:</h4>
 				<Button
 					buttonStyle="btn--outline"

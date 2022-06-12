@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styles from "./Subscribe.module.css"
+import styles from "./Subscribe.module.css";
 
 const headers = {
 	"Content-Type": "application/json",
@@ -14,7 +14,7 @@ function Subscribe({ unsubscribe }) {
 	// const subscribeBackendUri = `https://localhost:3001/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
 	// }`;
-	
+
 	let timer = null;
 
 	const [responseFromSubscribeBox, setResponseFromSubscribeBox] = useState({
@@ -97,44 +97,40 @@ function Subscribe({ unsubscribe }) {
 	};
 
 	return (
-		<div className={`${styles.wrapper} card panel-shadow--light`}>
-			<div className={styles.container}>
-				<form className={styles.email_form} onSubmit={handleSubmit}>
-					<input
-						type="email"
-						name="email"
-						placeholder="Your Email"
-						className={styles.input}
-						required
-						onChange={(e) => setEmail(e.target.value)}
-					/>
-					<button
-						className={`btn btn--medium btn--outline ${
-							responseFromSubscribeBox.isLoading
-								? "btn--pending"
-								: responseFromSubscribeBox.data
-								? "btn--complete"
-								: responseFromSubscribeBox.error
-								? "btn--error"
-								: ""
-						}`}
-					>
-						{responseFromSubscribeBox.isLoading
-							? "Processing..."
-							: responseFromSubscribeBox.data
-							? `${
-									unsubscribe
-										? "Check your email!"
-										: "Check your email!"
-							  }`
-							: responseFromSubscribeBox.error
-							? `${"Oops, try again!"}`
-							: unsubscribe
-							? "Unsubscribe"
-							: "Subscribe"}
-					</button>
-				</form>
-			</div>
+		<form className={`flex-jcenter-wrap-jstretch ${styles.wrapper} card panel-shadow--light`} onSubmit={handleSubmit}>
+			<input
+				type="email"
+				name="email"
+				placeholder="Your Email"
+				className={styles.input}
+				required
+				onChange={(e) => setEmail(e.target.value)}
+			/>
+			<button
+				className={`btn btn--medium btn--outline ${
+					responseFromSubscribeBox.isLoading
+						? "btn--pending"
+						: responseFromSubscribeBox.data
+						? "btn--complete"
+						: responseFromSubscribeBox.error
+						? "btn--error"
+						: ""
+				}`}
+			>
+				{responseFromSubscribeBox.isLoading
+					? "Processing..."
+					: responseFromSubscribeBox.data
+					? `${
+							unsubscribe
+								? "Check your email!"
+								: "Check your email!"
+					  }`
+					: responseFromSubscribeBox.error
+					? `${"Oops, try again!"}`
+					: unsubscribe
+					? "Unsubscribe"
+					: "Subscribe"}
+			</button>
 
 			<p
 				className={`${styles.notification} ${
@@ -159,7 +155,7 @@ function Subscribe({ unsubscribe }) {
 					  }! To confirm, please click the link in the email.`
 					: ""}
 			</p>
-		</div>
+		</form>
 	);
 }
 

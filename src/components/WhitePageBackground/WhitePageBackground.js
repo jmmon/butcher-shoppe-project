@@ -4,7 +4,7 @@ import styles from "./WhitePageBackground.module.css";
 function WhitePageBackground({ separate = false, className = "", children }) {
 	return (
 		<section
-			className={`panel-shadow--dark ${className} ${styles.container} ${
+			className={`flex-col-jcenter panel-shadow--dark ${className} ${styles.container} ${
 				separate && styles.separate
 			}`}
 		>

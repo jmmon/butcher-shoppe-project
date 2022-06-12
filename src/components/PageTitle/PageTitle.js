@@ -14,7 +14,7 @@ function PageTitle({
 		<div className={`panel-shadow--dark ${styles.container}`}>
 
 		<section
-			className={`${styles.image} flex-col-center page-title--height  inset-box-shadow--dark `}
+			className={`${styles.image} flex-col-acenter-jcenter page-title--height  inset-box-shadow--dark `}
 			style={{
 				background: `url(${bgImage}) center center/cover no-repeat`,
 				backgroundPosition: `${position}`,

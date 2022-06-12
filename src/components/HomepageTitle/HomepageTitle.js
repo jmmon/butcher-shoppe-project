@@ -40,8 +40,8 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 				))}
 			</Fade>
 
-			<div className={`flex-center ${styles.content_wrapper}`}>
-				<div className={`flex-center-wrap ${styles.content_container}`}>
+			<div className={`flex-jcenter-acenter ${styles.content_wrapper}`}>
+				<div className={`flex-jcenter-acenter-wrap ${styles.content_container}`}>
 					<h1 className={`${styles.title} text-shadow--lg`}>
 						{title}
 					</h1>

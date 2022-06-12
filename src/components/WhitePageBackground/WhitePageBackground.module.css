@@ -1,10 +1,7 @@
 .container {
 	max-width: 1200px;
-	/* background-color: #fff; */
 	background-color: var(--white-page-background);
 	margin: calc(-2em - 0vh) auto 4em auto;
-	display: grid;
-	justify-content: center;
 	padding: 4rem 0;
 	z-index: 2;
 }
@@ -23,3 +20,9 @@
 		margin: 1rem auto 1rem auto;
 	}
 }
+
+
+
+/* .container {
+	border: 1px solid green;
+} */

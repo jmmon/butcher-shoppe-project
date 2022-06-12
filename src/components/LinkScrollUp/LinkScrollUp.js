@@ -3,25 +3,25 @@ import { Link, useLocation } from "react-router-dom";
 
 import "./LinkScrollUp.css";
 
-function LinkScrollUp({ path, cName, children }) {
+function LinkScrollUp({ className, path, children }) {
 	const { pathname } = useLocation();
 	const scrollToTop = () => {
 		window.scrollTo(0, 0);
 	};
 
-	cName = cName || "";
+	className = className || "";
 
 	return (
 		<>
 			{pathname === path || path === undefined ? (
 				<span
-					className={`${cName} footer-link-scroll`}
+					className={`${className} white-link margin`}
 					onClick={() => scrollToTop()}
 				>
 					{children}
 				</span>
 			) : (
-				<Link className={`${cName} footer-link-scroll`} to={path}>
+				<Link className={`${className} white-link margin`} to={path}>
 					{children}
 				</Link>
 			)}

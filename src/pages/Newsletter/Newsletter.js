@@ -58,12 +58,12 @@ function NewsletterPage() {
 					</section>
 				</WhitePageBackground>
 				<WhitePageBackground separate={true}>
-					<div className="padding-lg--bot">
-						<h3 className="margin-top--lg">
+					<div className="flex-col-acenter gap-2 padding-sm">
+						<h3>
 							Looking to unsubscribe?
 						</h3>
 						<Button
-							className="btns"
+							// className="btns"
 							buttonStyle="btn--outline"
 							buttonSize="btn--large"
 							url="/newsletter/unsubscribe"

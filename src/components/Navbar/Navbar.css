@@ -90,6 +90,7 @@
 	transition: all 0.15s ease-out;
 }
 
+
 .fa-bars {
 	color: #fff;
 }
@@ -157,9 +158,9 @@
 		border-radius: 0;
 	}
 
-	.navbar-container {
+	/* .navbar-container {
 		width: 100%;
-	}
+	} */
 
 	.navbar-logo-text {
 		width: 220px;

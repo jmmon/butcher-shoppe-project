@@ -1,33 +1,41 @@
-.container {
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-}
-
 .wrapper {
 	background-color: var(--navbar-gradient--light);
 	border: 1px solid black;
-	justify-content: center;
-	padding: 30px;
+	padding: 1.5rem 1rem;
 	max-width: 600px;
-	width: 96vw;
+	width: calc(100vw - 3rem);
 	margin: 0 auto;
+	gap: 2px;
 }
 
-.input::placeholder {
-	color: var(--input-placeholder--light);
+
+
+.wrapper > input {
+	flex: 1;
 }
+.wrapper > button {
+	flex: 1;
+}
+.wrapper > p {
+	width: 100%;
+}
+
+
+
 
 .input {
-	max-width: 50vw;
 	padding: 6px 14px;
 	border-radius: 4px;
 	outline: none;
 	border: none;
 	font-size: 18px;
 	border: 1px solid #fff;
-	margin-right: 2px;
 }
+
+.input::placeholder {
+	color: var(--input-placeholder--light);
+}
+
 
 .input:focus:required:invalid {
 	border: 1px solid red;
@@ -39,14 +47,6 @@
 	background-color: var(--input-required--valid);
 }
 
-/* .text {
-} */
-.email_form {
-	display: flex;
-	flex-direction: row;
-	margin: 0 auto;
-}
-
 
 .notification {
 	margin: 0;
@@ -56,7 +56,6 @@
 	text-align: center;
 	border-radius: 5px;
 	max-height: 0;
-	width: 86%;
 	transition: all 0.2s ease;
 }
 
@@ -65,7 +64,7 @@
 	padding: 8px;
 	border: 1px solid green;
 	background-color: rgba(223, 255, 223, 0.1);
-	max-height: 100px;
+	max-height: 200px;
 }
 
 .notification.error {
@@ -73,5 +72,5 @@
 	padding: 8px;
 	border: 1px solid red;
 	background-color: rgba(255, 223, 223, 0.1);
-	max-height: 100px;
+	max-height: 200px;
 }

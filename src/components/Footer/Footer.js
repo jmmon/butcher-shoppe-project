@@ -1,13 +1,14 @@
-import React, { Suspense, lazy as Lazy, useState, useEffect, useMemo } from "react";
+import React, {
+	useMemo,
+} from "react";
 import { Link } from "react-router-dom";
-import "./Footer.css";
+import styles from "./Footer.module.css";
+
 import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "./FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import Button from "components/Button/Button";
-
-const LogoComponentPromise = import("assets/logo/LogoComponent.js");
-const LogoComponent = Lazy(() => LogoComponentPromise);
+import LogoComponent from "assets/logo/LogoComponent"
 
 function Footer() {
 	const contactMemo = useMemo(
@@ -38,25 +39,25 @@ function Footer() {
 
 	return (
 		<div
-			className="footer-container panel-shadow--dark"
+			className={`flex-col-jcenter panel-shadow--dark ${styles.container}`}
 			id="footer-container"
 		>
-			<section className="footer-section">
-				<h2 className="footer--heading">
+			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
+				<h2 className={styles.heading}>
 					Join our{" "}
 					<LinkScrollUp
 						path="/newsletter"
-						cName="footer-link--underline"
+						className="white-link--underline"
 					>
 						newsletter
 					</LinkScrollUp>{" "}
 					to receive periodic updates!
 				</h2>
-				<p className="footer-subscription-text">
+				<p className={styles.subscription_text}>
 					You can{" "}
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						cName="footer-link--underline"
+						className="white-link--underline"
 					>
 						unsubscribe
 					</LinkScrollUp>{" "}
@@ -66,17 +67,20 @@ function Footer() {
 				<Subscribe />
 			</section>
 
-			<section className="footer-contact-map-container footer-section">
+			<section className={`flex-jaround-acenter-wrap ${styles.contact_map_container} ${styles.section}`}>
 				{contactMemo}
 				{mapMemo}
 			</section>
 
-			<section className="footer-section footer-links" id="more-links">
-				<div className="footer-links-container">
-					<div className="footer-link-wrapper">
-						<div className="footer-link-items-wrapper">
-							<h2 className="footer--heading">The Shoppe</h2>
-							<div className="footer-link-items">
+			<section
+				className={`flex-col-jcenter-acenter ${styles.section} ${styles.links}`}
+				id="more-links"
+			>
+				<div className={`flex-jcenter-wrap ${styles.links_container}`}>
+					<div className={`${styles.link_wrapper} flex`}>
+						<div className={styles.link_items_wrapper}>
+							<h2 className={styles.heading}>The Shoppe</h2>
+							<div className={`flex-col-astart ${styles.link_items}`}>
 								<LinkScrollUp path="/">Home</LinkScrollUp>
 								{/* <Link to="/">Home</Link> */}
 								<LinkScrollUp path="/meet-the-team">
@@ -89,9 +93,9 @@ function Footer() {
 								<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 							</div>
 						</div>
-						<div className="footer-link-items-wrapper">
-							<h2 className="footer--heading">Ordering</h2>
-							<div className="footer-link-items">
+						<div className={styles.link_items_wrapper}>
+							<h2 className={styles.heading}>Ordering</h2>
+							<div className={`flex-col-astart ${styles.link_items}`}>
 								<LinkScrollUp path="/prices">
 									Prices
 								</LinkScrollUp>
@@ -104,10 +108,10 @@ function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className="footer-link-wrapper">
-						<div className="footer-link-items-wrapper">
-							<h2 className="footer--heading">Keep In Touch</h2>
-							<div className="footer-link-items">
+					<div className={`${styles.link_wrapper} flex`}>
+						<div className={styles.link_items_wrapper}>
+							<h2 className={styles.heading}>Keep In Touch</h2>
+							<div className={`flex-col-astart ${styles.link_items}`}>
 								<LinkScrollUp path="/newsletter">
 									Subscribe to our Newsletter
 								</LinkScrollUp>
@@ -116,9 +120,9 @@ function Footer() {
 								</LinkScrollUp>
 							</div>
 						</div>
-						<div className="footer-link-items-wrapper">
-							<div className="footer-link-items">
-								<h2 className="footer--heading">
+						<div className={styles.link_items_wrapper}>
+							<div className={`flex-col-astart ${styles.link_items}`}>
+								<h2 className={styles.heading}>
 									Social Media
 								</h2>
 								<LinkScrollUp path="/">
@@ -131,51 +135,43 @@ function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className="footer-back-to-top">
+				<div className={styles.back_to_top}>
 					<Button onClick={() => window.scrollTo(0, 0)}>
 						Back To The Top
 					</Button>
 				</div>
 			</section>
 
-			<section className="footer-section">
-				<Suspense
-					fallback={
-						<div className="footer--loading-fallback">
-							Loading Banner...
-						</div>
-					}
-				>
-					<LogoComponent fill="white" className="footer-banner" />
-				</Suspense>
+			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
+					<LogoComponent fill="white" className={styles.banner} />
 			</section>
 
-			<section className="social-media">
-				<div className="social-media-wrap">
-					<div className="footer-logo">
-						<LinkScrollUp path="/" className="social-logo">
-							The Butcher Shoppe
-						</LinkScrollUp>
-					</div>
+			<section className={`flex-col-acenter ${styles.social_media}`}>
+				<div className={`flex-jaround-acenter ${styles.social_media_wrap}`}>
+					<LinkScrollUp path="/" className={`flex ${styles.social_name}`}>
+						The Butcher Shoppe
+					</LinkScrollUp>
 
-					<small className="website-rights">C 2022</small>
+					<small className={`${styles.website_rights} ${styles.social_small_font}`}>C 2022</small>
 
-					<div className="social-icons">
+					<div className={`flex-acenter-jbetween ${styles.social_icons}`}>
 						<Link
-							className="social-icon-link facebook"
+							className={`white-link facebook ${styles.social_small_font}`}
 							to="/"
 							target="_blank"
 							aria-label="Facebook"
 						>
-							<i className="fab fa-facebook-f"> TODO</i>
+							<i className="fab fa-facebook-f"></i>
+							{" "}[TODO]
 						</Link>
 						<Link
-							className="social-icon-link instagram"
+							className={`white-link instagram ${styles.social_small_font}`}
 							to="/"
 							target="_blank"
 							aria-label="Instagram"
 						>
-							<i className="fab fa-instagram"> TODO</i>
+							<i className="fab fa-instagram"></i>
+							{" "}[TODO]
 						</Link>
 					</div>
 				</div>
