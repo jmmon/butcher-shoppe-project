@@ -8,8 +8,8 @@ function LabelForm({ title, htmlFor, required, small, children }) {
 			htmlFor={htmlFor}
 			className={
 				small
-					? labelStyles.order_form__label_small
-					: labelStyles.order_form__label
+					? labelStyles.label_small
+					: labelStyles.label
 			}
 		>
 			{title}

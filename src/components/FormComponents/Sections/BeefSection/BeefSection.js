@@ -50,7 +50,7 @@ function BeefSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Cow Information">
 				TODO: header^^ banner
 			</Collapsible>
-			<section className={sectionStyles.order_form__section}>
+			<section className={sectionStyles.section}>
 				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
@@ -85,7 +85,7 @@ function BeefSection({ id, deleteAnimal }) {
 			</section>
 
 			<section
-				className={`${sectionStyles.order_form__section}  ${
+				className={`${sectionStyles.section}  ${
 					splitHalf
 						? styles.beef__split_half_section__show
 						: styles.beef__split_half_section
@@ -95,7 +95,7 @@ function BeefSection({ id, deleteAnimal }) {
 				{splitHalf && (
 					<>
 						<div className={formStyles.order_form__field}>
-							<h3 className={sectionStyles.order_form__title}>
+							<h3 className={sectionStyles.title}>
 								Contact Info
 							</h3>
 							<OrderFormSectionSubheading>
@@ -171,7 +171,7 @@ function BeefSection({ id, deleteAnimal }) {
 			</section>
 
 			<Collapsible trigger="Steak Options">
-				<section className={sectionStyles.order_form__section}>
+				<section className={sectionStyles.section}>
 					<OrderFormSectionSubheading>
 						Standard Steaks are Rib, T-Bone, Sirloin, Round, and
 						Flank
@@ -334,7 +334,7 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Roast Options">
-				<section className={sectionStyles.order_form__section}>
+				<section className={sectionStyles.section}>
 					<OrderFormSectionSubheading>
 						Standard Roasts are Chuck, Cross Rib, Arm, Rump, Sirloin
 						Tip and, Heel of Round
@@ -443,7 +443,7 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Ground Beef Options">
-				<section className={sectionStyles.order_form__section}>
+				<section className={sectionStyles.section}>
 					<OrderFormSectionSubheading>
 						Choose your ground beef options
 					</OrderFormSectionSubheading>
@@ -506,7 +506,7 @@ function BeefSection({ id, deleteAnimal }) {
 				</section>
 			</Collapsible>
 			<Collapsible trigger="Other Cut Options">
-				<section className={sectionStyles.order_form__section}>
+				<section className={sectionStyles.section}>
 					<OrderFormSectionSubheading>
 						More options for your cuts
 					</OrderFormSectionSubheading>

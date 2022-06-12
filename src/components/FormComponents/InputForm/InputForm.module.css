@@ -1,42 +1,35 @@
-.order_form__textarea {
+.textarea {
 	width: 100%;
-	height: 200px;
+	height: 10rem;
 	resize: vertical;
 }
 
-.order_form__input {
+.input {
 	display: block;
 	width: 100%;
-	font-size: 1.2em;
+	font-size: 1.2rem;
 	padding: 0.4em;
 }
 
-.form__validation_error {
+.validation_error {
+	width: 80%;
+	
 	color: red;
 }
 
 @media (max-width: 960px) {
-	.order_form__textarea {
-		width: 100%;
-		height: 160px;
+	.textarea {
+		height: 8rem;
 	}
 
-	.order_form__input {
-		display: block;
-		width: 100%;
-		font-size: 1.2em;
+	.input {
+		font-size: 1.2rem;
 	}
 }
 
 @media (max-width: 658px) {
-	.order_form__textarea {
-		width: 100%;
-		height: 160px;
-	}
 
-	.order_form__input {
-		display: block;
-		width: 100%;
-		font-size: 16px;
+	.input {
+		font-size: 1rem;
 	}
 }

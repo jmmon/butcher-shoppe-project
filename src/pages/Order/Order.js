@@ -57,7 +57,6 @@ function Order() {
 	});
 
 	useEffect(() => {
-		
 		console.log("errors", methods.formState.errors);
 		// Object.keys(methods.formState.errors).length > 0 &&
 		// 	console.log("errors", methods.formState.errors);
@@ -178,7 +177,7 @@ function Order() {
 			<WhitePageBackground>
 				<FormProvider {...methods}>
 					<form
-						className={styles.form__center}
+						className={`flex-col-acenter ${styles.form__center}`}
 						onSubmit={methods.handleSubmit(onSubmit)}
 					>
 						<Button
@@ -187,135 +186,129 @@ function Order() {
 						>
 							TESTING - Clear LocalStorage
 						</Button>
-						<div className={styles.form__container}>
-							<Tabs forceRenderTabPanel>
-								<TabList>
-									<Tab>Basic Info</Tab>
-									<Tab>Animal Cut Sheets</Tab>
-								</TabList>
-								<TabPanel>
-									<Collapsible
-										trigger="Contact Info"
-										open
-										triggerDisabled={true}
-										transitionTime={200}
-										easing="ease"
+						<Tabs forceRenderTabPanel>
+							<TabList>
+								<Tab>Basic Info</Tab>
+								<Tab>Animal Cut Sheets</Tab>
+							</TabList>
+							<TabPanel>
+								<Collapsible
+									trigger="Contact Info"
+									open
+									triggerDisabled={true}
+									transitionTime={200}
+									easing="ease"
+								>
+									<ContactInfoSection />
+								</Collapsible>
+								<Collapsible
+									trigger="Choose Your Date And Time"
+									open
+									triggerDisabled={true}
+									transitionTime={200}
+									easing="ease"
+								>
+									<SchedulerInput />
+								</Collapsible>
+							</TabPanel>
+							<TabPanel>
+								<Collapsible
+									trigger="Animal Info"
+									open
+									// triggerDisabled={true}
+									transitionTime={200}
+									easing="ease"
+								>
+									<h4>Select and add an animal cuts form:</h4>
+									<select
+										onChange={(e) =>
+											setNewAnimalChosenType(
+												e.target.value
+											)
+										}
 									>
-										<ContactInfoSection />
-									</Collapsible>
-									<Collapsible
-										trigger="Choose Your Date And Time"
-										open
-										triggerDisabled={true}
-										transitionTime={200}
-										easing="ease"
-									>
-										<SchedulerInput />
-									</Collapsible>
-								</TabPanel>
-								<TabPanel>
-									<Collapsible
-										trigger="Animal Info"
-										open
-										// triggerDisabled={true}
-										transitionTime={200}
-										easing="ease"
-									>
-										<h4>
-											Select and add an animal cuts form:
-										</h4>
-										<select
-											onChange={(e) =>
-												setNewAnimalChosenType(
-													e.target.value
-												)
-											}
-										>
-											<option value="beef">Beef</option>
-											<option value="lamb">Lamb</option>
-											<option value="hog">Hog</option>
-										</select>
-										<Button onClick={addAnimal}>
-											Add an animal
-										</Button>
-										{(idCollectionOfAnimalsByType.beef
-											.idArray.length > 0 ||
-											idCollectionOfAnimalsByType.lamb
-												.idArray.length > 0 ||
-											idCollectionOfAnimalsByType.hog
-												.idArray.length > 0) && (
-											<div>
-												<h4>Animals</h4>
-												{idCollectionOfAnimalsByType
-													.beef.idArray.length >
-													0 && (
-													<Collapsible
-														trigger="Your Beef"
-														transitionTime={200}
-														easing="ease"
-													>
-														{idCollectionOfAnimalsByType.beef.idArray.map(
-															(id) => (
-																<BeefSection
-																	key={id}
-																	id={id}
-																	deleteAnimal={
-																		deleteAnimal
-																	}
-																/>
-															)
-														)}
-													</Collapsible>
-												)}
-												{idCollectionOfAnimalsByType
-													.lamb.idArray.length >
-													0 && (
-													<Collapsible
-														trigger="Your Lamb"
-														transitionTime={200}
-														easing="ease"
-													>
-														{idCollectionOfAnimalsByType.lamb.idArray.map(
-															(id) => (
-																<LambSection
-																	key={id}
-																	id={id}
-																	deleteAnimal={
-																		deleteAnimal
-																	}
-																/>
-															)
-														)}
-													</Collapsible>
-												)}
-												{idCollectionOfAnimalsByType.hog
-													.idArray.length > 0 && (
-													<Collapsible
-														trigger="Your Hog"
-														transitionTime={200}
-														easing="ease"
-													>
-														{idCollectionOfAnimalsByType.hog.idArray.map(
-															(id) => (
-																<HogSection
-																	key={id}
-																	id={id}
-																	deleteAnimal={
-																		deleteAnimal
-																	}
-																/>
-															)
-														)}
-													</Collapsible>
-												)}
-											</div>
-										)}
-									</Collapsible>
-								</TabPanel>
-							</Tabs>
-						</div>
+										<option value="beef">Beef</option>
+										<option value="lamb">Lamb</option>
+										<option value="hog">Hog</option>
+									</select>
+									<Button onClick={addAnimal}>
+										Add an animal
+									</Button>
+									{(idCollectionOfAnimalsByType.beef.idArray
+										.length > 0 ||
+										idCollectionOfAnimalsByType.lamb.idArray
+											.length > 0 ||
+										idCollectionOfAnimalsByType.hog.idArray
+											.length > 0) && (
+										<div>
+											<h4>Animals</h4>
+											{idCollectionOfAnimalsByType.beef
+												.idArray.length > 0 && (
+												<Collapsible
+													trigger="Your Beef"
+													transitionTime={200}
+													easing="ease"
+												>
+													{idCollectionOfAnimalsByType.beef.idArray.map(
+														(id) => (
+															<BeefSection
+																key={id}
+																id={id}
+																deleteAnimal={
+																	deleteAnimal
+																}
+															/>
+														)
+													)}
+												</Collapsible>
+											)}
+											{idCollectionOfAnimalsByType.lamb
+												.idArray.length > 0 && (
+												<Collapsible
+													trigger="Your Lamb"
+													transitionTime={200}
+													easing="ease"
+												>
+													{idCollectionOfAnimalsByType.lamb.idArray.map(
+														(id) => (
+															<LambSection
+																key={id}
+																id={id}
+																deleteAnimal={
+																	deleteAnimal
+																}
+															/>
+														)
+													)}
+												</Collapsible>
+											)}
+											{idCollectionOfAnimalsByType.hog
+												.idArray.length > 0 && (
+												<Collapsible
+													trigger="Your Hog"
+													transitionTime={200}
+													easing="ease"
+												>
+													{idCollectionOfAnimalsByType.hog.idArray.map(
+														(id) => (
+															<HogSection
+																key={id}
+																id={id}
+																deleteAnimal={
+																	deleteAnimal
+																}
+															/>
+														)
+													)}
+												</Collapsible>
+											)}
+										</div>
+									)}
+								</Collapsible>
+							</TabPanel>
+						</Tabs>
 
-						<div className={styles.order_form__heading_container}>
+						<div className={styles.heading_container}>
 							<h3 className="order-form--before-submitting">
 								Please Double Check Your Selections Before
 								Submitting!
@@ -323,7 +316,7 @@ function Order() {
 						</div>
 						<input
 							type="submit"
-							className={`${styles.order_form__submit} btn btn--outline btn--large`}
+							className={`${styles.submit} btn btn--outline btn--large`}
 							value="Submit Form"
 						/>
 					</form>

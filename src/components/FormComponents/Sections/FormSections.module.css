@@ -1,17 +1,16 @@
-.order_form__section {
+.section {
 	margin: 0px auto;
-	padding: 16px 4px;
 	width: 100%;
 	display: grid;
+	/* display: flex;
+	flex-wrap: wrap; */
 	gap: 1.5em;
 }
 
-.order_form__title {
+.title {
 	text-decoration: underline;
 	font-size: 26px;
 	text-align: center;
-	/* color: #000; */
 	background-color: #f3f3f3;
 	transition: all 0.15s ease-out;
-	/* margin: 20px 0; */
 }

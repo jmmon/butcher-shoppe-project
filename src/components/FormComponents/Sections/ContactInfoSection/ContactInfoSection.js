@@ -13,7 +13,7 @@ function ContactInfoSection() {
 		<>
 			<div
 				name="contact_info"
-				className={sectionStyles.order_form__section}
+				className={`${sectionStyles.section}`}
 			>
 				<div className={formStyles.order_form__field}>
 					<LabelForm required={true} title="Name" />
@@ -22,6 +22,7 @@ function ContactInfoSection() {
 						title="First"
 						name="buyer.name.first"
 						placeholder="First name"
+						// subtitle="testing"
 						required={{
 							required: {
 								value: true,

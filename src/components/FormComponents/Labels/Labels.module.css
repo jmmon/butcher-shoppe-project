@@ -1,4 +1,14 @@
-.order_form__label_subtext {
+.label {
+	display: block;
+	font-size: 1.3rem;
+	width: 100%;
+}
+
+.label_small {
+	font-size: 1rem;
+}
+
+.subtitle {
 	display: block;
 	font-size: 1.3rem;
 	/* padding-left: 10px; */
@@ -6,34 +16,22 @@
 	color: var(--subheading-gray);
 }
 
-.order_form__label {
-	display: block;
-	font-size: 24px;
-	width: 100%;
-}
-
-.order_form__label_small {
-	font-size: 20px;
-}
-
-@media (max-width: 960px) {
-	.order_form__label {
-		display: block;
+/* @media (max-width: 960px) {
+	.label {
 		font-size: 20px;
 	}
 
-	.order_form__label_small {
+	.label_small {
 		font-size: 18px;
 	}
 }
 
 @media (max-width: 658px) {
-	.order_form__label {
-		display: block;
+	.label {
 		font-size: 18px;
 	}
 
-	.order_form__label_small {
+	.label_small {
 		font-size: 16px;
 	}
-}
+} */

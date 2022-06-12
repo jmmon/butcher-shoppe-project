@@ -173,7 +173,7 @@ function HogSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Hog Information">
 				TODO: Create a matching banner for this^ header
 			</Collapsible>
-			<section className={sectionStyles.order_form__section}>
+			<section className={sectionStyles.section}>
 				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
@@ -196,7 +196,7 @@ function HogSection({ id, deleteAnimal }) {
 			{wholeHog !== undefined && (
 				<>
 					<Collapsible trigger="Ham Options">
-						<div className={sectionStyles.order_form__section}>
+						<div className={sectionStyles.section}>
 							<OrderFormSectionSubheading>
 								Options for your ham
 							</OrderFormSectionSubheading>

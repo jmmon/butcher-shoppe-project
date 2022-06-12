@@ -76,7 +76,7 @@ function LambSection({ id, deleteAnimal }) {
 			<Collapsible trigger="Lamb Information">
 				TODO: header^^ banner
 			</Collapsible>
-			<section className={sectionStyles.order_form__section}>
+			<section className={sectionStyles.section}>
 				<GrowerInfoSection animalInfo={animalInfo} />
 
 				<RadioForm
@@ -99,7 +99,7 @@ function LambSection({ id, deleteAnimal }) {
 			</section>
 
 			<Collapsible trigger="Lamb Options">
-				<div className={sectionStyles.order_form__section}>
+				<div className={sectionStyles.section}>
 					<OrderFormSectionSubheading>
 						Leg of Lamb
 					</OrderFormSectionSubheading>

@@ -42,8 +42,8 @@ const InputForm = ({
 
 	return (
 		<div
-			className={`${formStyles.order_form__input_container} ${
-				small ? formStyles.order_form__input_container_small : ""
+			className={`${formStyles.container} ${
+				small ? formStyles.container_small : ""
 			}`}
 		>
 			<LabelInput
@@ -54,7 +54,7 @@ const InputForm = ({
 			/>
 
 			{thisError && (
-				<span role="alert" className={styles.form__validation_error}>
+				<span role="alert" className={styles.validation_error}>
 				{` (${thisError.message})`}
 				</span>
 			)}
@@ -81,7 +81,7 @@ const InputForm = ({
 							name,
 							required: true,
 							["aria-invalid"]: errors?.[name],
-							className: styles.order_form__input,
+							className: styles.input,
 						}}
 					/>
 				)}

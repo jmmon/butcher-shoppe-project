@@ -32,7 +32,7 @@ function LabelInput({
 			{subtitle && (
 				<>
 					<br />
-					<span className={labelStyles.order_form__label_subtext}>
+					<span className={labelStyles.subtitle}>
 						{subtitle}
 					</span>
 				</>
