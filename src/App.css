@@ -66,18 +66,33 @@ html {
 	--homepage-title--height: clamp(20vw, 30rem, 60vw);
 }
 
+/* flex selectors: */
+
 [class*="flex"] {
 	display: flex;
 }
 
-[class*="col"] {
+[class*="flex-"][class*="col"] {
 	flex-direction: column;
 }
+[class*="flex-"][class*="row"] {
+	flex-direction: row;
+}
 
-[class*="center"] {
+[class*="flex-"][class*="center"] {
 	justify-content: center;
 	align-items: center;
 }
+[class*="flex-"][class*="evenly"] {
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+[class*="flex-"][class*="wrap"] {
+	flex-wrap: wrap;
+}
+
+
 
 .website-container {
 	position: absolute;
@@ -87,6 +102,7 @@ html {
 	right: 0px;
 }
 
+/* everything below the navbar+header */
 .website-content-container {
 	background-color: var(--sky-blue-bg);
 	margin-top: 40px; /* sets it below the header */

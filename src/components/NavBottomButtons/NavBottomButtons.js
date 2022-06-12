@@ -2,32 +2,28 @@ import React from "react";
 import Button from "components/Button/Button";
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 
-import "./NavBottomButtons.css";
+import styles from "./NavBottomButtons.module.css";
 
 function NavBottomButtons({ prev, next }) {
 	return (
 		<WhitePageBackground separate={true}>
-			<div className="nav-bottom-buttons white-background--container">
-				<h4 className="text-center">Helpful Links:</h4>
-				<div className="nav-bottom-container">
-					<Button
-						className="btns"
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
-						url={prev.link}
-					>
-						{prev.title}
-					</Button>
+			<div className={`flex-evenly-wrap ${styles.container}`}>
+				<h4 className={`text-center ${styles.heading}`}>Helpful Links:</h4>
+				<Button
+					buttonStyle="btn--outline"
+					buttonSize="btn--large"
+					url={prev.link}
+				>
+					{prev.title}
+				</Button>
 
-					<Button
-						className="btns"
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
-						url={next.link}
-					>
-						{next.title}
-					</Button>
-				</div>
+				<Button
+					buttonStyle="btn--outline"
+					buttonSize="btn--large"
+					url={next.link}
+				>
+					{next.title}
+				</Button>
 			</div>
 		</WhitePageBackground>
 	);

@@ -1,0 +1,12 @@
+.container {
+	gap: 1rem;
+	width: 100%;
+	border: 1px solid red;
+}
+
+.heading {
+	font-size: 1.8rem;
+	color: var(--subheading-gray);
+	width: 100%;
+	margin-bottom: 1.5rem;
+}
