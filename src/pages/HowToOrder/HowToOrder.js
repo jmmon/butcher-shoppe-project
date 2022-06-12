@@ -6,16 +6,15 @@ import bgTitle from "assets/images/image-1-116.jpg";
 import PageTitle from "components/PageTitle/PageTitle";
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
+import Card from "components/Card/Card";
 
 function HowToOrder() {
 	return (
 		<>
 			<PageTitle title="How To Order" bgImage={bgTitle} />
 			<WhitePageBackground>
-				<article className="form--instructions">
-					<h2 className="text-center">
-						Ready to schedule your order?
-					</h2>
+				<Card title="Ready to schedule your order?">
+				<article>
 					<p>
 						Scheduling for our services is easy! Just fill out the
 						information below and sumbit it. Then, we will contact
@@ -97,6 +96,8 @@ function HowToOrder() {
 						</li>
 					</ol>
 				</article>
+				</Card>
+			
 			</WhitePageBackground>
 			<NavBottomButtons
 				prev={{ link: "/prices", title: "Prices" }}

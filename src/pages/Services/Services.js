@@ -47,25 +47,9 @@ function Services() {
 							</Button>
 						</div>
 					</div>
-					<div className="card--width panel-shadow--dark card--font-size">
-						<div className="grid--col-sm card--content-width padding-lg services--blerb">
-							<h3 className="text-center">What We Offer</h3>
-							<p>
-								We cover the tri-county area with our mobile
-								farmkill truck, and we process that meat in our
-								store in Downtown Northport.
-							</p>
-							<p>
-								We provide farm kills for beef, hogs, goats,
-								lamb and bison. This includes dispatch,
-								evisceration and transport to our meat shop.
-							</p>
-							<p>We provide custom cut, cure, smoke and wrap.</p>
-							<p>
-								We process wild game, including deer, elk, moose
-								and bear.
-							</p>
-							<ul>
+					{/* <div className="card--width panel-shadow--dark card--font-size"> */}
+						<Card title="What We Offer" paragraphs={["We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.", "We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.", "We provide custom cut, cure, smoke and wrap.", "We process wild game, including deer, elk, moose and bear."]}>
+						<ul className="indent">
 								<li>No poultry</li>
 							</ul>
 							<p>
@@ -77,8 +61,10 @@ function Services() {
 									(See map down below)
 								</a>
 							</p>
-						</div>
-					</div>
+
+						</Card>
+						
+					{/* </div> */}
 					<div className="card--width">
 						<Suspense
 							fallback={

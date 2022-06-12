@@ -9,6 +9,11 @@
 	padding: 10px;
 	border: 1px solid lightGrey;
 	border-top: 0;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
 }
 
 .Collapsible__trigger {

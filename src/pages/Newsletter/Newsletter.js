@@ -58,7 +58,7 @@ function NewsletterPage() {
 					</section>
 				</WhitePageBackground>
 				<WhitePageBackground separate={true}>
-					<div className="padding-bot--lg">
+					<div className="padding-lg--bot">
 						<h3 className="margin-top--lg">
 							Looking to unsubscribe?
 						</h3>

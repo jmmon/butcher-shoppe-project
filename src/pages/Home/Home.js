@@ -29,8 +29,9 @@ function Home() {
 					subtitle="Serving Northeast Washington State"
 				/>
 				<WhitePageBackground separate={true}>
-					<div className="grid--col-md">
+					<div className="grid--col-lg padding-md--bot">
 						<Card
+						// className="padding-sm--vertical"
 							title="Welcome to The Northport Butcher Shoppe!"
 							paragraphs={[
 								"Serving our local tri-county area, we provide local farmers with bringing their hard work to the dinner table!",
@@ -40,7 +41,7 @@ function Home() {
 								"No poultry!",
 							]}
 						/>
-
+						<hr/>
 						<Card
 							title="How It Works"
 							paragraphs={[

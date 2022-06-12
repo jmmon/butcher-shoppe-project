@@ -3,7 +3,7 @@ import "./Card.css";
 
 import ImageHeading from "components/ImageHeading/ImageHeading";
 
-function Card({ title, paragraphs, bg = null }) {
+function Card({ className = null, title, paragraphs, bg = null, children }) {
 	const content = paragraphs?.map((item) => (
 		<p className="card--paragraph" key={paragraphs.indexOf(item)}>
 			{item}
@@ -11,12 +11,13 @@ function Card({ title, paragraphs, bg = null }) {
 	));
 	return (
 		//panel-shadow--dark removed from section
-		<section className="white card--width  card--font-size">
+		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
 			<div className="grid--col-sm card--content-width padding-md--horizontal">
 				{!bg && <h3 className="card--heading text-center">{title}</h3>}
 
 				{content && content}
+				{children}
 			</div>
 		</section>
 	);

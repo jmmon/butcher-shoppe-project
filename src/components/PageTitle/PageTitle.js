@@ -1,5 +1,6 @@
 import React from "react";
 import "./PageTitle.css";
+import styles from "./PageTitle.module.css"
 
 function PageTitle({
 	title,
@@ -10,8 +11,10 @@ function PageTitle({
 	children = null,
 }) {
 	return (
+		<div className={`panel-shadow--dark ${styles.container}`}>
+
 		<section
-			className="flex-col-center page-title--height panel-shadow--dark inset-box-shadow--dark"
+			className={`${styles.image} flex-col-center page-title--height  inset-box-shadow--dark `}
 			style={{
 				background: `url(${bgImage}) center center/cover no-repeat`,
 				backgroundPosition: `${position}`,
@@ -31,6 +34,8 @@ function PageTitle({
 				{children}
 			</div>
 		</section>
+		
+		</div>
 	);
 }
 

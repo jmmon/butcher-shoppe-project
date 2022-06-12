@@ -9,7 +9,7 @@
 	justify-content: center;
 	text-align: center;
 	/* font-size: var(--page-title-large); */
-	font-size: 2rem;
+	font-size: 2.2rem;
 }
 
 .card--heading-margin {
@@ -17,7 +17,7 @@
 }
 
 .card--font-size {
-	/* font-size: 8rem; */
+	font-size: 1.2rem;
 }
 
 .card--width {

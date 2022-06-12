@@ -29,14 +29,12 @@ const DateTimePicker = ({ selectHandler }) => {
 	};
 
 	return (
-		<div
-		// className="form-container panel-shadow--dark card scheduler-form"
-		>
+		<>
 			<h3 className="scheduler--heading">What works best?</h3>
-			<div className="date input-container">
+			<div className="input-container">
 				<label
 					htmlFor="date-time-picker"
-					className="date-time-picker scheduler--label"
+					className="date-time-picker"
 				>
 					Select a date and time
 				</label>
@@ -58,7 +56,7 @@ const DateTimePicker = ({ selectHandler }) => {
 					inline
 				/>
 			</div>
-		</div>
+		</>
 	);
 };
 

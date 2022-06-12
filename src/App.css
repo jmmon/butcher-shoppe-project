@@ -143,14 +143,20 @@ html {
 .padding-lg {
 	padding: 4vh 4vw;
 }
-.padding-bot--lg {
+.padding-lg--bot {
 	padding-bottom: 4em;
+}
+.padding-md--bot {
+	padding-bottom: 2em;
 }
 
 .padding-md--horizontal {
 	padding: 0 2em;
 }
 .padding-md--vertical {
+	padding: 2em;
+}
+.padding-sm--vertical {
 	padding: 2em;
 }
 
@@ -221,7 +227,9 @@ html {
 	display: grid;
 	justify-content: center;
 }
-
+.grid--col-lg {
+	grid-row-gap: 8em;
+}
 .grid--col-md {
 	grid-row-gap: 4em;
 }
