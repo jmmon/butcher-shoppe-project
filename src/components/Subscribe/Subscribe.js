@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Subscribe.css";
+import styles from "./Subscribe.module.css"
 
 const headers = {
 	"Content-Type": "application/json",
@@ -14,7 +14,7 @@ function Subscribe({ unsubscribe }) {
 	// const subscribeBackendUri = `https://localhost:3001/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
 	// }`;
-
+	
 	let timer = null;
 
 	const [responseFromSubscribeBox, setResponseFromSubscribeBox] = useState({
@@ -38,8 +38,8 @@ function Subscribe({ unsubscribe }) {
 		}, 6000);
 	};
 
+	// componentWillUnmount
 	useEffect(() => {
-		// componentWillUnmount
 		return () => {
 			timer && clearTimeout(timer);
 		};
@@ -48,8 +48,6 @@ function Subscribe({ unsubscribe }) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// console.log("handleSubmit works");
-
 		setResponseFromSubscribeBox((prevState) => ({
 			...prevState,
 			isLoading: true,
@@ -57,13 +55,9 @@ function Subscribe({ unsubscribe }) {
 			error: null,
 		}));
 
-		console.log("entered email address:", email);
-		console.log("attempt axios post to:", subscribeBackendUri);
-
 		await axios
 			.post(subscribeBackendUri, { email: email }, { headers: headers })
 			.then((res) => {
-				// console.log("response status:", res.status);
 				if (res.status === 200) {
 					setResponseFromSubscribeBox((prevState) => ({
 						...prevState,
@@ -73,11 +67,11 @@ function Subscribe({ unsubscribe }) {
 					}));
 
 					setEmail("");
-					console.log(
-						`Success at ${
-							unsubscribe ? "unsubscribe" : "subscribe"
-						} email request!`
-					);
+					// console.log(
+					// 	`Success at ${
+					// 		unsubscribe ? "unsubscribe" : "subscribe"
+					// 	} email request!`
+					// );
 				} else if (res.status === 500) {
 					setResponseFromSubscribeBox((prevState) => ({
 						...prevState,
@@ -88,9 +82,8 @@ function Subscribe({ unsubscribe }) {
 				}
 			})
 			.catch((e) => {
-				console.log("axios post error:", e);
-				console.log("entered email address:", email);
-				console.log("attempt axios post to:", subscribeBackendUri);
+				console.error("Axios POST error:", e);
+				console.log(`Email: ${email}, URI: ${subscribeBackendUri}`);
 
 				setResponseFromSubscribeBox((prevState) => ({
 					...prevState,
@@ -104,14 +97,14 @@ function Subscribe({ unsubscribe }) {
 	};
 
 	return (
-		<div className="subscribe--wrapper card panel-shadow--light">
-			<div className="subscribe--container">
-				<form className="subscribe--email-form" onSubmit={handleSubmit}>
+		<div className={`${styles.wrapper} card panel-shadow--light`}>
+			<div className={styles.container}>
+				<form className={styles.email_form} onSubmit={handleSubmit}>
 					<input
 						type="email"
 						name="email"
 						placeholder="Your Email"
-						className="subscribe--input"
+						className={styles.input}
 						required
 						onChange={(e) => setEmail(e.target.value)}
 					/>
@@ -144,11 +137,11 @@ function Subscribe({ unsubscribe }) {
 			</div>
 
 			<p
-				className={`subscribe--notification ${
+				className={`${styles.notification} ${
 					responseFromSubscribeBox.error
-						? "error"
+						? styles.error
 						: responseFromSubscribeBox.data
-						? "success"
+						? styles.success
 						: ""
 				}`}
 			>

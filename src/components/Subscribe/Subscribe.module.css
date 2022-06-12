@@ -1,10 +1,10 @@
-.subscribe--container {
+.container {
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 }
 
-.subscribe--wrapper {
+.wrapper {
 	background-color: var(--navbar-gradient--light);
 	border: 1px solid black;
 	justify-content: center;
@@ -14,11 +14,11 @@
 	margin: 0 auto;
 }
 
-.subscribe--input::placeholder {
+.input::placeholder {
 	color: var(--input-placeholder--light);
 }
 
-.subscribe--input {
+.input {
 	max-width: 50vw;
 	padding: 6px 14px;
 	border-radius: 4px;
@@ -29,20 +29,26 @@
 	margin-right: 2px;
 }
 
-.subscribe--input:focus:required:invalid {
+.input:focus:required:invalid {
 	border: 1px solid red;
 	background-color: var(--input-required--invalid);
 }
 
-.subscribe--input:focus:required:valid {
+.input:focus:required:valid {
 	border: 1px solid green;
 	background-color: var(--input-required--valid);
 }
 
-/* .subscribe--text {
+/* .text {
 } */
+.email_form {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+}
 
-.subscribe--notification {
+
+.notification {
 	margin: 0;
 	padding: 0;
 	font-size: 20px;
@@ -54,7 +60,7 @@
 	transition: all 0.2s ease;
 }
 
-.subscribe--notification.success {
+.notification.success {
 	margin: 24px auto 24px auto;
 	padding: 8px;
 	border: 1px solid green;
@@ -62,16 +68,10 @@
 	max-height: 100px;
 }
 
-.subscribe--notification.error {
+.notification.error {
 	margin: 24px auto 24px auto;
 	padding: 8px;
 	border: 1px solid red;
 	background-color: rgba(255, 223, 223, 0.1);
 	max-height: 100px;
-}
-
-.subscribe--email-form {
-	display: flex;
-	flex-direction: row;
-	margin: 0 auto;
 }

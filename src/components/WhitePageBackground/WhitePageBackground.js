@@ -1,14 +1,12 @@
 import React from "react";
-import "./WhitePageBackground.css";
+import styles from "./WhitePageBackground.module.css";
 
-function WhitePageBackground({ separate = false, className="", children }) {
+function WhitePageBackground({ separate = false, className = "", children }) {
 	return (
 		<section
-			className={`panel-shadow--dark ${
-				separate
-					? "white-page-background separate"
-					: "white-page-background "
-			} ${className}`}
+			className={`panel-shadow--dark ${className} ${styles.container} ${
+				separate && styles.separate
+			}`}
 		>
 			{children}
 		</section>

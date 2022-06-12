@@ -58,25 +58,7 @@ const InputForm = ({
 				{` (${thisError.message})`}
 				</span>
 			)}
-			{/* <Controller
-				name={name}
-				control={control}
-				rules={{
-					validate: (value) => isValidPhoneNumber(value),
-				}}
-				render={({ field: { onChange, value } }) => (
-					<PhoneInput
-						value={value}
-						onChange={onChange}
-						defaultCountry="US"
-						name={name}
-						id={name}
-						className={styles.order_form__input}
-						area-invalid={errors?.[name]}
-						placeholder={placeholder || title}
-					/>
-				)}
-			/> */}
+
 			<Controller
 				name={name}
 				control={control}
@@ -88,7 +70,6 @@ const InputForm = ({
 						value={value}
 						onChange={onChange}
 						country={'us'}
-						// className={styles.order_form__input}
 						placeholder={placeholder || title}
 						isValid={(number) => validatePhoneNumber(number, isDirty)}
 						specialLabel=""
@@ -105,46 +86,6 @@ const InputForm = ({
 					/>
 				)}
 			/>
-
-
-
-			{/* <Controller
-				name={name}
-				control={control}
-				render={(props) => (
-					<PhoneInput2
-						onChange={(e) => {
-							trigger();
-							props.field.onChange(e);
-						}}
-						inputProps={{
-							id: name,
-							name,
-							required: true,
-							["aria-invalid"]: errors?.[name]
-						}}
-						country={'us'}
-						value={props.field.value}
-						isValid={(inputNumber, country) => {
-							// const phoneLength = Math.ceil((countries.filter(val => val.dialCode === country.dialCode)[0])?.format.length / 2);
-							return validatePhoneNumber(
-								inputNumber, 
-								country, 
-								props.formState.isDirty, 
-								// phoneLength 
-								);
-						}}
-
-						placeholder={placeholder || title}
-						className={styles.order_form__input}
-						prefix=""
-						specialLabel=""
-						countryCodeEditable={false}
-						// inputRef={register}
-					/>
-				)}
-				rules={{ required: true, validate: () => validPhoneNumber || 'Please enter a valid phone number' }}
-			/> */}
 		</div>
 	);
 };
