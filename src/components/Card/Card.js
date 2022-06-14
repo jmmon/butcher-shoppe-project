@@ -13,7 +13,7 @@ function Card({ className = null, title, paragraphs, bg = null, children }) {
 		//panel-shadow--dark removed from section
 		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
-			<div className="grid--col-sm card--content-width padding-md--horizontal">
+			<div className="grid-row-gap-1-2 card--content-width padding-2--horizontal">
 				{!bg && <h3 className="card--heading text-center">{title}</h3>}
 
 				{content && content}

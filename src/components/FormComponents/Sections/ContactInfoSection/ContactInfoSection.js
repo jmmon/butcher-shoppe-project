@@ -15,7 +15,7 @@ function ContactInfoSection() {
 				name="contact_info"
 				className={`${sectionStyles.section}`}
 			>
-				<div className={formStyles.order_form__field}>
+				<div className={formStyles.field}>
 					<LabelForm required={true} title="Name" />
 
 					<InputForm
@@ -54,7 +54,7 @@ function ContactInfoSection() {
 					/>
 				</div>
 
-				<div className={formStyles.order_form__field}>
+				<div className={formStyles.field}>
 					<LabelForm required={true} title="Contact" />
 
 					{/* <div className="phone input-container">
@@ -114,7 +114,7 @@ function ContactInfoSection() {
 					/>
 				</div>
 
-				<div className={formStyles.order_form__field}>
+				<div className={formStyles.field}>
 					<LabelForm required={true} title="Address" />
 
 					<InputForm

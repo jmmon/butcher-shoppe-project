@@ -6,11 +6,3 @@
 	flex-wrap: wrap; */
 	gap: 1.5em;
 }
-
-.title {
-	text-decoration: underline;
-	font-size: 26px;
-	text-align: center;
-	background-color: #f3f3f3;
-	transition: all 0.15s ease-out;
-}

@@ -56,7 +56,7 @@ function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 						handleChangeOption={handleChange_FreshRoastsAndOrSteaks}
 					/>
 					{freshRoastsAndOrSteaks.includes("roasts") && (
-						<div className={formStyles.order_form__field}>
+						<div className={formStyles.field}>
 							<SelectForm
 								title="Fresh Pork Roast Size"
 								subtitle="Roast size in pounds"
@@ -84,7 +84,7 @@ function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 						</div>
 					)}
 					{freshRoastsAndOrSteaks.includes("steaks") && (
-						<div className={formStyles.order_form__field}>
+						<div className={formStyles.field}>
 							<SelectForm
 								title="Steak Thickness"
 								subtitle="Steak thickness in inches"
@@ -170,7 +170,7 @@ function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 						}
 					/>
 					{smokedRoastsAndOrSteaks.includes("roasts") && (
-						<div className={formStyles.order_form__field}>
+						<div className={formStyles.field}>
 							<SelectForm
 								title="Smoked Ham Roast Size"
 								subtitle="Roast size in pounds"
@@ -198,7 +198,7 @@ function ShoulderChoices({ chosenChoicesArray, animalInfo }) {
 						</div>
 					)}
 					{smokedRoastsAndOrSteaks.includes("steaks") && (
-						<div className={formStyles.order_form__field}>
+						<div className={formStyles.field}>
 							<SelectForm
 								title="Steak Thickness"
 								subtitle="Steak thickness in inches"

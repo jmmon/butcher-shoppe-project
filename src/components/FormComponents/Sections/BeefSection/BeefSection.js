@@ -87,15 +87,15 @@ function BeefSection({ id, deleteAnimal }) {
 			<section
 				className={`${sectionStyles.section}  ${
 					splitHalf
-						? styles.beef__split_half_section__show
-						: styles.beef__split_half_section
+						? styles.split_half__show
+						: styles.split_half
 				}`}
 				id="split-half--contact-info"
 			>
 				{splitHalf && (
 					<>
-						<div className={formStyles.order_form__field}>
-							<h3 className={sectionStyles.title}>
+						<div className={formStyles.field}>
+							<h3 className={styles.title}>
 								Contact Info
 							</h3>
 							<OrderFormSectionSubheading>
@@ -176,7 +176,7 @@ function BeefSection({ id, deleteAnimal }) {
 						Standard Steaks are Rib, T-Bone, Sirloin, Round, and
 						Flank
 					</OrderFormSectionSubheading>
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Steak Thickness"
 							name="steak.thickness"
@@ -201,7 +201,6 @@ function BeefSection({ id, deleteAnimal }) {
 								},
 							]}
 							animalInfo={animalInfo}
-							// className={formStyles.order_form__field}
 						/>
 						<SelectForm
 							title="Number of Steaks Per Package"
@@ -228,7 +227,7 @@ function BeefSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Tenderized Round Steaks"
 							name="steak.extra.tenderized_round_steaks"
@@ -285,7 +284,7 @@ function BeefSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Tenderloin"
 							name="steak.extra.tenderloin"
@@ -340,7 +339,7 @@ function BeefSection({ id, deleteAnimal }) {
 						Tip and, Heel of Round
 					</OrderFormSectionSubheading>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Boneless Roasts"
 							name="roast.boneless"
@@ -382,7 +381,7 @@ function BeefSection({ id, deleteAnimal }) {
 							animalInfo={animalInfo}
 						/>
 					</div>
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Rib Options"
 							name="roast.rib_options"
@@ -448,7 +447,7 @@ function BeefSection({ id, deleteAnimal }) {
 						Choose your ground beef options
 					</OrderFormSectionSubheading>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Ground Beef Package Size"
 							name="ground_beef.package_size"
@@ -510,7 +509,7 @@ function BeefSection({ id, deleteAnimal }) {
 					<OrderFormSectionSubheading>
 						More options for your cuts
 					</OrderFormSectionSubheading>
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Boneless Stew Meat"
 							name="other.boneless_stew_meat"

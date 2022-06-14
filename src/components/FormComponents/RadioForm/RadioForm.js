@@ -55,7 +55,7 @@ const RadioForm = ({
 	);
 
 	return (
-		<div className={formStyles.order_form__field}>
+		<div className={formStyles.field}>
 			<LabelInput
 				title={title}
 				costsExtra={costsExtra}

@@ -260,7 +260,7 @@ function LambSection({ id, deleteAnimal }) {
 						animalInfo={animalInfo}
 					/>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Lamb Chops Per Package"
 							name="options.lamb_chops.number_per_package"
@@ -303,7 +303,7 @@ function LambSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<SelectForm
 							title="Trim"
 							// subtitle="(inches)"
@@ -339,7 +339,7 @@ function LambSection({ id, deleteAnimal }) {
 						/>
 					</div>
 
-					<div className={formStyles.order_form__field}>
+					<div className={formStyles.field}>
 						<CheckboxForm
 							title="EXTRAS"
 							name="organ_meats"

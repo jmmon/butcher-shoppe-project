@@ -58,7 +58,7 @@ function NewsletterPage() {
 					</section>
 				</WhitePageBackground>
 				<WhitePageBackground separate={true}>
-					<div className="flex-col-acenter gap-2 padding-sm">
+					<div className="flex-col-acenter gap-2 padding-1">
 						<h3>
 							Looking to unsubscribe?
 						</h3>

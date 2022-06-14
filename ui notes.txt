@@ -10,5 +10,16 @@
 
 	font: readable, scale hierarchy, line spacing
 	consistency: icons, fonts, pages, line spacing
+	CONTRAST ratio (Chrome Dev Tools)
 
 iconfinder.com
+
+
+
+Typography Tips:
+1. Split the content up into groups (start with huge spaces)
+2. Increase contrast through font-size (start with huge difference)
+3. Increase contrast through font-weight (bold text can have reduced line height; titles can have increased character spacing?)
+4. Increase contrast through color (medium greys vs black title; make sure there's a contrast between different "sections" of text - like between titles and bodies)
+5. Increase the line-height of the body (text < ~24px needs increase line-height for readability, ~140-150%)
+6. Decrease the line-height of large text (large text, especially all-caps, can have reduced line height)

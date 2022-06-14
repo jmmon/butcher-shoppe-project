@@ -1,4 +1,4 @@
-.beef__split_half_section {
+.split_half {
 	height: 0;
 	color: rgba(0, 0, 0, 0);
 	max-height: 0;
@@ -7,10 +7,18 @@
 	transition: all 0.4s ease;
 }
 
-.beef__split_half_section__show {
+.split_half__show {
 	height: 274px;
 	/* height: 300px; */
 	max-height: 1000px;
 	padding: 16px 4px;
 	transition: all 0.4s ease;
+}
+
+.title {
+	text-decoration: underline;
+	font-size: 26px;
+	text-align: center;
+	background-color: #f3f3f3;
+	transition: all 0.15s ease-out;
 }

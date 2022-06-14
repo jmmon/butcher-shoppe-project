@@ -7,7 +7,7 @@ import InputForm from "../../InputForm/InputForm";
 function GrowerInfoSection({ animalInfo }) {
 	return (
 		<>
-			<div className={formStyles.order_form__field}>
+			<div className={formStyles.field}>
 				<LabelForm title="Grower Name" />
 				<InputForm
 					title="First"
@@ -25,7 +25,7 @@ function GrowerInfoSection({ animalInfo }) {
 				/>
 			</div>
 
-			<div className={formStyles.order_form__field}>
+			<div className={formStyles.field}>
 				<LabelForm title="Ear Tag Number (if applicable)" />
 				<InputForm
 					title="Ear Tag Number (if applicable)"

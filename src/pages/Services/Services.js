@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import React from "react";
 import "./Services.css";
 
 import bgTitle from "assets/images/image-1-2.jpg";
@@ -11,22 +11,16 @@ import WhitePageBackground from "components/WhitePageBackground/WhitePageBackgro
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
-const ServicesButcheringPromise = import(
-	"components/ServicesButchering/ServicesButchering"
-);
-const ServicesButchering = lazy(() => ServicesButcheringPromise);
+import ServicesButchering from "components/ServicesButchering/ServicesButchering";
+import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
 
-const ServicesProcessingPromise = import(
-	"components/ServicesProcessing/ServicesProcessing"
-);
-const ServicesProcessing = lazy(() => ServicesProcessingPromise);
 
 function Services() {
 	return (
 		<>
 			<PageTitle title="SERVICES" bgImage={bgTitle} position="50% 40%" />
 			<WhitePageBackground>
-				<div className="grid--col-md">
+				<div className="grid-row-gap-4">
 					<div className="card--width">
 						<div className="services-btns-container">
 							<Button
@@ -47,7 +41,7 @@ function Services() {
 							</Button>
 						</div>
 					</div>
-					{/* <div className="card--width panel-shadow--dark card--font-size"> */}
+
 						<Card title="What We Offer" paragraphs={["We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.", "We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.", "We provide custom cut, cure, smoke and wrap.", "We process wild game, including deer, elk, moose and bear."]}>
 						<ul className="indent">
 								<li>No poultry</li>
@@ -64,15 +58,8 @@ function Services() {
 
 						</Card>
 						
-					{/* </div> */}
 					<div className="card--width">
-						<Suspense
-							fallback={
-								<div className="footer--loading-fallback">
-									Loading Contact Box...
-								</div>
-							}
-						>
+
 							<Card
 								title="Farm Kill"
 								paragraphs={[
@@ -82,18 +69,10 @@ function Services() {
 								bg={bgServices}
 							/>
 							<ServicesButchering bg={bgServices} />
-						</Suspense>
 					</div>
 					<div className="card--width">
-						<Suspense
-							fallback={
-								<div className="footer--loading-fallback">
-									Loading Contact Box...
-								</div>
-							}
-						>
+
 							<ServicesProcessing bg={bgProcessing} />
-						</Suspense>
 					</div>
 				</div>
 			</WhitePageBackground>

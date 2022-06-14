@@ -84,8 +84,15 @@
 	justify-content: center;
 }
 
+.nav-links:focus,
+.navbar-home:focus {
+	outline: none;
+}
+
 .nav-links:hover,
-.navbar-home:hover {
+.navbar-home:hover,
+.nav-links:focus,
+.navbar-home:focus {
 	border-bottom: 4px solid #fff;
 	transition: all 0.15s ease-out;
 }

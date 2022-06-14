@@ -14,7 +14,7 @@ function Schedule() {
 		<>
 			<PageTitle title="SCHEDULE" bgImage={bgTitle} />
 			<WhitePageBackground>
-				<div className="grid--col-md">
+				<div className="grid-row-gap-4">
 					<div className="card--width">
 						<div className="schedule__container panel-shadow--dark card">
 							<div className="schedule-item__container">

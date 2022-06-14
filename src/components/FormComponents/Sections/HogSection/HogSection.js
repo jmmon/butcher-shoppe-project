@@ -247,7 +247,7 @@ function HogSection({ id, deleteAnimal }) {
 						{(hamSelected === "hams_and_roasts" ||
 							hamSelected ===
 								"half_hams_and_roasts_and_half_steaks") && (
-							<div className={formStyles.order_form__field}>
+							<div className={formStyles.field}>
 								<SelectForm
 									title="Smoked Or Fresh"
 									// subtitle={`${
@@ -330,7 +330,7 @@ function HogSection({ id, deleteAnimal }) {
 						{(hamSelected === "steaks" ||
 							hamSelected ===
 								"half_hams_and_roasts_and_half_steaks") && (
-							<div className={formStyles.order_form__field}>
+							<div className={formStyles.field}>
 								<SelectForm
 									title="Steaks Per Package"
 									name="ham.steak.number_per_package"
@@ -406,7 +406,7 @@ function HogSection({ id, deleteAnimal }) {
 							// handleChangeOption={handleSideBaconPorkSelection}
 						/>
 
-						<div className={formStyles.order_form__field}>
+						<div className={formStyles.field}>
 							<SelectForm
 								title="Bacon / Side Pork Cut Style"
 								name="bacon.cut_style"
@@ -512,7 +512,7 @@ function HogSection({ id, deleteAnimal }) {
 						/>
 
 						{loinCut.includes("chops") && (
-							<div className={formStyles.order_form__field}>
+							<div className={formStyles.field}>
 								<SelectForm
 									title="Loin Chops Thickness"
 									name="loin.chops.thickness"
@@ -569,7 +569,7 @@ function HogSection({ id, deleteAnimal }) {
 						)}
 
 						{loinCut.includes("roast") && (
-							<div className={formStyles.order_form__field}>
+							<div className={formStyles.field}>
 								<SelectForm
 									title="Loin Roast Size"
 									subtitle="Roast size in pounds"
