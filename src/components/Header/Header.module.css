@@ -40,7 +40,7 @@
 
 .clock_icon {
 	width: 1.1rem;
-	fill: black;
+	stroke: black;
 	transition: var(--transition);
 }
 
@@ -50,5 +50,10 @@
 
 
 .link.special:hover > .clock_icon {
-	fill: white;
+	stroke: black;
+}
+
+.circleTest {
+	border: 1px solid red;
+	stroke: black;
 }
