@@ -1,99 +1,54 @@
-.header-container {
+.header {
 	background-color: rgb(
-		/* var(--orange-bg--r),
-		var(--orange-bg--g),
-		var(--orange-bg--b) */
 			var(--harvest-gold--r),
 		var(--harvest-gold--g),
 		var(--harvest-gold--b)
 	);
 	display: flex;
-	align-items: center;
 	width: 100vw;
 	height: 40px;
 	position: fixed;
 	z-index: 999;
 }
 
-.header {
+.header-container {
 	margin: 0 auto;
+	padding: 0 20px;
+	width: calc(100vw - 40px);
+	max-width: 1500px;
+	height: 100%;
+	font-size: clamp(14px, 2.8vw, 20px);
+
 	display: flex;
 	justify-content: space-between;
 	gap: 20px;
-	padding: 0 20px;
-	align-items: center;
-	width: 100vw;
-	max-width: 1500px;
-	font-size: clamp(14px, 2.8vw, 20px);
 }
 
-.header-link,
-.header-link-special {
-	/* width: auto; */
-	display: flex;
-	gap: 10px;
-	align-content: center;
+.header-link {
 	text-decoration: none;
 	color: #000;
 	transition: var(--transition);
-	font-size: 1em;
+	font-size: 1rem;
+	height: 100%;
+
+	display: grid;
+	/* two columns to handle clock + hours */
+	grid-template-columns: auto auto;
+	gap: 10px;
+	align-items: center;
 }
 
 .clock-icon {
+	width: 1.1rem;
+	fill: black;
 	transition: var(--transition);
-	/* width: 0.5em; */
-}
-
-.header-hours {
-	font-size: 1em;
-}
-
-.header-link-special.hover {
-	color: #fff;
-	transition: var(--transition);
-}
-
-.header-icon {
-	width: 0.7em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/* padding-top: 2px; */
-}
-
-.header-link:first-child {
-	padding-top: 6px;
 }
 
 .header-link:hover {
 	color: #fff;
 }
 
-/* medium screens */
-@media screen and (max-width: 960px) {
-	/* .header {
-		font-size: var(--font--medium);
 
-		justify-content: space-between;
-	} */
-
-	/* .header-icon {
-		width: var(--icon--medium);
-		padding-top: 0px;
-	} */
-}
-
-/* small screens */
-@media screen and (max-width: 480px) {
-	/* .header {
-		font-size: var(--font--small);
-	} */
-
-	/* .header-icon {
-		width: var(--icon--small);
-	} */
-
-	/* .header-hours {
-		margin-left: -6px;
-	} */
+.header-link.special:hover > .clock-icon {
+	fill: white;
 }

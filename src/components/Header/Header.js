@@ -1,51 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
 
 import { ReactComponent as ClockIcon } from "assets/icons/clock.svg";
 
-function HeaderIcon({ icon }) {
-	return <div className="header-icon">{icon}</div>;
-}
-
 function Header() {
-	const [isHovered, setIsHovered] = useState(false);
-
-	const handleHover = () => {
-		setIsHovered(true);
-	};
-
-	const handleLeave = () => {
-		setIsHovered(false);
-	};
-
 	return (
-		<div className="header-container">
-			<div className="header">
-				<a
-					className={
-						isHovered
-							? "header-link-special hover"
-							: "header-link-special"
-					}
-					href="#contact-link-target"
-					onMouseEnter={handleHover}
-					onMouseLeave={handleLeave}
-				>
-					<HeaderIcon
-						icon={
-							isHovered ? (
-								<ClockIcon
-									className="clock-icon"
-									fill="white"
-								/>
-							) : (
-								<ClockIcon
-									className="clock-icon"
-									fill="black"
-								/>
-							)
-						}
-					/>
+		<div className="header">
+			<div className="header-container">
+				<a className="header-link special" href="#contact-link-target">
+					<ClockIcon className="clock-icon" />
 					<p className="header-hours">9-5 M-F</p>
 				</a>
 				<a className="header-link header-phone" href="tel:15096907214">
