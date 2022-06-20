@@ -1,4 +1,4 @@
-.header {
+.main {
 	background-color: rgb(
 			var(--harvest-gold--r),
 		var(--harvest-gold--g),
@@ -11,7 +11,7 @@
 	z-index: 999;
 }
 
-.header-container {
+.container {
 	margin: 0 auto;
 	padding: 0 20px;
 	width: calc(100vw - 40px);
@@ -24,7 +24,7 @@
 	gap: 20px;
 }
 
-.header-link {
+.link {
 	text-decoration: none;
 	color: #000;
 	transition: var(--transition);
@@ -38,17 +38,17 @@
 	align-items: center;
 }
 
-.clock-icon {
+.clock_icon {
 	width: 1.1rem;
 	fill: black;
 	transition: var(--transition);
 }
 
-.header-link:hover {
+.link:hover {
 	color: #fff;
 }
 
 
-.header-link.special:hover > .clock-icon {
+.link.special:hover > .clock_icon {
 	fill: white;
 }

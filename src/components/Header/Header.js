@@ -1,27 +1,27 @@
 import React from "react";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 import { ReactComponent as ClockIcon } from "assets/icons/clock.svg";
 
 function Header() {
 	return (
-		<div className="header">
-			<div className="header-container">
-				<a className="header-link special" href="#contact-link-target">
-					<ClockIcon className="clock-icon" />
-					<p className="header-hours">9-5 M-F</p>
+		<div className={styles.main}>
+			<div className={styles.container}>
+				<a className={`${styles.link} ${styles.special}`}href="#contact-link-target">
+					<ClockIcon className={styles.clock_icon} />
+					<p>9-5 M-F</p>
 				</a>
-				<a className="header-link header-phone" href="tel:15096907214">
+				<a className={styles.link} href="tel:15096907214">
 					(509) 690-7214
 				</a>
 				<a
-					className="header-link header-contact"
+					className={styles.link}
 					href="#contact-link-target"
 				>
 					Email Us
 				</a>
 				<a
-					className="header-link header-location"
+					className={styles.link}
 					href="#map-link-target"
 				>
 					Northport, WA
