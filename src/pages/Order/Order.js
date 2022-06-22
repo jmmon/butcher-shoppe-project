@@ -213,8 +213,11 @@ function Order() {
 									easing="ease"
 								>
 									<AnimalsBasic />
+									<Button onClick={addAnimal}>
+										Add Another Animal
+									</Button>
 
-									<h4>Select Your Animals:</h4>
+									{/* <h4>Select Your Animals:</h4>
 									<select
 										onChange={(e) =>
 											setNewAnimalChosenType(
@@ -225,10 +228,8 @@ function Order() {
 										<option value="beef">Beef</option>
 										<option value="lamb">Lamb</option>
 										<option value="hog">Hog</option>
-									</select>
-									<Button onClick={addAnimal}>
-										Add Another Animal
-									</Button>
+									</select> */}
+
 
 								</Collapsible>
 							</TabPanel>

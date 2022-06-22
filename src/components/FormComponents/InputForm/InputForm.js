@@ -34,6 +34,7 @@ const InputForm = ({
 	const numberAttributes = number
 		? {
 				min: number?.min || 0,
+				defaultValue: number?.default || number?.min || 0
 		  }
 		: null;
 
