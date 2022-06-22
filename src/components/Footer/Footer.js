@@ -125,12 +125,12 @@ function Footer() {
 								<h2 className={styles.heading}>
 									Social Media
 								</h2>
-								<LinkScrollUp path="/">
+								<Link to="https://www.facebook.com/TheButcherShoppe2022">
+									Facebook
+								</Link>
+								{/* <Link to="/">
 									TODO: Instagram
-								</LinkScrollUp>
-								<LinkScrollUp path="/">
-									TODO: Facebook
-								</LinkScrollUp>
+								</Link> */}
 							</div>
 						</div>
 					</div>
