@@ -1,6 +1,6 @@
 
 
-.form__center {
+/* .form__center {
 	border: 3px solid purple;
 }
 .form__center > * {
@@ -29,10 +29,8 @@
 }
 .form__center > * > * > * > * > * > * > * > * > *{
 	border: 2px solid green;
-}
-/* .form__center > * > * > * > * > * > * > * > * > * > *{
-	border: 2px solid red;
 } */
+
 
 .form__center {
 

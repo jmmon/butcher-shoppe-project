@@ -8,6 +8,7 @@ import "./SchedulerInput.css";
 
 const DateTimePicker = ({ selectHandler }) => {
 	const today = new Date();
+	const endDate = new Date().setMonth(today.getMonth()+6);
 
 	const [startDate, setStartDate] = useState(today);
 	const isWeekday = (date) => {
@@ -41,13 +42,13 @@ const DateTimePicker = ({ selectHandler }) => {
 				<DatePicker
 					className="date-time-picker scheduler--input"
 					selected={startDate}
-					// onChange={handleChange}
-					// value={input.startDate}
+
 					onChange={(date) => setStartDate(date)}
 					filterDate={isWeekday}
 					// calendarContainer={MyContainer}
 					minDate={today}
-					// excludeDates={[today]}
+					maxDate={endDate}
+					showDisabledMonthNavigation
 					showTimeSelect
 					timeFormat="HH:mm"
 					timeIntervals={30}
