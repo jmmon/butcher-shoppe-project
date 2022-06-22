@@ -27,12 +27,17 @@ const DeleteButtonX = () => {
 	);
 };
 
-const AnimalRow = () => {
+const AnimalRow = ({ type, count, index }) => {
+	const [thisAnimalType, setThisAnimalType] = useState();
+	const handleSelectOther = (e) => {
+		const value = e.target.value;
+		setThisAnimalType(value);
+	};
 	return (
 		<div className={formStyles.field}>
 			<SelectForm
 				title="Type"
-				name="animals.type"
+				name={`animals.${index}.type`}
 				options={[
 					{
 						label: `Beef`,
@@ -51,14 +56,32 @@ const AnimalRow = () => {
 						value: `other`,
 					},
 				]}
+				handleChangeOption={handleSelectOther}
 			/>
 
-			<InputForm
-				title="Count"
-				name="animals.count"
-				number={{ min: 1, default: 1 }}
-				small={true}
-			/>
+			{thisAnimalType === "other" ? (
+				<div className={formStyles.field}>
+					<InputForm
+						title="Other Type"
+						name={`animals.${index}.otherType`}
+						required={true}
+						small={true}
+					/>
+					<InputForm
+						title="Count"
+						name={`animals.${index}.count`}
+						number={{ min: 1, default: 1 }}
+						small={true}
+					/>
+				</div>
+			) : (
+				<InputForm
+					title="Count"
+					name={`animals.${index}.count`}
+					number={{ min: 1, default: 1 }}
+					small={true}
+				/>
+			)}
 
 			<DeleteButtonX />
 		</div>
@@ -66,14 +89,12 @@ const AnimalRow = () => {
 };
 
 function AnimalsBasic() {
-	const [animalTypeCount, setAnimalTypeCount] = useState(1);
-	const handleIncrementAnimal = () => {
-		setAnimalTypeCount(animalTypeCount + 1);
-	};
+	const storageFormObjectOrEmptyObject =
+		JSON.parse(window.localStorage.getItem("orderForm")) || {};
 
-	const [addedAnimalsArray, setAddedAnimalsArray] = useState([
-		{ type: "beef", count: 1 },
-	]);
+	const [addedAnimalsArray, setAddedAnimalsArray] = useState(
+		storageFormObjectOrEmptyObject?.animals || [{ type: "beef", count: 1 }]
+	);
 	const handleAddAnimal = () => {
 		setAddedAnimalsArray((previousAnimals) => [
 			...previousAnimals,
@@ -81,16 +102,17 @@ function AnimalsBasic() {
 		]);
 	};
 
-	const handleSetAnimalType = () => {
-		
-	};
-
 	return (
 		<>
 			<div name="animals" className={`${sectionStyles.section}`}>
 				<LabelForm required={true} title="Select Your Animals" />
-				{addedAnimalsArray.map(({type, count}, index) => (
-					<AnimalRow type={type} count={count} setAnimalType={handleSetAnimalType} key={index} />
+				{addedAnimalsArray.map(({ type, count }, index) => (
+					<AnimalRow
+						type={type}
+						count={count}
+						index={index}
+						key={index}
+					/>
 				))}
 				<Button onClick={handleAddAnimal}>Add Another Animal</Button>
 			</div>

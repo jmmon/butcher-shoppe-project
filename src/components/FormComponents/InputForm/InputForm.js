@@ -78,8 +78,8 @@ const InputForm = ({
 					)}
 					type={number ? "number" : "text"}
 					className={styles.input}
-					{...inputAttributes}
 					area-invalid={errors?.[name]}
+					{...inputAttributes}
 					{...numberAttributes}
 				/>
 			)}

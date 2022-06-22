@@ -24,8 +24,8 @@ function HogSection({ id, deleteAnimal }) {
 	const { setValue } = useFormContext();
 
 	const storageFormObjectOrEmptyObject = JSON.parse(
-		window.localStorage.getItem("orderForm") || {}
-	);
+		window.localStorage.getItem("orderForm")
+	) || {};
 
 	const [wholeHog, setWholeHog] = useState(
 		storageFormObjectOrEmptyObject?.animals?.[stringId]?.["info"]?.[
