@@ -213,9 +213,9 @@ function Order() {
 									easing="ease"
 								>
 									<AnimalsBasic />
-									<Button onClick={addAnimal}>
+									{/* <Button onClick={addAnimal}>
 										Add Another Animal
-									</Button>
+									</Button> */}
 
 									{/* <h4>Select Your Animals:</h4>
 									<select
