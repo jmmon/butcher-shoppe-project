@@ -39,7 +39,7 @@
 }
 
 .clock_icon {
-	width: 1.1rem;
+	width: 1rem;
 	stroke: black;
 	transition: var(--transition);
 }
@@ -48,12 +48,6 @@
 	color: #fff;
 }
 
-
 .link.special:hover > .clock_icon {
-	stroke: black;
-}
-
-.circleTest {
-	border: 1px solid red;
 	stroke: black;
 }

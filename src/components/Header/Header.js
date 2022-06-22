@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { ReactComponent as CircleTest } from "assets/icons/test.svg";
+import { ReactComponent as ClockIcon } from "assets/icons/clock.svg";
 
 function Header() {
 	return (
 		<div className={styles.main}>
 			<div className={styles.container}>
 				<a className={`${styles.link} ${styles.special}`}href="#contact-link-target">
-					<CircleTest className={styles.clock_icon} />
-					<p>9-5 M-F</p>
+					<ClockIcon className={styles.clock_icon} />
+					9-5 M-F
 				</a>
 				<a className={styles.link} href="tel:15096907214">
 					(509) 690-7214
