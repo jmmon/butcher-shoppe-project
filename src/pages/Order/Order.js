@@ -19,6 +19,7 @@ import LambSection from "components/FormComponents/Sections/LambSection/LambSect
 import HogSection from "components/FormComponents/Sections/HogSection/HogSection";
 import ContactInfoSection from "components/FormComponents/Sections/ContactInfoSection/ContactInfoSection";
 import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerInput";
+import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -188,8 +189,9 @@ function Order() {
 						</Button>
 						<Tabs forceRenderTabPanel>
 							<TabList>
-								<Tab>Basic Info</Tab>
-								<Tab>Animal Cut Sheets</Tab>
+								<Tab>Contact Info</Tab>
+								<Tab>Your Animal(s)</Tab>
+								<Tab>Preferred Date</Tab>
 							</TabList>
 							<TabPanel>
 								<Collapsible
@@ -201,25 +203,18 @@ function Order() {
 								>
 									<ContactInfoSection />
 								</Collapsible>
-								<Collapsible
-									trigger="Choose Your Date And Time"
-									open
-									triggerDisabled={true}
-									transitionTime={200}
-									easing="ease"
-								>
-									<SchedulerInput />
-								</Collapsible>
 							</TabPanel>
 							<TabPanel>
 								<Collapsible
 									trigger="Animal Info"
 									open
-									// triggerDisabled={true}
+									triggerDisabled={true}
 									transitionTime={200}
 									easing="ease"
 								>
-									<h4>Select and add an animal cuts form:</h4>
+									<AnimalsBasic />
+
+									<h4>Select Your Animals:</h4>
 									<select
 										onChange={(e) =>
 											setNewAnimalChosenType(
@@ -232,78 +227,20 @@ function Order() {
 										<option value="hog">Hog</option>
 									</select>
 									<Button onClick={addAnimal}>
-										Add an animal
+										Add Another Animal
 									</Button>
-									{(idCollectionOfAnimalsByType.beef.idArray
-										.length > 0 ||
-										idCollectionOfAnimalsByType.lamb.idArray
-											.length > 0 ||
-										idCollectionOfAnimalsByType.hog.idArray
-											.length > 0) && (
-										<div>
-											<h4>Animals</h4>
-											{idCollectionOfAnimalsByType.beef
-												.idArray.length > 0 && (
-												<Collapsible
-													trigger="Your Beef"
-													transitionTime={200}
-													easing="ease"
-												>
-													{idCollectionOfAnimalsByType.beef.idArray.map(
-														(id) => (
-															<BeefSection
-																key={id}
-																id={id}
-																deleteAnimal={
-																	deleteAnimal
-																}
-															/>
-														)
-													)}
-												</Collapsible>
-											)}
-											{idCollectionOfAnimalsByType.lamb
-												.idArray.length > 0 && (
-												<Collapsible
-													trigger="Your Lamb"
-													transitionTime={200}
-													easing="ease"
-												>
-													{idCollectionOfAnimalsByType.lamb.idArray.map(
-														(id) => (
-															<LambSection
-																key={id}
-																id={id}
-																deleteAnimal={
-																	deleteAnimal
-																}
-															/>
-														)
-													)}
-												</Collapsible>
-											)}
-											{idCollectionOfAnimalsByType.hog
-												.idArray.length > 0 && (
-												<Collapsible
-													trigger="Your Hog"
-													transitionTime={200}
-													easing="ease"
-												>
-													{idCollectionOfAnimalsByType.hog.idArray.map(
-														(id) => (
-															<HogSection
-																key={id}
-																id={id}
-																deleteAnimal={
-																	deleteAnimal
-																}
-															/>
-														)
-													)}
-												</Collapsible>
-											)}
-										</div>
-									)}
+
+								</Collapsible>
+							</TabPanel>
+							<TabPanel>
+							<Collapsible
+									trigger="Choose Your Date And Time"
+									open
+									triggerDisabled={true}
+									transitionTime={200}
+									easing="ease"
+								>
+									<SchedulerInput />
 								</Collapsible>
 							</TabPanel>
 						</Tabs>

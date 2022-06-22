@@ -4,13 +4,13 @@ import { CalendarContainer } from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./SchedulerInput.css";
-// import Button from "./Button.js";
 
 const DateTimePicker = ({ selectHandler }) => {
 	const today = new Date();
 	const endDate = new Date().setMonth(today.getMonth()+6);
 
-	const [startDate, setStartDate] = useState(today);
+	const [startDate, setStartDate] = useState(null);
+	
 	const isWeekday = (date) => {
 		const day = date.getDay(date);
 		return day !== 0;
@@ -41,7 +41,7 @@ const DateTimePicker = ({ selectHandler }) => {
 				</label>
 				<DatePicker
 					className="date-time-picker scheduler--input"
-					selected={startDate}
+					// selected={startDate}
 
 					onChange={(date) => setStartDate(date)}
 					filterDate={isWeekday}
@@ -49,11 +49,12 @@ const DateTimePicker = ({ selectHandler }) => {
 					minDate={today}
 					maxDate={endDate}
 					showDisabledMonthNavigation
-					showTimeSelect
-					timeFormat="HH:mm"
-					timeIntervals={30}
-					timeCaption="time"
-					dateFormat="MMMM d, yyyy h:mm aa"
+					// showTimeSelect
+					// timeFormat="HH:mm"
+					// timeIntervals={30}
+					// timeCaption="time"
+					// dateFormat="MMMM d, yyyy h:mm aa"
+					dateFormat="MMMM d, yyyy"
 					inline
 				/>
 			</div>
