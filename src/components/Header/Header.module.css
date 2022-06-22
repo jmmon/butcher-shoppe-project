@@ -38,9 +38,9 @@
 	align-items: center;
 }
 
-.clock_icon {
-	width: 1rem;
-	stroke: black;
+.calendar_icon {
+	width: 1.3rem;
+	fill: black;
 	transition: var(--transition);
 }
 
@@ -48,6 +48,16 @@
 	color: #fff;
 }
 
+.link.special:hover > .calendar_icon {
+	fill: white;
+}
+
+/* .clock_icon {
+	width: 1rem;
+	stroke: black;
+	transition: var(--transition);
+}
+
 .link.special:hover > .clock_icon {
 	stroke: black;
-}
+} */
