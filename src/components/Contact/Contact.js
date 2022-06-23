@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Contact.css";
+import Button from "components/Button/Button";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
@@ -63,7 +64,6 @@ const Contact = () => {
 			error: null,
 		}));
 
-
 		const dataFromContactBox = {
 			contact__name: input.contact__name,
 			contact__email: input.contact__email,
@@ -107,7 +107,6 @@ const Contact = () => {
 					error: e,
 					isLoading: false,
 				}));
-
 			})
 			.finally(() => {
 				resetButtonWithSetTimeout();
@@ -115,130 +114,108 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="contact">
-			<form className="contact__form" onSubmit={formHandleSubmit}>
-				<div className="input__container input__small">
-					<label className="contact__label" htmlFor="contact__name">
-						Name:
-					</label>
+		<form className="contact__form" onSubmit={formHandleSubmit}>
+			<div className="input__container input__small">
+				<label className="contact__label" htmlFor="contact__name">
+					Name:
+				</label>
 
-					<input
-						type="text"
-						className="contact__input contact__name"
-						name="contact__name"
-						placeholder="Your name"
-						value={input.contact__name}
-						onChange={inputHandleChange}
-						required
-					/>
-				</div>
+				<input
+					type="text"
+					className="contact__input"
+					name="contact__name"
+					placeholder="Your name"
+					value={input.contact__name}
+					onChange={inputHandleChange}
+					required
+				/>
+			</div>
 
-				<div className="input__container input__small">
-					<label className="contact__label" htmlFor="contact__email">
-						Email:
-					</label>
+			<div className="input__container input__small">
+				<label className="contact__label" htmlFor="contact__email">
+					Email:
+				</label>
 
-					<input
-						type="email"
-						className="contact__input contact__email"
-						name="contact__email"
-						placeholder="Your email"
-						value={input.contact__email}
-						onChange={inputHandleChange}
-						required
-					/>
-				</div>
+				<input
+					type="email"
+					className="contact__input"
+					name="contact__email"
+					placeholder="Your email"
+					value={input.contact__email}
+					onChange={inputHandleChange}
+					required
+				/>
+			</div>
 
-				<div className="input__container input__large">
-					<label
-						className="contact__label"
-						htmlFor="contact__textarea"
-					>
-						How can we help you?
-					</label>
+			<div className="input__container input__large flex">
+				<label className="contact__label topic__label" htmlFor="contact__topic">
+					Topic:
+				</label>
 
-					<textarea
-						type="text"
-						className="contact__input contact__textarea"
-						name="contact__textarea"
-						placeholder="Type here..."
-						onChange={inputHandleChange}
-						value={input.contact__textarea}
-						required
-					/>
-				</div>
+				<select className="input__topic" name="contact__topic" id="topic">
+					<option value="general">General</option>
+					<option value="pricing">Pricing</option>
+					<option value="orders">Orders</option>
+					<option value="support">Website Support</option>
+				</select>
+			</div>
 
-				<button
-					type="submit"
-					className={`contact__form__submit btn btn--outline btn--large ${
-						responseFromContactBox.isLoading
-							? "btn--pending"
-							: responseFromContactBox.data
-							? "btn--complete"
-							: responseFromContactBox.error
-							? "btn--error"
-							: ""
-					}`}
-					disabled={responseFromContactBox.isLoading}
-				>
-					{responseFromContactBox.isLoading
-						? "Sending..."
+			<div className="input__container input__large">
+				<label className="contact__label" htmlFor="contact__textarea">
+					How can we help you?
+				</label>
+
+				<textarea
+					type="text"
+					className="contact__input contact__textarea"
+					name="contact__textarea"
+					placeholder="Type here..."
+					onChange={inputHandleChange}
+					value={input.contact__textarea}
+					required
+				/>
+			</div>
+
+			<button
+				type="submit"
+				className={`contact__form__submit btn btn--outline btn--large ${
+					responseFromContactBox.isLoading
+						? "btn--pending"
 						: responseFromContactBox.data
-						? "Email Sent!"
+						? "btn--complete"
 						: responseFromContactBox.error
-						? "Sending Error!"
-						: "Send Email"}
-				</button>
+						? "btn--error"
+						: ""
+				}`}
+				disabled={responseFromContactBox.isLoading}
+			>
+				{responseFromContactBox.isLoading
+					? "Sending..."
+					: responseFromContactBox.data
+					? "Email Sent!"
+					: responseFromContactBox.error
+					? "Sending Error!"
+					: "Send Email"}
+			</button>
 
-				{/* <button
-					type="submit"
-					className={`contact__form__submit btn btn--outline btn--large ${
-						sentToUs.status === "PENDING"
-							? "btn--pending"
-							: sentToUs.status === "COMPLETE"
-							? "btn--complete"
-							: sentToUs.status === "ERROR"
-							? "btn--error"
-							: ""
-					}`}
-					disabled={sentToUs.status === "PENDING"}
-				>
-					{sentToUs.status === "PENDING"
-						? "Sending..."
-						: sentToUs.status === "COMPLETE"
-						? "Email Sent!"
-						: sentToUs.status === "ERROR"
-						? "Sending Error!"
-						: "Send Email"}
-				</button> */}
+			
 
-				<p
-					className={`contact__form__notification ${
-						responseFromContactBox.error
-							? "error"
-							: responseFromContactBox.data
-							? "success"
-							: ""
-					}`}
-				>
-					{responseFromContactBox.data
-						? "Message sent! A copy will be sent to your provided email address."
-						: responseFromContactBox.error
-						? `Error: ${responseFromContactBox.error.message}`
-						: ""}
-				</p>
-
-				{/* <p
-					className={`contact__form__notification ${
-						sentToUs.status === "ERROR" && "error"
-					} ${sentToUs.status === "COMPLETE" && "success"}`}
-				>
-					{sentToUs.status === "COMPLETE"
-						? "Message sent! A copy will be sent to your provided email address."
-						: sentToUs.errMsg}
-				</p> */}
-			</form>
-		</div>
+			<p
+				className={`contact__form__notification ${
+					responseFromContactBox.error
+						? "show error"
+						: responseFromContactBox.data
+						? "show success"
+						: ""
+				}`}
+			>
+				{responseFromContactBox.data
+					? "Message sent! A copy will be sent to your provided email address."
+					: responseFromContactBox.error
+					? `Error: ${responseFromContactBox.error.message}`
+					: ""}
+			</p>
+		</form>
 	);
 };
 

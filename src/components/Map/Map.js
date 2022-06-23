@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 
-import "./Map.css";
-
 const GoogleMap = ({ placeName, zoomLevel }) => {
 	const googleMapRef = useRef();
 	let googleMap;

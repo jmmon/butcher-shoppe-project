@@ -1,6 +1,7 @@
 import React, { Suspense, lazy as Lazy } from "react";
 import "./FooterSuspenseContainer.css";
 
+
 function FooterSuspenseContainer({
 	title,
 	lazyPromise,
@@ -9,6 +10,7 @@ function FooterSuspenseContainer({
 	...options
 }) {
 	const Content = Lazy(() => lazyPromise);
+
 	return (
 		<div className="footer-box-container" id={linkTarget}>
 			<h2 className="footer--heading">{title}</h2>

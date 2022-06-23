@@ -70,7 +70,7 @@ function Footer() {
 			</section>
 
 			<section
-				className={`flex-jaround-acenter-wrap ${styles.contact_map_container} ${styles.section}`}
+				className={`flex-jcenter-acenter-wrap ${styles.contact_map_container} ${styles.section}`}
 			>
 				{contactMemo}
 				{mapMemo}
