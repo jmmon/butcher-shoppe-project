@@ -17,11 +17,11 @@
 	padding: 0 20px;
 	width: calc(100vw - 2vw);
 	max-width: 1500px;
-	font-size: clamp(0.6rem, 2.4vw, 1rem);
+	font-size: clamp(0.6rem, 2.2vw, 1rem);
 
-	/* display: flex;
-	justify-content: space-between; */
-	display: grid;
+	display: flex;
+	justify-content: space-between;
+	/* display: grid; */
 	grid-template-columns: repeat(4, 1fr);
 	gap: 20px;
 }
@@ -42,7 +42,8 @@
 }
 
 .icon {
-	height: 1.3rem;
+	width: 1.3rem;
+	padding: 2px;
 	fill: black;
 	stroke: black;
 	transition: var(--transition);
@@ -59,7 +60,7 @@
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 482px) {
 	.link {
 		flex-direction: column;
 		overflow: hidden;
