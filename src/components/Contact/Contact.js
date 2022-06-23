@@ -13,6 +13,7 @@ const Contact = () => {
 	const [input, setInput] = useState({
 		contact__name: "",
 		contact__email: "",
+		contact__topic: "general",
 		contact__textarea: "",
 	});
 
@@ -67,6 +68,7 @@ const Contact = () => {
 		const dataFromContactBox = {
 			contact__name: input.contact__name,
 			contact__email: input.contact__email,
+			contact__topic: input.contact__topic,
 			contact__textarea: input.contact__textarea,
 			contact__number: (Math.random() * 100000) | 0,
 		};
@@ -94,6 +96,7 @@ const Contact = () => {
 						...prevInput,
 						contact__name: "",
 						contact__email: "",
+						contact__topic: "general",
 						contact__textarea: "",
 					};
 				});
@@ -148,11 +151,20 @@ const Contact = () => {
 			</div>
 
 			<div className="input__container input__large flex">
-				<label className="contact__label topic__label" htmlFor="contact__topic">
+				<label
+					className="contact__label topic__label"
+					htmlFor="contact__topic"
+				>
 					Topic:
 				</label>
 
-				<select className="input__topic" name="contact__topic" id="topic">
+				<select
+					className="input__topic"
+					name="contact__topic"
+					id="topic"
+					onChange={inputHandleChange}
+					value={input.contact__topic}
+				>
 					<option value="general">General Question</option>
 					<option value="pricing">Pricing Question</option>
 					<option value="orders">Orders Question</option>
@@ -197,8 +209,6 @@ const Contact = () => {
 					? "Sending Error!"
 					: "Send Email"}
 			</button>
-
-			
 
 			<p
 				className={`contact__form__notification ${
