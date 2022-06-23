@@ -45,7 +45,7 @@ function Footer() {
 			id="footer-container"
 		>
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-				<h2 className={styles.heading}>
+				<h2 className={`${styles.heading} margin-1--bot`}>
 					Join our{" "}
 					<LinkScrollUp
 						path="/newsletter"
@@ -70,6 +70,19 @@ function Footer() {
 			</section>
 
 			<section
+				className={`flex-jcenter-acenter-wrap ${styles.section} gap-1`}
+			>
+				<h2 className={styles.heading}>Give Us A Call: </h2>
+
+				<a
+					className={`white-link text-center ${styles.heading} ${styles.phone}`}
+					href="tel:15096907214"
+				>
+					(509) 690-7214
+				</a>
+			</section>
+
+			<section
 				className={`flex-jcenter-acenter-wrap ${styles.contact_map_container} ${styles.section}`}
 			>
 				{contactMemo}
@@ -83,7 +96,9 @@ function Footer() {
 				<div className={`flex-jcenter-wrap ${styles.links_container}`}>
 					<div className={`${styles.link_wrapper} flex`}>
 						<div className={styles.link_items_wrapper}>
-							<h2 className={styles.heading}>The Shoppe</h2>
+							<h2 className={`margin-1--bot ${styles.heading}`}>
+								The Shoppe
+							</h2>
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
@@ -100,7 +115,9 @@ function Footer() {
 							</div>
 						</div>
 						<div className={styles.link_items_wrapper}>
-							<h2 className={styles.heading}>Ordering</h2>
+							<h2 className={`margin-1--bot ${styles.heading}`}>
+								Ordering
+							</h2>
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
@@ -121,17 +138,31 @@ function Footer() {
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
-								<h2 className={styles.heading}>Social Media</h2>
-								<a href={facebookUrl} target="_blank" className={`white-link `}>
+								<h2
+									className={`margin-1--bot ${styles.heading}`}
+								>
+									Social Media
+								</h2>
+								<a
+									href={facebookUrl}
+									target="_blank"
+									className={`white-link `}
+								>
 									Facebook
 								</a>
-								<a href={instagramUrl} target="_blank" className={`white-link `}>
+								<a
+									href={instagramUrl}
+									target="_blank"
+									className={`white-link `}
+								>
 									Instagram
 								</a>
 							</div>
 						</div>
 						<div className={styles.link_items_wrapper}>
-							<h2 className={styles.heading}>Keep In Touch</h2>
+							<h2 className={`margin-1--bot ${styles.heading}`}>
+								Keep In Touch
+							</h2>
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
@@ -145,6 +176,9 @@ function Footer() {
 						</div>
 					</div>
 				</div>
+			</section>
+			
+			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
 				<div className={styles.back_to_top}>
 					<Button onClick={() => window.scrollTo(0, 0)}>
 						Back To The Top

@@ -42,18 +42,10 @@
 }
 
 
-/* .contact__topic__container {
-	width: 100%;
-	padding: 2px;
-} */
-.contact__label.topic__label {
-	padding-right: 0.8rem;
-	flex-grow: 0;
-}
-
 .input__topic {
+	margin-left: 0.8rem;
 	flex-grow: 1;
-	/* width: 100%; */
+	/* border-radius: 4px; */
 }
 
 .contact__form__submit {

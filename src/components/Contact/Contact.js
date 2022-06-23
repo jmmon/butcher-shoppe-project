@@ -153,9 +153,9 @@ const Contact = () => {
 				</label>
 
 				<select className="input__topic" name="contact__topic" id="topic">
-					<option value="general">General</option>
-					<option value="pricing">Pricing</option>
-					<option value="orders">Orders</option>
+					<option value="general">General Question</option>
+					<option value="pricing">Pricing Question</option>
+					<option value="orders">Orders Question</option>
 					<option value="support">Website Support</option>
 				</select>
 			</div>

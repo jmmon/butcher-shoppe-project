@@ -12,7 +12,7 @@
 
 
 .heading {
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
 	font-size: 24px;
 	text-align: center;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -64,11 +64,8 @@
 }
 
 .back_to_top {
-	margin-top: 3em;
+	/* margin-top: 3em; */
 }
-
-
-
 
 
 
@@ -79,7 +76,7 @@
 	width: 100vw;
 	max-height: 460px;
 	height: 40vw;
-	margin: 20px 0;
+	/* margin: 1rem 0; */
 }
 
 
