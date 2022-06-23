@@ -15,6 +15,7 @@ function LinkScrollUp({ className, path, children }) {
 		<>
 			{pathname === path || path === undefined ? (
 				<span
+				tabIndex="0"
 					className={`${className} white-link margin`}
 					onClick={() => scrollToTop()}
 				>

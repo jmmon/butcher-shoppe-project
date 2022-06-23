@@ -33,6 +33,10 @@ function Order() {
 
 	const [newAnimalChosenType, setNewAnimalChosenType] = useState("beef");
 	const [animalToUnregister, setAnimalToUnregister] = useState("");
+	
+	const storageFormObjectOrEmptyObject = JSON.parse(
+		window.localStorage.getItem("orderForm")
+	) || {};
 
 	const [idCollectionOfAnimalsByType, setIdCollectionOfAnimalsByType] =
 		useState({
@@ -50,11 +54,9 @@ function Order() {
 	};
 
 	useFormPersist("orderForm", {
-		watch: methods.watch, // to watch the value to save into storage
-		setValue: methods.setValue, // to set the value when loading up the page
+		watch: methods.watch,
+		setValue: methods.setValue,
 		storage: window.localStorage,
-		// exclude: ["animals"],
-		// could exclude the animals here, then would need to watch them separately to add them separately to localStorage
 	});
 
 	useEffect(() => {

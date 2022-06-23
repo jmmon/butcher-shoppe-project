@@ -25,6 +25,7 @@ function Button({
 			className={`${className} btn ${checkButtonStyle} ${checkButtonSize}`}
 			onClick={onClick}
 			type={type}
+			tabIndex={url === "" ? 1 : -1}
 			{...buttonProps}
 		>
 			{children}
@@ -32,11 +33,11 @@ function Button({
 	);
 
 	return url.includes("#") ? (
-		<a href={url} className="btn-mobile">
+		<a href={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
 			{button}
 		</a>
 	) : (
-		<Link to={url} className="btn-mobile">
+		<Link to={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
 			{button}
 		</Link>
 	);

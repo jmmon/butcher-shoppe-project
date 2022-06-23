@@ -49,7 +49,6 @@ const Contact = () => {
 		return () => {
 			if (timer) {
 				clearTimeout(timer);
-				// console.log("timer cleared");
 			}
 		};
 	});
@@ -64,11 +63,6 @@ const Contact = () => {
 			error: null,
 		}));
 
-		// setSentToUs((prevState) => ({
-		// 	...prevState,
-		// 	status: "PENDING",
-		// 	errMsg: null,
-		// }));
 
 		const dataFromContactBox = {
 			contact__name: input.contact__name,
@@ -94,12 +88,6 @@ const Contact = () => {
 					isLoading: false,
 				}));
 
-				// setSentToUs((prevState) => ({
-				// 	...prevState,
-				// 	status: "COMPLETE",
-				// 	errMsg: null,
-				// }));
-
 				// clear input boxes
 				setInput((prevInput) => {
 					return {
@@ -120,11 +108,6 @@ const Contact = () => {
 					isLoading: false,
 				}));
 
-				// setSentToUs((prevState) => ({
-				// 	...prevState,
-				// 	status: "ERROR",
-				// 	errMsg: `Error: ${e.message}`,
-				// }));
 			})
 			.finally(() => {
 				resetButtonWithSetTimeout();

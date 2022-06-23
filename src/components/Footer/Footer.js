@@ -1,6 +1,4 @@
-import React, {
-	useMemo,
-} from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
@@ -8,7 +6,11 @@ import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "./FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import Button from "components/Button/Button";
-import LogoComponent from "assets/logo/LogoComponent"
+import LogoComponent from "assets/logo/LogoComponent";
+
+const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
+
+const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
 
 function Footer() {
 	const contactMemo = useMemo(
@@ -67,7 +69,9 @@ function Footer() {
 				<Subscribe />
 			</section>
 
-			<section className={`flex-jaround-acenter-wrap ${styles.contact_map_container} ${styles.section}`}>
+			<section
+				className={`flex-jaround-acenter-wrap ${styles.contact_map_container} ${styles.section}`}
+			>
 				{contactMemo}
 				{mapMemo}
 			</section>
@@ -80,7 +84,9 @@ function Footer() {
 					<div className={`${styles.link_wrapper} flex`}>
 						<div className={styles.link_items_wrapper}>
 							<h2 className={styles.heading}>The Shoppe</h2>
-							<div className={`flex-col-astart ${styles.link_items}`}>
+							<div
+								className={`flex-col-astart ${styles.link_items}`}
+							>
 								<LinkScrollUp path="/">Home</LinkScrollUp>
 								{/* <Link to="/">Home</Link> */}
 								<LinkScrollUp path="/meet-the-team">
@@ -95,7 +101,9 @@ function Footer() {
 						</div>
 						<div className={styles.link_items_wrapper}>
 							<h2 className={styles.heading}>Ordering</h2>
-							<div className={`flex-col-astart ${styles.link_items}`}>
+							<div
+								className={`flex-col-astart ${styles.link_items}`}
+							>
 								<LinkScrollUp path="/prices">
 									Prices
 								</LinkScrollUp>
@@ -110,27 +118,29 @@ function Footer() {
 					</div>
 					<div className={`${styles.link_wrapper} flex`}>
 						<div className={styles.link_items_wrapper}>
+							<div
+								className={`flex-col-astart ${styles.link_items}`}
+							>
+								<h2 className={styles.heading}>Social Media</h2>
+								<a href={facebookUrl} target="_blank" className={`white-link `}>
+									Facebook
+								</a>
+								<a href={instagramUrl} target="_blank" className={`white-link `}>
+									Instagram
+								</a>
+							</div>
+						</div>
+						<div className={styles.link_items_wrapper}>
 							<h2 className={styles.heading}>Keep In Touch</h2>
-							<div className={`flex-col-astart ${styles.link_items}`}>
+							<div
+								className={`flex-col-astart ${styles.link_items}`}
+							>
 								<LinkScrollUp path="/newsletter">
 									Subscribe to our Newsletter
 								</LinkScrollUp>
 								<LinkScrollUp path="/newsletter/unsubscribe">
 									Unsubscribe
 								</LinkScrollUp>
-							</div>
-						</div>
-						<div className={styles.link_items_wrapper}>
-							<div className={`flex-col-astart ${styles.link_items}`}>
-								<h2 className={styles.heading}>
-									Social Media
-								</h2>
-								<Link to="https://www.facebook.com/TheButcherShoppe2022">
-									Facebook
-								</Link>
-								{/* <Link to="/">
-									TODO: Instagram
-								</Link> */}
 							</div>
 						</div>
 					</div>
@@ -143,36 +153,45 @@ function Footer() {
 			</section>
 
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-					<LogoComponent fill="white" className={styles.banner} />
+				<LogoComponent fill="white" className={styles.banner} />
 			</section>
 
 			<section className={`flex-col-acenter ${styles.social_media}`}>
-				<div className={`flex-jaround-acenter ${styles.social_media_wrap}`}>
-					<LinkScrollUp path="/" className={`flex ${styles.social_name}`}>
+				<div
+					className={`flex-jaround-acenter ${styles.social_media_wrap}`}
+				>
+					<LinkScrollUp
+						path="/"
+						className={`flex ${styles.social_name}`}
+					>
 						The Butcher Shoppe
 					</LinkScrollUp>
 
-					<small className={`${styles.website_rights} ${styles.social_small_font}`}>C 2022</small>
+					<small
+						className={`${styles.website_rights} ${styles.social_small_font}`}
+					>
+						C 2022
+					</small>
 
-					<div className={`flex-acenter-jbetween ${styles.social_icons}`}>
-						<Link
-							className={`white-link facebook ${styles.social_small_font}`}
-							to="/"
+					<div
+						className={`flex-acenter-jbetween ${styles.social_icons}`}
+					>
+						<a
+							className={`white-link ${styles.social_small_font}`}
+							href={facebookUrl}
 							target="_blank"
 							aria-label="Facebook"
 						>
 							<i className="fab fa-facebook-f"></i>
-							{" "}[TODO]
-						</Link>
-						<Link
-							className={`white-link instagram ${styles.social_small_font}`}
-							to="/"
+						</a>
+						<a
+							className={`white-link ${styles.social_small_font}`}
+							href={instagramUrl}
 							target="_blank"
 							aria-label="Instagram"
 						>
 							<i className="fab fa-instagram"></i>
-							{" "}[TODO]
-						</Link>
+						</a>
 					</div>
 				</div>
 			</section>
