@@ -118,39 +118,41 @@ const Contact = () => {
 
 	return (
 		<form className="contact__form" onSubmit={formHandleSubmit}>
-			<div className="input__container input__small">
-				<label className="contact__label" htmlFor="contact__name">
-					Name:
-				</label>
+			<div className="double-container">
+				<div className="input__container input__small">
+					<label className="contact__label" htmlFor="contact__name">
+						Name:
+					</label>
 
-				<input
-					type="text"
-					className="contact__input"
-					name="contact__name"
-					placeholder="Your name"
-					value={input.contact__name}
-					onChange={inputHandleChange}
-					required
-				/>
+					<input
+						type="text"
+						className="contact__input"
+						name="contact__name"
+						placeholder="Your name"
+						value={input.contact__name}
+						onChange={inputHandleChange}
+						required
+					/>
+				</div>
+
+				<div className="input__container input__small">
+					<label className="contact__label" htmlFor="contact__email">
+						Email:
+					</label>
+
+					<input
+						type="email"
+						className="contact__input"
+						name="contact__email"
+						placeholder="Your email"
+						value={input.contact__email}
+						onChange={inputHandleChange}
+						required
+					/>
+				</div>
 			</div>
 
-			<div className="input__container input__small">
-				<label className="contact__label" htmlFor="contact__email">
-					Email:
-				</label>
-
-				<input
-					type="email"
-					className="contact__input"
-					name="contact__email"
-					placeholder="Your email"
-					value={input.contact__email}
-					onChange={inputHandleChange}
-					required
-				/>
-			</div>
-
-			<div className="input__container input__large flex">
+			<div className="input__container input__large">
 				<label
 					className="contact__label topic__label"
 					htmlFor="contact__topic"
@@ -159,7 +161,7 @@ const Contact = () => {
 				</label>
 
 				<select
-					className="input__topic"
+					className="input__topic contact__input"
 					name="contact__topic"
 					id="topic"
 					onChange={inputHandleChange}
@@ -172,7 +174,7 @@ const Contact = () => {
 				</select>
 			</div>
 
-			<div className="input__container input__large">
+			<div className="input__container input__large input__grow">
 				<label className="contact__label" htmlFor="contact__textarea">
 					How can we help you?
 				</label>

@@ -4,8 +4,17 @@
 	width: 100%;
 
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 4px;
+	/* flex-wrap: wrap;  */
+	/* align-items: center; */
+	/* justify-content: center; */
+}
+
+.double-container {
+	display: flex;
+	padding: 2px;
 }
 
 .input__container {
@@ -35,22 +44,31 @@
 	margin-top: 4px;
 	padding: 5px;
 }
+.input__grow {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
 
 .contact__textarea {
-	height: 100px;
 	resize: none;
+	flex-grow: 1
 }
 
 
+/* 
 .input__topic {
-	margin-left: 0.8rem;
-	flex-grow: 1;
-	/* border-radius: 4px; */
+} */
+
+.topic__label {
+	display: flex;
+	align-items: center;
 }
 
 .contact__form__submit {
 	margin-top: 5px;
 	width: 100%;
+	
 }
 
 

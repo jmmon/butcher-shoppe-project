@@ -34,22 +34,19 @@ function Home() {
 						// className="padding-1--vertical"
 							title="Welcome to The Northport Butcher Shoppe!"
 							paragraphs={[
-								"Serving our local tri-county area, we provide local farmers with bringing their hard work to the dinner table!",
-								"We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.",
-								"We provide custom cut, cure, smoke and wrap.",
-								"We process wild game, including deer, elk, moose and bear.",
-								"No poultry!",
+								"Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter and custom butchery.",
+								"Our services include the slaughtering and processing of beef, hogs, goats, lambs, bison and exotic animals like alpacas, lamas and emu.",
+								"We even process wild game!",
+								"Sorry, no poultry or rabbits!",
 							]}
 						/>
 						<hr/>
 						<Card
 							title="How It Works"
 							paragraphs={[
-								"Instead of loading and hauling your livestock to a kill floor, dispatch can be done swiftly and responsibly on your own farm.",
-								"Once your carcass is in our coolers, we will skillfully cut, cure, smoke and wrap your order according to your specifications. This includes wild game too!",
-								"By taking the time to craft each animal into the artistic expression that will best suit your table, we hope to offer each of our customers a satisfying feeling of abundance for having chosen us to process your livestock.",
-								"Our truck and our facility are WSDA Inspected.",
-								"We encourage you to take a look at our membership program as well.",
+								"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass.",
+								"If you decide to send the carcass back to our Shoppe, we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
+								"Our truck and our facility are WSDA inspected.",
 							]}
 						/>
 					</div>

@@ -32,9 +32,9 @@
 	border: 1px solid #fff;
 }
 
-.input::placeholder {
+/* .input::placeholder {
 	color: var(--input-placeholder--light);
-}
+} */
 
 
 .input:focus:required:invalid {
