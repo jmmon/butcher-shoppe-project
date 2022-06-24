@@ -15,7 +15,7 @@
 }
 
 .card--font-size {
-	font-size: min(6vw,  1.2rem);
+	font-size: var(--card--font-size);
 	/* font-size: clamp(1rem, 6vw, 1.2rem); */
 }
 

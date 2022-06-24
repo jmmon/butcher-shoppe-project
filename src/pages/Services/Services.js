@@ -53,6 +53,13 @@ function Services() {
 						// 	"We also process wild game, like deer, elk, moose and bear",
 						// 	"Sorry, no poultry or rabbits!",
 						// ]}
+
+						// paragraphs={[
+						// 	"We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.",
+						// 	"We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.",
+						// 	"We provide custom cut, cure, smoke and wrap.",
+						// 	"We process wild game, including deer, elk, moose and bear.",
+						// ]}
 					>
 						<p className="card--paragraph">
 							Basic kill fees and average meat processing fees are

@@ -50,6 +50,8 @@
 	--font--medium: 16px;
 	--font--small: 14px;
 
+	--card--font-size: min(6vw, 1.2rem);
+
 	--icon--normal: 22px;
 	--icon--medium: 20px;
 	--icon--small: 18px;
@@ -204,6 +206,10 @@ html {
 
 .margin-1--bot {
 	margin-bottom: 1rem;
+}
+
+.margin-4--v {
+	margin: 4rem auto;
 }
 
 

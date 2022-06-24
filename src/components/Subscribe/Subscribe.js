@@ -6,7 +6,7 @@ const headers = {
 	"Content-Type": "application/json",
 };
 
-function Subscribe({ unsubscribe }) {
+function Subscribe({ unsubscribe, className }) {
 	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
@@ -97,7 +97,7 @@ function Subscribe({ unsubscribe }) {
 	};
 
 	return (
-		<form className={`flex-jcenter-wrap-jstretch ${styles.wrapper} card panel-shadow--light`} onSubmit={handleSubmit}>
+		<form className={`${className} flex-jcenter-wrap-jstretch ${styles.wrapper} card panel-shadow--light`} onSubmit={handleSubmit}>
 			<input
 				type="email"
 				name="email"
