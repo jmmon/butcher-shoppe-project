@@ -14,7 +14,6 @@ import Card from "components/Card/Card";
 import ServicesButchering from "components/ServicesButchering/ServicesButchering";
 import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
 
-
 function Services() {
 	return (
 		<>
@@ -42,37 +41,40 @@ function Services() {
 						</div>
 					</div>
 
-						<Card title="What We Offer" paragraphs={["We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.", "We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.", "We provide custom cut, cure, smoke and wrap.", "We process wild game, including deer, elk, moose and bear."]}>
+					<Card
+						title="What We Offer"
+						paragraphs={[
+							"We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.",
+							"We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.",
+							"We provide custom cut, cure, smoke and wrap.",
+							"We process wild game, including deer, elk, moose and bear.",
+						]}
+					>
 						<ul className="indent">
-								<li>No poultry</li>
-							</ul>
-							<p>
-								Basic kill fees and average meat processing fees
-								are outlined below. Kill fees are paid in the
-								field and processing fees are paid upon pick-up
-								at the downtown Northport store.{" "}
-								<a href="#map-link-target">
-									(See map down below)
-								</a>
-							</p>
+							<li>No poultry</li>
+						</ul>
+						<p>
+							Basic kill fees and average meat processing fees are
+							outlined below. Kill fees are paid in the field and
+							processing fees are paid upon pick-up at the
+							downtown Northport store.{" "}
+							<a href="#map-link-target">(See map down below)</a>
+						</p>
+					</Card>
 
-						</Card>
-						
 					<div className="card--width">
-
-							<Card
-								title="Farm Kill"
-								paragraphs={[
-									"On the scheduled day of your appointment, you will be asked to safely secure your animal(s) where dispatch can occur without harming other livestock. The designated animal(s) will be killed, hung, eviscerated, de-hided, de-headed and de-legged on sight.",
-									"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be weighed and loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
-								]}
-								bg={bgServices}
-							/>
-							<ServicesButchering bg={bgServices} />
+						<Card
+							title="Farm Kill"
+							paragraphs={[
+								"On the scheduled day of your appointment, you will be asked to safely secure your animal(s) where dispatch can occur without harming other livestock. The designated animal(s) will be killed, hung, eviscerated, de-hided, de-headed and de-legged on sight.",
+								"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be weighed and loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
+							]}
+							bg={bgServices}
+						/>
+						<ServicesButchering bg={bgServices} />
 					</div>
 					<div className="card--width">
-
-							<ServicesProcessing bg={bgProcessing} />
+						<ServicesProcessing bg={bgProcessing} />
 					</div>
 				</div>
 			</WhitePageBackground>
