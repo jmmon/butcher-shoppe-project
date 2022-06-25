@@ -14,9 +14,11 @@ let subscribe__transporter = nodemailer.createTransport({
 });
 
 router.route("/subscribe").get((req, res) => {
+	console.log('subscribe get works!');
 	res.send("subscribe get works!");
 });
 router.route("/unsubscribe").get((req, res) => {
+	console.log('UNsubscribe get works!');
 	res.send("unsubscribe get works!");
 });
 
@@ -37,7 +39,8 @@ router.route("/subscribe").post(async (req, res) => {
 		subscribe__transporter
 			.sendMail({
 				from: `"Subscriber (Internal)" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Northport Newsletter Subscriber" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				to: `"Northport Newsletter Subscriber" <${process.env.TESTING_SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				// to: `"Northport Newsletter Subscriber" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
 				subject: `subscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {

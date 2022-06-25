@@ -60,7 +60,7 @@ function NewsletterPage() {
 								confirm your newsletter subscription!
 							</p>
 						</Card>
-						<div className="margin-4--top"></div>
+						<div className="margin-6--top"></div>
 						<Subscribe/>
 						<div className="margin-4--top"></div>
 					</section>

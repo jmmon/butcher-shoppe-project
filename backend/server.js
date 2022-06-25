@@ -3,14 +3,16 @@ const app = express();
 const cors = require("cors");
 // const mongoose = require("mongoose");
 
-// const corsOptions = {
-// 	origin: "localhost:3000/",
-// 	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-// };
 
-// app.use(cors(corsOptions));
+// cors options ONLY FOR DEV
+const corsOptions = {
+	origin: "*",
+	optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
-app.use(cors());
+
+// app.use(cors());
 app.use(express.json());
 require("dotenv").config();
 

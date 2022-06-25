@@ -7,13 +7,13 @@ const headers = {
 };
 
 function Subscribe({ unsubscribe, className }) {
-	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
-		unsubscribe ? "unsubscribe" : "subscribe"
-	}`;
-
-	// const subscribeBackendUri = `https://localhost:3001/server/${
+	// const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
 	// }`;
+
+	const subscribeBackendUri = `http://localhost:3001/server/${
+		unsubscribe ? "unsubscribe" : "subscribe"
+	}`;
 
 	let timer = null;
 

@@ -204,13 +204,17 @@ html {
 	margin-top: 4rem;
 }
 
+.margin-6--top {
+	margin-top: 6rem;
+}
+
 .margin-1--bot {
 	margin-bottom: 1rem;
 }
-
-.margin-4--v {
-	margin: 4rem auto;
-}
+/* 
+.margin-6--v {
+	margin: 6rem auto;
+} */
 
 
 .border-sm {

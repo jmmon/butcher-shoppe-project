@@ -16,7 +16,7 @@ import NotFound from "pages/NotFound/NotFound";
 import ComingSoon from "pages/ComingSoon/ComingSoon";
 import Newsletter from "pages/Newsletter/Newsletter";
 import Unsubscribe from "pages/Newsletter/Unsubscribe";
-// import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
+import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
 import Prices from "pages/Prices/Prices";
 
@@ -71,17 +71,17 @@ function App() {
 								element={<Unsubscribe />}
 							/>
 
-							{/* <Route
-								path="/newsletter/subscribe/confirm"
+							<Route
+								path="/newsletter/subscribe/confirm/:confirmId"
 								exact
 								element={<SubscribeConfirm subscribe={true} />}
 							/>
 
 							<Route
-								path="/newsletter/unsubscribe/confirm"
+								path="/newsletter/unsubscribe/confirm/:confirmId"
 								exact
 								element={<SubscribeConfirm subscribe={false} />}
-							/> */}
+							/>
 
 							<Route path="*" element={<NotFound />} />
 						</Routes>
