@@ -2,19 +2,13 @@ Newsletter Subscribe Request
 
 Thank you for your interest in The Butcher Shoppe newsletter!
 
-We have received a request for subscription of your email
-address to The Butcher Shoppe mailing list.
+We have received a request to subscribe your email to our twice-montly email newsletter. To complete your subscription, please click (or copy-paste into your address bar) the following link:
 
-To confirm your subscription, please do one of the following:
- - visit this web page and click "Subscribe to list newsletter":
-    %(confirmurl)s
- - send a message to newsletter-request@thenorthportbutchershoppe.com with ONLY the following text in the subject line or message:
-
-    confirm %(cookie)s
+https://thenorthportbutchershoppe.com/newsletter/subscribe/confirm/%(cookie)s
 
 
-Once confirmed, we'll keep you up to date on all the latest
-information about The Butcher Shoppe!
+Once confirmed, we'll keep you up to date on all the latest information about The Butcher Shoppe!
+
 
 Thanks again!
 
@@ -22,6 +16,15 @@ Thanks again!
 The Butcher Shoppe Team
 
 Northport, WA
+
+-----------------------------------------------------------------
+
+If the above link didn't work, confirm your subscription by doing one of the following:
+ - visit this web page and click "Subscribe to list newsletter":
+    %(confirmurl)s
+ - send a message to newsletter-request@thenorthportbutchershoppe.com with ONLY the following text in the subject line or message:
+
+    confirm %(cookie)s
 
 -----------------------------------------------------------------
 

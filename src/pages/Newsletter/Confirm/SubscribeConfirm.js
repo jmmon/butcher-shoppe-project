@@ -21,16 +21,21 @@ function SubscribeConfirm({ isSubscribePage }) {
 	const [error, setError] = useState(null);
 
 	let timer = null;
+	let redirectTimer = null;
 
 
 	useEffect(() => {
 		return () => {
-			if (timer === null) return;
+			if (timer) {
+				setError(null); // just in case?
+				clearTimeout(timer);
+			}
+			if (redirectTimer) {
+				clearTimeout(timer);
+			}
 
-			setError(null); // just in case?
-			clearTimeout(timer)
 		};
-	}, [timer]);
+	}, [timer, redirectTimer]);
 
 	useEffect(() => {
 		console.log("SubscribeConfirm param:", confirmationId);
@@ -46,7 +51,9 @@ function SubscribeConfirm({ isSubscribePage }) {
 
 				console.log(res.status);
 				if (res.status < 300) {
-					navigate("/", { replace: true });
+					redirectTimer = setTimeout(() =>{
+						navigate("/", { replace: true });
+					}, 3000)
 				}
 			})
 			.catch((e) => {

@@ -2,17 +2,12 @@ Newsletter Unsubscribe Request
 
 Thanks for your time with The Butcher Shoppe newsletter!
 
-To confirm removal of you from our newsletter, please do one of the following:
- - visit this web page and click Unsubscribe:
-    %(confirmurl)s
- - send a message to newsletter-request@thenorthportbutchershoppe.com with ONLY the following text in the message:
+We have received a request to remove your email from our newsletter. To complete the request, please click (or copy-paste into your address bar) the following link:
 
-    confirm %(cookie)s
+https://thenorthportbutchershoppe.com/newsletter/unsubscribe/confirm/%(cookie)s
 
 
-Once confirmed, your email address will be removed from The Butcher Shoppe newsletter.
-
-You will receive a final confirmation email from newsletter-bounce@thenorthportbutchershoppe.com indicating successful removal of your subscription. (Check the spam folder!)
+Once confirmed, you will get one final goodbye email (from newsletter-bounce@thenorthportbutchershoppe.com) indicating removal of your email address from The Butcher Shoppe newsletter was successful.
 
 Thanks again!
 
@@ -20,6 +15,15 @@ Thanks again!
 The Butcher Shoppe Team
 
 Northport, WA
+
+-----------------------------------------------------------------
+
+If the above link didn't work, confirm the removal of your email from our newsletter by doing one of the following:
+ - visit this web page and click Unsubscribe:
+    %(confirmurl)s
+ - send a message to newsletter-request@thenorthportbutchershoppe.com with ONLY the following text in the message:
+
+    confirm %(cookie)s
 
 -----------------------------------------------------------------
 
