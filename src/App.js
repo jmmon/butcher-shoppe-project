@@ -38,11 +38,21 @@ function App() {
 								element={<Unsubscribe />}
 							/> */}
 							<Route path="newsletter">
+
 								<Route
 									path="subscribe"
 									exact
 									element={<Newsletter />}
-								/>
+								>
+									<Route
+										path="confirm/:id"
+										
+										element={
+											<SubscribeConfirm isSubscribePage />
+										}
+									/>
+								</Route>
+
 								<Route
 									path="unsubscribe"
 									exact
@@ -50,23 +60,11 @@ function App() {
 								>
 									<Route
 										path="confirm/:id"
-										exact
+										
 										element={<SubscribeConfirm />}
 									/>
 								</Route>
-								<Route
-									path="subscribe"
-									exact
-									element={<Newsletter />}
-								>
-									<Route
-										path="confirm/:id"
-										exact
-										element={
-											<SubscribeConfirm isSubscribePage />
-										}
-									/>
-								</Route>
+
 							</Route>
 							<Route path="*" element={<ComingSoon />} />
 						</Routes>

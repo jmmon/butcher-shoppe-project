@@ -26,7 +26,7 @@ function Footer({ simple = false }) {
 			<section className="footer-subscription">
 				<h2 className="footer-subscription-heading">
 					Join our{" "}
-					<Link className="footer-subscribe-link" to="/newsletter/">
+					<Link className="footer-subscribe-link" to="/newsletter/subscribe">
 						newsletter
 					</Link>{" "}
 					to receive periodic updates!

@@ -5,6 +5,15 @@
 	font-family: "PT Sans", sans-serif;
 }
 
+/* * {
+	font-family: "PT Sans", sans-serif;
+	font-weight: 700;
+}
+html {
+	font-size: 20px;
+	scroll-padding-top: 4rem;
+} */
+
 :root {
 	--subheading-gray: #444;
 	--input-placeholder--light: #aaa;
@@ -51,6 +60,54 @@
 	--icon--small: 18px;
 }
 
+
+
+/* flex selectors: */
+
+[class*="flex"] {
+	display: flex;
+}
+
+[class*="flex-"][class*="col"] {
+	flex-direction: column;
+}
+[class*="flex-"][class*="row"] {
+	flex-direction: row;
+}
+[class*="flex-"][class*="wrap"] {
+	flex-wrap: wrap;
+}
+
+[class*="flex-"][class*="jcenter"] {
+	justify-content: center;
+}
+[class*="flex-"][class*="jevenly"] {
+	justify-content: space-evenly;
+}
+[class*="flex-"][class*="jaround"] {
+	justify-content: space-around;
+}
+[class*="flex-"][class*="jbetween"] {
+	justify-content: space-between;
+}
+
+[class*="flex-"][class*="acenter"] {
+	align-items: center;
+}
+[class*="flex-"][class*="jstretch"] {
+	align-items: stretch;
+}
+[class*="flex-"][class*="astart"] {
+	align-items: flex-start;
+}
+
+
+
+
+
+
+
+
 .website-container {
 	position: absolute;
 	top: 0px;
@@ -71,6 +128,13 @@
 .panel--shadow {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.panel-shadow--dark {
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3),
+		0 8px 20px 8px rgba(0, 0, 0, 0.19);
+}
+
 
 .card-heading {
 	display: flex;

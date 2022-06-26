@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./WhitePageBackground.module.css";
-import "./globalStyles.css";
 
 function WhitePageBackground({ separate = false, className = "", children }) {
 	return (
