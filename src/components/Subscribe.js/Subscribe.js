@@ -110,7 +110,8 @@ function Subscribe({ unsubscribe }) {
 					<button
 						className={`btn btn--medium btn--outline ${
 							responseFromSubscribeBox.isLoading
-								? "btn--pending"
+								// ? "btn--pending"
+								? "btn--complete"
 								: responseFromSubscribeBox.data
 								? "btn--complete"
 								: responseFromSubscribeBox.error
@@ -119,13 +120,9 @@ function Subscribe({ unsubscribe }) {
 						}`}
 					>
 						{responseFromSubscribeBox.isLoading
-							? "Processing..."
+							? "Done!"
 							: responseFromSubscribeBox.data
-							? `${
-									unsubscribe
-										? "Check your email!"
-										: "Check your email!"
-							  }`
+							? "Done!"
 							: responseFromSubscribeBox.error
 							? `${"Oops, try again!"}`
 							: unsubscribe
@@ -148,14 +145,16 @@ function Subscribe({ unsubscribe }) {
 					? `Server error: ${JSON.stringify(
 							responseFromSubscribeBox.error
 					  )}`
+
 					: responseFromSubscribeBox.error
 					? `Error: ${responseFromSubscribeBox.error.message}`
+
 					: responseFromSubscribeBox.data
 					? `${
 							unsubscribe ? "Unsubscribe" : "Subscribe"
 					  } request sent to ${
 							responseFromSubscribeBox.data
-					  }! To confirm, please click the link in the email.`
+					  }. To confirm, please click the link in the email.`
 					: ""}
 			</p>
 		</>

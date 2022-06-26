@@ -42,7 +42,7 @@ function SubscribeConfirm({ isSubscribePage }) {
 			.post(confirmUri, data)
 			.then((res) => {
 				console.log("SubscribeConfirm-POST response:", res);
-				console.log("SubscribeConfirm-POST response.data:", res.data);
+				// console.log("SubscribeConfirm-POST response.data:", res.data);
 
 				console.log(res.status);
 				if (res.status < 300) {
@@ -61,7 +61,7 @@ function SubscribeConfirm({ isSubscribePage }) {
 
 	return (
 		<div>
-			<PageTitle title="Confirm Subscription" bgImage={bgImage}></PageTitle>
+			<PageTitle heading={`Confirming ${ isSubscribePage ? "Your Subscription" : "Un-Subscription"}...`} bgImage={bgImage}></PageTitle>
 			<WhitePageBackground>
 				<div className="flex-col-jcenter-acenter">
 					{isSubscribePage && (
