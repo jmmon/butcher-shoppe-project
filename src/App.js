@@ -16,6 +16,8 @@ import ComingSoon from "./components/_pages/ComingSoon/ComingSoon";
 import Newsletter from "./components/_pages/Newsletter/Newsletter";
 import Unsubscribe from "./components/_pages/Newsletter/Unsubscribe";
 
+import SubscribeConfirm from "./pages/Newsletter/Confirm/SubscribeConfirm";
+
 function App() {
 	return (
 		<div className="website-container" id="link-destination-top">
@@ -25,7 +27,7 @@ function App() {
 					<Navbar simple={true} />
 					<div className="website-content-container">
 						<Routes>
-							<Route
+							{/* <Route
 								path="/newsletter"
 								exact
 								element={<Newsletter />}
@@ -34,7 +36,38 @@ function App() {
 								path="/newsletter/unsubscribe"
 								exact
 								element={<Unsubscribe />}
-							/>
+							/> */}
+							<Route path="newsletter">
+								<Route
+									path="subscribe"
+									exact
+									element={<Newsletter />}
+								/>
+								<Route
+									path="unsubscribe"
+									exact
+									element={<Unsubscribe />}
+								>
+									<Route
+										path="confirm/:id"
+										exact
+										element={<SubscribeConfirm />}
+									/>
+								</Route>
+								<Route
+									path="subscribe"
+									exact
+									element={<Newsletter />}
+								>
+									<Route
+										path="confirm/:id"
+										exact
+										element={
+											<SubscribeConfirm isSubscribePage />
+										}
+									/>
+								</Route>
+							</Route>
 							<Route path="*" element={<ComingSoon />} />
 						</Routes>
 						<Footer simple={true} />
