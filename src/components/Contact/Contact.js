@@ -9,7 +9,6 @@ const contactBoxBackendUri =
 const headers = { "Content-Type": "application/json" };
 
 const Contact = () => {
-	// const form = useRef();
 	const [input, setInput] = useState({
 		contact__name: "",
 		contact__email: "",
@@ -46,14 +45,18 @@ const Contact = () => {
 	};
 
 	useEffect(() => {
-		// componentWillUnmount
 		return () => {
-			if (timer) {
-				clearTimeout(timer);
-				// console.log("timer cleared");
-			}
+			if (timer === null) return;
+
+			setResponseFromContactBox((prevState) => ({
+				...prevState,
+				data: null,
+				error: null,
+				isLoading: false,
+			}));
+			clearTimeout(timer);
 		};
-	});
+	}, [timer]);
 
 	const formHandleSubmit = (e) => {
 		e.preventDefault();
@@ -64,12 +67,6 @@ const Contact = () => {
 			data: null,
 			error: null,
 		}));
-
-		// setSentToUs((prevState) => ({
-		// 	...prevState,
-		// 	status: "PENDING",
-		// 	errMsg: null,
-		// }));
 
 		const dataFromContactBox = {
 			contact__name: input.contact__name,
@@ -95,12 +92,6 @@ const Contact = () => {
 					isLoading: false,
 				}));
 
-				// setSentToUs((prevState) => ({
-				// 	...prevState,
-				// 	status: "COMPLETE",
-				// 	errMsg: null,
-				// }));
-
 				// clear input boxes
 				setInput((prevInput) => {
 					return {
@@ -120,12 +111,6 @@ const Contact = () => {
 					error: e,
 					isLoading: false,
 				}));
-
-				// setSentToUs((prevState) => ({
-				// 	...prevState,
-				// 	status: "ERROR",
-				// 	errMsg: `Error: ${e.message}`,
-				// }));
 			})
 			.finally(() => {
 				resetButtonWithSetTimeout();
@@ -190,7 +175,8 @@ const Contact = () => {
 					type="submit"
 					className={`contact__form__submit btn btn--outline btn--large ${
 						responseFromContactBox.isLoading
-							? "btn--pending"
+							// ? "btn--pending"
+							? "btn--complete"
 							: responseFromContactBox.data
 							? "btn--complete"
 							: responseFromContactBox.error
@@ -200,35 +186,13 @@ const Contact = () => {
 					disabled={responseFromContactBox.isLoading}
 				>
 					{responseFromContactBox.isLoading
-						? "Sending..."
+						? "Done!"
 						: responseFromContactBox.data
-						? "Email Sent!"
+						? "Done!"
 						: responseFromContactBox.error
 						? "Sending Error!"
 						: "Send Email"}
 				</button>
-
-				{/* <button
-					type="submit"
-					className={`contact__form__submit btn btn--outline btn--large ${
-						sentToUs.status === "PENDING"
-							? "btn--pending"
-							: sentToUs.status === "COMPLETE"
-							? "btn--complete"
-							: sentToUs.status === "ERROR"
-							? "btn--error"
-							: ""
-					}`}
-					disabled={sentToUs.status === "PENDING"}
-				>
-					{sentToUs.status === "PENDING"
-						? "Sending..."
-						: sentToUs.status === "COMPLETE"
-						? "Email Sent!"
-						: sentToUs.status === "ERROR"
-						? "Sending Error!"
-						: "Send Email"}
-				</button> */}
 
 				<p
 					className={`contact__form__notification ${
@@ -246,15 +210,6 @@ const Contact = () => {
 						: ""}
 				</p>
 
-				{/* <p
-					className={`contact__form__notification ${
-						sentToUs.status === "ERROR" && "error"
-					} ${sentToUs.status === "COMPLETE" && "success"}`}
-				>
-					{sentToUs.status === "COMPLETE"
-						? "Message sent! A copy will be sent to your provided email address."
-						: sentToUs.errMsg}
-				</p> */}
 			</form>
 		</div>
 	);
