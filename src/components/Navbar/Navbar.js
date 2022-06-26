@@ -101,7 +101,7 @@ function Navbar({ simple = false }) {
 
 						<li className="nav-item">
 							<Link
-								to="/newsletter"
+								to="/newsletter/subscribe"
 								className="nav-links-mobile"
 								onClick={closeMobileMenu}
 							>
@@ -112,7 +112,7 @@ function Navbar({ simple = false }) {
 
 					{button && (
 						<Link
-							to="/newsletter"
+							to="/newsletter/subscribe"
 							className="btn-mobile newsletter-btn"
 						>
 							<div className="btn btn--outline btn--large">

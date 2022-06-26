@@ -4,6 +4,7 @@ import styles from "./Subscribe.module.css";
 
 const headers = {
 	"Content-Type": "application/json",
+	// "Access-Control-Allow-Origin": "https://staging.thenorthportbutchershoppe.com"
 };
 
 function Subscribe({ unsubscribe, className }) {
@@ -11,9 +12,13 @@ function Subscribe({ unsubscribe, className }) {
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
 	// }`;
 
-	const subscribeBackendUri = `http://localhost:3001/server/${
+	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/staging/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
+
+	// const subscribeBackendUri = `http://localhost:3001/server/${
+	// 	unsubscribe ? "unsubscribe" : "subscribe"
+	// }`;
 
 	let timer = null;
 

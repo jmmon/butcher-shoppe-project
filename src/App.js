@@ -29,6 +29,32 @@ function App() {
 					<Navbar />
 					<div className="website-content-container">
 						<Routes>
+							<Route path="newsletter">
+								<Route
+									path="unsubscribe/confirm/:id"
+									// exact
+									element={
+										<SubscribeConfirm isSubscribePage={false} />
+									}
+								/>
+								<Route
+									path="subscribe/confirm/:id"
+									// exact
+									element={
+										<SubscribeConfirm isSubscribePage={true} />
+									}
+								/>
+								<Route
+									path="unsubscribe"
+									exact
+									element={<Unsubscribe />}
+								/>
+								<Route
+									path="subscribe"
+									exact
+									element={<Newsletter />}
+								/>
+							</Route>
 							<Route path="/" exact element={<Home />} />
 
 							<Route
@@ -51,11 +77,6 @@ function App() {
 								element={<HowToOrder />}
 							/>
 							<Route path="/order" exact element={<Order />} />
-							<Route
-								path="/newsletter"
-								exact
-								element={<Newsletter />}
-							/>
 
 							<Route
 								path="/meet-the-team"
@@ -65,24 +86,6 @@ function App() {
 
 							<Route path="/prices" exact element={<Prices />} />
 
-							<Route
-								path="/newsletter/unsubscribe"
-								exact
-								element={<Unsubscribe />}
-							/>
-
-							<Route
-								path="/newsletter/subscribe/confirm/:confirmId"
-								exact
-								element={<SubscribeConfirm subscribe={true} />}
-							/>
-
-							<Route
-								path="/newsletter/unsubscribe/confirm/:confirmId"
-								exact
-								element={<SubscribeConfirm subscribe={false} />}
-							/>
-
 							<Route path="*" element={<NotFound />} />
 						</Routes>
 						<Footer />
@@ -91,7 +94,6 @@ function App() {
 			</Router>
 		</div>
 	);
-	// }
 }
 
 export default App;

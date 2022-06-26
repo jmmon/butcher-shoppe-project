@@ -48,7 +48,7 @@ function Footer() {
 				<h2 className={`${styles.heading} margin-1--bot`}>
 					Join our{" "}
 					<LinkScrollUp
-						path="/newsletter"
+						path="/newsletter/subscribe"
 						className="white-link--underline"
 					>
 						newsletter
@@ -166,7 +166,7 @@ function Footer() {
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
-								<LinkScrollUp path="/newsletter">
+								<LinkScrollUp path="/newsletter/subscribe">
 									Subscribe to our Newsletter
 								</LinkScrollUp>
 								<LinkScrollUp path="/newsletter/unsubscribe">

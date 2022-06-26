@@ -14,22 +14,30 @@ let subscribe__transporter = nodemailer.createTransport({
 });
 
 router.route("/subscribe").get((req, res) => {
-	console.log('subscribe get works!');
+	console.log("subscribe get works!");
 	res.send("subscribe get works!");
 });
 router.route("/unsubscribe").get((req, res) => {
-	console.log('UNsubscribe get works!');
+	console.log("UNsubscribe get works!");
 	res.send("unsubscribe get works!");
 });
 
 router.route("/subscribe").post(async (req, res) => {
 	console.log("req.body:", req.body);
+	// res.set("Access-Control-Allow-Origin", [
+	// 	"https://thenorthportbutchershoppe.com",
+	// 	"https://staging.thenorthportbutchershoppe.com",
+	// 	"http://thenorthportbutchershoppe.com",
+	// 	"http://staging.thenorthportbutchershoppe.com",
+	// ]);
 
 	console.log("subscribe post route working:");
 	const subscribe_userEmail = req.body.email;
 
 	console.log("email to subscribe:", subscribe_userEmail);
 	console.log("-----");
+
+	console.log("Subscribing to  TESTING newsletter");
 
 	// send us the email from the user
 	// (from "userEmail" (from our internal email so as not to access the user's email), to our info@thenorthport)
