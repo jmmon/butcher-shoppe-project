@@ -10,7 +10,7 @@
 	margin-top: -2rem;
 }
 
-.newsletter--container.unsubscribe {
+.newsletter--container-unsubscribe {
 	padding: 0rem 0 4rem 0;
 }
 
@@ -23,8 +23,8 @@
 	text-align: center;
 	padding: 20px 2vw;
 }
-.newsletter--subheading.unsubscribe {
-	margin-top: 4rem;
+.newsletter--subheading-unsubscribe {
+	margin-bottom: 2rem;
 }
 
 .newsletter--container--content-wrapper {

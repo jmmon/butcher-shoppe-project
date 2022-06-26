@@ -8,13 +8,15 @@
 /* * {
 	font-family: "PT Sans", sans-serif;
 	font-weight: 700;
-}
+} */
 html {
 	font-size: 20px;
 	scroll-padding-top: 4rem;
-} */
+}
 
 :root {
+	--white-page-background: #fff;
+
 	--subheading-gray: #444;
 	--input-placeholder--light: #aaa;
 	--footer-background-color: #242424;

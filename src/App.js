@@ -27,17 +27,37 @@ function App() {
 					<Navbar simple={true} />
 					<div className="website-content-container">
 						<Routes>
-							{/* <Route
-								path="/newsletter"
-								exact
-								element={<Newsletter />}
-							/>
-							<Route
-								path="/newsletter/unsubscribe"
-								exact
-								element={<Unsubscribe />}
-							/> */}
 							<Route path="newsletter">
+								<Route
+									path="unsubscribe/confirm/:id"
+									// exact
+									element={
+										<SubscribeConfirm
+										/>
+									}
+								/>
+								<Route
+									path="subscribe/confirm/:id"
+									// exact
+									element={
+										<SubscribeConfirm
+											isSubscribePage
+										/>
+									}
+								/>
+								<Route
+									path="unsubscribe"
+									exact
+									element={<Unsubscribe />}
+								/>
+								<Route
+									path="subscribe"
+									exact
+									element={<Newsletter />}
+								/>
+							</Route>
+
+							{/* <Route path="newsletter">
 
 								<Route
 									path="subscribe"
@@ -65,7 +85,8 @@ function App() {
 									/>
 								</Route>
 
-							</Route>
+							</Route> */}
+
 							<Route path="*" element={<ComingSoon />} />
 						</Routes>
 						<Footer simple={true} />

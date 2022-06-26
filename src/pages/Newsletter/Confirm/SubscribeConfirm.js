@@ -6,39 +6,40 @@ import PageTitle from "components/PageTitle/PageTitle";
 
 import bgImage from "assets/images/image-1-136.jpg";
 
-// const confirmUri =
-// 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
+const confirmUri =
+	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
+const listName = "Newsletter";
 
-const TESTINGconfirmUri =
-	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
-const listName = "Testing";
+// const TESTINGconfirmUri =
+// 	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
+// const listName = "Testing";
 
 function SubscribeConfirm({ isSubscribePage }) {
 	const params = useParams();
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 	const confirmationId = params.id;
-
 	const [error, setError] = useState(null);
 
 	let timer = null;
-	timer = setTimeout(() => {
-		setError = null;
-	}, 10000);
+
 
 	useEffect(() => {
 		return () => {
-			timer.destroy();
-		};
-	}, []);
+			if (timer === null) return;
 
-	React.useEffect(() => {
+			setError(null); // just in case?
+			clearTimeout(timer)
+		};
+	}, [timer]);
+
+	useEffect(() => {
 		console.log("SubscribeConfirm param:", confirmationId);
 		const data = `realname=&digests=0&language=en&cookie=${confirmationId}&submit=${
 			isSubscribePage ? "Subscribe+to" : "Unsubscribe+from"
 		}+list+${listName}`;
 
 		axios
-			.post(TESTINGconfirmUri, data)
+			.post(confirmUri, data)
 			.then((res) => {
 				console.log("SubscribeConfirm-POST response:", res);
 				console.log("SubscribeConfirm-POST response.data:", res.data);
@@ -50,10 +51,13 @@ function SubscribeConfirm({ isSubscribePage }) {
 			})
 			.catch((e) => {
 				setError(e);
-
 				console.log("SubscribeConfirm-POST axios error:", e);
+
+				timer = setTimeout(() => {
+					setError(null);
+				}, 10000);
 			});
-	}, [confirmationId, navigate]); // testing
+	}, [confirmationId, navigate]);
 
 	return (
 		<div>
