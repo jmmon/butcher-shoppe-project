@@ -2,7 +2,7 @@ import React from "react";
 import "./Services.css";
 
 import bgTitle from "assets/images/image-1-2.jpg";
-import bgServices from "assets/images/image-1-124.jpg";
+import bgSlaughter from "assets/images/image-1-124.jpg";
 import bgProcessing from "assets/images/image-1-2.jpg";
 
 import Button from "components/Button/Button";
@@ -13,6 +13,7 @@ import Card from "components/Card/Card";
 
 import ServicesButchering from "components/ServicesButchering/ServicesButchering";
 import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
+import { Link } from "wouter";
 
 function Services() {
 	return (
@@ -26,9 +27,9 @@ function Services() {
 								className="btns"
 								buttonStyle="btn--outline"
 								buttonSize="btn--large"
-								url="#butchering-link"
+								url="#slaughter-link"
 							>
-								Butchering
+								Slaughter
 							</Button>
 							<Button
 								className="btns"
@@ -72,22 +73,28 @@ function Services() {
 
 					<hr />
 
-					<div className="flex-col-jcenter">
+					<div className="flex-col-jcenter" id="slaughter-link">
 						<Card
 							title="Slaughter"
 							paragraphs={[
 								"On the scheduled day of your appointment, you will be asked to safely secure your animal(s) where dispatch can occur without harming other livestock. The designated animal(s) will be killed, hung, eviscerated, de-hided, de-headed and de-legged on sight.",
 								"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be weighed and loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
 							]}
-							bg={bgServices}
+							bg={bgSlaughter}
 						/>
-						{/* <div className="spacer"></div> */}
-						{/* <ServicesButchering bg={bgServices} /> */}
 						<h2 className="prices-grid-title ">Slaughter Prices</h2>
+						{/* <p>Minimum Charge: $100</p> */}
 						<div className="prices-grid-container panel-shadow--light">
-							<span className="prices-grid-header">
-								Animal
+							<span className="prices-minimum-header">
+								Minimum Charge
 							</span>
+							<span className="prices-minimum-amount">
+								$100
+							</span>
+
+							<span className="prices-grid-spacer"></span>
+
+							<span className="prices-grid-header">Animal</span>
 							<span className="prices-grid-header">
 								Base Price
 							</span>
@@ -110,22 +117,61 @@ function Services() {
 							<span className="prices-grid-spacer"></span>
 
 							<span className="prices-grid-item">
-								Sheep, <br/>Goats
+								Sheep, <br />
+								Goats
 							</span>
 							<span className="prices-grid-item">$80</span>
 							<span className="prices-grid-item">$70</span>
-							
+
 							<span className="prices-grid-spacer"></span>
 
 							<span className="prices-grid-item">
-								Bison,<br/>Buffalo
+								Bison,
+								<br />
+								Buffalo
 							</span>
-							<span className="prices-grid-item prices-grid-item-2">$180</span>
-							<span className="prices-grid-item prices-grid-item-2">$160</span>
+							<span className="prices-grid-item prices-grid-item-2">
+								$180
+							</span>
+							<span className="prices-grid-item prices-grid-item-2">
+								$160
+							</span>
 						</div>
 					</div>
-					<div className="card--width">
-						{/* <ServicesProcessing bg={bgProcessing} /> */}
+					<div className="flex-col-jcenter" id="processing-link">
+						<Card
+							title="Processing"
+							bg={bgProcessing}
+							paragraphs={[
+								"Our goal is to best serve our customers, and, once completed, our shoppe will be available for processing the carcasses in downtown Northport.",
+							]}
+						>
+							<p className="card--paragraph">
+								Our meat processing shoppe is currently under
+								construction. Subscribe to our{" "}
+								<Link href="/newsletter/subscribe">
+									newsletter
+								</Link>{" "}
+								so you will know when our shoppe is ready.
+							</p>
+							<p className="card--paragraph">
+								In the meantime, to best serve you, we offer
+								transportation of the carcass to a meat
+								processing shop of your choice after dispatch.
+							</p>
+						</Card>
+
+						<h2 className="prices-grid-title ">
+							Processing Prices
+						</h2>
+						<div className="card--width card--content-width card--font-size">
+							<p className="card--paragraph">
+								For now, we will use the shop of your choice to
+								process the carcass. To get pricing information
+								for meat processing, please contact your shop of
+								choice.
+							</p>
+						</div>
 					</div>
 				</div>
 			</WhitePageBackground>

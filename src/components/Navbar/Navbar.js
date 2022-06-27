@@ -41,6 +41,8 @@ function Navbar({ simple = false }) {
 						className="navbar-home"
 						onClick={closeMobileMenu}
 					>
+						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
+						{" "}
 						<LogoComponent fill="white" className="nav-logo" />
 					</Link>
 

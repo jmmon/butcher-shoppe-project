@@ -7,7 +7,7 @@ const SIZES = ["btn--medium", "btn--large"];
 function Button({
 	children,
 	type,
-	onClick: handleClick = null,
+	onClick = null,
 	buttonStyle,
 	buttonSize,
 	url = "",
@@ -19,12 +19,12 @@ function Button({
 		? buttonStyle
 		: STYLES[0];
 	const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0];
-	if (handleClick) console.log('onClick from button', handleClick);
+	if (onClick) console.log('onClick from button', onClick);
 
 	const button = (
 		<button
 			className={`${className} btn ${checkButtonStyle} ${checkButtonSize}`}
-			onClick={handleClick}
+			onClick={onClick}
 			type={type}
 			tabIndex={url === "" ? 1 : -1}
 			{...buttonProps}

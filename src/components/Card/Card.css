@@ -25,7 +25,8 @@
 }
 
 .card--content-width {
-	max-width: 90%;
+	/* max-width: 90%; */
+	max-width: 70ch;
 	/* width: min(1000px, 96%); */
 	margin: auto;
 }
