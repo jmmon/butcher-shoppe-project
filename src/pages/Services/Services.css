@@ -54,7 +54,7 @@
 	border: 1px solid black;
 	row-gap: 1.5rem;
 	column-gap: 2rem;
-	padding: 1rem;
+	padding: 1.4rem;
 	width: min(1000px, 96%);
 
 	align-items: center;
@@ -63,12 +63,10 @@
 }
 
 .prices-grid-header {
-	/* font-size: 1.3rem; */
 	margin: -1rem 0;
 	grid-column: span 2;
-	/* justify-self: left; */
-	/* margin-left: 0.5rem; */
 	color: #333;
+	text-align: left;
 }
 
 .prices-grid-spacer {
@@ -80,10 +78,9 @@
 .prices-grid-item {
 	font-size: 1.3rem;
 	grid-column: span 2;
-	/* grid-row: span 2; */
 }
 
-[class^="prices-minimum"] {
+[class^="prices-two-column"] {
 	grid-column: span 3;
 	font-size: 1.3rem;
 	text-align: center;

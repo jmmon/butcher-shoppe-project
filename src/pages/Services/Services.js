@@ -85,10 +85,10 @@ function Services() {
 						<h2 className="prices-grid-title ">Slaughter Prices</h2>
 						{/* <p>Minimum Charge: $100</p> */}
 						<div className="prices-grid-container panel-shadow--light">
-							<span className="prices-minimum-header">
+							<span className="prices-two-column-header">
 								Minimum Charge
 							</span>
-							<span className="prices-minimum-amount">
+							<span className="prices-two-column-amount">
 								$100
 							</span>
 
@@ -136,8 +136,42 @@ function Services() {
 							<span className="prices-grid-item prices-grid-item-2">
 								$160
 							</span>
+
+							<span className="prices-grid-spacer"></span>
+
+							<span className="prices-two-column">
+								Exotic Animals
+							</span>
+							<span className="prices-two-column">
+								<a href="tel:15096907214">Please Call Us</a>
+							</span>
+						</div>
+						<div>
+							<h2 className="prices-grid-title ">
+								Extra Charges
+							</h2>
+							<div className="card--width card--content-width card--font-size">
+								<ul>
+									<li>
+										<p className="card--paragraph">
+											Fuel surcharge will apply based on
+											the current diesel prices
+										</p>
+									</li>
+									<li>
+										<p className="card--paragraph">
+											Farms located north of Chewelah will
+											be subject to mileage fees, please
+											call the office
+										</p>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
+
+					<hr />
+
 					<div className="flex-col-jcenter" id="processing-link">
 						<Card
 							title="Processing"
@@ -160,17 +194,18 @@ function Services() {
 								processing shop of your choice after dispatch.
 							</p>
 						</Card>
-
-						<h2 className="prices-grid-title ">
-							Processing Prices
-						</h2>
-						<div className="card--width card--content-width card--font-size">
-							<p className="card--paragraph">
-								For now, we will use the shop of your choice to
-								process the carcass. To get pricing information
-								for meat processing, please contact your shop of
-								choice.
-							</p>
+						<div>
+							<h2 className="prices-grid-title ">
+								Processing Prices
+							</h2>
+							<div className="card--width card--content-width card--font-size">
+								<p className="card--paragraph">
+									For now, we will use the shop of your choice
+									to process the carcass. To get pricing
+									information for meat processing, please
+									contact your shop of choice.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>

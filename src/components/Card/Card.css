@@ -16,7 +16,6 @@
 
 .card--font-size {
 	font-size: var(--card--font-size);
-	/* font-size: clamp(1rem, 6vw, 1.2rem); */
 }
 
 .card--width {
@@ -25,9 +24,7 @@
 }
 
 .card--content-width {
-	/* max-width: 90%; */
 	max-width: 70ch;
-	/* width: min(1000px, 96%); */
 	margin: auto;
 }
 
