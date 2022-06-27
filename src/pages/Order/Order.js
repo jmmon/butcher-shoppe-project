@@ -14,9 +14,9 @@ import WhitePageBackground from "components/WhitePageBackground/WhitePageBackgro
 import PageTitle from "components/PageTitle/PageTitle.js";
 import Button from "components/Button/Button";
 
-import BeefSection from "components/FormComponents/Sections/BeefSection/BeefSection";
-import LambSection from "components/FormComponents/Sections/LambSection/LambSection";
-import HogSection from "components/FormComponents/Sections/HogSection/HogSection";
+// import BeefSection from "components/FormComponents/Sections/BeefSection/BeefSection";
+// import LambSection from "components/FormComponents/Sections/LambSection/LambSection";
+// import HogSection from "components/FormComponents/Sections/HogSection/HogSection";
 import ContactInfoSection from "components/FormComponents/Sections/ContactInfoSection/ContactInfoSection";
 import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerInput";
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";

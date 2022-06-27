@@ -100,8 +100,8 @@ function HowToOrder() {
 			
 			</WhitePageBackground>
 			<NavBottomButtons
-				prev={{ link: "/prices", title: "Prices" }}
-				next={{ link: "/order", title: "Order" }}
+				prev={{ link: "/services", title: "Services" }}
+				next={{ link: "/order", title: "Order Form" }}
 			/>
 		</>
 	);

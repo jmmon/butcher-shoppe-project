@@ -1,5 +1,6 @@
 import React from "react";
 import "./Services.css";
+import { Link } from "wouter";
 
 import bgTitle from "assets/images/image-1-2.jpg";
 import bgSlaughter from "assets/images/image-1-124.jpg";
@@ -11,9 +12,8 @@ import WhitePageBackground from "components/WhitePageBackground/WhitePageBackgro
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
-import ServicesButchering from "components/ServicesButchering/ServicesButchering";
-import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
-import { Link } from "wouter";
+// import ServicesButchering from "components/ServicesButchering/ServicesButchering";
+// import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
 
 function Services() {
 	return (
@@ -62,7 +62,7 @@ function Services() {
 						// 	"We process wild game, including deer, elk, moose and bear.",
 						// ]}
 					>
-						<p className="card--paragraph">
+						<p className="">
 							Basic kill fees and average meat processing fees are
 							outlined below. Kill fees are paid in the field and
 							processing fees are paid upon pick-up at the
@@ -150,16 +150,16 @@ function Services() {
 							<h2 className="prices-grid-title ">
 								Extra Charges
 							</h2>
-							<div className="card--width card--content-width card--font-size">
+							<div className="card--width card--content-width">
 								<ul>
 									<li>
-										<p className="card--paragraph">
+										<p>
 											Fuel surcharge will apply based on
 											the current diesel prices
 										</p>
 									</li>
 									<li>
-										<p className="card--paragraph">
+										<p>
 											Farms located north of Chewelah will
 											be subject to mileage fees, please
 											call the office
@@ -180,7 +180,7 @@ function Services() {
 								"Our goal is to best serve our customers, and, once completed, our shoppe will be available for processing the carcasses in downtown Northport.",
 							]}
 						>
-							<p className="card--paragraph">
+							<p>
 								Our meat processing shoppe is currently under
 								construction. Subscribe to our{" "}
 								<Link href="/newsletter/subscribe">
@@ -188,7 +188,7 @@ function Services() {
 								</Link>{" "}
 								so you will know when our shoppe is ready.
 							</p>
-							<p className="card--paragraph">
+							<p>
 								In the meantime, to best serve you, we offer
 								transportation of the carcass to a meat
 								processing shop of your choice after dispatch.
@@ -199,7 +199,7 @@ function Services() {
 								Processing Prices
 							</h2>
 							<div className="card--width card--content-width card--font-size">
-								<p className="card--paragraph">
+								<p>
 									For now, we will use the shop of your choice
 									to process the carcass. To get pricing
 									information for meat processing, please

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route as WouterRouter, Switch } from "wouter";
+import { Route, Switch } from "wouter";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -18,7 +18,6 @@ import Newsletter from "pages/Newsletter/Newsletter";
 import Unsubscribe from "pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
-import Prices from "pages/Prices/Prices";
 
 function App() {
 	return (
@@ -28,99 +27,57 @@ function App() {
 				<Navbar />
 				<div className="website-content-container">
 					<Switch>
-						<WouterRouter path="/newsletter/subscribe" ><Newsletter /></WouterRouter>
-						<WouterRouter path="/newsletter/unsubscribe" ><Unsubscribe /></WouterRouter>
-						<WouterRouter path="/newsletter/subscribe/confirm/:id">
-							{(params) => (<SubscribeConfirm isSubscribePage id={params.id} />)}
-						</WouterRouter>
-						<WouterRouter path="/newsletter/unsubscribe/confirm/:id">
-						{(params) => (<SubscribeConfirm isSubscribePage={false} id={params.id} />)}
-						</WouterRouter>
-							
+						<Route path="/newsletter/subscribe">
+							<Newsletter />
+						</Route>
+						<Route path="/newsletter/unsubscribe">
+							<Unsubscribe />
+						</Route>
+						<Route path="/newsletter/subscribe/confirm/:id">
+							{(params) => (
+								<SubscribeConfirm
+									isSubscribePage
+									id={params.id}
+								/>
+							)}
+						</Route>
+						<Route path="/newsletter/unsubscribe/confirm/:id">
+							{(params) => (
+								<SubscribeConfirm
+									isSubscribePage={false}
+									id={params.id}
+								/>
+							)}
+						</Route>
 
-						<WouterRouter path="/" ><Home /></WouterRouter>
-						<WouterRouter path="/services" ><Services /></WouterRouter>
-						<WouterRouter path="/coming-soon" ><ComingSoon /></WouterRouter>
-						<WouterRouter path="/faq" ><Faq /></WouterRouter>
-						<WouterRouter path="/how-to-order" ><HowToOrder /></WouterRouter>
-						<WouterRouter path="/order" ><Order /></WouterRouter>
-						<WouterRouter path="/meet-the-team" ><MeetTheTeam /></WouterRouter>
-						<WouterRouter path="/prices" ><Prices /></WouterRouter>
-						<WouterRouter path="*" ><NotFound /></WouterRouter>
-
+						<Route path="/">
+							<Home />
+						</Route>
+						<Route path="/services">
+							<Services />
+						</Route>
+						<Route path="/coming-soon">
+							<ComingSoon />
+						</Route>
+						<Route path="/faq">
+							<Faq />
+						</Route>
+						<Route path="/how-to-order">
+							<HowToOrder />
+						</Route>
+						<Route path="/order">
+							<Order />
+						</Route>
+						<Route path="/meet-the-team">
+							<MeetTheTeam />
+						</Route>
+						<Route path="*">
+							<NotFound />
+						</Route>
 					</Switch>
 					<Footer />
 				</div>
 			</ScrollToTop>
-			{/* <Router>
-				<ScrollToTop>
-					<Header />
-					<Navbar />
-					<div className="website-content-container">
-						<Routes>
-							<Route path="newsletter">
-								<Route
-									path="unsubscribe/confirm/:id"
-									// exact
-									element={
-										<SubscribeConfirm isSubscribePage={false} />
-									}
-								/>
-								<Route
-									path="subscribe/confirm/:id"
-									// exact
-									element={
-										<SubscribeConfirm isSubscribePage={true} />
-									}
-								/>
-								<Route
-									path="unsubscribe"
-									exact
-									element={<Unsubscribe />}
-								/>
-								<Route
-									path="subscribe"
-									exact
-									element={<Newsletter />}
-								/>
-							</Route>
-							<Route path="/" exact element={<Home />} />
-
-							<Route
-								path="/services"
-								exact
-								element={<Services />}
-							/>
-
-							<Route
-								path="/coming-soon"
-								exact
-								element={<ComingSoon />}
-							/>
-
-							<Route path="/faq" exact element={<Faq />} />
-
-							<Route
-								path="/how-to-order"
-								exact
-								element={<HowToOrder />}
-							/>
-							<Route path="/order" exact element={<Order />} />
-
-							<Route
-								path="/meet-the-team"
-								exact
-								element={<MeetTheTeam />}
-							/>
-
-							<Route path="/prices" exact element={<Prices />} />
-
-							<Route path="*" element={<NotFound />} />
-						</Routes>
-						<Footer />
-					</div>
-				</ScrollToTop>
-			</Router> */}
 		</div>
 	);
 }

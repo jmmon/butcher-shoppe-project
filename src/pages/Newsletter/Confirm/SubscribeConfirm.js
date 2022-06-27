@@ -26,7 +26,7 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 		return () => {
 			timer.destroy();
 		};
-	}, []);
+	}, [timer]);
 
 	React.useEffect(() => {
 		console.log("SubscribeConfirm param:", confirmationId);
@@ -50,7 +50,7 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 
 				console.log("SubscribeConfirm-POST axios error:", e);
 			});
-	}, [confirmationId, useLocation, location]); // testing
+	}, [confirmationId, setLocation, location, isSubscribePage, setError]); // testing
 
 	return (
 		<div>

@@ -118,14 +118,12 @@ function Footer() {
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
-								<LinkScrollUp path="/prices">
-									Prices
-								</LinkScrollUp>
+								
 								<LinkScrollUp path="/how-to-order">
 									How To Order
 								</LinkScrollUp>
 								<LinkScrollUp path="/order">
-									Submit Your Order
+									Order Form
 								</LinkScrollUp>
 							</div>
 						</div>

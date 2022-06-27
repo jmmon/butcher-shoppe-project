@@ -67,9 +67,15 @@
 	font-family: "PT Sans", sans-serif;
 	font-weight: 700;
 }
+
 html {
 	font-size: 20px;
 	scroll-padding-top: 4rem;
+}
+
+p {
+	line-height: 2rem;
+	font-size: var(--card--font-size);
 }
 
 /* flex selectors: */

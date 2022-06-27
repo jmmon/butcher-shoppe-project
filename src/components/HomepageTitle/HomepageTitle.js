@@ -23,25 +23,26 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 		>
 			<Fade {...properties}>
 				{slideImages.map((slideImage, index) => (
-					<div className={styles.image_wrapper}>
-					<div
-						key={index}
-						className={`${styles.image} inset-box-shadow--dark`}
-						style={{
-							backgroundImage: `url(${slideImage.url})`,
-							backgroundSize: `cover`,
-							backgroundRepeat: `no-repeat`,
-							backgroundPosition: `${
-								slideImage.position || "50% 50%"
-							}`,
-						}}
-					></div>
+					<div key={index} className={styles.image_wrapper}>
+						<div
+							className={`${styles.image} inset-box-shadow--dark`}
+							style={{
+								backgroundImage: `url(${slideImage.url})`,
+								backgroundSize: `cover`,
+								backgroundRepeat: `no-repeat`,
+								backgroundPosition: `${
+									slideImage.position || "50% 50%"
+								}`,
+							}}
+						></div>
 					</div>
 				))}
 			</Fade>
 
 			<div className={`flex-jcenter-acenter ${styles.content_wrapper}`}>
-				<div className={`flex-jcenter-acenter-wrap ${styles.content_container}`}>
+				<div
+					className={`flex-jcenter-acenter-wrap ${styles.content_container}`}
+				>
 					<h1 className={`${styles.title} text-shadow--lg`}>
 						{title}
 					</h1>
