@@ -78,6 +78,10 @@ p {
 	font-size: var(--card--font-size);
 }
 
+.line-height {
+	line-height: 2rem;
+}
+
 /* flex selectors: */
 
 [class*="flex"] {
@@ -204,6 +208,10 @@ p {
 }
 .padding-1--vertical {
 	padding: 2em;
+}
+
+.margin-1--top {
+	margin-top: 1rem;
 }
 
 .margin-4--top {
