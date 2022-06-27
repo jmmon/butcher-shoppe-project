@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route as wouterRouter } from "wouter";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
 
