@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "wouter";
 
 import "./LinkScrollUp.css";
 
 function LinkScrollUp({ className, path, children }) {
-	const { pathname } = useLocation();
+	const [location, setLocation] = useLocation();
 	const scrollToTop = () => {
 		window.scrollTo(0, 0);
 	};
@@ -13,7 +13,7 @@ function LinkScrollUp({ className, path, children }) {
 
 	return (
 		<>
-			{pathname === path || path === undefined ? (
+			{location === path || path === undefined ? (
 				<span
 				tabIndex="0"
 					className={`${className} white-link margin`}
@@ -22,7 +22,7 @@ function LinkScrollUp({ className, path, children }) {
 					{children}
 				</span>
 			) : (
-				<Link className={`${className} white-link margin`} to={path}>
+				<Link className={`${className} white-link margin`} href={path}>
 					{children}
 				</Link>
 			)}

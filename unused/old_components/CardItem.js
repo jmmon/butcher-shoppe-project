@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'wouter'
 
 function CardItem({src, text, label, path}) {
 	return (
 		<>
 			<li className="cards__item">
-				<Link to={path} className="cards__item__link">
+				<Link href={path} className="cards__item__link">
 					<figure className="cards__item__pic-wrap" data-category={label}>
 						<img src={src} alt="Travel Image" className="cards__item__img" />
 					</figure>

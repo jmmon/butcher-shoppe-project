@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
 import Subscribe from "components/Subscribe/Subscribe";
@@ -103,11 +102,9 @@ function Footer() {
 								className={`flex-col-astart ${styles.link_items}`}
 							>
 								<LinkScrollUp path="/">Home</LinkScrollUp>
-								{/* <Link to="/">Home</Link> */}
 								<LinkScrollUp path="/meet-the-team">
 									Meet The Team
 								</LinkScrollUp>
-								{/* <Link to="/meet-the-team">Meet The Team</Link> */}
 								<LinkScrollUp path="/services">
 									Services
 								</LinkScrollUp>
@@ -180,9 +177,9 @@ function Footer() {
 			
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
 				<div className={styles.back_to_top}>
-					<Button onClick={() => window.scrollTo(0, 0)}>
+					<LinkScrollUp className="btn btn--primary">
 						Back To The Top
-					</Button>
+					</LinkScrollUp>
 				</div>
 			</section>
 

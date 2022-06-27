@@ -1,5 +1,5 @@
 import "./Button.css";
-import { Link } from "react-router-dom";
+import {Link} from "wouter";
 
 const STYLES = ["btn--primary", "btn--outline"];
 const SIZES = ["btn--medium", "btn--large"];
@@ -7,7 +7,7 @@ const SIZES = ["btn--medium", "btn--large"];
 function Button({
 	children,
 	type,
-	onClick,
+	onClick: handleClick = null,
 	buttonStyle,
 	buttonSize,
 	url = "",
@@ -19,11 +19,12 @@ function Button({
 		? buttonStyle
 		: STYLES[0];
 	const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0];
+	if (handleClick) console.log('onClick from button', handleClick);
 
 	const button = (
 		<button
 			className={`${className} btn ${checkButtonStyle} ${checkButtonSize}`}
-			onClick={onClick}
+			onClick={handleClick}
 			type={type}
 			tabIndex={url === "" ? 1 : -1}
 			{...buttonProps}
@@ -37,7 +38,7 @@ function Button({
 			{button}
 		</a>
 	) : (
-		<Link to={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
+		<Link href={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
 			{button}
 		</Link>
 	);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "wouter";
 import styles from "./Header.module.css";
 import { ReactComponent as CalendarIcon } from "assets/icons/211703_calendar_icon.svg";
 import { ReactComponent as PhoneIcon } from "assets/icons/211829_telephone_icon.svg";
@@ -10,7 +10,7 @@ function Header() {
 	return (
 		<div className={styles.main}>
 			<div className={styles.container}>
-				<Link className={styles.link} to="/order">
+				<Link className={styles.link} href="/order">
 					<CalendarIcon className={styles.icon} />
 					<span className={styles.text}>Schedule</span>
 				</Link>

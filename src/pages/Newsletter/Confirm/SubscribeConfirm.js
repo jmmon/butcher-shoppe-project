@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import {useLocation} from "wouter"
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 import PageTitle from "components/PageTitle/PageTitle";
 
@@ -11,10 +11,9 @@ const TESTINGconfirmUri =
 	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
 const listName = "Testing";
 
-function SubscribeConfirm({ isSubscribePage }) {
-	const params = useParams();
-	let navigate = useNavigate();
-	const confirmationId = params.id;
+function SubscribeConfirm({ isSubscribePage, id }) {
+	const [location, setLocation] = useLocation();
+	const confirmationId = id;
 
 	const [error, setError] = useState(null);
 
@@ -43,7 +42,7 @@ function SubscribeConfirm({ isSubscribePage }) {
 
 				console.log(res.status);
 				if (res.status < 300) {
-					navigate("/", { replace: true });
+					setLocation("/", { replace: true });
 				}
 			})
 			.catch((e) => {
@@ -51,7 +50,7 @@ function SubscribeConfirm({ isSubscribePage }) {
 
 				console.log("SubscribeConfirm-POST axios error:", e);
 			});
-	}, [confirmationId, navigate]); // testing
+	}, [confirmationId, useLocation, location]); // testing
 
 	return (
 		<div>

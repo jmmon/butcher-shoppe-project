@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 import "./Navbar.css";
 
 import LogoComponent from "assets/logo/LogoComponent.js";
@@ -37,14 +37,11 @@ function Navbar({ simple = false }) {
 			<nav className="navbar">
 				<div className="navbar-container">
 					<Link
-						to="/"
+						href="/"
 						className="navbar-home"
 						onClick={closeMobileMenu}
 					>
 						<LogoComponent fill="white" className="nav-logo" />
-						{/* <div className="navbar-logo-text">
-							The Butcher Shoppe
-						</div> */}
 					</Link>
 
 					{/* Hamburger icon*/}
@@ -55,7 +52,7 @@ function Navbar({ simple = false }) {
 					<ul className={click ? "nav-menu active" : "nav-menu"}>
 						<li className="nav-item">
 							<Link
-								to="/services"
+								href="/services"
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
@@ -64,7 +61,7 @@ function Navbar({ simple = false }) {
 						</li>
 						<li className="nav-item">
 							<Link
-								to="/meet-the-team"
+								href="/meet-the-team"
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
@@ -73,7 +70,7 @@ function Navbar({ simple = false }) {
 						</li>
 						<li className="nav-item">
 							<Link
-								to="/how-to-order"
+								href="/how-to-order"
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
@@ -82,7 +79,7 @@ function Navbar({ simple = false }) {
 						</li>
 						<li className="nav-item">
 							<Link
-								to="/FAQ"
+								href="/FAQ"
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
@@ -101,7 +98,7 @@ function Navbar({ simple = false }) {
 
 						<li className="nav-item">
 							<Link
-								to="/newsletter/subscribe"
+								href="/newsletter/subscribe"
 								className="nav-links-mobile"
 								onClick={closeMobileMenu}
 							>
@@ -112,7 +109,7 @@ function Navbar({ simple = false }) {
 
 					{button && (
 						<Link
-							to="/newsletter/subscribe"
+							href="/newsletter/subscribe"
 							className="btn-mobile newsletter-btn"
 						>
 							<div className="btn btn--outline btn--large">

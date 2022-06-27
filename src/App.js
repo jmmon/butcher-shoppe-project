@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Route as wouterRouter } from "wouter";
+import { Route as WouterRouter, Switch } from "wouter";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";
 
@@ -24,7 +23,36 @@ import Prices from "pages/Prices/Prices";
 function App() {
 	return (
 		<div className="website-container" id="link-destination-top">
-			<Router>
+			<ScrollToTop>
+				<Header />
+				<Navbar />
+				<div className="website-content-container">
+					<Switch>
+						<WouterRouter path="/newsletter/subscribe" ><Newsletter /></WouterRouter>
+						<WouterRouter path="/newsletter/unsubscribe" ><Unsubscribe /></WouterRouter>
+						<WouterRouter path="/newsletter/subscribe/confirm/:id">
+							{(params) => (<SubscribeConfirm isSubscribePage id={params.id} />)}
+						</WouterRouter>
+						<WouterRouter path="/newsletter/unsubscribe/confirm/:id">
+						{(params) => (<SubscribeConfirm isSubscribePage={false} id={params.id} />)}
+						</WouterRouter>
+							
+
+						<WouterRouter path="/" ><Home /></WouterRouter>
+						<WouterRouter path="/services" ><Services /></WouterRouter>
+						<WouterRouter path="/coming-soon" ><ComingSoon /></WouterRouter>
+						<WouterRouter path="/faq" ><Faq /></WouterRouter>
+						<WouterRouter path="/how-to-order" ><HowToOrder /></WouterRouter>
+						<WouterRouter path="/order" ><Order /></WouterRouter>
+						<WouterRouter path="/meet-the-team" ><MeetTheTeam /></WouterRouter>
+						<WouterRouter path="/prices" ><Prices /></WouterRouter>
+						<WouterRouter path="*" ><NotFound /></WouterRouter>
+
+					</Switch>
+					<Footer />
+				</div>
+			</ScrollToTop>
+			{/* <Router>
 				<ScrollToTop>
 					<Header />
 					<Navbar />
@@ -92,7 +120,7 @@ function App() {
 						<Footer />
 					</div>
 				</ScrollToTop>
-			</Router>
+			</Router> */}
 		</div>
 	);
 }

@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './FaqItem.css'
-// import {Link} from 'react-router-dom'
 
 function FaqItem({question, answer}) {
 	const [click, setClick] = useState(false);

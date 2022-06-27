@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import {useLocation} from "wouter";
  
 function ScrollToTop({ children }) {
-  const { pathname } = useLocation();
+  const [location, setLocation] = useLocation();
  
   useEffect(() => {
-    if (pathname !== "/contact") window.scrollTo(0, 0);
-  }, [pathname]);
+    if (location !== "/contact") window.scrollTo(0, 0);
+  }, [location]);
  
   return children;
 }
