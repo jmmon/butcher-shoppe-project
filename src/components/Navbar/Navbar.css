@@ -19,7 +19,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 80px;
+	height: var(--navbar-height);
 	width: calc(100vw - 20px);
 	max-width: 1500px;
 	padding: 0 10px;
@@ -35,9 +35,7 @@
 }
 
 .navbar-home {
-	color: #fff;
 	justify-self: start;
-	/* margin-left: 40px; */
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 1.7rem;
@@ -51,8 +49,6 @@
 .navbar-logo-text {
 	width: 280px;
 	padding-left: 10px;
-
-	/* text-align: center; */
 }
 
 .fa-typo3 {
@@ -63,7 +59,7 @@
 .nav-menu {
 	/* Does NOT include Logo or Newsletter-btn */
 	display: grid;
-	grid-template-columns: repeat(6, auto);
+	grid-template-columns: repeat(7, auto);
 	grid-gap: 10px;
 	list-style: none;
 	text-align: center;
@@ -76,7 +72,7 @@
 }
 
 .nav-links {
-	color: #fff;
+	color: white;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -112,9 +108,6 @@
 	display: none;
 	/* font-size: 24px; */
 }
-/* .fas.fa-bars {
-	font-size: 2em;
-} */
 
 .nav-logo {
 	height: 90px;
@@ -131,26 +124,22 @@
 
 @media screen and (max-width: 960px) {
 	.nav-menu {
+		left: 0;
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		/* height: calc(100vh - 80px); */
-		/* height: auto; */
 		position: absolute;
-		top: 80px;
-		left: -100%;
+		top: -700px;
 		opacity: 1;
 		transition: all 0.5s ease;
-		padding-bottom: 10rem;
 	}
 
 	.nav-menu.active {
-		background: #242222;
-
-		left: 0;
+		background: rgba(100, 100, 100, 0.5);
+		top: var(--navbar-height);
 		opacity: 1;
 		transition: all 0.5s ease;
-		z-index: 1;
+		z-index: 2;
 	}
 
 	.nav-links {
@@ -161,7 +150,7 @@
 	}
 
 	.nav-links:hover {
-		background-color: #fff;
+		background-color: var(--header-orange);
 		color: #242424;
 		border-radius: 0;
 	}

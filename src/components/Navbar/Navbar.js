@@ -79,13 +79,24 @@ function Navbar({ simple = false }) {
 								How To Order
 							</Link>
 						</li>
+						
 						<li className="nav-item">
-							<Link
+							
+						<Link
 								href="/FAQ"
 								className="nav-links"
 								onClick={closeMobileMenu}
 							>
 								FAQ
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								href="/order"
+								className="nav-links"
+								onClick={closeMobileMenu}
+							>
+								Order
 							</Link>
 						</li>
 						<li className="nav-item">
