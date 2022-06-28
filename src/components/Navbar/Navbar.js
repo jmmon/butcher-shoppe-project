@@ -51,6 +51,11 @@ function Navbar({ simple = false }) {
 						<i className={click ? "fas fa-times" : "fas fa-bars"} />
 					</div>
 
+					{/* <div className="menu-icon" onClick={handleClick}> */}
+						{/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
+					{/* </div> */}
+					<input type="checkbox" className="menu-icon nav-checkbox" />
+
 					<ul className={click ? "nav-menu active" : "nav-menu"}>
 						<li className="nav-item">
 							<Link
@@ -81,8 +86,7 @@ function Navbar({ simple = false }) {
 						</li>
 						
 						<li className="nav-item">
-							
-						<Link
+							<Link
 								href="/FAQ"
 								className="nav-links"
 								onClick={closeMobileMenu}
@@ -108,7 +112,6 @@ function Navbar({ simple = false }) {
 								More...
 							</a>
 						</li>
-
 						<li className="nav-item">
 							<Link
 								href="/newsletter/subscribe"
