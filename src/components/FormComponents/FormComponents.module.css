@@ -1,8 +1,8 @@
 .container {
 	margin: 0 auto;
 	padding: 0.5em;
-	max-width: 520px;
-	width: 50%;
+	/* max-width: 520px; */
+	max-width: 50%;
 
 	min-width: 300px;
 }
@@ -15,7 +15,7 @@
 @media (max-width: 960px) {
 	.container_small {
 		display: inline-block;
-		width: 50%;
+		max-width: 50%;
 	}
 }
 

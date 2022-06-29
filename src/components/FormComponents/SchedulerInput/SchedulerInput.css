@@ -4,17 +4,15 @@
 }
 
 .input-container {
-	margin: 0 auto;
-	/* width: 100%; */
-	display: flex-column;
-	justify-content: center;
+	/* margin: 0 auto; */
+	/* width: 400px; */
+
 }
 
-.date-time-picker {
-	width: 250px;
-	height: 30px;
-	font-size: 20px;
-}
+/* .date-time-picker {
+display: flex;
+justify-content: center;
+} */
 
 .date-time-picker--container {
 	padding: 4px;
