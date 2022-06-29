@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import "./Navbar.css";
 
@@ -7,9 +7,12 @@ import LogoComponent from "assets/logo/LogoComponent.js";
 function Navbar({ simple = false }) {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
+	const navMenu = useRef();
 
 	const handleClick = () => setClick(!click);
-	const closeMobileMenu = () => setClick(false);
+	const closeMobileMenu = () => {
+		setClick(false);
+	};
 
 	const showButton = () => {
 		if (!simple) {
@@ -32,6 +35,20 @@ function Navbar({ simple = false }) {
 		}
 	});
 
+	window.addEventListener("click", function (evt) {
+		if (
+			evt.target.matches(".nav-menu.active") ||
+			evt.target.matches(".nav-item") ||
+			evt.target.matches(".nav-links") ||
+			evt.target.matches(".menu-icon") ||
+			evt.target.matches(".fas.fa-times")
+		) {
+			return;
+		}
+
+		closeMobileMenu();
+	});
+
 	return (
 		<>
 			<nav className="navbar">
@@ -41,8 +58,7 @@ function Navbar({ simple = false }) {
 						className="navbar-home"
 						onClick={closeMobileMenu}
 					>
-						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
-						{" "}
+						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
 						<LogoComponent fill="white" className="nav-logo" />
 					</Link>
 
@@ -51,12 +67,10 @@ function Navbar({ simple = false }) {
 						<i className={click ? "fas fa-times" : "fas fa-bars"} />
 					</div>
 
-					{/* <div className="menu-icon" onClick={handleClick}> */}
-						{/* <i className={click ? "fas fa-times" : "fas fa-bars"} /> */}
-					{/* </div> */}
-					<input type="checkbox" className="menu-icon nav-checkbox" />
-
-					<ul className={click ? "nav-menu active" : "nav-menu"}>
+					<ul
+						className={click ? "nav-menu active" : "nav-menu"}
+						ref={navMenu}
+					>
 						<li className="nav-item">
 							<Link
 								href="/services"
@@ -84,7 +98,7 @@ function Navbar({ simple = false }) {
 								How To Order
 							</Link>
 						</li>
-						
+
 						<li className="nav-item">
 							<Link
 								href="/FAQ"
@@ -123,6 +137,7 @@ function Navbar({ simple = false }) {
 						</li>
 					</ul>
 
+					{/* Normal Newsletter Button	 */}
 					{button && (
 						<Link
 							href="/newsletter/subscribe"

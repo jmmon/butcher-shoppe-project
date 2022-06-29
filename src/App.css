@@ -119,7 +119,7 @@ p {
 [class*="flex-"][class*="acenter"] {
 	align-items: center;
 }
-[class*="flex-"][class*="jstretch"] {
+[class*="flex-"][class*="astretch"] {
 	align-items: stretch;
 }
 [class*="flex-"][class*="astart"] {

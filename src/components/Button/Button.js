@@ -34,11 +34,11 @@ function Button({
 	);
 
 	return url.includes("#") ? (
-		<a href={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
+		<a href={url} focusable={url !== "" ? 1 : -1}>
 			{button}
 		</a>
 	) : (
-		<Link href={url} focusable={url !== "" ? 1 : -1} className="btn-mobile">
+		<Link href={url} focusable={url !== "" ? 1 : -1}>
 			{button}
 		</Link>
 	);

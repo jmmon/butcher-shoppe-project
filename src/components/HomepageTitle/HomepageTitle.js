@@ -49,6 +49,7 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 					<p className={`${styles.subtitle} text-shadow--sm`}>
 						{subtitle}
 					</p>
+					
 					<Button
 						className={`${styles.hero_btn}`}
 						buttonStyle="btn--outline"

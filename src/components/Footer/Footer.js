@@ -89,12 +89,11 @@ function Footer() {
 			</section>
 
 			<section
-				className={`flex-col-jcenter-acenter ${styles.section} ${styles.links}`}
+				className={`flex-jcenter ${styles.section} ${styles.links}`}
 				id="more-links"
 			>
-				<div className={`flex-jcenter-wrap ${styles.links_container}`}>
-					<div className={`${styles.link_wrapper} flex`}>
-						<div className={styles.link_items_wrapper}>
+					<div className={`flex-jbetween ${styles.links_half} `}>
+						<div className={styles.links_column}>
 							<h2 className={`margin-1--bot ${styles.heading}`}>
 								The Shoppe
 							</h2>
@@ -111,7 +110,7 @@ function Footer() {
 								<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 							</div>
 						</div>
-						<div className={styles.link_items_wrapper}>
+						<div className={styles.links_column}>
 							<h2 className={`margin-1--bot ${styles.heading}`}>
 								Ordering
 							</h2>
@@ -128,8 +127,8 @@ function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className={`${styles.link_wrapper} flex`}>
-						<div className={styles.link_items_wrapper}>
+					<div className={`${styles.links_half} flex`}>
+						<div className={styles.links_column}>
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
@@ -145,23 +144,16 @@ function Footer() {
 								>
 									Facebook
 								</a>
-								<a
-									href={instagramUrl}
-									target="_blank"
-									className={`white-link `}
-								>
-									Instagram
-								</a>
 							</div>
 						</div>
-						<div className={styles.link_items_wrapper}>
+						<div className={styles.links_column}>
 							<h2 className={`margin-1--bot ${styles.heading}`}>
 								Keep In Touch
 							</h2>
 							<div
 								className={`flex-col-astart ${styles.link_items}`}
 							>
-								<LinkScrollUp path="/newsletter/subscribe">
+							<LinkScrollUp path="/newsletter/subscribe">
 									Subscribe to our Newsletter
 								</LinkScrollUp>
 								<LinkScrollUp path="/newsletter/unsubscribe">
@@ -170,10 +162,9 @@ function Footer() {
 							</div>
 						</div>
 					</div>
-				</div>
 			</section>
 			
-			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
+			<section className={`flex-jcenter-acenter ${styles.section}`}>
 				<div className={styles.back_to_top}>
 					<LinkScrollUp className="btn btn--primary">
 						Back To The Top
@@ -181,7 +172,7 @@ function Footer() {
 				</div>
 			</section>
 
-			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
+			<section className={`flex-jcenter-acenter ${styles.section}`}>
 				<LogoComponent fill="white" className={styles.banner} />
 			</section>
 
@@ -196,15 +187,10 @@ function Footer() {
 						The Butcher Shoppe
 					</LinkScrollUp>
 
-					<small
-						className={`${styles.website_rights} ${styles.social_small_font}`}
-					>
-						C 2022
-					</small>
-
 					<div
-						className={`flex-acenter-jbetween ${styles.social_icons}`}
+						className={`flex-acenter-jcenter gap-1 ${styles.social_icons}`}
 					>
+						<h4>Find Us On:</h4>
 						<a
 							className={`white-link ${styles.social_small_font}`}
 							href={facebookUrl}
@@ -213,15 +199,12 @@ function Footer() {
 						>
 							<i className="fab fa-facebook-f"></i>
 						</a>
-						<a
-							className={`white-link ${styles.social_small_font}`}
-							href={instagramUrl}
-							target="_blank"
-							aria-label="Instagram"
-						>
-							<i className="fab fa-instagram"></i>
-						</a>
 					</div>
+					<small
+						className={`${styles.website_rights} ${styles.social_small_font}`}
+					>
+						C 2022
+					</small>
 				</div>
 			</section>
 		</div>

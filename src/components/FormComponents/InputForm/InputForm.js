@@ -42,7 +42,7 @@ const InputForm = ({
 	name.split(".").forEach((key) => (thisError = thisError?.[key]));
 
 	return (
-		<p
+		<div
 			className={`${formStyles.container} ${
 				small ? formStyles.container_small : ""
 			}`}
@@ -83,7 +83,7 @@ const InputForm = ({
 					{...numberAttributes}
 				/>
 			)}
-		</p>
+		</div>
 	);
 };
 

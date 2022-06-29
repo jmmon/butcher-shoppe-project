@@ -102,7 +102,7 @@ function Subscribe({ unsubscribe, className }) {
 	};
 
 	return (
-		<form className={`${className} flex-jcenter-wrap-jstretch ${styles.wrapper} card panel-shadow--light`} onSubmit={handleSubmit}>
+		<form className={`${className} flex-jcenter-wrap-astretch ${styles.wrapper} card panel-shadow--light`} onSubmit={handleSubmit}>
 			<input
 				type="email"
 				name="email"
