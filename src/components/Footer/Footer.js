@@ -75,9 +75,9 @@ function Footer() {
 
 				<a
 					className={`white-link text-center ${styles.heading} ${styles.phone}`}
-					href="tel:15096907214"
+					href="tel:15096406766"
 				>
-					(509) 690-7214
+					(509) 640-6766
 				</a>
 			</section>
 
