@@ -18,7 +18,7 @@ function MeetTheTeam() {
 				position="50% 56%"
 			/>
 			<WhitePageBackground>
-				<Card title="About Us" />
+				<Card title="The Team" />
 
 				<section className="team-container">
 					<img src={topImage} className="team-img-left panel-shadow--dark" />

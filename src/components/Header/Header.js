@@ -14,9 +14,9 @@ function Header() {
 					<CalendarIcon className={styles.icon} />
 					<span className={styles.text}>Schedule</span>
 				</Link>
-				<a className={`flex-acenter gap-05 ${styles.link}`} href="tel:15096907214">
+				<a className={`flex-acenter gap-05 ${styles.link}`} href="tel:15096406766">
 					<PhoneIcon className={styles.icon} />
-					<span className={styles.text}>(509) 690-7214</span>
+					<span className={styles.text}>(509)640-6766</span>
 				</a>
 				<a className={`flex-acenter gap-05 ${styles.link}`} href="#contact-link-target">
 					<ChatIcon className={styles.icon} />

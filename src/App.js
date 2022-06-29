@@ -18,6 +18,7 @@ import Newsletter from "pages/Newsletter/Newsletter";
 import Unsubscribe from "pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
+import Membership from "pages/Membership/Membership";
 
 function App() {
 	return (
@@ -70,6 +71,9 @@ function App() {
 						</Route>
 						<Route path="/meet-the-team">
 							<MeetTheTeam />
+						</Route>
+						<Route path="/membership">
+							<Membership />
 						</Route>
 						<Route path="*">
 							<NotFound />
