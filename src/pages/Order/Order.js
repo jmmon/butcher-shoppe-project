@@ -24,11 +24,14 @@ import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerIn
 import SchedulerInputWindow from "components/FormComponents/SchedulerInput/SchedulerInputWindow";
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
+<<<<<<< HEAD
 import axios from "axios";
 
 const orderFormBackendUri =
 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 const headers = { "Content-Type": "application/json" };
+=======
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -40,12 +43,15 @@ function Order() {
 		mode: "all",
 	});
 
+<<<<<<< HEAD
 	const [responseFromSubmitOrder, setResponseFromSubmitOrder] = useState({
 		isLoading: false,
 		data: null,
 		error: null,
 	});
 
+=======
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 	const [idCollectionOfAnimalsByType, setIdCollectionOfAnimalsByType] =
 		useState({
 			beef: { thisId: 0, idArray: [] },
@@ -53,6 +59,7 @@ function Order() {
 			hog: { thisId: 0, idArray: [] },
 		});
 
+<<<<<<< HEAD
 	let timer = null;
 
 	// const clearLocalStorage = () => {
@@ -63,6 +70,16 @@ function Order() {
 	// 	);
 	// };
 
+=======
+	// const clearLocalStorage = () => {
+	// 	window.localStorage.removeItem("orderForm");
+	// 	console.log(
+	// 		"TESTING - local storage",
+	// 		window.localStorage.getItem("orderForm")
+	// 	);
+	// };
+
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 	// useFormPersist("orderForm", {
 	// 	watch: methods.watch,
 	// 	setValue: methods.setValue,
@@ -83,6 +100,7 @@ function Order() {
 	// 		);
 	// }, [window.localStorage.getItem("orderForm")]);
 
+<<<<<<< HEAD
 	// const addAnimal = (e) => {
 	// 	e.preventDefault();
 
@@ -237,6 +255,96 @@ function Order() {
 				resetButtonWithSetTimeout();
 			});
 	};
+=======
+	const onSubmit = (data) => {
+		console.log("submitting");
+		console.log({ data });
+	};
+
+	// const addAnimal = (e) => {
+	// 	e.preventDefault();
+
+	// 	let copy_chosenAnimalType_IdArray = [
+	// 		...idCollectionOfAnimalsByType[newAnimalChosenType].idArray,
+	// 	];
+
+	// 	const thisId = idCollectionOfAnimalsByType[newAnimalChosenType].thisId;
+
+	// 	console.log(
+	// 		`${newAnimalChosenType} - pre-existing array of IDs: ${copy_chosenAnimalType_IdArray}\nNext id for the new animal will be: ${thisId}`
+	// 	);
+
+	// 	copy_chosenAnimalType_IdArray.push(thisId);
+
+	// 	const nextId = thisId + 1;
+
+	// 	setIdCollectionOfAnimalsByType({
+	// 		...idCollectionOfAnimalsByType,
+	// 		[newAnimalChosenType]: {
+	// 			thisId: nextId,
+	// 			idArray: [...copy_chosenAnimalType_IdArray],
+	// 		},
+	// 	});
+	// };
+
+	// const deleteAnimal = (e) => {
+	// 	e.preventDefault();
+	// 	const typeOfAnimal = e.target.getAttribute("animal");
+	// 	const idOfAnimal = +e.target.getAttribute("id");
+
+	// 	let copy_chosenAnimalType_IdArray = [
+	// 		...idCollectionOfAnimalsByType[typeOfAnimal].idArray,
+	// 	];
+	// 	const index = copy_chosenAnimalType_IdArray.indexOf(idOfAnimal);
+
+	// 	console.log({
+	// 		typeOfAnimal,
+	// 		idOfAnimal,
+	// 		copy_chosenAnimalType_IdArray,
+	// 	});
+
+	// 	console.log(
+	// 		`Removing item ${copy_chosenAnimalType_IdArray[index]} at index ${index}`
+	// 	);
+
+	// 	copy_chosenAnimalType_IdArray.splice(index, 1);
+
+	// 	console.log(
+	// 		`NEW ID array after removing the ID: ${copy_chosenAnimalType_IdArray}`
+	// 	);
+
+	// 	testing__displayObjOfArrs(
+	// 		idCollectionOfAnimalsByType,
+	// 		"Old collection of animals: "
+	// 	);
+
+	// 	setIdCollectionOfAnimalsByType({
+	// 		...idCollectionOfAnimalsByType,
+	// 		[typeOfAnimal]: {
+	// 			thisId: idCollectionOfAnimalsByType[typeOfAnimal].thisId,
+	// 			idArray: [...copy_chosenAnimalType_IdArray],
+	// 		},
+	// 	});
+
+	// 	methods.unregister(`${typeOfAnimal}_${idOfAnimal}`);
+	// };
+
+	// const testing__displayObjOfArrs = (obj, msg) => {
+	// 	let string = "";
+	// 	Object.keys(obj).forEach(
+	// 		(arr) =>
+	// 			obj[arr].length > 0 && (string += `\n - ${arr}: ${obj[arr]}`)
+	// 	);
+	// 	string !== "" && console.log(`${msg}${string}`);
+	// };
+
+	// useEffect(() => {
+	// 	testing__displayObjOfArrs(
+	// 		idCollectionOfAnimalsByType,
+	// 		"(useEffect) updated collection of animals: "
+	// 	);
+	// }, [idCollectionOfAnimalsByType]);
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 
 	return (
 		<>
@@ -325,6 +433,7 @@ function Order() {
 									<div
 										className={`flex-jcenter-astart-wrap gap-4 ${styles.date}`}
 									>
+<<<<<<< HEAD
 										<SchedulerInput
 											register={methods.register}
 											title="Preferred Date:"
@@ -333,6 +442,12 @@ function Order() {
 											register={methods.register}
 											title="Alternate Date or Date Window"
 										/>
+=======
+										{/* <SchedulerInput 
+										register={methods.register} title="Preferred Date:" /> */}
+										<SchedulerInputWindow 
+										register={methods.register} title="Alternate Date or Date Window" />
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 									</div>
 									{/* <button className="btn btn--primary date-picker-done">Done</button> */}
 								</Collapsible>
@@ -346,6 +461,10 @@ function Order() {
 							</h4>
 						</div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 						<p
 							className={`${styles.notification} ${
 								Object.keys(methods.formState.errors).length > 0
@@ -355,8 +474,12 @@ function Order() {
 						>
 							Please Fix Marked Fields
 						</p>
+<<<<<<< HEAD
 
 						<button
+=======
+						<input
+>>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 							type="submit"
 							className={`${styles.submit} btn btn--outline btn--large ${
 								responseFromSubmitOrder.isLoading
