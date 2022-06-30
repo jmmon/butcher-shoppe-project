@@ -35,7 +35,7 @@ function SelectForm({
 		: "Err: No options were provided for this select box";
 
 	return (
-		<p
+		<div
 			className={`${formStyles.field} ${formStyles.container} ${formStyles.container_small}`}
 		>
 			<LabelInput
@@ -53,7 +53,7 @@ function SelectForm({
 			>
 				{allOptions}
 			</select>
-		</p>
+		</div>
 	);
 }
 

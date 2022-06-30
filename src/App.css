@@ -233,6 +233,9 @@ p {
 .margin-1--bot {
 	margin-bottom: 1rem;
 }
+.margin-2--bot {
+	margin-bottom: 2rem;
+}
 /* 
 .margin-6--v {
 	margin: 6rem auto;

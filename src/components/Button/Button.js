@@ -19,12 +19,12 @@ function Button({
 		? buttonStyle
 		: STYLES[0];
 	const checkButtonSize = STYLES.includes(buttonSize) ? buttonSize : SIZES[0];
-	if (onClick) console.log('onClick from button', onClick);
 
 	const button = (
 		<button
 			className={`${className} btn ${checkButtonStyle} ${checkButtonSize}`}
 			onClick={onClick}
+			// onClick={onClick ? (e) => onClick(e) : null}
 			type={type}
 			tabIndex={url === "" ? 1 : -1}
 			{...buttonProps}
@@ -35,11 +35,11 @@ function Button({
 
 	return url.includes("#") ? (
 		<a href={url} focusable={url !== "" ? 1 : -1}>
-			{button}
+			{" "}{button}
 		</a>
 	) : (
 		<Link href={url} focusable={url !== "" ? 1 : -1}>
-			{button}
+			{" "}{button}
 		</Link>
 	);
 }

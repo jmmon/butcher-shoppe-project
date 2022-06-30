@@ -3,10 +3,10 @@ import axios from "axios";
 import "./Contact.css";
 import Button from "components/Button/Button";
 
-// const contactBoxBackendUri =
-// 	"https://thenorthportbutchershoppe.com/server/contact";
 const contactBoxBackendUri =
-	"https://thenorthportbutchershoppe.com/staging/server/contact";
+	"https://thenorthportbutchershoppe.com/server/contact";
+// const contactBoxBackendUri =
+// 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 // const contactBoxBackendUri = "localhost:3001/server/contact";
 const headers = { "Content-Type": "application/json" };
 

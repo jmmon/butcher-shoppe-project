@@ -55,7 +55,7 @@ const InputForm = ({
 
 			{thisError && (
 				<span role="alert" className={styles.validation_error}>
-				{` (${thisError.message})`}
+				{` (${thisError.message ? thisError.message : "Please input your phone number"})`}
 				</span>
 			)}
 
