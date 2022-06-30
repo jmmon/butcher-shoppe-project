@@ -26,9 +26,12 @@ import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/Animal
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
 import axios from "axios";
 
-const orderFormBackendUri =
-	"https://thenorthportbutchershoppe.com/staging/server/contact";
+// const orderFormBackendUri =
+// 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 const headers = { "Content-Type": "application/json" };
+
+const orderFormBackendUri = "http://localhost:3001/server/order";
+
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -70,9 +73,9 @@ function Order() {
 	// });
 
 	useEffect(() => {
-		console.log("errors", methods.formState.errors);
-		// Object.keys(methods.formState.errors).length > 0 &&
-		// 	console.log("errors", methods.formState.errors);
+		// console.log("errors", methods.formState.errors);
+		Object.keys(methods.formState.errors).length > 0 &&
+			console.log("errors", methods.formState.errors);
 	}, [methods.formState.errors]);
 
 	// useEffect(() => {
@@ -188,15 +191,27 @@ function Order() {
 		};
 	});
 
-	const onSubmit = (data) => {
-		console.log("submitting");
-		console.log({ data });
-	};
 
 	const formHandleSubmit = (data) => {
 		// e.preventDefault();
-		console.log("submitting");
+		// console.log("handleSubmit");
 		console.log({ data });
+
+		//check for missing end date on alternative date selection?
+		if (!data.dates.alternate.end) {
+			data.dates.alternate.end = data.dates.alternate.start;
+		}
+
+		//slice only date off the datetime string
+
+		// console.log('date object toDateString:', data.date.preferred.toDateString());
+		// console.log('date object toJson:', data.date.preferred.toJSON());
+		// console.log('date object toString:', data.date.preferred.toString());
+		
+		data.dates.preferred = data.dates.preferred.toDateString();
+		data.dates.alternate.start = data.dates.alternate.start.toDateString();
+		data.dates.alternate.end = data.dates.alternate.end.toDateString();
+		data.order_number = (Math.random() * 100000) | 0;
 
 		setResponseFromSubmitOrder((prevState) => ({
 			...prevState,
@@ -257,14 +272,8 @@ function Order() {
 				<FormProvider {...methods}>
 					<form
 						className={`flex-col-acenter ${styles.form__center}`}
-						onSubmit={methods.handleSubmit(onSubmit)}
+						onSubmit={methods.handleSubmit(formHandleSubmit)}
 					>
-						{/* <Button
-							buttonStyle="btn--outline"
-							onClick={clearLocalStorage}
-						>
-							TESTING - Clear LocalStorage
-						</Button> */}
 						<Tabs forceRenderTabPanel>
 							<TabList>
 								<Tab>Contact Info</Tab>
@@ -334,7 +343,6 @@ function Order() {
 											title="Alternate Date or Date Window"
 										/>
 									</div>
-									{/* <button className="btn btn--primary date-picker-done">Done</button> */}
 								</Collapsible>
 							</TabPanel>
 						</Tabs>

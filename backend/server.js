@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 require("dotenv").config();
 
-app.use("/staging/server", express.static("public"));
+app.use("/server", express.static("public"));
 
 //connect to mongoose
 // mongoose
@@ -49,18 +49,19 @@ app.use("/staging/server", express.static("public"));
 
 // thenorthportbutchershoppe.com/server/...
 //require route
-app.use("/staging/server", require("./routes/subscribeRoute"));
-app.use("/staging/server", require("./routes/contactRoute"));
+app.use("/server", require("./routes/subscribeRoute"));
+app.use("/server", require("./routes/contactRoute"));
+app.use("/server", require("./routes/orderRoute"));
 
 // live
 
-app.listen(() => {
-	console.log("Server started. Listening...");
-});
+// app.listen(() => {
+// 	console.log("Server started. Listening...");
+// });
 
 // dev
 
-// const port = 3001;
-// app.listen(port, () => {
-// 	console.log(`Server started. Listening (Port ${port} )`);
-// });
+const port = 3001;
+app.listen(port, () => {
+	console.log(`Server started. Listening (Port ${port} )`);
+});

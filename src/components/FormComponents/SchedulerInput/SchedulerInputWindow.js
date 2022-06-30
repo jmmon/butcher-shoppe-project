@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SchedulerInput.css";
-<<<<<<< HEAD
 import { useFormContext } from "react-hook-form";
-=======
-import { Controller, useFormContext } from "react-hook-form";
->>>>>>> 650ca68fb440ac8ace2c8a0dabccd281d517f8a5
 
 const DateTimePicker = ({
 	title = "",
@@ -16,7 +12,7 @@ const DateTimePicker = ({
 		setValue,
 	} = useFormContext();
 
-	const name = "date.alternate";
+	const name = "dates.alternate";
 
 	// let thisError = errors;
 	// name.split(".").forEach((key) => (thisError = thisError?.[key]));
