@@ -7,6 +7,7 @@ import PageTitle from "components/PageTitle/PageTitle";
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
+import { Link } from "wouter";
 
 function HowToOrder() {
 	return (
@@ -17,13 +18,29 @@ function HowToOrder() {
 					<article>
 						<p>
 							Scheduling for our services is easy! Just fill out
-							the information below and sumbit it. Then, we will
-							contact you to finalize the scheduling date and
-							time. After the mobile dispatch, we will give you an
+							the <Link href="/order">order form</Link> and submit
+							your order, or <a>give us a call</a> if you have any
+							questions or would like to order over the phone.
+						</p>
+						<br />
+						<p>
+							Then, we will contact you to finalize the date and
+							time for the mobile dispatch.
+						</p>
+						<br />
+						<p>
+							After the mobile dispatch, while our meat processing
+							plant is still being prepared, we will offer to take
+							your carcass to a processor of your choice, and the
+							processor will handle the rest!
+						</p>
+						{/* <br />
+							<p>
+							we will give you an
 							estimate for when the meat will be processed and
 							ready for pickup. Finally, come visit us in
 							Northport to pick up your meat!
-						</p>
+						</p> */}
 						<br />
 						<br />
 						<h2>Steps for ordering:</h2>
@@ -38,43 +55,47 @@ function HowToOrder() {
 										<li>
 											<p>
 												The first section is your basic
-												information and your location.
+												information and your address.
 												Give us contact information we
-												can reach you at, and choose a
-												preference for method of
-												contact. Then enter your
-												location, so we can optimize our
-												route, keeping your costs down
-												and saving you time!
+												can reach you at. Then enter
+												your address so we can optimize
+												our route, keeping your costs
+												down and saving you time!
 											</p>
 										</li>
-										<li>
+										{/* <li>
 											<p>
 												Once finished with your contact
 												info, next is the info about
 												each animal you would like
 												processed.
 											</p>
-										</li>
+										</li> */}
 									</ul>
 								</details>
 							</li>
 							<li>
 								<details>
-									<summary>Next, add an animal</summary>
+									<summary>Next, add your animal(s)</summary>
 									<div className="panel-shadow--light">
 										<ul>
 											<li>
 												<p>
-													Select an aminal for
-													processing, then fill out
-													the cut form for that
-													animal.
+													Select a type of animal for
+													slaughter, and choose how
+													many of that animal you
+													would like to dispatch.
+												</p>
+											</li>
+											<li>
+												<p>
+													Do you have more animals
+													you'd like processed? Add more animal types, and choose how many of each animal.
 												</p>
 											</li>
 										</ul>
 
-										<h4 className="margin-1--top">
+										{/* <h4 className="margin-1--top">
 											Unsure about the cuts you would
 											like?
 										</h4>
@@ -94,31 +115,24 @@ function HowToOrder() {
 													animals.
 												</p>
 											</li>
-										</ul>
+										</ul> */}
 									</div>
 								</details>
 							</li>
 							<li>
 								<details>
 									<summary>
-										Add any additional animals
+										Select your preferred date, and an alternate date
 									</summary>
 									<ul className="panel-shadow--light">
 										<li>
 											<p>
-												You may add multiple animals of
-												the same type or different
-												types. We offer custom cut forms
-												for all the animals you would
-												like processed.
+												Choose a date that works best for you. We want to work around your schedule.
 											</p>
 										</li>
 										<li>
 											<p>
-												Select the cut options, use our
-												default selections, or copy the
-												selections you made for a
-												previous similar animal.
+												If for some reason we aren't available on your preferred date, we will use the alternate date. For the alternate date, you may also choose a date window by selecting a starting date and an ending date.
 											</p>
 										</li>
 									</ul>
@@ -133,8 +147,8 @@ function HowToOrder() {
 												Done filling out the form? Check
 												to make sure all your info is
 												correct, and submit your order
-												using the Submit Order button
-												below the form.
+												using the Submit button
+												below the form!
 											</p>
 										</li>
 									</ul>

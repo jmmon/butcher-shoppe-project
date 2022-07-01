@@ -49,7 +49,7 @@ function Footer() {
 					Join our{" "}
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className="white-link--underline"
+						className="underline"
 					>
 						newsletter
 					</LinkScrollUp>{" "}
@@ -59,7 +59,7 @@ function Footer() {
 					You can{" "}
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						className="white-link--underline"
+						className="underline"
 					>
 						unsubscribe
 					</LinkScrollUp>{" "}

@@ -3,20 +3,22 @@
 	color: var(--footer-background-color);
 	text-decoration: none;
 	cursor: pointer;
+	transition: all 0.3 ease-out;
 }
+
 .white-link.margin {
 	 margin-bottom: 8px;
 	}
 
 .white-link:hover {
-	color: rgba(var(--sky-blue), 0.9);
-	transition: 0.3 ease-out;
+	/* color: rgba(var(--footer-background-color), 0.8); */
+	transform: scale(1.1);
 }
 
-.white-link--underline {
+.white-link.underline {
 	cursor: pointer;
 	display: inline;
 	text-decoration: underline;
 	/* color: #fff; */
-	color: var(--footer-background-color);
+	/* color: var(--footer-background-color); */
 }

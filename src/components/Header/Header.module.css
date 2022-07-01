@@ -24,29 +24,30 @@
 
 .link {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 	transition: var(--transition);
-	height: 30px;
+	height: 100%;
 	font-weight: 400;
-	margin-top: 5px;
+	/* margin-top: 5px; */
 }
 
 .icon {
 	width: 1.3rem;
 	padding: 2px;
-	fill: black;
-	stroke: black;
+	fill: #fff;
+	stroke: #fff;
 	transition: var(--transition);
 	margin-right: -0.2rem;
 }
 
 .link:hover {
-	color: #fff;
+	/* color: #ccc; */
+	border-bottom: 3px solid white;
 }
 
 .link:hover > * {
-	fill: white;
-	stroke: white;
+	/* fill: #ccc;
+	stroke: #ccc; */
 }
 
 

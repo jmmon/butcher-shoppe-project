@@ -3,7 +3,7 @@ import {Link, useLocation} from "wouter";
 
 import "./LinkScrollUp.css";
 
-function LinkScrollUp({ className, path, children }) {
+function LinkScrollUp({ className = '', path, children }) {
 	const [location, setLocation] = useLocation();
 	const scrollToTop = () => {
 		window.scrollTo(0, 0);
@@ -16,13 +16,13 @@ function LinkScrollUp({ className, path, children }) {
 			{location === path || path === undefined ? (
 				<span
 				tabIndex="0"
-					className={`${className} white-link margin`}
+					className={`white-link margin ${className}`}
 					onClick={() => scrollToTop()}
 				>
 					{children}
 				</span>
 			) : (
-				<Link className={`${className} white-link margin`} href={path}>
+				<Link className={`white-link margin ${className}`} href={path}>
 					{children}
 				</Link>
 			)}
