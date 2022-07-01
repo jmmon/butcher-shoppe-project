@@ -75,7 +75,7 @@
 
 .nav-links {
 	/* color: white; */
-	color: black;
+	color: var(--footer-background-color);
 	display: flex;
 	align-items: center;
 	text-decoration: none;

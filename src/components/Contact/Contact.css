@@ -56,10 +56,9 @@
 	flex-grow: 1
 }
 
-
-/* 
 .input__topic {
-} */
+	/* color: #757575; */
+}
 
 .topic__label {
 	display: flex;

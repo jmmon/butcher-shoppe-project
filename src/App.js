@@ -77,9 +77,9 @@ function App() {
 							<Membership />
 						</Route>
 
-						<Route path="/logo">
+						{/* <Route path="/logo">
 							<LogoTest />
-						</Route>
+						</Route> */}
 
 
 						<Route path="*">

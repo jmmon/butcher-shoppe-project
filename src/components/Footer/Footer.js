@@ -45,26 +45,28 @@ function Footer() {
 			id="footer-container"
 		>
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-				<h2 className={`${styles.heading} margin-1--bot`}>
-					Join our{" "}
+				<div className="margin-1--bot flex">
+					<h2 className={`${styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className="underline"
+						className={`${styles.heading} underline ${styles.newsletter_link}`}
 					>
 						newsletter
-					</LinkScrollUp>{" "}
-					to receive periodic updates!
-				</h2>
-				<p className={styles.subscription_text}>
-					You can{" "}
+					</LinkScrollUp>
+					<h2 className={`${styles.heading}`}>
+						to receive periodic updates!
+					</h2>
+				</div>
+				<div className="flex">
+					<p className={styles.subscription_text}>You can</p>
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						className="underline"
+						className={`${styles.subscription_text} underline ${styles.newsletter_link} ${styles.unsubscribe_link}`}
 					>
 						unsubscribe
-					</LinkScrollUp>{" "}
-					at any time.
-				</p>
+					</LinkScrollUp>
+					<p className={styles.subscription_text}>at any time.</p>
+				</div>
 
 				<Subscribe />
 			</section>
@@ -166,9 +168,9 @@ function Footer() {
 			<section className={`flex-jcenter-acenter ${styles.section}`}>
 				{/* <div className={styles.logo_surround}> */}
 				<LogoA1Component
-				fills={{
-					white: "#ccc"
-				}}
+					fills={{
+						white: "#ccc",
+					}}
 					// fills={{
 					// 	brown: "#765", //handle
 					// 	black: "#aaa", //blade, trees

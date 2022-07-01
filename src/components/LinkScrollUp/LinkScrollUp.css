@@ -3,7 +3,7 @@
 	color: var(--footer-background-color);
 	text-decoration: none;
 	cursor: pointer;
-	transition: all 0.3 ease-out;
+	transition: transform 0.1s ease-in-out;
 }
 
 .white-link.margin {
@@ -12,7 +12,8 @@
 
 .white-link:hover {
 	/* color: rgba(var(--footer-background-color), 0.8); */
-	transform: scale(1.1);
+	transform: scale(1.05);
+	/* font-size: 1.1em; */
 }
 
 .white-link.underline {
