@@ -99,7 +99,7 @@ function ContactInfoSection() {
 					<InputForm
 						title="Email Address"
 						name="buyer.email_address"
-						placeholder="Enter your email address"
+						placeholder="Email address"
 						required={{
 							required: {
 								value: true,

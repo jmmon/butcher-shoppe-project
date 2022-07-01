@@ -4,7 +4,7 @@
 	/* max-width: 520px; */
 	/* max-width: 50%; */
 
-	min-width: 250px;
+	min-width: 200px;
 	flex: 50%;
 }
 
@@ -15,19 +15,11 @@
 .field {
 	display: flex;
 	flex-wrap: wrap;
+	flex: 30%;
 }
 
-
-@media (max-width: 960px) {
-	/* .container_small {
-		display: inline-block;
-		max-width: 50%;
-	} */
-}
-
-@media (max-width: 658px) {
-	/* .container_small {
-		display: inline-block;
-		width: 100%;
-	} */
+.animals_basic_field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }

@@ -4,13 +4,11 @@ import formStyles from "../../FormComponents.module.css";
 
 import LabelForm from "../../Labels/LabelForm/LabelForm";
 
-// import PhoneInput from "react-phone-number-input/input";
 import InputForm from "../../InputForm/InputForm";
-import PhoneInputForm from "../../InputForm/PhoneInputForm";
 import SelectForm from "components/FormComponents/SelectForm/SelectForm";
 import Button from "components/Button/Button";
 
-const DeleteButtonX = ({onClick}) => {
+const DeleteButtonX = ({ onClick }) => {
 	return (
 		<button
 			style={{
@@ -20,6 +18,7 @@ const DeleteButtonX = ({onClick}) => {
 				width: "1rem",
 				height: "1rem",
 				cursor: "pointer",
+				marginTop: "1.6rem",
 			}}
 			onClick={onClick}
 		>
@@ -37,56 +36,61 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 	};
 
 	return (
-		<div className={formStyles.field}>
+		<div className={formStyles.animals_basic_field}>
 			<DeleteButtonX onClick={() => handleDelete(index)} />
-			<SelectForm
-				title="Type"
-				name={`animals.${index}.type`}
-				options={[
-					{
-						label: `Beef`,
-						value: "beef",
-					},
-					{
-						label: `Hog`,
-						value: "hog",
-					},
-					{
-						label: "Lamb",
-						value: "lamb",
-					},
-					{
-						label: `Other Animal`,
-						value: `other`,
-					},
-				]}
-				handleChangeOption={handleSelectOther}
-			/>
+			<div className={formStyles.field}>
+				<SelectForm
+					title="Type"
+					name={`animals.${index}.type`}
+					options={[
+						{
+							label: `Beef`,
+							value: "beef",
+						},
+						{
+							label: `Hog`,
+							value: "hog",
+						},
+						{
+							label: "Lamb",
+							value: "lamb",
+						},
+						{
+							label: `Other Animal`,
+							value: `other`,
+						},
+					]}
+					handleChangeOption={handleSelectOther}
+				/>
+			</div>
 
 			{thisAnimalType === "other" ? (
+				<>
+					<div className={formStyles.field}>
+						<InputForm
+							title="Animal Type"
+							placeholder="Other animal type"
+							name={`animals.${index}.otherType`}
+							required={true}
+						/>
+					</div>
+					<div className={formStyles.field}>
+						<InputForm
+							title="Count"
+							name={`animals.${index}.count`}
+							number={{ min: 1, default: 1 }}
+						/>
+					</div>
+				</>
+			) : (
 				<div className={formStyles.field}>
-					<InputForm
-						title="Other Type"
-						name={`animals.${index}.otherType`}
-						required={true}
-						small={true}
-					/>
 					<InputForm
 						title="Count"
 						name={`animals.${index}.count`}
 						number={{ min: 1, default: 1 }}
-						small={true}
 					/>
 				</div>
-			) : (
-				<InputForm
-					title="Count"
-					name={`animals.${index}.count`}
-					number={{ min: 1, default: 1 }}
-					small={true}
-				/>
 			)}
-
 		</div>
 	);
 };
@@ -99,14 +103,14 @@ function AnimalsBasic() {
 	// 	storageFormObjectOrEmptyObject?.animals || [{ type: "beef", count: 1 }]
 	// );
 
-	const [addedAnimalsArray, setAddedAnimalsArray] = useState(
-		[{ type: "beef", count: 1 }]
-	);
+	const [addedAnimalsArray, setAddedAnimalsArray] = useState([
+		{ type: "beef", count: 1 },
+	]);
 
 	const handleAddAnimal = (e) => {
 		e.preventDefault();
 		console.log(e);
-		console.log('add animal');
+		console.log("add animal");
 		setAddedAnimalsArray((previousAnimals) => [
 			...previousAnimals,
 			{ type: "beef", count: 1 },
@@ -120,12 +124,12 @@ function AnimalsBasic() {
 			newAnimals.splice(index, 1);
 			setAddedAnimalsArray(newAnimals);
 		}
-	}
+	};
 
 	return (
 		<>
 			<div name="animals" className={`${sectionStyles.section}`}>
-				<LabelForm required={true} title="Select Your Animals" />
+				<LabelForm title="Select Your Animals" />
 				{addedAnimalsArray.map(({ type, count }, index) => (
 					<AnimalRow
 						type={type}
