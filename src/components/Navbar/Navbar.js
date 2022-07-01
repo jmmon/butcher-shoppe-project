@@ -137,13 +137,22 @@ function Navbar({ simple = false }) {
 								More...
 							</a>
 						</li>
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<Link
 								href="/newsletter/subscribe"
-								className="nav-links-mobile"
+								className="nav-links-mobile btn--outline"
 								onClick={closeMobileMenu}
 							>
 								Newsletter
+							</Link>
+						</li> */}
+						<li className="nav-item">
+							<Link
+								href="/newsletter/subscribe"
+								className="nav-links mobile"
+								onClick={closeMobileMenu}
+							>
+							Newsletter
 							</Link>
 						</li>
 					</ul>

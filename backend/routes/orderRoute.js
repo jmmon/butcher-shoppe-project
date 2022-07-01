@@ -97,7 +97,7 @@ router.route("/order").post((req, res) => {
 
 			order_form__transporter.sendMail({
 				from: `"Orders @ The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"Northport Butcher Shoppe Info" <${process.env.ORDER_ARCHIVE_EMAIL_USERNAME}>`,
+				to: `"Order Archive" <${process.env.ORDER_ARCHIVE_EMAIL_USERNAME}>`,
 				// to: process.env.NOREPLY_EMAIL_USERNAME,
 
 				replyTo: `"${fullName}" <${buyer.email_address}>`,
