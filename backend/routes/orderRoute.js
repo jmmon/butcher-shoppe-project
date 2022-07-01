@@ -54,8 +54,9 @@ router.route("/order").post((req, res) => {
 	if (!req.body) {
 		res.status(400).send("Missing info!");
 	} else {
+		const contactInfo = `\x20-\x20Contact Info:\n\nName: ${fullName}\nPhone: ${contact.phone}\nEmail: ${contact.email}`;
 
-		const buyerAddressFormatted = `${address.line_1.toUpperCase()}${address.line_2 !== '' ? `\n${address.line_2.toUpperCase()}` : ""}\n${address.city.toUpperCase()}, ${address.state.toUpperCase()} ${address.zip_code}`;
+		const addressInfo = `\x20-\x20Address:\n\n${address.line_1.toUpperCase()}${address.line_2 !== '' ? `\n${address.line_2.toUpperCase()}` : ""}\n${address.city.toUpperCase()}, ${address.state.toUpperCase()} ${address.zip_code}`;
 
 		
 		//google maps string for the email address:
@@ -64,67 +65,79 @@ router.route("/order").post((req, res) => {
 		//formats to:
 		//https://www.google.com/maps?q=4254+Wilcox+Rd,+Northport,+Washington,+99157
 
-		const googleMapsAddressString = `${address.line_1},+${address.line_2 !== '' ? address.line_2 : ''},+${address.city},+${address.state},+${address.zip_code}`.replaceAll(' ', "+");
-		const googleLink = `https://maps.google.com/?q=${googleMapsAddressString}`;
-
-		const buyerInfoFormatted =  `\x20-\x20Contact Info:\n\nName: ${fullName.toUpperCase()}\nPhone: ${contact.phone}\nEmail: ${contact.email}\n\n\x20-\x20Address:\n\n${buyerAddressFormatted}\n\n${googleLink}`;
-
+		const googleMapsAddressString = `https://maps.google.com/?q=${address.line_1},+${address.line_2 !== '' ? address.line_2 : ''},+${address.city},+${address.state},+${address.zip_code}`.replaceAll(' ', "+");
 
 		const animalsString = animals.map(animalString => `\n${animalString.toUpperCase()}`);
 
-		const buyerAnimalsFormatted = `\x20-\x20Animals scheduling for slaughter:\n${animalsString}\n`;
 
-		const textBodyHeader = `You Received A New Order:\n`;
+// `\n\n\n\n\n${googleLink}\n\n\n`
 
-		const textBodyFooter = `\n\n(Replies get sent to ${fullName} at ${contact.email})`;
+		const animalsInfo = `\x20-\x20Animals scheduled for slaughter:\n${animalsString}\n`;
 
-		const orderDates = `Preferred Date: ${dates.preferred}\n\nAlternate Date${dates.alternate.start === dates.alternate.end ? `: ${dates.alternate.start}` : ` Window: \n\x20from: ${dates.alternate.start}\n\x20to: ${dates.alternate.end}`}`;
 
-		const orderInfo = `${buyerInfoFormatted}\n\n${buyerAnimalsFormatted}\n\n${orderDates}`;
+		const datesInfo = `\x20-\x20Dates:\n\nPreferred Date: ${dates.preferred}\nAlternate Date${dates.alternate.start === dates.alternate.end ? `: ${dates.alternate.start}` : ` Window: \n\x20from: ${dates.alternate.start}\n\x20to: ${dates.alternate.end}`}`;
+		
 
-		console.log('---EMAIL TO US EXAMPLE---\n', textBodyHeader);
-		console.log(orderInfo);
-		console.log(textBodyFooter);
+		// const orderInfo = `${buyerInfoFormatted}\n\n${orderDates}`;
 
-		try {
-			console.log("should send emails");
-		} catch (e) {
-			console.log("Error Sending email:", e);
-			res.status(500).send("Server Error Submitting Order:", e);
-		} finally {
-			console.log("Finished sending both emails!");
-			res.status(200).send("Order submitted!");
-		}
 
-		// Promise.all([
-		// 	// to us
-		// 	order_form__transporter.sendMail({
-		// 		from: `"Order Form (Internal)" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-		// 		// to: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`, // string list of receiver(s)
-		// 		to: NOREPLY_EMAIL_USERNAME,
-		// 		replyTo: `"${fullName}" <${buyer.email_address}>`,
-		// 		subject: `NEW ORDER from ${fullName} - Order #${orderNumber}`, // subject line
-		// 		text: `Hello, Northport Butcher Shoppe,\n\nNEW ORDER RECEIVED:\n\nFrom ${fullName}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})`, // plain text body
-		// 		html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new mesage from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
-		// 	}),
-		// 	// to them
-		// 	order_form__transporter.sendMail({
-		// 		from: `"Northport Butcher Shoppe Contact Form" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
-		// 		to: `"${contact__name}" <${contact__userEmail}>`, // string list of receiver(s)
-		// 		replyTo: `"Northport Butcher Shoppe Info" <${process.env.SUPPORT_EMAIL_USERNAME}>`,
-		// 		subject: `Contact - ${fullTopic} - The Northport Butcher Shoppe - Contact #${contact__number}`, // subject line
-		// 		text: `Hello ${contact__name},\n\nThank you for reaching out to us at the Northport Butcher Shoppe!\nWe will get back to you as soon as we are able.\nHere's a copy of the message you sent us:\n\n"\n${text}\n"\n\n(Replies to this email get sent to ${process.env.INFO_EMAIL_USERNAME})`, // plain text body
-		// 		html: `<h1>Hello ${contact__name},</h1><h3>Thank you for reaching out to us at the Northport Butcher Shoppe!<br>We will get back to you as soon as we are able.</h3><br><i>Here's a copy of the message you sent us:</i><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies to this email get sent to ${process.env.INFO_EMAIL_USERNAME})</i>`,
-		// 	}),
-		// ])
-		// 	.then(() => {
-		// 		console.log("Finished sending both emails!");
-		// 		res.status(200).send("Contact mail sent!");
-		// 	})
-		// 	.catch((e) => {
-		// 		console.log("Error Sending email:", e);
-		// 		res.status(500).send("Mail NOT sent:", e);
-		// 	});
+		
+		const textBodyHeader_toUs = `You Received A New Order:\n`;
+		const textBodyFooter_toUs = `(Replies get sent to ${fullName} at ${contact.email})`;
+
+		const textBodyHeader_toThem = `We Have Received Your Order:\n`;
+		const textBodyFooter_toThem = `Have any questions? Reply to this email and we will get back to you!`;
+
+
+		// try {
+		// 	console.log("should send emails");
+		// } catch (e) {
+		// 	console.log("Error Sending email:", e);
+		// 	res.status(500).send("Server Error Submitting Order:", e);
+		// } finally {
+		// 	console.log("Finished sending both emails!");
+		// 	res.status(200).send("Order submitted!");
+		// }
+
+		Promise.all([
+			// to us
+			order_form__transporter.sendMail({
+				from: `"Orders @ The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
+				// to: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
+				to: process.env.NOREPLY_EMAIL_USERNAME,
+
+				replyTo: `"${fullName}" <${buyer.email_address}>`,
+
+				subject: `NEW ORDER from ${fullName} - Order #${orderNumber}`,
+
+				text: `${textBodyHeader_toUs}\n${contactInfo}\n\n\n${addressInfo}\n\n${googleMapsAddressString}\n\n\n${animalsInfo}\n\n${datesInfo}\n\n${textBodyFooter_toUs}`,
+
+				html: `<h2>${textBodyHeader_toUs}</h2><br>${contactInfo.replaceAll('\n', '<br>')}<br><br><br>${addressInfo.replaceAll('\n', '<br>')}<br><br><a href=${googleMapsAddressString}>Google Maps</a><br><br><br>${animalsInfo.replaceAll('\n', '<br>')}<br><br>${datesInfo.replaceAll('\n', '<br>')}<br><br><i>${textBodyFooter_toUs}</i>`,
+			}),
+
+			// to them
+			order_form__transporter.sendMail({
+				from: `"Orders @ The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
+
+				to: `"${fullName}" <${buyer.email_address}>`,
+
+				replyTo: `"Northport Butcher Shoppe Info" <${process.env.SUPPORT_EMAIL_USERNAME}>`,
+
+				subject: `ORDER RECIEVED - Order #${orderNumber}`,
+
+				text: `${textBodyHeader_toThem}\n${contactInfo}\n\n\n${addressInfo}\n\n${googleMapsAddressString}\n\n\n${animalsInfo}\n\n${datesInfo}\n\n${textBodyFooter_toThem}`,
+
+				html: `<h2>${textBodyHeader_toThem}</h2><br>${contactInfo.replaceAll('\n', '<br>')}<br><br><br>${addressInfo.replaceAll('\n', '<br>')}<br><br><a href=${googleMapsAddressString}>Google Maps</a><br><br><br>${animalsInfo.replaceAll('\n', '<br>')}<br><br>${datesInfo.replaceAll('\n', '<br>')}<br><br><i>${textBodyFooter_toThem}</i>`,
+			}),
+		])
+			.then(() => {
+				console.log("Finished sending both emails!");
+				res.status(200).send("Contact mail sent!");
+			})
+			.catch((e) => {
+				console.log("Error Sending email:", e);
+				res.status(500).send("Mail NOT sent:", e);
+			});
 	}
 });
 
