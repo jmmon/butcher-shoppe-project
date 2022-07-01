@@ -45,7 +45,7 @@ function Services() {
 					<Card
 						title="What We Offer"
 						paragraphs={[
-							"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to another local shop or send it back to our meat shop in Northport.",
+							"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to a local shop of your choice, or once our Northport meat processing Shoppe is complete we will send it there to be processed.",
 							"We also process wild game, like deer, elk, moose and bear",
 							"Sorry, no poultry or rabbits!",
 						]}
@@ -161,11 +161,14 @@ function Services() {
 									<li>
 										<p>
 											Farms located north of Chewelah will
-											be subject to mileage fees, please
-											call the office
+											be subject to mileage fees
 										</p>
 									</li>
 								</ul>
+								<div className="prices-extra-call">
+								Please <a href="tel:15096907214">give us a call</a> if you have any questions on our pricing or extra charges!
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -177,16 +180,16 @@ function Services() {
 							title="Processing"
 							bg={bgProcessing}
 							paragraphs={[
-								"Our goal is to best serve our customers, and, once completed, our shoppe will be available for processing the carcasses in downtown Northport.",
+								"Our goal is to best serve our customers, and, once completed, our Shoppe will be available for processing the carcasses in downtown Northport.",
 							]}
 						>
 							<p>
-								Our meat processing shoppe is currently under
+								Our meat processing Shoppe is currently under
 								construction. Subscribe to our{" "}
 								<Link href="/newsletter/subscribe">
 									newsletter
 								</Link>{" "}
-								so you will know when our shoppe is ready.
+								so you will know when our Shoppe is ready.
 							</p>
 							<p>
 								In the meantime, to best serve you, we offer

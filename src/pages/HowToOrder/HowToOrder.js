@@ -19,7 +19,7 @@ function HowToOrder() {
 						<p>
 							Scheduling for our services is easy! Just fill out
 							the <Link href="/order">order form</Link> and submit
-							your order, or <a>give us a call</a> if you have any
+							your order, or <a href="tel:15096907214">give us a call</a> if you have any
 							questions or would like to order over the phone.
 						</p>
 						<br />
