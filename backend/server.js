@@ -55,13 +55,13 @@ app.use("/server", require("./routes/orderRoute"));
 
 // live
 
-// app.listen(() => {
-// 	console.log("Server started. Listening...");
-// });
+app.listen(() => {
+	console.log("Server started. Listening...");
+});
 
 // dev
 
-const port = 3001;
-app.listen(port, () => {
-	console.log(`Server started. Listening (Port ${port} )`);
-});
+// const port = 3001;
+// app.listen(port, () => {
+// 	console.log(`Server started. Listening (Port ${port} )`);
+// });

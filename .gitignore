@@ -26,3 +26,5 @@ yarn-error.log*
 .env
 
 /old_components
+
+*.zip
