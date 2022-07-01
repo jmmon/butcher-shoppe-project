@@ -45,7 +45,7 @@ function Footer() {
 			id="footer-container"
 		>
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-				<div className="margin-1--bot flex">
+				<div className="margin-1--bot flex-wrap-jcenter">
 					<h2 className={`${styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
@@ -100,7 +100,7 @@ function Footer() {
 						<h2 className={`margin-1--bot ${styles.heading}`}>
 							The Shoppe
 						</h2>
-						<div className={`flex-col-astart ${styles.link_items}`}>
+						<div className={`flex-col ${styles.link_items}`}>
 							<LinkScrollUp path="/">Home</LinkScrollUp>
 							<LinkScrollUp path="/meet-the-team">
 								Meet The Team
@@ -115,7 +115,7 @@ function Footer() {
 						<h2 className={`margin-1--bot ${styles.heading}`}>
 							Ordering
 						</h2>
-						<div className={`flex-col-astart ${styles.link_items}`}>
+						<div className={`flex-col ${styles.link_items}`}>
 							<LinkScrollUp path="/how-to-order">
 								How To Order
 							</LinkScrollUp>
@@ -127,7 +127,7 @@ function Footer() {
 				</div>
 				<div className={`${styles.links_half} flex`}>
 					<div className={styles.links_column}>
-						<div className={`flex-col-astart ${styles.link_items}`}>
+						<div className={`flex-col ${styles.link_items}`}>
 							<h2 className={`margin-1--bot ${styles.heading}`}>
 								Social Media
 							</h2>
@@ -144,7 +144,7 @@ function Footer() {
 						<h2 className={`margin-1--bot ${styles.heading}`}>
 							Keep In Touch
 						</h2>
-						<div className={`flex-col-astart ${styles.link_items}`}>
+						<div className={`flex-col ${styles.link_items}`}>
 							<LinkScrollUp path="/newsletter/subscribe">
 								Subscribe to our Newsletter
 							</LinkScrollUp>

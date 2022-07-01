@@ -71,7 +71,6 @@ function Navbar({ simple = false }) {
 						// 	red: "#000"
 						}}
 						/>
-						{/* <div className="nav-logo">The Butcher Shoppe</div> */}
 					</Link>
 
 					{/* Hamburger icon*/}

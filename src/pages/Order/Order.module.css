@@ -98,4 +98,6 @@
 
 .phone_heading {
 	margin-bottom: 3rem;
+	display: inline;
+	text-align: center;
 }

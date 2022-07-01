@@ -2,7 +2,7 @@
 	margin: 0px auto;
 	width: 100%;
 	display: grid;
-	/* display: flex;
-	flex-wrap: wrap; */
+	/* display: flex; */
+	/* flex-wrap: wrap; */
 	gap: 1.5em;
 }

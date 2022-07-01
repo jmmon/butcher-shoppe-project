@@ -10,8 +10,8 @@ function LogoA1Component({ fills, className }) {
 	return (
 		<svg
 			className={className || null}
-			height="440px"
-			width="1522px"
+			height="440pt"
+			width="1522pt"
 			version="1.1"
 			viewBox="0 0 1522 440"
 			preserveAspectRatio="xMidYMid meet"

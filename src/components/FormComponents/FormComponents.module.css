@@ -2,26 +2,32 @@
 	margin: 0 auto;
 	padding: 0.5em;
 	/* max-width: 520px; */
-	max-width: 50%;
+	/* max-width: 50%; */
 
-	min-width: 300px;
+	min-width: 250px;
+	flex: 50%;
 }
 
 .container_small {
 	display: inline-block;
 }
 
+.field {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 
 @media (max-width: 960px) {
-	.container_small {
+	/* .container_small {
 		display: inline-block;
 		max-width: 50%;
-	}
+	} */
 }
 
 @media (max-width: 658px) {
-	.container_small {
+	/* .container_small {
 		display: inline-block;
 		width: 100%;
-	}
+	} */
 }
