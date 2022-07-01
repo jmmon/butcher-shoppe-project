@@ -28,11 +28,10 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 							className={`${styles.image} inset-box-shadow--dark`}
 							style={{
 								backgroundImage: `url(${slideImage.url})`,
-								backgroundSize: `cover`,
+								backgroundSize: slideImage?.size ||`cover`,
 								backgroundRepeat: `no-repeat`,
-								backgroundPosition: `${
-									slideImage.position || "50% 50%"
-								}`,
+								backgroundPosition: slideImage.position || "50% 50%"
+								,
 							}}
 						></div>
 					</div>

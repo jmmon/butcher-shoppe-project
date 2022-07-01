@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import "./Navbar.css";
 
 import LogoComponent from "assets/logo/LogoComponent.js";
+import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {
 	const [click, setClick] = useState(false);
@@ -59,7 +60,18 @@ function Navbar({ simple = false }) {
 						onClick={closeMobileMenu}
 					>
 						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
-						<LogoComponent fill="white" className="nav-logo" />
+						{/* <LogoComponent fill="white" className="nav-logo" /> */}
+						<LogoA1Component 
+						className="nav-logo-2" 
+						fills={{
+						// 	black: "#fff", 
+						// 	brown: "#fff", 
+							white: "#ccc", 
+						// 	grey: "#aaa", 
+						// 	red: "#000"
+						}}
+						/>
+						{/* <div className="nav-logo">The Butcher Shoppe</div> */}
 					</Link>
 
 					{/* Hamburger icon*/}

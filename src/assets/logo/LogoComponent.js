@@ -3,9 +3,9 @@ export default function LogoComponent({ fill, className }) {
 		<svg
 			className={className || null}
 			height="4655pt"
+			width="6210pt"
 			preserveAspectRatio="xMidYMid meet"
 			viewBox="1552 1164 3105 2328"
-			width="6210pt"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<g transform="matrix(.1 0 0 -.1 0 4655)">

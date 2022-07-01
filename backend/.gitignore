@@ -4,4 +4,6 @@ node_modules
 /.env
 .env
 
-/utils/generateKeys.js
+utils/private_key.pem
+utils/decrypt.js
+utils

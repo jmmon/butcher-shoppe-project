@@ -33,7 +33,8 @@
 	font-size: 0.9rem;
 	padding-left: 1rem;
 	text-align: left;
-	color: #fff;
+	/* color: #fff; */
+	color: var(--footer-background-color);
 }
 
 .contact__input {

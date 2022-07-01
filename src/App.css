@@ -8,6 +8,8 @@
 	--white-page-background: #fff;
 	--offwhite: rgb(236, 229, 229);
 
+	--logo-red: #911102;
+
 	--footer-content--width: 1000px;
 	--schedule--item-height: 380px;
 	--card-border-radius: 4px;
@@ -17,7 +19,8 @@
 	--input-required--invalid: rgb(255, 231, 231);
 
 	--navbar-gradient--dark: rgb(50, 50, 50);
-	--navbar-gradient--light: rgb(100, 100, 100);
+	--navbar-gradient--light: #646464; 
+/* rgb(100, 100, 100) */
 
 	--transition: all 0.1s ease-out;
 

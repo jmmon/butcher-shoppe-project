@@ -6,6 +6,7 @@ import FooterSuspenseContainer from "./FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import Button from "components/Button/Button";
 import LogoComponent from "assets/logo/LogoComponent";
+import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
@@ -92,78 +93,67 @@ function Footer() {
 				className={`flex-jcenter ${styles.section} ${styles.links}`}
 				id="more-links"
 			>
-					<div className={`flex-jbetween ${styles.links_half} `}>
-						<div className={styles.links_column}>
-							<h2 className={`margin-1--bot ${styles.heading}`}>
-								The Shoppe
-							</h2>
-							<div
-								className={`flex-col-astart ${styles.link_items}`}
-							>
-								<LinkScrollUp path="/">Home</LinkScrollUp>
-								<LinkScrollUp path="/meet-the-team">
-									Meet The Team
-								</LinkScrollUp>
-								<LinkScrollUp path="/services">
-									Services
-								</LinkScrollUp>
-								<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
-							</div>
-						</div>
-						<div className={styles.links_column}>
-							<h2 className={`margin-1--bot ${styles.heading}`}>
-								Ordering
-							</h2>
-							<div
-								className={`flex-col-astart ${styles.link_items}`}
-							>
-								
-								<LinkScrollUp path="/how-to-order">
-									How To Order
-								</LinkScrollUp>
-								<LinkScrollUp path="/order">
-									Order Form
-								</LinkScrollUp>
-							</div>
+				<div className={`flex-jbetween ${styles.links_half} `}>
+					<div className={styles.links_column}>
+						<h2 className={`margin-1--bot ${styles.heading}`}>
+							The Shoppe
+						</h2>
+						<div className={`flex-col-astart ${styles.link_items}`}>
+							<LinkScrollUp path="/">Home</LinkScrollUp>
+							<LinkScrollUp path="/meet-the-team">
+								Meet The Team
+							</LinkScrollUp>
+							<LinkScrollUp path="/services">
+								Services
+							</LinkScrollUp>
+							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 						</div>
 					</div>
-					<div className={`${styles.links_half} flex`}>
-						<div className={styles.links_column}>
-							<div
-								className={`flex-col-astart ${styles.link_items}`}
-							>
-								<h2
-									className={`margin-1--bot ${styles.heading}`}
-								>
-									Social Media
-								</h2>
-								<a
-									href={facebookUrl}
-									target="_blank"
-									className={`white-link `}
-								>
-									Facebook
-								</a>
-							</div>
+					<div className={styles.links_column}>
+						<h2 className={`margin-1--bot ${styles.heading}`}>
+							Ordering
+						</h2>
+						<div className={`flex-col-astart ${styles.link_items}`}>
+							<LinkScrollUp path="/how-to-order">
+								How To Order
+							</LinkScrollUp>
+							<LinkScrollUp path="/order">
+								Order Form
+							</LinkScrollUp>
 						</div>
-						<div className={styles.links_column}>
+					</div>
+				</div>
+				<div className={`${styles.links_half} flex`}>
+					<div className={styles.links_column}>
+						<div className={`flex-col-astart ${styles.link_items}`}>
 							<h2 className={`margin-1--bot ${styles.heading}`}>
-								Keep In Touch
+								Social Media
 							</h2>
-							<div
-								className={`flex-col-astart ${styles.link_items}`}
+							<a
+								href={facebookUrl}
+								target="_blank"
+								className={`white-link `}
 							>
+								Facebook
+							</a>
+						</div>
+					</div>
+					<div className={styles.links_column}>
+						<h2 className={`margin-1--bot ${styles.heading}`}>
+							Keep In Touch
+						</h2>
+						<div className={`flex-col-astart ${styles.link_items}`}>
 							<LinkScrollUp path="/newsletter/subscribe">
-									Subscribe to our Newsletter
-								</LinkScrollUp>
-								<LinkScrollUp path="/newsletter/unsubscribe">
-									Unsubscribe
-								</LinkScrollUp>
-							</div>
+								Subscribe to our Newsletter
+							</LinkScrollUp>
+							<LinkScrollUp path="/newsletter/unsubscribe">
+								Unsubscribe
+							</LinkScrollUp>
 						</div>
 					</div>
+				</div>
 			</section>
-			
+
 			<section className={`flex-jcenter-acenter ${styles.section}`}>
 				<div className={styles.back_to_top}>
 					<LinkScrollUp className="btn btn--primary">
@@ -172,8 +162,24 @@ function Footer() {
 				</div>
 			</section>
 
+			{/* <section className={`flex-jcenter-acenter ${styles.section} ${styles.logo_surround}`}> */}
 			<section className={`flex-jcenter-acenter ${styles.section}`}>
-				<LogoComponent fill="white" className={styles.banner} />
+				{/* <div className={styles.logo_surround}> */}
+				<LogoA1Component
+				fills={{
+					white: "#ccc"
+				}}
+					// fills={{
+					// 	brown: "#765", //handle
+					// 	black: "#aaa", //blade, trees
+					// 	white: "#242424", //outside, mountain-trace, holes
+					// 	// grey: "#888", // mountains
+					// 	//red //text
+					// }}
+					className={styles.banner_2}
+				/>
+				{/* </div> */}
+				{/* <LogoComponent fill="white" className={styles.banner} /> */}
 			</section>
 
 			<section className={`flex-col-acenter ${styles.social_media}`}>

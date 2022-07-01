@@ -1,4 +1,9 @@
 export default [
+	// {
+	// 	url: require("assets/logo/newest/tbs4-a1.png"),
+	// 	position: "50% 50%",
+	// 	size: "contain",
+	// },
 	{
 		url: require("assets/images/homepage/_DSC1246.jpg"),
 		position: "50% 58%",

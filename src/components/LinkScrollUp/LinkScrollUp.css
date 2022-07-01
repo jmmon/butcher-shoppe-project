@@ -1,5 +1,6 @@
 .white-link {
-	color: #fff;
+	/* color: #fff; */
+	color: var(--footer-background-color);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -16,5 +17,6 @@
 	cursor: pointer;
 	display: inline;
 	text-decoration: underline;
-	color: #fff;
+	/* color: #fff; */
+	color: var(--footer-background-color);
 }

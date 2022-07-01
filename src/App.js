@@ -19,6 +19,7 @@ import Unsubscribe from "pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
 import Membership from "pages/Membership/Membership";
+import LogoTest from "pages/LogoTest/LogoTest";
 
 function App() {
 	return (
@@ -75,6 +76,12 @@ function App() {
 						<Route path="/membership">
 							<Membership />
 						</Route>
+
+						<Route path="/logo">
+							<LogoTest />
+						</Route>
+
+
 						<Route path="*">
 							<NotFound />
 						</Route>
