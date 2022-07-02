@@ -8,7 +8,7 @@
 .faq-section__title {
 	margin: auto;
 	margin-bottom: 1.5rem;
-	font-size: 36px;
+	font-size: 1.8rem;
 	text-align: center;
 }
 
@@ -29,7 +29,7 @@
 	transition-property: all;
 	transition-duration: .3s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	margin-bottom: 40px;
+	margin-bottom: 2rem;
 }
 
 .faq-section__text__slider.closed{
@@ -37,21 +37,18 @@
 }
 
 .faq_question {
-	padding-left: 25px;
-	margin-bottom: 10px;
+	padding-left: 1.25rem;
+	margin-bottom: 0.5rem;
 	font-size: 1.6rem;
-	/* font-weight: bold; */
 }
 
 .faq_question__container {
-	padding: 1.5rem 20px;
-	/* display: flex; */
-	/* justify-content: center; */
+	padding: 1.5rem 1rem;
 }
 
 .fa-chevron-up,
 .fa-chevron-down {
-	margin-left: 5px;
+	margin-left: 0.25rem;
 }
 
 .expand-icon {

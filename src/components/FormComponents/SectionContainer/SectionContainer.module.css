@@ -1,0 +1,37 @@
+.container {
+	background-color: #f1f1f1;
+}
+
+.header {
+	display: block;
+	text-align: center;
+	font-size: 1.6rem;
+	text-decoration: none;
+	position: relative;
+	border: 1px solid white;
+	padding: 10px;
+	/* background: rgb(
+		var(--harvest-gold--r),
+		var(--harvest-gold--g),
+		var(--harvest-gold--b)
+	); */
+	background: var(--logo-red);
+	color: white;
+	cursor: pointer;
+}
+
+.content_outer {
+	height: auto;
+	transition: none 0s ease 0s;
+	overflow: hidden;
+}
+
+.content_inner {
+	padding: 10px;
+	border: 1px solid lightGrey;
+	border-top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
+}

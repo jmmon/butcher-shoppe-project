@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Collapsible from "react-collapsible";
+// import Collapsible from "react-collapsible";
 import { useForm, FormProvider } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-import "./Order.css";
+// import "./Order.css";
 import styles from "./Order.module.css";
 
 import bgImage from "assets/images/image-1-3.jpg";
@@ -25,13 +25,13 @@ import SchedulerInputWindow from "components/FormComponents/SchedulerInput/Sched
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
 import axios from "axios";
+import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
 
 // const orderFormBackendUri =
 // 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 const headers = { "Content-Type": "application/json" };
 
 const orderFormBackendUri = "http://localhost:3001/server/order";
-
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -44,17 +44,17 @@ function Order() {
 	});
 
 	const [responseFromSubmitOrder, setResponseFromSubmitOrder] = useState({
-		isLoading: false,
 		data: null,
 		error: null,
+		isLoading: false,
 	});
 
-	const [idCollectionOfAnimalsByType, setIdCollectionOfAnimalsByType] =
-		useState({
-			beef: { thisId: 0, idArray: [] },
-			lamb: { thisId: 0, idArray: [] },
-			hog: { thisId: 0, idArray: [] },
-		});
+	// const [idCollectionOfAnimalsByType, setIdCollectionOfAnimalsByType] =
+	// 	useState({
+	// 		beef: { thisId: 0, idArray: [] },
+	// 		lamb: { thisId: 0, idArray: [] },
+	// 		hog: { thisId: 0, idArray: [] },
+	// 	});
 
 	let timer = null;
 
@@ -72,11 +72,11 @@ function Order() {
 	// 	storage: window.localStorage,
 	// });
 
-	useEffect(() => {
-		// console.log("errors", methods.formState.errors);
-		Object.keys(methods.formState.errors).length > 0 &&
-			console.log("errors", methods.formState.errors);
-	}, [methods.formState.errors]);
+	// useEffect(() => {
+	// 	// console.log("errors", methods.formState.errors);
+	// 	Object.keys(methods.formState.errors).length > 0 &&
+	// 		console.log("errors", methods.formState.errors);
+	// }, [methods.formState.errors]);
 
 	// useEffect(() => {
 	// 	window.localStorage.getItem("orderForm") !== null &&
@@ -191,7 +191,6 @@ function Order() {
 		};
 	});
 
-
 	const formHandleSubmit = (data) => {
 		// e.preventDefault();
 		// console.log("handleSubmit");
@@ -202,12 +201,6 @@ function Order() {
 			data.dates.alternate.end = data.dates.alternate.start;
 		}
 
-		//slice only date off the datetime string
-
-		// console.log('date object toDateString:', data.date.preferred.toDateString());
-		// console.log('date object toJson:', data.date.preferred.toJSON());
-		// console.log('date object toString:', data.date.preferred.toString());
-		
 		data.dates.preferred = data.dates.preferred.toDateString();
 		data.dates.alternate.start = data.dates.alternate.start.toDateString();
 		data.dates.alternate.end = data.dates.alternate.end.toDateString();
@@ -281,24 +274,12 @@ function Order() {
 								<Tab>Preferred Date</Tab>
 							</TabList>
 							<TabPanel>
-								<Collapsible
-									trigger="Contact Info"
-									open
-									triggerDisabled={true}
-									transitionTime={200}
-									easing="ease"
-								>
+								<SectionContainer title="Contact Info">
 									<ContactInfoSection />
-								</Collapsible>
+								</SectionContainer>
 							</TabPanel>
 							<TabPanel>
-								<Collapsible
-									trigger="Animal Info"
-									open
-									triggerDisabled={true}
-									transitionTime={200}
-									easing="ease"
-								>
+								<SectionContainer title="Animal Info">
 									<AnimalsBasic />
 									{/* <Button onClick={addAnimal}>
 										Add Another Animal
@@ -316,16 +297,10 @@ function Order() {
 										<option value="lamb">Lamb</option>
 										<option value="hog">Hog</option>
 									</select> */}
-								</Collapsible>
+								</SectionContainer>
 							</TabPanel>
 							<TabPanel>
-								<Collapsible
-									trigger="Schedule A Date"
-									open
-									triggerDisabled={true}
-									transitionTime={200}
-									easing="ease"
-								>
+								<SectionContainer title="Schedule A Date">
 									<OrderFormSectionSubheading>
 										Pick a Preferred Date, and you may
 										choose an Alternate Date or Alternate
@@ -343,7 +318,7 @@ function Order() {
 											title="Alternate Date or Date Window"
 										/>
 									</div>
-								</Collapsible>
+								</SectionContainer>
 							</TabPanel>
 						</Tabs>
 
@@ -366,7 +341,9 @@ function Order() {
 
 						<button
 							type="submit"
-							className={`${styles.submit} btn btn--outline btn--large ${
+							className={`${
+								styles.submit
+							} btn btn--outline btn--large ${
 								responseFromSubmitOrder.isLoading
 									? "btn--pending"
 									: responseFromSubmitOrder.data
@@ -387,21 +364,20 @@ function Order() {
 						</button>
 
 						<p
-				className={`${styles.notification} ${
-					responseFromSubmitOrder.error
-						? `${styles.show} ${styles.error}`
-						: responseFromSubmitOrder.data
-						? `${styles.show} ${styles.success}`
-						: ""
-				}`}
-			>
-				{responseFromSubmitOrder.data
-					? "Order Submitted! A copy will be sent to your provided email address."
-					: responseFromSubmitOrder.error
-					? `Error: ${responseFromSubmitOrder.error.message}`
-					: ""}
-			</p>
-
+							className={`${styles.notification} ${
+								responseFromSubmitOrder.error
+									? `${styles.show} ${styles.error}`
+									: responseFromSubmitOrder.data
+									? `${styles.show} ${styles.success}`
+									: ""
+							}`}
+						>
+							{responseFromSubmitOrder.data
+								? "Order Submitted! A copy will be sent to your provided email address."
+								: responseFromSubmitOrder.error
+								? `Error: ${responseFromSubmitOrder.error.message}`
+								: ""}
+						</p>
 					</form>
 				</FormProvider>
 			</WhitePageBackground>

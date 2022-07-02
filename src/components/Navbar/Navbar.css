@@ -1,16 +1,10 @@
 .navbar {
-	/* background: linear-gradient(
-		90deg,
-		var(--navbar-gradient--light) 80%,
-		var(--navbar-gradient--dark) 120%
-	); */
-	/* background-color: var(--navbar-gradient--light); */
 	background-color: #ccc;
 	height: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.9rem;
+	font-size: clamp(0.9rem, 1.6vw, 1.2rem);
 	position: -webkit-sticky;
 	position: sticky;
 	top: 40px;
@@ -40,7 +34,6 @@
 	justify-self: start;
 	cursor: pointer;
 	text-decoration: none;
-	font-size: 1.7rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -83,17 +76,18 @@
 	height: 100%;
 	min-width: 60px;
 	justify-content: center;
+	/* font-family: var(--header-font); */
 }
 
 .nav-links:focus,
 .navbar-home:focus {
 	outline: none;
+	border-bottom: 4px solid var(--footer-background-color);
 }
 
+
 .nav-links:hover,
-.navbar-home:hover,
-.nav-links:focus,
-.navbar-home:focus {
+.navbar-home:hover {
 	/* border-bottom: 4px solid #fff; */
 	border-bottom: 4px solid var(--footer-background-color);
 	background: rgba(255, 255, 255, 1);

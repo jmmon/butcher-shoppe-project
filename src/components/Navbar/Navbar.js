@@ -52,7 +52,7 @@ function Navbar({ simple = false }) {
 
 	return (
 		<>
-			<nav className="navbar">
+			<nav className="navbar panel-shadow--light">
 				<div className="navbar-container">
 					<Link
 						href="/"

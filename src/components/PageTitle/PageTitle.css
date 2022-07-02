@@ -16,6 +16,7 @@
 	/* font-size: var(--page-title-xlarge); */
 	text-align: center;
 	font-size: clamp(1.8em, 8vw, 4.5em);
+	font-family: var(--header-font);
 }
 
 .smaller {

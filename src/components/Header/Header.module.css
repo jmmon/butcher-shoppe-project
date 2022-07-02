@@ -1,9 +1,4 @@
 .main {
-	/* background-color: rgb(
-			var(--harvest-gold--r),
-		var(--harvest-gold--g),
-		var(--harvest-gold--b)
-	); */
 	background-color: var(--logo-red);
 	display: flex;
 	justify-content: center;
@@ -27,8 +22,6 @@
 	color: #fff;
 	transition: var(--transition);
 	height: 100%;
-	font-weight: 400;
-	/* margin-top: 5px; */
 }
 
 .icon {
@@ -40,14 +33,13 @@
 	margin-right: -0.2rem;
 }
 
-.link:hover {
-	/* color: #ccc; */
+.link:focus {
+	outline: none;	
 	border-bottom: 3px solid white;
 }
 
-.link:hover > * {
-	/* fill: #ccc;
-	stroke: #ccc; */
+.link:hover {
+	border-bottom: 3px solid white;
 }
 
 
