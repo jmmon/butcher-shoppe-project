@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import "./Navbar.css";
 
-import LogoComponent from "assets/logo/LogoComponent.js";
+// import LogoComponent from "assets/logo/LogoComponent.js";
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
-	const navMenu = useRef();
 
 	const handleClick = () => setClick(!click);
 	const closeMobileMenu = () => {
@@ -81,7 +80,6 @@ function Navbar({ simple = false }) {
 
 					<ul
 						className={click ? "nav-menu active" : "nav-menu"}
-						ref={navMenu}
 					>
 						<li className="nav-item">
 							<Link
