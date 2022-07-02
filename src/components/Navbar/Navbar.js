@@ -68,7 +68,8 @@ function Navbar({ simple = false }) {
 						// 	brown: "#fff", 
 							white: "#ccc", 
 						// 	grey: "#aaa", 
-						// 	red: "#000"
+						// 	red: "#000",
+							text: "#fff",
 						}}
 						/>
 					</Link>
