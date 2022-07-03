@@ -5,6 +5,7 @@ import bgImage from "assets/images/image-1-132.jpg";
 import PageTitle from "components/PageTitle/PageTitle.js";
 import FaqSection from "components/FaqSection/FaqSection";
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
+import PageLayout from "components/PageLayout/PageLayout";
 
 function Faq() {
 	const generalFAQ = [
@@ -54,19 +55,21 @@ function Faq() {
 	// ];
 
 	return (
-		<>
-			<PageTitle
-				title="FREQUENTLY ASKED QUESTIONS"
-				bgImage={bgImage}
-				smaller="true"
-			/>
-			<WhitePageBackground>
-				<FaqSection
-					sectionTitle={"General Questions"}
-					questionList={generalFAQ}
+		<PageLayout
+			helmet={null}
+			title={
+				<PageTitle
+					title="FREQUENTLY ASKED QUESTIONS"
+					bgImage={bgImage}
+					smaller="true"
 				/>
-			</WhitePageBackground>
-		</>
+			}
+		>
+			<FaqSection
+				sectionTitle={"General Questions"}
+				questionList={generalFAQ}
+			/>
+		</PageLayout>
 	);
 }
 

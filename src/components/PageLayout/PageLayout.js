@@ -4,12 +4,17 @@ import "./PageLayout.css";
 
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 
-function PageLayout() {
+function PageLayout({separate = false, helmet = null, title = null, children, bottomNav = null}) {
 	return (
 		<>
-			<WhitePageBackground>
-				<div></div>
+			{helmet}
+			{title}
+			<WhitePageBackground separate={separate}>
+				<main>
+				{children}
+				</main>
 			</WhitePageBackground>
+			{bottomNav}
 		</>
 	);
 }

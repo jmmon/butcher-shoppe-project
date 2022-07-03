@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import "./Navbar.css";
 
-// import LogoComponent from "assets/logo/LogoComponent.js";
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {

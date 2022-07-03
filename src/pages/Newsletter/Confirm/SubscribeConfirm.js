@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {useLocation} from "wouter"
-import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
+import { useLocation } from "wouter";
 import PageTitle from "components/PageTitle/PageTitle";
+import PageLayout from "components/PageLayout/PageLayout";
 
 // const confirmUri =
 // 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
@@ -53,31 +53,31 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 	}, [confirmationId, setLocation, location, isSubscribePage, setError]); // testing
 
 	return (
-		<div>
-			<PageTitle title="Confirm Subscription"></PageTitle>
-			<WhitePageBackground>
-				<div className="flex-col-jcenter-acenter">
-					{isSubscribePage && (
-						<>
-							<h2>Thanks For Joining Our Newsletter</h2>
-							<p>You will be redirected to our home page.</p>
-						</>
-					)}
-					{!isSubscribePage && (
-						<h2>Come back anytime to stay up to date!</h2>
-					)}
-					{!isSubscribePage && (
+		<PageLayout
+			helmet={null}
+			title={<PageTitle title="Confirm Subscription"></PageTitle>}
+		>
+			<div className="flex-col-jcenter-acenter">
+				{isSubscribePage && (
+					<>
+						<h2>Thanks For Joining Our Newsletter</h2>
 						<p>You will be redirected to our home page.</p>
-					)}
-					{error && (
-						<p className="subscribe_notification error">
-							There was an error with the confirmation:{" "}
-							{error.message}
-						</p>
-					)}
-				</div>
-			</WhitePageBackground>
-		</div>
+					</>
+				)}
+				{!isSubscribePage && (
+					<h2>Come back anytime to stay up to date!</h2>
+				)}
+				{!isSubscribePage && (
+					<p>You will be redirected to our home page.</p>
+				)}
+				{error && (
+					<p className="subscribe_notification error">
+						There was an error with the confirmation:{" "}
+						{error.message}
+					</p>
+				)}
+			</div>
+		</PageLayout>
 	);
 }
 

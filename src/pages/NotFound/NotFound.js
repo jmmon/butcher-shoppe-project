@@ -1,10 +1,10 @@
 import React from "react";
 import PageTitle from "components/PageTitle/PageTitle";
+import PageLayout from "components/PageLayout/PageLayout";
 
 function PageNotFound() {
 	return (
-		<>
-			<PageTitle title="Page Not Found!" />
+		<PageLayout helmet={null} title={<PageTitle title="Page Not Found!" />}>
 			<div className="grid-row-gap-4">
 				<div className="card--width ">
 					<div className="text-wrapper-shadow">
@@ -19,7 +19,7 @@ function PageNotFound() {
 					</div>
 				</div>
 			</div>
-		</>
+		</PageLayout>
 	);
 }
 

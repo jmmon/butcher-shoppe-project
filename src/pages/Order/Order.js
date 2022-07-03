@@ -9,8 +9,6 @@ import "react-tabs/style/react-tabs.css";
 import styles from "./Order.module.css";
 
 import bgImage from "assets/images/image-1-3.jpg";
-
-import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 import PageTitle from "components/PageTitle/PageTitle.js";
 
 import subscribeStyles from "../../components/Subscribe/Subscribe.module.css";
@@ -26,6 +24,7 @@ import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/Animal
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
 import axios from "axios";
 import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
+import PageLayout from "components/PageLayout/PageLayout";
 
 // const orderFormBackendUri =
 // 	"https://thenorthportbutchershoppe.com/staging/server/contact";
@@ -247,45 +246,47 @@ function Order() {
 	};
 
 	return (
-		<>
-			<PageTitle
-				title="Schedule For Our Service"
-				bgImage={bgImage}
-				smaller="true"
-				position="50% 50%"
-			/>
-
-			<WhitePageBackground>
-				<h3 className={`flex-jcenter-acenter ${styles.phone_heading}`}>
-					Please fill out the order form below, or give us a call at:
-					<a className={styles.phone} href="tel:15096406766">
-						(509) 640-6766
-					</a>
-				</h3>
-				<FormProvider {...methods}>
-					<form
-						className={`flex-col-acenter ${styles.form__center}`}
-						onSubmit={methods.handleSubmit(formHandleSubmit)}
-					>
-						<Tabs forceRenderTabPanel>
-							<TabList>
-								<Tab>Contact Info</Tab>
-								<Tab>Your Animal(s)</Tab>
-								<Tab>Preferred Date</Tab>
-							</TabList>
-							<TabPanel>
-								<SectionContainer title="Contact Info">
-									<ContactInfoSection />
-								</SectionContainer>
-							</TabPanel>
-							<TabPanel>
-								<SectionContainer title="Animal Info">
-									<AnimalsBasic />
-									{/* <Button onClick={addAnimal}>
+		<PageLayout
+		helmet={null}
+			title={
+				<PageTitle
+					title="Schedule For Our Service"
+					bgImage={bgImage}
+					smaller
+					position="50% 50%"
+				/>
+			}
+		>
+			<h3 className={`flex-jcenter-acenter ${styles.phone_heading}`}>
+				Please fill out the order form below, or give us a call at:
+				<a className={styles.phone} href="tel:15096406766">
+					(509) 640-6766
+				</a>
+			</h3>
+			<FormProvider {...methods}>
+				<form
+					className={`flex-col-acenter ${styles.form__center}`}
+					onSubmit={methods.handleSubmit(formHandleSubmit)}
+				>
+					<Tabs forceRenderTabPanel>
+						<TabList>
+							<Tab>Contact Info</Tab>
+							<Tab>Your Animal(s)</Tab>
+							<Tab>Preferred Date</Tab>
+						</TabList>
+						<TabPanel>
+							<SectionContainer title="Contact Info">
+								<ContactInfoSection />
+							</SectionContainer>
+						</TabPanel>
+						<TabPanel>
+							<SectionContainer title="Animal Info">
+								<AnimalsBasic />
+								{/* <Button onClick={addAnimal}>
 										Add Another Animal
 									</Button> */}
 
-									{/* <h4>Select Your Animals:</h4>
+								{/* <h4>Select Your Animals:</h4>
 									<select
 										onChange={(e) =>
 											setNewAnimalChosenType(
@@ -297,91 +298,90 @@ function Order() {
 										<option value="lamb">Lamb</option>
 										<option value="hog">Hog</option>
 									</select> */}
-								</SectionContainer>
-							</TabPanel>
-							<TabPanel>
-								<SectionContainer title="Schedule A Date">
-									<OrderFormSectionSubheading>
-										Pick a Preferred Date, and you may
-										choose an Alternate Date or Alternate
-										Start and End Date Window
-									</OrderFormSectionSubheading>
-									<div
-										className={`flex-jcenter-astart-wrap gap-4 ${styles.date}`}
-									>
-										<SchedulerInput
-											register={methods.register}
-											title="Preferred Date:"
-										/>
-										<SchedulerInputWindow
-											register={methods.register}
-											title="Alternate Date or Date Window"
-										/>
-									</div>
-								</SectionContainer>
-							</TabPanel>
-						</Tabs>
+							</SectionContainer>
+						</TabPanel>
+						<TabPanel>
+							<SectionContainer title="Schedule A Date">
+								<OrderFormSectionSubheading>
+									Pick a Preferred Date, and you may choose an
+									Alternate Date or Alternate Start and End
+									Date Window
+								</OrderFormSectionSubheading>
+								<div
+									className={`flex-jcenter-astart-wrap gap-4 ${styles.date}`}
+								>
+									<SchedulerInput
+										register={methods.register}
+										title="Preferred Date:"
+									/>
+									<SchedulerInputWindow
+										register={methods.register}
+										title="Alternate Date or Date Window"
+									/>
+								</div>
+							</SectionContainer>
+						</TabPanel>
+					</Tabs>
 
-						<div className={styles.heading_container}>
-							<h4 className="order-form--before-submitting">
-								Please Double Check Your Information Before
-								Submitting!
-							</h4>
-						</div>
+					<div className={styles.heading_container}>
+						<h4 className="order-form--before-submitting">
+							Please Double Check Your Information Before
+							Submitting!
+						</h4>
+					</div>
 
-						<p
-							className={`${styles.notification} ${
-								Object.keys(methods.formState.errors).length > 0
-									? `${styles.show} ${styles.error}`
-									: ""
-							}`}
-						>
-							Please Fix Marked Fields
-						</p>
+					<p
+						className={`${styles.notification} ${
+							Object.keys(methods.formState.errors).length > 0
+								? `${styles.show} ${styles.error}`
+								: ""
+						}`}
+					>
+						Please Fix Marked Fields
+					</p>
 
-						<button
-							type="submit"
-							className={`${
-								styles.submit
-							} btn btn--outline btn--large ${
-								responseFromSubmitOrder.isLoading
-									? "btn--pending"
-									: responseFromSubmitOrder.data
-									? "btn--complete"
-									: responseFromSubmitOrder.error
-									? "btn--error"
-									: ""
-							}`}
-							disabled={responseFromSubmitOrder.isLoading}
-						>
-							{responseFromSubmitOrder.isLoading
-								? "Submitting..."
+					<button
+						type="submit"
+						className={`${
+							styles.submit
+						} btn btn--outline btn--large ${
+							responseFromSubmitOrder.isLoading
+								? "btn--pending"
 								: responseFromSubmitOrder.data
-								? "Order submitted!"
+								? "btn--complete"
 								: responseFromSubmitOrder.error
-								? "Submission Error"
-								: "Submit"}
-						</button>
+								? "btn--error"
+								: ""
+						}`}
+						disabled={responseFromSubmitOrder.isLoading}
+					>
+						{responseFromSubmitOrder.isLoading
+							? "Submitting..."
+							: responseFromSubmitOrder.data
+							? "Order submitted!"
+							: responseFromSubmitOrder.error
+							? "Submission Error"
+							: "Submit"}
+					</button>
 
-						<p
-							className={`${styles.notification} ${
-								responseFromSubmitOrder.error
-									? `${styles.show} ${styles.error}`
-									: responseFromSubmitOrder.data
-									? `${styles.show} ${styles.success}`
-									: ""
-							}`}
-						>
-							{responseFromSubmitOrder.data
-								? "Order Submitted! A copy will be sent to your provided email address."
-								: responseFromSubmitOrder.error
-								? `Error: ${responseFromSubmitOrder.error.message}`
-								: ""}
-						</p>
-					</form>
-				</FormProvider>
-			</WhitePageBackground>
-		</>
+					<p
+						className={`${styles.notification} ${
+							responseFromSubmitOrder.error
+								? `${styles.show} ${styles.error}`
+								: responseFromSubmitOrder.data
+								? `${styles.show} ${styles.success}`
+								: ""
+						}`}
+					>
+						{responseFromSubmitOrder.data
+							? "Order Submitted! A copy will be sent to your provided email address."
+							: responseFromSubmitOrder.error
+							? `Error: ${responseFromSubmitOrder.error.message}`
+							: ""}
+					</p>
+				</form>
+			</FormProvider>
+		</PageLayout>
 	);
 }
 
