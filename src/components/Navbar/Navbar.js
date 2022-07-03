@@ -61,7 +61,7 @@ function Navbar({ simple = false }) {
 						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
 						{/* <LogoComponent fill="white" className="nav-logo" /> */}
 						<LogoA1Component 
-						className="nav-logo-2" 
+						className="nav-logo" 
 						fills={{
 						// 	black: "#fff", 
 						// 	brown: "#fff", 
