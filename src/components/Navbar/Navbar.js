@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import "./Navbar.css";
 // import "./Navbar_old.css";
 
+import styles from "./Navbar.module.css";
+
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {
@@ -46,6 +48,7 @@ function Navbar({ simple = false }) {
 		) {
 			return;
 		}
+
 
 		closeMobileMenu();
 	});
