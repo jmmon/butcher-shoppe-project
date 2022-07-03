@@ -35,11 +35,12 @@ function Navbar({ simple = false }) {
 	});
 
 	window.addEventListener("click", function (evt) {
+		if (!isMenuOpen) return;
 		if (
 			evt.target.matches(".nav-menu.active") ||
 			evt.target.matches(".nav-item") ||
 			evt.target.matches(".nav-links") ||
-			evt.target.matches(".menu-icon") ||
+			evt.target.matches(".menu-toggle-button") ||
 			evt.target.matches(".fas.fa-times")
 		) {
 			return;
@@ -73,7 +74,7 @@ function Navbar({ simple = false }) {
 					</Link>
 
 					{/* Hamburger icon*/}
-					<div className="menu-icon" onClick={ToggleMenu}>
+					<div className="menu-toggle-button" onClick={ToggleMenu}>
 						<i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"} />
 					</div>
 
