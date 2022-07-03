@@ -55,13 +55,13 @@
 	width: 35px;
 }
 
-.fa-bars {
+.bars {
 	color: var(--footer-background-color);
 	margin: auto;
 	font-size: 2rem;
 }
 
-.fa-times {
+.times {
 	margin: auto;
 	margin-top: -8px;
 	color: var(--footer-background-color);
@@ -112,10 +112,15 @@
 	text-decoration: none;
 }
 
-
-.newsletter_btn > .btn {
+.newsletter_btn_inner {
 	min-width: 90px;
 	width: auto;
+	
+	padding: 8px 20px;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	cursor: pointer;
 }
 
 
@@ -131,7 +136,7 @@
 	transition: all 0.15s ease-out;
 }
 
-.home:hover > svg > g > path.svg-background {
+.home:hover path.svg_background {
 	fill: rgba(255, 255, 255, 1);
 	transition: all 0.15s ease-out;
 }
