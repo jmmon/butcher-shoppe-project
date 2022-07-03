@@ -5,30 +5,30 @@ import "./Navbar.css";
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {
-	const [click, setClick] = useState(false);
-	const [button, setButton] = useState(true);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [showRegularNewsletterButton, setShowRegularNewsletterButton] = useState(true);
 
-	const handleClick = () => setClick(!click);
+	const ToggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	const closeMobileMenu = () => {
-		setClick(false);
+		setIsMenuOpen(false);
 	};
 
-	const showButton = () => {
+	const handleShowRegularNewsletterButton = () => {
 		if (!simple) {
 			if (window.innerWidth <= 960) {
-				setButton(false);
+				setShowRegularNewsletterButton(false);
 			} else {
-				setButton(true);
+				setShowRegularNewsletterButton(true);
 			}
 		}
 	};
 
 	useEffect(() => {
-		showButton();
+		handleShowRegularNewsletterButton();
 	}, []);
 
 	window.addEventListener("resize", () => {
-		showButton();
+		handleShowRegularNewsletterButton();
 		if (window.innerWidth > 960) {
 			closeMobileMenu();
 		}
@@ -73,12 +73,12 @@ function Navbar({ simple = false }) {
 					</Link>
 
 					{/* Hamburger icon*/}
-					<div className="menu-icon" onClick={handleClick}>
-						<i className={click ? "fas fa-times" : "fas fa-bars"} />
+					<div className="menu-icon" onClick={ToggleMenu}>
+						<i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"} />
 					</div>
 
 					<ul
-						className={click ? "nav-menu active" : "nav-menu"}
+						className={isMenuOpen ? "nav-menu active" : "nav-menu"}
 					>
 						<li className="nav-item">
 							<Link
@@ -135,15 +135,6 @@ function Navbar({ simple = false }) {
 								More...
 							</a>
 						</li>
-						{/* <li className="nav-item">
-							<Link
-								href="/newsletter/subscribe"
-								className="nav-links-mobile btn--outline"
-								onClick={closeMobileMenu}
-							>
-								Newsletter
-							</Link>
-						</li> */}
 						<li className="nav-item">
 							<Link
 								href="/newsletter/subscribe"
@@ -156,7 +147,7 @@ function Navbar({ simple = false }) {
 					</ul>
 
 					{/* Normal Newsletter Button	 */}
-					{button && (
+					{showRegularNewsletterButton && (
 						<Link
 							href="/newsletter/subscribe"
 							className="btn-mobile newsletter-btn"
