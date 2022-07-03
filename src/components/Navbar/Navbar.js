@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "wouter";
 import "./Navbar.css";
+// import "./Navbar_old.css";
 
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 function Navbar({ simple = false }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [showRegularNewsletterButton, setShowRegularNewsletterButton] = useState(true);
+	const [isLargeScreen, setIsLargeScreen] = useState(false);
 
 	const ToggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	const closeMobileMenu = () => {
@@ -15,10 +16,10 @@ function Navbar({ simple = false }) {
 
 	const handleShowRegularNewsletterButton = () => {
 		if (!simple) {
-			if (window.innerWidth <= 960) {
-				setShowRegularNewsletterButton(false);
+			if (window.innerWidth > 960) {
+				setIsLargeScreen(true);
 			} else {
-				setShowRegularNewsletterButton(true);
+				setIsLargeScreen(false);
 			}
 		}
 	};
@@ -59,15 +60,10 @@ function Navbar({ simple = false }) {
 						onClick={closeMobileMenu}
 					>
 						{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
-						{/* <LogoComponent fill="white" className="nav-logo" /> */}
 						<LogoA1Component 
 						className="nav-logo" 
 						fills={{
-						// 	black: "#fff", 
-						// 	brown: "#fff", 
 							white: "#ccc", 
-						// 	grey: "#aaa", 
-						// 	red: "#000",
 							text: "#fff",
 						}}
 						/>
@@ -79,7 +75,7 @@ function Navbar({ simple = false }) {
 					</div>
 
 					<ul
-						className={isMenuOpen ? "nav-menu active" : "nav-menu"}
+						className={`${isMenuOpen ? "nav-menu active" : "nav-menu"}`}
 					>
 						<li className="nav-item">
 							<Link
@@ -148,7 +144,7 @@ function Navbar({ simple = false }) {
 					</ul>
 
 					{/* Normal Newsletter Button	 */}
-					{showRegularNewsletterButton && (
+					{isLargeScreen && (
 						<Link
 							href="/newsletter/subscribe"
 							className="btn-mobile newsletter-btn"
