@@ -4,7 +4,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: clamp(0.9rem, 1.6vw, 1.2rem);
 	position: -webkit-sticky;
 	position: sticky;
 	top: 40px;
@@ -16,9 +15,11 @@
 	justify-content: space-between;
 	align-items: center;
 	height: var(--navbar-height);
-	width: calc(100vw - 20px);
+	/* width: calc(100vw - 1.7vw); */
+	width: 98.4vw;
 	max-width: 1500px;
-	padding: 0 10px;
+	/* padding: 0 0.8vw; */
+	padding-right: 0.8vw;
 }
 
 
@@ -49,22 +50,26 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	transform: translate(-100%, 60%);
+	/* transform: translate(-80%, 60%); */
 	font-size: 0.8rem;
 	cursor: pointer;
+	width: 35px;
+	height: 80px;
+	padding-right: calc(0.5rem + 4vw);
+}
+
+.bars,
+.times {
+	margin: auto;
+	color: var(--footer-background-color);
 	width: 35px;
 }
 
 .bars {
-	color: var(--footer-background-color);
-	margin: auto;
 	font-size: 2rem;
 }
 
 .times {
-	margin: auto;
-	margin-top: -8px;
-	color: var(--footer-background-color);
 	font-size: 2.6rem;
 }
 
@@ -76,7 +81,7 @@
 	display: flex;
 	flex-direction: column;
 	width: auto;
-	max-width: 30rem;
+	max-width: 12rem;
 	opacity: 0;
 	transition: all 0.5s ease;
 }
@@ -90,7 +95,7 @@
 }
 
 .item {
-	height: 80px;
+	height: 50px;
 	right: 0;
 }
 
@@ -99,13 +104,14 @@
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	padding: 0 2rem;
+	padding: 0 1.2rem;
 	height: 100%;
-	min-width: 60px;
+	min-width: 3rem;
 	width: 100%;
 	justify-content: center;
 	font-family: var(--header-font);
-	font-size: 1rem;
+	font-size: clamp(0.75rem, 1.8vw, 1.2rem);
+	/* letter-spacing: 0.05rem; */
 }
 
 .newsletter_btn {
@@ -124,12 +130,13 @@
 }
 
 
-.links:hover {
+ /* {
 	background: rgba(255, 255, 255, 0.9);
 	border-bottom: 4px solid var(--footer-background-color);
 	transition: all 0.15s ease-out;
-}
+} */
 
+.links:hover,
 .home:hover {
 	background: rgba(255, 255, 255, 1);
 	border-bottom: 4px solid var(--footer-background-color);
@@ -164,8 +171,10 @@
 
 /* large screens */
 @media (min-width: 961px) {
+	/* off screen so it stays loaded for first use */
+	/* not really needed but might feel a little smoother */
 	.menu_toggle {
-		display: none;
+		top: -200px;
 	}
 
 	/* Does NOT include Logo or Newsletter-btn */
@@ -175,14 +184,17 @@
 		display: grid;
 		grid-template-columns: repeat(7, auto);
 		width: calc(100vw - (9rem + 11rem));
-		max-width: auto;
+		max-width: 100vw;
 		opacity: 1;
 		transition: none;
 	}
 
+	.item {
+		height: 80px;
+	}
+
 	.links {
 		padding: 0.5rem 0rem;
-		font-size: 1em;
 	}
 
 	.links:hover {
