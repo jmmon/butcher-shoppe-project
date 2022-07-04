@@ -21,18 +21,33 @@
 	display: inline;
 }
 
-.newsletter_link {
+/* .newsletter_link {
 	margin-left: 0.6ch;
 	margin-right: 0.6ch;
+} */
+
+.join_our_newsletter_container {
+	gap: 0.7ch;
+	margin-bottom: 2rem;
 }
+.join_our_newsletter_container > .heading {
+	line-height: 1.4;
+}
+
 
 .subscription_text {
 	margin-bottom: 24px;
-	font-size: 20px;
+	font-size: 1rem;
 }
 
 .unsubscribe_link {
 	line-height: 2rem;
+}
+
+
+.mobile_margin {
+	margin-left: 2vw;
+	margin-right: 2vw;
 }
 
 /* Contact / Map */
@@ -63,16 +78,17 @@
 	max-width: 240px;
 	margin: 0 auto;
 	padding: 1rem;
-	/* justify-content: center; */
 	text-align: center;
 
 }
 
 .link_items {
 	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;
+	gap: 0.5rem;
 }
 
 

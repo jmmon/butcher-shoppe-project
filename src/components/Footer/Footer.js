@@ -45,11 +45,11 @@ function Footer() {
 			id="footer-container"
 		>
 			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-				<div className="margin-1--bot flex-wrap-jcenter">
+				<div className={`flex-wrap-jcenter ${styles.join_our_newsletter_container} ${styles.mobile_margin}`}>
 					<h2 className={`${styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className={`${styles.heading} underline ${styles.newsletter_link}`}
+						className={`${styles.heading} underline`}
 					>
 						newsletter
 					</LinkScrollUp>
@@ -57,11 +57,11 @@ function Footer() {
 						to receive periodic updates!
 					</h2>
 				</div>
-				<div className="flex">
+				<div className={`flex-wrap-jcenter ${styles.join_our_newsletter_container} ${styles.mobile_margin}`}>
 					<p className={styles.subscription_text}>You can</p>
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						className={`${styles.subscription_text} underline ${styles.newsletter_link} ${styles.unsubscribe_link}`}
+						className={`${styles.subscription_text} underline ${styles.unsubscribe_link}`}
 					>
 						unsubscribe
 					</LinkScrollUp>
@@ -72,12 +72,12 @@ function Footer() {
 			</section>
 
 			<section
-				className={`flex-jcenter-acenter-wrap ${styles.section} gap-1`}
+				className={`flex-jcenter-acenter-wrap ${styles.section} gap-1 ${styles.mobile_margin}`}
 			>
-				<h2 className={styles.heading}>Give Us A Call: </h2>
+				<h2 className={`${styles.heading}`}>Give Us A Call: </h2>
 
 				<a
-					className={`white-link text-center ${styles.heading} ${styles.phone}`}
+					className={`white-link text-center ${styles.heading}`}
 					href="tel:15096406766"
 				>
 					(509) 640-6766
