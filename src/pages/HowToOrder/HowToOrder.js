@@ -133,7 +133,7 @@ function HowToOrder() {
 									Select your preferred date, and an alternate
 									date
 								</summary>
-								<ul className="panel-shadow--light details_content line-height card">
+								<ul className="panel-shadow--light details_content line-height">
 									<li>
 										<p>
 											Choose a date that works best for
