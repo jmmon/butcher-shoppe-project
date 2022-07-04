@@ -140,9 +140,9 @@ function Subscribe({ unsubscribe, className }) {
 			<p
 				className={`${styles.notification} ${
 					responseFromSubscribeBox.error
-						? styles.error
+						? `${styles.error} ${styles.show}`
 						: responseFromSubscribeBox.data
-						? styles.success
+						? `${styles.success} ${styles.show}`
 						: ""
 				}`}
 			>
