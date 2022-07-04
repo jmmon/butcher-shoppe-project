@@ -71,10 +71,6 @@
 	color: var(--footer-background-color);
 	font-size: 40px;
 }
-.times {
-	color: var(--footer-background-color);
-	font-size: 50px;
-}
 
 
 .links {
@@ -116,14 +112,6 @@
 
 /* small screens */
 @media (max-width: 960px) {
-	/* regular state for mobile */
-	.dropdown_button .bars {
-		display: block;
-	}
-	.dropdown_button .times {
-		display: none;
-	}
-
 	/* activate menu on hover or click */
 	.menu_container:hover > .menu,
 	.menu_container:focus-within .menu,
@@ -133,20 +121,6 @@
 		pointer-events: auto;
 		background: rgba(231, 231, 231, 0.95);
 	}
-
-	/* menu open: swap the icon */
-	.menu_container:hover > .dropdown_button > .times,
-	.menu_container:focus-within > .dropdown_button > .times,
-	.menu_container > .menu ~ .dropdown_button > .times {
-		display: block;
-	}
-
-	.menu_container:hover > .dropdown_button > .bars,
-	.menu_container:focus-within > .dropdown_button > .bars,
-	.menu_container > .menu ~ .dropdown_button > .bars {
-		display: none;
-	}
-
 
 	/* newsletter link on mobile menu */
 	.newsletter_mobile {

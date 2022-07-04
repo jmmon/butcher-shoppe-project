@@ -24,7 +24,7 @@ function Navbar() {
 				{/* Hamburger icon*/}
 				<div className={styles.menu_container}>
 					<div className={styles.dropdown_button}>
-						<i className={`fas fa-times ${styles.times}`} />
+		
 						<i className={`fas fa-bars ${styles.bars}`} />
 					</div>
 
