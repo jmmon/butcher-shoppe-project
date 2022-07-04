@@ -1,15 +1,26 @@
 import React from "react";
-import PageTitle from "components/PageTitle/PageTitle";
+import { Link } from "wouter";
+import Helmet from "react-helmet";
 import "./Membership.css";
+import PageTitle from "components/PageTitle/PageTitle";
 import bgImage from "assets/images/image-1-156.jpg";
 import PageLayout from "components/PageLayout/PageLayout";
 import Card from "components/Card/Card";
-import { Link } from "wouter";
 
 function Membership() {
 	return (
 		<PageLayout
-			helmet={null}
+			helmet={
+				<Helmet>
+					<title>
+						Membership | The Butcher Shoppe | Northport, WA
+					</title>
+					<meta
+						name="description"
+						content="Our Membership program is in the works; stay tuned to our newsletter for info!"
+					/>
+				</Helmet>
+			}
 			title={
 				<PageTitle
 					title="Membership"

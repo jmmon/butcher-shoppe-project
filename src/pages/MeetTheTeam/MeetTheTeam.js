@@ -1,5 +1,6 @@
 import React from "react";
 import "./MeetTheTeam.css";
+import Helmet from "react-helmet";
 
 import bgImage from "assets/images/image-1-113.jpg";
 import PageTitle from "components/PageTitle/PageTitle.js";
@@ -9,7 +10,17 @@ import PageLayout from "components/PageLayout/PageLayout";
 function MeetTheTeam() {
 	return (
 		<PageLayout
-			helmet={null}
+			helmet={
+				<Helmet>
+					<title>
+						Meet The Team | The Butcher Shoppe | Northport, WA
+					</title>
+					<meta
+						name="description"
+						content="Our team is proud to serve the greater Northport and Colville area with our mobile slaughter - and soon, meat processing."
+					/>
+				</Helmet>
+			}
 			title={
 				<PageTitle
 					title="Meet The Team"

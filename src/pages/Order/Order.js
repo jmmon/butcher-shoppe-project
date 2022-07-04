@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Helmet from "react-helmet";
 // import Collapsible from "react-collapsible";
 import { useForm, FormProvider } from "react-hook-form";
 // import useFormPersist from "react-hook-form-persist";
@@ -250,7 +251,17 @@ function Order() {
 
 	return (
 		<PageLayout
-			helmet={null}
+			helmet={
+				<Helmet>
+					<title>
+						Order Page | The Butcher Shoppe | Northport, WA
+					</title>
+					<meta
+						name="description"
+						content="Place your order for our mobile slaughter service! Coming soon, we will offer meat processing!"
+					/>
+				</Helmet>
+			}
 			title={
 				<PageTitle
 					title="Schedule For Our Service"

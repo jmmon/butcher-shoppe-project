@@ -4,13 +4,11 @@ import styles from "./Footer.module.css";
 import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "./FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
-import Button from "components/Button/Button";
-import LogoComponent from "assets/logo/LogoComponent";
 import LogoA1Component from "assets/logo/newest/best/httpspng2svg/LogoA1Component";
 
 const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
-const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
+// const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
 
 function Footer() {
 	const contactMemo = useMemo(
@@ -133,6 +131,7 @@ function Footer() {
 							<a
 								href={facebookUrl}
 								target="_blank"
+								rel="noreferrer"
 								className={`white-link `}
 							>
 								Facebook
@@ -151,6 +150,7 @@ function Footer() {
 							<a
 								href={facebookUrl}
 								target="_blank"
+								rel="noreferrer"
 								className={`white-link `}
 							>
 								Facebook
@@ -207,6 +207,7 @@ function Footer() {
 							className={`white-link ${styles.social_small_font}`}
 							href={facebookUrl}
 							target="_blank"
+							rel="noreferrer"
 							aria-label="Facebook"
 						>
 							<i className="fab fa-facebook-f"></i>
