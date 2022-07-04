@@ -20,7 +20,7 @@ function Footer() {
 				title: "Contact Us!",
 				lazyPromise: import("../Contact/Contact.js"),
 				loadingName: "Contact Box",
-				linkTarget: "contact-link-target",
+				linkTarget: "contact",
 			}),
 		[]
 	);
@@ -32,7 +32,7 @@ function Footer() {
 				title: "Find us in downtown Northport!",
 				lazyPromise: import("../Map/Map.js"),
 				loadingName: "Map",
-				linkTarget: "map-link-target",
+				linkTarget: "map",
 				placeName: "420 Center Ave, Northport, WA 99157, USA",
 				zoomLevel: 15,
 			}),
@@ -97,25 +97,24 @@ function Footer() {
 			>
 				<div className={`flex-jbetween ${styles.links_half} `}>
 					<div className={styles.links_column}>
-						<h2 className={`margin-1--bot ${styles.heading}`}>
-							The Shoppe
-						</h2>
+						<h2 className={`${styles.heading}`}>The Shoppe</h2>
 						<div className={`flex-col ${styles.link_items}`}>
 							<LinkScrollUp path="/">Home</LinkScrollUp>
 							<LinkScrollUp path="/meet-the-team">
 								Meet The Team
 							</LinkScrollUp>
-							<LinkScrollUp path="/services">
-								Services
+							<LinkScrollUp path="/membership">
+								Membership
 							</LinkScrollUp>
 							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 						</div>
 					</div>
 					<div className={styles.links_column}>
-						<h2 className={`margin-1--bot ${styles.heading}`}>
-							Ordering
-						</h2>
+						<h2 className={`${styles.heading}`}>Ordering</h2>
 						<div className={`flex-col ${styles.link_items}`}>
+							<LinkScrollUp path="/services">
+								Services
+							</LinkScrollUp>
 							<LinkScrollUp path="/how-to-order">
 								How To Order
 							</LinkScrollUp>
@@ -126,9 +125,9 @@ function Footer() {
 					</div>
 				</div>
 				<div className={`${styles.links_half} flex`}>
-					<div className={styles.links_column}>
+					{/* <div className={styles.links_column}>
 						<div className={`flex-col ${styles.link_items}`}>
-							<h2 className={`margin-1--bot ${styles.heading}`}>
+							<h2 className={`${styles.heading}`}>
 								Social Media
 							</h2>
 							<a
@@ -139,11 +138,9 @@ function Footer() {
 								Facebook
 							</a>
 						</div>
-					</div>
+					</div> */}
 					<div className={styles.links_column}>
-						<h2 className={`margin-1--bot ${styles.heading}`}>
-							Keep In Touch
-						</h2>
+						<h2 className={`${styles.heading}`}>Keep In Touch</h2>
 						<div className={`flex-col ${styles.link_items}`}>
 							<LinkScrollUp path="/newsletter/subscribe">
 								Subscribe to our Newsletter
@@ -151,6 +148,13 @@ function Footer() {
 							<LinkScrollUp path="/newsletter/unsubscribe">
 								Unsubscribe
 							</LinkScrollUp>
+							<a
+								href={facebookUrl}
+								target="_blank"
+								className={`white-link `}
+							>
+								Facebook
+							</a>
 						</div>
 					</div>
 				</div>

@@ -40,7 +40,7 @@ function Services() {
 							className="btns"
 							buttonStyle="btn--outline"
 							buttonSize="btn--large"
-							url="#slaughter-link"
+							url="#slaughter"
 						>
 							Slaughter
 						</Button>
@@ -48,7 +48,7 @@ function Services() {
 							className="btns"
 							buttonStyle="btn--outline"
 							buttonSize="btn--large"
-							url="#processing-link"
+							url="#processing"
 						>
 							Processing
 						</Button>
@@ -80,13 +80,13 @@ function Services() {
 						outlined below. Kill fees are paid in the field and
 						processing fees are paid upon pick-up at the downtown
 						Northport store.{" "}
-						<a href="#map-link-target">(See map down below)</a>
+						<a href="#map">(See map down below)</a>
 					</p>
 				</Card>
 
 				<hr />
 
-				<div className="flex-col-jcenter" id="slaughter-link">
+				<div className="flex-col-jcenter" id="slaughter">
 					<Card
 						title="Slaughter"
 						paragraphs={[
@@ -184,7 +184,7 @@ function Services() {
 
 				<hr />
 
-				<div className="flex-col-jcenter" id="processing-link">
+				<div className="flex-col-jcenter" id="processing">
 					<Card
 						title="Processing"
 						bg={bgProcessing}

@@ -18,11 +18,11 @@ function Header() {
 					<PhoneIcon className={styles.icon} />
 					<span className={styles.text}>(509)640-6766</span>
 				</a>
-				<a className={`flex-acenter gap-05 ${styles.link}`} href="#contact-link-target">
+				<a className={`flex-acenter gap-05 ${styles.link}`} href="#contact">
 					<ChatIcon className={styles.icon} />
 					<span className={styles.text}>Email Us</span>
 				</a>
-				<a className={`flex-acenter gap-05 ${styles.link}`} href="#map-link-target">
+				<a className={`flex-acenter gap-05 ${styles.link}`} href="#map">
 					<LocationIcon
 						className={`${styles.icon} ${styles.location_icon}`}
 					/>
