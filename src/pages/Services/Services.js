@@ -12,9 +12,6 @@ import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 import PageLayout from "components/PageLayout/PageLayout";
 
-// import ServicesButchering from "components/ServicesButchering/ServicesButchering";
-// import ServicesProcessing from "components/ServicesProcessing/ServicesProcessing";
-
 function Services() {
 	return (
 		<PageLayout

@@ -15,7 +15,8 @@
 		var(--harvest-gold--g),
 		var(--harvest-gold--b)
 	); */
-	background: var(--logo-red);
+	/* background: var(--logo-red); */
+	background: var(--calendar-red);
 	color: white;
 	cursor: pointer;
 }

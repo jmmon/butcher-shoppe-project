@@ -12,21 +12,19 @@ import Services from "pages/Services/Services.js";
 import Faq from "pages/Faq/Faq.js";
 import Order from "pages/Order/Order.js";
 import HowToOrder from "pages/HowToOrder/HowToOrder.js";
-import NotFound from "pages/NotFound/NotFound";
-import ComingSoon from "pages/ComingSoon/ComingSoon";
 import Newsletter from "pages/Newsletter/Newsletter";
 import Unsubscribe from "pages/Newsletter/Unsubscribe";
 import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
 import Membership from "pages/Membership/Membership";
-import LogoTest from "pages/LogoTest/LogoTest";
+import NotFound from "pages/NotFound/NotFound";
+
 
 function App() {
 	return (
 		<div className="website-container" id="link-destination-top">
 			<ScrollToTop>
 				<Header />
-				{/* <Navbar /> */}
 				<Navbar />
 				<div className="website-content-container">
 					<Switch>
@@ -59,9 +57,6 @@ function App() {
 						<Route path="/services">
 							<Services />
 						</Route>
-						<Route path="/coming-soon">
-							<ComingSoon />
-						</Route>
 						<Route path="/faq">
 							<Faq />
 						</Route>
@@ -78,12 +73,7 @@ function App() {
 							<Membership />
 						</Route>
 
-						{/* <Route path="/logo">
-							<LogoTest />
-						</Route> */}
-
-
-						<Route path="*">
+						<Route>
 							<NotFound />
 						</Route>
 					</Switch>

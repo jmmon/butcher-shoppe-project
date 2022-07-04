@@ -41,3 +41,14 @@ justify-content: center;
 .form-container .btn {
 	background-color: #ddd;
 }
+
+
+
+.react-datepicker__day[class*="-selected"],
+.react-datepicker__day[class*="--in-range"] {
+	background: var(--calendar-red);
+}
+
+.react-datepicker__day[class*="--in-selecting-range"] {
+	background: var(--calendar-red-selecting);
+}

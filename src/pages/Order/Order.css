@@ -1,4 +1,4 @@
-.Collapsible {
+/* .Collapsible {
 	background-color: #f1f1f1;
 }
 
@@ -22,9 +22,6 @@
 	border: 1px solid white;
 	padding: 10px;
 	background: rgb(
-		/* var(--orange-bg--r),
-		var(--orange-bg--g),
-		var(--orange-bg--b) */
 			var(--harvest-gold--r),
 		var(--harvest-gold--g),
 		var(--harvest-gold--b)
@@ -40,4 +37,4 @@
 .Collapsible__trigger:is-disabled {
 	opacity: 0.5;
 	background-color: grey;
-}
+} */

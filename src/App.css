@@ -20,6 +20,9 @@
 	--offwhite: rgb(236, 229, 229);
 
 	--logo-red: #911102;
+	/* --logo-red: #91100220; */
+	--calendar-red: #911102cc;
+	--calendar-red-selecting: #91100230;
 
 	--footer-content--width: 1000px;
 	--schedule--item-height: 380px;
