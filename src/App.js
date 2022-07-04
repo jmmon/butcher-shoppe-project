@@ -26,6 +26,7 @@ function App() {
 		<div className="website-container" id="link-destination-top">
 			<ScrollToTop>
 				<Header />
+				{/* <Navbar /> */}
 				<Navbar />
 				<div className="website-content-container">
 					<Switch>
