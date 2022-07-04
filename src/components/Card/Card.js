@@ -41,7 +41,7 @@ function Card({ className = '', title, subtitle, paragraphs, bg = null, children
 		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
 			<div className="grid-row-gap-1-2 card--content-width ">
-				{!bg && <h2 className="card--title text-center">{title}</h2>}
+				{(!bg && title) && <h2 className="card--title text-center">{title}</h2>}
 				{subtitle && <h3 className="card--subtitle text-center"><i>{subtitle}</i></h3>}
 
 				{content && content}

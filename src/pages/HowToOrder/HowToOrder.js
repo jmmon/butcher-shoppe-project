@@ -54,13 +54,13 @@ function HowToOrder() {
 					<br />
 					<h2>Steps for ordering:</h2>
 					<br />
-					<ol className="form--steps line-height">
-						<li>
+					<ol className="form--steps">
+						<li className="details_item">
 							<details>
 								<summary>
 									Start with your contact information
 								</summary>
-								<ul className="panel-shadow--light">
+								<ul className="panel-shadow--light details_content line-height">
 									<li>
 										<p>
 											The first section is your basic
@@ -82,11 +82,10 @@ function HowToOrder() {
 								</ul>
 							</details>
 						</li>
-						<li>
+						<li className="details_item">
 							<details>
 								<summary>Next, add your animal(s)</summary>
-								<div className="panel-shadow--light">
-									<ul>
+									<ul className="panel-shadow--light details_content line-height">
 										<li>
 											<p>
 												Select a type of animal for
@@ -126,16 +125,15 @@ function HowToOrder() {
 												</p>
 											</li>
 										</ul> */}
-								</div>
 							</details>
 						</li>
-						<li>
+						<li className="details_item">
 							<details>
 								<summary>
 									Select your preferred date, and an alternate
 									date
 								</summary>
-								<ul className="panel-shadow--light">
+								<ul className="panel-shadow--light details_content line-height card">
 									<li>
 										<p>
 											Choose a date that works best for
@@ -156,10 +154,10 @@ function HowToOrder() {
 								</ul>
 							</details>
 						</li>
-						<li>
+						<li className="details_item">
 							<details>
 								<summary>Double-check and submit!</summary>
-								<ul className="panel-shadow--light">
+								<ul className="panel-shadow--light details_content line-height">
 									<li>
 										<p>
 											Done filling out the form? Check to

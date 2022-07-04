@@ -6,25 +6,24 @@
 	font-size: 1.2rem;
 }
 
-.form--steps {
-	width: 80%;
-	margin: 0 auto;
+.details_item {
+	margin-left: 1rem;
+	margin-bottom: 0.5rem;
+	line-height: 1.5rem;
 }
 
-details > :nth-child(2){
+.details_content {
 	padding: 0.5rem;
 	background: #eee;
-	margin: 0.5rem 0;
-}
+	margin: 0.5rem -0.2rem 1rem -1.2rem;
 
-details ul li{
- margin-left: 2rem;
-}
-
-details ul {
 	list-style-type: disc;
 	
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1rem;
+}
+
+.details_content > li{
+ margin-left: 1.5rem;
 }

@@ -1,33 +1,33 @@
 import React from "react";
-import "./FaqSection.css";
+import "pages/Faq/Faq.css";
 
-const Question = ({question, answer, index}) => {
+const Question = ({ question, answer, index }) => {
 	return (
-		<div className="faq_question__container" key={index} >
-			<ul className="faq_question">
-				<li><h4><i>{question}</i></h4></li>
-			</ul>
-			
-			<p className="faq_answer" dangerouslySetInnerHTML={{__html: answer}}></p>
+		<div className="faq_question__container" key={index}>
+			<h3 className="faq_question">
+				<small className="faq_small">q. </small>
+				<i>{question}</i>
+			</h3>
+
+			<p
+				className="faq_answer"
+				dangerouslySetInnerHTML={{ __html: answer }}
+			></p>
 		</div>
 	);
 };
 
-function FaqSection({ sectionTitle, questionList }) {
+function FaqSection({ questionList }) {
 	return (
-		<section
-			className="faq-section"
-			// id={linkDestination}
-		>
-			<div className="faq-section__container">
-				<h3 className="faq-section__title">{sectionTitle}</h3>
-
-				<div className="faq-section__text panel-shadow--dark">
-					{questionList.map((question, index) => <Question question={question.question} answer={question.answer} index={index} />)}
-
-				</div>
-			</div>
-		</section>
+		<div className="faq_section__text flex-col gap-4">
+			{questionList.map((question, index) => (
+				<Question
+					question={question.question}
+					answer={question.answer}
+					index={index}
+				/>
+			))}
+		</div>
 	);
 }
 

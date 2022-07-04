@@ -76,8 +76,7 @@ function Services() {
 						Basic kill fees and average meat processing fees are
 						outlined below. Kill fees are paid in the field and
 						processing fees are paid upon pick-up at the downtown
-						Northport store.{" "}
-						<a href="#map">(See map down below)</a>
+						Northport store. <a href="#map">(See map down below)</a>
 					</p>
 				</Card>
 
@@ -154,8 +153,8 @@ function Services() {
 					</div>
 					<div>
 						<h2 className="prices-grid-title ">Extra Charges</h2>
-						<div className="card--width card--content-width">
-							<ul>
+						<Card>
+							<ul className="prices-extra-margin flex-col gap-1">
 								<li>
 									<p>
 										Fuel surcharge will apply based on the
@@ -175,7 +174,8 @@ function Services() {
 								you have any questions on our pricing or extra
 								charges!
 							</div>
-						</div>
+						</Card>
+
 					</div>
 				</div>
 

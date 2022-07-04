@@ -23,6 +23,7 @@
 	/* --logo-red: #91100220; */
 	--calendar-red: #911102cc;
 	--calendar-red-selecting: #91100230;
+	--faq-qa-red: #911102aa;
 
 	--footer-content--width: 1000px;
 	--schedule--item-height: 380px;
@@ -67,7 +68,8 @@
 	--font--medium: 16px;
 	--font--small: 14px;
 
-	--card--font-size: min(6vw, 1.2rem);
+	/* --card--font-size: min(5vw, 1.2rem); */
+	--card--font-size: clamp(1rem, 5vw, 1.2rem);
 
 	--icon--normal: 22px;
 	--icon--medium: 20px;
@@ -96,8 +98,14 @@ html {
 }
 
 p {
-	line-height: 2rem;
+	line-height: 2;
 	font-size: var(--card--font-size);
+}
+
+@media (max-width:960px) {
+	p {
+		line-height: 1.8;
+	}
 }
 
 .line-height {
@@ -150,6 +158,9 @@ p {
 
 .gap-4 {
 	gap: 4rem;
+}
+.gap-3 {
+	gap: 3rem;
 }
 .gap-2 {
 	gap: 2rem;
