@@ -5,10 +5,10 @@ const Question = ({question, answer, index}) => {
 	return (
 		<div className="faq_question__container" key={index} >
 			<ul className="faq_question">
-				<li><h4 ><i>{question}</i></h4></li>
+				<li><h4><i>{question}</i></h4></li>
 			</ul>
 			
-			<p className="faq_answer">{answer}</p>
+			<p className="faq_answer" dangerouslySetInnerHTML={{__html: answer}}></p>
 		</div>
 	);
 };
