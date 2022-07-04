@@ -2,7 +2,7 @@
 	border-radius: var(--card-border-radius);
 }
 
-.card--heading {
+.card--title {
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -10,7 +10,16 @@
 	margin-bottom: 1rem;
 }
 
-.card--heading-margin {
+.card--subtitle {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	margin-top: -2.5rem;
+}
+
+.card--title-margin {
 	margin-top: -100px;
 }
 
@@ -26,9 +35,4 @@
 .card--content-width {
 	max-width: 70ch;
 	margin: auto;
-}
-
-
-.card--paragraph {
-	line-height: 2rem;
 }

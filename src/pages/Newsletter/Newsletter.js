@@ -48,7 +48,7 @@ function NewsletterPage() {
 				</WhitePageBackground>
 			}
 		>
-			<section className="">
+			<section>
 				<Card
 					title="What's happening at The Butcher Shoppe?"
 					className="newsletter--blerb-container"
@@ -62,18 +62,18 @@ function NewsletterPage() {
 						</h3>
 					</div>
 
-					<p className="card--paragraph">
+					<p>
 						For our neighbors and our community, we like to keep
 						everyone up to date on all things related to The Butcher
 						Shoppe. We send out a twice-monthly newsletter with all
 						the info!
 					</p>
-					<p className="card--paragraph">
+					<p>
 						Want to stay informed? Take part in our newsletter to
 						stay up to date on all the Shoppe information: news,
 						updates, and more!
 					</p>
-					<p className="card--paragraph">
+					<p>
 						Enter your email address below and click "Subscribe" to
 						receive instructions on how to confirm your newsletter
 						subscription!
@@ -83,16 +83,6 @@ function NewsletterPage() {
 				<Subscribe />
 				<div className="margin-4--top"></div>
 			</section>
-
-			{/* <section className={`white card--width  card--font-size`}>
-						<div className="grid-row-gap-1-2 card--content-width ">
-							<h3 className="card--heading text-center">
-								Get All Our Updates Delivered Straight To Your
-								Inbox!
-							</h3>
-						</div>
-						<Subscribe />
-					</section> */}
 		</PageLayout>
 	);
 }

@@ -7,6 +7,7 @@ import bgImage from "assets/images/image-1-136.jpg";
 import PageTitle from "components/PageTitle/PageTitle";
 import Subscribe from "components/Subscribe/Subscribe";
 import PageLayout from "components/PageLayout/PageLayout";
+import Card from "components/Card/Card";
 
 function NewsletterPage() {
 	return (
@@ -25,22 +26,22 @@ function NewsletterPage() {
 			title={<PageTitle title="UNSUBSCRIBE" bgImage={bgImage} />}
 		>
 			<section>
-				<h2 className="page--subheading">
-					Looking To Unsubscribe From Our Newsletter?
-				</h2>
-				<div className="newsletter--container--content-wrapper">
-					<p className="newsletter--blerb card panel-shadow--light">
+				<Card title="Want To Unsubscribe?">
+					<p>
 						We hope you enjoy our newsletters! If you are already a
 						newsletter subscriber and wish to unsubscribe, you can
-						do that here. <br />
-						<br />
+						do that here.
+					</p>
+					<p>
 						Enter your subscribed email below and we will send you
 						an email for you to confirm your removal from our
 						newsletter mailing list. Click the link in the email and
 						you will be unsubscribed!
 					</p>
-					<Subscribe unsubscribe={true} />
-				</div>
+				</Card>
+				<div className="margin-6--top"></div>
+				<Subscribe unsubscribe />
+				<div className="margin-4--top"></div>
 			</section>
 		</PageLayout>
 	);

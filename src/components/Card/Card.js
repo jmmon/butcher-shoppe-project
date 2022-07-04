@@ -19,7 +19,7 @@ function ImageHeading({ bg, title }) {
 			<h3
 				className={`${
 					bg && "text-white"
-				} card--heading text-shadow--lg`}
+				} card--title text-shadow--lg`}
 			>
 				{title}
 			</h3>
@@ -29,18 +29,20 @@ function ImageHeading({ bg, title }) {
 
 
 
-function Card({ className = '', title, paragraphs, bg = null, children }) {
+function Card({ className = '', title, subtitle, paragraphs, bg = null, children }) {
 	const content = paragraphs?.map((item) => (
 		<p className="card--paragraph" key={paragraphs.indexOf(item)}>
 			{item}
 		</p>
 	));
+	
 	return (
 		//panel-shadow--dark removed from section
 		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
 			<div className="grid-row-gap-1-2 card--content-width ">
-				{!bg && <h3 className="card--heading text-center">{title}</h3>}
+				{!bg && <h2 className="card--title text-center">{title}</h2>}
+				{subtitle && <h3 className="card--subtitle text-center"><i>{subtitle}</i></h3>}
 
 				{content && content}
 				{children}
