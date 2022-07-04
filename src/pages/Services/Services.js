@@ -88,7 +88,7 @@ function Services() {
 						title="Slaughter"
 						paragraphs={[
 							"On the scheduled day of your appointment, you will be asked to safely secure your animal(s) where dispatch can occur without harming other livestock. The designated animal(s) will be killed, hung, eviscerated, de-hided, de-headed and de-legged on sight.",
-							"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be weighed and loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
+							"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
 						]}
 						bg={bgSlaughter}
 					/>
@@ -164,7 +164,7 @@ function Services() {
 								</li>
 								<li>
 									<p>
-										Farms located north of Chewelah will be
+										Farms located south of Chewelah will be
 										subject to mileage fees
 									</p>
 								</li>
