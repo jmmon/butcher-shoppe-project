@@ -6,10 +6,6 @@
 	transition: transform 0.1s ease-in-out;
 }
 
-.white-link.margin {
-	 margin-bottom: 8px;
-	}
-
 .white-link:hover {
 	/* color: rgba(var(--footer-background-color), 0.8); */
 	transform: scale(1.05);
