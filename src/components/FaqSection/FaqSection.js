@@ -19,7 +19,7 @@ const Question = ({ question, answer, index }) => {
 
 function FaqSection({ questionList }) {
 	return (
-		<div className="faq_section__text flex-col gap-4">
+		<div className="faq_section__text flex-col gap-4 card--font-size">
 			{questionList.map((question, index) => (
 				<Question
 					question={question.question}
