@@ -25,8 +25,8 @@ function Navbar() {
 				</Link>
 
 				{/* Hamburger icon*/}
-				<div className={`${styles.nav_item} ${styles.has_dropdown}`}>
-					<div className={styles.nav_dropdown_button}>
+				<div className={styles.menu_container}>
+					<div className={styles.dropdown_button}>
 						<i className={`fas fa-times ${styles.times}`} />
 						<i className={`fas fa-bars ${styles.bars}`} />
 					</div>
@@ -66,7 +66,7 @@ function Navbar() {
 								More...
 							</a>
 						</li>
-						<li className={`${styles.menu_item} ${styles.mobile}`}>
+						<li className={styles.mobile}>
 							<Link
 								href="/newsletter/subscribe"
 								className={styles.links}
@@ -80,10 +80,9 @@ function Navbar() {
 				{/* Normal Newsletter Button	 */}
 				<Link
 					href="/newsletter/subscribe"
-					className={styles.newsletter}
 				>
 					<div
-						className={`${styles.newsletter_inner} btn--outline btn--large`}
+						className={`${styles.newsletter_button} btn--outline btn--large`}
 						tabIndex="0"
 					>
 						Newsletter
