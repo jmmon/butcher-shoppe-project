@@ -247,7 +247,7 @@ function Order() {
 
 	return (
 		<PageLayout
-		helmet={null}
+			helmet={null}
 			title={
 				<PageTitle
 					title="Schedule For Our Service"
@@ -379,6 +379,15 @@ function Order() {
 							? `Error: ${responseFromSubmitOrder.error.message}`
 							: ""}
 					</p>
+					<h3
+						className={`flex-jcenter-acenter ${styles.phone_heading}`}
+					>
+						If you have any questions or need to make adjustments, give us a call
+						at:
+						<a className={styles.phone} href="tel:15096406766">
+							(509) 640-6766
+						</a>
+					</h3>
 				</form>
 			</FormProvider>
 		</PageLayout>

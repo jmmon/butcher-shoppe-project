@@ -52,7 +52,7 @@
 
 .links {
 	width: auto;
-	font-size: clamp(0.8rem, 3vw, 1rem);
+	font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .links_half {
@@ -69,6 +69,7 @@
 }
 
 .link_items {
+	margin-top: 0.5rem;
 	text-align: center;
 	width: 100%;
 	box-sizing: border-box;

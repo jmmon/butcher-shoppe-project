@@ -8,13 +8,13 @@ const headers = {
 };
 
 function Subscribe({ unsubscribe, className }) {
-	// const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
-	// 	unsubscribe ? "unsubscribe" : "subscribe"
-	// }`;
-
-	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/staging/server/${
+	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
+
+	// const subscribeBackendUri = `https://thenorthportbutchershoppe.com/staging/server/${
+	// 	unsubscribe ? "unsubscribe" : "subscribe"
+	// }`;
 
 	// const subscribeBackendUri = `http://localhost:3001/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
@@ -112,7 +112,7 @@ function Subscribe({ unsubscribe, className }) {
 				onChange={(e) => setEmail(e.target.value)}
 			/>
 			<button
-				className={`btn btn--medium btn--outline ${
+				className={`${styles.subscribe_btn} btn btn--medium btn--outline ${
 					responseFromSubscribeBox.isLoading
 						? "btn--pending"
 						: responseFromSubscribeBox.data

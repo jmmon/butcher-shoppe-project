@@ -10,15 +10,7 @@
 
 
 
-.wrapper > input {
-	flex: 1;
-}
-.wrapper > button {
-	flex: 1;
-}
-.wrapper > p {
-	width: 100%;
-}
+
 
 
 
@@ -30,6 +22,17 @@
 	border: none;
 	font-size: 18px;
 	border: 1px solid #fff;
+	max-width: 100%;
+	
+	flex: 1;
+	flex-basis: 55%;
+}
+.subscribe_btn {
+	flex: 1;
+	flex-basis: 35%;
+}
+.notification {
+	width: 100%;
 }
 
 /* .input::placeholder {

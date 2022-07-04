@@ -29,7 +29,7 @@ function Footer() {
 		() =>
 			FooterSuspenseContainer({
 				key: "map",
-				title: "Find us in downtown Northport!",
+				title: "Find Us In Downtown Northport!",
 				lazyPromise: import("../Map/Map.js"),
 				loadingName: "Map",
 				linkTarget: "map",

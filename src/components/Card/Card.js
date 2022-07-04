@@ -31,11 +31,11 @@ function ImageHeading({ bg, title }) {
 
 function Card({ className = '', title, subtitle, paragraphs, bg = null, children }) {
 	const content = paragraphs?.map((item) => (
-		<p className="card--paragraph" key={paragraphs.indexOf(item)}>
+		<p key={paragraphs.indexOf(item)}>
 			{item}
 		</p>
 	));
-	
+
 	return (
 		//panel-shadow--dark removed from section
 		<section className={`white card--width  card--font-size ${className}`}>
