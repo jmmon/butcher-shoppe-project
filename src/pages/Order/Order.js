@@ -32,7 +32,8 @@ import PageLayout from "components/PageLayout/PageLayout";
 const headers = { "Content-Type": "application/json" };
 
 // const orderFormBackendUri = "http://localhost:3001/server/order";
-const orderFormBackendUri = "https://thenorthportbutchershoppe.com/server/order";
+const orderFormBackendUri =
+	"https://thenorthportbutchershoppe.com/server/order";
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -381,17 +382,15 @@ function Order() {
 							? `Error: ${responseFromSubmitOrder.error.message}`
 							: ""}
 					</p>
-					<h3
-						className={`flex-jcenter-acenter ${styles.phone_heading}`}
-					>
-						If you have any questions or need to make adjustments, give us a call
-						at:
-						<a className={styles.phone} href="tel:15096406766">
-							(509) 640-6766
-						</a>
-					</h3>
 				</form>
 			</FormProvider>
+			<h3 className={`flex-jcenter-acenter ${styles.phone_heading}`}>
+				If you have any questions or need to make adjustments, give us a
+				call at:
+				<a className={styles.phone} href="tel:15096406766">
+					(509) 640-6766
+				</a>
+			</h3>
 		</PageLayout>
 	);
 }

@@ -99,6 +99,7 @@
 }
 
 .phone_heading {
+	margin: 0 2vw;
 	margin-bottom: 3rem;
 	display: inline;
 	text-align: center;
