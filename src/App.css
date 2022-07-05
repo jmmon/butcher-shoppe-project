@@ -7,6 +7,7 @@
        /* url('fonts/pt-sans-v17-latin-700.woff2') format('woff2'),  */
 			 /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('fonts/pt-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-display: swap;
 }
 
 :root {
@@ -325,10 +326,6 @@ p {
 @media screen and (max-width: 960px) {
 	.card--heading {
 		font-size: var(--page-title-medium);
-	}
-
-	.text-shadow--lg {
-		text-shadow: -2px 2px #000;
 	}
 	.card--heading-margin {
 		margin-top: -100px;

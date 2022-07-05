@@ -38,7 +38,7 @@ function Footer() {
 	);
 
 	return (
-		<div
+		<footer
 			className={`flex-col-jcenter panel-shadow--dark ${styles.container}`}
 			id="footer-container"
 		>
@@ -122,7 +122,7 @@ function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className={`${styles.links_half} flex`}>
+				<div className={`${styles.links_half} flex-jbetween`}>
 					{/* <div className={styles.links_column}>
 						<div className={`flex-col ${styles.link_items}`}>
 							<h2 className={`${styles.heading}`}>
@@ -220,7 +220,7 @@ function Footer() {
 					</small>
 				</div>
 			</section>
-		</div>
+		</footer>
 	);
 }
 

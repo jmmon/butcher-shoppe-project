@@ -16,13 +16,13 @@ function LinkScrollUp({ className = '', path, children }) {
 			{location === path || path === undefined ? (
 				<span
 				tabIndex="0"
-					className={`white-link margin ${className}`}
+					className={`white-link ${className}`}
 					onClick={() => scrollToTop()}
 				>
 					{children}
 				</span>
 			) : (
-				<Link className={`white-link margin ${className}`} href={path}>
+				<Link className={`white-link ${className}`} href={path}>
 					{children}
 				</Link>
 			)}

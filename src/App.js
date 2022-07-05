@@ -18,11 +18,11 @@ import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
 import MeetTheTeam from "pages/MeetTheTeam/MeetTheTeam";
 import Membership from "pages/Membership/Membership";
 import NotFound from "pages/NotFound/NotFound";
-		
+
 
 function App() {
 	return (
-		<div className="website-container" id="link-destination-top">
+		<div className="website-container">
 			<ScrollToTop>
 				<Header />
 				<Navbar />
