@@ -4,12 +4,12 @@ import { useLocation } from "wouter";
 import PageTitle from "components/PageTitle/PageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
 
-// const confirmUri =
-// 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
+const confirmUri =
+	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
 
-const TESTINGconfirmUri =
-	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
-const listName = "Testing";
+// const TESTINGconfirmUri =
+// 	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
+const listName = "Newsletter";
 
 function SubscribeConfirm({ isSubscribePage, id }) {
 	const [location, setLocation] = useLocation();
@@ -35,7 +35,7 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 		}+list+${listName}`;
 
 		axios
-			.post(TESTINGconfirmUri, data)
+			.post(confirmUri, data)
 			.then((res) => {
 				console.log("SubscribeConfirm-POST response:", res);
 				console.log("SubscribeConfirm-POST response.data:", res.data);
@@ -50,7 +50,7 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 
 				console.log("SubscribeConfirm-POST axios error:", e);
 			});
-	}, [confirmationId, setLocation, location, isSubscribePage, setError]); // testing
+	}, [confirmationId, setLocation, location, isSubscribePage, setError]);
 
 	return (
 		<PageLayout

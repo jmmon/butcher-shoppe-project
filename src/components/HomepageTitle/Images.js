@@ -9,7 +9,7 @@ export default [
 		position: "50% 58%",
 	},
 	{
-		url: require("assets/images/homepage/_MG_1051-1500-1000-q97-c4.jpg"),
+		url: require("assets/images/homepage/_MG_1051-1500-1000-q80-c4.jpg"),
 		position: "50% 45%",
 	},
 	{
