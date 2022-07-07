@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Contact.css";
-import Button from "components/Button/Button";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
@@ -11,7 +10,6 @@ const contactBoxBackendUri =
 const headers = { "Content-Type": "application/json" };
 
 const Contact = () => {
-	// const form = useRef();
 	const [input, setInput] = useState({
 		contact__name: "",
 		contact__email: "",

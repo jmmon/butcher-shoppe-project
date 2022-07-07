@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SchedulerInput.css";
@@ -8,7 +8,6 @@ const DateTimePicker = ({
 	title = "",
 }) => {
 	const {
-		formState: { errors },
 		setValue,
 	} = useFormContext();
 
@@ -28,7 +27,7 @@ const DateTimePicker = ({
 	// 	return day !== 0;
 	// };
 
-	let timer = null;
+	// let timer = null;
 
 	const onChange = (dates) => {
 	  const [start, end] = dates;

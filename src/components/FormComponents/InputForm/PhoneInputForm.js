@@ -80,7 +80,6 @@ const InputForm = ({
 							id: name,
 							name,
 							required: true,
-							["aria-invalid"]: errors?.[name],
 							className: styles.input,
 						}}
 					/>

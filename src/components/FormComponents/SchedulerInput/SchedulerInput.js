@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import { useFormContext } from "react-hook-form";
 
@@ -7,7 +7,6 @@ import "./SchedulerInput.css";
 
 const DateTimePicker = ({ title = "" }) => {
 	const {
-		formState: { errors },
 		setValue,
 	} = useFormContext();
 
@@ -21,10 +20,10 @@ const DateTimePicker = ({ title = "" }) => {
 
 	const [startDate, setStartDate] = useState(today);
 
-	const isWeekday = (date) => {
-		const day = date.getDay(date);
-		return day !== 0;
-	};
+	// const isWeekday = (date) => {
+	// 	const day = date.getDay(date);
+	// 	return day !== 0;
+	// };
 
 	const onChange = (date) => {
 		setStartDate(date);
