@@ -1,7 +1,49 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import PageLayout from '../layouts/PageLayout.astro';
+import MainLayout from '../../../../layouts/MainLayout.astro';
+import PageLayout from '../../../../layouts/PageLayout.astro';
+
 ---
+
+
+<script>
+	const axios = window.axios;
+	const confirmUri =
+	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
+	const listName = "Newsletter";
+	
+	console.log("axios");
+	console.log({axios});
+
+	const run = () => {
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const params = Object.fromEntries(urlSearchParams.entries());
+		console.log('params.id', params.id);
+
+		const data = `realname=&digests=0&language=en&cookie=${params.id}&submit=Subscribe+to+list+${listName}`;
+
+		axios.post(confirmUri, data)
+		.then((res) => {
+			console.log("SubscribeConfirm-POST response:", res);
+			console.log("SubscribeConfirm-POST response.data:", res.data);
+
+			console.log(res.status);
+			if (res.status < 300) {
+				
+				window.location.replace("https://thenorthportbutchershoppe.com");
+			}
+		}).catch((e) => {
+			console.log({e});
+		});
+	}
+
+	run();
+
+</script>
+
+
+
+
+
 <MainLayout>
 	<Fragment slot="meta-slot">
 		<title>
@@ -16,9 +58,9 @@ import PageLayout from '../layouts/PageLayout.astro';
 	
 
 	<PageLayout slot="page-content">
-		<h1 slot="page-header">This is the home header slot</h1>
-		<div slot="page-body">This is the home page content</div>
-		<div slot="bottom-nav-buttons">The home bottom nav buttons</div>
+		<h1 slot="page-header">This is the subscribe Confirm INDEX.ASTRO header slot</h1>
+		<div slot="page-body">This is the subscribe Confirm INDEX.ASTRO page content.</div>
+		<div slot="bottom-nav-buttons">The subscribe Confirm INDEX.ASTRO bottom nav buttons</div>
 	</PageLayout>
 
 </MainLayout>
