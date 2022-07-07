@@ -1,4 +1,5 @@
 import React from "react";
+import 'preact/debug'
 import { Route, Switch } from "wouter";
 import "./App.css";
 import ScrollToTop from "./utils/ScrollToTop";

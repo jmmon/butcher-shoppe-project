@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Contact.css";
-import Button from "components/Button/Button";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
