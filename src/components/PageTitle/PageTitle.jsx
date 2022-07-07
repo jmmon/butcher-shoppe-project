@@ -1,5 +1,4 @@
 import React from "react";
-import "./PageTitle.css";
 import styles from "./PageTitle.module.css"
 
 function PageTitle({
@@ -14,23 +13,23 @@ function PageTitle({
 		<div className={`panel-shadow--dark ${styles.container}`}>
 
 		<section
-			className={`${styles.image} flex-col-acenter-jcenter page-title--height  inset-box-shadow--dark `}
+			className={`${styles.image} flex-col-acenter-jcenter ${styles.title__height}  inset-box-shadow--dark `}
 			style={{
 				background: `url(${bgImage}) center center/cover no-repeat`,
 				backgroundPosition: `${position}`,
 			}}
 		>
-			<div className="page-title--container">
+			<div className={styles.title__container}>
 				<h1
 					className={
 						smaller === "true" || smaller === true
-							? "text-shadow--lg page-title--heading smaller"
-							: "text-shadow--lg page-title--heading"
+							? `text-shadow--lg ${styles.title__heading} ${styles.smaller}`
+							: `text-shadow--lg ${styles.title__heading}`
 					}
 				>
 					{title}
 				</h1>
-				{subtitle && <p className="page-subtitle">{subtitle}</p>}
+				{subtitle && <p>{subtitle}</p>}
 				{children}
 			</div>
 		</section>

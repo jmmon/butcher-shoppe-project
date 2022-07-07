@@ -3,7 +3,7 @@ import "./Faq.css";
 import Helmet from "react-helmet";
 import bgImage from "assets/images/image-1-132.jpg";
 
-import PageTitle from "components/PageTitle/PageTitle.js";
+import PageTitle from "components/PageTitle/PageTitle";
 import FaqSection from "components/FaqSection/FaqSection";
 import PageLayout from "components/PageLayout/PageLayout";
 
