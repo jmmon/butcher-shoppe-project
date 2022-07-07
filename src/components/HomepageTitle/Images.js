@@ -21,8 +21,8 @@ const Images = [
 		position: "50% 40%",
 	},
 ];
-const exportObj = {Images,};
-export default exportObj;
+
+export default Images;
 
 
 /* 
