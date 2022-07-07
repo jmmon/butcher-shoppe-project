@@ -32,7 +32,6 @@ function Subscribe({ unsubscribe, className }) {
 
 	const resetButtonWithSetTimeout = () => {
 		timer = setTimeout(() => {
-			// reset button timer
 
 			setResponseFromSubscribeBox((prevState) => ({
 				...prevState,
@@ -43,7 +42,6 @@ function Subscribe({ unsubscribe, className }) {
 		}, 6000);
 	};
 
-	// componentWillUnmount
 	useEffect(() => {
 		return () => {
 			timer && clearTimeout(timer);
@@ -72,11 +70,7 @@ function Subscribe({ unsubscribe, className }) {
 					}));
 
 					setEmail("");
-					// console.log(
-					// 	`Success at ${
-					// 		unsubscribe ? "unsubscribe" : "subscribe"
-					// 	} email request!`
-					// );
+
 				} else if (res.status === 500) {
 					setResponseFromSubscribeBox((prevState) => ({
 						...prevState,

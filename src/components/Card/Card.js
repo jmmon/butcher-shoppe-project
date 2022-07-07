@@ -29,7 +29,7 @@ function ImageHeading({ bg, title }) {
 
 
 
-function Card({ className = '', title, subtitle, paragraphs, bg = null, children }) {
+function Card({ className = '', title, subtitle = null, paragraphs, bg = null, children }) {
 	const content = paragraphs?.map((item) => (
 		<p key={paragraphs.indexOf(item)}>
 			{item}

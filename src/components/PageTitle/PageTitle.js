@@ -3,8 +3,8 @@ import "./PageTitle.css";
 import styles from "./PageTitle.module.css"
 
 function PageTitle({
-	title,
-	bgImage,
+	title = "Loading...",
+	bgImage = null,
 	position = "50% 50%",
 	smaller = false,
 	subtitle = null,

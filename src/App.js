@@ -10,6 +10,10 @@ import Footer from "components/Footer/Footer.js";
 
 import Home from "pages/Home/Home.js";
 import NotFound from "pages/NotFound/NotFound";
+import PageLayout from "components/PageLayout/PageLayout";
+import Card from "components/Card/Card";
+import PageTitle from "components/PageTitle/PageTitle";
+import { Helmet } from "react-helmet";
 
 const Services = lazy(() => import("pages/Services/Services.js"));
 const Faq = lazy(() => import("pages/Faq/Faq.js"));
@@ -42,8 +46,34 @@ function App() {
 				<Header />
 				<Navbar />
 				<div className="website-content-container">
-					<Switch>
-						<Suspense fallback={<div>Loading...</div>}>
+					<Suspense
+						fallback={
+							<PageLayout
+								helmet={
+									<Helmet>
+										<title>
+											The Butcher Shoppe: Processing &
+											Mobile Dispatch | Northport, WA
+										</title>
+										<meta
+											name="description"
+											content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
+										/>
+									</Helmet>
+								}
+								title={<PageTitle />}
+							>
+								<div className="grid-row-gap-8 padding-2--bot">
+									<Card
+										title="Thank you for your patience!"
+									>
+										<div className="text-center">Loading the page as fast as we can!</div>
+									</Card>
+								</div>
+							</PageLayout>
+						}
+					>
+						<Switch>
 							<Route path="/">
 								<Home />
 							</Route>
@@ -53,84 +83,58 @@ function App() {
 							</Route>
 
 							<Route path="/newsletter/unsubscribe">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 								<Unsubscribe />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/newsletter/subscribe/confirm/:id">
 								{(params) => (
-									// <Suspense fallback={<div>Loading...</div>}>
 									<SubscribeConfirm
 										isSubscribePage
 										id={params.id}
 									/>
-
-									// </Suspense>
 								)}
 							</Route>
 
 							<Route path="/newsletter/unsubscribe/confirm/:id">
 								{(params) => (
-									// <Suspense fallback={<div>Loading...</div>}>
 									<SubscribeConfirm
 										isSubscribePage={false}
 										id={params.id}
 									/>
-
-									// </Suspense>
 								)}
 							</Route>
 
 							<Route path="/services">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 
 								<Services />
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/faq">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 
 								<Faq />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/how-to-order">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 								<HowToOrder />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/order">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 								<Order />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/meet-the-team">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 								<MeetTheTeam />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route path="/membership">
-								{/* <Suspense fallback={<div>Loading...</div>}> */}
 								<Membership />
-
-								{/* </Suspense> */}
 							</Route>
 
 							<Route>
 								<NotFound />
 							</Route>
-						</Suspense>
-					</Switch>
+						</Switch>
+					</Suspense>
 					<Footer />
 				</div>
 			</ScrollToTopOnClickLink>

@@ -4,13 +4,15 @@ import "./Contact.css";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
+
 // const contactBoxBackendUri =
 // 	"https://thenorthportbutchershoppe.com/staging/server/contact";
+
 // const contactBoxBackendUri = "localhost:3001/server/contact";
+
 const headers = { "Content-Type": "application/json" };
 
 const Contact = () => {
-	// const form = useRef();
 	const [input, setInput] = useState({
 		contact__name: "",
 		contact__email: "",
