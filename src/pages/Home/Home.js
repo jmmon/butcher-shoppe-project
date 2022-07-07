@@ -7,7 +7,7 @@ import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import HomepageTitle from "components/HomepageTitle/HomepageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
 
-function Home() {
+export default function Home() {
 	return (
 		<PageLayout
 			separate
@@ -71,4 +71,3 @@ function Home() {
 	);
 }
 
-export default Home;

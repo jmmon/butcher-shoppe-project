@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import {useLocation} from "wouter";
  
-function ScrollToTop({ children }) {
+function ScrollToTopOnClickLink({ children }) {
   const [location, setLocation] = useLocation();
  
   useEffect(() => {
@@ -11,4 +11,4 @@ function ScrollToTop({ children }) {
   return children;
 }
  
-export default ScrollToTop;
+export default ScrollToTopOnClickLink;

@@ -24,7 +24,7 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 
 	useEffect(() => {
 		return () => {
-			timer.destroy();
+			if (timer) clearTimeout(timer);
 		};
 	}, [timer]);
 

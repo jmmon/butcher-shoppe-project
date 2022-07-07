@@ -1,4 +1,4 @@
-export default [
+const Images = [
 	// {
 	// 	url: require("assets/logo/newest/tbs4-a1.png"),
 	// 	position: "50% 50%",
@@ -21,7 +21,8 @@ export default [
 		position: "50% 40%",
 	},
 ];
-
+const exportObj = {Images,};
+export default exportObj;
 
 
 /* 

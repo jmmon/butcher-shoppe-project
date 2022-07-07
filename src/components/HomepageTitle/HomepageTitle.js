@@ -6,7 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 import styles from "./HomepageTitle.module.css";
 
 import Button from "components/Button/Button";
-import slideImages from "./Images.js";
+import Images from "./Images.js";
 
 function HomepageTitle({ simple = false, title, subtitle }) {
 	const properties = {
@@ -22,7 +22,7 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 			className={`${styles.section} text-center text-white panel-shadow--dark`}
 		>
 			<Fade {...properties}>
-				{slideImages.map((slideImage, index) => (
+				{Images.map((slideImage, index) => (
 					<div key={index} className={styles.image_wrapper}>
 						<div
 							className={`${styles.image} inset-box-shadow--dark`}

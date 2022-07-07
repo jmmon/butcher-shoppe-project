@@ -2,7 +2,7 @@ import React from "react";
 import 'preact/debug'
 import { Route, Switch } from "wouter";
 import "./App.css";
-import ScrollToTop from "./utils/ScrollToTop";
+import ScrollToTopOnClickLink from "./utils/ScrollToTopOnClickLink";
 
 import Header from "components/Header/Header.js";
 import Navbar from "components/Navbar/Navbar.js";
@@ -24,7 +24,7 @@ import NotFound from "pages/NotFound/NotFound";
 function App() {
 	return (
 		<div className="website-container">
-			<ScrollToTop>
+			<ScrollToTopOnClickLink>
 				<Header />
 				<Navbar />
 				<div className="website-content-container">
@@ -80,7 +80,7 @@ function App() {
 					</Switch>
 					<Footer />
 				</div>
-			</ScrollToTop>
+			</ScrollToTopOnClickLink>
 		</div>
 	);
 }
