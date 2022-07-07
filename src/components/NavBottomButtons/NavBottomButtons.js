@@ -10,16 +10,14 @@ function NavBottomButtons({ prev, next }) {
 			<div className={`flex-jevenly-acenter-wrap ${styles.container}`}>
 				<h4 className={`text-center ${styles.heading}`}>Helpful Links:</h4>
 				<Button
-					buttonStyle="btn--outline"
-					buttonSize="btn--large"
+					className="btn--outline btn--large"
 					url={prev.link}
 				>
 					{prev.title}
 				</Button>
 
 				<Button
-					buttonStyle="btn--outline"
-					buttonSize="btn--large"
+					className="btn--outline btn--large"
 					url={next.link}
 				>
 					{next.title}

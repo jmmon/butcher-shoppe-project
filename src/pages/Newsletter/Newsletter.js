@@ -37,9 +37,7 @@ function NewsletterPage() {
 					<div className="flex-col-acenter gap-2 padding-1">
 						<h3>Looking to unsubscribe?</h3>
 						<Button
-							// className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btn--outline btn--large"
 							url="/newsletter/unsubscribe"
 						>
 							Click here

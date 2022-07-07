@@ -5,8 +5,6 @@ function ConfirmButton({
 	children,
 	type,
 	onClick,
-	buttonStyle,
-	buttonSize,
 	url = "",
 	...buttonProps
 }) {
@@ -24,8 +22,6 @@ function ConfirmButton({
 			{...buttonProps}
 			type={type}
 			onClick={handleClick}
-			buttonStyle={buttonStyle}
-			buttonSize={buttonSize}
 			url={url}
 		>
 			{confirmed ? "Are you sure?" : children}
