@@ -20,20 +20,32 @@ import Footer from "../components/Footer.astro";
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<!-- Stylesheet and Icons/fonts -->
-	<!-- <link rel="prefetch" href="/fonts/pt-sans-v17-latin-700.woff"
-		as="font" type="font/woff" crossorigin> -->
-
+	<link rel="prefetch" href="/fonts/pt-sans-v17-latin-700.woff"
+		as="font" type="font/woff" crossorigin>
 	<script rel="prefetch" src="https://kit.fontawesome.com/47862eacfc.js"
 		crossorigin="anonymous"></script>
-	<slot name="meta-slot">
+	<script src="https://unpkg.com/axios/dist/axios.min.js" client:idle ></script>
 
+	<slot name="meta-slot">
+		<>
+			<!-- default meta -->
+			<title>
+				The Butcher Shoppe: Processing & Mobile Dispatch |
+				Northport, WA
+			</title>
+			<meta
+				name="description"
+				content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
+			>
+		
+		</>
 	</slot>
 </head>
 
 <body>
+	
 	<main>
 		<Header />
 		<Navbar />
