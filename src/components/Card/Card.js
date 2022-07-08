@@ -1,10 +1,5 @@
-import React from "react";
+// import React from "react";
 import "./Card.css";
-
-// import ImageHeading from "components/ImageHeading/ImageHeading";
-
-
-import "./ImageHeading.css";
 
 function ImageHeading({ bg, title }) {
 	return (

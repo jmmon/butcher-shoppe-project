@@ -7,35 +7,7 @@
 	gap: 10px;
 }
 
-.card-wrapper {
-	padding-top: 3vh;
-}
 
-#butchering-link {
-	padding-top: 8vh;
-}
-
-.container {
-	margin: auto;
-	padding: 0.5rem;
-	margin-top: 5rem;
-	display: flex;
-	flex-direction: column;
-}
-
-.card-content-wrapper {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-around;
-	padding: 10px 10px;
-	gap: 20px;
-}
-
-.skinny-blerb {
-	min-width: 400px;
-	max-width: 50%;
-}
 
 
 .indent {
