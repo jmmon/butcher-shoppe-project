@@ -1,6 +1,17 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import PageLayout from '../layouts/PageLayout.astro';
+
+
+import bgTitle from "../assets/images/image-1-2.jpg";
+import bgSlaughter from "../assets/images/image-1-124.jpg";
+import bgProcessing from "../assets/images/image-1-2.jpg";
+
+import PageTitle from '../components/PageTitle/PageTitle';
+import NavBottomButtons from '../components/NavBottomButtons/NavBottomButtons';
+import Button from '../components/Button/Button';
+import Card from '../components/Card/Card';
+
 ---
 <MainLayout>
 	<Fragment slot="meta-slot">
@@ -15,75 +26,273 @@ import PageLayout from '../layouts/PageLayout.astro';
 	</Fragment>
 	
 
-	<PageLayout slot="page-content">
-		<h1 slot="page-header">
+	<PageLayout slot="page-content" >
+
+		<PageTitle
+			slot="page-header"
+			title="SERVICES"
+			bgImage={bgTitle}
+			position="50% 40%"
+		/>
+		<!-- <h1 slot="page-header">
 			This is the services header slot
-		</h1>
-		<div slot="page-body">
-			This is the services page content
+		</h1> -->
+
+		<div slot="page-body"
+		class="grid-row-gap-4">
+			<div class="card--width">
+				<div class="services-buttons-container">
+					<Button
+						className="btns btn--large btn--outline"
+						url="#slaughter"
+					>
+						Slaughter
+					</Button>
+					<Button
+						className="btns btn--outline btn--large"
+						url="#processing"
+					>
+						Processing
+					</Button>
+				</div>
+			</div>
+
+			<Card
+				title="What We Offer"
+				paragraphs={[
+					"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to a local shop of your choice, or once our Northport meat processing Shoppe is complete we will send it there to be processed.",
+					"We also process wild game, like deer, elk, moose and bear",
+					"Sorry, no poultry or rabbits!",
+				]}
+			>
+				<p class="">
+					Basic kill fees and average meat processing fees are
+					outlined below. Kill fees are paid in the field and
+					processing fees are paid upon pick-up at the downtown
+					Northport store. <a href="#map">(See map down below)</a>
+				</p>
+			</Card>
+
+			<hr />
+
+			<div class="flex-col-jcenter" id="slaughter">
+				<Card
+					title="Slaughter"
+					paragraphs={[
+						"On the scheduled day of your appointment, you will be asked to safely secure your animal(s) where dispatch can occur without harming other livestock. The designated animal(s) will be killed, hung, eviscerated, de-hided, de-headed and de-legged on sight.",
+						"	You may choose to retain any or all of the contents removed from the animal. We will dispose of the rest. Then your animal(s) will be loaded into a refrigerated box and transported to the designated shop. Kill and leave is an option as well.",
+					]}
+					bg={bgSlaughter}
+				/>
+				<h2 class="prices-grid-title ">Slaughter Prices</h2>
+				<div class="prices-grid-container panel-shadow--light">
+					<span class="prices-two-column-header">
+						Minimum Charge
+					</span>
+					<span class="prices-two-column-amount">$100</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-grid-header">Animal</span>
+					<span class="prices-grid-header">Base Price</span>
+					<span class="prices-grid-header">
+						If You Keep The Guts
+					</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-grid-item">Beef</span>
+					<span class="prices-grid-item">$160</span>
+					<span class="prices-grid-item">$140</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-grid-item">Hog</span>
+					<span class="prices-grid-item">$100</span>
+					<span class="prices-grid-item">$90</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-grid-item">
+						Sheep, <br />
+						Goats
+					</span>
+					<span class="prices-grid-item">$80</span>
+					<span class="prices-grid-item">$70</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-grid-item">
+						Bison,
+						<br />
+						Buffalo
+					</span>
+					<span class="prices-grid-item prices-grid-item-2">
+						$180
+					</span>
+					<span class="prices-grid-item prices-grid-item-2">
+						$160
+					</span>
+
+					<span class="prices-grid-spacer"></span>
+
+					<span class="prices-two-column">
+						Exotic Animals
+					</span>
+					<span class="prices-two-column">
+						<a href="tel:15096907214">Please Call Us</a>
+					</span>
+				</div>
+				<div>
+					<h2 class="prices-grid-title ">Extra Charges</h2>
+					<Card>
+						<ul class="prices-extra-margin flex-col gap-1">
+							<li>
+								Fuel surcharge will apply based on the
+									current diesel prices
+								<!-- <p>
+									Fuel surcharge will apply based on the
+									current diesel prices
+								</p> -->
+							</li>
+							<li>
+								Farms located south of Chewelah will be
+									subject to mileage fees
+								<!-- <p>
+									Farms located south of Chewelah will be
+									subject to mileage fees
+								</p> -->
+							</li>
+						</ul>
+						<div class="prices-extra-call">
+							Please{" "}
+							<a href="tel:15096907214">give us a call</a> if
+							you have any questions on our pricing or extra
+							charges!
+						</div>
+					</Card>
+
+				</div>
+			</div>
+
+			<hr />
+
+			<div class="flex-col-jcenter" id="processing">
+				<Card
+					title="Processing"
+					bg={bgProcessing}
+					paragraphs={[
+						"Our goal is to best serve our customers, and, once completed, our Shoppe will be available for processing the carcasses in downtown Northport.",
+					]}
+				>
+					<p>
+						Our meat processing Shoppe is currently under
+						construction. Subscribe to our{" "}
+						<a href="/newsletter/subscribe">newsletter</a>{" "}
+						so you will know when our Shoppe is ready.
+					</p>
+					<p>
+						In the meantime, to best serve you, we offer
+						transportation of the carcass to a meat processing
+						shop of your choice after dispatch.
+					</p>
+				</Card>
+				<div>
+					<h2 class="prices-grid-title">
+						Processing Prices
+					</h2>
+					<div class="card--width card--content-width card--font-size">
+						<p>
+							For now, we will use the shop of your choice to
+							process the carcass. To get pricing information
+							for meat processing, please contact your shop of
+							choice.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div slot="bottom-nav-buttons">
+
+		<!-- <div slot="bottom-nav-buttons">
 			The services bottom nav buttons
-		</div>
+		</div> -->
+
+		<NavBottomButtons
+			slot="bottom-nav-buttons"
+			prev={{ title: "FAQ", link: "/faq" }}
+			next={{ title: "How To Order", link: "/how-to-order" }}
+		/>
+
 	</PageLayout>
 </MainLayout>
 
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg,#4F39FA, #DA62C4);
-	}
+.services-buttons-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 2vh auto;
+	height: 60px;
+	gap: 10px;
+}
 
-	.main-title {
-		width: 100vw;
-		height: 50vh;
-		background: #ccc;
-	}
 
-	h1 {
-		margin: 2rem 0;
-	}
 
-	main {
-		margin: auto;
-    	padding: 1em;
-		max-width: 60ch;
-	}
 
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
+.indent {
+	padding-left: 2em;
+}
 
-	@keyframes pulse {
-		0%, 100% { background-position-y: 0%; }
-		50% { background-position-y: 80%; }
-	}
+.prices-grid-title {
+	margin: 2rem 0;
+}
 
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4F39FA;
-		padding: 1.0rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
 
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+.prices-grid-container {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	border: 1px solid black;
+	row-gap: 1.5rem;
+	column-gap: 2rem;
+	padding: 1.4rem;
+	width: min(1000px, 96%);
+
+	align-items: center;
+	background-color: #f5faf5fa;
+
+}
+
+.prices-grid-header {
+	margin: -1rem 0;
+	grid-column: span 2;
+	color: #333;
+	text-align: left;
+}
+
+.prices-grid-spacer {
+	grid-column: 1 / 7;
+	border-bottom: 1px solid grey;
+}
+
+
+.prices-grid-item {
+	font-size: 1.3rem;
+	grid-column: span 2;
+}
+
+[class^="prices-two-column"] {
+	grid-column: span 3;
+	font-size: 1.3rem;
+	text-align: center;
+}
+
+.prices-extra-margin {
+	margin-left: 1rem;
+}
+
+.prices-extra-call {
+	margin-top: 2rem;
+	color: var(--text-dark);
+}
 </style>

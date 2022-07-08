@@ -1,19 +1,20 @@
 ---
+import WhitePageBackground from "../components/WhitePageBackground/WhitePageBackground";
+
 // export interface Props {
-// 	pageTitle: string;
+// 	separate: boolean;
 // }
 
-// const { pageTitle } = Astro.props as Props;
+// const { separate = false } = Astro.props as Props;
+const { separate = false } = Astro.props;
 ---
 
 <main>
-	<slot name="page-header">
+	<slot name="page-header"></slot>
 
-	</slot>
-	<slot name="page-body">
+	<WhitePageBackground separate={separate}>
+		<slot name="page-body"></slot>
+	</WhitePageBackground>
 
-	</slot>
-	<slot name="bottom-nav-buttons">
-
-	</slot>
+	<slot name="bottom-nav-buttons"></slot>
 </main>

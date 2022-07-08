@@ -47,14 +47,12 @@ import Footer from "../components/Footer.astro";
 
 <body>
 	
-	<main>
 		<Header />
 		<Navbar />
 		<div class="content-container">
 			<slot name="page-content"/>
+			<Footer />
 		</div>
-		<Footer />
-	</main>
 </body>
 
 </html>
@@ -135,6 +133,13 @@ import Footer from "../components/Footer.astro";
 		--card-border-radius: 4px;
 
 		--subscribe-component-bg: #646464;
+
+		--page-title-text-color: #fff;
+
+		--sky-blue: 193, 248, 255;
+		--sky-blue-bg: rgba(var(--sky-blue), 0.5);
+
+		--white-page-background: #fff;
 	}
 
 	* {
@@ -403,11 +408,7 @@ import Footer from "../components/Footer.astro";
 	background-color: var(--btn-error-hover);
 }
 
-/* Card styles */
 
-:global(.card) {
-	border-radius: var(--card-border-radius);
-}
 
 
 
@@ -429,5 +430,65 @@ import Footer from "../components/Footer.astro";
 	display: inline;
 	text-decoration: underline;
 }
+
+
+
+
+
+
+
+/* Card styles */
+
+:global(.card) {
+	border-radius: var(--card-border-radius);
+}
+
+
+
+:global(.card--width) {
+	width: 92%;
+	margin: auto;
+}
+
+:global(.card--content-width) {
+	max-width: 65ch;
+	margin: auto;
+}
+
+
+:global(.card--font-size) {
+	font-size: var(--card--font-size);
+}
+
+
+
+
+/* padding classes */
+:global(.padding-2--horizontal) {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+:global(.padding-2--vertical) {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+/* grid classes */
+:global([class*="grid-"]) {
+	display: grid;
+	justify-content: center;
+}
+:global(.grid-row-gap-8) {
+	grid-row-gap: 8em;
+}
+:global(.grid-row-gap-4) {
+	grid-row-gap: 4em;
+}
+:global(.grid-row-gap-1-2) {
+	grid-row-gap: 1.2em;
+}
+
+
+
 
 </style>
