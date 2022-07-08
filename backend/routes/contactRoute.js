@@ -2,14 +2,15 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
+
 let contact_form__transporter = nodemailer.createTransport({
 	host: process.env.EMAIL_HOST,
 	port: process.env.EMAIL_PORT,
 	//secure: false, // true for port 465, false for other ports?
 	secure: true,
 	auth: {
-		user: process.env.CONTACT_EMAIL_USERNAME,
-		pass: process.env.CONTACT_EMAIL_PASSWORD,
+		user: process.env.NOREPLY_EMAIL_USERNAME,
+		pass: process.env.NOREPLY_EMAIL_PASSWORD,
 	},
 });
 
@@ -50,8 +51,8 @@ router.route("/contact").post((req, res) => {
 			Promise.all([
 				// to us
 				contact_form__transporter.sendMail({
-					from: `"Contact_Form(Internal)" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
-					to: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`, // string list of receiver(s)
+					from: `"Contact - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
+					to: `"Info - The Butcher Shoppe" <${process.env.INFO_EMAIL_USERNAME}>`, // string list of receiver(s)
 					replyTo: `"${contact__name}" <${contact__userEmail}>`,
 					subject: `New Contact Message from ${contact__name} - ${fullTopic} - Contact #${contact__number}`, // subject line
 					text: `Hello, Northport Butcher Shoppe,\n\nYou received a new message from ${contact__name}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})`, // plain text body
@@ -59,7 +60,7 @@ router.route("/contact").post((req, res) => {
 				}),
 				// to them
 				contact_form__transporter.sendMail({
-					from: `"Northport Butcher Shoppe Contact Form" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
+					from: `"Contact - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
 					to: `"${contact__name}" <${contact__userEmail}>`, // string list of receiver(s)
 					replyTo: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
 					subject: `Contact - ${fullTopic} - The Northport Butcher Shoppe - Contact #${contact__number}`, // subject line
@@ -81,7 +82,7 @@ router.route("/contact").post((req, res) => {
 			Promise.all([
 				// to us
 				contact_form__transporter.sendMail({
-					from: `"Contact_Form(Internal)" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
+					from: `"Contact_Form(Internal)" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
 					to: `"Northport Butcher Shoppe Info" <${process.env.SUPPORT_EMAIL_USERNAME}>`, // string list of receiver(s)
 					replyTo: `"${contact__name}" <${contact__userEmail}>`,
 					subject: `New Contact Message from ${contact__name} - ${fullTopic} - Contact #${contact__number}`, // subject line
@@ -90,7 +91,7 @@ router.route("/contact").post((req, res) => {
 				}),
 				// to them
 				contact_form__transporter.sendMail({
-					from: `"Northport Butcher Shoppe Contact Form" <${process.env.CONTACT_EMAIL_USERNAME}>`, // sender address
+					from: `"Northport Butcher Shoppe Contact Form" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
 					to: `"${contact__name}" <${contact__userEmail}>`, // string list of receiver(s)
 					replyTo: `"Northport Butcher Shoppe Info" <${process.env.SUPPORT_EMAIL_USERNAME}>`,
 					subject: `Contact - ${fullTopic} - The Northport Butcher Shoppe - Contact #${contact__number}`, // subject line
