@@ -2,7 +2,7 @@ import React from "react";
 import "./HowToOrder.css";
 import Helmet from "react-helmet";
 
-import bgTitle from "assets/images/image-1-116.jpg";
+import bgTitle from "assets/images/image-1-116-cropped.jpg";
 
 import PageTitle from "components/PageTitle/PageTitle";
 

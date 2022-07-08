@@ -9,7 +9,7 @@ import "react-tabs/style/react-tabs.css";
 // import "./Order.css";
 import styles from "./Order.module.css";
 
-import bgImage from "assets/images/image-1-3.jpg";
+import bgImage from "assets/images/image-1-3-cropped.jpg";
 import PageTitle from "components/PageTitle/PageTitle.js";
 
 // import subscribeStyles from "../../components/Subscribe/Subscribe.module.css";

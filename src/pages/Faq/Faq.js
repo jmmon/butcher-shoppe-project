@@ -1,7 +1,9 @@
 import React from "react";
 import "./Faq.css";
 import Helmet from "react-helmet";
-import bgImage from "assets/images/image-1-132.jpg";
+import bgImage from "assets/images/image-1-132-cropped.jpg";
+//height 412.567px
+//width 1374.76px
 
 import PageTitle from "components/PageTitle/PageTitle.js";
 import FaqSection from "components/FaqSection/FaqSection";

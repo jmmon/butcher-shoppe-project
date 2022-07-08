@@ -49,7 +49,7 @@ router.route("/subscribe").post(async (req, res) => {
 		subscribe__transporter
 			.sendMail({
 				from: `"Newsletter - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Subscriber - The Butcher Shoppe" <${process.env.TESTING_SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				to: `"Subscriber - The Butcher Shoppe" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
 				subject: `subscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {

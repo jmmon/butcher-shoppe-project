@@ -61,7 +61,7 @@ function App() {
 										/>
 									</Helmet>
 								}
-								title={<PageTitle />}
+								title={<PageTitle title="Loading..." />}
 							>
 								<div className="grid-row-gap-8 padding-2--bot">
 									<Card
