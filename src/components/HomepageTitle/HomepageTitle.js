@@ -50,18 +50,14 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 					</p>
 					
 					<Button
-						className={`${styles.hero_btn}`}
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
+						className={`${styles.hero_btn} btn--outline btn--large`}
 						url="/services"
 					>
 						Services
 					</Button>
 
 					<Button
-						className={`${styles.hero_btn}`}
-						buttonStyle="btn--outline"
-						buttonSize="btn--large"
+						className={`${styles.hero_btn} btn--outline btn--large`}
 						url="/how-to-order"
 					>
 						How to Order

@@ -1,0 +1,494 @@
+---
+import Header from "../components/Header.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+// export interface Props {
+// 	tabTitle: string;
+// }
+
+// const { tabTitle } = Astro.props as Props;
+// const { tabTitle } = Astro.props;
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+	<!-- Stylesheet and Icons/fonts -->
+	<link rel="prefetch" href="/fonts/pt-sans-v17-latin-700.woff"
+		as="font" type="font/woff" crossorigin>
+	<script rel="prefetch" src="https://kit.fontawesome.com/47862eacfc.js"
+		crossorigin="anonymous" ></script>
+		<!-- if I want to load it for the whole website -->
+	<!-- <script src="https://unpkg.com/axios/dist/axios.min.js" client:idle ></script> -->
+
+	<slot name="meta-slot">
+		<>
+			<!-- default meta -->
+			<title>
+				The Butcher Shoppe: Processing & Mobile Dispatch |
+				Northport, WA
+			</title>
+			<meta
+				name="description"
+				content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
+			>
+		
+		</>
+	</slot>
+</head>
+
+<body>
+	
+		<Header />
+		<Navbar />
+		<div class="content-container">
+			<slot name="page-content"/>
+			<Footer />
+		</div>
+</body>
+
+</html>
+
+<style>
+	/* pt-sans-700 - latin */
+	@font-face {
+		font-family: 'PT Sans';
+		font-style: normal;
+		font-weight: 700;
+		src: local(''),
+			/* url('fonts/pt-sans-v17-latin-700.woff2') format('woff2'),  */
+			/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('/fonts/pt-sans-v17-latin-700.woff') format('woff');
+		/* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		font-display: swap;
+	}
+
+	:root {
+		/* ~20px to  23.8px*/
+		/* --font-size-base: clamp(1.25rem, 0.34vw + 1.1375rem, 1.4875rem); */
+		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+		--card--font-size: clamp(1rem, 5vw, 1.2rem);
+		/* may use above instead of this old one */
+		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+		/* --color-text: hsl(12, 5%, 4%); */
+		/* --color-bg: hsl(10, 21%, 95%); */
+		/* --color-border: hsl(17, 24%, 90%); */
+
+		--p-line-height: clamp(1.8em, 1.2vw + 1.4em, 2em);
+		/* old line height: 2 || (max-width:960px) => 1.8 */
+
+		--header-height: 2rem;
+		--navbar-height: clamp(3.2rem, 7vw, 4rem);
+		--navbar-bg-main: #ccc;
+		--navbar-bg-menu: rgba(231, 231, 231, 0.95);
+
+		--content-width--large: 1500px;
+
+		--text-dark: #242424;
+		--logo-red: #911102;
+		--calendar-red: #911102cc;
+		--calendar-red-selecting: #91100230;
+		--faq-qa-red: #911102aa;
+
+		
+		--transition: all 0.1s ease-out;
+
+
+		/* button colors */
+		--btn-white: #fff;
+		--btn-dark: var(--text-dark);
+
+		/* --btn-pending-hsl: hsl(46, 100%, 59%);
+		--btn-pending-hover-hsl: hsl(46, 100%, 91%);
+		--btn-error: hsl(12, 51%, 53%);
+		--btn-complete: hsl(114, 71%, 44%);
+		--pending-hue: 46;
+		--complete-hue: 114;
+		--error-hue: 12;
+		--pending-saturation: 100%;
+		--normal-lightness: 59%; */
+
+		--btn-pending: rgb(255, 207, 48);
+		--btn-pending-hover: rgb(255, 255, 207);
+		--btn-complete: rgb(48, 192, 32);
+		--btn-complete-hover: rgb(192, 255, 192);
+		--btn-error: rgb(196, 96, 72);
+		--btn-error-hover: rgb(255, 192, 192);
+
+		--input-required--valid: rgb(231, 255, 231);
+		--input-required--invalid: rgb(255, 231, 231);
+
+
+		/* card */
+		--card-border-radius: 4px;
+
+		--subscribe-component-bg: #646464;
+
+		--page-title-text-color: #fff;
+
+		--sky-blue: 193, 248, 255;
+		--sky-blue-bg: rgba(var(--sky-blue), 0.5);
+
+		--white-page-background: #fff;
+	}
+
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: "PT Sans", sans-serif;
+		font-weight: 700;
+	}
+
+	html {
+		/* font-size: var(--font-size-base);  */
+		/* color: var(--color-text); */
+		/* background-color: var(--color-bg); */
+		font-size: 20px;
+		scroll-padding-top: 4rem;
+
+	}
+
+	body {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		right: 0px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.content-container {
+		background-color: var(--sky-blue-bg);
+		margin-top: var(--header-height);
+		/* sets it below the header */
+	}
+
+	:global(p) {
+		/* 2 / 1.19 == 1.6806722689 ratio */
+		/* line-height: clamp(1.8em, 0.0021vw, 2em); */
+		/* line-height: clamp(1.8em, 0.496vw, 2em); */
+		line-height: var(--p-line-height);
+		font-size: var(--font-size-base);
+		/* 2em/960 ==  0.00208333 ??*/
+		/* 40px/960px ==   0.041666 */
+		/* 47.6px/960px ==   0.04958333 */
+	}
+
+	:global(.line-height) {
+		line-height: var(--p-line-height);
+	}
+
+	:global(h1) {
+		font-size: var(--font-size-xl);
+	}
+
+	:global(h2) {
+		font-size: var(--font-size-lg);
+	}
+
+	:global(code) {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	/* flex selectors: */
+
+	:global([class*="flex"]) {
+		display: flex;
+	}
+
+	:global([class*="flex-"][class*="col"]) {
+		flex-direction: column;
+	}
+
+	:global([class*="flex-"][class*="row"]) {
+		flex-direction: row;
+	}
+
+	:global([class*="flex-"][class*="wrap"]) {
+		flex-wrap: wrap;
+	}
+
+	:global([class*="flex-"][class*="jcenter"]) {
+		justify-content: center;
+	}
+
+	:global([class*="flex-"][class*="jevenly"]) {
+		justify-content: space-evenly;
+	}
+
+	:global([class*="flex-"][class*="jaround"]) {
+		justify-content: space-around;
+	}
+
+	:global([class*="flex-"][class*="jbetween"]) {
+		justify-content: space-between;
+	}
+
+	:global([class*="flex-"][class*="acenter"]) {
+		align-items: center;
+	}
+
+	:global([class*="flex-"][class*="astretch"]) {
+		align-items: stretch;
+	}
+
+	:global([class*="flex-"][class*="astart"]) {
+		align-items: flex-start;
+	}
+
+	:global(.gap-4) {
+		gap: 4rem;
+	}
+
+	:global(.gap-3) {
+		gap: 3rem;
+	}
+
+	:global(.gap-2) {
+		gap: 2rem;
+	}
+
+	:global(.gap-1) {
+		gap: 1rem;
+	}
+
+	:global(.gap-05) {
+		gap: 0.5rem;
+	}
+
+
+	:global(.inset-box-shadow) {
+		box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
+	}
+
+	:global(.inset-box-shadow--dark) {
+		box-shadow: var(--inset-box-shadow--dark);
+	}
+
+	:global(.panel-shadow--dark) {
+		/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+		box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3),
+			0 8px 20px 8px rgba(0, 0, 0, 0.19);
+	}
+
+	:global(.panel-shadow--light) {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		/* box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3),
+			0 8px 20px 4px rgba(0, 0, 0, 0.19); */
+	}
+
+	:global(.text-shadow--sm) {
+		text-shadow: -2px 2px 5px #000;
+	}
+
+	:global(.text-shadow--lg) {
+		text-shadow: -3px 3px 8px #000;
+	}
+
+	:global(.white) {
+		background-color: #fff;
+	}
+
+	:global(.text-white) {
+		color: #fff;
+	}
+
+	:global(.text-center) {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 960px) {
+		:global(.text-shadow--lg) {
+			text-shadow: -3px 3px 10px #000;
+		}
+
+		:global(.text-shadow--sm) {
+			text-shadow: -2px 2px 6px #000;
+		}
+	}
+
+
+	@media screen and (max-width: 480px) {
+		:global(.text-shadow--lg) {
+			text-shadow: -1px 1px 8px #000;
+		}
+
+		:global(.text-shadow--sm) {
+			text-shadow: -1px 1px 8px #000;
+		}
+	}
+
+
+
+/* button styles */
+
+:global([class*="btn"]) {
+	padding: 0.4rem 1rem;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	width: 220px;
+	transition: var(--transition);
+	font-size: 1rem;
+	color: var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--primary"]) {
+	background-color: var(--btn-white);
+	color: var(--btn-dark);
+	border: 1px solid var(--btn-white);
+}
+
+:global([class*="btn"][class*="--primary"][class*="--dark"]) {
+	border: 1px solid var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--outline"]) {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--btn-white);
+	border: 1px solid var(--btn-white);
+}
+
+:global([class*="btn"][class*="--outline"][class*="--secondary"]) {
+	background-color: transparent;
+	color: var(--btn-dark);
+	border: 1px solid var(--btn-dark);
+}
+
+
+
+:global([class*="btn"][class*="--large"]) {
+	padding: 0.6rem 1.3rem;
+}
+
+:global([class*="btn"]:hover) {
+	background: var(--btn-white);
+	color: var(--btn-dark);
+	border: 1px solid var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--pending"]) {
+	background-color: var(--btn-pending);
+	color: var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--complete"]) {
+	background-color: var(--btn-complete);
+	color: var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--error"]) {
+	background-color: var(--btn-error);
+	color: var(--btn-dark);
+}
+
+:global([class*="btn"][class*="--pending"]:hover) {
+	background-color: var(--btn-pending-hover);
+}
+
+:global([class*="btn"][class*="--complete"]:hover) {
+	background-color: var(--btn-complete-hover);
+}
+
+:global([class*="btn"][class*="--error"]:hover) {
+	background-color: var(--btn-error-hover);
+}
+
+
+
+
+
+
+/* Link Styles */
+:global(.dark-link) {
+	color: var(--footer-background-color);
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.1s ease-in-out;
+}
+
+:global(.dark-link:hover) {
+	transform: scale(1.05);
+}
+
+:global(.dark-link.underline) {
+	cursor: pointer;
+	display: inline;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+/* Card styles */
+
+:global(.card) {
+	border-radius: var(--card-border-radius);
+}
+
+
+
+:global(.card--width) {
+	width: 92%;
+	margin: auto;
+}
+
+:global(.card--content-width) {
+	max-width: 65ch;
+	margin: auto;
+}
+
+
+:global(.card--font-size) {
+	font-size: var(--card--font-size);
+}
+
+
+
+
+/* padding classes */
+:global(.padding-2--horizontal) {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+:global(.padding-2--vertical) {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+/* grid classes */
+:global([class*="grid-"]) {
+	display: grid;
+	justify-content: center;
+}
+:global(.grid-row-gap-8) {
+	grid-row-gap: 8em;
+}
+:global(.grid-row-gap-4) {
+	grid-row-gap: 4em;
+}
+:global(.grid-row-gap-1-2) {
+	grid-row-gap: 1.2em;
+}
+
+
+
+
+</style>

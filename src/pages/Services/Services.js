@@ -45,17 +45,13 @@ function Services() {
 				<div className="card--width">
 					<div className="services-btns-container">
 						<Button
-							className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btns btn--large btn--outline"
 							url="#slaughter"
 						>
 							Slaughter
 						</Button>
 						<Button
-							className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btns btn--outline btn--large"
 							url="#processing"
 						>
 							Processing

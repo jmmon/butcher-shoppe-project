@@ -5,7 +5,7 @@ import bgImage from "assets/images/image-1-132-cropped.jpg";
 //height 412.567px
 //width 1374.76px
 
-import PageTitle from "components/PageTitle/PageTitle.js";
+import PageTitle from "components/PageTitle/PageTitle";
 import FaqSection from "components/FaqSection/FaqSection";
 import PageLayout from "components/PageLayout/PageLayout";
 
