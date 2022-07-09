@@ -139,7 +139,9 @@ function AnimalsBasic() {
 						handleDelete={handleDeleteAnimal}
 					/>
 				))}
-				<Button onClick={handleAddAnimal}>Add Another Animal</Button>
+				<div className="flex-jcenter-acenter padding-2--vertical">
+					<Button className={`btn--large btn--wide btn--outline`} onClick={handleAddAnimal}>Add Another Animal</Button>
+				</div>
 			</div>
 		</>
 	);
