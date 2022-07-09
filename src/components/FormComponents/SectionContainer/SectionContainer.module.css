@@ -35,4 +35,5 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 1rem;
+	padding: min(4vw, 2rem);
 }
