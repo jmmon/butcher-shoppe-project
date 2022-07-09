@@ -26,6 +26,7 @@ import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/Animal
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
 import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
 import PageLayout from "components/PageLayout/PageLayout";
+import InputForm from "components/FormComponents/InputForm/InputForm";
 
 const headers = { "Content-Type": "application/json" };
 
@@ -289,6 +290,7 @@ function Order() {
 							<Tab>Contact Info</Tab>
 							<Tab>Your Animal(s)</Tab>
 							<Tab>Preferred Date</Tab>
+							<Tab>Notes</Tab>
 						</TabList>
 						<TabPanel>
 							<SectionContainer title="Contact Info">
@@ -333,6 +335,22 @@ function Order() {
 									<SchedulerInputWindow
 										register={methods.register}
 										title="Alternate Date or Date Window:"
+									/>
+								</div>
+							</SectionContainer>
+						</TabPanel>
+						<TabPanel>
+							<SectionContainer title="Order Notes">
+								<OrderFormSectionSubheading>
+									Any additional information or instructions that will help us with your order
+								</OrderFormSectionSubheading>
+								<div className="flex-jcenter">
+									<InputForm 
+										title="Order Notes"
+										name="order_notes"
+										placeholder="Additional information..."
+										animalInfo={null}
+										textarea={true} 
 									/>
 								</div>
 							</SectionContainer>

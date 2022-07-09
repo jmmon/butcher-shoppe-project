@@ -31,6 +31,7 @@ const InputForm = ({
 		placeholder: placeholder || title,
 	};
 
+	
 	const numberAttributes = number
 		? {
 				min: number?.min || 0,
@@ -38,8 +39,10 @@ const InputForm = ({
 		  }
 		: null;
 
+
 	let thisError = errors;
 	name.split(".").forEach((key) => (thisError = thisError?.[key]));
+
 
 	return (
 		<div
