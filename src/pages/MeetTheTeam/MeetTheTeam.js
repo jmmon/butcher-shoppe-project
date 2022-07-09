@@ -3,7 +3,7 @@ import "./MeetTheTeam.css";
 import Helmet from "react-helmet";
 
 import bgImage from "assets/images/image-1-113-cropped.jpg";
-import PageTitle from "components/PageTitle/PageTitle.js";
+import PageTitle from "components/PageTitle/PageTitle";
 
 import Card from "components/Card/Card";
 import PageLayout from "components/PageLayout/PageLayout";
