@@ -2,7 +2,7 @@ import React from "react";
 import "./Newsletter.css";
 import Helmet from "react-helmet";
 
-import bgImage from "assets/images/image-1-136.jpg";
+import bgImage from "assets/images/image-1-136-cropped.jpg";
 
 import PageTitle from "components/PageTitle/PageTitle";
 import Subscribe from "components/Subscribe/Subscribe";
@@ -37,9 +37,7 @@ function NewsletterPage() {
 					<div className="flex-col-acenter gap-2 padding-1">
 						<h3>Looking to unsubscribe?</h3>
 						<Button
-							// className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btn--outline btn--large"
 							url="/newsletter/unsubscribe"
 						>
 							Click here

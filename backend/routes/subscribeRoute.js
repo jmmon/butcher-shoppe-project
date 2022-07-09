@@ -22,6 +22,8 @@ router.route("/unsubscribe").get((req, res) => {
 	res.send("unsubscribe get works!");
 });
 
+
+
 router.route("/subscribe").post(async (req, res) => {
 	console.log("req.body:", req.body);
 	// res.set("Access-Control-Allow-Origin", [
@@ -46,9 +48,8 @@ router.route("/subscribe").post(async (req, res) => {
 	} else {
 		subscribe__transporter
 			.sendMail({
-				from: `"Subscriber (Internal)" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Northport Newsletter Subscriber" <${process.env.TESTING_SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
-				// to: `"Northport Newsletter Subscriber" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				from: `"Newsletter - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
+				to: `"Subscriber - The Butcher Shoppe" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
 				subject: `subscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {
@@ -67,6 +68,8 @@ router.route("/subscribe").post(async (req, res) => {
 	}
 });
 
+
+
 router.route("/unsubscribe").post((req, res) => {
 	console.log("UNsubscribe post route working:");
 	console.log("req.body:", req.body);
@@ -82,8 +85,8 @@ router.route("/unsubscribe").post((req, res) => {
 	} else {
 		subscribe__transporter
 			.sendMail({
-				from: `"Subscriber (Internal)" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Northport Newsletter Subscriber" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				from: `"Newsletter - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
+				to: `"Subscriber - The Butcher Shoppe" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
 				subject: `unsubscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {

@@ -1,0 +1,37 @@
+---
+
+const {linkTarget, title, loadingName} = Astro.props;
+---
+
+<div class="container" id={linkTarget}>
+	<h2 class="heading">{title}</h2>
+	<slot>
+		<div class="fallback">Loading {loadingName}</div>
+	</slot>
+</div>
+
+<style>
+.container {
+	height: 400px;
+	width: 90vw;
+	max-width: 480px;
+	margin-bottom: 2rem;
+}
+
+.heading {
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.fallback {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 400px;
+	width: 90vw;
+	max-width: 480px;
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	font-size: 30px;
+}
+</style>

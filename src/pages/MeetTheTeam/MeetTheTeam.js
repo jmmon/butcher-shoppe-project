@@ -2,7 +2,7 @@ import React from "react";
 import "./MeetTheTeam.css";
 import Helmet from "react-helmet";
 
-import bgImage from "assets/images/image-1-113.jpg";
+import bgImage from "assets/images/image-1-113-cropped.jpg";
 import PageTitle from "components/PageTitle/PageTitle.js";
 
 import Card from "components/Card/Card";
@@ -25,7 +25,6 @@ function MeetTheTeam() {
 				<PageTitle
 					title="Meet The Team"
 					bgImage={bgImage}
-					position="50% 56%"
 				/>
 			}
 		>

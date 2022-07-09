@@ -1,0 +1,323 @@
+---
+import Subscribe from "./Subscribe/Subscribe.jsx";
+import BackToTopButton from "./BackToTopButton.jsx";
+import FooterContactMapContainer from "./FooterContactMapContainer/FooterContactMapContainer.astro";
+
+import Contact from "./Contact/Contact.jsx";
+import Map from "./Map/Map.jsx";
+
+import NewLogo from "../assets/logo/NewLogo.jsx";
+
+const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
+// const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
+---
+
+<footer class="flex-col-jcenter panel-shadow--dark container"
+	id="footer-container">
+
+	<section class="flex-col-jcenter-acenter section">
+		<div class="flex-wrap-jcenter-acenter join_our_newsletter_container mobile_margin">
+			<h2 class="heading">Join our</h2>
+			<a href="/newsletter/subscribe"
+				class="dark-link heading underline">newsletter</a>
+			<h2 class="heading">to receive periodic updates!</h2>
+		</div>
+		<div class="flex-wrap-jcenter-acenter join_our_newsletter_container mobile_margin">
+			<p class="subscription_text">You can</p>
+			<a href="/newsletter/unsubscribe"
+				class="dark-link subscription_text underline unsubscribe_link">newsletter</a>
+			<p class="subscription_text">at any time.</p>
+		</div>
+
+		<Subscribe client:idle />
+	</section>
+
+	<section class="flex-jcenter-acenter-wrap section gap-1 mobile_margin">
+		<h2 class="heading">Give Us A Call:</h2>
+		<a href="tel:15096406766" class="dark-link text-center heading">(509)
+			640-6766</a>
+	</section>
+
+	<section class="flex-jcenter-acenter-wrap contact_map_container section">
+		<FooterContactMapContainer linkTarget="contact" title="Contact Us!" loadingName="Contact Box">
+			<Contact client:idle />
+		</FooterContactMapContainer>
+		
+		<FooterContactMapContainer linkTarget="map" title="Find Us In Downtown Northport!" loadingName="Map">
+			<Map placeName="420 Center Ave, Northport, WA 99157, USA" zoomLevel={15} client:idle />
+		</FooterContactMapContainer>
+	</section>
+
+	<section class="flex-jcenter section links" id="more">
+		<div class="flex-jbetween links_half">
+			<div class="links_column">
+				<h2 class="heading">
+					The Shoppe
+				</h2>
+				<div class="flex-col link_items">
+					<a href="/" class="dark-link">Home</a>
+					<a href="/meet-the-team" class="dark-link">Meet The Team</a>
+					<a href="/membership" class="dark-link">Membership</a>
+					<a href="/faq" class="dark-link">FAQ</a>
+				</div>
+			</div>
+			<div class="links_column">
+				<h2 class="heading">
+					Ordering
+				</h2>
+				<div class="flex-col link_items">
+					<a href="/services" class="dark-link">Services</a>
+					<a href="/how-to-order" class="dark-link">How To Order</a>
+					<a href="/order" class="dark-link">Order Form</a>
+				</div>
+			</div>
+		</div>
+		<div class="flex-jbetween links_half">
+			<div class="links_column">
+				<h2 class="heading">
+					Keep In Touch
+				</h2>
+				<div class="flex-col link_items">
+					<a href="/newsletter/subscribe" class="dark-link">Subscribe To Our
+						Newsletter</a>
+					<a href="/newsletter/unsubscribe" class="dark-link">Unsubscribe</a>
+					<a href={facebookUrl} target="_blank" rel="noreferrer"
+						class="dark-link" aria-label="Facebook">
+						Facebook
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="flex-jcenter-acenter section">
+		<div class="back_to_top">
+			<BackToTopButton className="btn--primary" client:idle>Back To The Top</BackToTopButton>
+		</div>
+	</section>
+
+	<section class="flex-jcenter-acenter section">
+		<!-- Logo component -->
+		<!-- <NewLogo
+			fills={{
+				white: "#222",
+			}}
+			className="banner_background"
+		/> -->
+		<NewLogo
+			fills={{
+				white: "#CCC",
+			}}
+			className="banner"
+		/>
+	</section>
+
+	<section class="flex-col-acenter social_media">
+		<div class="flex-jaround-acenter social_media_wrap">
+			<a href="/" class="dark-link social_name">The Butcher Shoppe</a>
+			<div class="flex-acenter-jcenter gap-1 social_icons">
+				<h4>Find Us On:</h4>
+				<a href={facebookUrl} target="_blank" rel="noreferrer"
+						class="dark-link social_small_font" aria-label="Facebook">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+			</div>
+			<small class="website_rights social_small_font">C 2022</small>
+		</div>
+	</section>
+
+</footer>
+
+<style>
+	.container {
+		/* background-color: var(--footer-background-color); */
+		background-color: #ccc;
+		z-index: -1;
+		/* color: #fff; */
+		color: var(--footer-background-color);
+		gap: 4em;
+	}
+
+	.section {
+		margin: 2rem auto;
+	}
+
+
+
+	.heading {
+		font-size: 1.5rem;
+		text-align: center;
+		font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+			"Lucida Sans", Arial, sans-serif;
+		display: inline;
+	}
+
+	/* .newsletter_link {
+	margin-left: 0.6ch;
+	margin-right: 0.6ch;
+} */
+
+	.join_our_newsletter_container {
+		gap: 0.7ch;
+		margin-bottom: 2rem;
+	}
+
+	.join_our_newsletter_container>.heading {
+		line-height: 1.4;
+	}
+
+
+	.subscription_text {
+		margin-bottom: 24px;
+		font-size: 1rem;
+	}
+
+	.unsubscribe_link {
+		margin-block-start: 1em;
+		line-height: var(--p-line-height);
+	}
+
+
+	.mobile_margin {
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	/* Contact / Map */
+
+	.contact_map_container {
+		max-width: 1200px;
+		width: 100%;
+		gap: 4rem;
+		padding: 0 1rem;
+	}
+
+
+
+
+
+	/* bunch o' links */
+
+	.links {
+		width: auto;
+		font-size: clamp(0.9rem, 2vw, 1rem);
+	}
+
+	.links_half {
+		max-width: 480px;
+	}
+
+	.links_column {
+		width: 240px;
+		margin: 0 auto;
+		padding: 1rem;
+		text-align: center;
+
+	}
+
+	.link_items {
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		text-align: center;
+		/* width: 100%; */
+		/* width: content-width; */
+		box-sizing: border-box;
+		gap: 0.5rem;
+	}
+
+
+
+	/* logo banner */
+
+	.logo_surround {
+		background-color: #eee;
+		width: 100%;
+		overflow: hidden;
+		padding: 10%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* box-shadow: inset -10vw 5vh 1.5vw 2vw var(--footer-background-color); */
+
+
+	}
+
+
+	.banner {
+		max-width: 930px;
+		width: 80vw;
+		max-height: 400px;
+		height: 40vw;
+		z-index: 1;
+	}
+
+	.banner_background {
+		opacity: 0.1;
+		position: absolute;
+		transform: translatex(-50%), scale(200%);
+		overflow: hidden;
+		width: 100%;
+	}
+
+	/* path.svg_background {
+		fill: #0000;
+	} */
+
+
+
+
+	/* very bottom section */
+
+	.social_media {
+		max-width: var(--footer-content--width);
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.social_media_wrap {
+		width: 90%;
+		max-width: 1000px;
+		margin: 30px auto 0 auto;
+	}
+
+	.social_name {
+		margin-bottom: 16px;
+		padding-bottom: 8px;
+	}
+
+	.website_rights {
+		margin-bottom: 16px;
+	}
+
+	.social_small_font {
+		font-size: 0.8rem;
+	}
+
+	.social_icons {
+		width: 240px;
+		padding-bottom: 16px;
+	}
+
+
+	@media (max-width: 990px) {
+		.links {
+			flex-direction: column;
+		}
+
+		.social_media_wrap {
+			flex-direction: column;
+		}
+	}
+
+
+	@media (max-width: 480px) {
+		.links_half {
+			flex-direction: column;
+		}
+
+		.links_column {
+			/* max-width: 200px; */
+			flex-shrink: 1;
+		}
+	}
+</style>

@@ -1,10 +1,5 @@
-import React from "react";
+// import React from "react";
 import "./Card.css";
-
-// import ImageHeading from "components/ImageHeading/ImageHeading";
-
-
-import "./ImageHeading.css";
 
 function ImageHeading({ bg, title }) {
 	return (
@@ -29,7 +24,7 @@ function ImageHeading({ bg, title }) {
 
 
 
-function Card({ className = '', title, subtitle, paragraphs, bg = null, children }) {
+function Card({ className = '', title, subtitle = null, paragraphs, bg = null, children }) {
 	const content = paragraphs?.map((item) => (
 		<p key={paragraphs.indexOf(item)}>
 			{item}

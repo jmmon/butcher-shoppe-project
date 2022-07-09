@@ -9,7 +9,7 @@ import "react-tabs/style/react-tabs.css";
 // import "./Order.css";
 import styles from "./Order.module.css";
 
-import bgImage from "assets/images/image-1-3.jpg";
+import bgImage from "assets/images/image-1-3-cropped.jpg";
 import PageTitle from "components/PageTitle/PageTitle.js";
 
 // import subscribeStyles from "../../components/Subscribe/Subscribe.module.css";
@@ -27,14 +27,18 @@ import axios from "axios";
 import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
 import PageLayout from "components/PageLayout/PageLayout";
 
+const headers = { "Content-Type": "application/json" };
+
+const orderFormBackendUri =
+	"https://thenorthportbutchershoppe.com/server/order";
+
+
 // const orderFormBackendUri =
 // 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 
-const headers = { "Content-Type": "application/json" };
-
 // const orderFormBackendUri = "http://localhost:3001/server/order";
-const orderFormBackendUri =
-	"https://thenorthportbutchershoppe.com/server/order";
+
+
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -195,8 +199,6 @@ function Order() {
 	});
 
 	const formHandleSubmit = (data) => {
-		// e.preventDefault();
-		// console.log("handleSubmit");
 		console.log({ data });
 
 		//check for missing end date on alternative date selection?

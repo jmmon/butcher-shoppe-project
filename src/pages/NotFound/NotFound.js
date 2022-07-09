@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import PageTitle from "components/PageTitle/PageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
 import Card from "components/Card/Card";
-import bgImage from "assets/images/image-1-134.jpg";
+import bgImage from "assets/images/image-1-134-cropped.jpg";
 
 function PageNotFound() {
 	return (

@@ -82,9 +82,8 @@ router.route("/order").post((req, res) => {
 		Promise.all([
 			// to us
 			order_form__transporter.sendMail({
-				from: `"Orders @ The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
-				// to: process.env.NOREPLY_EMAIL_USERNAME,
+				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
+				to: `"Info - The Butcher Shoppe" <${process.env.INFO_EMAIL_USERNAME}>`,
 
 				replyTo: `"${fullName}" <${buyer.email_address}>`,
 
@@ -96,9 +95,8 @@ router.route("/order").post((req, res) => {
 			}),
 
 			order_form__transporter.sendMail({
-				from: `"Orders @ The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"Order Archive" <${process.env.ORDER_ARCHIVE_EMAIL_USERNAME}>`,
-				// to: process.env.NOREPLY_EMAIL_USERNAME,
+				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
+				to: `"Orders - Archive - The Butcher Shoppe" <${process.env.ORDER_ARCHIVE_EMAIL_USERNAME}>`,
 
 				replyTo: `"${fullName}" <${buyer.email_address}>`,
 
@@ -112,10 +110,8 @@ router.route("/order").post((req, res) => {
 			// to them
 			order_form__transporter.sendMail({
 				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-
 				to: `"${fullName}" <${buyer.email_address}>`,
-
-				replyTo: `"Northport Butcher Shoppe Info" <${process.env.SUPPORT_EMAIL_USERNAME}>`,
+				replyTo: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
 
 				subject: `ORDER RECIEVED - Order #${orderNumber}`,
 

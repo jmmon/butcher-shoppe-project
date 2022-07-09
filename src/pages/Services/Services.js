@@ -3,9 +3,9 @@ import "./Services.css";
 import { Link } from "wouter";
 import Helmet from "react-helmet";
 
-import bgTitle from "assets/images/image-1-2.jpg";
-import bgSlaughter from "assets/images/image-1-124.jpg";
-import bgProcessing from "assets/images/image-1-2.jpg";
+import bgTitle from "assets/images/image-1-2-cropped.jpg";
+import bgSlaughter from "assets/images/image-1-124-cropped.jpg";
+import bgProcessing from "assets/images/image-1-2-cropped.jpg";
 
 import Button from "components/Button/Button";
 import PageTitle from "components/PageTitle/PageTitle";
@@ -45,17 +45,13 @@ function Services() {
 				<div className="card--width">
 					<div className="services-btns-container">
 						<Button
-							className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btns btn--large btn--outline"
 							url="#slaughter"
 						>
 							Slaughter
 						</Button>
 						<Button
-							className="btns"
-							buttonStyle="btn--outline"
-							buttonSize="btn--large"
+							className="btns btn--outline btn--large"
 							url="#processing"
 						>
 							Processing
