@@ -16,7 +16,7 @@ function Footer() {
 			FooterSuspenseContainer({
 				key: "contact",
 				title: "Contact Us!",
-				lazyPromise: import("../Contact/Contact.js"),
+				lazyPromise: import("../Contact/Contact"),
 				loadingName: "Contact Box",
 				linkTarget: "contact",
 			}),
@@ -28,7 +28,7 @@ function Footer() {
 			FooterSuspenseContainer({
 				key: "map",
 				title: "Find Us In Downtown Northport!",
-				lazyPromise: import("../Map/Map.js"),
+				lazyPromise: import("../Map/Map"),
 				loadingName: "Map",
 				linkTarget: "map",
 				placeName: "420 Center Ave, Northport, WA 99157, USA",

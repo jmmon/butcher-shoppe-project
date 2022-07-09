@@ -4,21 +4,21 @@ import { Route, Switch } from "wouter";
 import "./App.css";
 import ScrollToTopOnClickLink from "./utils/ScrollToTopOnClickLink";
 
-import Header from "components/Header/Header.js";
-import Navbar from "components/Navbar/Navbar.js";
-import Footer from "components/Footer/Footer.js";
+import Header from "components/Header/Header";
+import Navbar from "components/Navbar/Navbar";
+import Footer from "components/Footer/Footer";
 
-import Home from "pages/Home/Home.js";
+import Home from "pages/Home/Home";
 import NotFound from "pages/NotFound/NotFound";
 import PageLayout from "components/PageLayout/PageLayout";
 import Card from "components/Card/Card";
 import PageTitle from "components/PageTitle/PageTitle";
 import { Helmet } from "react-helmet";
 
-const Services = lazy(() => import("pages/Services/Services.js"));
-const Faq = lazy(() => import("pages/Faq/Faq.js"));
-const Order = lazy(() => import("pages/Order/Order.js"));
-const HowToOrder = lazy(() => import("pages/HowToOrder/HowToOrder.js"));
+const Services = lazy(() => import("pages/Services/Services"));
+const Faq = lazy(() => import("pages/Faq/Faq"));
+const Order = lazy(() => import("pages/Order/Order"));
+const HowToOrder = lazy(() => import("pages/HowToOrder/HowToOrder"));
 const Newsletter = lazy(() => import("pages/Newsletter/Newsletter"));
 const Unsubscribe = lazy(() => import("pages/Newsletter/Unsubscribe"));
 const SubscribeConfirm = lazy(() =>
