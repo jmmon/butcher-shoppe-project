@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
-// import Collapsible from "react-collapsible";
 import { useForm, FormProvider } from "react-hook-form";
-// import useFormPersist from "react-hook-form-persist";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import axios from "axios";
+// import useFormPersist from "react-hook-form-persist";
 
+// import Collapsible from "react-collapsible";
 // import "./Order.css";
 import styles from "./Order.module.css";
 
@@ -23,7 +24,6 @@ import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerIn
 import SchedulerInputWindow from "components/FormComponents/SchedulerInput/SchedulerInputWindow";
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import axios from "axios";
 import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
 import PageLayout from "components/PageLayout/PageLayout";
 
