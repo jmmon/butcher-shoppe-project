@@ -1,3 +1,5 @@
+// //import React from "react";
+
 export default function BackToTopButton({className, children}) {
 	const scrollToTop = () => {
 		window.scrollTo(0, 0);

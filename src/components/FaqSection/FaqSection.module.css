@@ -1,26 +1,20 @@
-.faq_container {
-	width: min(1000px, 96%);
-	margin: 0 auto;
-	gap: 2rem;
-}
-
-.faq_section__text {
+.container {
 	padding-bottom: 1rem;
 }
 
-.faq_question {
+.question {
 	margin-bottom: 0.8rem;
 	font-size: 1.25em;
 	line-height: 1.2;
 	border-bottom: 1px solid grey;
 }
 
-.faq_small {
+.small {
 	margin-right: 0.4rem;
 	color: var(--faq-qa-red);
 }
 
-.faq_answer::before {
+.answer::before {
 	content: "a. ";
 	color: var(--faq-qa-red);
 }

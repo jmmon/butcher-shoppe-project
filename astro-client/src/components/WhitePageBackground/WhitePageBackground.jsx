@@ -1,4 +1,4 @@
-// import React from "react";
+// //import React from "react";
 import styles from "./WhitePageBackground.module.css";
 
 function WhitePageBackground({ separate = false, className = "", children }) {

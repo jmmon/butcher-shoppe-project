@@ -1,3 +1,4 @@
+//import React from "react";
 export default function NewLogo({ fills = {}, className = null, styles=null }) {
 	const brown = fills?.brown || "#5a3407";
 	const black = fills?.black || "#000";

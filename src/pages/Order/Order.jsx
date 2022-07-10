@@ -24,7 +24,7 @@ import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerIn
 import SchedulerInputWindow from "components/FormComponents/SchedulerInput/SchedulerInputWindow";
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import SectionContainer from "components/FormComponents/SectionContainer/SectionContainer";
+import SectionContainer from "components/SectionContainer/SectionContainer";
 import PageLayout from "components/PageLayout/PageLayout";
 import InputForm from "components/FormComponents/InputForm/InputForm";
 

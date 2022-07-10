@@ -1,4 +1,4 @@
-
+//import React from "react";
 import "./Card.css";
 
 function ImageHeading({ bg = null, title = "" }) {

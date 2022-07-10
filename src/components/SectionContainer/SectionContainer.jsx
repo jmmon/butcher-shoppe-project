@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./SectionContainer.module.css";
 
 export default function SectionContainer({ title, children }) {

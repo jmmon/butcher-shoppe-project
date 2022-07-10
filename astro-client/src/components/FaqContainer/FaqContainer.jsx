@@ -1,17 +1,9 @@
-import React from "react";
-import styles from "./Faq.module.css";
-import Helmet from "react-helmet";
-import bgImage from "assets/images/image-1-132-cropped-55.jpg";
-//height 412.567px
-//width 1374.76px
-
-import PageTitle from "components/PageTitle/PageTitle";
-import FaqSection from "components/FaqSection/FaqSection";
-import PageLayout from "components/PageLayout/PageLayout";
+//import React from "react";
+import FaqSection from "../FaqSection/FaqSection";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import SectionContainer from "components/SectionContainer/SectionContainer";
+import SectionContainer from "../SectionContainer/SectionContainer";
 
 function Faq() {
 	const generalFAQ = [
@@ -61,40 +53,16 @@ function Faq() {
 	// ];
 
 	return (
-		<PageLayout
-			helmet={
-				<Helmet>
-					<title>
-						Frequently Asked Questions | The Butcher Shoppe |
-						Northport, WA
-					</title>
-					<meta
-						name="description"
-						content="Have questions about our services? Here's some common Q's and A's."
-					/>
-				</Helmet>
-			}
-			title={
-				<PageTitle
-					title="FREQUENTLY ASKED QUESTIONS"
-					bgImage={bgImage}
-					smaller="true"
-				/>
-			}
-		>
-			<div className={`flex-col-acenter ${styles.container}`}>
-				<Tabs forceRenderTabPanel>
-					<TabList>
-						<Tab>General Questions</Tab>
-					</TabList>
-					<TabPanel>
-						<SectionContainer title="General Questions">
-							<FaqSection questionList={generalFAQ} />
-						</SectionContainer>
-					</TabPanel>
-				</Tabs>
-			</div>
-		</PageLayout>
+		<Tabs forceRenderTabPanel>
+			<TabList>
+				<Tab>General Questions</Tab>
+			</TabList>
+			<TabPanel>
+				<SectionContainer title="General Questions">
+					<FaqSection questionList={generalFAQ} />
+				</SectionContainer>
+			</TabPanel>
+		</Tabs>
 	);
 }
 
