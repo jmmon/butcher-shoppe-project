@@ -3,9 +3,9 @@ import "./Services.css";
 import { Link } from "wouter";
 import Helmet from "react-helmet";
 
-import bgTitle from "assets/images/image-1-2-cropped.jpg";
-import bgSlaughter from "assets/images/image-1-124-cropped.jpg";
-import bgProcessing from "assets/images/image-1-2-cropped.jpg";
+import bgTitle from "assets/images/image-1-2-cropped-55.jpg";
+import bgSlaughter from "assets/images/image-1-124-cropped-55.jpg";
+import bgProcessing from "assets/images/image-1-2-cropped-55.jpg";
 
 import Button from "components/Button/Button";
 import PageTitle from "components/PageTitle/PageTitle";

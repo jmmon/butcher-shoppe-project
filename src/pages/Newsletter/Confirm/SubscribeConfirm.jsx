@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLocation } from "wouter";
 import PageTitle from "components/PageTitle/PageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
-import bgImage from "assets/images/image-1-136-cropped.jpg";
+import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
 const confirmUri =
 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";

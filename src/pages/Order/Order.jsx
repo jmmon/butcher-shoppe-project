@@ -10,7 +10,7 @@ import axios from "axios";
 // import "./Order.css";
 import styles from "./Order.module.css";
 
-import bgImage from "assets/images/image-1-3-cropped.jpg";
+import bgImage from "assets/images/image-1-3-cropped-55.jpg";
 import PageTitle from "components/PageTitle/PageTitle";
 
 // import subscribeStyles from "../../components/Subscribe/Subscribe.module.css";

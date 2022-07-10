@@ -5,19 +5,19 @@ const Images = [
 	// 	size: "contain",
 	// },
 	{
-		url: require("assets/images/homepage/_DSC1246.jpg"),
+		url: require("assets/images/homepage/current/_DSC1246.jpg"),
 		position: "50% 58%",
 	},
 	{
-		url: require("assets/images/homepage/_MG_1051-1500-1000-q80-c4.jpg"),
+		url: require("assets/images/homepage/current/_MG_1051-1500-1000-q60-c4.jpg"),
 		position: "50% 45%",
 	},
 	{
-		url: require("assets/images/homepage/image-1-14.jpg"),
+		url: require("assets/images/homepage/current/image-1-14.jpg"),
 		position: "50% 60%",
 	},
 	{
-		url: require("assets/images/homepage/image-1-117.jpg"),
+		url: require("assets/images/homepage/current/image-1-117-q80-c4.jpg"),
 		position: "50% 40%",
 	},
 ];

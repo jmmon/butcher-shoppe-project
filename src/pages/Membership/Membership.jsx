@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import Helmet from "react-helmet";
 import "./Membership.css";
 import PageTitle from "components/PageTitle/PageTitle";
-import bgImage from "assets/images/image-1-156-cropped.jpg";
+import bgImage from "assets/images/image-1-156-cropped-55.jpg";
 import PageLayout from "components/PageLayout/PageLayout";
 import Card from "components/Card/Card";
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./MeetTheTeam.css";
 import Helmet from "react-helmet";
 
-import bgImage from "assets/images/image-1-113-cropped.jpg";
+import bgImage from "assets/images/image-1-113-cropped-55.jpg";
 import PageTitle from "components/PageTitle/PageTitle";
 
 import Card from "components/Card/Card";
