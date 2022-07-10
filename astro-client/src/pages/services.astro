@@ -3,9 +3,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 
 
-import bgTitle from "../assets/images/image-1-2.jpg";
-import bgSlaughter from "../assets/images/image-1-124.jpg";
-import bgProcessing from "../assets/images/image-1-2.jpg";
+import bgTitle from "../assets/images/image-1-2-cropped-55.jpg";
+import bgSlaughter from "../assets/images/image-1-124-cropped-55.jpg";
+import bgProcessing from "../assets/images/image-1-2-cropped-55.jpg";
 
 import PageTitle from '../components/PageTitle/PageTitle';
 import NavBottomButtons from '../components/NavBottomButtons/NavBottomButtons';
@@ -16,13 +16,12 @@ import Card from '../components/Card/Card';
 <MainLayout>
 	<Fragment slot="meta-slot">
 		<title>
-			The Butcher Shoppe: Processing & Mobile Dispatch |
-			Northport, WA
+			Our Services | The Butcher Shoppe | Northport, WA
 		</title>
 		<meta
 			name="description"
-			content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
-		>
+			content="We currently offer our mobile slaughter service - no hassle of transporting animals, no kill floor!"
+		/>
 	</Fragment>
 	
 
@@ -34,9 +33,6 @@ import Card from '../components/Card/Card';
 			bgImage={bgTitle}
 			position="50% 40%"
 		/>
-		<!-- <h1 slot="page-header">
-			This is the services header slot
-		</h1> -->
 
 		<div slot="page-body"
 		class="grid-row-gap-4">
@@ -212,10 +208,6 @@ import Card from '../components/Card/Card';
 				</div>
 			</div>
 		</div>
-
-		<!-- <div slot="bottom-nav-buttons">
-			The services bottom nav buttons
-		</div> -->
 
 		<NavBottomButtons
 			slot="bottom-nav-buttons"

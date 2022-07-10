@@ -140,6 +140,9 @@ import Footer from "../components/Footer.astro";
 		--sky-blue-bg: rgba(var(--sky-blue), 0.5);
 
 		--white-page-background: #fff;
+
+		--homepage-title--height: clamp(20vw, 30rem, 60vw);
+		--inset-box-shadow--dark: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 	}
 
 	* {
@@ -180,14 +183,15 @@ import Footer from "../components/Footer.astro";
 		/* line-height: clamp(1.8em, 0.0021vw, 2em); */
 		/* line-height: clamp(1.8em, 0.496vw, 2em); */
 		line-height: var(--p-line-height);
-		font-size: var(--font-size-base);
+		/* font-size: var(--font-size-base); */
+		font-size: var(--card--font-size);
 		/* 2em/960 ==  0.00208333 ??*/
 		/* 40px/960px ==   0.041666 */
 		/* 47.6px/960px ==   0.04958333 */
 	}
 
 	:global(.line-height) {
-		line-height: var(--p-line-height);
+		line-height: 2rem;
 	}
 
 	:global(h1) {
