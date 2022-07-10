@@ -1,9 +1,9 @@
 import React from "react";
 import "pages/Faq/Faq.css";
 
-const Question = ({ question, answer, index }) => {
+const Question = ({ question, answer }) => {
 	return (
-		<div className="faq_question__container" key={index}>
+		<div className="faq_question__container">
 			<h3 className="faq_question">
 				<small className="faq_small">q. </small>
 				<i>{question}</i>
@@ -24,7 +24,7 @@ function FaqSection({ questionList }) {
 				<Question
 					question={question.question}
 					answer={question.answer}
-					index={index}
+					key={index}
 				/>
 			))}
 		</div>

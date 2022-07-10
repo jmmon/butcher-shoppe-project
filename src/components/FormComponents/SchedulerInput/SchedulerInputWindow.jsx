@@ -19,8 +19,8 @@ const DateTimePicker = ({
 	const today = new Date();
 	const lastAvailableDate = new Date().setMonth(today.getMonth() + 6);
 
-	const [startDate, setStartDate] = useState(null);
-	const [endDate, setEndDate] = useState(null);
+	const [startDate, setStartDate] = useState(today);
+	const [endDate, setEndDate] = useState(today);
 
 	// const isWeekday = (date) => {
 	// 	const day = date.getDay(date);
@@ -51,15 +51,16 @@ const DateTimePicker = ({
 					className="date-time-picker scheduler--input"
 					name={name}
 					onChange={onChange}
-					// filterDate={isWeekday}
 					startDate={startDate}
 					endDate={endDate}
+					// filterDate={isWeekday}
 					minDate={today}
 					maxDate={lastAvailableDate}
 					showDisabledMonthNavigation
 					// dateFormat="MMMM d, yyyy"
 					selectsRange
 					inline
+					selected={today}
 				/>
 			</div>
 		</>
