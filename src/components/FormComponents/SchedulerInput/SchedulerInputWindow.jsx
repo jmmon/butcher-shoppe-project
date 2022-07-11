@@ -56,11 +56,12 @@ const DateTimePicker = ({
 					// filterDate={isWeekday}
 					minDate={today}
 					maxDate={lastAvailableDate}
+
 					showDisabledMonthNavigation
 					// dateFormat="MMMM d, yyyy"
 					selectsRange
 					inline
-					selected={today}
+					selected={startDate}
 				/>
 			</div>
 		</>
