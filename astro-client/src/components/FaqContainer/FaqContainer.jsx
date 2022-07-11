@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import SectionContainer from "../SectionContainer/SectionContainer";
 
-function Faq() {
+export default function FaqContainer() {
 	const generalFAQ = [
 		{
 			question: "What services do you provide?",
@@ -65,5 +65,3 @@ function Faq() {
 		</Tabs>
 	);
 }
-
-export default Faq;
