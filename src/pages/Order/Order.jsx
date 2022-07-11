@@ -197,7 +197,7 @@ function Order() {
 	});
 
 	const formHandleSubmit = (data) => {
-		console.log({ data });
+		// console.log({ data });
 
 		//check for missing end date on alternative date selection?
 		if (!data.dates.alternate.end) {
@@ -216,14 +216,14 @@ function Order() {
 			error: null,
 		}));
 
-		console.log("attempt axios post to:", orderFormBackendUri);
+		// console.log("attempt axios post to:", orderFormBackendUri);
 
 		axios
 			.post(orderFormBackendUri, data, {
 				headers: headers,
 			})
 			.then((res) => {
-				console.log("response status:", res.status);
+				// console.log("response status:", res.status);
 
 				setResponseFromSubmitOrder((prevState) => ({
 					...prevState,

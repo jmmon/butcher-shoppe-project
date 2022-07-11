@@ -60,7 +60,7 @@ export default function OrderForm() {
 	});
 
 	const formHandleSubmit = (data) => {
-		console.log({ data });
+		console.log("original", { data });
 
 		//check for missing end date on alternative date selection?
 		if (!data.dates.alternate.end) {
@@ -72,44 +72,47 @@ export default function OrderForm() {
 		data.dates.alternate.end = data.dates.alternate.end.toDateString();
 		data.order_number = (Math.random() * 100000) | 0;
 
-		setResponseFromSubmitOrder((prevState) => ({
-			...prevState,
-			isLoading: true,
-			data: null,
-			error: null,
-		}));
+		
+		console.log("cleaned", { data });
 
-		console.log("attempt axios post to:", orderFormBackendUri);
+		// setResponseFromSubmitOrder((prevState) => ({
+		// 	...prevState,
+		// 	isLoading: true,
+		// 	data: null,
+		// 	error: null,
+		// }));
 
-		axios
-			.post(orderFormBackendUri, data, {
-				headers: headers,
-			})
-			.then((res) => {
-				console.log("response status:", res.status);
+		// console.log("attempt axios post to:", orderFormBackendUri);
 
-				setResponseFromSubmitOrder((prevState) => ({
-					...prevState,
-					data: res.data,
-					error: null,
-					isLoading: false,
-				}));
+		// axios
+		// 	.post(orderFormBackendUri, data, {
+		// 		headers: headers,
+		// 	})
+		// 	.then((res) => {
+		// 		console.log("response status:", res.status);
 
-				// clear data
-			})
-			.catch((e) => {
-				console.log("axios post error:", e);
+		// 		setResponseFromSubmitOrder((prevState) => ({
+		// 			...prevState,
+		// 			data: res.data,
+		// 			error: null,
+		// 			isLoading: false,
+		// 		}));
 
-				setResponseFromSubmitOrder((prevState) => ({
-					...prevState,
-					isLoading: false,
-					data: null,
-					error: e,
-				}));
-			})
-			.finally(() => {
-				resetButtonWithSetTimeout();
-			});
+		// 		// clear data
+		// 	})
+		// 	.catch((e) => {
+		// 		console.log("axios post error:", e);
+
+		// 		setResponseFromSubmitOrder((prevState) => ({
+		// 			...prevState,
+		// 			isLoading: false,
+		// 			data: null,
+		// 			error: e,
+		// 		}));
+		// 	})
+		// 	.finally(() => {
+		// 		resetButtonWithSetTimeout();
+		// 	});
 	};
 
 	return (

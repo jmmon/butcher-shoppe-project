@@ -114,7 +114,7 @@ function AnimalsBasic() {
 
 	const handleAddAnimal = (e) => {
 		e.preventDefault();
-		console.log(e);
+		// console.log(e);
 		console.log("add animal");
 		setAddedAnimalsArray((previousAnimals) => [
 			...previousAnimals,
