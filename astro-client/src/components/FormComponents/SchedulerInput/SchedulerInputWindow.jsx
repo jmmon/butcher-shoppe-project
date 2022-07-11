@@ -67,7 +67,7 @@ const DateTimePicker = ({
 					// dateFormat="MMMM d, yyyy"
 					selectsRange
 					inline
-					selected={today}
+					selected={startDate}
 				/>
 			</div>
 		</>

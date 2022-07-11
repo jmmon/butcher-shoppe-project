@@ -57,7 +57,7 @@ const DateTimePicker = ({ title = "" }) => {
 					showDisabledMonthNavigation
 					// dateFormat="MMMM d, yyyy"
 					inline
-					selected={today}
+					selected={startDate}
 				/>
 			</div>
 		</>
