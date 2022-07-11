@@ -25,11 +25,11 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 		<div class="flex-wrap-jcenter-acenter join_our_newsletter_container mobile_margin">
 			<p class="subscription_text">You can</p>
 			<a href="/newsletter/unsubscribe"
-				class="dark-link subscription_text underline unsubscribe_link">newsletter</a>
+				class="dark-link subscription_text underline unsubscribe_link">unsubscribe</a>
 			<p class="subscription_text">at any time.</p>
 		</div>
 
-		<Subscribe client:load />
+		<Subscribe client:only="preact" />
 	</section>
 
 	<section class="flex-jcenter-acenter-wrap section gap-1 mobile_margin">
@@ -40,11 +40,11 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
 	<section class="flex-jcenter-acenter-wrap contact_map_container section">
 		<FooterContactMapContainer linkTarget="contact" title="Contact Us!" loadingName="Contact Box">
-			<Contact client:load />
+			<Contact client:only="preact" />
 		</FooterContactMapContainer>
 		
 		<FooterContactMapContainer linkTarget="map" title="Find Us In Downtown Northport!" loadingName="Map">
-			<Map placeName="420 Center Ave, Northport, WA 99157, USA" zoomLevel={15} client:load />
+			<Map placeName="420 Center Ave, Northport, WA 99157, USA" zoomLevel={15} client:only="preact" />
 		</FooterContactMapContainer>
 	</section>
 
@@ -92,7 +92,7 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
 	<section class="flex-jcenter-acenter section">
 		<div class="back_to_top">
-			<BackToTopButton className="btn--primary" client:load>Back To The Top</BackToTopButton>
+			<BackToTopButton className="btn--primary" client:only="preact">Back To The Top</BackToTopButton>
 		</div>
 	</section>
 
@@ -173,7 +173,6 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 	}
 
 	.unsubscribe_link {
-		margin-block-start: 1em;
 		line-height: var(--p-line-height);
 	}
 
@@ -321,3 +320,35 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 		}
 	}
 </style>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+Hey all, having trouble building. `npm run dev` works fine, but `build` gives an error:
+``` building client 
+vite v2.9.14 building for production...
+✓ 2 modules transformed.
+[vite:load-fallback] Could not load C:/Users/jmmon/Documents/VS%202019/Butcher%20Shop%20Project/butcher-shop-project-1/astro-client/src/components/BackToTopButton: ENOENT: no such file or directory, open 'C:\Users\jmmon\Documents\VS%202019\Butcher%20Shop%20Project\butcher-shop-project-1\astro-client\src\components\BackToTopButton'
+transforming (10) node_modules\axios\lib\axios.js error   Could not load C:/Users/jmmon/Documents/VS%202019/Butcher%20Shop%20Project/butcher-shop-project-1/astro-client/src/components/BackToTopButton: ENOENT: no such file or directory, open 'C:\Users\jmmon\Documents\VS%202019\Butcher%20Shop%20Project\butcher-shop-project-1\astro-client\src\components\BackToTopButton'```
+
+Seems like this is from my footer.astro which is loading 4 different react jsx components. Which component throws the error can change but it's the same error on each component. Example import:
+```---
+import Subscribe from "./Subscribe/Subscribe.jsx";
+import BackToTopButton from "./BackToTopButton.jsx";
+
+...other imports...
+
+---```
+And error happens for both `client:idle` and `client:load`. Switched to `client:only="preact"` and now the error occurs on a different component. (Other component import ending with ".jsx" and component has `client:only="preact"`, and path is correct)
+
+Again, dev works fine, but build gives me these errors. Any tips?
+
+ -->

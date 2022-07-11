@@ -19,7 +19,7 @@ export default function NewLogo({ fills = {}, className = null, styles=null }) {
 			version="1.1"
 			viewBox="0 0 1522 440"
 			preserveAspectRatio="xMidYMid meet"
-			xmlns="http://www.w3.org/2000/svg"
+			// xmlns="http://www.w3.org/2000/svg"
 		>
 			<g>
 				{/* top bg */}
