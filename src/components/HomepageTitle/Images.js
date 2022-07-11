@@ -9,7 +9,7 @@ const Images = [
 		position: "50% 58%",
 	},
 	{
-		url: require("assets/images/homepage/current/_MG_1051-1500-1000-q60-c4.jpg"),
+		url: require("assets/images/homepage/current/_MG_1051-1500-1000-q50-c4.jpg"),
 		position: "50% 45%",
 	},
 	{
