@@ -1,0 +1,24 @@
+---
+
+---
+
+<div class="container">
+	<slot>
+		<!-- <h1 class="fallback text-shadow--lg">The Butcher Shoppe</h1> -->
+	</slot>
+</div>
+
+<style>
+.container {
+	height: clamp(50vh, 30rem, 60vw);
+	width: 100vw;
+	background: var(--text-dark);
+}
+
+/* .fallback {
+	color: white;
+	font-size: clamp(1.8em, 9vw, 4.5em);
+	width: 100%;
+	line-height: 0.9;
+} */
+</style>

@@ -1,6 +1,6 @@
 .section {
 	position: relative;
-	background-color: var(--footer-background-color);
+	background-color: var(--text-dark);
 	font-family: var(--header-font);
 	letter-spacing: 0.05em;
 }
@@ -60,9 +60,9 @@
 		/* inset calc(-2vw + 1.5rem) 0 calc(4vw - 2rem) 0
 				var(--footer-background-color), */
 			inset 0 0 calc(4vw - 2rem) 0
-				var(--footer-background-color),
+				var(--text-dark),
 				inset 0 0 calc(2vw - 2rem) 0
-				var(--footer-background-color),
+				var(--text-dark),
 			/* inset calc(8vw - 6rem) 0 0 0
 			hotpink,
 				var(--footer-background-color), */

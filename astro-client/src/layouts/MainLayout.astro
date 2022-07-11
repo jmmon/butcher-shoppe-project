@@ -42,14 +42,14 @@ import Footer from "../components/Footer.astro";
 	</head>
 
 	<body>
-			<Header />
-			<Navbar />
-			<div class="content-container">
+		<Header />
+		<Navbar />
+		<div class="content-container">
 
-				<slot name="page-content" />
+			<slot name="page-content" />
 
-				<Footer />
-			</div>
+			<Footer />
+		</div>
 	</body>
 
 </html>
@@ -145,7 +145,7 @@ import Footer from "../components/Footer.astro";
 		--inset-box-shadow--dark: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 	}
 
-	* {
+	:global(*) {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
@@ -153,7 +153,7 @@ import Footer from "../components/Footer.astro";
 		font-weight: 700;
 	}
 
-	html {
+	:global(html) {
 		/* font-size: var(--font-size-base);  */
 		/* color: var(--color-text); */
 		/* background-color: var(--color-bg); */
@@ -162,14 +162,13 @@ import Footer from "../components/Footer.astro";
 
 	}
 
-	body {
+	/* website-container */
+	:global(body) {
 		position: absolute;
 		top: 0px;
 		bottom: 0px;
 		left: 0px;
 		right: 0px;
-		margin: 0;
-		padding: 0;
 	}
 
 	.content-container {

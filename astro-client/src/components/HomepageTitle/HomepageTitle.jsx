@@ -1,8 +1,8 @@
 // import React from "react";
 import * as React from 'preact';
 
-// import { Fade } from "react-slideshow-image";
-// import "react-slideshow-image/dist/styles.css";
+import { Fade } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 import "./HomepageTitle.css";
 import styles from "./HomepageTitle.module.css";
@@ -24,7 +24,7 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 		<section
 			className={`${styles.section} text-center text-white panel-shadow--dark`}
 		>
-			{/* <Fade {...properties}>
+			<Fade {...properties}>
 				{Images.map((slideImage, index) => (
 					<div key={index} className={styles.image_wrapper}>
 						<div
@@ -39,7 +39,7 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 						></div>
 					</div>
 				))}
-			</Fade> */}
+			</Fade>
 
 			<div className={`flex-jcenter-acenter ${styles.content_wrapper}`}>
 				<div

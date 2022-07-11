@@ -2,9 +2,9 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import PageLayout from '../layouts/PageLayout.astro';
 
-import titleBgImage from "../assets/images/image-1-113-cropped-55.jpg";
 
 import HomepageTitle from '../components/HomepageTitle/HomepageTitle';
+import HomepageTitleContainer from "../components/HomepageTitleContainer.astro"
 import NavBottomButtons from '../components/NavBottomButtons/NavBottomButtons';
 import Card from '../components/Card/Card';
 ---
@@ -21,12 +21,15 @@ import Card from '../components/Card/Card';
 	</Fragment>
 	
 
-	<PageLayout slot="page-content">
-		<HomepageTitle
-			slot="page-header"
-			title="The Butcher Shoppe"
-			subtitle="Serving Northeast Washington State"
-		/>
+	<PageLayout separate slot="page-content">
+		<HomepageTitleContainer slot="page-header">
+			<HomepageTitle
+				title="The Butcher Shoppe"
+				subtitle="Serving Northeast Washington State"
+				client:only="preact"
+			/>
+		</HomepageTitleContainer>
+		
 
 		<div slot="page-body" class="grid-row-gap-8 padding-2--bot">
 			<Card
