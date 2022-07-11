@@ -1,6 +1,6 @@
 //import React, { useEffect, useRef } from "react";
-// import { useEffect, useRef } from "preact/hooks";
-import * as React from 'preact';
+import { useEffect, useRef } from "preact/hooks";
+// import * as React from 'preact';
 
 import styles from "./Map.module.css";
 

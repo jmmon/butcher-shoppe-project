@@ -1,6 +1,7 @@
 //import React, { useState, useEffect } from "react";
-// import { useState, useEffect } from "preact/hooks";
-import * as React from 'preact';
+
+import { useState, useEffect } from "preact/hooks";
+// import * as React from 'preact';
 
 import axios from "axios";
 import styles from "./Contact.module.css";

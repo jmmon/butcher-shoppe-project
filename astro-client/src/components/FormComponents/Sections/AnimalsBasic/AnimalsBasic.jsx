@@ -1,5 +1,7 @@
 // import React, { useState } from "react";
-import * as React from 'preact';
+// import * as React from 'preact';
+import {useState} from "preact/compat";
+
 
 import sectionStyles from "../FormSections.module.css";
 import formStyles from "../../FormComponents.module.css";

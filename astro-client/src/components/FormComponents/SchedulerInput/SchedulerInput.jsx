@@ -1,5 +1,8 @@
 // import React, { useState } from "react";
-import * as React from 'preact';
+// import * as React from 'preact';
+
+import { useState } from "preact/compat";
+
 
 import DatePicker from "react-datepicker";
 import { useFormContext } from "react-hook-form";
@@ -47,8 +50,10 @@ const DateTimePicker = ({ title = "" }) => {
 					name={name}
 					onChange={onChange}
 					// filterDate={isWeekday}
-					minDate={startDate}
+					
+					minDate={today}
 					maxDate={lastAvailableDate}
+
 					showDisabledMonthNavigation
 					// dateFormat="MMMM d, yyyy"
 					inline

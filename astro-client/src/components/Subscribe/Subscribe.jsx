@@ -1,6 +1,6 @@
 //import React, { useState, useEffect } from "react";
-import * as React from 'preact';
-// import { useState, useEffect } from "preact/hooks";
+// import * as React from 'preact';
+import { useState, useEffect } from "preact/hooks";
 import axios from "axios";
 import styles from "./Subscribe.module.css";
 

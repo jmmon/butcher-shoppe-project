@@ -1,5 +1,8 @@
 // import React, { useState } from "react";
-import * as React from 'preact';
+// import * as React from 'preact';
+
+import { useState } from "preact/compat";
+
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -56,8 +59,10 @@ const DateTimePicker = ({
 					startDate={startDate}
 					endDate={endDate}
 					// filterDate={isWeekday}
+					
 					minDate={today}
 					maxDate={lastAvailableDate}
+
 					showDisabledMonthNavigation
 					// dateFormat="MMMM d, yyyy"
 					selectsRange

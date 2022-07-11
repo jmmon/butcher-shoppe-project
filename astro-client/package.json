@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "react-hook-form": "^7.33.1"
+    "react-datepicker": "^4.8.0",
+    "react-hook-form": "^7.33.1",
+    "react-phone-input-2": "^2.15.1"
   }
 }
