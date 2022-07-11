@@ -22,7 +22,6 @@ import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/Animal
 import DateSelector from "components/FormComponents/Sections/DateSelector/DateSelector";
 
 import PageLayout from "components/PageLayout/PageLayout";
-import InputForm from "components/FormComponents/InputForm/InputForm";
 import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
 
 const headers = { "Content-Type": "application/json" };

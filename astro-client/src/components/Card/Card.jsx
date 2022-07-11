@@ -36,7 +36,7 @@ export default function Card({
 		//panel-shadow--dark removed from section
 		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
-			<div className="grid-row-gap-1 card--content-width ">
+			<div className="grid-row-gap-1-2 card--content-width ">
 				{!bg && title && (
 					<h2 className="card--title text-center">{title}</h2>
 				)}

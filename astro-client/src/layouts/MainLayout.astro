@@ -16,20 +16,19 @@ import Footer from "../components/Footer.astro";
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-	<!-- Stylesheet and Icons/fonts -->
-	<link rel="prefetch" href="/fonts/pt-sans-v17-latin-700.woff"
-		as="font" type="font/woff" crossorigin>
-	<script rel="prefetch" src="https://kit.fontawesome.com/47862eacfc.js"
-		crossorigin="anonymous" ></script>
+		<!-- Stylesheet and Icons/fonts -->
+		<link rel="prefetch" href="/fonts/pt-sans-v17-latin-700.woff"
+			as="font" type="font/woff" crossorigin>
+		<script rel="prefetch" src="https://kit.fontawesome.com/47862eacfc.js"
+			crossorigin="anonymous" ></script>
 
 
-	<slot name="meta-slot">
-		<>
+		<slot name="meta-slot">
 			<!-- default meta -->
 			<title>
 				The Butcher Shoppe: Processing & Mobile Dispatch |
@@ -39,20 +38,19 @@ import Footer from "../components/Footer.astro";
 				name="description"
 				content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
 			>
-		
-		</>
-	</slot>
-</head>
+		</slot>
+	</head>
 
-<body>
-	
-		<Header />
-		<Navbar />
-		<div class="content-container">
-			<slot name="page-content"/>
-			<Footer />
-		</div>
-</body>
+	<body>
+			<Header />
+			<Navbar />
+			<div class="content-container">
+
+				<slot name="page-content" />
+
+				<Footer />
+			</div>
+	</body>
 
 </html>
 
@@ -71,6 +69,9 @@ import Footer from "../components/Footer.astro";
 	}
 
 	:root {
+		--header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+
 		/* ~20px to  23.8px*/
 		/* --font-size-base: clamp(1.25rem, 0.34vw + 1.1375rem, 1.4875rem); */
 		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -177,6 +178,11 @@ import Footer from "../components/Footer.astro";
 		/* sets it below the header */
 	}
 
+
+
+
+
+
 	:global(p) {
 		/* 2 / 1.19 == 1.6806722689 ratio */
 		/* line-height: clamp(1.8em, 0.0021vw, 2em); */
@@ -187,10 +193,6 @@ import Footer from "../components/Footer.astro";
 		/* 2em/960 ==  0.00208333 ??*/
 		/* 40px/960px ==   0.041666 */
 		/* 47.6px/960px ==   0.04958333 */
-	}
-
-	:global(.line-height) {
-		line-height: 2rem;
 	}
 
 	:global(h1) {
@@ -205,6 +207,34 @@ import Footer from "../components/Footer.astro";
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
+	:global(.line-height) {
+		line-height: 2rem;
+	}
+
+
+
+
+
+	/* grid classes */
+
+:global([class*="grid-"]) {
+	display: grid;
+	justify-content: center;
+}
+:global(.grid-row-gap-8) {
+	grid-row-gap: 8em;
+}
+:global(.grid-row-gap-4) {
+	grid-row-gap: 4em;
+}
+:global(.grid-row-gap-1-2) {
+	grid-row-gap: 1.2em;
+}
+
+
+
+
 
 	/* flex selectors: */
 
@@ -273,6 +303,11 @@ import Footer from "../components/Footer.astro";
 	}
 
 
+
+
+
+	/* Shadow Inside/Outside*/
+
 	:global(.inset-box-shadow) {
 		box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
 	}
@@ -292,6 +327,12 @@ import Footer from "../components/Footer.astro";
 		/* box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3),
 			0 8px 20px 4px rgba(0, 0, 0, 0.19); */
 	}
+
+
+
+
+
+	/* Text styles */
 
 	:global(.text-shadow--sm) {
 		text-shadow: -2px 2px 5px #000;
@@ -336,6 +377,8 @@ import Footer from "../components/Footer.astro";
 
 
 
+
+
 /* button styles */
 
 :global([class*="btn"]) {
@@ -372,8 +415,6 @@ import Footer from "../components/Footer.astro";
 	border: 1px solid var(--btn-dark);
 }
 
-
-
 :global([class*="btn"][class*="--large"]) {
 	padding: 0.6rem 1.3rem;
 }
@@ -383,6 +424,12 @@ import Footer from "../components/Footer.astro";
 	color: var(--btn-dark);
 	border: 1px solid var(--btn-dark);
 }
+
+
+
+
+
+/* button states */
 
 :global([class*="btn"][class*="--pending"]) {
 	background-color: var(--btn-pending);
@@ -415,8 +462,8 @@ import Footer from "../components/Footer.astro";
 
 
 
-
 /* Link Styles */
+
 :global(.dark-link) {
 	color: var(--footer-background-color);
 	text-decoration: none;
@@ -438,15 +485,11 @@ import Footer from "../components/Footer.astro";
 
 
 
-
-
 /* Card styles */
 
 :global(.card) {
 	border-radius: var(--card-border-radius);
 }
-
-
 
 :global(.card--width) {
 	width: 92%;
@@ -458,7 +501,6 @@ import Footer from "../components/Footer.astro";
 	margin: auto;
 }
 
-
 :global(.card--font-size) {
 	font-size: var(--card--font-size);
 }
@@ -466,7 +508,9 @@ import Footer from "../components/Footer.astro";
 
 
 
+
 /* padding classes */
+
 :global(.padding-2--horizontal) {
 	padding-left: 2rem;
 	padding-right: 2rem;
@@ -476,20 +520,7 @@ import Footer from "../components/Footer.astro";
 	padding-bottom: 2rem;
 }
 
-/* grid classes */
-:global([class*="grid-"]) {
-	display: grid;
-	justify-content: center;
-}
-:global(.grid-row-gap-8) {
-	grid-row-gap: 8em;
-}
-:global(.grid-row-gap-4) {
-	grid-row-gap: 4em;
-}
-:global(.grid-row-gap-1-2) {
-	grid-row-gap: 1.2em;
-}
+
 
 
 
