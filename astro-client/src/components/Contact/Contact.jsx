@@ -77,15 +77,15 @@ const Contact = () => {
 			contact__number: (Math.random() * 100000) | 0,
 		};
 
-		console.log("message data:", dataFromContactBox);
-		console.log("attempt axios post to:", contactBoxBackendUri);
+		// console.log("message data:", dataFromContactBox);
+		// console.log("attempt axios post to:", contactBoxBackendUri);
 
 		axios
 			.post(contactBoxBackendUri, dataFromContactBox, {
 				headers: headers,
 			})
 			.then((res) => {
-				console.log("response status:", res.status);
+				// console.log("response status:", res.status);
 
 				setResponseFromContactBox((prevState) => ({
 					...prevState,

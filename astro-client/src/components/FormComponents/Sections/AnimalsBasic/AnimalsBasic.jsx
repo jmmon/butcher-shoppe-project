@@ -115,7 +115,7 @@ function AnimalsBasic() {
 	const handleAddAnimal = (e) => {
 		e.preventDefault();
 		// console.log(e);
-		console.log("add animal");
+		// console.log("add animal");
 		setAddedAnimalsArray((previousAnimals) => [
 			...previousAnimals,
 			{ type: "beef", count: 1 },
@@ -123,7 +123,7 @@ function AnimalsBasic() {
 	};
 
 	const handleDeleteAnimal = (index) => {
-		console.log(addedAnimalsArray);
+		// console.log(addedAnimalsArray);
 		if (index > 0) {
 			let newAnimals = [...addedAnimalsArray];
 			newAnimals.splice(index, 1);

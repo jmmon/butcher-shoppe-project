@@ -60,7 +60,7 @@ export default function OrderForm() {
 	});
 
 	const formHandleSubmit = (data) => {
-		console.log("original", { data });
+		// console.log("original", { data });
 
 		//check for missing end date on alternative date selection?
 		if (!data.dates.alternate.end) {
@@ -73,7 +73,7 @@ export default function OrderForm() {
 		data.order_number = (Math.random() * 100000) | 0;
 
 		
-		console.log("cleaned", { data });
+		console.log("final data:", data);
 
 		// setResponseFromSubmitOrder((prevState) => ({
 		// 	...prevState,
