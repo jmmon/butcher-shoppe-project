@@ -1,4 +1,6 @@
 //import React from "react";
+import * as React from 'preact';
+
 export default function NewLogo({ fills = {}, className = null, styles=null }) {
 	const brown = fills?.brown || "#5a3407";
 	const black = fills?.black || "#000";

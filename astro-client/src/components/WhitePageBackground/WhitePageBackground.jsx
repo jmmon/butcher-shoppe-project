@@ -1,4 +1,6 @@
 // //import React from "react";
+import * as React from 'preact';
+
 import styles from "./WhitePageBackground.module.css";
 
 function WhitePageBackground({ separate = false, className = "", children }) {

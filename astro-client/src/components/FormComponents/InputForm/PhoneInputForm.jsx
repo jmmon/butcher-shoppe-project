@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import * as React from 'preact';
+
 import { Controller, useFormContext } from "react-hook-form";
 import PhoneInput2 from "react-phone-input-2";
 

@@ -1,4 +1,6 @@
 //import React from "react";
+import * as React from 'preact';
+
 import FaqSection from "../FaqSection/FaqSection";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";

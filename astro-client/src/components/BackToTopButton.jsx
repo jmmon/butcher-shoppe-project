@@ -1,4 +1,5 @@
 // //import React from "react";
+import * as React from 'preact';
 
 export default function BackToTopButton({className, children}) {
 	const scrollToTop = () => {

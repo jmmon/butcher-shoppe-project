@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import * as React from 'preact';
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";

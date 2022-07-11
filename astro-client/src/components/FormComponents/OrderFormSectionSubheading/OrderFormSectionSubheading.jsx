@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import * as React from 'preact';
+
 import styles from "./OrderFormSectionSubheading.module.css";
 
 function OrderFormSectionSubheading({ children }) {

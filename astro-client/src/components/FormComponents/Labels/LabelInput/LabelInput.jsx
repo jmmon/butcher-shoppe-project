@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import * as React from 'preact';
+
 import LabelForm from "../LabelForm/LabelForm";
 import labelStyles from "../Labels.module.css";
 

@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import * as React from 'preact';
+
 import labelStyles from "../Labels.module.css";
 
 function LabelForm({ title, htmlFor, required, small, children }) {

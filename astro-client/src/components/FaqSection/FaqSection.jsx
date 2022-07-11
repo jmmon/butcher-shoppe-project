@@ -1,4 +1,6 @@
 //import React from "react";
+import * as React from 'preact';
+
 import styles from "./FaqSection.module.css";
 
 const Question = ({ question, answer }) => {

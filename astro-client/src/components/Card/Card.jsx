@@ -1,4 +1,6 @@
 //import React from "react";
+import * as React from 'preact';
+
 import "./Card.css";
 
 function ImageHeading({ bg = null, title = "" }) {

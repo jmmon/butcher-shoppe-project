@@ -1,4 +1,5 @@
-import React from 'react'
+// import React from 'react'
+import * as React from 'preact';
 import InputForm from '../../../FormComponents/InputForm/InputForm'
 import OrderFormSectionSubheading from '../../../FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading'
 import SectionContainer from '../../../SectionContainer/SectionContainer'

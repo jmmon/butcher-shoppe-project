@@ -1,5 +1,6 @@
 //import React, { useState, useEffect } from "react";
-import { useState, useEffect } from "preact/hooks";
+import * as React from 'preact';
+// import { useState, useEffect } from "preact/hooks";
 import axios from "axios";
 import styles from "./Subscribe.module.css";
 
@@ -7,6 +8,7 @@ const headers = {
 	"Content-Type": "application/json",
 	// "Access-Control-Allow-Origin": "https://staging.thenorthportbutchershoppe.com"
 };
+
 export default function Subscribe({ unsubscribe = false, className = "" }) {
 	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"

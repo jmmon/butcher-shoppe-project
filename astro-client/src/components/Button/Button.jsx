@@ -1,6 +1,8 @@
 // import "./Button.css";
 // import {Link} from "wouter";
 //import React from "react";
+import * as React from 'preact';
+
 
 function Button({
 	children = null,

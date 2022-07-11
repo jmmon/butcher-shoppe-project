@@ -1,4 +1,5 @@
 //import React from "react";
+import * as React from 'preact';
 import styles from "./PageTitle.module.css"
 
 function PageTitle({

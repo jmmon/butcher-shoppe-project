@@ -1,5 +1,7 @@
 //import React, { useState } from "react";
-import {useState} from "preact/hooks";
+// import {useState} from "preact/hooks";
+import * as React from 'preact';
+
 import Button from "./Button";
 
 function ConfirmButton({

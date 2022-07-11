@@ -36,7 +36,10 @@ import NavBottomButtons from '../components/NavBottomButtons/NavBottomButtons';
 				</a>
 			</h3>
 			
-			<OrderForm client:load/>
+			<!-- <OrderForm client:load/> -->
+			<!-- <OrderForm client:only="react" /> -->
+			<OrderForm client:only="preact" />
+
 
 			<h3 class="flex-jcenter-acenter phone_heading">
 				If you have any questions or need to make adjustments, give us a call at:
