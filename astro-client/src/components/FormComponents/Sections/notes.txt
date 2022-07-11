@@ -1,0 +1,20 @@
+Should change to multiple forms???
+
+Each form saves to localStorage for persistence
+
+{
+	Contact Info form
+
+	Beef form
+
+	Hog form
+
+	Lamb form
+}
+
+
+Each animal form:
+	Add new {select: beef, hog, lamb}
+		=> named "beef_1" in localStorage, has its own form data
+
+	

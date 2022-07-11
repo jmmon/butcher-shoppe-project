@@ -1,0 +1,16 @@
+.order_form__select {
+	display: block;
+	width: 100%;
+	font-size: 1.2rem;
+	padding: 0.4rem;
+}
+.order_form__select,
+.order_form__select_option {
+	cursor: pointer;
+}
+
+@media (max-width: 658px) {
+	.order_form__select {
+		font-size: 1rem;
+	}
+}

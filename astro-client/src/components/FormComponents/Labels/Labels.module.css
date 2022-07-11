@@ -1,0 +1,41 @@
+.label {
+	display: block;
+	font-size: 1.3rem;
+	width: 100%;
+}
+
+.label_small {
+	font-size: 1rem;
+}
+
+.subtitle {
+	display: block;
+	font-size: 1.3rem;
+	margin-bottom: 6px;
+	color: var(--subheading-gray);
+}
+
+.form_required {
+	margin-left: 4px;
+	color: red;
+}
+
+.form_special_extra {
+	font-size: 1.2rem;
+	color: rgb(
+		calc(var(--orange-bg--r) - 20),
+		calc(var(--orange-bg--g) - 20),
+		calc(var(--orange-bg--b) - 0)
+	);
+}
+
+
+@media (max-width: 658px) {
+	.label,
+	.subtitle {
+		font-size: 1rem;
+	}
+	.label_small {
+		font-size: 0.9rem;
+	}
+}
