@@ -6,8 +6,6 @@ import "react-tabs/style/react-tabs.css";
 import axios from "axios";
 // import useFormPersist from "react-hook-form-persist";
 
-// import Collapsible from "react-collapsible";
-// import "./Order.css";
 import styles from "./Order.module.css";
 
 import bgImage from "assets/images/image-1-3-cropped-55.jpg";
@@ -20,13 +18,12 @@ import PageTitle from "components/PageTitle/PageTitle";
 // import LambSection from "components/FormComponents/Sections/LambSection/LambSection";
 // import HogSection from "components/FormComponents/Sections/HogSection/HogSection";
 import ContactInfoSection from "components/FormComponents/Sections/ContactInfoSection/ContactInfoSection";
-import SchedulerInput from "components/FormComponents/SchedulerInput/SchedulerInput";
-import SchedulerInputWindow from "components/FormComponents/SchedulerInput/SchedulerInputWindow";
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
-import OrderFormSectionSubheading from "components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading";
-import SectionContainer from "components/SectionContainer/SectionContainer";
+import DateSelector from "components/FormComponents/Sections/DateSelector/DateSelector";
+
 import PageLayout from "components/PageLayout/PageLayout";
 import InputForm from "components/FormComponents/InputForm/InputForm";
+import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
 
 const headers = { "Content-Type": "application/json" };
 
@@ -293,13 +290,11 @@ function Order() {
 							<Tab>Notes</Tab>
 						</TabList>
 						<TabPanel>
-							<SectionContainer title="Contact Info">
-								<ContactInfoSection />
-							</SectionContainer>
+							<ContactInfoSection />
 						</TabPanel>
 						<TabPanel>
-							<SectionContainer title="Animal Info">
-								<AnimalsBasic />
+							<AnimalsBasic />
+							{/* <SectionContainer title="Animal Info"> */}
 								{/* <Button onClick={addAnimal}>
 										Add Another Animal
 									</Button> */}
@@ -316,44 +311,13 @@ function Order() {
 										<option value="lamb">Lamb</option>
 										<option value="hog">Hog</option>
 									</select> */}
-							</SectionContainer>
+							{/* </SectionContainer> */}
 						</TabPanel>
 						<TabPanel>
-							<SectionContainer title="Schedule A Date">
-								<OrderFormSectionSubheading>
-									Pick a Preferred Date, and you may choose an
-									Alternate Date or Alternate Start and End
-									Date Window
-								</OrderFormSectionSubheading>
-								<div
-									className={`flex-jcenter-astart-wrap gap-4 ${styles.date}`}
-								>
-									<SchedulerInput
-										register={methods.register}
-										title="Preferred Date:"
-									/>
-									<SchedulerInputWindow
-										register={methods.register}
-										title="Alternate Date or Date Window:"
-									/>
-								</div>
-							</SectionContainer>
+							<DateSelector />
 						</TabPanel>
 						<TabPanel>
-							<SectionContainer title="Order Notes">
-								<OrderFormSectionSubheading>
-									Any additional information or instructions that will help us with your order
-								</OrderFormSectionSubheading>
-								<div className="flex-jcenter">
-									<InputForm 
-										title="Order Notes"
-										name="order_notes"
-										placeholder="Additional information..."
-										animalInfo={null}
-										textarea={true} 
-									/>
-								</div>
-							</SectionContainer>
+							<OrderNotes />
 						</TabPanel>
 					</Tabs>
 

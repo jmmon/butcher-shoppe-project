@@ -1,16 +1,15 @@
 import React from "react";
 import sectionStyles from "../FormSections.module.css";
 import formStyles from "../../FormComponents.module.css";
+import SectionContainer from "components/SectionContainer/SectionContainer";
 
 import LabelForm from "../../Labels/LabelForm/LabelForm";
-
-// import PhoneInput from "react-phone-number-input/input";
 import InputForm from "../../InputForm/InputForm";
 import PhoneInputForm from "../../InputForm/PhoneInputForm";
 
 function ContactInfoSection() {
 	return (
-		<>
+		<SectionContainer title="Contact Info">
 			<div
 				name="contact_info"
 				className={`${sectionStyles.section}`}
@@ -176,7 +175,7 @@ function ContactInfoSection() {
 					/>
 				</div>
 			</div>
-		</>
+		</SectionContainer>
 	);
 }
 

@@ -7,6 +7,7 @@ import LabelForm from "../../Labels/LabelForm/LabelForm";
 import InputForm from "../../InputForm/InputForm";
 import SelectForm from "components/FormComponents/SelectForm/SelectForm";
 import Button from "components/Button/Button";
+import SectionContainer from "components/SectionContainer/SectionContainer";
 
 const DeleteButtonX = ({ onClick }) => {
 	return (
@@ -127,7 +128,7 @@ function AnimalsBasic() {
 	};
 
 	return (
-		<>
+		<SectionContainer title="Animal Info">
 			<div name="animals" className={`${sectionStyles.section}`}>
 				<LabelForm title="Select Your Animals" />
 				{addedAnimalsArray.map(({ type, count }, index) => (
@@ -142,8 +143,7 @@ function AnimalsBasic() {
 				<div className="flex-jcenter-acenter padding-2--vertical">
 					<Button className={`btn--large btn--wide btn--outline`} onClick={handleAddAnimal}>Add Another Animal</Button>
 				</div>
-			</div>
-		</>
+			</div></SectionContainer>
 	);
 }
 
