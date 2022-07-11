@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.css";
 import Helmet from "react-helmet";
 
 import Card from "components/Card/Card";
@@ -45,17 +44,19 @@ export default function Home() {
 					]}
 				>
 					<p>
- Our meat processing Shoppe in <a href="#map">Northport</a> is currently under construction. Once complete, we will be able to process your meat in-house, helping bring your favorite cuts from your pasture to your table!
-</p>
-<p>
-						We slaughter all sorts of larger animals, including beef, hogs, goats, lambs, bison, and exotic animals like alpacas, lamas and emu.
-						</p>
-						<p>
-						We even process wild game!
-						</p>
-						<p>
-						Sorry, no poultry or rabbits!
-						</p>
+						Our meat processing Shoppe in{" "}
+						<a href="#map">Northport</a> is currently under
+						construction. Once complete, we will be able to process
+						your meat in-house, helping bring your favorite cuts
+						from your pasture to your table!
+					</p>
+					<p>
+						We slaughter all sorts of larger animals, including
+						beef, hogs, goats, lambs, bison, and exotic animals like
+						alpacas, lamas and emu.
+					</p>
+					<p>We even process wild game!</p>
+					<p>Sorry, no poultry or rabbits!</p>
 				</Card>
 				<hr />
 				<Card
@@ -70,4 +71,3 @@ export default function Home() {
 		</PageLayout>
 	);
 }
-
