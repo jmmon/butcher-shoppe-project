@@ -7,7 +7,7 @@ export default function SectionContainer({ title, children }) {
 		<div className={Styles.container}>
 			<span className={Styles.header}>{title}</span>
 			<div className={Styles.content_outer}>
-				<div className={Styles.content_inner}>
+				<div className={`flex-col-jcenter gap-1 ${Styles.content_inner}`}>
 
 					{children}
 				</div>

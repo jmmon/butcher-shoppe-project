@@ -4,7 +4,6 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import Styles from "./SelectForm.module.css";
-import formStyles from "../FormComponents.module.css";
 
 function Option({ label, value }) {
 	return (
@@ -37,7 +36,7 @@ function SelectForm({
 
 	return (
 		<div
-			className={`${formStyles.field} ${formStyles.container} ${formStyles.container_small}`}
+			className={`flex-30-wrap input_container small`}
 		>
 			<LabelInput
 				name={name}

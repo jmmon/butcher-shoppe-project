@@ -3,7 +3,7 @@ import * as React from 'preact';
 
 import LabelForm from "../LabelForm/LabelForm";
 
-import Styles from "../Labels.module.css";
+import Styles from "./LabelInput.module.css";
 
 function LabelInput({
 	title,

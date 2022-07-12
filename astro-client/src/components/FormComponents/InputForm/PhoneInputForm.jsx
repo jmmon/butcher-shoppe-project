@@ -8,7 +8,6 @@ import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 
 import Styles from "./InputForm.module.css";
-import formStyles from "../FormComponents.module.css";
 
 const InputForm = ({
 	title,
@@ -44,8 +43,8 @@ const InputForm = ({
 
 	return (
 		<div
-			className={`${formStyles.container} ${
-				small ? formStyles.container_small : ""
+			className={`input_container ${
+				small ? "small" : ""
 			}`}
 		>
 			<LabelInput

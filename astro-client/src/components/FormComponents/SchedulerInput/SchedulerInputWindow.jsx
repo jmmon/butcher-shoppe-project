@@ -3,11 +3,10 @@
 
 import { useState } from "preact/compat";
 
-
+import { useFormContext } from "react-hook-form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SchedulerInput.css";
-import { useFormContext } from "react-hook-form";
 
 const DateTimePicker = ({
 	title = "",

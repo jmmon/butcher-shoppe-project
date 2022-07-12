@@ -1,13 +1,7 @@
 // import React from "react";
 import * as React from 'preact';
 
-// import {useState} from "preact/compat";
-
-
-import sectionStyles from "../FormSections.module.css";
-import formStyles from "../../FormComponents.module.css";
 import SectionContainer from "../../../SectionContainer/SectionContainer";
-
 import LabelForm from "../../Labels/LabelForm/LabelForm";
 import InputForm from "../../InputForm/InputForm";
 import PhoneInputForm from "../../InputForm/PhoneInputForm";
@@ -17,9 +11,9 @@ function ContactInfoSection() {
 		<SectionContainer title="Contact Info">
 			<div
 				name="contact_info"
-				className={`${sectionStyles.section}`}
+				className="form_section"
 			>
-				<div className={formStyles.field}>
+				<div className="flex-30-wrap">
 					<LabelForm required={true} title="Name" />
 
 					<InputForm
@@ -57,25 +51,9 @@ function ContactInfoSection() {
 					/>
 				</div>
 
-				<div className={formStyles.field}>
+				<div className="flex-30-wrap">
 					<LabelForm required={true} title="Contact" />
 
-					{/* <div className="phone input-container">
-						<label
-							htmlFor="phone"
-							className="phone scheduler--label"
-						>
-							Your Phone Number
-						</label>
-						<PhoneInput
-							className="scheduler--input"
-							id="phone"
-							name="buyer.phone_number_component"
-							country="US"
-							required={true}
-							placeholder="Enter your 10 digit phone number"
-						/>
-					</div> */}
 					<PhoneInputForm
 						title="Phone Number"
 						name="buyer.phone_number"
@@ -83,22 +61,6 @@ function ContactInfoSection() {
 						small={true}
 					/>
 
-					{/* <InputForm
-						title="Phone Number"
-						name="buyer.phone_number"
-						placeholder="10 digit phone number"
-						required={{
-							required: {
-								value: true,
-								message: "A phone number is required",
-							},
-							pattern: {
-								value: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
-								message: "Please use a valid phone number",
-							},
-						}}
-						small={true}
-					/> */}
 					<InputForm
 						title="Email Address"
 						name="buyer.email_address"
@@ -117,7 +79,7 @@ function ContactInfoSection() {
 					/>
 				</div>
 
-				<div className={formStyles.field}>
+				<div className="flex-30-wrap">
 					<LabelForm required={true} title="Address" />
 
 					<InputForm

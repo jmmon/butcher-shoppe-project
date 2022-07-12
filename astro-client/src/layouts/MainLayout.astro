@@ -281,6 +281,13 @@ import Footer from "../components/Footer.astro";
 		align-items: flex-start;
 	}
 
+	:global([class*="flex-30"]) {
+		flex: 30%;
+	}
+	:global([class*="flex-50"]) {
+		flex: 50%;
+	}
+
 	:global(.gap-4) {
 		gap: 4rem;
 	}
@@ -537,5 +544,32 @@ import Footer from "../components/Footer.astro";
 	font-size: clamp(0.6rem, 4vw, 1rem);
 }
 
+
+
+
+
+
+
+/* form styles */
+
+:global(.input_container) {
+	margin: 0 auto;
+	padding: 0.5em;
+
+	min-width: 200px;
+	flex: 50%;
+}
+
+:global(.input_container.small) {
+	display: inline-block;
+}
+
+
+:global(.form_section) {
+	margin: 0px auto;
+	width: 100%;
+	display: grid;
+	gap: 1.5em;
+}
 
 </style>

@@ -2,10 +2,9 @@
 import * as React from 'preact';
 
 import { useFormContext } from "react-hook-form";
-import LabelInput from "../Labels/LabelInput/LabelInput";
+import LabelInput from "../Labels/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import Styles from "./RadioForm.module.css";
-import formStyles from "../FormComponents.module.css";
 
 const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	const { register } = useFormContext();
@@ -57,7 +56,7 @@ const RadioForm = ({
 	);
 
 	return (
-		<div className={formStyles.field}>
+		<div className="flex-30-wrap">
 			<LabelInput
 				title={title}
 				costsExtra={costsExtra}

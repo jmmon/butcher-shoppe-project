@@ -2,12 +2,7 @@
 // import * as React from 'preact';
 import {useState} from "preact/compat";
 
-
-import sectionStyles from "../FormSections.module.css";
-import formStyles from "../../FormComponents.module.css";
-
-import LabelForm from "../../Labels/LabelForm/LabelForm";
-
+import LabelForm from "../../Labels/LabelForm";
 import InputForm from "../../InputForm/InputForm";
 import SelectForm from "../../../FormComponents/SelectForm/SelectForm";
 import Button from "../../../Button/Button";
@@ -41,9 +36,10 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 	};
 
 	return (
-		<div className={formStyles.animals_basic_field}>
+		<div className="flex-wrap-acenter">
 			<DeleteButtonX onClick={() => handleDelete(index)} />
-			<div className={formStyles.field}>
+			<div className="flex-30-wrap">
+				
 				<SelectForm
 					title="Type"
 					name={`animals.${index}.type`}
@@ -71,7 +67,7 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 
 			{thisAnimalType === "other" ? (
 				<>
-					<div className={formStyles.field}>
+					<div className="flex-30-wrap">
 						<InputForm
 							title="Animal Type"
 							placeholder="Other animal type"
@@ -79,7 +75,7 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 							required={true}
 						/>
 					</div>
-					<div className={formStyles.field}>
+					<div className="flex-30-wrap">
 						<InputForm
 							title="Count"
 							name={`animals.${index}.count`}
@@ -88,7 +84,7 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 					</div>
 				</>
 			) : (
-				<div className={formStyles.field}>
+				<div className="flex-30-wrap">
 					<InputForm
 						title="Count"
 						name={`animals.${index}.count`}
@@ -133,7 +129,7 @@ function AnimalsBasic() {
 
 	return (
 		<SectionContainer title="Animal Info">
-			<div name="animals" className={`${sectionStyles.section}`}>
+			<div name="animals" className="form_section">
 				<LabelForm title="Select Your Animals" />
 				{addedAnimalsArray.map(({ type, count }, index) => (
 					<AnimalRow

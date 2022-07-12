@@ -5,7 +5,6 @@ import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 import Styles from "./CheckboxForm.module.css";
-import formStyles from "../FormComponents.module.css";
 
 const EachCheckbox = ({
 	label,
@@ -52,9 +51,6 @@ const CheckboxForm = ({
 	handleChooseOption,
 	previousCheckedOptionsArray,
 }) => {
-	const {
-		formState: { errors },
-	} = useFormContext();
 	const parentName = name;
 
 	const allOptions = options
@@ -71,7 +67,7 @@ const CheckboxForm = ({
 		: "Err: No options were provided!";
 
 	return (
-		<div className={formStyles.field}>
+		<div className="flex-30-wrap">
 			<LabelInput
 				title={title}
 				name={name}
