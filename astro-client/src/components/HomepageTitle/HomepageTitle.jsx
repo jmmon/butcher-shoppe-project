@@ -4,7 +4,6 @@ import * as React from 'preact';
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-import "./HomepageTitle.css";
 import Styles from "./HomepageTitle.module.css";
 
 import Button from "../Button/Button";

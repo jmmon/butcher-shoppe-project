@@ -29,7 +29,7 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 			<p class="subscription_text">at any time.</p>
 		</div>
 
-		<Subscribe client:only="preact" />
+		<Subscribe client:load />
 	</section>
 
 	<section class="flex-jcenter-acenter-wrap section gap-1 mobile_margin">
@@ -40,11 +40,11 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
 	<section class="flex-jcenter-acenter-wrap contact_map_container section">
 		<FooterContactMapContainer linkTarget="contact" title="Contact Us!" loadingName="Contact Box">
-			<Contact client:only="preact" />
+			<Contact client:load />
 		</FooterContactMapContainer>
 		
 		<FooterContactMapContainer linkTarget="map" title="Find Us In Downtown Northport!" loadingName="Map">
-			<Map placeName="420 Center Ave, Northport, WA 99157, USA" zoomLevel={15} client:only="preact" />
+			<Map placeName="420 Center Ave, Northport, WA 99157, USA" zoomLevel={15} client:load />
 		</FooterContactMapContainer>
 	</section>
 
@@ -92,7 +92,7 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
 	<section class="flex-jcenter-acenter section">
 		<div class="back_to_top">
-			<BackToTopButton className="btn--primary" client:only="preact">Back To The Top</BackToTopButton>
+			<BackToTopButton className="btn--primary" client:load>Back To The Top</BackToTopButton>
 		</div>
 	</section>
 

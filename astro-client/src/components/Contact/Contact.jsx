@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "preact/hooks";
 // import * as React from 'preact';
+import Styles from "./Styles.module.css";
 
 import axios from "axios";
-import Styles from "./Contact.module.css";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
