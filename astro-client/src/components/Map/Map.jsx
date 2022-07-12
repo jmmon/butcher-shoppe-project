@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "preact/hooks";
 // import * as React from 'preact';
 
-import styles from "./Map.module.css";
+import Styles from "./Map.module.css";
 
 const GoogleMap = ({ placeName, zoomLevel }) => {
 	const googleMapRef = useRef(null);
@@ -53,7 +53,7 @@ const GoogleMap = ({ placeName, zoomLevel }) => {
 		);
 	};
 	return (
-		<div className={styles.fallback} ref={googleMapRef}>
+		<div className={Styles.fallback} ref={googleMapRef}>
 			Loading Map...
 		</div>
 	);

@@ -1,12 +1,12 @@
 // import React from "react";
 import * as React from 'preact';
 
-import styles from "./OrderFormSectionSubheading.module.css";
+import Styles from "./OrderFormSectionSubheading.module.css";
 
 function OrderFormSectionSubheading({ children }) {
 	return (
-		<div className={styles.order_form__section__subheading_container}>
-			<ul className={styles.order_form__section__subheading}>
+		<div className={Styles.container}>
+			<ul className={Styles.subheading}>
 				<li>{children}</li>
 			</ul>
 			<hr />

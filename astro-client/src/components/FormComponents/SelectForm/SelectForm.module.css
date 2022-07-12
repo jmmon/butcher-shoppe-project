@@ -1,16 +1,16 @@
-.order_form__select {
+.select {
 	display: block;
 	width: 100%;
 	font-size: 1.2rem;
 	padding: 0.4rem;
 }
-.order_form__select,
-.order_form__select_option {
+.select,
+.option {
 	cursor: pointer;
 }
 
 @media (max-width: 658px) {
-	.order_form__select {
+	.select {
 		font-size: 1rem;
 	}
 }

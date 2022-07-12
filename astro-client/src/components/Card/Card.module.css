@@ -1,4 +1,4 @@
-.card--title {
+.title {
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -6,7 +6,7 @@
 	margin-bottom: 1rem;
 }
 
-.card--subtitle {
+.subtitle {
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -15,6 +15,6 @@
 	margin-top: -2.5rem;
 }
 
-.image-heading--margin-bottom {
+.margin_bottom {
 	margin-bottom: 2rem;
 }

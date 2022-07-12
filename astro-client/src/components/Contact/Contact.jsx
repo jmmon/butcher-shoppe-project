@@ -4,7 +4,7 @@ import { useState, useEffect } from "preact/hooks";
 // import * as React from 'preact';
 
 import axios from "axios";
-import styles from "./Contact.module.css";
+import Styles from "./Contact.module.css";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
@@ -121,16 +121,16 @@ const Contact = () => {
 	};
 
 	return (
-		<form className={styles.form} onSubmit={formHandleSubmit}>
-			<div className={styles.double_input}>
-				<div className={`${styles.container} ${styles.small}`}>
-					<label className={styles.label} htmlFor="contact__name">
+		<form className={Styles.form} onSubmit={formHandleSubmit}>
+			<div className={Styles.double_input}>
+				<div className={`${Styles.container} ${Styles.small}`}>
+					<label className={Styles.label} htmlFor="contact__name">
 						Name:
 					</label>
 
 					<input
 						type="text"
-						className={styles.input}
+						className={Styles.input}
 						name="contact__name"
 						placeholder="Your name"
 						value={input.contact__name}
@@ -139,14 +139,14 @@ const Contact = () => {
 					/>
 				</div>
 
-				<div className={`${styles.container} ${styles.small}`}>
-					<label className={styles.label} htmlFor="contact__email">
+				<div className={`${Styles.container} ${Styles.small}`}>
+					<label className={Styles.label} htmlFor="contact__email">
 						Email:
 					</label>
 
 					<input
 						type="email"
-						className={styles.input}
+						className={Styles.input}
 						name="contact__email"
 						placeholder="Your email"
 						value={input.contact__email}
@@ -156,16 +156,16 @@ const Contact = () => {
 				</div>
 			</div>
 
-			<div className={`${styles.container} ${styles.large}`}>
+			<div className={`${Styles.container} ${Styles.large}`}>
 				<label
-					className={`${styles.label} ${styles.topic__label}`}
+					className={`${Styles.label} ${Styles.topic__label}`}
 					htmlFor="contact__topic"
 				>
 					Topic:
 				</label>
 
 				<select
-					className={`${styles.input__topic} ${styles.input}`}
+					className={`${Styles.input__topic} ${Styles.input}`}
 					name="contact__topic"
 					id="topic"
 					onChange={inputHandleChange}
@@ -178,14 +178,14 @@ const Contact = () => {
 				</select>
 			</div>
 
-			<div className={`${styles.container} ${styles.large} ${styles.grow}`}>
-				<label className={styles.label} htmlFor="contact__textarea">
+			<div className={`${Styles.container} ${Styles.large} ${Styles.grow}`}>
+				<label className={Styles.label} htmlFor="contact__textarea">
 					How can we help you?
 				</label>
 
 				<textarea
 					type="text"
-					className={`${styles.input} ${styles.textarea}`}
+					className={`${Styles.input} ${Styles.textarea}`}
 					name="contact__textarea"
 					placeholder="Type here..."
 					onChange={inputHandleChange}
@@ -196,7 +196,7 @@ const Contact = () => {
 
 			<button
 				type="submit"
-				className={`${styles.submit} btn--outline--large${
+				className={`${Styles.submit} btn--outline--large${
 					responseFromContactBox.isLoading
 						? "--pending"
 						: responseFromContactBox.data
@@ -217,11 +217,11 @@ const Contact = () => {
 			</button>
 
 			<p
-				className={`${styles.notification} ${
+				className={`${Styles.notification} ${
 					responseFromContactBox.error
-						? `${styles.show} ${styles.error}`
+						? `${Styles.show} ${Styles.error}`
 						: responseFromContactBox.data
-						? `${styles.show} ${styles.success}`
+						? `${Styles.show} ${Styles.success}`
 						: ""
 				}`}
 			>

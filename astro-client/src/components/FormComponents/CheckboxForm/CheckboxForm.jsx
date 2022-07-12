@@ -4,7 +4,7 @@ import * as React from 'preact';
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import styles from "./CheckboxForm.module.css";
+import Styles from "./CheckboxForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const EachCheckbox = ({
@@ -24,7 +24,7 @@ const EachCheckbox = ({
 	return (
 		<React.Fragment key={name}>
 			<input
-				className={styles.order_form__checkbox}
+				className={Styles.checkbox}
 				type="checkbox"
 				id={name}
 				name={name}
@@ -78,7 +78,7 @@ const CheckboxForm = ({
 				costsExtra={costsExtra}
 				subtitle={subtitle}
 			/>
-			<p className={styles.order_form__checkbox_container}>
+			<p className={Styles.container}>
 				{allOptions}
 			</p>
 		</div>

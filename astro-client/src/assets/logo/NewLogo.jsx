@@ -1,7 +1,7 @@
 //import React from "react";
 import * as React from 'preact';
 
-export default function NewLogo({ fills = {}, className = null, styles=null }) {
+export default function NewLogo({ fills = {}, className = null, Styles=null }) {
 	const brown = fills?.brown || "#5a3407";
 	const black = fills?.black || "#000";
 	const white = fills?.white || "#fff";
@@ -9,7 +9,7 @@ export default function NewLogo({ fills = {}, className = null, styles=null }) {
 	const red = fills?.red || "#911102";
 	const text = fills?.text || "#fff";
 
-	const svgBackground = styles?.svg_background || "svg_background"
+	const svgBackground = Styles?.svg_background || "svg_background"
 	
 	return (
 		<svg

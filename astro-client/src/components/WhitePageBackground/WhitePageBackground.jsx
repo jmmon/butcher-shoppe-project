@@ -1,13 +1,13 @@
 // //import React from "react";
 import * as React from 'preact';
 
-import styles from "./WhitePageBackground.module.css";
+import Styles from "./WhitePageBackground.module.css";
 
 function WhitePageBackground({ separate = false, className = "", children }) {
 	return (
 		<section
-			className={`flex-col-jcenter panel-shadow--dark ${className} ${styles.container} ${
-				separate && styles.separate
+			className={`flex-col-jcenter panel-shadow--dark ${className} ${Styles.container} ${
+				separate && Styles.separate
 			}`}
 		>
 			{children}

@@ -5,7 +5,7 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
 import "./HomepageTitle.css";
-import styles from "./HomepageTitle.module.css";
+import Styles from "./HomepageTitle.module.css";
 
 import Button from "../Button/Button";
 import Images from "./Images.js";
@@ -17,18 +17,18 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 		infinite: true,
 		arrows: false,
 		easing: "cubic-in",
-		indicators: (i) => <div className={styles.indicator}>{i + 1}</div>,
+		indicators: (i) => <div className={Styles.indicator}>{i + 1}</div>,
 	};
 
 	return (
 		<section
-			className={`${styles.section} text-center text-white panel-shadow--dark`}
+			className={`${Styles.section} text-center text-white panel-shadow--dark`}
 		>
 			<Fade {...properties}>
 				{Images.map((slideImage, index) => (
-					<div key={index} className={styles.image_wrapper}>
+					<div key={index} className={Styles.image_wrapper}>
 						<div
-							className={`${styles.image} inset-box-shadow--dark`}
+							className={`${Styles.image} inset-box-shadow--dark`}
 							style={{
 								backgroundImage: `url(${slideImage.url})`,
 								backgroundSize: slideImage?.size ||`cover`,
@@ -41,26 +41,26 @@ function HomepageTitle({ simple = false, title, subtitle }) {
 				))}
 			</Fade>
 
-			<div className={`flex-jcenter-acenter ${styles.content_wrapper}`}>
+			<div className={`flex-jcenter-acenter ${Styles.content_wrapper}`}>
 				<div
-					className={`flex-jcenter-acenter-wrap ${styles.content_container}`}
+					className={`flex-jcenter-acenter-wrap ${Styles.content_container}`}
 				>
-					<h1 className={`${styles.title} text-shadow--lg`}>
+					<h1 className={`${Styles.title} text-shadow--lg`}>
 						{title}
 					</h1>
-					<p className={`${styles.subtitle} text-shadow--sm`}>
+					<p className={`${Styles.subtitle} text-shadow--sm`}>
 						{subtitle}
 					</p>
 					
 					<Button
-						className={`${styles.hero_btn} btn--outline btn--large`}
+						className={`${Styles.hero_btn} btn--outline btn--large`}
 						url="/services"
 					>
 						Services
 					</Button>
 
 					<Button
-						className={`${styles.hero_btn} btn--outline btn--large`}
+						className={`${Styles.hero_btn} btn--outline btn--large`}
 						url="/how-to-order"
 					>
 						How to Order

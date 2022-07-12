@@ -2,7 +2,7 @@
 // import * as React from 'preact';
 import { useState, useEffect } from "preact/hooks";
 import axios from "axios";
-import styles from "./Subscribe.module.css";
+import Styles from "./Subscribe.module.css";
 
 const headers = {
 	"Content-Type": "application/json",
@@ -91,18 +91,18 @@ export default function Subscribe({ unsubscribe = false, className = "" }) {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className={`${className} flex-jcenter-wrap-astretch ${styles.wrapper} card panel-shadow--light`}
+			className={`${className} flex-jcenter-wrap-astretch ${Styles.wrapper} card panel-shadow--light`}
 		>
 			<input
 				type="email"
 				name="email"
 				placeholder="Your Email"
-				className={styles.input}
+				className={Styles.input}
 				required
 				onChange={(e) => setEmail(e.target.value)}
 			/>
 			<button
-				className={`${styles.subscribe_btn} btn--medium--outline${
+				className={`${Styles.subscribe_btn} btn--medium--outline${
 					responseFromSubscribeBox.isLoading
 						? "--pending"
 						: responseFromSubscribeBox.data
@@ -128,11 +128,11 @@ export default function Subscribe({ unsubscribe = false, className = "" }) {
 			</button>
 
 			<p
-				className={`${styles.notification} ${
+				className={`${Styles.notification} ${
 					responseFromSubscribeBox.error
-						? `${styles.error} ${styles.show}`
+						? `${Styles.error} ${Styles.show}`
 						: responseFromSubscribeBox.data
-						? `${styles.success} ${styles.show}`
+						? `${Styles.success} ${Styles.show}`
 						: ""
 				}`}
 			>

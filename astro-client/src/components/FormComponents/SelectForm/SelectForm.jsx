@@ -3,13 +3,13 @@ import * as React from 'preact';
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import styles from "./SelectForm.module.css";
+import Styles from "./SelectForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 function Option({ label, value }) {
 	return (
 		<option
-			className={styles.order_form__select_option}
+			className={Styles.option}
 			key={value}
 			value={value}
 		>
@@ -49,7 +49,7 @@ function SelectForm({
 				{...register(name)}
 				name={name}
 				id={name}
-				className={styles.order_form__select}
+				className={Styles.select}
 				onChange={handleChangeOption && ((e) => handleChangeOption(e))}
 			>
 				{allOptions}

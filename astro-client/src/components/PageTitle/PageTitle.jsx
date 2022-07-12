@@ -1,6 +1,6 @@
 //import React from "react";
-import * as React from 'preact';
-import styles from "./PageTitle.module.css"
+import * as React from "preact";
+import Styles from "./PageTitle.module.css";
 
 function PageTitle({
 	title = "Loading...",
@@ -11,22 +11,21 @@ function PageTitle({
 	children = null,
 }) {
 	return (
-		<div className={`panel-shadow--dark ${styles.container}`}>
-
+		<div className={`panel-shadow--dark ${Styles.container}`}>
 			<section
-				className={`${styles.image} flex-col-acenter-jcenter ${styles.title__height}  inset-box-shadow--dark `}
+				className={`${Styles.image} flex-col-acenter-jcenter ${Styles.title__height}  inset-box-shadow--dark `}
 				style={{
 					background: `url(${bgImage}) center center/cover no-repeat`,
 					backgroundPosition: `${position}`,
 				}}
 			>
-				<div className={styles.title__container}>
+				<div className={Styles.title__container}>
 					<h1
-						className={
+						className={`text-shadow--lg ${Styles.title__heading} ${
 							smaller === "true" || smaller === true
-								? `text-shadow--lg ${styles.title__heading} ${styles.smaller}`
-								: `text-shadow--lg ${styles.title__heading}`
-						}
+								? Styles.smaller
+								: ""
+						}`}
 					>
 						{title}
 					</h1>
@@ -34,7 +33,6 @@ function PageTitle({
 					{children}
 				</div>
 			</section>
-		
 		</div>
 	);
 }

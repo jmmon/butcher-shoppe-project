@@ -15,12 +15,12 @@
 	color: var(--subheading-gray);
 }
 
-.form_required {
+.required {
 	margin-left: 4px;
 	color: red;
 }
 
-.form_special_extra {
+.extra {
 	font-size: 1.2rem;
 	color: rgb(
 		calc(var(--orange-bg--r) - 20),

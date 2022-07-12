@@ -1,18 +1,18 @@
 //import React from "react";
 import * as React from 'preact';
 
-import styles from "./FaqSection.module.css";
+import Styles from "./FaqSection.module.css";
 
 const Question = ({ question, answer }) => {
 	return (
-		<div className={styles.question_container}>
-			<h3 className={styles.question}>
-				<small className={styles.small}>q. </small>
+		<div className={Styles.question_container}>
+			<h3 className={Styles.question}>
+				<small className={Styles.small}>q. </small>
 				<i>{question}</i>
 			</h3>
 
 			<p
-				className={styles.answer}
+				className={Styles.answer}
 				dangerouslySetInnerHTML={{ __html: answer }}
 			></p>
 		</div>
@@ -21,7 +21,7 @@ const Question = ({ question, answer }) => {
 
 function FaqSection({ questionList }) {
 	return (
-		<div className={`${styles.container} flex-col gap-4 card--font-size`}>
+		<div className={`${Styles.container} flex-col gap-4 card--font-size`}>
 			{questionList.map((question, index) => (
 				<Question
 					question={question.question}

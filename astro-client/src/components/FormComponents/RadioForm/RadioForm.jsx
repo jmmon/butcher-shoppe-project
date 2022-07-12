@@ -4,7 +4,7 @@ import * as React from 'preact';
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import styles from "./RadioForm.module.css";
+import Styles from "./RadioForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
@@ -15,12 +15,12 @@ const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	return (
 		<label
 			htmlFor={value}
-			className={styles.order_form__radio_container}
+			className={Styles.container}
 			key={value}
 		>
 			<input
 				{...register(name)}
-				className={styles.order_form__radio}
+				className={Styles.radio}
 				type="radio"
 				id={value}
 				name={name}
@@ -64,7 +64,7 @@ const RadioForm = ({
 				subtitle={subtitle}
 				required={required}
 			/>
-			<div className={styles.order_form__radio_wrapper}>{allOptions}</div>
+			<div className={Styles.wrapper}>{allOptions}</div>
 		</div>
 	);
 };

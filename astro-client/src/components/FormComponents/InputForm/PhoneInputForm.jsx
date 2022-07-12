@@ -7,7 +7,7 @@ import PhoneInput2 from "react-phone-input-2";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
 
-import styles from "./InputForm.module.css";
+import Styles from "./InputForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const InputForm = ({
@@ -56,7 +56,7 @@ const InputForm = ({
 			/>
 
 			{thisError && (
-				<span role="alert" className={styles.validation_error}>
+				<span role="alert" className={Styles.validation_error}>
 				{` (${thisError.message ? thisError.message : "Please input your phone number"})`}
 				</span>
 			)}
@@ -82,7 +82,7 @@ const InputForm = ({
 							id: name,
 							name,
 							required: true,
-							className: styles.input,
+							className: Styles.input,
 						}}
 					/>
 				)}
