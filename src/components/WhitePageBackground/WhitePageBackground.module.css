@@ -1,6 +1,6 @@
 .container {
 	max-width: 1200px;
-	background-color: var(--white-page-background);
+	background-color: var(--white);
 	margin: calc(-2em - 0vh) auto 4em auto;
 	padding: 4rem 0;
 	z-index: 2;

@@ -22,12 +22,9 @@
 
 .form_special_extra {
 	font-size: 1.2rem;
-	color: rgb(
-		calc(var(--orange-bg--r) - 20),
-		calc(var(--orange-bg--g) - 20),
-		calc(var(--orange-bg--b) - 0)
-	);
+	color: var(--form_special_extra);
 }
+
 
 
 @media (max-width: 658px) {

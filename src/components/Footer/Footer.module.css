@@ -1,9 +1,9 @@
 .container {
-	/* background-color: var(--footer-background-color); */
+	/* background-color: var(--text-dark); */
 	background-color: #ccc;
 	z-index: -1;
 	/* color: #fff; */
-	color: var(--footer-background-color);
+	color: var(--text-dark);
 	gap: 4em;
 }
 
@@ -103,7 +103,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* box-shadow: inset -10vw 5vh 1.5vw 2vw var(--footer-background-color); */
+	/* box-shadow: inset -10vw 5vh 1.5vw 2vw var(--text-dark); */
 
 	
 }

@@ -1,6 +1,6 @@
 .container {
 	
-	background-color: var(--footer-background-color);
+	background-color: var(--text-dark);
 }
 .title__height {
 
@@ -17,7 +17,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--page-title-text-color);
+	color: var(--white);
 	/* font-size: var(--page-title-xlarge); */
 	text-align: center;
 	font-size: clamp(1.8em, 8vw, 4.5em);
@@ -55,25 +55,25 @@
 	
 	min-height: 30vh;
 	/* box-shadow: inset calc(-10vw + 8rem) 0 2vw 0
-	var(--footer-background-color) */
+	var(--text-dark) */
 }
 /* calc(-2vw + 1rem) */
 @media (min-width: 1200px) {
 	.image {
 		box-shadow: 
 		/* inset calc(-2vw + 1.5rem) 0 calc(4vw - 2rem) 0
-				var(--footer-background-color), */
+				var(--text-dark), */
 			inset 0 0 calc(4vw - 2rem) 0
-				var(--footer-background-color),
+				var(--text-dark),
 				inset 0 0 calc(2vw - 2rem) 0
-				var(--footer-background-color),
+				var(--text-dark),
 			/* inset calc(8vw - 6rem) 0 0 0
 			hotpink,
-				var(--footer-background-color), */
+				var(--text-dark), */
 				/* inset calc(10vw - 8rem) 0 
-				2vw 0 var(--footer-background-color), */
+				2vw 0 var(--text-dark), */
 				/* inset calc(4vw) 0 
-				2vw 0 var(--footer-background-color), */
+				2vw 0 var(--text-dark), */
 				var(--inset-box-shadow--dark);
 	}
 }

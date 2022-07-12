@@ -1,13 +1,13 @@
 .white-link {
 	/* color: #fff; */
-	color: var(--footer-background-color);
+	color: var(--text-dark);
 	text-decoration: none;
 	cursor: pointer;
 	transition: transform 0.1s ease-in-out;
 }
 
 .white-link:hover {
-	/* color: rgba(var(--footer-background-color), 0.8); */
+	/* color: rgba(var(--text-dark), 0.8); */
 	transform: scale(1.05);
 	/* font-size: 1.1em; */
 }
@@ -17,5 +17,5 @@
 	display: inline;
 	text-decoration: underline;
 	/* color: #fff; */
-	/* color: var(--footer-background-color); */
+	/* color: var(--text-dark); */
 }

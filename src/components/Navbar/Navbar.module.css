@@ -68,7 +68,7 @@
 
 /* menu icon */
 .bars {
-	color: var(--footer-background-color);
+	color: var(--text-dark);
 	font-size: 40px;
 }
 
@@ -79,7 +79,7 @@
 	align-items: center;
 	
 	text-decoration: none;
-	color: var(--footer-background-color);
+	color: var(--text-dark);
 	
 	font-size: clamp(0.92rem, 1.9vw, 1.2rem);
 }
@@ -91,7 +91,7 @@
 .home:hover {
 	outline: none;
 	background: rgba(255, 255, 255, 1);
-	border-bottom: 4px solid var(--footer-background-color);
+	border-bottom: 4px solid var(--text-dark);
 	transition: all 0.15s ease-out;
 }
 

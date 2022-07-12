@@ -35,7 +35,7 @@
 .notification.show {
 	margin: 12px auto;
 	padding: 8px;
-	color: var(--footer-background-color);
+	color: var(--text-dark);
 	max-height: 100px;
 	font-size: 1rem;
 }

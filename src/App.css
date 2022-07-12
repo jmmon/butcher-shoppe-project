@@ -14,10 +14,10 @@
 	--header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
 
-	--footer-background-color: #242424;
+	--text-dark: #242424;
 	--subheading-gray: #444;
 	--input-placeholder--light: #aaa;
-	--white-page-background: #fff;
+	--white: #fff;
 	--offwhite: rgb(236, 229, 229);
 
 	--logo-red: #911102;
@@ -25,31 +25,24 @@
 	--calendar-red: #911102cc;
 	--calendar-red-selecting: #91100230;
 	--faq-qa-red: #911102aa;
-
-	--footer-content--width: 1000px;
-	--schedule--item-height: 380px;
-	--card-border-radius: 4px;
-	--min-page-width: 375px;
-
-	--input-required--valid: rgb(231, 255, 231);
-	--input-required--invalid: rgb(255, 231, 231);
-
+	
 	--navbar-gradient--dark: rgb(50, 50, 50);
-	--navbar-gradient--light: #646464; 
-/* rgb(100, 100, 100) */
+	--navbar-gradient--light: rgb(100, 100, 100); 
+	
+	--sky-blue: 193, 248, 255;
+	--sky-blue-bg: rgba(var(--sky-blue), 0.5);
+	--form_special_extra: rgb(203, 100, 36);
+	
+		--input-required--valid: rgb(231, 255, 231);
+		--input-required--invalid: rgb(255, 231, 231);
 
 	--transition: all 0.1s ease-out;
 
-	--sky-blue: 193, 248, 255;
-	--sky-blue-bg: rgba(var(--sky-blue), 0.5);
 
-	/* header orange */
-	--orange-bg--r: 223;
-	--orange-bg--g: 120;
-	--orange-bg--b: 36;
-	--harvest-gold--r: 216;
-	--harvest-gold--g: 151;
-	--harvest-gold--b: 60;
+	--footer-content--width: 1000px;
+
+	--card-border-radius: 4px;
+
 
 	--page-title-xlarge: 90px;
 	/* --page-title-large: 72px; */
@@ -59,9 +52,6 @@
 	--page-title-small: 50px;
 	--page-title-xsmall: 25px;
 
-	--page-title-bg-color: #eee;
-	--page-title-container-color: var(--sky-blue-bg);
-	--page-title-text-color: #fff;
 
 	--font--xlarge: 36px;
 	--font--large: 26px;
@@ -69,12 +59,7 @@
 	--font--medium: 16px;
 	--font--small: 14px;
 
-	/* --card--font-size: min(5vw, 1.2rem); */
 	--card--font-size: clamp(1rem, 5vw, 1.2rem);
-
-	--icon--normal: 22px;
-	--icon--medium: 20px;
-	--icon--small: 18px;
 
 	--homepage-title--height: clamp(20vw, 30rem, 60vw);
 	--inset-box-shadow--dark: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
@@ -92,8 +77,6 @@
 }
 
 html {
-	--header-orange: rgb(var(--harvest-gold--r), var(--harvest-gold--g), var(--harvest-gold--b))
-	;
 	font-size: 20px;
 	scroll-padding-top: 4rem;
 }
@@ -112,6 +95,24 @@ p {
 .line-height {
 	line-height: 2rem;
 }
+
+.website-container {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+/* everything below the navbar+header */
+.website-content-container {
+	background-color: var(--sky-blue-bg);
+	margin-top: var(--header-height); /* sets it below the header */
+}
+
+
+
+
 
 /* flex selectors: */
 
@@ -151,11 +152,18 @@ p {
 [class*="flex-"][class*="astart"] {
 	align-items: flex-start;
 }
+[class*="flex-30"] {
+	flex: 30%;
+}
+[class*="flex-50"] {
+	flex: 50%;
+}
 
-/* [class*="size-100"][class*="-100"] {
-	width: 100%;
-	height: 100%;
-} */
+
+
+
+
+/* Gaps for flex and grid */
 
 .gap-4 {
 	gap: 4rem;
@@ -173,6 +181,12 @@ p {
 	gap: 0.5rem;
 }
 
+
+
+
+
+/* Grid styles */
+
 [class*="grid-"] {
 	display: grid;
 	justify-content: center;
@@ -187,19 +201,11 @@ p {
 	grid-row-gap: 1.2em;
 }
 
-.website-container {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-}
 
-/* everything below the navbar+header */
-.website-content-container {
-	background-color: var(--sky-blue-bg);
-	margin-top: 40px; /* sets it below the header */
-}
+
+
+
+/* panel shadows, text shadows */
 
 .inset-box-shadow {
 	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
@@ -213,12 +219,41 @@ p {
 	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3),
 		0 8px 20px 8px rgba(0, 0, 0, 0.19);
 }
-
 .panel-shadow--light {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	/* box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3),
 		0 8px 20px 4px rgba(0, 0, 0, 0.19); */
 }
+
+.text-shadow--sm {
+	text-shadow: -2px 2px 5px #000;
+}
+.text-shadow--lg {
+	text-shadow: -3px 3px 8px #000;
+}
+
+@media screen and (max-width: 960px) {
+	.text-shadow--lg {
+		text-shadow: -3px 3px 10px #000;
+	}
+	.text-shadow--sm {
+		text-shadow: -2px 2px 6px #000;
+	}
+}
+@media screen and (max-width: 480px) {
+	.text-shadow--lg {
+		text-shadow: -1px 1px 8px #000;
+	}
+	.text-shadow--sm {
+		text-shadow: -1px 1px 8px #000;
+	}
+}
+
+
+
+
+
+/* Padding + Margin classes */
 
 .padding-1 {
 	padding: 1rem;
@@ -267,39 +302,30 @@ p {
 .margin-2--bot {
 	margin-bottom: 2rem;
 }
-/* 
-.margin-6--v {
-	margin: 6rem auto;
-} */
 
 
-.border-sm {
-	border: 1px solid black;
+
+
+
+/* text and card classes */
+
+.text-white {
+	color: #fff;
+}
+.text-center {
+	text-align: center;
 }
 
-.text-shadow--sm {
-	text-shadow: -2px 2px 5px #000;
-}
-
-.text-shadow--lg {
-	text-shadow: -3px 3px 8px #000;
-}
 .page--subheading {
 	padding-top: 10px;
 	text-align: center;
 	font-size: 2em;
 }
-
+.border-sm {
+	border: 1px solid black;
+}
 .white {
 	background-color: #fff;
-}
-
-.text-white {
-	color: #fff;
-}
-
-.text-center {
-	text-align: center;
 }
 
 .width-400 {
@@ -332,30 +358,5 @@ p {
 	.card--heading-margin {
 		margin-top: -100px;
 	}
-
-	.text-shadow--lg {
-		text-shadow: -3px 3px 10px #000;
-	}
-	.text-shadow--sm {
-		text-shadow: -2px 2px 6px #000;
-	}
 }
 
-/* @media screen and (max-width: 768px) {
-	.card--heading {
-		font-size: 50px;
-	}
-} */
-
-@media screen and (max-width: 480px) {
-	.text-shadow--lg {
-		text-shadow: -1px 1px 8px #000;
-	}
-	.text-shadow--sm {
-		text-shadow: -1px 1px 8px #000;
-	}
-
-	.card--heading-margin {
-		margin-top: -100px;
-	}
-}
