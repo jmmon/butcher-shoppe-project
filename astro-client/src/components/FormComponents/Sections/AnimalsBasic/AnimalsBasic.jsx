@@ -2,7 +2,7 @@
 // import * as React from 'preact';
 import {useState} from "preact/compat";
 
-import LabelForm from "../../Labels/LabelForm";
+import LabelForm from "../../Labels/LabelForm/LabelForm";
 import InputForm from "../../InputForm/InputForm";
 import SelectForm from "../../../FormComponents/SelectForm/SelectForm";
 import Button from "../../../Button/Button";
