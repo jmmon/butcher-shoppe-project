@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "The Butcher Shoppe",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/preact": "^0.3.1",
+    "@astrojs/preact": "^0.3.2",
     "astro": "^1.0.0-beta.63",
-    "preact": "^10.8.2",
+    "preact": "^10.10.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.1.1"
   },
