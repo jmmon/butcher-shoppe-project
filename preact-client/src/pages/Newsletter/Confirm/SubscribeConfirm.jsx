@@ -5,6 +5,8 @@ import PageTitle from "components/PageTitle/PageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
+import Styles from "components/Subscribe/Subscribe.module.css";
+
 const confirmUri =
 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
 
@@ -12,16 +14,19 @@ const confirmUri =
 // 	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
 const listName = "Newsletter";
 
-function SubscribeConfirm({ isSubscribePage, id }) {
+export default function SubscribeConfirm({ isSubscribePage, id }) {
 	const [location, setLocation] = useLocation();
 	const confirmationId = id;
 
 	const [error, setError] = useState(null);
 
 	let timer = null;
-	timer = setTimeout(() => {
-		setError = null;
-	}, 10000);
+
+	const startRedirectTimer = () => {
+		timer = setTimeout(() => {
+			setLocation("/", { replace: true });
+		}, 3000);
+	}
 
 	useEffect(() => {
 		return () => {
@@ -43,45 +48,58 @@ function SubscribeConfirm({ isSubscribePage, id }) {
 
 				console.log(res.status);
 				if (res.status < 300) {
-					setLocation("/", { replace: true });
+					startRedirectTimer();
 				}
 			})
 			.catch((e) => {
 				setError(e);
-
 				console.log("SubscribeConfirm-POST axios error:", e);
 			});
-	}, [confirmationId, setLocation, location, isSubscribePage, setError]);
+	}, [confirmationId, setLocation, location, isSubscribePage, setError, startRedirectTimer]);
 
 	return (
 		<PageLayout
 			helmet={null}
-			title={<PageTitle bgImage={bgImage} title="Confirm Subscription"></PageTitle>}
+			title={
+				<PageTitle
+					bgImage={bgImage}
+					title="Confirm Subscription"
+				></PageTitle>
+			}
 		>
 			<div className="flex-col-jcenter-acenter">
 				{isSubscribePage && (
 					<>
-						<h2>Thanks For Joining Our Newsletter</h2>
-						<p>You will be redirected to our home page.</p>
+						<h2>Thanks For Joining Our Newsletter!</h2>
+						<p>
+							You will be redirected to our home page in a few
+							seconds.
+						</p>
 					</>
 				)}
 				{!isSubscribePage && (
-					<h2>Come back anytime to stay up to date!</h2>
-				)}
-				{!isSubscribePage && (
-					<p>You will be redirected to our home page.</p>
+					<>
+						<h2>Come back anytime to stay up to date!</h2>
+						<p>
+							You will be redirected to our home page in a few
+							seconds.
+						</p>
+					</>
 				)}
 				{error && (
-					<p className="subscribe_notification error">
-						There was an error with the confirmation:{" "}
-						{error.message}
+					<p
+						className={`${Styles.notification} ${Styles.show} ${Styles.error} card--content-width`}
+					>
+						There was an error with the confirmation. Please try
+						again from the email link, or contact us if you need
+						assistance!
+						<br />
+						Error message: {error.message}
 					</p>
 				)}
 			</div>
 		</PageLayout>
 	);
 }
-
-export default SubscribeConfirm;
 
 // TODO: migrate this function to the under-conostruction barnch so live testing can be performed behind the scenes before links are added in the confirmation emails.

@@ -10,24 +10,23 @@ import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
 import { Link } from "wouter";
+import TelLink from "components/TelLink/TelLink";
 
 function HowToOrder() {
 	return (
 		<PageLayout
 			helmet={
-			<Helmet>
-				<title>
-					How To Order | The Butcher Shoppe | Northport, WA
-				</title>
-				<meta
-					name="description"
-					content="All the info you should need to help you place your order. Have questions? Give us a call!"
-				/>
-			</Helmet>
+				<Helmet>
+					<title>
+						How To Order | The Butcher Shoppe | Northport, WA
+					</title>
+					<meta
+						name="description"
+						content="All the info you should need to help you place your order. Have questions? Give us a call!"
+					/>
+				</Helmet>
 			}
-			title={
-			<PageTitle title="How To Order" bgImage={bgTitle} />
-			}
+			title={<PageTitle title="How To Order" bgImage={bgTitle} />}
 			bottomNav={
 				<NavBottomButtons
 					prev={{ link: "/services", title: "Services" }}
@@ -40,9 +39,8 @@ function HowToOrder() {
 					<p>
 						Scheduling for our services is easy! Just fill out the{" "}
 						<Link href="/order">order form</Link> and submit your
-						order, or <a href="tel:15096907214">give us a call</a>{" "}
-						if you have any questions or would like to order over
-						the phone.
+						order, or <TelLink>give us a call</TelLink> if you have
+						any questions or would like to order over the phone.
 					</p>
 					<br />
 					<p>
@@ -50,11 +48,16 @@ function HowToOrder() {
 						for the mobile dispatch.
 					</p>
 					<br />
-					<p>
+					{/* <p>
 						After the mobile dispatch, while our meat processing
 						plant is still being prepared, we will offer to take
 						your carcass to a processor of your choice, and the
 						processor will handle the rest!
+					</p> */}
+					<p>
+						After the mobile dispatch, we will take your carcass(es)
+						to a meat processor of your choice, and they will handle
+						the rest!
 					</p>
 					{/* <br />
 							<p>
@@ -74,6 +77,16 @@ function HowToOrder() {
 									Start with your contact information
 								</summary>
 								<ul className="panel-shadow--light details_content line-height">
+									<li>
+										<p>
+											Head on over to our{" "}
+											<a href="/order" target="_blank">
+												Order
+											</a>{" "}
+											page, where you will find our order
+											form.
+										</p>
+									</li>
 									<li>
 										<p>
 											The first section is your basic
@@ -98,26 +111,35 @@ function HowToOrder() {
 						<li className="details_item">
 							<details>
 								<summary>Next, add your animal(s)</summary>
-									<ul className="panel-shadow--light details_content line-height">
-										<li>
-											<p>
-												Select a type of animal for
-												slaughter, and choose how many
-												of that animal you would like to
-												dispatch.
-											</p>
-										</li>
-										<li>
-											<p>
-												Do you have more animals you'd
-												like processed? Add more animal
-												types, and choose how many of
-												each animal.
-											</p>
-										</li>
-									</ul>
+								<ul className="panel-shadow--light details_content line-height">
+									<li>
+										<p>
+											Select a type of animal for
+											slaughter, and choose how many of
+											that animal type you have ready for
+											slaughter.
+										</p>
+									</li>
+									<li>
+										<p>
+											You may enter multiple types of
+											animals if you'd like to schedule
+											them all for the same day.
+										</p>
+									</li>
+									<li>
+										<p>
+											Have an animal not listed under our
+											animal types? Select "Other Animal"
+											and tell us what type you have, and
+											the animal count.{" "}
+											<TelLink>Give us a call</TelLink> if
+											you have any questions!
+										</p>
+									</li>
+								</ul>
 
-									{/* <h4 className="margin-1--top">
+								{/* <h4 className="margin-1--top">
 											Unsure about the cuts you would
 											like?
 										</h4>
@@ -144,7 +166,7 @@ function HowToOrder() {
 							<details>
 								<summary>
 									Select your preferred date, and an alternate
-									date
+									date or window
 								</summary>
 								<ul className="panel-shadow--light details_content line-height">
 									<li>
@@ -158,10 +180,15 @@ function HowToOrder() {
 										<p>
 											If for some reason we aren't
 											available on your preferred date, we
-											will use the alternate date. For the
-											alternate date, you may also choose
-											a date window by selecting a
-											starting date and an ending date.
+											will use the alternate date.
+										</p>
+									</li>
+									<li>
+										<p>
+											For the alternate date, you may also
+											choose a date window by selecting a
+											starting date and then an ending
+											date.
 										</p>
 									</li>
 								</ul>
@@ -177,6 +204,25 @@ function HowToOrder() {
 											make sure all your info is correct,
 											and submit your order using the
 											Submit button below the form!
+										</p>
+									</li>
+									<li>
+										<p>
+											Once submitted, we will email you a
+											copy of your order information to
+											the email address you provided. That
+											way, you will have a copy for your
+											records.{" "}
+										</p>
+									</li>
+									<li>
+										<p>
+											If you need to make any changes
+											after the order is submitted, you
+											may reply to the order email and we
+											will get back to you. Or feel free
+											to give us a{" "}
+											<TelLink>call!</TelLink>
 										</p>
 									</li>
 								</ul>

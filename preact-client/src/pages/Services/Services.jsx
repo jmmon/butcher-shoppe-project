@@ -12,18 +12,19 @@ import PageTitle from "components/PageTitle/PageTitle";
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 import PageLayout from "components/PageLayout/PageLayout";
+import TelLink from "components/TelLink/TelLink";
 
 function Services() {
 	return (
 		<PageLayout
 			helmet={
-        <Helmet>
+				<Helmet>
 					<title>
 						Our Services | The Butcher Shoppe | Northport, WA
 					</title>
 					<meta
 						name="description"
-						content="We currently offer our mobile slaughter service - no hassle of transporting animals, no kill floor!"
+						content="We currently offer our mobile slaughter service - no hassle of transporting animals, and no kill floor!"
 					/>
 				</Helmet>
 			}
@@ -45,13 +46,13 @@ function Services() {
 				<div className="card--width">
 					<div className="services-btns-container">
 						<Button
-							className="btns btn--large btn--outline"
+							className="btn btn--large btn--outline"
 							url="#slaughter"
 						>
 							Slaughter
 						</Button>
 						<Button
-							className="btns btn--outline btn--large"
+							className="btn btn--outline btn--large"
 							url="#processing"
 						>
 							Processing
@@ -61,8 +62,14 @@ function Services() {
 
 				<Card
 					title="What We Offer"
+					// paragraphs={[
+					// 	"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to a local shop of your choice, or once our Northport meat processing Shoppe is complete we will send it there to be processed.",
+					// 	"We also process wild game, like deer, elk, moose and bear",
+					// 	"Sorry, no poultry or rabbits!",
+					// ]}
 					paragraphs={[
-						"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to a local shop of your choice, or once our Northport meat processing Shoppe is complete we will send it there to be processed.",
+						"We serve the surrounding Stevens County area with our mobile farm slaughter truck. After dispatch, we will deliver your carcass to a local meat processing shop of your choice.",
+						"Our own meat processing Shoppe in downtown Northport is currently under construction, and once it is complete we will send carcasses there to be processed in-house.",
 						"We also process wild game, like deer, elk, moose and bear",
 						"Sorry, no poultry or rabbits!",
 					]}
@@ -79,11 +86,11 @@ function Services() {
 					// 	"We process wild game, including deer, elk, moose and bear.",
 					// ]}
 				>
-					<p className="">
+					<p>
 						Basic kill fees and average meat processing fees are
 						outlined below. Kill fees are paid in the field and
-						processing fees are paid upon pick-up at the downtown
-						Northport store. <a href="#map">(See map down below)</a>
+						processing fees are paid upon pick-up at your chosen
+						meat processing shop.
 					</p>
 				</Card>
 
@@ -155,7 +162,7 @@ function Services() {
 							Exotic Animals
 						</span>
 						<span className="prices-two-column">
-							<a href="tel:15096907214">Please Call Us</a>
+							<TelLink>Please Call Us</TelLink>
 						</span>
 					</div>
 					<div>
@@ -176,26 +183,24 @@ function Services() {
 								</li>
 							</ul>
 							<div className="prices-extra-call">
-								Please{" "}
-								<a href="tel:15096907214">give us a call</a> if
-								you have any questions on our pricing or extra
+								Please <TelLink>give us a call</TelLink> if you
+								have any questions on our pricing or extra
 								charges!
 							</div>
 						</Card>
-
 					</div>
 				</div>
 
 				<hr />
 
 				<div className="flex-col-jcenter" id="processing">
-					<Card
-						title="Processing"
-						bg={bgProcessing}
-						paragraphs={[
-							"Our goal is to best serve our customers, and, once completed, our Shoppe will be available for processing the carcasses in downtown Northport.",
-						]}
-					>
+					<Card title="Processing" bg={bgProcessing}>
+						<p>
+							Our goal is to best serve our customers, and, once
+							completed, our Shoppe in downtown <a href="#map">Northport</a> will
+							process your animal carcasses, giving you the cuts
+							you want from your animals.
+						</p>
 						<p>
 							Our meat processing Shoppe is currently under
 							construction. Subscribe to our{" "}

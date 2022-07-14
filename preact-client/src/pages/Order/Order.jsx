@@ -6,7 +6,7 @@ import "react-tabs/style/react-tabs.css";
 import axios from "axios";
 // import useFormPersist from "react-hook-form-persist";
 
-import styles from "./Order.module.css";
+import Styles from "./Order.module.css";
 
 import bgImage from "assets/images/image-1-3-cropped-55.jpg";
 import PageTitle from "components/PageTitle/PageTitle";
@@ -23,6 +23,7 @@ import DateSelector from "components/FormComponents/Sections/DateSelector/DateSe
 
 import PageLayout from "components/PageLayout/PageLayout";
 import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
+import TelLink from "components/TelLink/TelLink";
 
 const headers = { "Content-Type": "application/json" };
 
@@ -270,15 +271,13 @@ function Order() {
 				/>
 			}
 		>
-			<h3 className={`flex-jcenter-acenter ${styles.phone_heading}`}>
+			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				Please fill out the order form below, or give us a call at:
-				<a className={styles.phone} href="tel:15096406766">
-					(509) 640-6766
-				</a>
+				<TelLink className={Styles.phone}>(509) 640-6766</TelLink>
 			</h3>
 			<FormProvider {...methods}>
 				<form
-					className={`flex-col-acenter ${styles.form__center}`}
+					className={`flex-col-acenter ${Styles.form__center}`}
 					onSubmit={methods.handleSubmit(formHandleSubmit)}
 				>
 					<Tabs forceRenderTabPanel>
@@ -320,7 +319,7 @@ function Order() {
 						</TabPanel>
 					</Tabs>
 
-					<div className={styles.heading_container}>
+					<div className={Styles.heading_container}>
 						<h4 className="order-form--before-submitting">
 							Please Double Check Your Information Before
 							Submitting!
@@ -328,9 +327,9 @@ function Order() {
 					</div>
 
 					<p
-						className={`${styles.notification} ${
+						className={`${Styles.notification} ${
 							Object.keys(methods.formState.errors).length > 0
-								? `${styles.show} ${styles.error}`
+								? `${Styles.show} ${Styles.error}`
 								: ""
 						}`}
 					>
@@ -340,7 +339,7 @@ function Order() {
 					<button
 						type="submit"
 						className={`${
-							styles.submit
+							Styles.submit
 						} btn btn--outline btn--large ${
 							responseFromSubmitOrder.isLoading
 								? "btn--pending"
@@ -362,11 +361,11 @@ function Order() {
 					</button>
 
 					<p
-						className={`${styles.notification} ${
+						className={`${Styles.notification} ${
 							responseFromSubmitOrder.error
-								? `${styles.show} ${styles.error}`
+								? `${Styles.show} ${Styles.error}`
 								: responseFromSubmitOrder.data
-								? `${styles.show} ${styles.success}`
+								? `${Styles.show} ${Styles.success}`
 								: ""
 						}`}
 					>
@@ -378,12 +377,10 @@ function Order() {
 					</p>
 				</form>
 			</FormProvider>
-			<h3 className={`flex-jcenter-acenter ${styles.phone_heading}`}>
+			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				If you have any questions or need to make adjustments, give us a
 				call at:
-				<a className={styles.phone} href="tel:15096406766">
-					(509) 640-6766
-				</a>
+				<TelLink className={Styles.phone}>(509) 640-6766</TelLink>
 			</h3>
 		</PageLayout>
 	);

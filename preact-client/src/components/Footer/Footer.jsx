@@ -5,6 +5,7 @@ import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "../FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import LogoComponent from "assets/logo/LogoComponent";
+import TelLink from "components/TelLink/TelLink";
 
 const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
@@ -74,12 +75,7 @@ function Footer() {
 			>
 				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
 
-				<a
-					className={`main-link text-center ${Styles.heading}`}
-					href="tel:15096406766"
-				>
-					(509) 640-6766
-				</a>
+				<TelLink className={`main-link text-center ${Styles.heading}`}>(509) 640-6766</TelLink>
 			</section>
 
 			<section

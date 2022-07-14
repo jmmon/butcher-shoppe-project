@@ -36,28 +36,28 @@ function Navbar() {
 							Services
 						</Link>
 						<Link
-							href="/meet-the-team"
-							className={`${Styles.menu_item} ${Styles.links}`}
-						>
-							Meet The Team
-						</Link>
-						<Link
 							href="/how-to-order"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							How To Order
 						</Link>
 						<Link
-							href="/FAQ"
-							className={`${Styles.menu_item} ${Styles.links}`}
-						>
-							FAQ
-						</Link>
-						<Link
 							href="/order"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Order
+						</Link>
+						<Link
+							href="/meet-the-team"
+							className={`${Styles.menu_item} ${Styles.links}`}
+						>
+							Meet The Team
+						</Link>
+						<Link
+							href="/FAQ"
+							className={`${Styles.menu_item} ${Styles.links}`}
+						>
+							FAQ
 						</Link>
 						<a
 							href="#more-links"

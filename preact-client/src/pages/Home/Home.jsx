@@ -13,12 +13,12 @@ export default function Home() {
 			helmet={
 				<Helmet>
 					<title>
-						The Butcher Shoppe: Processing & Mobile Dispatch |
-						Northport, WA
+						The Butcher Shoppe: Mobile Slaughter Truck | Northport,
+						WA
 					</title>
 					<meta
 						name="description"
-						content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile slaughter and will soon provide meat processing. Check out our newsletter!"
+						content="Serving the tri-county area in northeast Washington, The Butcher Shoppe's Mobile Slaughter Truck brings our dispatch service to you! Check out our newsletter!"
 					/>
 				</Helmet>
 			}
@@ -39,7 +39,8 @@ export default function Home() {
 				<Card
 					title="Welcome to The Northport Butcher Shoppe!"
 					paragraphs={[
-						"Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter and custom butchery.",
+						"Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter.",
+						// "Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter and custom butchery.",
 						"With our mobile slaughter truck, we provide animal slaughter conveniently on-site at your farm.",
 					]}
 				>
@@ -47,8 +48,8 @@ export default function Home() {
 						Our meat processing Shoppe in{" "}
 						<a href="#map">Northport</a> is currently under
 						construction. Once complete, we will be able to process
-						your meat in-house, helping bring your favorite cuts
-						from your pasture to your table!
+						your animal carcasses in-house, helping bring your
+						favorite cuts from your pasture to your table!
 					</p>
 					<p>
 						We slaughter all sorts of larger animals, including
@@ -62,11 +63,22 @@ export default function Home() {
 				<Card
 					title="How It Works"
 					paragraphs={[
-						"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass.",
-						"If you decide to send the carcass back to our Shoppe, we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
-						"Our truck and our facility are WSDA inspected.",
+						"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass for you.",
+						// "If you decide to send the carcass back to our Shoppe, we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
+						"Coming soon, we will offer our own in-house meat processing at our Shoppe, where we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
 					]}
-				/>
+				>
+					<p>
+						Stay up to date on the progress of our Shoppe by
+						subscribing to our{" "}
+						<a href="/newsletter/subscribe">newsletter.</a> When our
+						Butcher Shoppe in downtown Northport is operational, our{" "}
+						<a href="/newsletter/subscribe">newsletter</a>{" "}
+						subscribers will be the first to know!
+					</p>
+
+					<p>Our truck and our facility are WSDA inspected.</p>
+				</Card>
 			</div>
 		</PageLayout>
 	);

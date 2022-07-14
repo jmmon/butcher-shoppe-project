@@ -25,7 +25,7 @@ function Faq() {
 		},
 		{
 			question: "When will your processing Shoppe be open for business?",
-			answer: 'Our Shoppe is currently under construction and our current best estimate for when it will be opened is this fall, 2022. Subscribe to our <a href="/newsletter/subscribe">Newsletter</a> to be notified when the Shoppe opens!',
+			answer: 'Our Shoppe is currently under construction and our current best estimate for when it will be operational is in 2023. Subscribe to our <a href="/newsletter/subscribe">Newsletter</a> to be notified when the Shoppe opens!',
 		},
 		{
 			question: `Do you raise animals for sale?`,
