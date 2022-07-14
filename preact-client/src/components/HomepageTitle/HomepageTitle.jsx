@@ -8,7 +8,7 @@ import Styles from "./HomepageTitle.module.css";
 import Button from "components/Button/Button";
 import Images from "./Images.js";
 
-function HomepageTitle({ simple = false, title = "", subtitle = "" }) {
+function HomepageTitle({ simple = false, title = "", subtitle = "", subtext = "" }) {
 	const properties = {
 		duration: 8000,
 		transitionDuration: 800,
@@ -38,16 +38,16 @@ function HomepageTitle({ simple = false, title = "", subtitle = "" }) {
 				))}
 			</Fade>
 
-			<div className={`flex-jcenter-acenter ${Styles.content_wrapper}`}>
+			<div className={`flex-col-jaround-acenter ${Styles.content_wrapper}`}>
 				<div
-					className={`flex-jcenter-acenter-wrap ${Styles.content_container}`}
+					className={`flex-jcenter-wrap ${Styles.content_container}`}
 				>
 					<h1 className={`${Styles.title} text-shadow--lg`}>
 						{title}
 					</h1>
-					<p className={`${Styles.subtitle} text-shadow--sm`}>
+					<h2 className={`${Styles.subtitle} text-shadow--sm`}>
 						{subtitle}
-					</p>
+					</h2>
 					
 					<Button
 						className={`${Styles.hero_btn} btn--outline btn--large`}
@@ -62,7 +62,13 @@ function HomepageTitle({ simple = false, title = "", subtitle = "" }) {
 					>
 						How to Order
 					</Button>
+					
 				</div>
+
+
+				<p className={`${Styles.subtext} flex text-shadow--lg`}>
+						<i>{subtext}</i>
+					</p>
 			</div>
 		</section>
 	);

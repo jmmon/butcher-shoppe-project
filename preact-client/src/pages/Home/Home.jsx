@@ -25,7 +25,9 @@ export default function Home() {
 			title={
 				<HomepageTitle
 					title="The Butcher Shoppe"
-					subtitle="Serving Northeast Washington State"
+					subtitle="Mobile Farm Slaughter"
+					subtext="Serving Northeast Washington State"
+
 				/>
 			}
 			bottomNav={
