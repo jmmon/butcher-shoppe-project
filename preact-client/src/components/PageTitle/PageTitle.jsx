@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./PageTitle.module.css"
+import Styles from "./PageTitle.module.css"
 
 function PageTitle({
 	title = "",
@@ -10,21 +10,21 @@ function PageTitle({
 	children = null,
 }) {
 	return (
-		<div className={`panel-shadow--dark ${styles.container}`}>
+		<div className={`panel-shadow--dark ${Styles.container}`}>
 
 		<section
-			className={`${styles.image} flex-col-acenter-jcenter ${styles.title__height}  inset-box-shadow--dark `}
+			className={`${Styles.image} flex-col-acenter-jcenter ${Styles.title__height}  inset-box-shadow--dark `}
 			style={{
 				background: `url(${bgImage}) center center/cover no-repeat`,
 				backgroundPosition: `${position}`,
 			}}
 		>
-			<div className={styles.title__container}>
+			<div className={Styles.title__container}>
 				<h1
 					className={
 						smaller === "true" || smaller === true
-							? `text-shadow--lg ${styles.title__heading} ${styles.smaller}`
-							: `text-shadow--lg ${styles.title__heading}`
+							? `text-shadow--lg ${Styles.title__heading} ${Styles.smaller}`
+							: `text-shadow--lg ${Styles.title__heading}`
 					}
 				>
 					{title}

@@ -8,19 +8,20 @@
 	display: flex;
 	flex: 1;
 	align-items: center;
-	/* z-index: 1; */
 	gap: 0.5rem;
-	/* font-size: min(4vw, 1rem); */
 	font-size: clamp(0.6rem, 4vw, 1rem);
 }
 
 
-div.indicator {
+.indicator {
+	--main-color: 223, 213, 213;
+	--active-bg-color: 112, 112, 112;
+	--white-rgb: 255, 255, 255;
+
 	cursor: pointer;
-	color: rgb(223, 213, 213);
-	/* color: #fff; */
+	color: rgb(var(--main-color));
 	background-color: rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(223, 213, 213, 0.8);
+	border: 1px solid rgba(var(--main-color), 0.8);
 	border-radius: 2px;
 	padding: 0.2rem;
 	font-size: 0.8em;
@@ -31,24 +32,21 @@ div.indicator {
 	
 	z-index: 3;
 	transition: all 100ms ease-in-out;
-		box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.8);
 }
 
 .indicator.active {
-	color: #fff;
+	color: rgb(var(--white-rgb));
 	text-shadow: -2px 2px 6px rgba(0, 0, 0, 0.8);
-  background: rgba(122,122,122,0.9);
+  background: rgba(var(--active-bg-color), 0.9);
 	font-size: 1em;
 } 
 
 .indicator:hover {
-  background: rgba(112,112,112,1);
-	color: #fff;
-	box-shadow: inset 0px 0px 4px rgba(255,255,255,0.5);
-
+  background: rgba(var(--active-bg-color), 1);
+	color: rgb(var(--white-rgb));
+	box-shadow: inset 0px 0px 4px rgba(var(--white-rgb), 0.5);
 }
-
-
 
 
 

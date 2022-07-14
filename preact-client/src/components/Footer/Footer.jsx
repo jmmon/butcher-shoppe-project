@@ -1,8 +1,8 @@
 import React, { useMemo } from "react";
-import styles from "./Footer.module.css";
+import Styles from "./Footer.module.css";
 
 import Subscribe from "components/Subscribe/Subscribe";
-import FooterSuspenseContainer from "./FooterSuspenseContainer";
+import FooterSuspenseContainer from "../FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import LogoComponent from "assets/logo/LogoComponent";
 
@@ -39,43 +39,43 @@ function Footer() {
 
 	return (
 		<footer
-			className={`flex-col-jcenter panel-shadow--dark ${styles.container}`}
+			className={`flex-col-jcenter panel-shadow--dark ${Styles.container}`}
 			id="footer-container"
 		>
-			<section className={`flex-col-jcenter-acenter ${styles.section}`}>
-				<div className={`flex-wrap-jcenter ${styles.join_our_newsletter_container} ${styles.mobile_margin}`}>
-					<h2 className={`${styles.heading}`}>Join our</h2>
+			<section className={`flex-col-jcenter-acenter ${Styles.section}`}>
+				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
+					<h2 className={`${Styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className={`${styles.heading} underline`}
+						className={`${Styles.heading} underline`}
 					>
 						newsletter
 					</LinkScrollUp>
-					<h2 className={`${styles.heading}`}>
+					<h2 className={`${Styles.heading}`}>
 						to receive periodic updates!
 					</h2>
 				</div>
-				<div className={`flex-wrap-jcenter ${styles.join_our_newsletter_container} ${styles.mobile_margin}`}>
-					<p className={styles.subscription_text}>You can</p>
+				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
+					<p className={Styles.subscription_text}>You can</p>
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						className={`${styles.subscription_text} underline ${styles.unsubscribe_link}`}
+						className={`${Styles.subscription_text} underline ${Styles.unsubscribe_link}`}
 					>
 						unsubscribe
 					</LinkScrollUp>
-					<p className={styles.subscription_text}>at any time.</p>
+					<p className={Styles.subscription_text}>at any time.</p>
 				</div>
 
 				<Subscribe />
 			</section>
 
 			<section
-				className={`flex-jcenter-acenter-wrap ${styles.section} gap-1 ${styles.mobile_margin}`}
+				className={`flex-jcenter-acenter-wrap ${Styles.section} gap-1 ${Styles.mobile_margin}`}
 			>
-				<h2 className={`${styles.heading}`}>Give Us A Call: </h2>
+				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
 
 				<a
-					className={`white-link text-center ${styles.heading}`}
+					className={`main-link text-center ${Styles.heading}`}
 					href="tel:15096406766"
 				>
 					(509) 640-6766
@@ -83,20 +83,20 @@ function Footer() {
 			</section>
 
 			<section
-				className={`flex-jcenter-acenter-wrap ${styles.contact_map_container} ${styles.section}`}
+				className={`flex-jcenter-acenter-wrap ${Styles.contact_map_container} ${Styles.section}`}
 			>
 				{contactMemo}
 				{mapMemo}
 			</section>
 
 			<section
-				className={`flex-jcenter ${styles.section} ${styles.links}`}
+				className={`flex-jcenter ${Styles.section} ${Styles.links}`}
 				id="more-links"
 			>
-				<div className={`flex-jbetween ${styles.links_half} `}>
-					<div className={styles.links_column}>
-						<h2 className={`${styles.heading}`}>The Shoppe</h2>
-						<div className={`flex-col ${styles.link_items}`}>
+				<div className={`flex-jbetween ${Styles.links_half} `}>
+					<div className={Styles.links_column}>
+						<h2 className={`${Styles.heading}`}>The Shoppe</h2>
+						<div className={`flex-col ${Styles.link_items}`}>
 							<LinkScrollUp path="/">Home</LinkScrollUp>
 							<LinkScrollUp path="/meet-the-team">
 								Meet The Team
@@ -107,9 +107,9 @@ function Footer() {
 							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 						</div>
 					</div>
-					<div className={styles.links_column}>
-						<h2 className={`${styles.heading}`}>Ordering</h2>
-						<div className={`flex-col ${styles.link_items}`}>
+					<div className={Styles.links_column}>
+						<h2 className={`${Styles.heading}`}>Ordering</h2>
+						<div className={`flex-col ${Styles.link_items}`}>
 							<LinkScrollUp path="/services">
 								Services
 							</LinkScrollUp>
@@ -122,7 +122,7 @@ function Footer() {
 						</div>
 					</div>
 				</div>
-				<div className={`${styles.links_half} flex-jbetween`}>
+				<div className={`${Styles.links_half} flex-jbetween`}>
 					{/* <div className={styles.links_column}>
 						<div className={`flex-col ${styles.link_items}`}>
 							<h2 className={`${styles.heading}`}>
@@ -132,15 +132,15 @@ function Footer() {
 								href={facebookUrl}
 								target="_blank"
 								rel="noreferrer"
-								className={`white-link `}
+								className={`main-link `}
 							>
 								Facebook
 							</a>
 						</div>
 					</div> */}
-					<div className={styles.links_column}>
-						<h2 className={`${styles.heading}`}>Keep In Touch</h2>
-						<div className={`flex-col ${styles.link_items}`}>
+					<div className={Styles.links_column}>
+						<h2 className={`${Styles.heading}`}>Keep In Touch</h2>
+						<div className={`flex-col ${Styles.link_items}`}>
 							<LinkScrollUp path="/newsletter/subscribe">
 								Subscribe to our Newsletter
 							</LinkScrollUp>
@@ -151,7 +151,7 @@ function Footer() {
 								href={facebookUrl}
 								target="_blank"
 								rel="noreferrer"
-								className={`white-link `}
+								className={`main-link `}
 							>
 								Facebook
 							</a>
@@ -160,8 +160,8 @@ function Footer() {
 				</div>
 			</section>
 
-			<section className={`flex-jcenter-acenter ${styles.section}`}>
-				<div className={styles.back_to_top}>
+			<section className={`flex-jcenter-acenter ${Styles.section}`}>
+				<div className={Styles.back_to_top}>
 					<LinkScrollUp className="btn btn--primary">
 						Back To The Top
 					</LinkScrollUp>
@@ -169,7 +169,7 @@ function Footer() {
 			</section>
 
 			{/* <section className={`flex-jcenter-acenter ${styles.section} ${styles.logo_surround}`}> */}
-			<section className={`flex-jcenter-acenter ${styles.section}`}>
+			<section className={`flex-jcenter-acenter ${Styles.section}`}>
 				{/* <div className={styles.logo_surround}> */}
 				<LogoComponent
 					fills={{
@@ -182,29 +182,29 @@ function Footer() {
 					// 	// grey: "#888", // mountains
 					// 	//red //text
 					// }}
-					className={styles.banner_2}
+					className={Styles.banner_2}
 				/>
 				{/* </div> */}
 				{/* <LogoComponent fill="white" className={styles.banner} /> */}
 			</section>
 
-			<section className={`flex-col-acenter ${styles.social_media}`}>
+			<section className={`flex-col-acenter ${Styles.social_media}`}>
 				<div
-					className={`flex-jaround-acenter ${styles.social_media_wrap}`}
+					className={`flex-jaround-acenter ${Styles.social_media_wrap}`}
 				>
 					<LinkScrollUp
 						path="/"
-						className={`flex ${styles.social_name}`}
+						className={`flex ${Styles.social_name}`}
 					>
 						The Butcher Shoppe
 					</LinkScrollUp>
 
 					<div
-						className={`flex-acenter-jcenter gap-1 ${styles.social_icons}`}
+						className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
 					>
 						<h4>Find Us On:</h4>
 						<a
-							className={`white-link ${styles.social_small_font}`}
+							className={`main-link ${Styles.social_small_font}`}
 							href={facebookUrl}
 							target="_blank"
 							rel="noreferrer"
@@ -214,7 +214,7 @@ function Footer() {
 						</a>
 					</div>
 					<small
-						className={`${styles.website_rights} ${styles.social_small_font}`}
+						className={`${Styles.website_rights} ${Styles.social_small_font}`}
 					>
 						C 2022
 					</small>

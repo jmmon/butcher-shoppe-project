@@ -1,11 +1,11 @@
-import styles from "./SectionContainer.module.css";
+import Styles from "./SectionContainer.module.css";
 
 export default function SectionContainer({ title, children }) {
 	return (
-		<div className={styles.container}>
-			<span className={styles.header}>{title}</span>
-			<div className={styles.content_outer}>
-				<div className={styles.content_inner}>
+		<div className={Styles.container}>
+			<span className={Styles.header}>{title}</span>
+			<div className={Styles.content_outer}>
+				<div className={Styles.content_inner}>
 
 					{children}
 				</div>

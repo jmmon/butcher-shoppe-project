@@ -1,4 +1,4 @@
-.contact__form {
+.form {
 	margin: auto;
 	height: 100%;
 	width: 100%;
@@ -7,37 +7,33 @@
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 4px;
-	/* flex-wrap: wrap;  */
-	/* align-items: center; */
-	/* justify-content: center; */
 }
 
-.double-container {
+.double_input {
 	display: flex;
 	padding: 2px;
 }
 
-.input__container {
+.container {
 	padding: 2px;
 }
 
-.input__small {
+.small {
 	width: 50%;
 }
 
-.input__large {
+.large {
 	width: 100%;
 }
 
-.contact__label {
+.label {
 	font-size: 0.9rem;
 	padding-left: 1rem;
 	text-align: left;
-	/* color: #fff; */
 	color: var(--text-dark);
 }
 
-.contact__input {
+.input {
 	border: 1px solid #fff;
 	display: block;
 	width: 100%;
@@ -45,41 +41,43 @@
 	margin-top: 4px;
 	padding: 5px;
 }
-.input__grow {
+
+.grow {
 	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 }
 
-.contact__textarea {
+.textarea {
 	resize: none;
 	flex-grow: 1
 }
 
-.input__topic {
-	/* color: #757575; */
-}
 
-.topic__label {
+.label.topic {
 	display: flex;
 	align-items: center;
 }
 
-.contact__form__submit {
+.input.topic {
+
+}
+
+.submit {
 	margin-top: 5px;
 	width: 100%;
-	
+
 }
 
 
 /* Focus validation highlighting */
-.contact__input:focus:required:invalid {
+.input:focus:required:invalid {
 	border: 1px solid red;
 	background-color: var(--input-required--invalid);
 	outline: none;
 }
 
-.contact__input:focus:required:valid {
+.input:focus:required:valid {
 	border: 1px solid green;
 	background-color: var(--input-required--valid);
 	outline: none;
@@ -89,7 +87,7 @@
 
 /* Notification styles */
 
-.contact__form__notification {
+.notification {
 	margin: 0;
 	padding: 0;
 	font-size: 1rem;
@@ -101,18 +99,18 @@
 	transition: all 0.2s ease;
 }
 
-.contact__form__notification.show {
+.notification.show {
 	margin: 12px auto;
 	padding: 8px;
 	max-height: 100px;
 }
 
-.contact__form__notification.error {
+.notification.error {
 	background-color: rgba(255, 223, 223, 1);
 	border: 1px solid red;
 }
 
-.contact__form__notification.success {
+.notification.success {
 	background-color: rgba(223, 255, 223, 1);
 	border: 1px solid green;
 }

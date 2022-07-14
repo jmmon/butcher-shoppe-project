@@ -360,3 +360,53 @@ p {
 	}
 }
 
+
+
+
+
+/* Link styles */
+
+.main-link {
+	color: var(--text-dark);
+	text-decoration: none;
+	cursor: pointer;
+	transition: transform 0.1s ease-in-out;
+}
+
+.main-link:hover {
+	transform: scale(1.05);
+}
+
+.main-link.underline {
+	cursor: pointer;
+	display: inline;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/* Card styles */
+
+.card {
+	border-radius: var(--card-border-radius);
+}
+
+.card--font-size { 
+	font-size: var(--card--font-size);
+}
+
+.card--width {
+	width: 92%;
+	margin: auto;
+}
+
+.card--content-width {
+	max-width: 65ch;
+	margin: auto;
+}

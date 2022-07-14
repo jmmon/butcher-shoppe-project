@@ -1,7 +1,5 @@
 import React from "react";
-import {Link, useLocation} from "wouter";
-
-import "./LinkScrollUp.css";
+import { Link, useLocation } from "wouter";
 
 function LinkScrollUp({ className = '', path, children }) {
 	const [location, setLocation] = useLocation();
@@ -16,13 +14,13 @@ function LinkScrollUp({ className = '', path, children }) {
 			{location === path || path === undefined ? (
 				<span
 				tabIndex="0"
-					className={`white-link ${className}`}
+					className={`main-link ${className}`}
 					onClick={() => scrollToTop()}
 				>
 					{children}
 				</span>
 			) : (
-				<Link className={`white-link ${className}`} href={path}>
+				<Link className={`main-link ${className}`} href={path}>
 					{children}
 				</Link>
 			)}

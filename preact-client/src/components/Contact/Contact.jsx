@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Contact.css";
+
+import Styles from "./Contact.module.css";
 
 const contactBoxBackendUri =
 	"https://thenorthportbutchershoppe.com/server/contact";
@@ -120,16 +121,16 @@ const Contact = () => {
 	};
 
 	return (
-		<form className="contact__form" onSubmit={formHandleSubmit}>
-			<div className="double-container">
-				<div className="input__container input__small">
-					<label className="contact__label" htmlFor="contact__name">
+		<form className={Styles.form} onSubmit={formHandleSubmit}>
+			<div className={Styles.double_input}>
+				<div className={`${Styles.container} ${Styles.small}`}>
+					<label className={Styles.label} htmlFor="contact__name">
 						Name:
 					</label>
 
 					<input
+						className={Styles.input}
 						type="text"
-						className="contact__input"
 						name="contact__name"
 						placeholder="Your name"
 						value={input.contact__name}
@@ -138,14 +139,14 @@ const Contact = () => {
 					/>
 				</div>
 
-				<div className="input__container input__small">
-					<label className="contact__label" htmlFor="contact__email">
+				<div className={`${Styles.container} ${Styles.small}`}>
+					<label className={Styles.label} htmlFor="contact__email">
 						Email:
 					</label>
 
 					<input
+						className={Styles.input}
 						type="email"
-						className="contact__input"
 						name="contact__email"
 						placeholder="Your email"
 						value={input.contact__email}
@@ -155,16 +156,16 @@ const Contact = () => {
 				</div>
 			</div>
 
-			<div className="input__container input__large">
+			<div className={`${Styles.container} ${Styles.large}`}>
 				<label
-					className="contact__label topic__label"
+					className={`${Styles.label} ${Styles.topic}`}
 					htmlFor="contact__topic"
 				>
 					Topic:
 				</label>
 
 				<select
-					className="input__topic contact__input"
+					className={`${Styles.input} ${Styles.topic}`}
 					name="contact__topic"
 					id="topic"
 					onChange={inputHandleChange}
@@ -177,14 +178,16 @@ const Contact = () => {
 				</select>
 			</div>
 
-			<div className="input__container input__large input__grow">
-				<label className="contact__label" htmlFor="contact__textarea">
+			<div 
+			className={`${Styles.container} ${Styles.large} ${Styles.grow}`}
+			>
+				<label className={Styles.label} htmlFor="contact__textarea">
 					How can we help you?
 				</label>
 
 				<textarea
 					type="text"
-					className="contact__input contact__textarea"
+					className={`${Styles.input} ${Styles.textarea}`}
 					name="contact__textarea"
 					placeholder="Type here..."
 					onChange={inputHandleChange}
@@ -195,7 +198,7 @@ const Contact = () => {
 
 			<button
 				type="submit"
-				className={`contact__form__submit btn btn--outline btn--large ${
+				className={`${Styles.submit} btn btn--outline btn--large ${
 					responseFromContactBox.isLoading
 						? "btn--pending"
 						: responseFromContactBox.data
@@ -216,11 +219,11 @@ const Contact = () => {
 			</button>
 
 			<p
-				className={`contact__form__notification ${
+				className={`${Styles.notification} ${
 					responseFromContactBox.error
-						? "show error"
+						? `${Styles.show} ${Styles.error}`
 						: responseFromContactBox.data
-						? "show success"
+						? `${Styles.show} ${Styles.success}`
 						: ""
 				}`}
 			>
