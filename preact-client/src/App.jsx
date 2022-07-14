@@ -44,11 +44,13 @@ function App() {
 				<Header />
 				<Navbar />
 				<div className="website-content-container">
+
 					<Suspense
 						fallback={
 							<Fallback />
 						}
 					>
+						
 						<Switch>
 							<Route path="/">
 								<Home />
@@ -110,7 +112,9 @@ function App() {
 								<NotFound />
 							</Route>
 						</Switch>
+
 					</Suspense>
+
 					<Footer />
 				</div>
 			</ScrollToTopOnClickLink>
