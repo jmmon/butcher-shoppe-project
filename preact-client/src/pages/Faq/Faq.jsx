@@ -1,41 +1,16 @@
 import React from "react";
-import styles from "./Faq.module.css";
+import Styles from "./Faq.module.css";
 import Helmet from "react-helmet";
 import bgImage from "assets/images/image-1-132-cropped-55.jpg";
 //height 412.567px
 //width 1374.76px
 
 import PageTitle from "components/PageTitle/PageTitle";
-import FaqSection from "components/FaqSection/FaqSection";
 import PageLayout from "components/PageLayout/PageLayout";
-
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
-import SectionContainer from "components/SectionContainer/SectionContainer";
+import GeneralQuestionsSection from "components/GeneralQuestionsSection/GeneralQuestionsSection";
 
 function Faq() {
-	const generalFAQ = [
-		{
-			question: "What services do you provide?",
-			answer: `We currently provide a mobile slaughter service to the greater Northport and Colville area in north-eastern Washington state. Coming soon, we will also provide a meat processing service at our Shoppe, located in <a href="#map">downtown Northport, WA.</a> Subscribe to our <a href="/newsletter/subscribe">Newsletter</a> to be the first to know when our processing Shoppe will open!`,
-		},
-		{
-			question: "Where are you located?",
-			answer: 'Right smack dab in the middle of <a href="#map">Northport, Washington!</a>',
-		},
-		{
-			question: "When will your processing Shoppe be open for business?",
-			answer: 'Our Shoppe is currently under construction and our current best estimate for when it will be operational is in 2023. Subscribe to our <a href="/newsletter/subscribe">Newsletter</a> to be notified when the Shoppe opens!',
-		},
-		{
-			question: `Do you raise animals for sale?`,
-			answer: `No, we only butcher and process farm animals from other farms. Check out our <a href="/services">Services page</a> for more information.`,
-		},
-		{
-			question: "Do you process poultry?",
-			answer: `Unfortunately, due to the time required we will not be processing any poultry. See our <a href="/services">Services page</a> for the list of animals we handle.`,
-		},
-	];
+	
 
 	// const slaughteringFAQ = [
 	// 	{
@@ -82,17 +57,22 @@ function Faq() {
 				/>
 			}
 		>
-			<div className={`flex-col-acenter ${styles.container}`}>
-				<Tabs forceRenderTabPanel>
-					<TabList>
-						<Tab>General Questions</Tab>
-					</TabList>
-					<TabPanel>
-						<SectionContainer title="General Questions">
-							<FaqSection questionList={generalFAQ} />
-						</SectionContainer>
-					</TabPanel>
-				</Tabs>
+			<div className={`flex-col-acenter ${Styles.container}`}>
+
+					<div className={Styles.tabbed}>
+						<input type="radio" id="faq-tab1" name="faq-css-tabs" checked />
+
+						<ul className={Styles.labels_container}>
+							<li className={Styles.label}>
+								<label for="faq-tab1">General Questions</label>
+							</li>
+						</ul>
+					
+						<div className={Styles.tab_content}>
+							<GeneralQuestionsSection />
+						</div>
+					</div>
+
 			</div>
 		</PageLayout>
 	);

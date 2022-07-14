@@ -196,11 +196,20 @@ function HowToOrder() {
 						</li>
 						<li className="details_item">
 							<details>
-								<summary>Double-check and submit!</summary>
+								<summary>Add any notes and submit!</summary>
 								<ul className="panel-shadow--light details_content line-height">
 									<li>
 										<p>
-											Done filling out the form? Check to
+											Have special instructions, or want
+											to leave notes with your order? Use
+											the Order Notes section to provide
+											any additional info that would make
+											things go easier.
+										</p>
+									</li>
+									<li>
+										<p>
+											Once you're done, check to
 											make sure all your info is correct,
 											and submit your order using the
 											Submit button below the form!
@@ -208,9 +217,9 @@ function HowToOrder() {
 									</li>
 									<li>
 										<p>
-											Once submitted, we will email you a
+											Once submitted, you will be emailed a
 											copy of your order information to
-											the email address you provided. That
+											the email address you provided under Contact Information. That
 											way, you will have a copy for your
 											records.{" "}
 										</p>
@@ -220,7 +229,7 @@ function HowToOrder() {
 											If you need to make any changes
 											after the order is submitted, you
 											may reply to the order email and we
-											will get back to you. Or feel free
+											will get back to you. Or, feel free
 											to give us a{" "}
 											<TelLink>call!</TelLink>
 										</p>

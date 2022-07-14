@@ -55,7 +55,7 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 				setError(e);
 				console.log("SubscribeConfirm-POST axios error:", e);
 			});
-	}, [confirmationId, setLocation, location, isSubscribePage, setError, startRedirectTimer]);
+	}, []);
 
 	return (
 		<PageLayout
@@ -64,7 +64,7 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 				<PageTitle
 					bgImage={bgImage}
 					title="Confirm Subscription"
-				></PageTitle>
+				/>
 			}
 		>
 			<div className="flex-col-jcenter-acenter">

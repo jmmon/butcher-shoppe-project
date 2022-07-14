@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { useForm, FormProvider } from "react-hook-form";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import axios from "axios";
 // import useFormPersist from "react-hook-form-persist";
 
@@ -280,7 +278,43 @@ function Order() {
 					className={`flex-col-acenter ${Styles.form__center}`}
 					onSubmit={methods.handleSubmit(formHandleSubmit)}
 				>
-					<Tabs forceRenderTabPanel>
+					<div className={Styles.tabbed}>
+						<input type="radio" id="order-tab1" name="order-css-tabs" defaultChecked={true}/>
+						<input type="radio" id="order-tab2" name="order-css-tabs" />
+						<input type="radio" id="order-tab3" name="order-css-tabs" />
+						<input type="radio" id="order-tab4" name="order-css-tabs" />
+
+						<ul className={Styles.labels_container}>
+							<li className={Styles.label}>
+								<label for="order-tab1">Contact Info</label>
+							</li>
+							<li className={Styles.label}>
+								<label for="order-tab2">Your Animal(s)</label>
+							</li>
+							<li className={Styles.label}>
+								<label for="order-tab3">Preferred Date</label>
+							</li>
+							<li className={Styles.label}>
+								<label for="order-tab4">Notes</label>
+							</li>
+						</ul>
+					
+						<div className={Styles.tab_content}>
+							<ContactInfoSection />
+						</div>
+						<div className={Styles.tab_content}>
+							<AnimalsBasic />
+						</div>
+						<div className={Styles.tab_content}>
+							<DateSelector />
+						</div>
+						<div className={Styles.tab_content}>
+							<OrderNotes />
+						</div>
+					</div>
+
+
+					{/* <Tabs forceRenderTabPanel>
 						<TabList>
 							<Tab>Contact Info</Tab>
 							<Tab>Your Animal(s)</Tab>
@@ -292,6 +326,17 @@ function Order() {
 						</TabPanel>
 						<TabPanel>
 							<AnimalsBasic />
+
+						</TabPanel>
+						<TabPanel>
+							<DateSelector />
+						</TabPanel>
+						<TabPanel>
+							<OrderNotes />
+						</TabPanel>
+					</Tabs> */}
+
+
 							{/* <SectionContainer title="Animal Info"> */}
 								{/* <Button onClick={addAnimal}>
 										Add Another Animal
@@ -310,14 +355,6 @@ function Order() {
 										<option value="hog">Hog</option>
 									</select> */}
 							{/* </SectionContainer> */}
-						</TabPanel>
-						<TabPanel>
-							<DateSelector />
-						</TabPanel>
-						<TabPanel>
-							<OrderNotes />
-						</TabPanel>
-					</Tabs>
 
 					<div className={Styles.heading_container}>
 						<h4 className="order-form--before-submitting">
