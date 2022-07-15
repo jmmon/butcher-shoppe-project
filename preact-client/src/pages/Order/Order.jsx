@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Helmet from "react-helmet";
 import { useForm, FormProvider } from "react-hook-form";
 import axios from "axios";
 // import useFormPersist from "react-hook-form-persist";
@@ -250,7 +249,7 @@ function Order() {
 	return (
 		<PageLayout
 			helmet={
-				<Helmet>
+				<>
 					<title>
 						Order Page | The Butcher Shoppe | Northport, WA
 					</title>
@@ -258,7 +257,7 @@ function Order() {
 						name="description"
 						content="Place your order for our mobile slaughter service! Coming soon, we will offer meat processing!"
 					/>
-				</Helmet>
+				</>
 			}
 			title={
 				<PageTitle

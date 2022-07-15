@@ -26,7 +26,7 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 		timer = setTimeout(() => {
 			setLocation("/", { replace: true });
 		}, 3000);
-	}
+	};
 
 	useEffect(() => {
 		return () => {
@@ -59,13 +59,18 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 
 	return (
 		<PageLayout
-			helmet={null}
-			title={
-				<PageTitle
-					bgImage={bgImage}
-					title="Confirm Subscription"
-				/>
+			helmet={
+				<>
+					<title>
+						Our Newsletter | The Butcher Shoppe | Northport, WA
+					</title>
+					<meta
+						name="description"
+						content="Join our twice-monthly newsletter to stay up-to-date on your local Butcher Shoppe news."
+					/>
+				</>
 			}
+			title={<PageTitle bgImage={bgImage} title="Confirm Subscription" />}
 		>
 			<div className="flex-col-jcenter-acenter">
 				{isSubscribePage && (

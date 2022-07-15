@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 
@@ -11,7 +12,9 @@ function PageLayout({
 }) {
 	return (
 		<>
+		<Helmet>
 			{helmet}
+		</Helmet>
 			<main>
 				{title}
 				<WhitePageBackground separate={separate}>

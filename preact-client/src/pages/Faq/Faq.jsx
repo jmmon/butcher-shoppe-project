@@ -1,6 +1,5 @@
 import React from "react";
 import Styles from "./Faq.module.css";
-import Helmet from "react-helmet";
 import bgImage from "assets/images/image-1-132-cropped-55.jpg";
 //height 412.567px
 //width 1374.76px
@@ -38,7 +37,7 @@ function Faq() {
 	return (
 		<PageLayout
 			helmet={
-				<Helmet>
+				<>
 					<title>
 						Frequently Asked Questions | The Butcher Shoppe |
 						Northport, WA
@@ -47,7 +46,7 @@ function Faq() {
 						name="description"
 						content="Have questions about our services? Here's some common Q's and A's."
 					/>
-				</Helmet>
+				</>
 			}
 			title={
 				<PageTitle

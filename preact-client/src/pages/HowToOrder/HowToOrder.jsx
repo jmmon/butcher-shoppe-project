@@ -1,6 +1,5 @@
 import React from "react";
 import "./HowToOrder.css";
-import Helmet from "react-helmet";
 import PageLayout from "components/PageLayout/PageLayout";
 
 import bgTitle from "assets/images/image-1-116-cropped-55.jpg";
@@ -16,7 +15,7 @@ function HowToOrder() {
 	return (
 		<PageLayout
 			helmet={
-				<Helmet>
+				<>
 					<title>
 						How To Order | The Butcher Shoppe | Northport, WA
 					</title>
@@ -24,7 +23,7 @@ function HowToOrder() {
 						name="description"
 						content="All the info you should need to help you place your order. Have questions? Give us a call!"
 					/>
-				</Helmet>
+				</>
 			}
 			title={<PageTitle title="How To Order" bgImage={bgTitle} />}
 			bottomNav={

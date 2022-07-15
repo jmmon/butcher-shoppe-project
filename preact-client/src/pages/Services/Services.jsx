@@ -1,7 +1,6 @@
 import React from "react";
 import "./Services.css";
 import { Link } from "wouter";
-import Helmet from "react-helmet";
 
 import bgTitle from "assets/images/image-1-2-cropped-55.jpg";
 import bgSlaughter from "assets/images/image-1-124-cropped-55.jpg";
@@ -18,7 +17,7 @@ function Services() {
 	return (
 		<PageLayout
 			helmet={
-				<Helmet>
+				<>
 					<title>
 						Our Services | The Butcher Shoppe | Northport, WA
 					</title>
@@ -26,7 +25,7 @@ function Services() {
 						name="description"
 						content="We currently offer our mobile slaughter service - no hassle of transporting animals, and no kill floor!"
 					/>
-				</Helmet>
+				</>
 			}
 			title={
 				<PageTitle
