@@ -286,16 +286,16 @@ function Order() {
 
 						<ul className={Styles.labels_container}>
 							<li className={Styles.label}>
-								<label for="order-tab1">Contact Info</label>
+								<label htmlFor="order-tab1">Contact Info</label>
 							</li>
 							<li className={Styles.label}>
-								<label for="order-tab2">Your Animal(s)</label>
+								<label htmlFor="order-tab2">Your Animal(s)</label>
 							</li>
 							<li className={Styles.label}>
-								<label for="order-tab3">Preferred Date</label>
+								<label htmlFor="order-tab3">Preferred Date</label>
 							</li>
 							<li className={Styles.label}>
-								<label for="order-tab4">Notes</label>
+								<label htmlFor="order-tab4">Notes</label>
 							</li>
 						</ul>
 					

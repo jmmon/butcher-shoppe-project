@@ -16,7 +16,7 @@ const Question = ({ question, answer }) => {
 	);
 };
 
-function FaqSection({ questionList }) {
+export default function FaqSection({ questionList }) {
 	return (
 		<div className={`${Styles.container} flex-col gap-4 card--font-size`}>
 			{questionList.map((question, index) => (
@@ -29,5 +29,3 @@ function FaqSection({ questionList }) {
 		</div>
 	);
 }
-
-export default FaqSection;

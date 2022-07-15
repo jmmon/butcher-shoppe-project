@@ -14,7 +14,7 @@ import PageLayout from "components/PageLayout/PageLayout";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 
-function Services() {
+export default function Services() {
 	return (
 		<PageLayout
 			helmet={
@@ -231,5 +231,3 @@ function Services() {
 		</PageLayout>
 	);
 }
-
-export default Services;

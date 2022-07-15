@@ -35,11 +35,11 @@ export default function Faq() {
 			<div className={`flex-col-acenter ${Styles.container}`}>
 
 					<div className={Styles.tabbed}>
-						<input type="radio" id="faq-tab1" name="faq-css-tabs" checked />
+						<input type="radio" id="faq-tab1" name="faq-css-tabs" defaultChecked />
 
 						<ul className={Styles.labels_container}>
 							<li className={Styles.label}>
-								<label for="faq-tab1">General Questions</label>
+								<label htmlFor="faq-tab1">General Questions</label>
 							</li>
 						</ul>
 					
