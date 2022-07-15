@@ -4,12 +4,13 @@ import PageTitle from "components/PageTitle/PageTitle";
 import bgImage from "assets/images/image-1-156-cropped-55.jpg";
 import PageLayout from "components/PageLayout/PageLayout";
 import Card from "components/Card/Card";
+import { Helmet } from "react-helmet";
 
 function Membership() {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						Membership | The Butcher Shoppe | Northport, WA
 					</title>
@@ -17,7 +18,7 @@ function Membership() {
 						name="description"
 						content="Our Membership program is in the works; stay tuned to our newsletter for info!"
 					/>
-				</>
+				</Helmet>
 			}
 			title={
 				<PageTitle

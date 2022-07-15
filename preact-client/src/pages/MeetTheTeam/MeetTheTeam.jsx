@@ -6,11 +6,12 @@ import PageTitle from "components/PageTitle/PageTitle";
 
 import Card from "components/Card/Card";
 import PageLayout from "components/PageLayout/PageLayout";
+import { Helmet } from "react-helmet";
 function MeetTheTeam() {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						Meet The Team | The Butcher Shoppe | Northport, WA
 					</title>
@@ -18,7 +19,7 @@ function MeetTheTeam() {
 						name="description"
 						content="Our team is proud to serve the greater Northport and Colville area with our mobile slaughter - and soon, meat processing."
 					/>
-				</>
+				</Helmet>
 			}
 			title={
 				<PageTitle

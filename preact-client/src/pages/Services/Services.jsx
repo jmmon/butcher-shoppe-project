@@ -12,12 +12,13 @@ import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 import PageLayout from "components/PageLayout/PageLayout";
 import TelLink from "components/TelLink/TelLink";
+import { Helmet } from "react-helmet";
 
 function Services() {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						Our Services | The Butcher Shoppe | Northport, WA
 					</title>
@@ -25,7 +26,7 @@ function Services() {
 						name="description"
 						content="We currently offer our mobile slaughter service - no hassle of transporting animals, and no kill floor!"
 					/>
-				</>
+				</Helmet>
 			}
 			title={
 				<PageTitle

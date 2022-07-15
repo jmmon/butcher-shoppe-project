@@ -1,9 +1,8 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 
 import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
 
-function PageLayout({
+export default function PageLayout({
 	separate = false,
 	helmet = null,
 	title = null,
@@ -12,9 +11,8 @@ function PageLayout({
 }) {
 	return (
 		<>
-		<Helmet>
 			{helmet}
-		</Helmet>
+			
 			<main>
 				{title}
 				<WhitePageBackground separate={separate}>
@@ -25,5 +23,3 @@ function PageLayout({
 		</>
 	);
 }
-
-export default PageLayout;

@@ -4,13 +4,14 @@ import Card from "components/Card/Card";
 import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
 import HomepageTitle from "components/HomepageTitle/HomepageTitle";
 import PageLayout from "components/PageLayout/PageLayout";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
 	return (
 		<PageLayout
 			separate
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						The Butcher Shoppe: Mobile Slaughter Truck | Northport,
 						WA
@@ -19,7 +20,7 @@ export default function Home() {
 						name="description"
 						content="Serving the tri-county area in northeast Washington, The Butcher Shoppe's Mobile Slaughter Truck brings our dispatch service to you! Check out our newsletter!"
 					/>
-				</>
+				</Helmet>
 			}
 			title={
 				<HomepageTitle

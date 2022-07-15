@@ -10,12 +10,13 @@ import Card from "components/Card/Card";
 
 import { Link } from "wouter";
 import TelLink from "components/TelLink/TelLink";
+import { Helmet } from "react-helmet";
 
 function HowToOrder() {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						How To Order | The Butcher Shoppe | Northport, WA
 					</title>
@@ -23,7 +24,7 @@ function HowToOrder() {
 						name="description"
 						content="All the info you should need to help you place your order. Have questions? Give us a call!"
 					/>
-				</>
+				</Helmet>
 			}
 			title={<PageTitle title="How To Order" bgImage={bgTitle} />}
 			bottomNav={

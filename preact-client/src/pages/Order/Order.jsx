@@ -21,6 +21,7 @@ import DateSelector from "components/FormComponents/Sections/DateSelector/DateSe
 import PageLayout from "components/PageLayout/PageLayout";
 import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
 import TelLink from "components/TelLink/TelLink";
+import { Helmet } from "react-helmet";
 
 const headers = { "Content-Type": "application/json" };
 
@@ -249,7 +250,7 @@ function Order() {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						Order Page | The Butcher Shoppe | Northport, WA
 					</title>
@@ -257,7 +258,7 @@ function Order() {
 						name="description"
 						content="Place your order for our mobile slaughter service! Coming soon, we will offer meat processing!"
 					/>
-				</>
+				</Helmet>
 			}
 			title={
 				<PageTitle

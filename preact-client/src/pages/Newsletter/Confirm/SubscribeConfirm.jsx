@@ -6,6 +6,7 @@ import PageLayout from "components/PageLayout/PageLayout";
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
 import Styles from "components/Subscribe/Subscribe.module.css";
+import { Helmet } from "react-helmet";
 
 const confirmUri =
 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
@@ -60,7 +61,7 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 	return (
 		<PageLayout
 			helmet={
-				<>
+				<Helmet>
 					<title>
 						Our Newsletter | The Butcher Shoppe | Northport, WA
 					</title>
@@ -68,7 +69,7 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 						name="description"
 						content="Join our twice-monthly newsletter to stay up-to-date on your local Butcher Shoppe news."
 					/>
-				</>
+				</Helmet>
 			}
 			title={<PageTitle bgImage={bgImage} title="Confirm Subscription" />}
 		>
