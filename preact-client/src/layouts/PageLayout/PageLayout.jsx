@@ -1,6 +1,6 @@
 import React from "react";
 
-import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
+import WhitePageBackground from "layouts/WhitePageBackground/WhitePageBackground";
 
 export default function PageLayout({
 	separate = false,

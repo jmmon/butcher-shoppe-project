@@ -7,10 +7,10 @@ import bgSlaughter from "assets/images/image-1-124-cropped-55.jpg";
 import bgProcessing from "assets/images/image-1-2-cropped-55.jpg";
 
 import Button from "components/Button/Button";
-import PageTitle from "components/PageTitle/PageTitle";
-import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
+import PageTitle from "layouts/PageTitle/PageTitle";
+import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 

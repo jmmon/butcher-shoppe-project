@@ -10,6 +10,15 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Franklin Gothic Heavy Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local(''),
+	url("fonts/Franklin\ Gothic\ Heavy\ Regular/Franklin\ Gothic\ Heavy\ Regular.ttf") format("truetype");
+	font-display: swap;
+}
+
 :root {
 	--header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;

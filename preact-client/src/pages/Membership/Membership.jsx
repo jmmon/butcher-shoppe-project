@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "wouter";
-import PageTitle from "components/PageTitle/PageTitle";
+import PageTitle from "layouts/PageTitle/PageTitle";
 import bgImage from "assets/images/image-1-156-cropped-55.jpg";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import Card from "components/Card/Card";
 import { Helmet } from "react-helmet";
 

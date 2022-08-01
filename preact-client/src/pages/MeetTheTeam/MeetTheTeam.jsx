@@ -2,10 +2,10 @@ import React from "react";
 import "./MeetTheTeam.css";
 
 import bgImage from "assets/images/image-1-113-cropped-55.jpg";
-import PageTitle from "components/PageTitle/PageTitle";
+import PageTitle from "layouts/PageTitle/PageTitle";
 
 import Card from "components/Card/Card";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 function MeetTheTeam() {
 	return (

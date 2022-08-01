@@ -4,8 +4,8 @@ import bgImage from "assets/images/image-1-132-cropped-55.jpg";
 //height 412.567px
 //width 1374.76px
 
-import PageTitle from "components/PageTitle/PageTitle";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageTitle from "layouts/PageTitle/PageTitle";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import GeneralQuestionsSection from "components/GeneralQuestionsSection/GeneralQuestionsSection";
 import { Helmet } from "react-helmet";
 

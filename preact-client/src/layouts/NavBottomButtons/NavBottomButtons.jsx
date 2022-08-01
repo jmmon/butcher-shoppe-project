@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "components/Button/Button";
-import WhitePageBackground from "components/WhitePageBackground/WhitePageBackground";
+import WhitePageBackground from "layouts/WhitePageBackground/WhitePageBackground";
 
 import Styles from "./NavBottomButtons.module.css";
 

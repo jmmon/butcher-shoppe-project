@@ -3,9 +3,9 @@ import "./Newsletter.css";
 
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
-import PageTitle from "components/PageTitle/PageTitle";
+import PageTitle from "layouts/PageTitle/PageTitle";
 import Subscribe from "components/Subscribe/Subscribe";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import Card from "components/Card/Card";
 import { Helmet } from "react-helmet";
 

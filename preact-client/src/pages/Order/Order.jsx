@@ -6,7 +6,7 @@ import axios from "axios";
 import Styles from "./Order.module.css";
 
 import bgImage from "assets/images/image-1-3-cropped-55.jpg";
-import PageTitle from "components/PageTitle/PageTitle";
+import PageTitle from "layouts/PageTitle/PageTitle";
 
 // import subscribeStyles from "../../components/Subscribe/Subscribe.module.css";
 // import Button from "components/Button/Button";
@@ -18,7 +18,7 @@ import ContactInfoSection from "components/FormComponents/Sections/ContactInfoSe
 import AnimalsBasic from "components/FormComponents/Sections/AnimalsBasic/AnimalsBasic";
 import DateSelector from "components/FormComponents/Sections/DateSelector/DateSelector";
 
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";

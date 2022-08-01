@@ -1,11 +1,11 @@
 import React from "react";
 import "./HowToOrder.css";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageLayout from "layouts/PageLayout/PageLayout";
 
 import bgTitle from "assets/images/image-1-116-cropped-55.jpg";
 
-import PageTitle from "components/PageTitle/PageTitle";
-import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
+import PageTitle from "layouts/PageTitle/PageTitle";
+import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
 import { Link } from "wouter";

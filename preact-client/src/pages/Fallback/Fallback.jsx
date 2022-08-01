@@ -1,8 +1,8 @@
 import React from "react";
 
 import Card from "components/Card/Card";
-import PageLayout from "components/PageLayout/PageLayout";
-import PageTitle from "components/PageTitle/PageTitle";
+import PageLayout from "layouts/PageLayout/PageLayout";
+import PageTitle from "layouts/PageTitle/PageTitle";
 import { Helmet } from "react-helmet";
 
 export default function Fallback() {

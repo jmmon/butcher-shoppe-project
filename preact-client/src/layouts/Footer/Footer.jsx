@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Styles from "./Footer.module.css";
 
 import Subscribe from "components/Subscribe/Subscribe";
-import FooterSuspenseContainer from "../FooterSuspenseContainer/FooterSuspenseContainer";
+import FooterSuspenseContainer from "../../components/FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import LogoComponent from "assets/logo/LogoComponent";
 import TelLink from "components/TelLink/TelLink";
@@ -17,7 +17,7 @@ function Footer() {
 			FooterSuspenseContainer({
 				key: "contact",
 				title: "Contact Us!",
-				lazyPromise: import("../Contact/Contact"),
+				lazyPromise: import("../../components/Contact/Contact"),
 				loadingName: "Contact Box",
 				linkTarget: "contact",
 			}),
@@ -29,7 +29,7 @@ function Footer() {
 			FooterSuspenseContainer({
 				key: "map",
 				title: "Find Us In Downtown Northport!",
-				lazyPromise: import("../Map/Map"),
+				lazyPromise: import("../../components/Map/Map"),
 				loadingName: "Map",
 				linkTarget: "map",
 				placeName: "420 Center Ave, Northport, WA 99157, USA",

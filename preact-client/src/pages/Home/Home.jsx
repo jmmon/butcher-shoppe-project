@@ -1,9 +1,9 @@
 import React from "react";
 
 import Card from "components/Card/Card";
-import NavBottomButtons from "components/NavBottomButtons/NavBottomButtons";
-import HomepageTitle from "components/HomepageTitle/HomepageTitle";
-import PageLayout from "components/PageLayout/PageLayout";
+import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
+import HomepageTitle from "layouts/HomepageTitle/HomepageTitle";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 
 export default function Home() {

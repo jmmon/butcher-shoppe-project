@@ -4,9 +4,9 @@ import { Route, Switch } from "wouter";
 import "./App.css";
 import ScrollToTopOnClickLink from "./utils/ScrollToTopOnClickLink";
 
-import Header from "components/Header/Header";
-import Navbar from "components/Navbar/Navbar";
-import Footer from "components/Footer/Footer";
+import Header from "layouts/Header/Header";
+import Navbar from "layouts/Navbar/Navbar";
+import Footer from "layouts/Footer/Footer";
 
 import Fallback from "pages/Fallback/Fallback";
 
@@ -25,6 +25,7 @@ import("pages/Newsletter/Confirm/SubscribeConfirm")
 );
 const MeetTheTeam = lazy(() => import("pages/MeetTheTeam/MeetTheTeam"));
 const Membership = lazy(() => import("pages/Membership/Membership"));
+const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
 
 
 // import Services from "pages/Services/Services.js";
@@ -50,6 +51,10 @@ function App() {
 						}
 					>
 						<Switch>
+							<Route path="/testing-logo">
+								<TestingLogoPage />
+							</Route>
+
 							<Route path="/">
 								<Home />
 							</Route>

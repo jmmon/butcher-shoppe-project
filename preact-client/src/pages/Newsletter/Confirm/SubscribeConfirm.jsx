@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "wouter";
-import PageTitle from "components/PageTitle/PageTitle";
-import PageLayout from "components/PageLayout/PageLayout";
+import PageTitle from "layouts/PageTitle/PageTitle";
+import PageLayout from "layouts/PageLayout/PageLayout";
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
 import Styles from "components/Subscribe/Subscribe.module.css";
