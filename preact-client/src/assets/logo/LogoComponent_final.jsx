@@ -1,27 +1,33 @@
 import React from "react";
 import stylesheet from "./LogoComponent_final.module.css";
 
+// const defaultFills = {
+
+// }
+
 export default function LogoComponent({ 
-	fills, 
-	className, 
+	// fills = null, 
+	className = null, // for our SVG container
 	styles = null
 }) {
+	// combine our logo styles with any incoming styles
 	styles = {
 		...styles,
 		...stylesheet
 	}
 
-	const brown = fills?.brown || "#5a3407";
-	const black = fills?.black || "#000";
-	const white = fills?.white || "#fff";
-	const grey = fills?.grey || "#534b4a";
-	const red = fills?.red || "#911102";
-	const text = fills?.text || "#fff";
+	// const brown = fills?.brown || "#5a3407";
+	// const black = fills?.black || "#000";
+	// const white = fills?.white || "#fff";
+	// const grey = fills?.grey || "#534b4a";
+	// const red = fills?.red || "#911102";
+	// const text = fills?.text || "#fff";
 
-	const svgBackground = styles?.svg_background || "svg_background";
+	// const svgBackground = styles?.svg_background || "svg_background";
 
 	return (
 		<svg
+			className={className}
 			id="Layer_1"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 774.9 346.24"

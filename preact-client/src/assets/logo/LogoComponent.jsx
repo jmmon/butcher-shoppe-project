@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function LogoComponent({ fills, className, styles=null }) {
+export default function LogoComponent({ fills = null, className = null, styles=null }) {
 	const brown = fills?.brown || "#5a3407";
 	const black = fills?.black || "#000";
 	const white = fills?.white || "#fff";
@@ -12,7 +12,7 @@ export default function LogoComponent({ fills, className, styles=null }) {
 	
 	return (
 		<svg
-			className={className || null}
+			className={className}
 			height="440pt"
 			width="1522pt"
 			version="1.1"
