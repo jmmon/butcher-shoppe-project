@@ -11,8 +11,11 @@ function Navbar() {
 	return (
 		<nav className={`${Styles.wrapper} panel-shadow--light`}>
 			<div className={Styles.navbar}>
+					<div className={Styles.logo_bg_ellipse}></div>
 				<Link href="/" className={Styles.home}>
-					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
+					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
+					{" "}
+					{/* <div className={Styles.logo_bg_square}></div> */}
 					<LogoComponent
 						className={Styles.logo}
 						fills={{
