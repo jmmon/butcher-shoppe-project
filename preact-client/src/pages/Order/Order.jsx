@@ -195,7 +195,7 @@ function Order() {
 	});
 
 	const formHandleSubmit = (data) => {
-		// console.log({ data });
+		console.log('Submitting data:', { data });
 
 		//check for missing end date on alternative date selection?
 		if (!data.dates.alternate.end) {

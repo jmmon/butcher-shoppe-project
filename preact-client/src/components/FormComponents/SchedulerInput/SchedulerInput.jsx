@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { useFormContext } from "react-hook-form";
 
@@ -29,6 +29,11 @@ const DateTimePicker = ({ title = "" }) => {
 		setStartDate(date);
 		setValue(name, date);
 	};
+
+	// initial state! otherwise the form context does not have an initial value;; should probably be set elsewhere...
+	useEffect(() => {
+		setValue(name, today);
+	}, []);
 
 	return (
 		<>

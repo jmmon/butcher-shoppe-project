@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SchedulerInput.css";
@@ -35,6 +35,11 @@ const DateTimePicker = ({
 		setEndDate(end);
 		setValue(name, {start, end});
 	};
+
+	// initial state! otherwise the form context does not have an initial value;; should probably be set elsewhere...
+	useEffect(() => {
+		setValue(name, {start: today, end: today});
+	}, []);
 
 	return (
 		<>
