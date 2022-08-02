@@ -13,14 +13,6 @@ function Navbar() {
 			<div className={Styles.navbar}>
 				<Link href="/" className={Styles.home}>
 					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{" "}
-					{/* <LogoComponent
-						className={Styles.logo}
-						fills={{
-							white: "#ccc",
-							text: "#fff",
-						}}
-						styles={Styles}
-					/> */}
 					<LogoComponent
 						className={Styles.logo}
 						fills={{
@@ -29,7 +21,15 @@ function Navbar() {
 						}}
 						styles={Styles}
 					/>
-					<div className={Styles.logo_border}></div>
+					{/* <LogoComponent
+						className={Styles.logo}
+						fills={{
+							white: "#ccc",
+							text: "#fff",
+						}}
+						styles={Styles}
+					/>
+					<div className={Styles.logo_border}></div> */}
 				</Link>
 
 				{/* Hamburger icon*/}
