@@ -13,6 +13,26 @@ let noReplyEmailTransporter = nodemailer.createTransport({
 	},
 });
 
+
+const ordersAtNoReplyAddress = {
+	name: "Orders - The Butcher Shoppe",
+	address: process.env.NOREPLY_EMAIL_USERNAME 
+};
+const infoAtInfoAddress = {
+	name: "Info - The Butcher Shoppe",
+	address: process.env.INFO_EMAIL_USERNAME
+};
+const orderArchiveAddress = {
+	name: "Orders - Archive - The Butcher Shoppe",
+	address: process.env.ORDER_ARCHIVE_EMAIL_USERNAME
+};
+const supportAddress = {
+	name: "Support - The Butcher Shoppe",
+	address: process.env.SUPPORT_EMAIL_USERNAME
+};
+
+
+
 // const formatOrderContent = (data) => {
 // 	const fullName = `${data.buyer.name.first} ${data.buyer.name.last}`;
 // 	const address = data.buyer.address;
@@ -72,7 +92,7 @@ router.route("/order").post((req, res) => {
 	// );
 
 	if (!req.body) {
-		res.status(400).send("Missing info!");
+		res.status(400).send({message: "Missing info!"});
 	} else {
 		const contactInfoFormatted = `\x20-\x20Contact Info:\n\nName: ${contact.fullName}\nPhone: ${contact.phone}\nEmail: ${contact.email}`;
 		const addressInfoFormatted = `\x20-\x20Address:\n\n${address.line_1.toUpperCase()}${
@@ -106,12 +126,19 @@ router.route("/order").post((req, res) => {
 		const textBodyHeader_toThem = `We Have Received Your Order:\n`;
 		const textBodyFooter_toThem = `Have any questions? Reply to this email and we will get back to you!`;
 
+		
+		const userAddress = {
+			name: contact.fullName,
+			address: contact.email
+		}
+
 		Promise.all([
 			// to us
 			noReplyEmailTransporter.sendMail({
-				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"Info - The Butcher Shoppe" <${process.env.INFO_EMAIL_USERNAME}>`,
-				replyTo: `"${contact.fullName}" <${contact.email_address}>`,
+				from: ordersAtNoReplyAddress,
+				to: infoAtInfoAddress,
+				replyTo: userAddress,
+
 				subject: `NEW ORDER from ${contact.fullName} - Order #${orderNumber}`,
 				text: `${textBodyHeader_toUs}\n${orderContentFormatted}\n\n${textBodyFooter_toUs}`,
 				html: `<h2>${textBodyHeader_toUs}</h2><br>${orderContentHTML}<br><br><i>${textBodyFooter_toUs}</i>`,
@@ -119,9 +146,10 @@ router.route("/order").post((req, res) => {
 
 			// to order archive
 			noReplyEmailTransporter.sendMail({
-				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"Orders - Archive - The Butcher Shoppe" <${process.env.ORDER_ARCHIVE_EMAIL_USERNAME}>`,
-				replyTo: `"${contact.fullName}" <${contact.email_address}>`,
+				from: ordersAtNoReplyAddress,
+				to: orderArchiveAddress,
+				replyTo: userAddress,
+				
 				subject: `NEW ORDER from ${contact.fullName} - Order #${orderNumber}`,
 				text: `${textBodyHeader_toUs}\n${orderContentFormatted}\n\n${textBodyFooter_toUs}`,
 				html: `<h2>${textBodyHeader_toUs}</h2><br>${orderContentHTML}<br><br><i>${textBodyFooter_toUs}</i>`,
@@ -129,9 +157,10 @@ router.route("/order").post((req, res) => {
 
 			// to them
 			noReplyEmailTransporter.sendMail({
-				from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-				to: `"${contact.fullName}" <${contact.email_address}>`,
-				replyTo: `"Northport Butcher Shoppe Info" <${process.env.INFO_EMAIL_USERNAME}>`,
+				from: ordersAtNoReplyAddress,
+				to: userAddress,
+				replyTo: infoAtInfoAddress,
+
 				subject: `ORDER RECIEVED - Order #${orderNumber}`,
 				text: `${textBodyHeader_toThem}\n${orderContentFormatted}\n\n${textBodyFooter_toThem}`,
 				html: `<h2>${textBodyHeader_toThem}</h2><br>${orderContentHTML}<br><br><i>${textBodyFooter_toThem}</i>`,
@@ -139,19 +168,20 @@ router.route("/order").post((req, res) => {
 		])
 			.then(() => {
 				console.log("Finished sending emails!");
-				res.status(200).send("Contact mail sent!");
+				res.status(200).send({message: "Contact mail sent!"});
 			})
 			.catch((e) => {
 				console.log("Error Sending email:", e);
 				noReplyEmailTransporter.sendMail({
-					from: `"Orders - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`,
-					to: `"Support - The Butcher Shoppe" <${process.env.SUPPORT_EMAIL_USERNAME}>`,
-					replyTo: `"Info - The Butcher Shoppe" <${process.env.INFO_EMAIL_USERNAME}>`,
+					from: ordersAtNoReplyAddress,
+					to: supportAddress,
+					replyTo: infoAtInfoAddress,
+
 					subject: `ERROR creating order! RE: "NEW ORDER from ${contact.fullName} - Order #${orderNumber}"`,
 					text: `ERROR creating this order!\nError Info:\n${e}\n\nOrder info:\n\n${textBodyHeader_toUs}\n${orderContentFormatted}\n\n${textBodyFooter_toUs}`,
 					html: `<h2>ERROR creating this order!</h2><br><h3>Error Info:</h3><br><pre><code>${e}</code></pre><br><h3>Order info:</h3><br><h2>${textBodyHeader_toUs}</h2><br>${orderContentHTML}<br><br><i>${textBodyFooter_toUs}</i>`,
 				}),
-					res.status(500).send("Mail NOT sent:", e);
+				res.status(500).send({message: "Mail NOT sent:", error: e});
 			});
 	}
 });

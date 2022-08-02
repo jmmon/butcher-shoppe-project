@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
-let subscribe__transporter = nodemailer.createTransport({
+let noReplyEmailTransporter = nodemailer.createTransport({
 	host: process.env.EMAIL_HOST,
 	port: process.env.EMAIL_PORT,
 	//secure: false, // true for port 465, false for other ports?
@@ -13,6 +13,19 @@ let subscribe__transporter = nodemailer.createTransport({
 	},
 });
 
+const newsletterAtNoReplyAddress = {
+	name: "Newsletter - The Butcher Shoppe",
+	address: process.env.NOREPLY_EMAIL_USERNAME
+};
+const supportAtSupportAddress = {
+	name: "Support - The Butcher Shoppe",
+	address: process.env.SUPPORT_EMAIL_USERNAME
+};
+const subscriberAddress = {
+	name: "Subscriber - The Butcher Shoppe",
+	address: process.env.SUBSCRIBER_EMAIL_USERNAME
+};
+
 router.route("/subscribe").get((req, res) => {
 	console.log("subscribe get works!");
 	res.send("subscribe get works!");
@@ -21,8 +34,6 @@ router.route("/unsubscribe").get((req, res) => {
 	console.log("UNsubscribe get works!");
 	res.send("unsubscribe get works!");
 });
-
-
 
 router.route("/subscribe").post(async (req, res) => {
 	console.log("req.body:", req.body);
@@ -41,15 +52,21 @@ router.route("/subscribe").post(async (req, res) => {
 
 	console.log("Subscribing to  TESTING newsletter");
 
+	const subscribingCustomerAddress = {
+		name: "Subscribing Customer",
+		address: subscribe_userEmail
+	};
+
 	// send us the email from the user
 	// (from "userEmail" (from our internal email so as not to access the user's email), to our info@thenorthport)
 	if (subscribe_userEmail === undefined) {
-		res.status(400).send("email is undefined");
+		res.status(400).send({message: "Email is undefined"});
 	} else {
-		subscribe__transporter
+		noReplyEmailTransporter
 			.sendMail({
-				from: `"Newsletter - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Subscriber - The Butcher Shoppe" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				from: newsletterAtNoReplyAddress, // sender address
+				to: subscriberAddress, // string list of receiver(s)
+				
 				subject: `subscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {
@@ -58,17 +75,24 @@ router.route("/subscribe").post(async (req, res) => {
 						emailRes
 					)}`
 				);
-				res.status(200).send("Subscription request sent!");
+				res.status(200).send({message: "Subscription request sent!"});
 			})
 			.catch((e) => {
-				console.error("Error sending subscribe email:");
-				console.error(e);
-				res.status(500).send("Subscription request error:", e);
+				console.error("Error sending subscribe email", e);
+
+				noReplyEmailTransporter.sendMail({
+					from: newsletterAtNoReplyAddress,
+					to: supportAtSupportAddress,
+					replyTo: subscribingCustomerAddress,
+
+					subject: `ERROR subscribing! RE: "Subscribe request from ${subscribe_userEmail}"`,
+					text: `ERROR handling subscribe request!\nError Info:\n${e}\n\nUser email: ${subscribe_userEmail}`,
+					html: `<h2>ERROR handling subscribe request!</h2><br><h3>Error Info:</h3><br><pre><code>${e}</code></pre><br><br><h4>User email: ${subscribe_userEmail}</h4>`,
+				}),
+					res.status(500).send({message: "Subscription request error:", error: e});
 			});
 	}
 });
-
-
 
 router.route("/unsubscribe").post((req, res) => {
 	console.log("UNsubscribe post route working:");
@@ -78,15 +102,21 @@ router.route("/unsubscribe").post((req, res) => {
 	console.log("email to UNsubscribe:", subscribe_userEmail);
 	console.log("-----");
 
+	const unsubscribingCustomerAddress = {
+		name: "Unsubscribing Customer",
+		address: subscribe_userEmail
+	};
+
 	// send us the email from the user
 	// (from "userEmail" (from our internal email so as not to access the user's email), to our info@thenorthport)
 	if (subscribe_userEmail === undefined) {
-		res.status(400).send("email is undefined");
+		res.status(400).send({message: "email is undefined"});
 	} else {
-		subscribe__transporter
+		noReplyEmailTransporter
 			.sendMail({
-				from: `"Newsletter - The Butcher Shoppe" <${process.env.NOREPLY_EMAIL_USERNAME}>`, // sender address
-				to: `"Subscriber - The Butcher Shoppe" <${process.env.SUBSCRIBER_EMAIL_USERNAME}>`, // string list of receiver(s)
+				from: newsletterAtNoReplyAddress, // sender address
+				to: subscriberAddress, // string list of receiver(s)
+
 				subject: `unsubscribe address=${subscribe_userEmail}`,
 			})
 			.then((emailRes) => {
@@ -96,11 +126,21 @@ router.route("/unsubscribe").post((req, res) => {
 					)}`
 				);
 
-				res.status(200).send("Unsubscribe request sent!");
+				res.status(200).send({message: "Unsubscribe request sent!"});
 			})
 			.catch((e) => {
 				console.error("Error sending unsubscribe email", e);
-				res.status(500).send("Unsubscribe request error:", e);
+
+				noReplyEmailTransporter.sendMail({
+					from: newsletterAtNoReplyAddress,
+					to: supportAtSupportAddress,
+					replyTo: unsubscribingCustomerAddress,
+
+					subject: `ERROR unsubscribing! RE: "Unsubscribe request from ${subscribe_userEmail}"`,
+					text: `ERROR handling unsubscribe request!\nError Info:\n${e}\n\nUser email: ${subscribe_userEmail}`,
+					html: `<h2>ERROR handling unsubscribe request!</h2><br><h3>Error Info:</h3><br><pre><code>${e}</code></pre><br><br><h4>User email: ${subscribe_userEmail}</h4>`,
+				}),
+				res.status(500).send({message: "Unsubscription request error:", error: e});
 			});
 	}
 });

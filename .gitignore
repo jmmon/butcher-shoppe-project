@@ -2,3 +2,6 @@ resources/
 /resources
 
 *.zip
+
+backend-copy/
+/backend-copy
