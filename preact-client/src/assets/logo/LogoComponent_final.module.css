@@ -1,3 +1,4 @@
+/* Colors */
 /* mountains */
 .cls_1 {
 	fill: #544c4c;
@@ -8,27 +9,14 @@
 	fill: #fff;
 }
 
-/* MOBILE FARM SLAUGHTER */
-.cls_3 {
-	font-size: 43.66px;
-	font-weight: 900;
+/* trees color */
+.cls_7 {
+	fill: #0d0d0c;
 }
 
-/* MOBILE FARM SLAUGHTER */
-.cls_3,
-.cls_3 > *,
-/* website url */
-.cls_4,
-.cls_4 > *,
-/* phone number */
-.cls_5,
-.cls_5 > * {
-	font-family: 'Franklin Gothic Heavy Regular';
-}
-
-/* website url */
-.cls_4 {
-	font-size: 25.81px;
+/* border of ellipse */
+.cls_12 {
+	fill: #131211;
 }
 
 /* website url */
@@ -40,22 +28,42 @@
 	fill: #a13d33;
 }
 
+
+/* Font stuff */
+/* MOBILE FARM SLAUGHTER */
+.cls_3,
+/* website url */
+.cls_4,
+/* phone number */
+.cls_5 {
+	font-family: var(--logo-font-family);
+}
+
+/* MOBILE FARM SLAUGHTER */
+.cls_3 {
+	font-size: 43.66px;
+	font-weight: var(--logo-font-weight);
+}
+
+/* website url */
+.cls_4 {
+	font-size: 25.81px;
+}
+
 /* phone number */
 .cls_5 {
 	font-size: 36.63px;
 }
 
-/* trees color */
-.cls_7 {
-	fill: #0d0d0c;
-}
 
+/* Letter spacing */
 /* website url spacing */
 .cls_8 {
-	letter-spacing: 0em;
+	letter-spacing: 0;
 }
 
 /* website url spacing */
+/* MOBILE FARM SL(A)UGHTER */
 .cls_9 {
 	letter-spacing: -.02em;
 }
@@ -63,16 +71,6 @@
 /* website url spacing */
 .cls_10 {
 	letter-spacing: .01em;
-}
-
-/* MOBILE FARM SL(A)UGHTER */
-.cls_11 {
-	letter-spacing: -.02em;
-}
-
-/* border of ellipse */
-.cls_12 {
-	fill: #131211;
 }
 
 /* MOBILE (F)ARM SLAUGHTER */

@@ -1,34 +1,19 @@
 import React from "react";
 import stylesheet from "./LogoComponent_final.module.css";
 
-// const defaultFills = {
-
-// }
-
-export default function LogoComponent({ 
-	// fills = null, 
+export default function LogoComponent({
 	className = null, // for our SVG container
-	styles = null
+	styles = null,
 }) {
 	// combine our logo styles with any incoming styles
 	styles = {
 		...styles,
-		...stylesheet
-	}
-
-	// const brown = fills?.brown || "#5a3407";
-	// const black = fills?.black || "#000";
-	// const white = fills?.white || "#fff";
-	// const grey = fills?.grey || "#534b4a";
-	// const red = fills?.red || "#911102";
-	// const text = fills?.text || "#fff";
-
-	// const svgBackground = styles?.svg_background || "svg_background";
+		...stylesheet,
+	};
 
 	return (
 		<svg
 			className={className}
-			id="Layer_1"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 774.9 346.24"
 		>
@@ -143,55 +128,56 @@ export default function LogoComponent({
 			</g>
 			{/* MOBILE FARM SLAUGHTER */}
 			<text className={styles.cls_3} transform="translate(201.71 266.87)">
-				<tspan x="0" y="0">
+				<tspan x="0" y="0"
+				 className={styles.cls_3} >
 					MOBILE{" "}
 				</tspan>
-				<tspan className={styles.cls_13} x="168.81" y="0">
+				<tspan className={`${styles.cls_3} ${styles.cls_13}`} x="168.81" y="0">
 					F
 				</tspan>
-				<tspan x="191.24" y="0">
+				<tspan className={styles.cls_3} x="191.24" y="0">
 					ARM SL
 				</tspan>
-				<tspan className={styles.cls_11} x="346.88" y="0">
+				<tspan className={`${styles.cls_3} ${styles.cls_9}`} x="346.88" y="0">
 					A
 				</tspan>
-				<tspan x="374.06" y="0">
+				<tspan className={styles.cls_3} x="374.06" y="0">
 					UGHTER
 				</tspan>
 			</text>
 			{/* www.thenorthportbutchershoppe.com */}
-			<text className={styles.cls_4} transform="translate(239.86 293.56)">
-				<tspan x="0" y="0">
+			<text transform="translate(239.86 293.56)">
+				<tspan className={styles.cls_4} x="0" y="0">
 					ww
 				</tspan>
-				<tspan className={styles.cls_9} x="38.34" y="0">
+				<tspan className={`${styles.cls_4} ${styles.cls_9}`} x="38.34" y="0">
 					w
 				</tspan>
-				<tspan x="56.92" y="0">
+				<tspan className={styles.cls_4} x="56.92" y="0">
 					.theno
 				</tspan>
-				<tspan className={styles.cls_14} x="134.5" y="0">
+				<tspan className={`${styles.cls_4} ${styles.cls_14}`} x="134.5" y="0">
 					r
 				</tspan>
-				<tspan x="144.86" y="0">
+				<tspan className={styles.cls_4} x="144.86" y="0">
 					thpo
 				</tspan>
-				<tspan className={styles.cls_14} x="200.17" y="0">
+				<tspan className={`${styles.cls_4} ${styles.cls_14}`} x="200.17" y="0">
 					r
 				</tspan>
-				<tspan x="210.53" y="0">
+				<tspan className={styles.cls_4} x="210.53" y="0">
 					tbut
 				</tspan>
-				<tspan className={styles.cls_10} x="259.99" y="0">
+				<tspan className={`${styles.cls_4} ${styles.cls_10}`} x="259.99" y="0">
 					c
 				</tspan>
-				<tspan x="273.81" y="0">
+				<tspan className={styles.cls_4} x="273.81" y="0">
 					he
 				</tspan>
-				<tspan className={styles.cls_8} x="304.19" y="0">
+				<tspan className={`${styles.cls_4} ${styles.cls_8}`} x="304.19" y="0">
 					r
 				</tspan>
-				<tspan x="314.14" y="0">
+				<tspan className={styles.cls_4} x="314.14" y="0">
 					shoppe.com
 				</tspan>
 			</text>
@@ -200,94 +186,73 @@ export default function LogoComponent({
 				className={styles.cls_5}
 				transform="translate(516.96 102.3) rotate(5.04)"
 			>
-				<tspan x="0" y="0">
-					5
-				</tspan>
+				5
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(538.04 104.15) rotate(7.1)"
 			>
-				<tspan x="0" y="0">
-					0
-				</tspan>
+				0
 			</text>
-			<text className={styles.cls_5} transform="translate(559 106.75) rotate(9.27)">
-				<tspan x="0" y="0">
-					9
-				</tspan>
+			<text
+				className={styles.cls_5}
+				transform="translate(559 106.75) rotate(9.27)"
+			>
+				9
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(579.9 110.24) rotate(10.96)"
 			>
-				<tspan x="0" y="0">
-					-
-				</tspan>
+				-
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(589.54 112.01) rotate(12.75)"
 			>
-				<tspan x="0" y="0">
-					6
-				</tspan>
+				6
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(610.07 116.64) rotate(15.41)"
 			>
-				<tspan x="0" y="0">
-					4
-				</tspan>
+				4
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(630.32 122.19) rotate(18.38)"
 			>
-				<tspan x="0" y="0">
-					0
-				</tspan>
+				0
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(650.29 128.94) rotate(20.82)"
 			>
-				<tspan x="0" y="0">
-					-
-				</tspan>
+				-
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(659.36 132.22) rotate(23.55)"
 			>
-				<tspan x="0" y="0">
-					6
-				</tspan>
+				6
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(678.45 140.48) rotate(27.96)"
 			>
-				<tspan x="0" y="0">
-					7
-				</tspan>
+				7
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(695.66 149.46) rotate(33.31)"
 			>
-				<tspan x="0" y="0">
-					6
-				</tspan>
+				6
 			</text>
 			<text
 				className={styles.cls_5}
 				transform="translate(712.71 160.46) rotate(41.15)"
 			>
-				<tspan x="0" y="0">
-					6
-				</tspan>
+				6
 			</text>
 			{/* grey mountains */}
 			<path
