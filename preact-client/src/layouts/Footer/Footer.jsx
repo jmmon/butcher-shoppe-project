@@ -42,8 +42,7 @@ function Footer() {
 
 	return (
 		<footer
-			className={`flex-col-jcenter panel-shadow--dark ${Styles.footer}`}
-			id="footer-container"
+			className={`flex-col-jcenter panel-shadow--dark gap-4 ${Styles.footer}`}
 		>
 			<section className={`flex-col-jcenter-acenter ${Styles.section}`}>
 				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
@@ -81,7 +80,7 @@ function Footer() {
 			</section>
 
 			<section
-				className={`flex-jcenter-acenter-wrap ${Styles.contact_map_container} ${Styles.section}`}
+				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 			>
 				{contactMemo}
 				{mapMemo}
@@ -93,16 +92,22 @@ function Footer() {
 			>
 				<div className={`flex-jbetween ${Styles.links_half} `}>
 					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>The Shoppe</h2>
+						<h2 className={`${Styles.heading}`}>
+							The Shoppe
+						</h2>
 						<div className={`flex-col ${Styles.link_items}`}>
-							<LinkScrollUp path="/">Home</LinkScrollUp>
+							<LinkScrollUp path="/">
+								Home
+							</LinkScrollUp>
 							<LinkScrollUp path="/meet-the-team">
 								Meet The Team
 							</LinkScrollUp>
 							<LinkScrollUp path="/membership">
 								Membership
 							</LinkScrollUp>
-							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
+							<LinkScrollUp path="/faq">
+								FAQ
+							</LinkScrollUp>
 						</div>
 					</div>
 					<div className={Styles.links_column}>
@@ -134,7 +139,7 @@ function Footer() {
 								href={facebookUrl}
 								target="_blank"
 								rel="noreferrer"
-								className={`main-link `}
+								className={`main-link`}
 							>
 								Facebook
 							</a>
@@ -171,7 +176,7 @@ function Footer() {
 							<div
 								className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
 							>
-								<h4>Find Us On:</h4>
+								<h4 className={Styles.find_us}>Find Us On:</h4>
 								<a
 									className={`main-link ${Styles.social_small_font}`}
 									href={facebookUrl}
