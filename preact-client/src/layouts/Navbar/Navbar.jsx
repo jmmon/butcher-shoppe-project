@@ -11,11 +11,10 @@ function Navbar() {
 	return (
 		<nav className={`${Styles.wrapper} panel-shadow--light`}>
 			<div className={Styles.navbar}>
-					<div className={Styles.logo_bg_ellipse}></div>
+				<div className={Styles.logo_bg_ellipse}></div>
 				<Link href="/" className={Styles.home}>
 					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
 					{" "}
-					{/* <div className={Styles.logo_bg_square}></div> */}
 					<LogoComponent
 						className={Styles.logo}
 						fills={{
@@ -35,10 +34,9 @@ function Navbar() {
 					<div className={Styles.logo_border}></div> */}
 				</Link>
 
-				{/* Hamburger icon*/}
 				<div className={Styles.menu_container}>
+					{/* Hamburger icon*/}
 					<div className={Styles.dropdown_button}>
-		
 						<i className={`fas fa-bars ${Styles.bars}`} />
 					</div>
 
