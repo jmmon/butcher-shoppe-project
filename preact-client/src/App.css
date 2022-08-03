@@ -20,8 +20,18 @@
 }
 
 :root {
-	--header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-		"Lucida Sans", Arial, sans-serif;
+	/* --header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif; */
+
+		/* new logo colors, font */
+	--logo-font-family: 'Franklin Gothic Heavy Regular';
+	--logo-font-weight: 900;
+	--logo-red: #a13d33;
+	--calendar-red: #a13d33cc;
+	--calendar-red-selecting: #a13d3340;
+	--faq-qa-red: #a13d33aa;
+
+	--header-font: var(--logo-font-family);
 
 	--text-dark: #242424;
 	--subheading-gray: #444;
@@ -29,11 +39,11 @@
 	--white: #fff;
 	--offwhite: rgb(236, 229, 229);
 
-	--logo-red: #911102;
-	/* --logo-red: #91100220; */
-	--calendar-red: #911102cc;
-	--calendar-red-selecting: #91100230;
-	--faq-qa-red: #911102aa;
+	/* old logo colors */
+	/* --logo-red: #911102; */
+	/* --calendar-red: #911102cc; */
+	/* --calendar-red-selecting: #91100230; */
+	/* --faq-qa-red: #911102aa; */
 	
 	--navbar-gradient--dark: rgb(50, 50, 50);
 	--navbar-gradient--light: rgb(100, 100, 100); 
