@@ -1,64 +1,65 @@
 .container {
-	
 	background-color: var(--text-dark);
 }
-.title__height {
 
+.image {
+	max-width: 2000px;
+	margin: 0 auto;
+	min-height: 10.5rem;
+	height: 34vh;
 }
 
-/* new styles */
-
-.title__container {
+.title_container {
 	display: flex;
-	padding: 0.5rem 2vw 3rem 2vw;
+	padding: 1rem 2vw 2rem;
 }
 
-.title__heading {
+.title {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: var(--white);
-	/* font-size: var(--page-title-xlarge); */
 	text-align: center;
 	font-size: clamp(1.8em, 8vw, 4.5em);
 	font-family: var(--header-font);
+	letter-spacing: 0.03em;
+}
+
+/* no subtitle used in website? */
+.subtitle {
+	font-family: var(--header-font);
+	letter-spacing: 0.05em;
 }
 
 .smaller {
 	font-size: clamp(1.6em, 5vw, 4em);
 }
 
-@media screen and (max-width: 1280px) {
-	.title__height {
+/* small screens */
+.padding {
+	padding: 1vh 0px;
+}
+
+/* medium screens */
+@media screen and (min-width: 480px) {
+	.padding {
 		padding: 4vh 0px;
 	}
 }
 
-@media screen and (max-width: 960px) {
-	.title__height {
+/* large screens */
+@media screen and (min-width: 960px) {
+	.padding {
 		padding: 4vh 0px;
 	}
 }
 
-@media screen and (max-width: 480px) {
-	.title__height {
-		padding: 1vh 0px;
+/* x-large screens */
+@media screen and (min-width: 1200px) {
+	.padding {
+		padding: 0;
 	}
-}
 
-
-/* end new styles */
-
-.image {
-	max-width: 2000px;
-	margin: 0 auto;
-	
-	min-height: 30vh;
-	/* box-shadow: inset calc(-10vw + 8rem) 0 2vw 0
-	var(--text-dark) */
-}
-/* calc(-2vw + 1rem) */
-@media (min-width: 1200px) {
 	.image {
 		box-shadow: 
 		/* inset calc(-2vw + 1.5rem) 0 calc(4vw - 2rem) 0

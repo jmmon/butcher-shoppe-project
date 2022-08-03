@@ -1,17 +1,14 @@
 .section {
 	position: relative;
 	background-color: var(--text-dark);
-	font-family: var(--header-font);
 	letter-spacing: 0.05em;
 }
-
 
 .image {
 	height: clamp(50vh, 30rem, 60vw);
 	max-width: 2000px;
 	margin: 0 auto;
 }
-
 
 .content_wrapper {
 	position: absolute;
@@ -23,7 +20,8 @@
 }
 
 .content_container {
-	margin-top: auto;
+	/* margin-top: auto; */
+	margin-top: 1em;
 	flex-grow: 1;
 }
 
@@ -32,6 +30,7 @@
 	width: 100%;
 	line-height: 0.9;
 	margin-top: 1em;
+	font-family: var(--header-font);
 }
 
 .subtitle {
@@ -47,15 +46,20 @@
 	font-size: clamp(0.8em, 2vw, 1.3em);
 	width: 10em;
 	margin: 0 2vw;
+	font-family: var(--header-font);
+	letter-spacing: 0.03em;
 }
 
-.subtext {
-	font-size: clamp(0.7em, 1.8vw, 1em);
-	color: #ccc;
+.subtext_wrapper {
 	flex-grow: 1;
 	align-items: end;
 }
 
+.subtext {
+	font-family: var(--header-font);
+	font-size: clamp(0.7em, 1.8vw, 1em);
+	color: #ccc;
+}
 
 
 

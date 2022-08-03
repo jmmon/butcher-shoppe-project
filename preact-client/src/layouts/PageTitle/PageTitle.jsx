@@ -10,31 +10,28 @@ function PageTitle({
 	children = null,
 }) {
 	return (
-		<div className={`panel-shadow--dark ${Styles.container}`}>
+		<section className={`panel-shadow--dark ${Styles.container}`}>
+			<div
+				className={`${Styles.image} flex-col-acenter-jcenter inset-box-shadow--dark ${Styles.padding}`}
+				style={{
+					background: `url(${bgImage}) center center/cover no-repeat`,
+					backgroundPosition: `${position}`,
+				}}
+			>
+				<div className={Styles.title_container}>
+					<h1
+						className={`text-shadow--lg ${Styles.title} ${smaller === "true" || smaller === true ? Styles.smaller : ""}`}
+					>
+						{title}
+					</h1>
+					
+					{/* no subtitle used in website? */}
+					{subtitle && <p className={Styles.subtitle}>{subtitle}</p>}
 
-		<section
-			className={`${Styles.image} flex-col-acenter-jcenter ${Styles.title__height}  inset-box-shadow--dark `}
-			style={{
-				background: `url(${bgImage}) center center/cover no-repeat`,
-				backgroundPosition: `${position}`,
-			}}
-		>
-			<div className={Styles.title__container}>
-				<h1
-					className={
-						smaller === "true" || smaller === true
-							? `text-shadow--lg ${Styles.title__heading} ${Styles.smaller}`
-							: `text-shadow--lg ${Styles.title__heading}`
-					}
-				>
-					{title}
-				</h1>
-				{subtitle && <p>{subtitle}</p>}
-				{children}
+					{children}
+				</div>
 			</div>
 		</section>
-		
-		</div>
 	);
 }
 

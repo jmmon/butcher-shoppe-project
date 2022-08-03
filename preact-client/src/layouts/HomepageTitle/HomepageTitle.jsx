@@ -8,33 +8,32 @@ import Styles from "./HomepageTitle.module.css";
 import Button from "components/Button/Button";
 import Images from "./Images.js";
 
-function HomepageTitle({ simple = false, title = "", subtitle = "", subtext = "" }) {
-	const properties = {
-		duration: 8000,
-		transitionDuration: 800,
-		infinite: true,
-		arrows: false,
-		easing: "cubic-in",
-		indicators: (i) => <div className="indicator">{i + 1}</div>,
-	};
+const properties = {
+	duration: 8000,
+	transitionDuration: 800,
+	infinite: true,
+	arrows: false,
+	easing: "cubic-in",
+	indicators: (i) => <div className="indicator">{i + 1}</div>,
+};
+
+function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
 	return (
 		<section
 			className={`${Styles.section} text-center text-white panel-shadow--dark`}
 		>
 			<Fade {...properties}>
 				{Images.map((slideImage, index) => (
-					<div key={index} className={Styles.image_wrapper}>
-						<div
-							className={`${Styles.image} inset-box-shadow--dark`}
-							style={{
-								backgroundImage: `url(${slideImage.url})`,
-								backgroundSize: slideImage?.size ||`cover`,
-								backgroundRepeat: `no-repeat`,
-								backgroundPosition: slideImage.position || "50% 50%"
-								,
-							}}
-						></div>
-					</div>
+					<div
+						key={index}
+						className={`${Styles.image} inset-box-shadow--dark`}
+						style={{
+							backgroundImage: `url(${slideImage.url})`,
+							backgroundSize: slideImage?.size ||`cover`,
+							backgroundRepeat: `no-repeat`,
+							backgroundPosition: slideImage.position || "50% 50%",
+						}}
+					></div>
 				))}
 			</Fade>
 
@@ -45,6 +44,7 @@ function HomepageTitle({ simple = false, title = "", subtitle = "", subtext = ""
 					<h1 className={`${Styles.title} text-shadow--lg`}>
 						{title}
 					</h1>
+
 					<h2 className={`${Styles.subtitle} text-shadow--sm`}>
 						{subtitle}
 					</h2>
@@ -62,13 +62,11 @@ function HomepageTitle({ simple = false, title = "", subtitle = "", subtext = ""
 					>
 						How to Order
 					</Button>
-					
 				</div>
 
-
-				<p className={`${Styles.subtext} flex text-shadow--lg`}>
-						<i>{subtext}</i>
-					</p>
+				<p className={`${Styles.subtext_wrapper} flex text-shadow--lg`}>
+					<i className={Styles.subtext}>{subtext}</i>
+				</p>
 			</div>
 		</section>
 	);
