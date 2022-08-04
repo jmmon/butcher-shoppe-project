@@ -2,12 +2,18 @@
 	position: relative;
 	background-color: var(--text-dark);
 	letter-spacing: 0.05em;
+
+	/* background-image: url("assets/logo/truckside6.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%; */
 }
 
 .image {
 	height: clamp(50vh, 30rem, 60vw);
 	max-width: 2000px;
 	margin: 0 auto;
+	/* opacity: 0.8; */
 }
 
 .content_wrapper {
@@ -50,15 +56,14 @@
 	letter-spacing: 0.03em;
 }
 
-.subtext_wrapper {
+.subtext {
 	flex-grow: 1;
 	align-items: end;
-}
-
-.subtext {
 	font-family: var(--header-font);
 	font-size: clamp(0.7em, 1.8vw, 1em);
-	color: #ccc;
+	color: #ddd;
+	line-height: 2;
+	font-size: 1.2rem;
 }
 
 

@@ -10,10 +10,14 @@ import Images from "./Images.js";
 
 const properties = {
 	duration: 8000,
-	transitionDuration: 800,
+	transitionDuration: 2000,
 	infinite: true,
 	arrows: false,
 	easing: "cubic-in",
+	// easing: "ease-in",
+	// easing: "linear",
+	// easing: "ease-out",
+	// easing: "cubic-out",
 	indicators: (i) => <div className="indicator">{i + 1}</div>,
 };
 
@@ -26,7 +30,7 @@ function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
 				{Images.map((slideImage, index) => (
 					<div
 						key={index}
-						className={`${Styles.image} inset-box-shadow--dark`}
+						className={`${Styles.image} `}
 						style={{
 							backgroundImage: `url(${slideImage.url})`,
 							backgroundSize: slideImage?.size ||`cover`,
@@ -64,9 +68,9 @@ function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
 					</Button>
 				</div>
 
-				<p className={`${Styles.subtext_wrapper} flex text-shadow--lg`}>
-					<i className={Styles.subtext}>{subtext}</i>
-				</p>
+				{/* <p className={`${Styles.subtext_wrapper} flex text-shadow--lg`}> */}
+					<i className={`${Styles.subtext} flex text-shadow--lg`}>{subtext}</i>
+				{/* </p> */}
 			</div>
 		</section>
 	);

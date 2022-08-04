@@ -12,7 +12,11 @@ function ImageHeading({ bg = null, title = "" }) {
 				}
 			}
 		>
-			<h3 className={`${bg && "text-white"} ${Styles.title} text-shadow--lg`}>
+			<h3
+				className={`${bg && "text-white"} ${
+					Styles.title
+				} text-shadow--lg`}
+			>
 				{title}
 			</h3>
 		</div>

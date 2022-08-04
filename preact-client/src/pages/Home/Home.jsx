@@ -6,6 +6,8 @@ import HomepageTitle from "layouts/HomepageTitle/HomepageTitle";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 
+// const LogoPngUrl = "assets/logo/truckside6.png"
+
 export default function Home() {
 	return (
 		<PageLayout
@@ -40,6 +42,7 @@ export default function Home() {
 		>
 			<div className="grid-row-gap-8 padding-2--bot">
 				<Card
+					// bg={LogoPngUrl}
 					title="Welcome to The Northport Butcher Shoppe!"
 					paragraphs={[
 						"Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter.",
