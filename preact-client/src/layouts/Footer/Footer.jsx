@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import Styles from "./Footer.module.css";
 
+import CONSTANTS from "utils/CONSTANTS";
+
 import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "../../components/FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
@@ -76,7 +78,7 @@ function Footer() {
 			>
 				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
 
-				<TelLink className={`main-link text-center ${Styles.heading}`}>(509) 640-6766</TelLink>
+				<TelLink className={`main-link text-center ${Styles.heading}`}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</section>
 
 			<section
@@ -158,7 +160,6 @@ function Footer() {
 			</section>
 
 			<div className={Styles.dark_wrapper}>
-
 				<div className={`flex-col-jcenter-acenter ${Styles.bottom_lighter_container}`}> 
 					<section className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}>
 						<LogoComponent  className={Styles.banner_2}/>

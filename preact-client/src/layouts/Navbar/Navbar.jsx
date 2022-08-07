@@ -5,7 +5,7 @@ import Styles from "./Navbar.module.css";
 
 // import LogoComponent from "assets/logo/LogoComponent";
 import LogoComponent from "assets/logo/LogoComponent_final";
-import { Style } from "react-bootstrap/lib/utils/StyleConfig";
+import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
 function Navbar() {
 	return (
@@ -41,60 +41,60 @@ function Navbar() {
 					</div>
 
 					<div className={Styles.menu}>
-						<Link
+						<LinkWithPreload
 							href="/services"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Services
-						</Link>
-						<Link
+						</LinkWithPreload>
+						<LinkWithPreload
 							href="/how-to-order"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							How To Order
-						</Link>
-						<Link
+						</LinkWithPreload>
+						<LinkWithPreload
 							href="/order"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Order
-						</Link>
-						<Link
+						</LinkWithPreload>
+						<LinkWithPreload
 							href="/meet-the-team"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Meet The Team
-						</Link>
-						<Link
+						</LinkWithPreload>
+						<LinkWithPreload
 							href="/FAQ"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							FAQ
-						</Link>
+						</LinkWithPreload>
 						<a
 							href="#more-links"
 							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							More...
 						</a>
-						<Link
+						<LinkWithPreload
 							href="/newsletter/subscribe"
 							className={`${Styles.links} ${Styles.newsletter_mobile}`}
 						>
 							Newsletter
-						</Link>
+						</LinkWithPreload>
 					</div>
 				</div>
 
 				{/* Normal Newsletter Button	 */}
-				<Link href="/newsletter/subscribe">
+				<LinkWithPreload href="/newsletter/subscribe">
 					<div
 						className={`${Styles.newsletter_button} btn--outline btn--large`}
 						tabIndex="0"
 					>
 						Newsletter
 					</div>
-				</Link>
+				</LinkWithPreload>
 			</div>
 		</nav>
 	);

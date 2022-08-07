@@ -6,7 +6,7 @@ import bgImage from "assets/images/image-1-132-cropped-55.jpg";
 
 import PageTitle from "layouts/PageTitle/PageTitle";
 import PageLayout from "layouts/PageLayout/PageLayout";
-import GeneralQuestionsSection from "components/GeneralQuestionsSection/GeneralQuestionsSection";
+import FaqGeneralQuestions from "components/FaqGeneralQuestions/FaqGeneralQuestions";
 import { Helmet } from "react-helmet";
 
 export default function Faq() {
@@ -44,7 +44,7 @@ export default function Faq() {
 						</ul>
 					
 						<div className={Styles.tab_content}>
-							<GeneralQuestionsSection />
+							<FaqGeneralQuestions />
 						</div>
 					</div>
 

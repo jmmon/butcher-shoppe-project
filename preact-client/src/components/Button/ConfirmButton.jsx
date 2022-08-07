@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Button from "./Button";
 
 function ConfirmButton({
-	children,
-	type,
 	onClick,
-	url = "",
+	confirmText = "Are you sure?",
+	children,
 	...buttonProps
 }) {
 	const [confirmed, setConfirmed] = useState(false);
@@ -17,14 +16,13 @@ function ConfirmButton({
 			setConfirmed(true);
 		}
 	};
+
 	return (
 		<Button
 			{...buttonProps}
-			type={type}
 			onClick={handleClick}
-			url={url}
 		>
-			{confirmed ? "Are you sure?" : children}
+			{confirmed ? confirmText : children}
 		</Button>
 	);
 }

@@ -1,5 +1,6 @@
 import "./Button.css";
-import {Link} from "wouter";
+
+import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
 function Button({
 	children,
@@ -21,14 +22,19 @@ function Button({
 		</button>
 	);
 
+	const props = {
+		focusable: url !== "" ? 1 : -1,
+		href: url,
+	}
+
 	return url.includes("#") ? (
-		<a href={url} focusable={url !== "" ? 1 : -1}>
+		<a {...props} >
 			{" "}{button}
 		</a>
 	) : (
-		<Link href={url} focusable={url !== "" ? 1 : -1}>
+		<LinkWithPreload {...props} >
 			{" "}{button}
-		</Link>
+		</LinkWithPreload>
 	);
 }
 

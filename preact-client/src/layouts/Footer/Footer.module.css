@@ -1,5 +1,5 @@
 .footer {
-	background-color: #ccc;
+	background-color: var(--grey-bg);
 	z-index: -1;
 	color: var(--text-dark);
 }
@@ -88,13 +88,13 @@
 }
 /* logo banner */
 .bottom_lighter_container {
-	background: #eee;
+	background: var(--grey-bg);
 	/* background: black; */
 	/* background: linear-gradient(to right, rgba(0, 0, 0, 0.05), #eee, rgba(0, 0, 0, 0.05)); */
 	
 	/* mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, #eee 6%, #eee 94%, rgba(0, 0, 0, 0.8) 100%); */
   /* -webkit-mask-image: same as mask-image */
-box-shadow: inset 0 0 calc(30px - 0px) 0 rgba(0, 0, 0, 0.2);
+/* box-shadow: inset 0 0 calc(30px - 0px) 0 rgba(0, 0, 0, 0.2); */
 	/* prevent logo from being too small on small screens? */
 	overflow-x: hidden;
 }

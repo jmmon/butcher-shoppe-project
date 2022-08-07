@@ -1,7 +1,7 @@
 
 /* navigation styles start here */
 .wrapper {
-	background: #ccc;
+	background: var(--grey-bg);
 	height: var(--navbar-height);
 	display: flex;
 	justify-content: center;
@@ -29,10 +29,8 @@
 	align-items: center;
 	justify-content: center;
 	height: 130px;
-	margin: 0 0;
-	margin-top: 50px;
+	margin: 50px 5px 0 0;
 	width: 280px;
-	/* background: #33ffff; */
 	clip-path: ellipse(51% 50% at 51% 50%);
 }
 
@@ -51,7 +49,7 @@
 	width: 240px;
 	left: 48px;
 	top: 0;
-	background-color: #ccc;
+	background-color: var(--grey-bg);
 	clip-path: ellipse(50% 50% at 50% 50%);
 }
 

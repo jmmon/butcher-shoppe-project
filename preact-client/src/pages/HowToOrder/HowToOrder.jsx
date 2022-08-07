@@ -8,7 +8,8 @@ import PageTitle from "layouts/PageTitle/PageTitle";
 import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
-import { Link } from "wouter";
+// import { Link } from "wouter";
+import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 
@@ -38,7 +39,7 @@ function HowToOrder() {
 				<article>
 					<p>
 						Scheduling for our services is easy! Just fill out the{" "}
-						<Link href="/order">order form</Link> and submit your
+						<LinkWithPreload href="/order">order form</LinkWithPreload> and submit your
 						order, or <TelLink>give us a call</TelLink> if you have
 						any questions or would like to order over the phone.
 					</p>

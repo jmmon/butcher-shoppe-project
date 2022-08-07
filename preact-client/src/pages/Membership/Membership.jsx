@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "wouter";
+// import { Link } from "wouter";
+import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import PageTitle from "layouts/PageTitle/PageTitle";
 import bgImage from "assets/images/image-1-156-cropped-55.jpg";
 import PageLayout from "layouts/PageLayout/PageLayout";
@@ -31,7 +32,7 @@ function Membership() {
 				<Card title="Membership Program" subtitle="Coming Soon">
 					<p className="margin-2--bot">
 						Subscribe to our{" "}
-						<Link href="/newsletter/subscribe">newsletter</Link> to
+						<LinkWithPreload href="/newsletter/subscribe">newsletter</LinkWithPreload> to
 						get the details when they are available.
 					</p>
 				</Card>

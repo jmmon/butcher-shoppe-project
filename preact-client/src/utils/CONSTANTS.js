@@ -1,0 +1,6 @@
+const CONSTANTS = {
+	PHONE_NUMBER_STRING: "(509) 640-6766",
+	PHONE_NUMBER_LINK: "tel:15096406766",
+};
+
+export default CONSTANTS;

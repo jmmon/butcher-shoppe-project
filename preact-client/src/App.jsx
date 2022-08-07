@@ -13,19 +13,31 @@ import Fallback from "pages/Fallback/Fallback";
 import Home from "pages/Home/Home";
 import NotFound from "pages/NotFound/NotFound";
 
+import routes from "./routes";
 
-const Services = lazy(() => import("pages/Services/Services"));
-const Faq = lazy(() => import("pages/Faq/Faq"));
-const Order = lazy(() => import("pages/Order/Order"));
-const HowToOrder = lazy(() => import("pages/HowToOrder/HowToOrder"));
-const Newsletter = lazy(() => import("pages/Newsletter/Newsletter"));
-const Unsubscribe = lazy(() => import("pages/Newsletter/Unsubscribe"));
 const SubscribeConfirm = lazy(() =>
-import("pages/Newsletter/Confirm/SubscribeConfirm")
+	import("pages/Newsletter/Confirm/SubscribeConfirm")
 );
-const MeetTheTeam = lazy(() => import("pages/MeetTheTeam/MeetTheTeam"));
-const Membership = lazy(() => import("pages/Membership/Membership"));
 const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
+
+
+
+// const Services = lazy(() => import("pages/Services/Services"));
+// const Faq = lazy(() => import("pages/Faq/Faq"));
+// const Order = lazy(() => import("pages/Order/Order"));
+// const HowToOrder = lazy(() => import("pages/HowToOrder/HowToOrder"));
+// const Newsletter = lazy(() => import("pages/Newsletter/Newsletter"));
+// const Unsubscribe = lazy(() => import("pages/Newsletter/Unsubscribe"));
+// const SubscribeConfirm = lazy(() =>
+// import("pages/Newsletter/Confirm/SubscribeConfirm")
+// );
+// const MeetTheTeam = lazy(() => import("pages/MeetTheTeam/MeetTheTeam"));
+// const Membership = lazy(() => import("pages/Membership/Membership"));
+// const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
+
+
+
+
 
 
 // import Services from "pages/Services/Services.js";
@@ -59,14 +71,6 @@ function App() {
 								<Home />
 							</Route>
 
-							<Route path="/newsletter/subscribe">
-								<Newsletter />
-							</Route>
-
-							<Route path="/newsletter/unsubscribe">
-								<Unsubscribe />
-							</Route>
-
 							<Route path="/newsletter/subscribe/confirm/:id">
 								{(params) => (
 									<SubscribeConfirm
@@ -79,19 +83,35 @@ function App() {
 							<Route path="/newsletter/unsubscribe/confirm/:id">
 								{(params) => (
 									<SubscribeConfirm
-										isSubscribePage={false}
 										id={params.id}
 									/>
 								)}
 							</Route>
 
-							<Route path="/services">
+							{routes.map((route) => (
+								<Route 
+									key={route.path}
+									exact={route.exact}
+									path={route.path}
+									component={route.component}
+								/>
+							))}
 
+							{/* <Route path="/newsletter/subscribe">
+								<Newsletter />
+							</Route>
+
+							<Route path="/newsletter/unsubscribe">
+								<Unsubscribe />
+							</Route>
+
+
+
+							<Route path="/services">
 								<Services />
 							</Route>
 
 							<Route path="/faq">
-
 								<Faq />
 							</Route>
 
@@ -109,7 +129,7 @@ function App() {
 
 							<Route path="/membership">
 								<Membership />
-							</Route>
+							</Route> */}
 
 							<Route>
 								<NotFound />
