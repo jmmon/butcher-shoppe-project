@@ -4,15 +4,12 @@
 
 .header {
 	display: block;
-	text-align: center;
 	font-size: 1.6rem;
 	text-decoration: none;
 	position: relative;
 	border: 1px solid white;
 	padding: 10px;
-
 	background: var(--calendar-red);
-	color: white;
 	cursor: pointer;
 }
 
@@ -26,9 +23,5 @@
 	padding: 10px;
 	border: 1px solid lightGrey;
 	border-top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 1rem;
 	padding: min(4vw, 2rem);
 }

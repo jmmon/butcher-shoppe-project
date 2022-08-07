@@ -2,15 +2,10 @@
 	margin: auto;
 	height: 100%;
 	width: 100%;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	gap: 4px;
 }
 
 .double_input {
-	display: flex;
 	padding: 2px;
 }
 
@@ -34,8 +29,8 @@
 }
 
 .input {
-	border: 1px solid #fff;
 	display: block;
+	border: 1px solid #fff;
 	width: 100%;
 	font-size: 1rem;
 	margin-top: 4px;
@@ -44,23 +39,11 @@
 
 .grow {
 	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
 }
 
 .textarea {
 	resize: none;
 	flex-grow: 1
-}
-
-
-.label.topic {
-	display: flex;
-	align-items: center;
-}
-
-.input.topic {
-
 }
 
 .submit {
@@ -94,7 +77,6 @@
 	color: var(--text-dark);
 	border-radius: 5px;
 	max-height: 0;
-	text-align: center;
 	width: 100%;
 	transition: all 0.2s ease;
 }

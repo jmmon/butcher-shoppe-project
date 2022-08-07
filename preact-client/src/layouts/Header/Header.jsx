@@ -10,21 +10,21 @@ import { ReactComponent as LocationIcon } from "assets/icons/211766_location_ico
 
 function Header() {
 	return (
-		<div className={Styles.main}>
+		<div className={`flex-acenter ${Styles.main}`}>
 			<div className={`flex-jbetween gap-1 ${Styles.container}`}>
-				<LinkWithPreload className={`flex-acenter ${Styles.link}`} href="/order">
+				<LinkWithPreload className={`flex-acenter text-white ${Styles.link}`} href="/order">
 					<CalendarIcon className={Styles.icon} />
 					<span className={Styles.text}>Schedule</span>
 				</LinkWithPreload>
-				<TelLink className={`flex-acenter ${Styles.link}`}>
+				<TelLink className={`flex-acenter text-white ${Styles.link}`}>
 					<PhoneIcon className={Styles.icon} />
 					<span className={Styles.text}>(509) 640-6766</span>
 				</TelLink>
-				<a className={`flex-acenter ${Styles.link}`} href="#contact">
+				<a className={`flex-acenter text-white ${Styles.link}`} href="#contact">
 					<ChatIcon className={Styles.icon} />
 					<span className={Styles.text}>Email Us</span>
 				</a>
-				<a className={`flex-acenter ${Styles.link}`} href="#map">
+				<a className={`flex-acenter text-white ${Styles.link}`} href="#map">
 					<LocationIcon
 						className={`${Styles.icon} ${Styles.location_icon}`}
 					/>

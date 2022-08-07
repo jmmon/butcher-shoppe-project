@@ -1,10 +1,10 @@
-.form--instructions {
+/* .form--instructions {
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
 	font-size: 1.2rem;
-}
+} */
 
 .details_item {
 	margin-left: 1rem;
@@ -16,12 +16,8 @@
 	padding: 0.5rem;
 	background: #eee;
 	margin: 0.5rem -0.2rem 1rem -1.2rem;
-
 	list-style-type: disc;
-	
-	display: grid;
 	grid-template-columns: 1fr;
-	gap: 1rem;
 }
 
 .details_content > li{

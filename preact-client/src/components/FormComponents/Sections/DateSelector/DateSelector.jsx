@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./DateSelector.module.css";
+import Styles from "./DateSelector.module.css";
 
 import SectionContainer from 'components/SectionContainer/SectionContainer';
 import OrderFormSectionSubheading from 'components/FormComponents/OrderFormSectionSubheading/OrderFormSectionSubheading';
@@ -15,7 +15,7 @@ export default function DateSelector() {
 				Date Window
 			</OrderFormSectionSubheading>
 			<div
-				className={`flex-jcenter-astart-wrap gap-4 ${styles.date}`}
+				className={`flex-jcenter-astart-wrap gap-4 ${Styles.date}`}
 			>
 				<SchedulerInput
 					title="Preferred Date:"

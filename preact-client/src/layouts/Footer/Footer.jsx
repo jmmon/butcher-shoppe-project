@@ -48,14 +48,14 @@ function Footer() {
 		>
 			<section className={`flex-col-jcenter-acenter ${Styles.section}`}>
 				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
-					<h2 className={`${Styles.heading}`}>Join our</h2>
+					<h2 className={`text-center ${Styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className={`${Styles.heading} underline`}
+						className={`text-center ${Styles.heading} underline`}
 					>
 						newsletter
 					</LinkScrollUp>
-					<h2 className={`${Styles.heading}`}>
+					<h2 className={`text-center ${Styles.heading}`}>
 						to receive periodic updates!
 					</h2>
 				</div>
@@ -76,7 +76,7 @@ function Footer() {
 			<section
 				className={`flex-jcenter-acenter-wrap ${Styles.section} gap-1 ${Styles.mobile_margin}`}
 			>
-				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
+				<h2 className={`text-center ${Styles.heading}`}>Give Us A Call: </h2>
 
 				<TelLink className={`main-link text-center ${Styles.heading}`}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</section>
@@ -93,11 +93,11 @@ function Footer() {
 				id="more-links"
 			>
 				<div className={`flex-jbetween ${Styles.links_half} `}>
-					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>
+					<div className={`text-center ${Styles.links_column}`}>
+						<h2 className={`text-center ${Styles.heading}`}>
 							The Shoppe
 						</h2>
-						<div className={`flex-col ${Styles.link_items}`}>
+						<div className={`flex-col text-center ${Styles.link_items}`}>
 							<LinkScrollUp path="/">
 								Home
 							</LinkScrollUp>
@@ -112,9 +112,9 @@ function Footer() {
 							</LinkScrollUp>
 						</div>
 					</div>
-					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>Ordering</h2>
-						<div className={`flex-col ${Styles.link_items}`}>
+					<div className={`text-center ${Styles.links_column}`}>
+						<h2 className={`text-center ${Styles.heading}`}>Ordering</h2>
+						<div className={`flex-col text-center ${Styles.link_items}`}>
 							<LinkScrollUp path="/services">
 								Services
 							</LinkScrollUp>
@@ -128,9 +128,9 @@ function Footer() {
 					</div>
 				</div>
 				<div className={`${Styles.links_half} flex-jbetween`}>
-					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>Keep In Touch</h2>
-						<div className={`flex-col ${Styles.link_items}`}>
+					<div className={`text-center ${Styles.links_column}`}>
+						<h2 className={`text-center ${Styles.heading}`}>Keep In Touch</h2>
+						<div className={`flex-col text-center ${Styles.link_items}`}>
 							<LinkScrollUp path="/newsletter/subscribe">
 								Subscribe to our Newsletter
 							</LinkScrollUp>

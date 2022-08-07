@@ -1,13 +1,12 @@
-.order_form__section__subheading {
+.container {
+	width: 94%;
+	margin: 0 auto 12px auto;
+}
+
+.subheading {
 	width: calc(100% - 14px);
 	padding-left: 24px;
 	font-size: 20px;
 	color: var(--subheading-gray);
-	margin: 0 auto 12px auto;
-	text-align: center;
-}
-
-.order_form__section__subheading_container {
-	width: 94%;
 	margin: 0 auto 12px auto;
 }

@@ -121,8 +121,8 @@ const Contact = () => {
 	};
 
 	return (
-		<form className={Styles.form} onSubmit={formHandleSubmit}>
-			<div className={Styles.double_input}>
+		<form className={`flex-col-jbetween ${Styles.form}`} onSubmit={formHandleSubmit}>
+			<div className={`flex ${Styles.double_input}`}>
 				<div className={`${Styles.container} ${Styles.small}`}>
 					<label className={Styles.label} htmlFor="contact__name">
 						Name:
@@ -158,7 +158,7 @@ const Contact = () => {
 
 			<div className={`${Styles.container} ${Styles.large}`}>
 				<label
-					className={`${Styles.label} ${Styles.topic}`}
+					className={`flex-acenter ${Styles.label} ${Styles.topic}`}
 					htmlFor="contact__topic"
 				>
 					Topic:
@@ -179,7 +179,7 @@ const Contact = () => {
 			</div>
 
 			<div 
-			className={`${Styles.container} ${Styles.large} ${Styles.grow}`}
+			className={`flex-col ${Styles.container} ${Styles.large} ${Styles.grow}`}
 			>
 				<label className={Styles.label} htmlFor="contact__textarea">
 					How can we help you?
@@ -219,7 +219,7 @@ const Contact = () => {
 			</button>
 
 			<p
-				className={`${Styles.notification} ${
+				className={`text-center ${Styles.notification} ${
 					responseFromContactBox.error
 						? `${Styles.show} ${Styles.error}`
 						: responseFromContactBox.data

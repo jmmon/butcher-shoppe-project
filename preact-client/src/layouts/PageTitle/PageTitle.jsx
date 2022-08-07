@@ -18,9 +18,9 @@ function PageTitle({
 					backgroundPosition: `${position}`,
 				}}
 			>
-				<div className={Styles.title_container}>
+				<div className={`flex ${Styles.title_container}`}>
 					<h1
-						className={`text-shadow--lg ${Styles.title} ${smaller === "true" || smaller === true ? Styles.smaller : ""}`}
+						className={`flex-acenter-jcenter text-white text-center text-shadow--lg ${Styles.title} ${smaller === "true" || smaller === true ? Styles.smaller : ""}`}
 					>
 						{title}
 					</h1>

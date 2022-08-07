@@ -270,13 +270,13 @@ function Order() {
 				/>
 			}
 		>
-			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
+			<h3 className={`flex-jcenter-acenter text-center ${Styles.phone_heading}`}>
 				Please fill out the order form below, or give us a call at:
 				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</h3>
 			<FormProvider {...methods}>
 				<form
-					className={`flex-col-acenter ${Styles.form__center}`}
+					className={`flex-col-acenter gap-2 ${Styles.form_center}`}
 					onSubmit={methods.handleSubmit(formHandleSubmit)}
 				>
 					<div className={Styles.tabbed}>
@@ -285,7 +285,7 @@ function Order() {
 						<input type="radio" id="order-tab3" name="order-css-tabs" />
 						<input type="radio" id="order-tab4" name="order-css-tabs" />
 
-						<ul className={Styles.labels_container}>
+						<ul className={`flex-astretch ${Styles.labels_container}`}>
 							<li className={Styles.label}>
 								<label htmlFor="order-tab1">Contact Info</label>
 							</li>
@@ -357,7 +357,7 @@ function Order() {
 									</select> */}
 							{/* </SectionContainer> */}
 
-					<div className={Styles.heading_container}>
+					<div className={`flex-jcenter ${Styles.heading_container}`}>
 						<h4 className="order-form--before-submitting">
 							Please Double Check Your Information Before
 							Submitting!
@@ -365,7 +365,7 @@ function Order() {
 					</div>
 
 					<p
-						className={`${Styles.notification} ${
+						className={`text-center ${Styles.notification} ${
 							Object.keys(methods.formState.errors).length > 0
 								? `${Styles.show} ${Styles.error}`
 								: ""
@@ -415,7 +415,7 @@ function Order() {
 					</p>
 				</form>
 			</FormProvider>
-			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
+			<h3 className={`flex-jcenter-acenter text-center ${Styles.phone_heading}`}>
 				If you have any questions or need to make adjustments, give us a
 				call at:
 				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>

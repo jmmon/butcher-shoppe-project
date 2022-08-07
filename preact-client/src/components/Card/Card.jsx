@@ -13,7 +13,7 @@ function ImageHeading({ bg = null, title = "" }) {
 			}
 		>
 			<h3
-				className={`${bg && "text-white"} ${
+				className={`${bg && "text-white"} flex-jcenter text-center ${
 					Styles.title
 				} text-shadow--lg`}
 			>
@@ -39,12 +39,12 @@ export default function Card({
 		//panel-shadow--dark removed from section
 		<section className={`white card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
-			<div className="grid-row-gap-1-2 card--content-width ">
+			<div className="grid-jcenter-row-gap-1-2 card--content-width ">
 				{!bg && title && (
-					<h2 className={`${Styles.title} text-center`}>{title}</h2>
+					<h2 className={`flex-jcenter text-center ${Styles.title}`}>{title}</h2>
 				)}
 				{subtitle && (
-					<h3 className={`${Styles.subtitle} text-center`}>
+					<h3 className={`flex-jcenter text-center ${Styles.subtitle}`}>
 						<i>{subtitle}</i>
 					</h3>
 				)}

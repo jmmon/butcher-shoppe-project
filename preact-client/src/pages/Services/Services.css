@@ -1,13 +1,7 @@
 .services-btns-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 	margin: 2vh auto;
 	height: 60px;
-	gap: 10px;
 }
-
-
 
 
 .indent {
@@ -21,17 +15,13 @@
 
 .prices-grid-container {
 	margin: 0 auto;
-	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	border: 1px solid black;
 	row-gap: 1.5rem;
 	column-gap: 2rem;
 	padding: 1.4rem;
 	width: min(1000px, 96%);
-
-	align-items: center;
 	background-color: #f5faf5fa;
-
 }
 
 .prices-grid-header {

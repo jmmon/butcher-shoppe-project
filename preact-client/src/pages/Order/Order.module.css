@@ -1,17 +1,24 @@
-.form__center {
-	width: min(1000px, 96%);
-	margin: 0 auto;
-	gap: 2rem;
+.phone_heading {
+	margin: 0 2vw;
+	margin-bottom: 3rem;
+	display: inline;
 }
 
-.form__center > div {
+.phone {
+	margin-left: 0.4rem;
+}
+
+.form_center {
+	width: min(1000px, 96%);
+	margin: 0 auto;
+}
+
+.form_center > div {
 	width: 100%;
 }
 
 .heading_container {
 	width: 100%;
-	display: flex;
-	justify-content: center;
 	padding: 1rem;
 }
 
@@ -20,14 +27,12 @@
 }
 
 
-
 .notification {
 	margin: 0;
 	padding: 0;
 	font-size: 0;
 	border-radius: 5px;
 	max-height: 0;
-	text-align: center;
 	/* width: 100%; */
 	transition: all 0.2s ease;
 }
@@ -54,16 +59,6 @@
 
 
 
-.phone {
-	margin-left: 0.4rem;
-}
-
-.phone_heading {
-	margin: 0 2vw;
-	margin-bottom: 3rem;
-	display: inline;
-	text-align: center;
-}
 
 
 
@@ -81,8 +76,6 @@
 }
 
 .labels_container {
-	display: flex;
-	align-items: stretch;
 	list-style: none;
 	padding: 0;
 	border-bottom: 1px solid #ccc;

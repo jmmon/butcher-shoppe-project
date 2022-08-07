@@ -1,24 +1,20 @@
-.order_form__checkbox_container {
+.container {
 	border-top: 1px solid gray;
 	padding-top: 10px;
-	display: grid;
-	gap: 10px;
 	grid-template-columns: 40px auto;
 }
 
-.order_form__checkbox {
+.checkbox {
 	height: 20px;
 	cursor: pointer;
 }
 
 @media (max-width: 960px) {
-	.order_form__checkbox {
+	.checkbox {
 		height: 16px;
 	}
 }
 
-@media (max-width: 658px) {
-	/* .order_form__checkbox {
-		height: 16px;
-	} */
-}
+/* @media (max-width: 658px) {
+
+} */

@@ -20,10 +20,12 @@
 	flex: 1;
 	flex-basis: 55%;
 }
+
 .subscribe_btn {
 	flex: 1;
 	flex-basis: 35%;
 }
+
 .notification {
 	width: 100%;
 }

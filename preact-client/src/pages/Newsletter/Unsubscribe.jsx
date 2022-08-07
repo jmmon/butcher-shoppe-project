@@ -1,5 +1,4 @@
 import React from "react";
-import "./Newsletter.css";
 
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 

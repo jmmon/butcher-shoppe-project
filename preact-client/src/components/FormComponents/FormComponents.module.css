@@ -1,9 +1,6 @@
 .container {
 	margin: 0 auto;
 	padding: 0.5em;
-	/* max-width: 520px; */
-	/* max-width: 50%; */
-
 	min-width: 200px;
 	flex: 50%;
 }
@@ -16,10 +13,4 @@
 	display: flex;
 	flex-wrap: wrap;
 	flex: 30%;
-}
-
-.animals_basic_field {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
 }

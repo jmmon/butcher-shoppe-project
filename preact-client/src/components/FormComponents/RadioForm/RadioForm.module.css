@@ -1,20 +1,16 @@
-.order_form__radio_container {
+.container {
 	border-top: 1px solid gray;
 	padding-top: 10px;
-	display: grid;
-	gap: 10px;
 	grid-template-columns: 40px auto;
 }
 
-.order_form__radio_wrapper {
-	/* border-top: 1px solid gray; */
+.wrapper {
 	padding-top: 10px;
 	margin-left: 2vw;
-	display: grid;
 	grid-row-gap: 6px;
 }
 
-.order_form__radio {
+.radio {
 	height: 20px;
 	cursor: pointer;
 }

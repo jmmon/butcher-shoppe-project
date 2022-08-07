@@ -42,9 +42,9 @@ export default function Services() {
 				/>
 			}
 		>
-			<div className="grid-row-gap-4">
+			<div className="grid-jcenter-row-gap-4">
 				<div className="card--width">
-					<div className="services-btns-container">
+					<div className="flex-jcenter-wrap gap-05 services-btns-container">
 						<Button
 							className="btn btn--large btn--outline"
 							url="#slaughter"
@@ -105,9 +105,9 @@ export default function Services() {
 						]}
 						bg={bgSlaughter}
 					/>
-					<h2 className="prices-grid-title ">Slaughter Prices</h2>
+					<h2 className="prices-grid-title">Slaughter Prices</h2>
 					{/* <p>Minimum Charge: $100</p> */}
-					<div className="prices-grid-container panel-shadow--light">
+					<div className="grid-acenter prices-grid-container panel-shadow--light">
 						<span className="prices-two-column-header">
 							Minimum Charge
 						</span>

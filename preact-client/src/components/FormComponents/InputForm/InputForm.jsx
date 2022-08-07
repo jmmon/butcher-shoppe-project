@@ -2,7 +2,7 @@ import React from "react";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import { useFormContext } from "react-hook-form";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import styles from "./InputForm.module.css";
+import Styles from "./InputForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const InputForm = ({
@@ -59,7 +59,7 @@ const InputForm = ({
 			/>
 
 			{thisError && (
-				<span role="alert" className={styles.validation_error}>
+				<span role="alert" className={Styles.validation_error}>
 					{` (${thisError.message})`}
 				</span>
 			)}
@@ -67,7 +67,7 @@ const InputForm = ({
 			{textarea ? (
 				<textarea
 					{...register(name)}
-					className={styles.textarea}
+					className={Styles.textarea}
 					{...inputAttributes}
 				/>
 			) : (
@@ -80,7 +80,7 @@ const InputForm = ({
 						}
 					)}
 					type={number ? "number" : "text"}
-					className={styles.input}
+					className={Styles.input}
 					area-invalid={errors?.[name]}
 					{...inputAttributes}
 					{...numberAttributes}

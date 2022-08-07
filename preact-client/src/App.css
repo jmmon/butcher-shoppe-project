@@ -208,20 +208,24 @@ p {
 
 /* Grid styles */
 
-[class*="grid-"] {
+[class*="grid"] {
 	display: grid;
+}
+[class*="grid"][class*="-jcenter"] {
 	justify-content: center;
 }
-.grid-row-gap-8 {
+[class*="grid"][class*="row-gap-8"] {
 	grid-row-gap: 8em;
 }
-.grid-row-gap-4 {
+[class*="grid"][class*="row-gap-4"] {
 	grid-row-gap: 4em;
 }
-.grid-row-gap-1-2 {
+[class*="grid"][class*="row-gap-1-2"] {
 	grid-row-gap: 1.2em;
 }
-
+[class*="grid"][class*="acenter"] {
+	align-items: center;
+}
 
 
 
