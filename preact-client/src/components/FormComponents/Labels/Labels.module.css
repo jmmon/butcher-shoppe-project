@@ -15,12 +15,12 @@
 	color: var(--subheading-gray);
 }
 
-.required {
+.form_required {
 	margin-left: 4px;
 	color: red;
 }
 
-.special_extra {
+.form_special_extra {
 	font-size: 1.2rem;
 	color: var(--form_special_extra);
 }

@@ -1,6 +1,7 @@
 import React, { Suspense, lazy as Lazy } from "react";
 import Styles from "./FooterSuspenseContainer.module.css";
 
+
 function FooterSuspenseContainer({
 	title,
 	lazyPromise,

@@ -37,7 +37,7 @@ const AnimalRow = ({ type, count, index, handleDelete }) => {
 	};
 
 	return (
-		<div className={`flex-acenter-wrap`}>
+		<div className={formStyles.animals_basic_field}>
 			<DeleteButtonX onClick={() => handleDelete(index)} />
 			<div className={formStyles.field}>
 				<SelectForm

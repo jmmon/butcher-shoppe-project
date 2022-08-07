@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "./Newsletter.module.css";
+import "./Newsletter.css";
 
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
@@ -49,10 +49,10 @@ function NewsletterPage() {
 			<section>
 				<Card
 					title="What's happening at The Butcher Shoppe?"
-					className={Styles.container}
+					className="newsletter--blerb-container"
 				>
-					<div className={`flex-jcenter ${Styles.heading_container}`}>
-						<h3 className={`flex-col text-center ${Styles.heading}`}>
+					<div className="flex-jcenter newsletter--blerb-heading--container">
+						<h3 className="newsletter--blerb-heading">
 							<em>
 								Get All Our Updates Delivered Straight To Your
 								Inbox!

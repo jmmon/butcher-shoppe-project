@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../Labels.module.css";
+import labelStyles from "../Labels.module.css";
 
 function LabelForm({ title, htmlFor, required, small, children }) {
 	return (
@@ -7,12 +7,12 @@ function LabelForm({ title, htmlFor, required, small, children }) {
 			htmlFor={htmlFor}
 			className={
 				small
-					? Styles.label_small
-					: Styles.label
+					? labelStyles.label_small
+					: labelStyles.label
 			}
 		>
 			{title}
-			{required && <span className={Styles.required}>*</span>}
+			{required && <span className={labelStyles.form_required}>*</span>}
 			{children}
 		</label>
 	);

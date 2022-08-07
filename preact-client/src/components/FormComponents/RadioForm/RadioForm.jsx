@@ -2,7 +2,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import Styles from "./RadioForm.module.css";
+import styles from "./RadioForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
@@ -13,12 +13,12 @@ const EachRadio = ({ name, animalInfo, value, label, handleChangeOption }) => {
 	return (
 		<label
 			htmlFor={value}
-			className={`grid gap-05 ${Styles.container}`}
+			className={styles.order_form__radio_container}
 			key={value}
 		>
 			<input
 				{...register(name)}
-				className={Styles.radio}
+				className={styles.order_form__radio}
 				type="radio"
 				id={value}
 				name={name}
@@ -62,7 +62,7 @@ const RadioForm = ({
 				subtitle={subtitle}
 				required={required}
 			/>
-			<div className={`grid ${Styles.wrapper}`}>{allOptions}</div>
+			<div className={styles.order_form__radio_wrapper}>{allOptions}</div>
 		</div>
 	);
 };

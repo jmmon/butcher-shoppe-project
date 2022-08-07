@@ -2,7 +2,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import LabelInput from "../Labels/LabelInput/LabelInput";
 import getSplitAnimalInfo from "../utils/getSplitAnimalInfo";
-import Styles from "./CheckboxForm.module.css";
+import styles from "./CheckboxForm.module.css";
 import formStyles from "../FormComponents.module.css";
 
 const EachCheckbox = ({
@@ -22,7 +22,7 @@ const EachCheckbox = ({
 	return (
 		<React.Fragment key={name}>
 			<input
-				className={Styles.checkbox}
+				className={styles.order_form__checkbox}
 				type="checkbox"
 				id={name}
 				name={name}
@@ -76,7 +76,7 @@ const CheckboxForm = ({
 				costsExtra={costsExtra}
 				subtitle={subtitle}
 			/>
-			<p className={`grid gap-05 ${Styles.container}`}>
+			<p className={styles.order_form__checkbox_container}>
 				{allOptions}
 			</p>
 		</div>

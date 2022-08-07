@@ -91,6 +91,8 @@
 	transition: var(--transition);
 }
 
-/* @media (max-width: 820px) {
-
-} */
+@media screen and (max-width: 820px) {
+	/* .btn {
+		width: 100%;
+	} */
+}

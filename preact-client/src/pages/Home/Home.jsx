@@ -40,7 +40,7 @@ export default function Home() {
 				/>
 			}
 		>
-			<div className="grid-jcenter-row-gap-8 padding-2--bot">
+			<div className="grid-row-gap-8 padding-2--bot">
 				<Card
 					// bg={LogoPngUrl}
 					title="Welcome to The Northport Butcher Shoppe!"

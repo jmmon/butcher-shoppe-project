@@ -43,7 +43,7 @@ const DateTimePicker = ({
 
 	return (
 		<>
-			<div className="flex-col-jcenter gap-05">
+			<div className="flex-col-jcenter gap-05 input-container">
 				<label
 					htmlFor="date-time-picker"
 					// className="date-time-picker"

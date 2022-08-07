@@ -22,7 +22,7 @@ export default function Fallback() {
 			}
 			title={<PageTitle title="Loading..." />}
 		>
-			<div className="grid-jcenter-row-gap-8 padding-2--bot">
+			<div className="grid-row-gap-8 padding-2--bot">
 				<Card title="Thank you for your patience!">
 					<div className="text-center">
 						Loading the page as fast as we can!

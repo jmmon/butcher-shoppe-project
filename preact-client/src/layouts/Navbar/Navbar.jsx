@@ -9,10 +9,10 @@ import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
 function Navbar() {
 	return (
-		<nav className={`flex-jcenter-acenter ${Styles.wrapper} panel-shadow--light`}>
-			<div className={`fkex-acenter ${Styles.navbar}`}>
+		<nav className={`${Styles.wrapper} panel-shadow--light`}>
+			<div className={Styles.navbar}>
 				<div className={Styles.logo_bg_ellipse}></div>
-				<Link href="/" className={`flex-acenter-jcenter ${Styles.home}`}>
+				<Link href="/" className={Styles.home}>
 					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
 					{" "}
 					<LogoComponent
@@ -40,40 +40,40 @@ function Navbar() {
 						<i className={`fas fa-bars ${Styles.bars}`} />
 					</div>
 
-					<div className={`flex-acenter ${Styles.menu}`}>
+					<div className={Styles.menu}>
 						<LinkWithPreload
 							href="/services"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Services
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/how-to-order"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							How To Order
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/order"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Order
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/meet-the-team"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							Meet The Team
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/FAQ"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							FAQ
 						</LinkWithPreload>
 						<a
 							href="#more-links"
-							className={`flex-jcenter-acenter ${Styles.menu_item} ${Styles.links}`}
+							className={`${Styles.menu_item} ${Styles.links}`}
 						>
 							More...
 						</a>

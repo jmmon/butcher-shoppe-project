@@ -1,6 +1,6 @@
 import React from "react";
 import LabelForm from "../LabelForm/LabelForm";
-import Styles from "../Labels.module.css";
+import labelStyles from "../Labels.module.css";
 
 function LabelInput({
 	title,
@@ -21,7 +21,7 @@ function LabelInput({
 			{costsExtra && (
 				<>
 					{" "}
-					<span className={Styles.special_extra}>
+					<span className={labelStyles.form_special_extra}>
 						*
 						<br />* Additional Fee - See Price List
 					</span>
@@ -31,7 +31,7 @@ function LabelInput({
 			{subtitle && (
 				<>
 					<br />
-					<span className={Styles.subtitle}>
+					<span className={labelStyles.subtitle}>
 						{subtitle}
 					</span>
 				</>

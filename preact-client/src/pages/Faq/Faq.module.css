@@ -1,7 +1,10 @@
 .container {
 	width: min(1000px, 96%);
 	margin: 0 auto;
+	gap: 2rem;
 }
+
+
 
 /* tab styles */
 .tabbed {
@@ -15,6 +18,8 @@
 }
 
 .labels_container {
+	display: flex;
+	align-items: stretch;
 	list-style: none;
 	padding: 0;
 	border-bottom: 1px solid #ccc;
@@ -33,7 +38,6 @@
 	cursor: pointer;	
 	transition: all 0.3s;
 }
-
 .label:hover label {
 	/* border-top-color: #333; */
 	border-top-color: var(--logo-red);
