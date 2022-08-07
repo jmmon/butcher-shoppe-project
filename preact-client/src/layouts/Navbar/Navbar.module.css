@@ -178,16 +178,9 @@
 	}
 	
 	.logo_bg_ellipse {
-		position: absolute;
-		z-index: -1;
 		height: 96px;
 		width: 180px;
 		left: 36px;
-	
-		top: 0;
-		
-		background-color: #ccc;
-		clip-path: ellipse(50% 50% at 50% 50%);
 	}
 
 	.home {
