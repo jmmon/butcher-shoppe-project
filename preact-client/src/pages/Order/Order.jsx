@@ -22,6 +22,7 @@ import PageLayout from "layouts/PageLayout/PageLayout";
 import OrderNotes from "components/FormComponents/Sections/OrderNotes/OrderNotes";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
+import CONSTANTS from "utils/CONSTANTS";
 
 const headers = { "Content-Type": "application/json" };
 
@@ -271,7 +272,7 @@ function Order() {
 		>
 			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				Please fill out the order form below, or give us a call at:
-				<TelLink className={Styles.phone}>(509) 640-6766</TelLink>
+				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</h3>
 			<FormProvider {...methods}>
 				<form
@@ -417,7 +418,7 @@ function Order() {
 			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				If you have any questions or need to make adjustments, give us a
 				call at:
-				<TelLink className={Styles.phone}>(509) 640-6766</TelLink>
+				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</h3>
 		</PageLayout>
 	);

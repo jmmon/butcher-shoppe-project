@@ -3,22 +3,37 @@ import "preact/debug";
 import { Route, Switch } from "wouter";
 import "./App.css";
 import ScrollToTopOnClickLink from "./utils/ScrollToTopOnClickLink";
+import Fallback from "pages/Fallback/Fallback";
+import routes from "./routes";
 
 import Header from "layouts/Header/Header";
 import Navbar from "layouts/Navbar/Navbar";
-import Footer from "layouts/Footer/Footer";
+// import Footer from "layouts/Footer/Footer";
 
-import Fallback from "pages/Fallback/Fallback";
 
-import Home from "pages/Home/Home";
-import NotFound from "pages/NotFound/NotFound";
 
-import routes from "./routes";
+// import Home from "pages/Home/Home";
+// import NotFound from "pages/NotFound/NotFound";
 
-const SubscribeConfirm = lazy(() =>
-	import("pages/Newsletter/Confirm/SubscribeConfirm")
+
+const NotFound = lazy(() =>
+	import("pages/NotFound/NotFound")
 );
-const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
+
+const Footer = lazy(() =>
+	import("layouts/Footer/Footer")
+);
+
+// const Fallback = lazy(() =>
+// 	import("pages/Fallback/Fallback")
+// );
+// const SubscribeConfirm = lazy(() =>
+// 	import("pages/Newsletter/Confirm/SubscribeConfirm")
+// );
+// const UnsubscribeConfirm = lazy(() =>
+// 	import("pages/Newsletter/Confirm/UnsubscribeConfirm")
+// );
+// const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
 
 
 
@@ -63,18 +78,17 @@ function App() {
 						}
 					>
 						<Switch>
-							<Route path="/testing-logo">
+							{/* <Route path="/testing-logo">
 								<TestingLogoPage />
-							</Route>
+							</Route> */}
 
-							<Route path="/">
+							{/* <Route path="/">
 								<Home />
-							</Route>
+							</Route> */}
 
-							<Route path="/newsletter/subscribe/confirm/:id">
+							{/* <Route path="/newsletter/subscribe/confirm/:id">
 								{(params) => (
 									<SubscribeConfirm
-										isSubscribePage
 										id={params.id}
 									/>
 								)}
@@ -82,11 +96,15 @@ function App() {
 
 							<Route path="/newsletter/unsubscribe/confirm/:id">
 								{(params) => (
-									<SubscribeConfirm
+									<UnsubscribeConfirm
 										id={params.id}
 									/>
 								)}
-							</Route>
+							</Route> */}
+
+							{/* <Route path="/newsletter/subscribe/confirm/:confirmationId" component={SubscribeConfirm}/>
+
+							<Route path="/newsletter/unsubscribe/confirm/:confirmationId" component={UnsubscribeConfirm}/> */}
 
 							{routes.map((route) => (
 								<Route 
@@ -135,8 +153,8 @@ function App() {
 								<NotFound />
 							</Route>
 						</Switch>
+					  <Footer />
 					</Suspense>
-					<Footer />
 				</div>
 			</ScrollToTopOnClickLink>
 		</div>

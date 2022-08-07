@@ -206,6 +206,7 @@
 	}
 
 	.newsletter_button {
+		cursor: pointer;
 		justify-self: end;
 		display: flex;
 		justify-content: center;

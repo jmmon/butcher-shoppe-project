@@ -15,13 +15,13 @@ const confirmUri =
 // 	"https://thenorthportbutchershoppe.com/mailman/confirm/testing_thenorthportbutchershoppe.com";
 const listName = "Newsletter";
 
-export default function SubscribeConfirm({ isSubscribePage, id }) {
-	const [location, setLocation] = useLocation();
-	const confirmationId = id;
-
+export default function SubscribeConfirm({ isSubscribePage = true, confirmationId }) {
+	const [location, setLocation] = useLocation();	
 	const [error, setError] = useState(null);
-
 	let timer = null;
+
+	const subscribeCommand = isSubscribePage ? "Subscribe+to" : "Unsubscribe+from";
+	const confirmData = `realname=&digests=0&language=en&cookie=${confirmationId}&submit=${subscribeCommand}+list+${listName}`;
 
 	const startRedirectTimer = () => {
 		timer = setTimeout(() => {
@@ -35,19 +35,16 @@ export default function SubscribeConfirm({ isSubscribePage, id }) {
 		};
 	}, [timer]);
 
-	React.useEffect(() => {
+	// On load:
+	useEffect(() => {
 		console.log("SubscribeConfirm param:", confirmationId);
-		const data = `realname=&digests=0&language=en&cookie=${confirmationId}&submit=${
-			isSubscribePage ? "Subscribe+to" : "Unsubscribe+from"
-		}+list+${listName}`;
 
 		axios
-			.post(confirmUri, data)
+			.post(confirmUri, confirmData)
 			.then((res) => {
 				console.log("SubscribeConfirm-POST response:", res);
-				console.log("SubscribeConfirm-POST response.data:", res.data);
+				console.log({status: res.status, data: res.data});
 
-				console.log(res.status);
 				if (res.status < 300) {
 					startRedirectTimer();
 				}
