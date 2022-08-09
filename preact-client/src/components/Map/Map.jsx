@@ -8,7 +8,7 @@ export default function GoogleMap({ placeName, zoomLevel }) {
 
 	useEffect(() => {
 		const googleMapScript = document.createElement("script");
-		googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_API_KEY}&libraries=places`;
+		googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_API_KEY}`;
 		googleMapScript.async = true;
 		window.document.body.appendChild(googleMapScript);
 		googleMapScript.addEventListener("load", () => {
