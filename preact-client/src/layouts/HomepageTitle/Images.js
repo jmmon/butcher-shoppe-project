@@ -1,13 +1,4 @@
 const Images = [
-	// {
-	// 	url: require("assets/logo/newest/tbs4-a1.png"),
-	// 	position: "50% 50%",
-	// 	size: "contain",
-	// },
-	// {
-	// 	url: require("assets/logo/truckside6.png"),
-	// 	position: "50% 58%",
-	// },
 	{
 		url: require("assets/images/homepage/_DSC1246-q80-c4.jpg"),
 		position: "50% 58%",

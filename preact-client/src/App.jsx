@@ -27,12 +27,12 @@ const Footer = lazy(() =>
 // const Fallback = lazy(() =>
 // 	import("pages/Fallback/Fallback")
 // );
-// const SubscribeConfirm = lazy(() =>
-// 	import("pages/Newsletter/Confirm/SubscribeConfirm")
-// );
-// const UnsubscribeConfirm = lazy(() =>
-// 	import("pages/Newsletter/Confirm/UnsubscribeConfirm")
-// );
+const SubscribeConfirm = lazy(() =>
+	import("pages/Newsletter/Confirm/SubscribeConfirm")
+);
+const UnsubscribeConfirm = lazy(() =>
+	import("pages/Newsletter/Confirm/UnsubscribeConfirm")
+);
 // const TestingLogoPage = lazy(() => import("pages/TestingLogo/TestingLogoPage"));
 
 
@@ -86,21 +86,21 @@ function App() {
 								<Home />
 							</Route> */}
 
-							{/* <Route path="/newsletter/subscribe/confirm/:id">
+							<Route path="/newsletter/subscribe/confirm/:confirmationId">
 								{(params) => (
 									<SubscribeConfirm
-										id={params.id}
+										confirmationId={params.confirmationId}
 									/>
 								)}
 							</Route>
 
-							<Route path="/newsletter/unsubscribe/confirm/:id">
+							<Route path="/newsletter/unsubscribe/confirm/:confirmationId">
 								{(params) => (
 									<UnsubscribeConfirm
-										id={params.id}
+										confirmationId={params.confirmationId}
 									/>
 								)}
-							</Route> */}
+							</Route>
 
 							{/* <Route path="/newsletter/subscribe/confirm/:confirmationId" component={SubscribeConfirm}/>
 

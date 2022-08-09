@@ -6,8 +6,6 @@ import HomepageTitle from "layouts/HomepageTitle/HomepageTitle";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 
-// const LogoPngUrl = "assets/logo/truckside6.png"
-
 export default function Home() {
 	return (
 		<PageLayout

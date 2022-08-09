@@ -4,17 +4,12 @@ import Styles from "./Subscribe.module.css";
 
 const headers = {
 	"Content-Type": "application/json",
-	// "Access-Control-Allow-Origin": "https://staging.thenorthportbutchershoppe.com"
 };
 
 function Subscribe({ unsubscribe, className }) {
 	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
-
-	// const subscribeBackendUri = `https://thenorthportbutchershoppe.com/staging/server/${
-	// 	unsubscribe ? "unsubscribe" : "subscribe"
-	// }`;
 
 	// const subscribeBackendUri = `http://localhost:3001/server/${
 	// 	unsubscribe ? "unsubscribe" : "subscribe"
@@ -32,7 +27,6 @@ function Subscribe({ unsubscribe, className }) {
 
 	const resetButtonWithSetTimeout = () => {
 		timer = setTimeout(() => {
-
 			setResponseFromSubscribeBox((prevState) => ({
 				...prevState,
 				isLoading: false,
@@ -50,6 +44,7 @@ function Subscribe({ unsubscribe, className }) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		console.log('Sending', unsubscribe ? "unsubscribe" : "subscribe" , 'email to', subscribeBackendUri, "\nwith email", email);
 
 		setResponseFromSubscribeBox((prevState) => ({
 			...prevState,
@@ -62,6 +57,8 @@ function Subscribe({ unsubscribe, className }) {
 			.post(subscribeBackendUri, { email: email }, { headers: headers })
 			.then((res) => {
 				if (res.status === 200) {
+					console.log('res.data.message', res.data.message);
+
 					setResponseFromSubscribeBox((prevState) => ({
 						...prevState,
 						isLoading: false,

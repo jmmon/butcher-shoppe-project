@@ -2,18 +2,12 @@
 	position: relative;
 	background-color: var(--text-dark);
 	letter-spacing: 0.05em;
-
-	/* background-image: url("assets/logo/truckside6.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%; */
 }
 
 .image {
 	height: clamp(50vh, 30rem, 60vw);
 	max-width: 2000px;
 	margin: 0 auto;
-	/* opacity: 0.8; */
 }
 
 .content_wrapper {
@@ -26,7 +20,6 @@
 }
 
 .content_container {
-	/* margin-top: auto; */
 	margin-top: 1em;
 	flex-grow: 1;
 }
@@ -66,30 +59,13 @@
 	font-size: 1.2rem;
 }
 
-
-
-@media (max-width: 450px) {
-}
-
-
-
-/* calc(-2vw + 1rem) */
 @media (min-width: 1200px) {
 	.image {
 		box-shadow: 
-		/* inset calc(-2vw + 1.5rem) 0 calc(4vw - 2rem) 0
-				var(--text-dark), */
 			inset 0 0 calc(4vw - 2rem) 0
 				var(--text-dark),
 				inset 0 0 calc(2vw - 2rem) 0
 				var(--text-dark),
-			/* inset calc(8vw - 6rem) 0 0 0
-			hotpink,
-				var(--text-dark), */
-				/* inset calc(10vw - 8rem) 0 
-				2vw 0 var(--text-dark), */
-				/* inset calc(4vw) 0 
-				2vw 0 var(--text-dark), */
 				var(--inset-box-shadow--dark);
 	}
 }

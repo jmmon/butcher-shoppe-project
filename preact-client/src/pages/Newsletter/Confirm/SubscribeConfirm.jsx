@@ -68,7 +68,7 @@ export default function SubscribeConfirm({ isSubscribePage = true, confirmationI
 					/>
 				</Helmet>
 			}
-			title={<PageTitle bgImage={bgImage} title="Confirm Subscription" />}
+			title={<PageTitle bgImage={bgImage} title={`Confirm ${isSubscribePage ? "Subscription" : "Unsubscription"}`} />}
 		>
 			<div className="flex-col-jcenter-acenter">
 				{isSubscribePage && (
