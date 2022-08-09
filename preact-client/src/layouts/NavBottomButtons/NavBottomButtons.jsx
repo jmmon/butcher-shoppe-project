@@ -4,7 +4,7 @@ import WhitePageBackground from "layouts/WhitePageBackground/WhitePageBackground
 
 import Styles from "./NavBottomButtons.module.css";
 
-function NavBottomButtons({ prev, next }) {
+export default function NavBottomButtons({ prev, next }) {
 	return (
 		<WhitePageBackground separate={true}>
 			<div className={`flex-jevenly-acenter-wrap ${Styles.container}`}>
@@ -26,5 +26,3 @@ function NavBottomButtons({ prev, next }) {
 		</WhitePageBackground>
 	);
 }
-
-export default NavBottomButtons;

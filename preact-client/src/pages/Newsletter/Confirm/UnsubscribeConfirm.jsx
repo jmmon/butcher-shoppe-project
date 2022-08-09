@@ -1,8 +1,6 @@
 import React from 'react'
-import SubscribeConfirm from './SubscribeConfirm'
+import Confirm from './Confirm'
 
-export default function UnsubscribeConfirm({...props}) {
-	return (
-		<SubscribeConfirm isSubscribePage={false} {...props}/>
-	)
+export default function UnsubscribeConfirm() {
+		return <Confirm isUnsubscribe />	
 }

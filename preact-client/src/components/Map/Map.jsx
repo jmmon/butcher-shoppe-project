@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import Styles from "../FooterSuspenseContainer/FooterSuspenseContainer.module.css";
 
-const GoogleMap = ({ placeName, zoomLevel }) => {
+export default function GoogleMap({ placeName, zoomLevel }) {
 	const googleMapRef = useRef();
 	let googleMap;
 
@@ -56,5 +56,3 @@ const GoogleMap = ({ placeName, zoomLevel }) => {
 		</div>
 	);
 };
-
-export default GoogleMap;

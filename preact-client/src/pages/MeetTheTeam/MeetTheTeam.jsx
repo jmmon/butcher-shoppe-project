@@ -7,7 +7,8 @@ import PageTitle from "layouts/PageTitle/PageTitle";
 import Card from "components/Card/Card";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
-function MeetTheTeam() {
+
+export default function MeetTheTeam() {
 	return (
 		<PageLayout
 			helmet={
@@ -101,5 +102,3 @@ function MeetTheTeam() {
 		</PageLayout>
 	);
 }
-
-export default MeetTheTeam;

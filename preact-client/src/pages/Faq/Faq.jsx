@@ -1,8 +1,6 @@
 import React from "react";
 import Styles from "./Faq.module.css";
 import bgImage from "assets/images/image-1-132-cropped-55.jpg";
-//height 412.567px
-//width 1374.76px
 
 import PageTitle from "layouts/PageTitle/PageTitle";
 import PageLayout from "layouts/PageLayout/PageLayout";

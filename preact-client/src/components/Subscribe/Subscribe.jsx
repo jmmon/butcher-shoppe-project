@@ -6,7 +6,7 @@ const headers = {
 	"Content-Type": "application/json",
 };
 
-function Subscribe({ unsubscribe, className }) {
+export default function Subscribe({ unsubscribe, className }) {
 	const subscribeBackendUri = `https://thenorthportbutchershoppe.com/server/${
 		unsubscribe ? "unsubscribe" : "subscribe"
 	}`;
@@ -154,5 +154,3 @@ function Subscribe({ unsubscribe, className }) {
 		</form>
 	);
 }
-
-export default Subscribe;

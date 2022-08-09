@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./PageTitle.module.css"
 
-function PageTitle({
+export default function PageTitle({
 	title = "",
 	bgImage = null,
 	position = "50% 50%",
@@ -34,5 +34,3 @@ function PageTitle({
 		</section>
 	);
 }
-
-export default PageTitle;

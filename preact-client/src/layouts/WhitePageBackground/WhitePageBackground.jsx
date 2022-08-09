@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from "./WhitePageBackground.module.css";
 
-function WhitePageBackground({ separate = false, className = "", children }) {
+export default function WhitePageBackground({ separate = false, className = "", children }) {
 	return (
 		<section
 			className={`flex-col-jcenter panel-shadow--dark ${className} ${Styles.container} ${
@@ -12,5 +12,3 @@ function WhitePageBackground({ separate = false, className = "", children }) {
 		</section>
 	);
 }
-
-export default WhitePageBackground;

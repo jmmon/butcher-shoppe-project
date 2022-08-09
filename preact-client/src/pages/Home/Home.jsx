@@ -25,7 +25,6 @@ export default function Home() {
 			title={
 				<HomepageTitle
 					title="The Butcher Shoppe"
-					// title="MOBILE FARM SLAUGHTER"
 					subtitle="Mobile Farm Slaughter"
 					subtext="Serving Northeast Washington State"
 
@@ -40,11 +39,9 @@ export default function Home() {
 		>
 			<div className="grid-row-gap-8 padding-2--bot">
 				<Card
-					// bg={LogoPngUrl}
 					title="Welcome to The Northport Butcher Shoppe!"
 					paragraphs={[
 						"Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter.",
-						// "Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter and custom butchery.",
 						"With our mobile slaughter truck, we provide animal slaughter conveniently on-site at your farm.",
 					]}
 				>
@@ -68,7 +65,6 @@ export default function Home() {
 					title="How It Works"
 					paragraphs={[
 						"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass for you.",
-						// "If you decide to send the carcass back to our Shoppe, we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
 						"Coming soon, we will offer our own in-house meat processing at our Shoppe, where we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
 					]}
 				>

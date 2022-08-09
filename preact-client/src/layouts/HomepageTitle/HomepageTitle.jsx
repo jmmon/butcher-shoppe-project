@@ -21,7 +21,7 @@ const properties = {
 	indicators: (i) => <div className="indicator">{i + 1}</div>,
 };
 
-function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
+export default function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
 	return (
 		<section
 			className={`${Styles.section} text-center text-white panel-shadow--dark`}
@@ -68,12 +68,8 @@ function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
 					</Button>
 				</div>
 
-				{/* <p className={`${Styles.subtext_wrapper} flex text-shadow--lg`}> */}
-					<i className={`${Styles.subtext} flex text-shadow--lg`}>{subtext}</i>
-				{/* </p> */}
+				<i className={`${Styles.subtext} flex text-shadow--lg`}>{subtext}</i>
 			</div>
 		</section>
 	);
 }
-
-export default HomepageTitle;

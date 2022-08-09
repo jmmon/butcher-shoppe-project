@@ -62,29 +62,12 @@ export default function Services() {
 
 				<Card
 					title="What We Offer"
-					// paragraphs={[
-					// 	"We serve the surrounding Stevens County area with our mobile farm slaughter truck and you have the option to have your carcass delivered to a local shop of your choice, or once our Northport meat processing Shoppe is complete we will send it there to be processed.",
-					// 	"We also process wild game, like deer, elk, moose and bear",
-					// 	"Sorry, no poultry or rabbits!",
-					// ]}
 					paragraphs={[
 						"We serve the surrounding Stevens County area with our mobile farm slaughter truck. After dispatch, we will deliver your carcass to a local meat processing shop of your choice.",
 						"Our own meat processing Shoppe in downtown Northport is currently under construction, and once it is complete we will send carcasses there to be processed in-house.",
 						"We also process wild game, like deer, elk, moose and bear",
 						"Sorry, no poultry or rabbits!",
 					]}
-					// paragraphs={[
-					// 	"We serve Stevens County and the surrounding area with our mobile farm slaughter truck. While our shop is under constructionand you have the option to have your carcass delivered to another local shop or send it back to our meat shop in Northport.",
-					// 	"We also process wild game, like deer, elk, moose and bear",
-					// 	"Sorry, no poultry or rabbits!",
-					// ]}
-
-					// paragraphs={[
-					// 	"We cover the tri-county area with our mobile farmkill truck, and we process that meat in our store in Downtown Northport.",
-					// 	"We provide farm kills for beef, hogs, goats, lamb and bison. This includes dispatch, evisceration and transport to our meat shop.",
-					// 	"We provide custom cut, cure, smoke and wrap.",
-					// 	"We process wild game, including deer, elk, moose and bear.",
-					// ]}
 				>
 					<p>
 						Basic kill fees and average meat processing fees are
@@ -106,7 +89,6 @@ export default function Services() {
 						bg={bgSlaughter}
 					/>
 					<h2 className="prices-grid-title ">Slaughter Prices</h2>
-					{/* <p>Minimum Charge: $100</p> */}
 					<div className="prices-grid-container panel-shadow--light">
 						<span className="prices-two-column-header">
 							Minimum Charge

@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
-
 import Styles from "./Navbar.module.css";
 
-// import LogoComponent from "assets/logo/LogoComponent";
 import LogoComponent from "assets/logo/LogoComponent_final";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
@@ -23,15 +21,6 @@ function Navbar() {
 						}}
 						styles={Styles}
 					/>
-					{/* <LogoComponent
-						className={Styles.logo}
-						fills={{
-							white: "#ccc",
-							text: "#fff",
-						}}
-						styles={Styles}
-					/>
-					<div className={Styles.logo_border}></div> */}
 				</Link>
 
 				<div className={Styles.menu_container}>
@@ -86,7 +75,7 @@ function Navbar() {
 					</div>
 				</div>
 
-				{/* Normal Newsletter Button	 */}
+				{/* Large Screen Newsletter Button	 */}
 				<LinkWithPreload href="/newsletter/subscribe">
 					<div
 						className={`${Styles.newsletter_button} btn--outline btn--large`}

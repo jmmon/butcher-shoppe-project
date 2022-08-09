@@ -17,7 +17,7 @@ function Option({ label, value }) {
 	);
 }
 
-function SelectForm({
+export default function SelectForm({
 	title,
 	name,
 	subtitle = null,
@@ -56,5 +56,3 @@ function SelectForm({
 		</div>
 	);
 }
-
-export default SelectForm;

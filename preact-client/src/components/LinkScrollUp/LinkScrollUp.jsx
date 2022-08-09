@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "wouter";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
-function LinkScrollUp({ 
+export default function LinkScrollUp({ 
 	className = '', 
 	path, 
 	children 
@@ -36,5 +36,3 @@ function LinkScrollUp({
 		</>
 	);
 }
-
-export default LinkScrollUp;

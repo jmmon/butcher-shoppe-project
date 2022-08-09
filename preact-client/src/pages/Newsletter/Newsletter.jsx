@@ -11,7 +11,7 @@ import Card from "components/Card/Card";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 
-function NewsletterPage() {
+export default function NewsletterPage() {
 	return (
 		<PageLayout
 			helmet={
@@ -84,5 +84,3 @@ function NewsletterPage() {
 		</PageLayout>
 	);
 }
-
-export default NewsletterPage;

@@ -8,12 +8,11 @@ import PageTitle from "layouts/PageTitle/PageTitle";
 import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
 
-// import { Link } from "wouter";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 
-function HowToOrder() {
+export default function HowToOrder() {
 	return (
 		<PageLayout
 			helmet={
@@ -49,24 +48,11 @@ function HowToOrder() {
 						for the mobile dispatch.
 					</p>
 					<br />
-					{/* <p>
-						After the mobile dispatch, while our meat processing
-						plant is still being prepared, we will offer to take
-						your carcass to a processor of your choice, and the
-						processor will handle the rest!
-					</p> */}
 					<p>
 						After the mobile dispatch, we will take your carcass(es)
 						to a meat processor of your choice, and they will handle
 						the rest!
 					</p>
-					{/* <br />
-							<p>
-							we will give you an
-							estimate for when the meat will be processed and
-							ready for pickup. Finally, come visit us in
-							Northport to pick up your meat!
-						</p> */}
 					<br />
 					<br />
 					<h2>Steps for ordering:</h2>
@@ -98,14 +84,6 @@ function HowToOrder() {
 											your costs down and saving you time!
 										</p>
 									</li>
-									{/* <li>
-											<p>
-												Once finished with your contact
-												info, next is the info about
-												each animal you would like
-												processed.
-											</p>
-										</li> */}
 								</ul>
 							</details>
 						</li>
@@ -139,28 +117,6 @@ function HowToOrder() {
 										</p>
 									</li>
 								</ul>
-
-								{/* <h4 className="margin-1--top">
-											Unsure about the cuts you would
-											like?
-										</h4>
-										<ul>
-											<li>
-												<p>
-													Check out the default cut
-													selections, or customize the
-													cuts to fit your needs.
-												</p>
-											</li>
-											<li>
-												<p>
-													Do you have more animals
-													you'd like processed? Next
-													you can add additional
-													animals.
-												</p>
-											</li>
-										</ul> */}
 							</details>
 						</li>
 						<li className="details_item">
@@ -244,5 +200,3 @@ function HowToOrder() {
 		</PageLayout>
 	);
 }
-
-export default HowToOrder;

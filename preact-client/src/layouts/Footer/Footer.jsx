@@ -6,7 +6,6 @@ import CONSTANTS from "utils/CONSTANTS";
 import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "../../components/FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
-// import LogoComponent from "assets/logo/LogoComponent";
 import LogoComponent from "assets/logo/LogoComponent_final";
 
 import TelLink from "components/TelLink/TelLink";
@@ -15,7 +14,7 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
 // const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
 
-function Footer() {
+export default function Footer() {
 	const contactMemo = useMemo(
 		() =>
 			FooterSuspenseContainer({
@@ -224,5 +223,3 @@ function Footer() {
 		</footer>
 	);
 }
-
-export default Footer;

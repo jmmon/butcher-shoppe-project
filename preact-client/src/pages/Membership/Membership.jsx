@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "wouter";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import PageTitle from "layouts/PageTitle/PageTitle";
 import bgImage from "assets/images/image-1-156-cropped-55.jpg";
