@@ -4,8 +4,6 @@
   font-style: normal;
   font-weight: 700;
   src: local(''),
-       /* url('fonts/pt-sans-v17-latin-700.woff2') format('woff2'),  */
-			 /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('fonts/pt-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	font-display: swap;
 }
@@ -21,10 +19,7 @@
 
 :root {
 	--grey-bg: #e8e8e8;
-	/* --header-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-		"Lucida Sans", Arial, sans-serif; */
 
-		/* new logo colors, font */
 	--logo-font-family: 'Franklin Gothic Heavy Regular';
 	--logo-font-weight: 900;
 	--logo-red: #a13d33;
@@ -39,12 +34,6 @@
 	--input-placeholder--light: #aaa;
 	--white: #fff;
 	--offwhite: rgb(236, 229, 229);
-
-	/* old logo colors */
-	/* --logo-red: #911102; */
-	/* --calendar-red: #911102cc; */
-	/* --calendar-red-selecting: #91100230; */
-	/* --faq-qa-red: #911102aa; */
 	
 	--navbar-gradient--dark: rgb(50, 50, 50);
 	--navbar-gradient--light: rgb(100, 100, 100); 
@@ -53,8 +42,9 @@
 	--sky-blue-bg: rgba(var(--sky-blue), 0.5);
 	--form_special_extra: rgb(203, 100, 36);
 	
-		--input-required--valid: rgb(231, 255, 231);
-		--input-required--invalid: rgb(255, 231, 231);
+	--input-required--valid: rgb(231, 255, 231);
+	--input-required--invalid: rgb(255, 231, 231);
+
 
 	--transition: all 0.1s ease-out;
 
