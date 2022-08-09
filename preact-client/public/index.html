@@ -17,7 +17,7 @@
 			name="description"
 			content="Serving the tri-county area in northeast Washington, The Butcher Shoppe offers mobile animal dispatch and soon will offer meat processing. Check out our newsletter!"
 		/>
-		<meta name="author" content="Joe Moulton" />
+		<meta name="author" content="The Butcher Shoppe" />
 		<title>
 			The Butcher Shoppe: Mobile Dispatch, Meat Processing | Northport, WA
 		</title>
@@ -41,17 +41,28 @@
 		<meta name="twitter:card" content="summary" />
 
 		<!-- Stylesheet and Icons/fonts -->
-		<link rel="prerender" href="fonts/pt-sans-v17-latin-700.woff" as="font" type="font/woff" crossorigin>
+		<link rel="preload" href="fonts/pt-sans-v17-latin-700.woff" as="font" type="font/woff" crossorigin>
+		<link rel="preload" href="fonts/Franklin\ Gothic\ Heavy\ Regular/Franklin\ Gothic\ Heavy\ Regular.ttf" as="font" type="font/ttf" crossorigin>
 		
 		<script
-			rel="prerender"
+			rel="preload"
 			src="https://kit.fontawesome.com/47862eacfc.js"
 			crossorigin="anonymous"
 		></script>
 	</head>
 
 	<body>
-		<noscript>You need to enable JavaScript to run this app. Sorry for any inconvenience!</noscript>
+		<noscript>Hello! Please enable Javascript to view our page. Thank you for understanding!</noscript>
 		<div id="root"></div>
 	</body>
 </html>
+
+
+<!-- 
+	preload: mostly compatible
+	prefetch: pretty compatible; not safari
+	preconnect: pretty compatible; not firefox
+	dns-prefetch: mostly compatible; firefox http only (not https)
+	prerender: firefox and safari not compatible
+
+ -->
