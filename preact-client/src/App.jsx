@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from "react";
 import "preact/debug";
 import { Route, Switch } from "wouter";
 import "./App.css";
-import ScrollToTopOnClickLink from "./utils/ScrollToTopOnClickLink";
+import LinkScrollToTop from "./utils/LinkScrollToTop";
 import Fallback from "pages/Fallback/Fallback";
 import routes from "./routes";
 
@@ -17,7 +17,7 @@ const Footer = lazy(() =>
 function App() {
 	return (
 		<div className="website-container">
-			<ScrollToTopOnClickLink>
+			<LinkScrollToTop excludes={["/contact"]}>
 				<Header />
 				<Navbar />
 				<div className="website-content-container">
@@ -43,7 +43,7 @@ function App() {
 					  <Footer />
 					</Suspense>
 				</div>
-			</ScrollToTopOnClickLink>
+			</LinkScrollToTop>
 		</div>
 	);
 }
