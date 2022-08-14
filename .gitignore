@@ -1,7 +1,9 @@
-resources/
-/resources
+# Ignore
+/resources/*
+/backend-copy/
 
 *.zip
 
-backend-copy/
-/backend-copy
+# Allow
+
+!/resources/logo/
