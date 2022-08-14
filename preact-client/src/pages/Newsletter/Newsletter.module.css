@@ -1,0 +1,15 @@
+/* .newsletter--blerb-container { */
+.card {
+	margin-bottom: 4rem;
+}
+
+.subheading_container {
+	border-bottom: 1px solid grey;
+	margin-bottom: 2rem;
+}
+
+.subheading {
+	font-size: 1.5rem;
+	text-align: center;
+	width: auto;
+}
