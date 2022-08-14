@@ -42,3 +42,19 @@ FINAL Final (react-snap to devDependencies): TOTAL
 	0.86s SLOW 3G
 	49ms EMERGING 4G
 )
+
+
+
+
+Removed testing libraries; using wouter
+NEW as of 8/14/2022: TOTAL
+	350.6kB MIN
+	95.1kB MIN + GZIP
+	3.17s 2G EDGE
+	1.9s SLOW 3G
+Largest package:
+1. react-datepicker v4.7.0
+	172.4kB MIN
+	39.1kB MIN + GZIP
+	0.78s SLOW 3G
+	45ms EMERGING 4G
