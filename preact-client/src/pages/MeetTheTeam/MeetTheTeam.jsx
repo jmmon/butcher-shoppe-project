@@ -1,5 +1,5 @@
 import React from "react";
-import "./MeetTheTeam.css";
+import Styles from "./MeetTheTeam.module.css";
 
 import bgImage from "assets/images/image-1-113-cropped-55.jpg";
 import PageTitle from "layouts/PageTitle/PageTitle";

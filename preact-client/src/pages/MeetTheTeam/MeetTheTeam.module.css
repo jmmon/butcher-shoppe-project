@@ -1,9 +1,9 @@
-.team-container {
+/* .team_container {
 	max-width: 92%;
 	margin: 0 auto;
 }
 
-[class*="team-img"] {
+[class*="team_img"] {
 	width: 92%;
 	width: 500px;
 	height: 600px;
@@ -13,28 +13,28 @@
 	object-position: 50% 50%;
 }
 
-.team-img-left {
+.team_img_left {
 	float: left;
 	margin: 2vw 4vw 4vw 1vw;
 }
 
-.team-img-right {
+.team_img_right {
 	float: right;
 	margin: 2vw 1vw 4vw 4vw;
 }
 
-.team-paragraph {
+.team_paragraph {
 	text-align: justify;
 	margin: 2vw;
 }
 
 @media (max-width: 900px) {
-	[class*="team-img"] {
+	[class*="team_img"] {
 		display: block;
 		width: 100%;
 		height: 400px;
 		margin: 2vw auto 1rem auto;
 	}
-	.team-paragraph {
+	.team_paragraph {
 	}
-}
+} */
