@@ -1,5 +1,5 @@
 import React from "react";
-import "./Services.css";
+import Styles from "./Services.module.css";
 import { Link } from "wouter";
 
 import bgTitle from "assets/images/image-1-2-cropped-55.jpg";
@@ -44,7 +44,7 @@ export default function Services() {
 		>
 			<div className="grid-row-gap-4">
 				<div className="card--width">
-					<div className="services-btns-container">
+					<div className={Styles.btns_container}>
 						<Button
 							className="btn btn--large btn--outline"
 							url="#slaughter"
@@ -88,69 +88,69 @@ export default function Services() {
 						]}
 						bg={bgSlaughter}
 					/>
-					<h2 className="prices-grid-title ">Slaughter Prices</h2>
-					<div className="prices-grid-container panel-shadow--light">
-						<span className="prices-two-column-header">
+					<h2 className={`text-center ${Styles.prices_title}`}>Slaughter Prices</h2>
+					<div className={`${Styles.prices_container} panel-shadow--light`}>
+						<span className={Styles.prices_two_column}>
 							Minimum Charge
 						</span>
-						<span className="prices-two-column-amount">$100</span>
+						<span className={Styles.prices_two_column}>$100</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-grid-header">Animal</span>
-						<span className="prices-grid-header">Base Price</span>
-						<span className="prices-grid-header">
+						<span className={`text-center ${Styles.prices_header}`}>Animal</span>
+						<span className={`text-center ${Styles.prices_header}`}>Base Price</span>
+						<span className={`text-center ${Styles.prices_header}`}>
 							If You Keep The Guts
 						</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-grid-item">Beef</span>
-						<span className="prices-grid-item">$160</span>
-						<span className="prices-grid-item">$140</span>
+						<span className={`text-center ${Styles.prices_item}`}>Beef</span>
+						<span className={`text-center ${Styles.prices_item}`}>$160</span>
+						<span className={`text-center ${Styles.prices_item}`}>$140</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-grid-item">Hog</span>
-						<span className="prices-grid-item">$100</span>
-						<span className="prices-grid-item">$90</span>
+						<span className={`text-center ${Styles.prices_item}`}>Hog</span>
+						<span className={`text-center ${Styles.prices_item}`}>$100</span>
+						<span className={`text-center ${Styles.prices_item}`}>$90</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-grid-item">
+						<span className={`text-center ${Styles.prices_item}`}>
 							Sheep, <br />
 							Goats
 						</span>
-						<span className="prices-grid-item">$80</span>
-						<span className="prices-grid-item">$70</span>
+						<span className={`text-center ${Styles.prices_item}`}>$80</span>
+						<span className={`text-center ${Styles.prices_item}`}>$70</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-grid-item">
+						<span className={`text-center ${Styles.prices_item}`}>
 							Bison,
 							<br />
 							Buffalo
 						</span>
-						<span className="prices-grid-item prices-grid-item-2">
+						<span className={`text-center ${Styles.prices_item}`}>
 							$180
 						</span>
-						<span className="prices-grid-item prices-grid-item-2">
+						<span className={`text-center ${Styles.prices_item}`}>
 							$160
 						</span>
 
-						<span className="prices-grid-spacer"></span>
+						<span className={Styles.prices_spacer}></span>
 
-						<span className="prices-two-column">
+						<span className={Styles.prices_two_column}>
 							Exotic Animals
 						</span>
-						<span className="prices-two-column">
+						<span className={Styles.prices_two_column}>
 							<TelLink>Please Call Us</TelLink>
 						</span>
 					</div>
 					<div>
-						<h2 className="prices-grid-title ">Extra Charges</h2>
+						<h2 className={`text-center ${Styles.prices_title}`}>Extra Charges</h2>
 						<Card>
-							<ul className="prices-extra-margin flex-col gap-1">
+							<ul className={`${Styles.prices_extra_margin} flex-col gap-1`}>
 								<li>
 									<p>
 										Fuel surcharge will apply based on the
@@ -164,7 +164,7 @@ export default function Services() {
 									</p>
 								</li>
 							</ul>
-							<div className="prices-extra-call">
+							<div className={Styles.prices_extra_call}>
 								Please <TelLink>give us a call</TelLink> if you
 								have any questions on our pricing or extra
 								charges!
@@ -196,7 +196,7 @@ export default function Services() {
 						</p>
 					</Card>
 					<div>
-						<h2 className="prices-grid-title ">
+						<h2 className={`text-center ${Styles.prices_title}`}>
 							Processing Prices
 						</h2>
 						<div className="card--width card--content-width card--font-size">
