@@ -54,14 +54,14 @@ export default function HomepageTitle({ title = "", subtitle = "", subtext = "" 
 					</h2>
 					
 					<Button
-						className={`${Styles.hero_btn} btn--outline btn--large`}
+						className={`${Styles.hero_btns} ${Styles.hero_btn} btn--outline`}
 						url="/services"
 					>
 						Services
 					</Button>
 
 					<Button
-						className={`${Styles.hero_btn} btn--outline btn--large`}
+						className={`${Styles.hero_btns} ${Styles.hero_btn} btn--outline`}
 						url="/how-to-order"
 					>
 						How to Order

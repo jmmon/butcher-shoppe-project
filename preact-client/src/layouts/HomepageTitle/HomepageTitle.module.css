@@ -40,13 +40,13 @@
 	font-family: var(--header-font);
 	flex-grow: 0;
 }
-
-.hero_btn {
-	font-size: clamp(0.8em, 2vw, 1.3em);
+.hero_btns.hero_btn {
+	font-size: clamp(0.8rem, 2vw, 1.3rem) !important;
 	width: 10em;
 	margin: 0 2vw;
 	font-family: var(--header-font);
 	letter-spacing: 0.03em;
+	padding: 12px 26px;
 }
 
 .subtext {
