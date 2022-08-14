@@ -1,0 +1,35 @@
+/* ellipse border */
+.cls_1{fill: #131211;}
+
+/* white bg of logo; Northport, Wa */
+.cls_2{fill:#fff;}
+
+/* MOBILE FARM SLAUGHTER */
+.cls_3{font-size: 43.66px;}
+.cls_3a{letter-spacing:-.03em;}
+.cls_3b{letter-spacing:-.02em;}
+
+
+/* website url */
+.cls_4{font-size:25.81px;}
+.cls_4b{letter-spacing:.02em;}
+.cls_4c{letter-spacing:.01em;}
+.cls_4d{letter-spacing:0;}
+
+/* text (not cleaver / Northport, Wa) */
+text,
+tspan{font-family: var(--logo-font-family);}
+
+/* text (not Northport, Wa / MOBILE FARM SLAUGHTER) */
+.cls_4,
+.cls_5,
+.cls_6{fill:#a13d33;}
+
+/* phone number */
+.cls_5{font-size:36.63px;}
+
+/* mountains */
+.cls_7{fill:#544c4c;}
+
+/* trees */
+.cls_8{fill:#0d0d0c;}

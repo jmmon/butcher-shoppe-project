@@ -6,7 +6,7 @@ import CONSTANTS from "utils/CONSTANTS";
 import Subscribe from "components/Subscribe/Subscribe";
 import FooterSuspenseContainer from "../../components/FooterSuspenseContainer/FooterSuspenseContainer";
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
-import LogoComponent from "assets/logo/LogoComponent_final";
+import LogoComponent from "assets/logo/LogoComponent";
 
 import TelLink from "components/TelLink/TelLink";
 

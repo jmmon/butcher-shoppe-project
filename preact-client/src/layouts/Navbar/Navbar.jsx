@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "wouter";
 import Styles from "./Navbar.module.css";
 
-import LogoComponent from "assets/logo/LogoComponent_final";
+import LogoComponent from "assets/logo/LogoComponent";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
 function Navbar() {
@@ -15,10 +15,6 @@ function Navbar() {
 					{" "}
 					<LogoComponent
 						className={Styles.logo}
-						fills={{
-							white: "#ccc",
-							text: "#fff",
-						}}
 						styles={Styles}
 					/>
 				</Link>
