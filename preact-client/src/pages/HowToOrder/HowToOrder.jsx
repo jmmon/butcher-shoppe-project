@@ -1,16 +1,14 @@
 import React from "react";
-import "./HowToOrder.css";
-import PageLayout from "layouts/PageLayout/PageLayout";
-
+import Styles from "./HowToOrder.module.css";
+import { Helmet } from "react-helmet";
 import bgTitle from "assets/images/image-1-116-cropped-55.jpg";
 
+import PageLayout from "layouts/PageLayout/PageLayout";
 import PageTitle from "layouts/PageTitle/PageTitle";
 import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import Card from "components/Card/Card";
-
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import TelLink from "components/TelLink/TelLink";
-import { Helmet } from "react-helmet";
 
 export default function HowToOrder() {
 	return (
@@ -57,13 +55,13 @@ export default function HowToOrder() {
 					<br />
 					<h2>Steps for ordering:</h2>
 					<br />
-					<ol className="form--steps">
-						<li className="details_item">
+					<ol>
+						<li className={Styles.details_item}>
 							<details>
 								<summary>
 									Start with your contact information
 								</summary>
-								<ul className="panel-shadow--light details_content line-height">
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
 									<li>
 										<p>
 											Head on over to our{" "}
@@ -87,10 +85,10 @@ export default function HowToOrder() {
 								</ul>
 							</details>
 						</li>
-						<li className="details_item">
+						<li className={Styles.details_item}>
 							<details>
 								<summary>Next, add your animal(s)</summary>
-								<ul className="panel-shadow--light details_content line-height">
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
 									<li>
 										<p>
 											Select a type of animal for
@@ -119,13 +117,13 @@ export default function HowToOrder() {
 								</ul>
 							</details>
 						</li>
-						<li className="details_item">
+						<li className={Styles.details_item}>
 							<details>
 								<summary>
 									Select your preferred date, and an alternate
 									date or window
 								</summary>
-								<ul className="panel-shadow--light details_content line-height">
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
 									<li>
 										<p>
 											Choose a date that works best for
@@ -151,10 +149,10 @@ export default function HowToOrder() {
 								</ul>
 							</details>
 						</li>
-						<li className="details_item">
+						<li className={Styles.details_item}>
 							<details>
 								<summary>Add any notes and submit!</summary>
-								<ul className="panel-shadow--light details_content line-height">
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
 									<li>
 										<p>
 											Have special instructions, or want
