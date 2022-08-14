@@ -36,9 +36,6 @@ function App() {
 								/>
 							))}
 
-							{/* <Route>
-								<NotFound />
-							</Route> */}
 						</Switch>
 					  <Footer />
 					</Suspense>
