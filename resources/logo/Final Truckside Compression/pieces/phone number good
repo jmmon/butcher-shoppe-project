@@ -1,0 +1,44 @@
+	<style>
+		.O{fill:#a13d33}
+		.P{font-family:FranklinGothic-Heavy,Franklin Gothic Heavy}
+		.Q{font-size:36.63px}
+	</style>
+	
+	<!-- phone number -->
+	<!-- good! -->
+	<text transform="matrix(.996134 .087851 -.087851 .996134 516.96 102.3)" class="O P Q">
+		<tspan x="0" y="0">5</tspan>
+	</text>
+	<text transform="matrix(.992332 .123601 -.123601 .992332 538.04 104.15)" class="O P Q">
+		<tspan x="0" y="0">0</tspan>
+	</text>
+	<text transform="matrix(.98694 .161087 -.161087 .98694 559 106.75)" class="O P Q">
+		<tspan x="0" y="0">9</tspan>
+	</text>
+	<text transform="matrix(.98176 .190124 -.190124 .98176 579.9 110.24)" class="O P Q">
+		<tspan x="0" y="0">-</tspan>
+	</text>
+	<text transform="matrix(.975342 .220697 -.220697 .975342 589.54 112.01)" class="O P Q">
+		<tspan x="0" y="0">6</tspan>
+	</text>
+	<text transform="matrix(.964049 .265724 -.265724 .964049 610.07 116.64)" class="O P Q">
+		<tspan x="0" y="0">4</tspan>
+	</text>
+	<text transform="matrix(.948986 .315318 -.315318 .948986 630.32 122.19)" class="O P Q">
+		<tspan x="0" y="0">0</tspan>
+	</text>
+	<text transform="matrix(.934702 .355433 -.355433 .934702 650.29 128.94)" class="O P Q">
+		<tspan x="0" y="0">-</tspan>
+	</text>
+	<text transform="matrix(.916712 .399549 -.399549 .916712 659.36 132.22)" class="O P Q">
+		<tspan x="0" y="0">6</tspan>
+	</text>
+	<text transform="matrix(.883275 .468855 -.468855 .883275 678.45 140.48)" class="O P Q">
+		<tspan x="0" y="0">7</tspan>
+	</text>
+	<text transform="matrix(.835712 .549169 -.549169 .835712 695.66 149.46)" class="O P Q">
+		<tspan x="0" y="0">6</tspan>
+	</text>
+	<text transform="matrix(.752989 .658033 -.658033 .752989 712.71 160.46)" class="O P Q">
+		<tspan x="0" y="0">6</tspan>
+	</text>
