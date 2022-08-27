@@ -1,0 +1,11 @@
+.container {
+	height: 400px;
+	width: 90vw;
+	max-width: 480px;
+	margin-bottom: 2rem;
+}
+
+.heading {
+	margin-bottom: 0.5rem;
+	letter-spacing: 0.05rem;
+}
