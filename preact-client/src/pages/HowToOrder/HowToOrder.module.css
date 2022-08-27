@@ -10,6 +10,7 @@
 	margin: 0.5rem -0.2rem 1rem -1.2rem;
 	list-style-type: disc;
 	grid-template-columns: 1fr;
+	line-height: 2rem;
 }
 
 .details_content > li {

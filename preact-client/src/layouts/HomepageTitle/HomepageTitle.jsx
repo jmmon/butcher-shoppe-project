@@ -49,7 +49,7 @@ export default function HomepageTitle({ title = "", subtitle = "", subtext = "" 
 						{title}
 					</h1>
 
-					<h2 className={`${Styles.subtitle} text-shadow--sm`}>
+					<h2 className={`${Styles.subtitle} ${Styles.text_shadow_sm}`}>
 						{subtitle}
 					</h2>
 					

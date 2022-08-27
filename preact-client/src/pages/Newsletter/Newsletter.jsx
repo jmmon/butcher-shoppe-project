@@ -1,5 +1,4 @@
 import React from "react";
-import "./Newsletter.css";
 import Styles from "./Newsletter.module.css";
 
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
@@ -35,7 +34,7 @@ export default function NewsletterPage() {
 			}
 			bottomNav={
 				<WhitePageBackground separate={true}>
-					<div className="flex-col-acenter gap-2 padding-1">
+					<div className={`flex-col-acenter ${Styles.unsubscribe_container}`}>
 						<h3>Looking to unsubscribe?</h3>
 						<Button
 							className="btn--outline btn--large"
@@ -78,9 +77,9 @@ export default function NewsletterPage() {
 						subscription!
 					</p>
 				</Card>
-				<div className="margin-6--top"></div>
+				<div className={Styles.mt_6}></div>
 				<Subscribe />
-				<div className="margin-4--top"></div>
+				<div className={Styles.mt_4}></div>
 			</section>
 		</PageLayout>
 	);

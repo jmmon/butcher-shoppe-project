@@ -5,7 +5,7 @@ import Styles from "./Card.module.css";
 function ImageHeading({ bg = null, title = "" }) {
 	return (
 		<div
-			className={`${Styles.margin_bottom} padding-2--horizontal padding-2--vertical inset-box-shadow`}
+			className={`${Styles.image_heading} padding-2--vertical`}
 			style={
 				bg && {
 					background: `url(${bg}) center center/cover no-repeat`,
@@ -36,10 +36,9 @@ export default function Card({
 	));
 
 	return (
-		//panel-shadow--dark removed from section
-		<section className={`white card--width  card--font-size ${className}`}>
+		<section className={`${Styles.container} card--width  card--font-size ${className}`}>
 			{bg && <ImageHeading bg={bg} title={title} />}
-			<div className="grid-row-gap-1-2 card--content-width ">
+			<div className={`${Styles.card_content} card--content-width`}>
 				{!bg && title && (
 					<h2 className={`${Styles.title} text-center`}>{title}</h2>
 				)}

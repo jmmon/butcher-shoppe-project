@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./Footer.module.css";
+import LinksStyles from "assets/styles/Links.module.css";
 
 import CONSTANTS from "utils/CONSTANTS";
 
@@ -27,7 +28,8 @@ export default function Footer() {
 					<h2 className={`${Styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
-						className={`${Styles.heading} underline`}
+						className={`${Styles.heading}`}
+						underline
 					>
 						newsletter
 					</LinkScrollUp>
@@ -39,7 +41,8 @@ export default function Footer() {
 					<p className={Styles.subscription_text}>You can</p>
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
-						className={`${Styles.subscription_text} underline ${Styles.unsubscribe_link}`}
+						className={`${Styles.subscription_text} ${Styles.unsubscribe_link}`}
+						underline
 					>
 						unsubscribe
 					</LinkScrollUp>
@@ -54,7 +57,7 @@ export default function Footer() {
 			>
 				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
 
-				<TelLink className={`main-link text-center ${Styles.heading}`}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
+				<TelLink className={`${LinksStyles.main_link} text-center ${Styles.heading}`}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
 			</section>
 
 			<section
@@ -159,7 +162,7 @@ export default function Footer() {
 								href={facebookUrl}
 								target="_blank"
 								rel="noreferrer"
-								className={`main-link`}
+								className={`${LinksStyles.main_link}`}
 							>
 								Facebook
 							</a>
@@ -197,7 +200,7 @@ export default function Footer() {
 							>
 								<h4 className={Styles.find_us}>Find Us On:</h4>
 								<a
-									className={`main-link ${Styles.social_small_font}`}
+									className={`${LinksStyles.main_link} ${Styles.social_small_font}`}
 									href={facebookUrl}
 									target="_blank"
 									rel="noreferrer"

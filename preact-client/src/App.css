@@ -1,4 +1,3 @@
-/* pt-sans-700 - latin */
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
@@ -18,65 +17,38 @@
 }
 
 :root {
+	/* navbar, footer */
 	--grey-bg: #e8e8e8;
 
 	--logo-font-family: 'Franklin Gothic Heavy Regular';
-	--logo-font-weight: 900;
 	--logo-red: #a13d33;
+	/* scheduler, sectionContainer */
 	--calendar-red: #a13d33cc;
-	--calendar-red-selecting: #a13d3340;
-	--faq-qa-red: #a13d33aa;
-
-	--header-font: var(--logo-font-family);
 
 	--text-dark: #242424;
 	--subheading-gray: #444;
+	/* subscribe module (contact, order?) */
 	--input-placeholder--light: #aaa;
-	--white: #fff;
-	--offwhite: rgb(236, 229, 229);
+
 	
-	--navbar-gradient--dark: rgb(50, 50, 50);
-	--navbar-gradient--light: rgb(100, 100, 100); 
-	
-	--sky-blue: 193, 248, 255;
-	--sky-blue-bg: rgba(var(--sky-blue), 0.5);
-	--form_special_extra: rgb(203, 100, 36);
-	
+	/* Contact, Subscribe (Order?) */
 	--input-required--valid: rgb(231, 255, 231);
 	--input-required--invalid: rgb(255, 231, 231);
 
-
+/* Button, Header */
 	--transition: all 0.1s ease-out;
 
 
+	--header-height: 2rem;
+	--navbar-height: 4.1rem;
 	--footer-content--width: 1000px;
 
-	--card-border-radius: 4px;
-
-
-	--page-title-xlarge: 90px;
-	/* --page-title-large: 72px; */
-	--page-title-large: 2em;
-	/* --page-title-medium: 64px; */
-	--page-title-medium: 1.8px;
-	--page-title-small: 50px;
-	--page-title-xsmall: 25px;
-
-
-	--font--xlarge: 36px;
-	--font--large: 26px;
-	--font--normal: 20px;
-	--font--medium: 16px;
-	--font--small: 14px;
 
 	--card--font-size: clamp(1rem, 5vw, 1.2rem);
 
-	--homepage-title--height: clamp(20vw, 30rem, 60vw);
+	/* page titles */
 	--inset-box-shadow--dark: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
 
-	/* --navbar-height: clamp(3.2rem, 7vw, 4rem); */
-	--navbar-height: 4.1rem;
-	--header-height: 2rem;
 }
 
 * {
@@ -103,10 +75,8 @@ p {
 	}
 }
 
-.line-height {
-	line-height: 2rem;
-}
 
+/* app only */
 .website-container {
 	position: absolute;
 	top: 0px;
@@ -116,13 +86,11 @@ p {
 }
 
 /* everything below the navbar+header */
+/* app only */
 .website-content-container {
-	background-color: var(--sky-blue-bg);
+	background-color: rgba(193, 248, 255, 0.5);
 	margin-top: var(--header-height); /* sets it below the header */
 }
-
-
-
 
 
 /* flex selectors: */
@@ -171,28 +139,17 @@ p {
 }
 
 
-
-
-
 /* Gaps for flex and grid */
 
+/* FaqSection, DateSelector, Footer */
 .gap-4 {
 	gap: 4rem;
 }
-.gap-3 {
-	gap: 3rem;
-}
-.gap-2 {
-	gap: 2rem;
-}
+
+/* Footer, Header, HowToOrder, Services */
 .gap-1 {
 	gap: 1rem;
 }
-.gap-05 {
-	gap: 0.5rem;
-}
-
-
 
 
 
@@ -202,123 +159,65 @@ p {
 	display: grid;
 	justify-content: center;
 }
+/* Home, Fallback */
 .grid-row-gap-8 {
 	grid-row-gap: 8em;
 }
-.grid-row-gap-4 {
-	grid-row-gap: 4em;
-}
-.grid-row-gap-1-2 {
-	grid-row-gap: 1.2em;
-}
-
-
 
 
 
 /* panel shadows, text shadows */
 
-.inset-box-shadow {
-	box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
-}
-.inset-box-shadow--dark {
-	box-shadow: var(--inset-box-shadow--dark);
-}
-
+/* Footer, HomepageTitle, PageTitle, WhitePageBackground, MeetTheTeam */
 .panel-shadow--dark {
-	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3),
 		0 8px 20px 8px rgba(0, 0, 0, 0.19);
 }
+/* Navbar, Subscribe, HowToOrder, Services */
 .panel-shadow--light {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	/* box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3),
-		0 8px 20px 4px rgba(0, 0, 0, 0.19); */
 }
 
-.text-shadow--sm {
-	text-shadow: -2px 2px 5px #000;
-}
+
+
+/* card, homepage title, page title */
 .text-shadow--lg {
 	text-shadow: -3px 3px 8px #000;
 }
 
 @media screen and (max-width: 960px) {
+	/* card, homepage title, page title */
 	.text-shadow--lg {
 		text-shadow: -3px 3px 10px #000;
 	}
-	.text-shadow--sm {
-		text-shadow: -2px 2px 6px #000;
-	}
 }
 @media screen and (max-width: 480px) {
+	/* card, homepage title, page title */
 	.text-shadow--lg {
 		text-shadow: -1px 1px 8px #000;
 	}
-	.text-shadow--sm {
-		text-shadow: -1px 1px 8px #000;
-	}
 }
-
-
-
-
 
 /* Padding + Margin classes */
 
-.padding-1 {
-	padding: 1rem;
-}
-.padding-2 {
-	padding: 2rem;
-}
-
-.padding-4 {
-	padding: 4vh 4vw;
-}
-.padding-4--bot {
-	padding-bottom: 4em;
-}
+/* Fallback, Home */
 .padding-2--bot {
 	padding-bottom: 2em;
 }
 
-.padding-2--horizontal {
-	padding-left: 2em;
-	padding-right: 2em;
-}
+/* Card, AnimalsBasic */
 .padding-2--vertical {
 	padding-top: 2em;
 	padding-bottom: 2em;
 }
-.padding-1--vertical {
-	padding: 2em;
-}
 
-.margin-1--top {
-	margin-top: 1rem;
-}
-
-.margin-4--top {
-	margin-top: 4rem;
-}
-
-.margin-6--top {
-	margin-top: 6rem;
-}
-
-.margin-1--bot {
-	margin-bottom: 1rem;
-}
+/* Membership, NotFound */
 .margin-2--bot {
 	margin-bottom: 2rem;
 }
 
 
-
-
-
-/* text and card classes */
+/* text and card styles */
 
 .text-white {
 	color: #fff;
@@ -327,86 +226,8 @@ p {
 	text-align: center;
 }
 
-.page--subheading {
-	padding-top: 10px;
-	text-align: center;
-	font-size: 2em;
-}
-.border-sm {
-	border: 1px solid black;
-}
-.white {
-	background-color: #fff;
-}
 
-.width-400 {
-	margin: auto;
-	max-width: 400px;
-}
-
-/* Dark background around text block */
-.text-wrapper-shadow {
-	margin: 2rem auto;
-	/* border: 2px solid #888;
-	border-radius: 10px; */
-	max-width: 800px;
-	padding: 1rem;
-	font-size: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
-	text-shadow: -1px 1px #000;
-	border-radius: 5px;
-	color: #fff;
-}
-
-.text--large {
-	font-size: var(--font--large);
-}
-
-@media screen and (max-width: 960px) {
-	.card--heading {
-		font-size: var(--page-title-medium);
-	}
-	.card--heading-margin {
-		margin-top: -100px;
-	}
-}
-
-
-
-
-
-/* Link styles */
-
-.main-link {
-	color: var(--text-dark);
-	text-decoration: none;
-	cursor: pointer;
-	transition: transform 0.1s ease-in-out;
-}
-
-.main-link:hover {
-	transform: scale(1.05);
-}
-
-.main-link.underline {
-	cursor: pointer;
-	display: inline;
-	text-decoration: underline;
-}
-
-
-
-
-
-
-
-
-
-/* Card styles */
-
-.card {
-	border-radius: var(--card-border-radius);
-}
+/* Card Styles */
 
 .card--font-size { 
 	font-size: var(--card--font-size);

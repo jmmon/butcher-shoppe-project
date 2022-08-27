@@ -61,7 +61,7 @@ export default function HowToOrder() {
 								<summary>
 									Start with your contact information
 								</summary>
-								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content}`}>
 									<li>
 										<p>
 											Head on over to our{" "}
@@ -88,7 +88,7 @@ export default function HowToOrder() {
 						<li className={Styles.details_item}>
 							<details>
 								<summary>Next, add your animal(s)</summary>
-								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content}`}>
 									<li>
 										<p>
 											Select a type of animal for
@@ -123,7 +123,7 @@ export default function HowToOrder() {
 									Select your preferred date, and an alternate
 									date or window
 								</summary>
-								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content}`}>
 									<li>
 										<p>
 											Choose a date that works best for
@@ -152,7 +152,7 @@ export default function HowToOrder() {
 						<li className={Styles.details_item}>
 							<details>
 								<summary>Add any notes and submit!</summary>
-								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content} line-height`}>
+								<ul className={`panel-shadow--light grid gap-1 ${Styles.details_content}`}>
 									<li>
 										<p>
 											Have special instructions, or want

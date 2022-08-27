@@ -9,6 +9,10 @@
 
 }
 
+.gap-05 {
+	gap: 0.5rem;
+}
+
 /* .date-time-picker {
 display: flex;
 justify-content: center;
@@ -50,5 +54,5 @@ justify-content: center;
 }
 
 .react-datepicker__day[class*="--in-selecting-range"] {
-	background: var(--calendar-red-selecting);
+	background: #a13d3340;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from "./Newsletter.module.css";
 
 import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
@@ -38,9 +39,9 @@ export default function NewsletterPage() {
 						you will be unsubscribed!
 					</p>
 				</Card>
-				<div className="margin-6--top"></div>
+				<div className={Styles.mt_6}></div>
 				<Subscribe unsubscribe />
-				<div className="margin-4--top"></div>
+				<div className={Styles.mt_4}></div>
 			</section>
 		</PageLayout>
 	);

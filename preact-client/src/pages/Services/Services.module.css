@@ -1,4 +1,7 @@
-/* .services-btns-container { */
+.container {
+	grid-row-gap: 4em;
+}
+
 .btns_container {
 	display: flex;
 	flex-wrap: wrap;

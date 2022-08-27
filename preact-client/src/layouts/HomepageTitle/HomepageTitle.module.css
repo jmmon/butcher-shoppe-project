@@ -29,7 +29,7 @@
 	width: 100%;
 	line-height: 0.9;
 	margin-top: 1em;
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 }
 
 .subtitle {
@@ -37,14 +37,18 @@
 	font-size: clamp(0.85em, 4vw, 2em);
 	width: 90%;
 	line-height: normal;
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 	flex-grow: 0;
 }
+.text_shadow_sm {
+	text-shadow: -2px 2px 5px #000;
+}
+
 .hero_btns.hero_btn {
 	font-size: clamp(0.8rem, 2vw, 1.3rem) !important;
 	width: 10em;
 	margin: 0 2vw;
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 	letter-spacing: 0.03em;
 	padding: 12px 26px;
 }
@@ -52,7 +56,7 @@
 .subtext {
 	flex-grow: 1;
 	align-items: end;
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 	font-size: clamp(0.7em, 1.8vw, 1em);
 	color: #ddd;
 	line-height: 2;
@@ -67,5 +71,16 @@
 				inset 0 0 calc(2vw - 2rem) 0
 				var(--text-dark),
 				var(--inset-box-shadow--dark);
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.text_shadow_sm {
+		text-shadow: -2px 2px 6px #000;
+	}
+}
+@media screen and (max-width: 480px) {
+	.text_shadow_sm {
+		text-shadow: -1px 1px 8px #000;
 	}
 }

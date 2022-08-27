@@ -7,6 +7,7 @@
 	margin: 0 auto;
 	min-height: 10.5rem;
 	height: 34vh;
+	box-shadow: var(--inset-box-shadow--dark);
 }
 
 .title_container {
@@ -18,16 +19,16 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--white);
+	color: white;
 	text-align: center;
 	font-size: clamp(1.8em, 8vw, 4.5em);
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 	letter-spacing: 0.03em;
 }
 
 /* no subtitle used in website? */
 .subtitle {
-	font-family: var(--header-font);
+	font-family: var(--logo-font-family);
 	letter-spacing: 0.05em;
 }
 

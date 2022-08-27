@@ -42,7 +42,7 @@ export default function Services() {
 				/>
 			}
 		>
-			<div className="grid-row-gap-4">
+			<div className={Styles.container}>
 				<div className="card--width">
 					<div className={Styles.btns_container}>
 						<Button

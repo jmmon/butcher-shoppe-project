@@ -1,5 +1,6 @@
 .container {
 	padding-bottom: 1rem;
+	--faq-qa-red: #a13d33aa;
 }
 
 .question {

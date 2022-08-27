@@ -1,5 +1,5 @@
 .wrapper {
-	background-color: var(--navbar-gradient--light);
+	background-color: rgb(100, 100, 100);
 	border: 1px solid black;
 	padding: 1.5rem 1rem;
 	max-width: 30rem;
@@ -26,6 +26,11 @@
 }
 .notification {
 	width: 100%;
+}
+
+
+.card {
+	border-radius: 4px;
 }
 
 /* .input::placeholder {

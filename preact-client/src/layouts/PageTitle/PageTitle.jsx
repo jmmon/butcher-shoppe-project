@@ -12,7 +12,7 @@ export default function PageTitle({
 	return (
 		<section className={`panel-shadow--dark ${Styles.container}`}>
 			<div
-				className={`${Styles.image} flex-col-acenter-jcenter inset-box-shadow--dark ${Styles.padding}`}
+				className={`${Styles.image} flex-col-acenter-jcenter ${Styles.padding}`}
 				style={{
 					background: `url(${bgImage}) center center/cover no-repeat`,
 					backgroundPosition: `${position}`,

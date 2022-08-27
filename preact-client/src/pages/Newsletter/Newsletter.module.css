@@ -13,3 +13,16 @@
 	text-align: center;
 	width: auto;
 }
+
+.mt_6 {
+	margin-top: 6rem;
+}
+
+.mt_4 {
+	margin-top: 4rem;
+}
+
+.unsubscribe_container {
+	padding: 1rem;
+	gap: 2rem;
+}
