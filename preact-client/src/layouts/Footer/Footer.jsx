@@ -1,12 +1,15 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Styles from "./Footer.module.css";
 
 import CONSTANTS from "utils/CONSTANTS";
 
 import Subscribe from "components/Subscribe/Subscribe";
-import FooterSuspenseContainer from "../../components/FooterSuspenseContainer/FooterSuspenseContainer";
+
 import LinkScrollUp from "components/LinkScrollUp/LinkScrollUp";
 import LogoComponent from "assets/logo/LogoComponent";
+import FooterModuleContainer from "components/FooterModuleContainer/FooterModuleContainer";
+import Contact from "components/Contact/Contact";
+import Map from "components/Map/Map";
 
 import TelLink from "components/TelLink/TelLink";
 
@@ -15,32 +18,6 @@ const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 // const instagramUrl = "https://www.instagram.com/the_butcher_shoppe_/";
 
 export default function Footer() {
-	const contactMemo = useMemo(
-		() =>
-			FooterSuspenseContainer({
-				key: "contact",
-				title: "Contact Us!",
-				lazyPromise: import("../../components/Contact/Contact"),
-				loadingName: "Contact Box",
-				linkTarget: "contact",
-			}),
-		[]
-	);
-
-	const mapMemo = useMemo(
-		() =>
-			FooterSuspenseContainer({
-				key: "map",
-				title: "Find Us In Downtown Northport!",
-				lazyPromise: import("../../components/Map/Map"),
-				loadingName: "Map",
-				linkTarget: "map",
-				placeName: "420 Center Ave, Northport, WA 99157, USA",
-				zoomLevel: 15,
-			}),
-		[]
-	);
-
 	return (
 		<footer
 			className={`flex-col-jcenter panel-shadow--dark gap-4 ${Styles.footer}`}
@@ -83,9 +60,51 @@ export default function Footer() {
 			<section
 				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 			>
-				{contactMemo}
-				{mapMemo}
+				<FooterModuleContainer 
+					linkTarget="contact"
+					title="Contact Us!"
+				>
+					<Contact />
+				</FooterModuleContainer>
+				
+				<FooterModuleContainer 
+					linkTarget="map"
+					title="Map"
+				>
+					<Map />
+				</FooterModuleContainer>
+
+				{/* <Map2 /> */}
+				
 			</section>
+
+			{/* 
+			const contactMemo = useMemo(
+		() =>
+			FooterSuspenseContainer({
+				key: "contact",
+				title: "Contact Us!",
+				lazyPromise: import("../../components/Contact/Contact"),
+				loadingName: "Contact Box",
+				linkTarget: "contact",
+			}),
+		[]
+	);
+
+	const mapMemo = useMemo(
+		() =>
+			FooterSuspenseContainer({
+				key: "map",
+				title: "Find Us In Downtown Northport!",
+				lazyPromise: import("../../components/Map/Map"),
+				loadingName: "Map",
+				linkTarget: "map",
+				placeName: "420 Center Ave, Northport, WA 99157, USA",
+				zoomLevel: 15,
+			}),
+		[]
+	);
+			*/}
 
 			<section
 				className={`flex-jcenter ${Styles.section} ${Styles.links}`}

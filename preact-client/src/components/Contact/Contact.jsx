@@ -198,7 +198,7 @@ const Contact = () => {
 
 			<button
 				type="submit"
-				className={`${Styles.submit} btn btn--outline btn--large ${
+				className={`${Styles.submit} ${Styles.btn} btn btn--outline btn--large ${
 					responseFromContactBox.isLoading
 						? "btn--pending"
 						: responseFromContactBox.data
