@@ -27,5 +27,7 @@
 }
 
 .card_content {
+	display: grid;
+	justify-content: center;
 	grid-row-gap: 1.2em;
 }

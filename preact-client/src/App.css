@@ -65,8 +65,8 @@ html {
 }
 
 p {
-	line-height: 2;
 	font-size: var(--card--font-size);
+	line-height: 2;
 }
 
 @media (max-width:960px) {

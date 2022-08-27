@@ -32,7 +32,6 @@ export default function LinkScrollUp({
 				<LinkWithPreload 
 					className={classes} 
 					href={path}
-					underline
 				>
 					{children}
 				</LinkWithPreload>

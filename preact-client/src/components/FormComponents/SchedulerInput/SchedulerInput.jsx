@@ -12,9 +12,6 @@ const DateTimePicker = ({ title = "" }) => {
 
 	const name = "dates.preferred";
 
-	// let thisError = errors;
-	// name.split(".").forEach((key) => (thisError = thisError?.[key]));
-
 	const today = new Date();
 	const lastAvailableDate = new Date().setMonth(today.getMonth() + 6);
 

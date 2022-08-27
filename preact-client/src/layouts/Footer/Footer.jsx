@@ -24,7 +24,9 @@ export default function Footer() {
 			className={`flex-col-jcenter panel-shadow--dark gap-4 ${Styles.footer}`}
 		>
 			<section className={`flex-col-jcenter-acenter ${Styles.section}`}>
-				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
+				<div
+					className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}
+				>
 					<h2 className={`${Styles.heading}`}>Join our</h2>
 					<LinkScrollUp
 						path="/newsletter/subscribe"
@@ -37,7 +39,9 @@ export default function Footer() {
 						to receive periodic updates!
 					</h2>
 				</div>
-				<div className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}>
+				<div
+					className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}
+				>
 					<p className={Styles.subscription_text}>You can</p>
 					<LinkScrollUp
 						path="/newsletter/unsubscribe"
@@ -57,57 +61,25 @@ export default function Footer() {
 			>
 				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
 
-				<TelLink className={`${LinksStyles.main_link} text-center ${Styles.heading}`}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
+				<TelLink
+					className={`${LinksStyles.main_link} text-center ${Styles.heading}`}
+				>
+					{CONSTANTS.PHONE_NUMBER_STRING}
+				</TelLink>
 			</section>
 
 			<section
 				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 			>
-				<FooterModuleContainer 
-					linkTarget="contact"
-					title="Contact Us!"
-				>
+				<FooterModuleContainer linkTarget="contact" title="Contact Us!">
 					<Contact />
 				</FooterModuleContainer>
-				
-				<FooterModuleContainer 
-					linkTarget="map"
-					title="Map"
-				>
+
+				<FooterModuleContainer linkTarget="map" title="Find Us In Downtown Northport!">
 					<Map />
 				</FooterModuleContainer>
 
-				{/* <Map2 /> */}
-				
 			</section>
-
-			{/* 
-			const contactMemo = useMemo(
-		() =>
-			FooterSuspenseContainer({
-				key: "contact",
-				title: "Contact Us!",
-				lazyPromise: import("../../components/Contact/Contact"),
-				loadingName: "Contact Box",
-				linkTarget: "contact",
-			}),
-		[]
-	);
-
-	const mapMemo = useMemo(
-		() =>
-			FooterSuspenseContainer({
-				key: "map",
-				title: "Find Us In Downtown Northport!",
-				lazyPromise: import("../../components/Map/Map"),
-				loadingName: "Map",
-				linkTarget: "map",
-				placeName: "420 Center Ave, Northport, WA 99157, USA",
-				zoomLevel: 15,
-			}),
-		[]
-	);
-			*/}
 
 			<section
 				className={`flex-jcenter ${Styles.section} ${Styles.links}`}
@@ -115,22 +87,16 @@ export default function Footer() {
 			>
 				<div className={`flex-jbetween ${Styles.links_half} `}>
 					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>
-							The Shoppe
-						</h2>
+						<h2 className={`${Styles.heading}`}>The Shoppe</h2>
 						<div className={`flex-col ${Styles.link_items}`}>
-							<LinkScrollUp path="/">
-								Home
-							</LinkScrollUp>
+							<LinkScrollUp path="/">Home</LinkScrollUp>
 							<LinkScrollUp path="/meet-the-team">
 								Meet The Team
 							</LinkScrollUp>
 							<LinkScrollUp path="/membership">
 								Membership
 							</LinkScrollUp>
-							<LinkScrollUp path="/faq">
-								FAQ
-							</LinkScrollUp>
+							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
 						</div>
 					</div>
 					<div className={Styles.links_column}>
@@ -168,7 +134,6 @@ export default function Footer() {
 							</a>
 						</div>
 					</div>
-					
 				</div>
 			</section>
 
@@ -181,65 +146,74 @@ export default function Footer() {
 			</section>
 
 			<div className={Styles.dark_wrapper}>
-				<div className={`flex-col-jcenter-acenter ${Styles.bottom_lighter_container}`}> 
-					<section className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}>
-						<LogoComponent  className={Styles.banner_2}/>
+				<div
+					className={`flex-col-jcenter-acenter ${Styles.bottom_lighter_container}`}
+				>
+					<section
+						className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}
+					>
+						<LogoComponent className={Styles.banner_2} />
 					</section>
 
-
-					<section className={`flex-jcenter-acenter ${Styles.social_media}`}>
-							<LinkScrollUp
-								path="/"
-								className={`flex-jcenter ${Styles.social_name}`}
-							>
-								The Butcher Shoppe
-							</LinkScrollUp>
-
-							<div
-								className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
-							>
-								<h4 className={Styles.find_us}>Find Us On:</h4>
-								<a
-									className={`${LinksStyles.main_link} ${Styles.social_small_font}`}
-									href={facebookUrl}
-									target="_blank"
-									rel="noreferrer"
-									aria-label="Facebook"
-								>
-									<i className="fab fa-facebook-f"></i>
-								</a>
-							</div>
-					</section>
-
-					<section className={`flex-col-jcenter-acenter ${Styles.social_emails_wrapper}`}>
-						<div className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
+					<section
+						className={`flex-jcenter-acenter ${Styles.social_media}`}
+					>
+						<LinkScrollUp
+							path="/"
+							className={`flex-jcenter ${Styles.social_name}`}
 						>
-							<span className={`${Styles.social_emails_name}`}>Questions?</span>
-							<a 
-							href="mailto: info@thenorthportbutchershoppe.com"
-							className={`${Styles.social_emails}`}
+							The Butcher Shoppe
+						</LinkScrollUp>
+
+						<div
+							className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
+						>
+							<h4 className={Styles.find_us}>Find Us On:</h4>
+							<a
+								className={`${LinksStyles.main_link} ${Styles.social_small_font}`}
+								href={facebookUrl}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Facebook"
+							>
+								<i className="fab fa-facebook-f"></i>
+							</a>
+						</div>
+					</section>
+
+					<section
+						className={`flex-col-jcenter-acenter ${Styles.social_emails_wrapper}`}
+					>
+						<div
+							className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
+						>
+							<span className={`${Styles.social_emails_name}`}>
+								Questions?
+							</span>
+							<a
+								href="mailto: info@thenorthportbutchershoppe.com"
+								className={`${Styles.social_emails}`}
 							>
 								info@thenorthportbutchershoppe.com
 							</a>
 						</div>
 						<div
 							className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
+						>
+							<span className={`${Styles.social_emails_name}`}>
+								Website Help?
+							</span>
+
+							<a
+								href="mailto: support@thenorthportbutchershoppe.com"
+								className={`${Styles.social_emails}`}
 							>
-								<span className={`${Styles.social_emails_name}`}>Website Help?</span>
-							
-							<a href="mailto: support@thenorthportbutchershoppe.com"
-							className={`${Styles.social_emails}`}>
 								support@thenorthportbutchershoppe.com
 							</a>
 						</div>
 					</section>
 
-
-					<small
-						className={Styles.website_rights}
-					>
-						C 2022
-					</small>
+					<small className={Styles.website_rights}>C 2022</small>
 				</div>
 			</div>
 		</footer>

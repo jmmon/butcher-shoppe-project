@@ -80,6 +80,8 @@ export default function Confirm({ isUnsubscribe}) {
 				) : (
 					<h2>Thanks For Joining Our Newsletter!</h2>
 				)}
+				
+				<br />
 				<p>
 					You will be redirected to our home page in a few seconds.
 				</p>

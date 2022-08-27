@@ -27,7 +27,6 @@ export default function Home() {
 					title="The Butcher Shoppe"
 					subtitle="Mobile Farm Slaughter"
 					subtext="Serving Northeast Washington State"
-
 				/>
 			}
 			bottomNav={

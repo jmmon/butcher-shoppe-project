@@ -60,6 +60,7 @@ export default function Services() {
 					</div>
 				</div>
 
+				
 				<Card
 					title="What We Offer"
 					paragraphs={[
@@ -88,8 +89,12 @@ export default function Services() {
 						]}
 						bg={bgSlaughter}
 					/>
-					<h2 className={`text-center ${Styles.prices_title}`}>Slaughter Prices</h2>
-					<div className={`${Styles.prices_container} panel-shadow--light`}>
+					<h2 className={`text-center ${Styles.prices_title}`}>
+						Slaughter Prices
+					</h2>
+					<div
+						className={`${Styles.prices_container} panel-shadow--light`}
+					>
 						<span className={Styles.prices_two_column}>
 							Minimum Charge
 						</span>
@@ -97,23 +102,39 @@ export default function Services() {
 
 						<span className={Styles.prices_spacer}></span>
 
-						<span className={`text-center ${Styles.prices_header}`}>Animal</span>
-						<span className={`text-center ${Styles.prices_header}`}>Base Price</span>
+						<span className={`text-center ${Styles.prices_header}`}>
+							Animal
+						</span>
+						<span className={`text-center ${Styles.prices_header}`}>
+							Base Price
+						</span>
 						<span className={`text-center ${Styles.prices_header}`}>
 							If You Keep The Guts
 						</span>
 
 						<span className={Styles.prices_spacer}></span>
 
-						<span className={`text-center ${Styles.prices_item}`}>Beef</span>
-						<span className={`text-center ${Styles.prices_item}`}>$160</span>
-						<span className={`text-center ${Styles.prices_item}`}>$140</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							Beef
+						</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$160
+						</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$140
+						</span>
 
 						<span className={Styles.prices_spacer}></span>
 
-						<span className={`text-center ${Styles.prices_item}`}>Hog</span>
-						<span className={`text-center ${Styles.prices_item}`}>$100</span>
-						<span className={`text-center ${Styles.prices_item}`}>$90</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							Hog
+						</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$100
+						</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$90
+						</span>
 
 						<span className={Styles.prices_spacer}></span>
 
@@ -121,8 +142,12 @@ export default function Services() {
 							Sheep, <br />
 							Goats
 						</span>
-						<span className={`text-center ${Styles.prices_item}`}>$80</span>
-						<span className={`text-center ${Styles.prices_item}`}>$70</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$80
+						</span>
+						<span className={`text-center ${Styles.prices_item}`}>
+							$70
+						</span>
 
 						<span className={Styles.prices_spacer}></span>
 
@@ -148,9 +173,13 @@ export default function Services() {
 						</span>
 					</div>
 					<div>
-						<h2 className={`text-center ${Styles.prices_title}`}>Extra Charges</h2>
+						<h2 className={`text-center ${Styles.prices_title}`}>
+							Extra Charges
+						</h2>
 						<Card>
-							<ul className={`${Styles.prices_extra_margin} flex-col gap-1`}>
+							<ul
+								className={`${Styles.prices_extra_margin} flex-col gap-1`}
+							>
 								<li>
 									<p>
 										Fuel surcharge will apply based on the
@@ -175,40 +204,46 @@ export default function Services() {
 
 				<hr />
 
-				<div className="flex-col-jcenter" id="processing">
-					<Card title="Processing" bg={bgProcessing}>
-						<p>
-							Our goal is to best serve our customers, and, once
-							completed, our Shoppe in downtown <a href="#map">Northport</a> will
-							process your animal carcasses, giving you the cuts
-							you want from your animals.
-						</p>
-						<p>
-							Our meat processing Shoppe is currently under
-							construction. Subscribe to our{" "}
-							<Link href="/newsletter/subscribe">newsletter</Link>{" "}
-							so you will know when our Shoppe is ready.
-						</p>
-						<p>
-							In the meantime, to best serve you, we offer
-							transportation of the carcass to a meat processing
-							shop of your choice after dispatch.
-						</p>
-					</Card>
-					<div>
-						<h2 className={`text-center ${Styles.prices_title}`}>
-							Processing Prices
-						</h2>
-						<div className="card--width card--content-width card--font-size">
-							<p>
-								For now, we will use the shop of your choice to
-								process the carcass. To get pricing information
-								for meat processing, please contact your shop of
-								choice.
-							</p>
+						<div className="flex-col-jcenter" id="processing">
+							<Card title="Processing" bg={bgProcessing}>
+								<p>
+									Our goal is to best serve our customers,
+									and, once completed, our Shoppe in downtown{" "}
+									<a href="#map">Northport</a> will process
+									your animal carcasses, giving you the cuts
+									you want from your animals.
+								</p>
+								<p>
+									Our meat processing Shoppe is currently
+									under construction. Subscribe to our{" "}
+									<Link href="/newsletter/subscribe">
+										newsletter
+									</Link>{" "}
+									so you will know when our Shoppe is ready.
+								</p>
+								<p>
+									In the meantime, to best serve you, we offer
+									transportation of the carcass to a meat
+									processing shop of your choice after
+									dispatch.
+								</p>
+							</Card>
+							<div>
+								<h2
+									className={`text-center ${Styles.prices_title}`}
+								>
+									Processing Prices
+								</h2>
+								<div className="card--width card--content-width card--font-size">
+									<p>
+										For now, we will use the shop of your
+										choice to process the carcass. To get
+										pricing information for meat processing,
+										please contact your shop of choice.
+									</p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
 			</div>
 		</PageLayout>
 	);

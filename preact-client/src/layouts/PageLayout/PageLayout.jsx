@@ -1,7 +1,16 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 import WhitePageBackground from "layouts/WhitePageBackground/WhitePageBackground";
 import { Helmet } from "react-helmet";
+
+const options = {
+	root: null,
+	rootMargin: "200px",
+	threshold: 0, // default
+	triggerOnce: true,
+	fallbackInView: true,
+};
 
 export default function PageLayout({
 	separate = false,
@@ -10,6 +19,7 @@ export default function PageLayout({
 	children,
 	bottomNav = null,
 }) {
+	const { ref, inView } = useInView(options);
 	return (
 		<>
 			{helmet === null ? (
@@ -32,7 +42,7 @@ export default function PageLayout({
 				<WhitePageBackground separate={separate}>
 					{children}
 				</WhitePageBackground>
-				{bottomNav}
+				<div ref={ref}>{inView && bottomNav}</div>
 			</main>
 		</>
 	);
