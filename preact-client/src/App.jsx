@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import "preact/debug";
 import { Route, Switch } from "wouter";
 import "./App.css";
@@ -8,13 +8,11 @@ import routes from "./routes";
 
 import Header from "layouts/Header/Header";
 import Navbar from "layouts/Navbar/Navbar";
-
-const Footer = lazy(() =>
-	import("layouts/Footer/Footer")
-);
+import Footer from "layouts/Footer/Footer";
 
 
 function App() {
+
 	return (
 		<div className="website-container">
 			<LinkScrollToTop excludes={["/contact"]}>
