@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import "preact/debug";
 import { Route, Switch } from "wouter";
 import "./App.css";
