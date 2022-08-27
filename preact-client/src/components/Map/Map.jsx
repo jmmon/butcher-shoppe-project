@@ -1,58 +1,37 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import GoogleMapReact from 'google-map-react';
+import MapMarker from "assets/icons/MapMarker";
 
-import Styles from "../FooterSuspenseContainer/FooterSuspenseContainer.module.css";
+const defaultProps = {
+	containerStyle: {
+		width: "100%",
+		height: "100%",
+		border: "1px solid rgb(195, 195, 195)",
+	},
+	zoom: 14,
+	center: { 
+		lat: 48.916251, 
+		lng: -117.782062,
+	},
+	mapOptions: {
+		disableDefaultUI: true,
+	}
+};
 
-export default function GoogleMap({ placeName, zoomLevel }) {
-	const googleMapRef = useRef();
-	let googleMap;
-
-	useEffect(() => {
-		const googleMapScript = document.createElement("script");
-		googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAP_API_KEY}`;
-		googleMapScript.async = true;
-		window.document.body.appendChild(googleMapScript);
-		googleMapScript.addEventListener("load", () => {
-			getLatLng();
-		});
-	}, []);
-
-	const createGoogleMap = (coordinates) => {
-		googleMap = new window.google.maps.Map(googleMapRef.current, {
-			zoom: zoomLevel,
-			center: {
-				lat: coordinates.lat(),
-				lng: coordinates.lng(),
-			},
-			disableDefaultUI: true,
-		});
-	};
-
-	const getLatLng = () => {
-		let lat, lng;
-		new window.google.maps.Geocoder().geocode(
-			{ address: `${placeName}` },
-			function (results, status) {
-				if (status === window.google.maps.GeocoderStatus.OK) {
-					createGoogleMap(results[0].geometry.location);
-					lat = results[0].geometry.location.lat();
-					lng = results[0].geometry.location.lng();
-					new window.google.maps.Marker({
-						position: { lat, lng },
-						map: googleMap,
-						title: `${placeName}`,
-					});
-				} else {
-					alert(
-						"Geocode was not successful for the following reason: " +
-							status
-					);
-				}
-			}
-		);
-	};
+export default function Map() {
 	return (
-		<div className={`flex-jcenter-acenter text-white ${Styles.fallback}`} ref={googleMapRef}>
-			Loading Map...
+		<div style={defaultProps.containerStyle}>
+			<GoogleMapReact
+        bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_API_KEY }}
+        defaultCenter={defaultProps.center}
+        defaultZoom={defaultProps.zoom}
+				options={defaultProps.mapOptions}
+      >
+        <MapMarker
+          lat={defaultProps.center.lat}
+          lng={defaultProps.center.lng}
+        />
+      </GoogleMapReact>
 		</div>
 	);
-};
+}
