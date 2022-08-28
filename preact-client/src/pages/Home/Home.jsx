@@ -5,6 +5,8 @@ import NavBottomButtons from "layouts/NavBottomButtons/NavBottomButtons";
 import HomepageTitle from "layouts/HomepageTitle/HomepageTitle";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
+import CONSTANTS from "utils/CONSTANTS";
+import { ComponentInView } from "utils/ComponentInView";
 
 export default function Home() {
 	return (
@@ -60,24 +62,26 @@ export default function Home() {
 					<p>Sorry, no poultry or rabbits!</p>
 				</Card>
 				<hr />
-				<Card
-					title="How It Works"
-					paragraphs={[
-						"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass for you.",
-						"Coming soon, we will offer our own in-house meat processing at our Shoppe, where we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
-					]}
-				>
-					<p>
-						Stay up to date on the progress of our Shoppe by
-						subscribing to our{" "}
-						<a href="/newsletter/subscribe">newsletter.</a> When our
-						Butcher Shoppe in downtown Northport is operational, our{" "}
-						<a href="/newsletter/subscribe">newsletter</a>{" "}
-						subscribers will be the first to know!
-					</p>
+				<ComponentInView marginPx={CONSTANTS.OFFSET.THIRD}>
+					<Card
+						title="How It Works"
+						paragraphs={[
+							"Instead of loading and hauling your animals to a kill floor, dispatch can be done swiftly and responsibly on your own farm. Let us know where your meat is being processed and we will deliver the carcass for you.",
+							"Coming soon, we will offer our own in-house meat processing at our Shoppe, where we will carefully take the time to craft each animal into the artistic expression reflected in your custom order form. We hope to offer each of you a satisfying feeling of abundance for having chosen us to process your livestock.",
+						]}
+					>
+						<p>
+							Stay up to date on the progress of our Shoppe by
+							subscribing to our{" "}
+							<a href="/newsletter/subscribe">newsletter.</a> When our
+							Butcher Shoppe in downtown Northport is operational, our{" "}
+							<a href="/newsletter/subscribe">newsletter</a>{" "}
+							subscribers will be the first to know!
+						</p>
 
-					<p>Our truck and our facility are WSDA inspected.</p>
-				</Card>
+						<p>Our truck and our facility are WSDA inspected.</p>
+					</Card>
+				</ComponentInView>
 			</div>
 		</PageLayout>
 	);

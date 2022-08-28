@@ -75,10 +75,12 @@ export default function Footer() {
 					<Contact />
 				</FooterModuleContainer>
 
-				<FooterModuleContainer linkTarget="map" title="Find Us In Downtown Northport!">
+				<FooterModuleContainer
+					linkTarget="map"
+					title="Find Us In Downtown Northport!"
+				>
 					<Map />
 				</FooterModuleContainer>
-
 			</section>
 
 			<section
@@ -145,77 +147,69 @@ export default function Footer() {
 				</div>
 			</section>
 
-			<div className={Styles.dark_wrapper}>
-				<div
-					className={`flex-col-jcenter-acenter ${Styles.bottom_lighter_container}`}
-				>
-					<section
-						className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}
-					>
-						<LogoComponent className={Styles.banner_2} />
-					</section>
-
-					<section
-						className={`flex-jcenter-acenter ${Styles.social_media}`}
-					>
-						<LinkScrollUp
-							path="/"
-							className={`flex-jcenter ${Styles.social_name}`}
-						>
-							The Butcher Shoppe
-						</LinkScrollUp>
-
-						<div
-							className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
-						>
-							<h4 className={Styles.find_us}>Find Us On:</h4>
-							<a
-								className={`${LinksStyles.main_link} ${Styles.social_small_font}`}
-								href={facebookUrl}
-								target="_blank"
-								rel="noreferrer"
-								aria-label="Facebook"
-							>
-								<i className="fab fa-facebook-f"></i>
-							</a>
-						</div>
-					</section>
-
-					<section
-						className={`flex-col-jcenter-acenter ${Styles.social_emails_wrapper}`}
-					>
-						<div
-							className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
-						>
-							<span className={`${Styles.social_emails_name}`}>
-								Questions?
-							</span>
-							<a
-								href="mailto: info@thenorthportbutchershoppe.com"
-								className={`${Styles.social_emails}`}
-							>
-								info@thenorthportbutchershoppe.com
-							</a>
-						</div>
-						<div
-							className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
-						>
-							<span className={`${Styles.social_emails_name}`}>
-								Website Help?
-							</span>
-
-							<a
-								href="mailto: support@thenorthportbutchershoppe.com"
-								className={`${Styles.social_emails}`}
-							>
-								support@thenorthportbutchershoppe.com
-							</a>
-						</div>
-					</section>
-
-					<small className={Styles.website_rights}>C 2022</small>
+			<section className={`flex-col-jcenter-acenter`}>
+				<div className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}>
+					<LogoComponent className={Styles.banner} />
 				</div>
-			</div>
+
+				<div className={`flex-jcenter-acenter ${Styles.social_media}`}>
+					<LinkScrollUp
+						path="/"
+						className={`flex-jcenter ${Styles.social_name}`}
+					>
+						The Butcher Shoppe
+					</LinkScrollUp>
+
+					<div
+						className={`flex-acenter-jcenter gap-1 ${Styles.social_icons}`}
+					>
+						<h4 className={Styles.find_us}>Find Us On:</h4>
+						<a
+							className={`${LinksStyles.main_link}`}
+							href={facebookUrl}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Facebook"
+						>
+							<i className="fab fa-facebook-f"></i>
+						</a>
+					</div>
+				</div>
+
+				<div
+					className={`flex-col-jcenter-acenter ${Styles.social_emails_wrapper}`}
+				>
+					<div
+						className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
+					>
+						<span className={`${Styles.social_emails_name}`}>
+							Questions?
+						</span>
+						<a
+							href="mailto: info@thenorthportbutchershoppe.com"
+							className={`${Styles.social_emails}`}
+						>
+							info@thenorthportbutchershoppe.com
+						</a>
+					</div>
+					<div
+						className={`flex-jcenter-acenter-wrap ${Styles.social_emails_container}`}
+					>
+						<span className={`${Styles.social_emails_name}`}>
+							Website Help?
+						</span>
+
+						<a
+							href="mailto: support@thenorthportbutchershoppe.com"
+							className={`${Styles.social_emails}`}
+						>
+							support@thenorthportbutchershoppe.com
+						</a>
+					</div>
+				</div>
+
+				<small className={Styles.website_rights}>C 2022</small>
+			</section>
 		</footer>
 	);
 }

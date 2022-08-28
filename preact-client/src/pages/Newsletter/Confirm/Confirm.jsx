@@ -20,7 +20,7 @@ export default function Confirm({ isUnsubscribe}) {
 	const route = isUnsubscribe ? "/newsletter/unsubscribe/confirm/:confirmationId" : "/newsletter/subscribe/confirm/:confirmationId";
   const [, params] = useRoute(route);
 	const confirmationId = params.confirmationId;
-	const [location, setLocation] = useLocation();	
+	const [, setLocation] = useLocation();	
 	const [error, setError] = useState(null);
 	let timer = null;
 

@@ -1,6 +1,12 @@
 const CONSTANTS = {
 	PHONE_NUMBER_STRING: "(509) 640-6766",
 	PHONE_NUMBER_LINK: "tel:15096406766",
+	OFFSET: {
+		FIRST: "100px",
+		SECOND: "200px",
+		THIRD: "300px",
+		FOURTH: "400px",
+	}
 };
 
 export default CONSTANTS;

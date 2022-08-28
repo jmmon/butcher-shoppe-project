@@ -29,13 +29,10 @@ const headers = { "Content-Type": "application/json" };
 const orderFormBackendUri =
 	"https://thenorthportbutchershoppe.com/server/order";
 
-
 // const orderFormBackendUri =
 // 	"https://thenorthportbutchershoppe.com/staging/server/contact";
 
 // const orderFormBackendUri = "http://localhost:3001/server/order";
-
-
 
 // So: add an animal: increment the ID by one, so each ID will be unique
 // Then, animals on the page will copy from one of the IDs.
@@ -196,7 +193,7 @@ function Order() {
 	});
 
 	const formHandleSubmit = (data) => {
-		console.log('Submitting data:', { data });
+		console.log("Submitting data:", { data });
 
 		//check for missing end date on alternative date selection?
 		if (!data.dates.alternate.end) {
@@ -272,7 +269,9 @@ function Order() {
 		>
 			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				Please fill out the order form below, or give us a call at:
-				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
+				<TelLink className={Styles.phone}>
+					{CONSTANTS.PHONE_NUMBER_STRING}
+				</TelLink>
 			</h3>
 			<FormProvider {...methods}>
 				<form
@@ -280,26 +279,47 @@ function Order() {
 					onSubmit={methods.handleSubmit(formHandleSubmit)}
 				>
 					<div className={Styles.tabbed}>
-						<input type="radio" id="order-tab1" name="order-css-tabs" defaultChecked={true}/>
-						<input type="radio" id="order-tab2" name="order-css-tabs" />
-						<input type="radio" id="order-tab3" name="order-css-tabs" />
-						<input type="radio" id="order-tab4" name="order-css-tabs" />
+						<input
+							type="radio"
+							id="order-tab1"
+							name="order-css-tabs"
+							defaultChecked={true}
+						/>
+						<input
+							type="radio"
+							id="order-tab2"
+							name="order-css-tabs"
+						/>
+						<input
+							type="radio"
+							id="order-tab3"
+							name="order-css-tabs"
+						/>
+						<input
+							type="radio"
+							id="order-tab4"
+							name="order-css-tabs"
+						/>
 
 						<ul className={Styles.labels_container}>
 							<li className={Styles.label}>
 								<label htmlFor="order-tab1">Contact Info</label>
 							</li>
 							<li className={Styles.label}>
-								<label htmlFor="order-tab2">Your Animal(s)</label>
+								<label htmlFor="order-tab2">
+									Your Animal(s)
+								</label>
 							</li>
 							<li className={Styles.label}>
-								<label htmlFor="order-tab3">Preferred Date</label>
+								<label htmlFor="order-tab3">
+									Preferred Date
+								</label>
 							</li>
 							<li className={Styles.label}>
 								<label htmlFor="order-tab4">Notes</label>
 							</li>
 						</ul>
-					
+
 						<div className={Styles.tab_content}>
 							<ContactInfoSection />
 						</div>
@@ -313,7 +333,6 @@ function Order() {
 							<OrderNotes />
 						</div>
 					</div>
-
 
 					{/* <Tabs forceRenderTabPanel>
 						<TabList>
@@ -337,13 +356,12 @@ function Order() {
 						</TabPanel>
 					</Tabs> */}
 
-
-							{/* <SectionContainer title="Animal Info"> */}
-								{/* <Button onClick={addAnimal}>
+					{/* <SectionContainer title="Animal Info"> */}
+					{/* <Button onClick={addAnimal}>
 										Add Another Animal
 									</Button> */}
 
-								{/* <h4>Select Your Animals:</h4>
+					{/* <h4>Select Your Animals:</h4>
 									<select
 										onChange={(e) =>
 											setNewAnimalChosenType(
@@ -355,7 +373,7 @@ function Order() {
 										<option value="lamb">Lamb</option>
 										<option value="hog">Hog</option>
 									</select> */}
-							{/* </SectionContainer> */}
+					{/* </SectionContainer> */}
 
 					<div className={Styles.heading_container}>
 						<h4 className="order-form--before-submitting">
@@ -418,7 +436,9 @@ function Order() {
 			<h3 className={`flex-jcenter-acenter ${Styles.phone_heading}`}>
 				If you have any questions or need to make adjustments, give us a
 				call at:
-				<TelLink className={Styles.phone}>{CONSTANTS.PHONE_NUMBER_STRING}</TelLink>
+				<TelLink className={Styles.phone}>
+					{CONSTANTS.PHONE_NUMBER_STRING}
+				</TelLink>
 			</h3>
 		</PageLayout>
 	);
