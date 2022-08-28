@@ -7,7 +7,7 @@ export default function FooterModuleContainer({
 	children
 }) {
 	return (
-		<div className={Styles.container} id={linkTarget}>
+		<div className={Styles.container}>
 			<h2 className={`text-center ${Styles.heading}`}>
 				{title}
 			</h2>

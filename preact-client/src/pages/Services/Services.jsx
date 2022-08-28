@@ -42,7 +42,10 @@ const PRICES = {
 	],
 };
 
-export default function Services() {
+export default function Services({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	return (
 		<PageLayout
 			helmet={
@@ -152,7 +155,7 @@ const PricesItem = ({ content, styles = false }) => (
 const PricesHeaderRow = ({ content }) => (
 	<>
 		{content.map((item) => (
-			<PricesItem content={item} styles="header" />
+			<PricesItem key={item} content={item} styles="header" />
 		))}
 	</>
 );
@@ -170,25 +173,25 @@ const PricesGrid = () => (
 
 		<span className={Styles.prices_spacer}></span>
 
-		{PRICES.animals.map((animal) => (
-			<>
+		{PRICES.animals.map((animal, animalIndex) => (
+			<React.Fragment key={animalIndex} >
 				<PricesItem
 					content={animal.names.map((name, index) => (
-						<>
+						<React.Fragment key={index}>
 							{index !== 0 && (
 								<>
 									,<br />
 								</>
 							)}
 							{name}
-						</>
+						</React.Fragment>
 					))}
 				/>
 				<PricesItem content={animal.base} />
 				<PricesItem content={animal.discount} />
 
 				<span className={Styles.prices_spacer}></span>
-			</>
+			</React.Fragment>
 		))}
 
 		<PricesItem content="Exotic Animals" styles="twoColumn" />

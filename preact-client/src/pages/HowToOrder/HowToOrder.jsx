@@ -10,7 +10,10 @@ import Card from "components/Card/Card";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 import TelLink from "components/TelLink/TelLink";
 
-export default function HowToOrder() {
+export default function HowToOrder({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	return (
 		<PageLayout
 			helmet={

@@ -24,8 +24,8 @@ export const ComponentInView = ({
 
 	const { ref, inView } = useInView(options);
 
-	React.useEffect(() => {
-		console.log({inView, marginPx: options.rootMargin, component: children?.type?.name, owner: children?._owner?.type?.name});
-	}, [inView]);
+	// React.useEffect(() => {
+	// 	console.log({inView, marginPx: options.rootMargin, component: children?.type?.name, owner: children?._owner?.type?.name});
+	// }, [inView]);
 	return <div ref={ref}>{inView && children}</div>;
 };

@@ -6,7 +6,10 @@ import PageLayout from "layouts/PageLayout/PageLayout";
 import Card from "components/Card/Card";
 import { Helmet } from "react-helmet";
 
-function Membership() {
+function Membership({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	return (
 		<PageLayout
 			helmet={

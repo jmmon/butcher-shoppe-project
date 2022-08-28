@@ -7,7 +7,10 @@ import PageLayout from "layouts/PageLayout/PageLayout";
 import FaqGeneralQuestions from "components/FaqGeneralQuestions/FaqGeneralQuestions";
 import { Helmet } from "react-helmet";
 
-export default function Faq() {
+export default function Faq({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	return (
 		<PageLayout
 			helmet={	

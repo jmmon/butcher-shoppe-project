@@ -8,7 +8,10 @@ import Card from "components/Card/Card";
 import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 
-export default function MeetTheTeam() {
+export default function MeetTheTeam({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	return (
 		<PageLayout
 			helmet={

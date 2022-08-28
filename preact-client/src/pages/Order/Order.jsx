@@ -39,7 +39,10 @@ const orderFormBackendUri =
 
 // So create an animal, it's linked with that ID, but deleting the animal should only delete the react component but not clear the ID from localStorage. ?
 
-function Order() {
+function Order({path, setVisitedRoutes}) {
+	React.useEffect(() => {
+		setVisitedRoutes((prev) => ([...prev, path]));
+	},[])
 	const methods = useForm({
 		mode: "all",
 	});

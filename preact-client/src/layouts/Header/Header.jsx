@@ -22,9 +22,9 @@ function Header() {
 				</TelLink>
 				<a className={`flex-acenter ${Styles.link}`} href="#contact">
 					<ChatIcon className={Styles.icon} />
-					<span className={Styles.text}>Email Us</span>
+					<span className={Styles.text}>Contact Us</span>
 				</a>
-				<a className={`flex-acenter ${Styles.link}`} href="#map">
+				<a className={`flex-acenter ${Styles.link}`} href="#contact">
 					<LocationIcon
 						className={`${Styles.icon} ${Styles.location_icon}`}
 					/>

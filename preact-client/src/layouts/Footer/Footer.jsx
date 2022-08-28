@@ -13,6 +13,7 @@ import Contact from "components/Contact/Contact";
 import Map from "components/Map/Map";
 
 import TelLink from "components/TelLink/TelLink";
+import { ComponentInView } from "utils/ComponentInView";
 
 const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
@@ -56,6 +57,7 @@ export default function Footer() {
 				<Subscribe />
 			</section>
 
+			<div id="contact" style={{scrollPaddingTop: "4rem",}}></div>
 			<section
 				className={`flex-jcenter-acenter-wrap ${Styles.section} gap-1 ${Styles.mobile_margin}`}
 			>
@@ -68,24 +70,27 @@ export default function Footer() {
 				</TelLink>
 			</section>
 
-			<section
-				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
-			>
-				<FooterModuleContainer linkTarget="contact" title="Contact Us!">
-					<Contact />
-				</FooterModuleContainer>
-
-				<FooterModuleContainer
-					linkTarget="map"
-					title="Find Us In Downtown Northport!"
+			
+			<ComponentInView marginPx="0px">
+				<section
+					className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 				>
-					<Map />
-				</FooterModuleContainer>
-			</section>
+					<FooterModuleContainer title="Contact Us!">
+						<Contact />
+					</FooterModuleContainer>
+
+					<FooterModuleContainer
+						title="Find Us In Downtown Northport!"
+					>
+						<Map />
+					</FooterModuleContainer>
+				</section>
+			</ComponentInView>
+			
+			<div id="more-links" style={{scrollPaddingTop: "4rem", marginTop: "-2rem"}}></div>
 
 			<section
 				className={`flex-jcenter ${Styles.section} ${Styles.links}`}
-				id="more-links"
 			>
 				<div className={`flex-jbetween ${Styles.links_half} `}>
 					<div className={Styles.links_column}>
