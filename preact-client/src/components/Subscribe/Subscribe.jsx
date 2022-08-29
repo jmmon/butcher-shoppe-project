@@ -24,7 +24,8 @@ export default function Subscribe({ unsubscribe, className }) {
 	});
 
 	const [email, setEmail] = useState("");
-
+	const [holdEmail, setHoldEmail] = useState("");
+	
 	const resetButtonWithSetTimeout = () => {
 		timer = setTimeout(() => {
 			setResponseFromSubscribeBox((prevState) => ({
@@ -33,6 +34,7 @@ export default function Subscribe({ unsubscribe, className }) {
 				data: null,
 				error: null,
 			}));
+			setHoldEmail("");
 		}, 6000);
 	};
 
@@ -65,7 +67,7 @@ export default function Subscribe({ unsubscribe, className }) {
 						data: email,
 						error: null,
 					}));
-
+					setHoldEmail(email);
 					setEmail("");
 
 				} else if (res.status === 500) {
@@ -104,22 +106,18 @@ export default function Subscribe({ unsubscribe, className }) {
 			/>
 			<button
 				className={`${Styles.subscribe_btn} btn btn--medium btn--outline ${
-					responseFromSubscribeBox.isLoading
-						? "btn--pending"
-						: responseFromSubscribeBox.data
+					responseFromSubscribeBox.isLoading || responseFromSubscribeBox.data
 						? "btn--complete"
 						: responseFromSubscribeBox.error
 						? "btn--error"
 						: ""
 				}`}
 			>
-				{responseFromSubscribeBox.isLoading
-					? "Processing..."
-					: responseFromSubscribeBox.data
+				{responseFromSubscribeBox.isLoading || responseFromSubscribeBox.data
 					? `${
 							unsubscribe
-								? "Check your email!"
-								: "Check your email!"
+								? "Sent!"
+								: "Sent!"
 					  }`
 					: responseFromSubscribeBox.error
 					? `${"Oops, try again!"}`
@@ -145,9 +143,9 @@ export default function Subscribe({ unsubscribe, className }) {
 					? `Error: ${responseFromSubscribeBox.error.message}`
 					: responseFromSubscribeBox.data
 					? `${
-							unsubscribe ? "Unsubscribe" : "Subscribe"
-					  } request sent to ${
-							responseFromSubscribeBox.data
+							unsubscribe ? "Unsubscribing" : "Subscribing"
+					  } email ${
+							holdEmail
 					  }! To confirm, please click the link in the email.`
 					: ""}
 			</p>

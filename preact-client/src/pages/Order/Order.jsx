@@ -400,9 +400,7 @@ function Order({path, setVisitedRoutes}) {
 						className={`${
 							Styles.submit
 						} btn btn--outline btn--large ${
-							responseFromSubmitOrder.isLoading
-								? "btn--pending"
-								: responseFromSubmitOrder.data
+							responseFromSubmitOrder.isLoading || responseFromSubmitOrder.data
 								? "btn--complete"
 								: responseFromSubmitOrder.error
 								? "btn--error"
@@ -410,9 +408,7 @@ function Order({path, setVisitedRoutes}) {
 						}`}
 						disabled={responseFromSubmitOrder.isLoading}
 					>
-						{responseFromSubmitOrder.isLoading
-							? "Submitting..."
-							: responseFromSubmitOrder.data
+						{responseFromSubmitOrder.isLoading || responseFromSubmitOrder.data
 							? "Order submitted!"
 							: responseFromSubmitOrder.error
 							? "Submission Error"

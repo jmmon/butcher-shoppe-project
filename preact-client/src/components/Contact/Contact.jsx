@@ -202,9 +202,7 @@ const Contact = () => {
 			<button
 				type="submit"
 				className={`${Styles.submit} ${Styles.btn} btn btn--outline btn--large ${
-					responseFromContactBox.isLoading
-						? "btn--pending"
-						: responseFromContactBox.data
+					responseFromContactBox.isLoading || responseFromContactBox.data
 						? "btn--complete"
 						: responseFromContactBox.error
 						? "btn--error"
@@ -212,12 +210,10 @@ const Contact = () => {
 				}`}
 				disabled={responseFromContactBox.isLoading}
 			>
-				{responseFromContactBox.isLoading
-					? "Sending..."
-					: responseFromContactBox.data
-					? "Email Sent!"
+				{responseFromContactBox.isLoading || responseFromContactBox.data
+					? "Sent!"
 					: responseFromContactBox.error
-					? "Sending Error!"
+					? "Oops, try again!"
 					: "Send Email"}
 			</button>
 
