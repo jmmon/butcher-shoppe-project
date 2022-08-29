@@ -30,6 +30,9 @@ const Contact = () => {
 	let timer = null;
 
 	const inputHandleChange = (e) => {
+		e.persist();
+		console.log(e, e.target, e.target.name);
+		console.log(e.target.value);
 		setInput((prevInput) => {
 			return {
 				...prevInput,

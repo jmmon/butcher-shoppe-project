@@ -13,7 +13,6 @@ import Contact from "components/Contact/Contact";
 import Map from "components/Map/Map";
 
 import TelLink from "components/TelLink/TelLink";
-import { ComponentInView } from "utils/ComponentInView";
 
 const facebookUrl = "https://www.facebook.com/TheButcherShoppe2022";
 
@@ -71,21 +70,19 @@ export default function Footer() {
 			</section>
 
 			
-			<ComponentInView marginPx="0px">
-				<section
-					className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
-				>
-					<FooterModuleContainer title="Contact Us!">
-						<Contact />
-					</FooterModuleContainer>
+			<section
+				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
+			>
+				<FooterModuleContainer title="Contact Us!">
+					<Contact />
+				</FooterModuleContainer>
 
-					<FooterModuleContainer
-						title="Find Us In Downtown Northport!"
-					>
-						<Map />
-					</FooterModuleContainer>
-				</section>
-			</ComponentInView>
+				<FooterModuleContainer
+					title="Find Us In Downtown Northport!"
+				>
+					<Map />
+				</FooterModuleContainer>
+			</section>
 			
 			<div id="more-links" style={{scrollPaddingTop: "4rem", marginTop: "-2rem"}}></div>
 
