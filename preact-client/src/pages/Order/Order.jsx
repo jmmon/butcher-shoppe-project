@@ -39,10 +39,10 @@ const orderFormBackendUri =
 
 // So create an animal, it's linked with that ID, but deleting the animal should only delete the react component but not clear the ID from localStorage. ?
 
-function Order({path, setVisitedRoutes}) {
+function Order({ path, setVisitedRoutes }) {
 	React.useEffect(() => {
-		setVisitedRoutes((prev) => ([...prev, path]));
-	},[])
+		setVisitedRoutes((prev) => [...prev, path]);
+	}, []);
 	const methods = useForm({
 		mode: "all",
 	});
@@ -400,7 +400,8 @@ function Order({path, setVisitedRoutes}) {
 						className={`${
 							Styles.submit
 						} btn btn--outline btn--large ${
-							responseFromSubmitOrder.isLoading || responseFromSubmitOrder.data
+							responseFromSubmitOrder.isLoading ||
+							responseFromSubmitOrder.data
 								? "btn--complete"
 								: responseFromSubmitOrder.error
 								? "btn--error"
@@ -408,7 +409,8 @@ function Order({path, setVisitedRoutes}) {
 						}`}
 						disabled={responseFromSubmitOrder.isLoading}
 					>
-						{responseFromSubmitOrder.isLoading || responseFromSubmitOrder.data
+						{responseFromSubmitOrder.isLoading ||
+						responseFromSubmitOrder.data
 							? "Order submitted!"
 							: responseFromSubmitOrder.error
 							? "Submission Error"
@@ -424,8 +426,10 @@ function Order({path, setVisitedRoutes}) {
 								: ""
 						}`}
 					>
-						{responseFromSubmitOrder.data
-							? "Order Submitted! A copy will be sent to your provided email address."
+						{responseFromSubmitOrder.isLoading
+							? "Thank you for your order!"
+							: responseFromSubmitOrder.data
+							? "Order Submitted. A copy will be sent to your provided email address."
 							: responseFromSubmitOrder.error
 							? `Error: ${responseFromSubmitOrder.error.message}`
 							: ""}
