@@ -60,19 +60,19 @@ export default function Footer() {
 			<section
 				className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 			>
-				<FooterModuleContainer 
+				{/* <FooterModuleContainer 
 					linkTarget="contact"
 					title="Contact Us!"
 				>
 					<Contact />
-				</FooterModuleContainer>
+				</FooterModuleContainer> */}
 				
-				<FooterModuleContainer 
+				{/* <FooterModuleContainer 
 					linkTarget="map"
 					title="Map"
 				>
 					<Map />
-				</FooterModuleContainer>
+				</FooterModuleContainer> */}
 
 				{/* <Map2 /> */}
 				
