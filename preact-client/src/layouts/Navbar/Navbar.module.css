@@ -24,9 +24,10 @@
 
 .logo_bg_ellipse {
 	z-index: -1;
-	height: 120px;
+	height: 116px;
 	width: 280px;
 	margin-left: 56px;
+	margin-top: 8px;
 	top: 0;
 	background-color: var(--grey-bg);
 	clip-path: ellipse(50% 50% at 50% 50%);
@@ -34,8 +35,9 @@
 
 .logo {
 	position: absolute;
-	height: 120px;
+	height: 126px;
 	padding-bottom: 4px;
+	padding-right: 4px;
 }
 
 
