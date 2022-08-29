@@ -75,15 +75,15 @@ export default function Footer() {
 				<section
 					className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
 				>
-					<FooterModuleContainer title="Contact Us!">
+					{/* <FooterModuleContainer title="Contact Us!">
 						<Contact />
-					</FooterModuleContainer>
+					</FooterModuleContainer> */}
 
 					<FooterModuleContainer
 						title="Find Us In Downtown Northport!"
 					>
 						<Map />
-					</FooterModuleContainer>
+					 </FooterModuleContainer>
 				</section>
 			</ComponentInView>
 			
