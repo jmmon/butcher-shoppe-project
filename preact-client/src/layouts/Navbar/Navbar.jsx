@@ -9,7 +9,6 @@ function Navbar() {
 	return (
 		<nav className={`flex-jcenter-acenter ${Styles.wrapper} panel-shadow--light`}>
 			<div className={`flex-acenter ${Styles.navbar}`}>
-				<div className={Styles.logo_bg_ellipse}></div>
 				<Link href="/" className={`flex-acenter-jcenter ${Styles.home}`}>
 					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
 					{" "}
@@ -17,6 +16,7 @@ function Navbar() {
 						className={Styles.logo}
 						styles={Styles}
 					/>
+					<div className={Styles.logo_bg_ellipse}></div>
 				</Link>
 
 				<div className={Styles.menu_container}>
