@@ -5,7 +5,7 @@ const defaultProps = {
 	containerStyle: {
 		width: "100%",
 		height: "100%",
-		border: "1px solid rgb(179, 179, 179)",
+		border: "3px solid #a13d33a0",
 	},
 	zoom: 14,
 	center: { 

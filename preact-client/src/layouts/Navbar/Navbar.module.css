@@ -64,6 +64,10 @@
 	top: 0;
 }
 
+.dropdown_close {
+	display: none;
+}
+
 /* menu icon */
 .bars {
 	color: var(--text-dark);
@@ -114,6 +118,16 @@
 		background: rgba(231, 231, 231, 0.95);
 		z-index: -1;
 	}
+
+	/* .menu_container:hover > .dropdown_button,
+	.menu_container:focus-within > .dropdown_button {
+		display: none;
+	}
+
+	.menu_container:hover ~ .dropdown_close,
+	.menu_container:focus-within ~ .dropdown_close {
+		display: flex;
+	} */
 
 	/* newsletter link on mobile menu */
 	.newsletter_mobile {

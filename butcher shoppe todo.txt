@@ -1,0 +1,3 @@
+Butcher Shoppe:
+	Close menu by clicking close button (must be outside of focus but moved over absolute)
+	Scripts: add defer property

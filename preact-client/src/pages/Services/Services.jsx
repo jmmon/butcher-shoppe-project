@@ -15,8 +15,11 @@ import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 import { ComponentInView } from "utils/ComponentInView";
 import CONSTANTS from "utils/CONSTANTS";
+import PricesGrid from "./PricesGrid";
+import {PRICES} from "utils/CONSTANTS";
+import NewPricesGrid from "./NewPricesGrid";
 
-const PRICES = {
+const PRICES_OLD = {
 	minimum: 100,
 	animals: [
 		{
@@ -35,7 +38,7 @@ const PRICES = {
 			discount: 80,
 		},
 		{
-			names: ["Bison", "Buffalo"],
+			names: ["Buffalo", "Bison"],
 			base: 220,
 			discount: 200,
 		},
@@ -108,12 +111,13 @@ export default function Services({path, setVisitedRoutes}) {
 							Slaughter Prices
 						</h2>
 
-						<PricesGrid />
+						{/* <PricesGrid PRICES={PRICES_OLD} /> */}
+						<NewPricesGrid PRICES={PRICES} />
 
 						<PricesExtra />
 					</div>
 
-					<hr />
+					<hr className={Styles.hr_separator_margin} />
 
 					<Processing />
 				</ComponentInView>
@@ -135,72 +139,6 @@ const Buttons = () => (
 	</div>
 );
 
-const PricesItem = ({ content, styles = false }) => (
-	<span
-		className={
-			styles === "twoColumn"
-				? Styles.prices_two_column
-				: `text-center ${
-						styles === "header"
-							? Styles.prices_header
-							: Styles.prices_item
-				  }`
-		}
-	>
-		{typeof content === "number" && "$"}
-		{content}
-	</span>
-);
-
-const PricesHeaderRow = ({ content }) => (
-	<>
-		{content.map((item) => (
-			<PricesItem key={item} content={item} styles="header" />
-		))}
-	</>
-);
-
-const PricesGrid = () => (
-	<div className={`${Styles.prices_container} panel-shadow--light`}>
-		<PricesItem content="Minimum Charge" styles="twoColumn" />
-		<PricesItem content={PRICES.minimum} styles="twoColumn" />
-
-		<span className={Styles.prices_spacer}></span>
-
-		<PricesHeaderRow
-			content={["Animal", "Base Price", "If You Keep The Guts"]}
-		/>
-
-		<span className={Styles.prices_spacer}></span>
-
-		{PRICES.animals.map((animal, animalIndex) => (
-			<React.Fragment key={animalIndex} >
-				<PricesItem
-					content={animal.names.map((name, index) => (
-						<React.Fragment key={index}>
-							{index !== 0 && (
-								<>
-									,<br />
-								</>
-							)}
-							{name}
-						</React.Fragment>
-					))}
-				/>
-				<PricesItem content={animal.base} />
-				<PricesItem content={animal.discount} />
-
-				<span className={Styles.prices_spacer}></span>
-			</React.Fragment>
-		))}
-
-		<PricesItem content="Exotic Animals" styles="twoColumn" />
-		<PricesItem
-			content={<TelLink>Please Call Us</TelLink>}
-			styles="twoColumn"
-		/>
-	</div>
-);
 
 const PricesExtra = () => (
 	<div>

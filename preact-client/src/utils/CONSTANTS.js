@@ -10,3 +10,37 @@ const CONSTANTS = {
 };
 
 export default CONSTANTS;
+
+
+export const PRICES = {
+	animals: [
+		{
+			names: ["Beef"],
+			"1": 200,
+			"2": 160,
+			"3+": 150,
+			gutsHaul: 30,
+		},
+		{
+			names: ["Hogs"],
+			"1": 125,
+			"2": 110,
+			"3+": 100,
+			gutsHaul: 20,
+		},
+		{
+			names: ["Lamb", "Goats"],
+			"1": 120,
+			"2": 90,
+			"3+": 80,
+			gutsHaul: 15,
+		},
+		{
+			names: ["Bison"],
+			"1": 250,
+			"2": 225,
+			"3+": 200,
+			gutsHaul: 30,
+		},
+	],
+};
