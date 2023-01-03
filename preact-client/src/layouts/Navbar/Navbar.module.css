@@ -73,6 +73,10 @@
 	color: var(--text-dark);
 	font-size: 2rem;
 }
+.bars_close {
+	color: var(--text-dark);
+	font-size: 1.8rem;
+}
 
 
 .links {
@@ -108,10 +112,6 @@
 
 /* small screens */
 @media (max-width: 960px) {
-	/* activate menu on hover or click */
-	/* .menu_container:hover > .menu,
-	.menu_container:focus-within .menu,
-	.menu_container .menu:hover */
 	.menu.menu_open
 	{
 		opacity: 1;
@@ -120,16 +120,6 @@
 		background: rgba(231, 231, 231, 0.95);
 		z-index: -1;
 	}
-
-	/* .menu_container:hover > .dropdown_button,
-	.menu_container:focus-within > .dropdown_button {
-		display: none;
-	}
-
-	.menu_container:hover ~ .dropdown_close,
-	.menu_container:focus-within ~ .dropdown_close {
-		display: flex;
-	} */
 
 	/* newsletter link on mobile menu */
 	.newsletter_mobile {
@@ -228,12 +218,11 @@
 		color: var(--text-dark);
 		font-size: 1.5rem;
 	}
+	.bars_close {
+		color: var(--text-dark);
+		font-size: 1.25rem;
+	}
 
-
-	/* activate menu on hover or click */
-	/* .menu_container:hover > .menu,
-	.menu_container:focus-within .menu,
-	.menu_container .menu:hover  */
 	.menu.menu_open
 	{
 		top: 3rem;

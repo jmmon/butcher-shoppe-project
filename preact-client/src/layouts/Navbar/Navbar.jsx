@@ -57,7 +57,8 @@ function Navbar(
 				<div ref={wrapperRef} className={Styles.menu_container}>
 					{/* Hamburger icon*/}
 					<div className={Styles.dropdown_button} onClick={handleToggleMenu}>
-						<i className={`fas fa-bars ${Styles.bars}`} />
+						{!isMenuOpen && <i className={`fas fa-bars ${Styles.bars}`} />}
+						{isMenuOpen && <i className={`fa-solid fa-x ${Styles.bars_close}`} />}
 					</div>
 
 					<div className={`flex-acenter ${Styles.menu} ${isMenuOpen && Styles.menu_open}`}>
