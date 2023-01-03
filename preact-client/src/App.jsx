@@ -26,6 +26,17 @@ function App() {
 	const [nextRoute, setNextRoute] = React.useState(1);
 	const [visitedRoutes, setVisitedRoutes] = React.useState(['/']);
 	// React.useEffect(() => {console.log({visitedRoutes})}, [visitedRoutes])
+
+	// const ref = React.useRef();
+	// const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	// const handleClick = (e) => {
+	// 	setIsMenuOpen(!isMenuOpen);
+	// 	console.log('toggled menu');
+	// }
+	// const handleClose = (e) => {
+	// 	setIsMenuOpen(false);
+	// 	console.log('menu closed');
+	// }
 	return (
 		<IdleDetector
 			events={['mousemove', 'keydown']}
@@ -35,10 +46,18 @@ function App() {
 			}}
 			idleTime={2000}
 		>
-		<div className="website-container">
+		<div 
+		className="website-container" 
+		// onClick={handleClose}
+		>
 			<LinkScrollToTop excludes={["/contact"]}>
 				<Header />
-				<Navbar />
+				<Navbar 
+				// ref={ref} 
+				// handleClose={handleClose} 
+				// handleClick={handleClick} 
+				// isMenuOpen={isMenuOpen} 
+				/>
 				<div className="website-content-container">
 					<Suspense
 						fallback={

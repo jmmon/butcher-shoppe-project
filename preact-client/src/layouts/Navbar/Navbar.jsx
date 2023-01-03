@@ -1,11 +1,46 @@
-import React from "react";
+import React  from "react";
 import { Link } from "wouter";
 import Styles from "./Navbar.module.css";
 
 import LogoComponent from "assets/logo/LogoComponent";
 import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
 
-function Navbar() {
+function useOutsideAlerter(ref, handler) {
+	React.useEffect(() => {
+		// alert if clicked on outside of element
+		function handleClickOutside(e) {
+			if (ref.current && !ref.current.contains(e.target)) {
+				// do something?
+				// alert('you clicked outside of me!');
+				handler(e);
+			}
+		}
+		// bind the event listener
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			//unbind the listener on cleanup
+			document.removeEventListener('mousedown', handleClickOutside);
+		}
+	}, [ref])
+}
+
+function Navbar(
+	// {handleClick, handleClose, isMenuOpen}
+	) {
+	
+	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const handleToggleMenu = (e) => {
+		console.log('toggled menu: open ==', !isMenuOpen);
+		setIsMenuOpen(!isMenuOpen);
+	}
+	const handleClose = (e) => {
+		setIsMenuOpen(false);
+		console.log('menu closed');
+	}
+
+	const wrapperRef = React.useRef(null);
+	useOutsideAlerter(wrapperRef, handleClose);
+
 	return (
 		<nav className={`flex-jcenter-acenter ${Styles.wrapper} panel-shadow--light`}>
 			<div className={`flex-acenter ${Styles.navbar}`}>
@@ -19,52 +54,59 @@ function Navbar() {
 					<div className={Styles.logo_bg_ellipse}></div>
 				</Link>
 
-				<div className={Styles.menu_container}>
+				<div ref={wrapperRef} className={Styles.menu_container}>
 					{/* Hamburger icon*/}
-					<div className={Styles.dropdown_button}>
+					<div className={Styles.dropdown_button} onClick={handleToggleMenu}>
 						<i className={`fas fa-bars ${Styles.bars}`} />
 					</div>
 
-					<div className={`flex-acenter ${Styles.menu}`}>
+					<div className={`flex-acenter ${Styles.menu} ${isMenuOpen && Styles.menu_open}`}>
 						<LinkWithPreload
 							href="/services"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							Services
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/how-to-order"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							How To Order
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/order"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							Order
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/meet-the-team"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							Meet The Team
 						</LinkWithPreload>
 						<LinkWithPreload
 							href="/FAQ"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							FAQ
 						</LinkWithPreload>
 						<a
 							href="#more-links"
 							className={`${Styles.menu_item} flex-jcenter-acenter ${Styles.links}`}
+							onClick={handleClose}
 						>
 							More...
 						</a>
 						<LinkWithPreload
 							href="/newsletter/subscribe"
 							className={`flex-jcenter-acenter ${Styles.links} ${Styles.newsletter_mobile}`}
+							onClick={handleClose}
 						>
 							Newsletter
 						</LinkWithPreload>

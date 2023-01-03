@@ -109,9 +109,11 @@
 /* small screens */
 @media (max-width: 960px) {
 	/* activate menu on hover or click */
-	.menu_container:hover > .menu,
+	/* .menu_container:hover > .menu,
 	.menu_container:focus-within .menu,
-	.menu_container .menu:hover {
+	.menu_container .menu:hover */
+	.menu.menu_open
+	{
 		opacity: 1;
 		top: var(--navbar-height);
 		pointer-events: auto;
@@ -229,9 +231,11 @@
 
 
 	/* activate menu on hover or click */
-	.menu_container:hover > .menu,
+	/* .menu_container:hover > .menu,
 	.menu_container:focus-within .menu,
-	.menu_container .menu:hover {
+	.menu_container .menu:hover  */
+	.menu.menu_open
+	{
 		top: 3rem;
 	}
 }
