@@ -186,7 +186,7 @@
 }
 
 
-
+/* tiny screens */
 @media (max-width: 480px) {
 	.wrapper {
 		height: 3rem;
@@ -195,21 +195,17 @@
 	.logo_bg_ellipse {
 		height: 96px;
 		width: 180px;
-		left: 36px;
 	}
 
 	.home {
-		justify-self: start;
-		height: 96px;
-		margin: 0 0;
 		margin-top: 38px;
-		width: 210px;
+		margin-left: -1.8rem;
+		clip-path: ellipse(50% 50% at 60% 50%);
 	}
 
 	/* NEW LOGO */
 	.logo {
-		/* height: 100%; */
-		padding-left: 2px;
+		padding-left: 3px;
 		padding-right: 4px;
 		padding-bottom: 4px;
 	}
