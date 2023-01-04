@@ -17,8 +17,8 @@ export const PRICES = {
 		{
 			names: ["Beef"],
 			"1": 200,
-			"2": 160,
-			"3+": 150,
+			"2": 175,
+			"3+": 160,
 			gutsHaul: 30,
 		},
 		{

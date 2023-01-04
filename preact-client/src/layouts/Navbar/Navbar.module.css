@@ -132,7 +132,7 @@
 	}
 
 	.links {
-		height: 5rem;
+		height: clamp(4rem, 16.6vw, 5rem);
 		width: clamp(9rem, 35vw, 12rem);
 	}
 }

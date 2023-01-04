@@ -21,21 +21,17 @@ function useOutsideAlerter(ref, handler) {
 			//unbind the listener on cleanup
 			document.removeEventListener('mousedown', handleClickOutside);
 		}
-	}, [ref])
+	}, [ref, handler])
 }
 
-function Navbar(
-	// {handleClick, handleClose, isMenuOpen}
-	) {
+function Navbar() {
 	
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 	const handleToggleMenu = (e) => {
-		console.log('toggled menu: open ==', !isMenuOpen);
 		setIsMenuOpen(!isMenuOpen);
 	}
 	const handleClose = (e) => {
 		setIsMenuOpen(false);
-		console.log('menu closed');
 	}
 
 	const wrapperRef = React.useRef(null);
