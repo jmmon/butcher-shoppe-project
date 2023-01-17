@@ -1,24 +1,28 @@
 const Images = [
+	{ url: require('assets/images/homepage/IMG_5313_reduced.jpg'), position: '50% 50%' },
 	{
-		url: require("assets/images/homepage/_DSC1246-q80-c4.jpg"),
-		position: "50% 58%",
+		url: require('assets/images/homepage/_DSC1246-q80-c4.jpg'),
+		position: '50% 58%',
 	},
 	{
-		url: require("assets/images/homepage/_MG_1051-1024x683_q60_c4.jpg"),
-		position: "50% 45%",
+		url: require('assets/images/homepage/_MG_1051-1024x683_q60_c4.jpg'),
+		position: '50% 45%',
 	},
 	{
-		url: require("assets/images/homepage/image-1-14.jpg"),
-		position: "50% 60%",
+		url: require('assets/images/homepage/image-1-14.jpg'),
+		position: '50% 60%',
 	},
 	{
-		url: require("assets/images/homepage/image-1-117-q55-c4.jpg"),
-		position: "50% 40%",
+		url: require('assets/images/homepage/IMG_5513_reduced.jpg'),
+		position: '50% 50%',
+	},
+	{
+		url: require('assets/images/homepage/image-1-117-q55-c4.jpg'),
+		position: '50% 40%',
 	},
 ];
 
 export default Images;
-
 
 /* 
 
