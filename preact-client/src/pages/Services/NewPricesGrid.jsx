@@ -34,6 +34,7 @@ export default function NewPricesGrid({ PRICES }) {
 				<PricesAnimalRow
 					animal={animal}
 					animalIndex={animalIndex}
+					key={animalIndex}
 				/>
 			))}
 

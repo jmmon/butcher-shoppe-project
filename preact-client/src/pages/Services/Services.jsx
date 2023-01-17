@@ -15,40 +15,13 @@ import TelLink from "components/TelLink/TelLink";
 import { Helmet } from "react-helmet";
 import { ComponentInView } from "utils/ComponentInView";
 import CONSTANTS from "utils/CONSTANTS";
-import PricesGrid from "./PricesGrid";
 import {PRICES} from "utils/CONSTANTS";
 import NewPricesGrid from "./NewPricesGrid";
-
-const PRICES_OLD = {
-	minimum: 100,
-	animals: [
-		{
-			names: ["Beef"],
-			base: 180,
-			discount: 160,
-		},
-		{
-			names: ["Hogs"],
-			base: 120,
-			discount: 100,
-		},
-		{
-			names: ["Lambs", "Goats"],
-			base: 90,
-			discount: 80,
-		},
-		{
-			names: ["Buffalo", "Bison"],
-			base: 220,
-			discount: 200,
-		},
-	],
-};
 
 export default function Services({path, setVisitedRoutes}) {
 	React.useEffect(() => {
 		setVisitedRoutes((prev) => ([...prev, path]));
-	},[])
+	}, [])
 	return (
 		<PageLayout
 			helmet={
@@ -111,7 +84,6 @@ export default function Services({path, setVisitedRoutes}) {
 							Slaughter Prices
 						</h2>
 
-						{/* <PricesGrid PRICES={PRICES_OLD} /> */}
 						<NewPricesGrid PRICES={PRICES} />
 
 						<PricesExtra />
