@@ -1,5 +1,7 @@
 /* general */
 .footer {
+	--links-font-size: clamp(0.9rem, 2vw, 1rem);
+
 	background-color: var(--grey-bg);
 	z-index: -1;
 	color: var(--text-dark);
@@ -49,7 +51,7 @@
 /* bunch o' links */
 .links {
 	width: auto;
-	font-size: clamp(0.9rem, 2vw, 1rem);
+	font-size: var(--links-font-size);
 }
 .links_half {
 	max-width: 480px;
@@ -71,6 +73,10 @@
 
 
 /* logo */
+.logo_section {
+	overflow-x: hidden;
+}
+
 .logo_wrapper {
 	max-width: 1400px;
 	width: 100%;

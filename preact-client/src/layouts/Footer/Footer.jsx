@@ -152,7 +152,7 @@ export default function Footer() {
 				</div>
 			</section>
 
-			<section className={`flex-col-jcenter-acenter`}>
+			<section className={`flex-col-jcenter-acenter ${Styles.logo_section}`}>
 				<div className={`flex-jcenter-acenter ${Styles.logo_wrapper}`}>
 					<LogoComponent className={Styles.banner} />
 				</div>
