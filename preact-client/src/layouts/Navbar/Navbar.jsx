@@ -109,9 +109,6 @@ function Navbar() {
 						</LinkWithPreload>
 					</div>
 				</div>
-				{/* <div className={`${Styles.dropdown_button} ${Styles.dropdown_close}`}>
-					<i className={`fa-solid fa-x ${Styles.bars}`} />
-				</div> */}
 
 				{/* Large Screen Newsletter Button	 */}
 				<LinkWithPreload href="/newsletter/subscribe">
