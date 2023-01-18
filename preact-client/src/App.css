@@ -1,9 +1,8 @@
 @font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('fonts/pt-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-family: 'PT Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''), url('fonts/pt-sans-v17-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	font-display: swap;
 }
 
@@ -12,7 +11,8 @@
 	font-style: normal;
 	font-weight: normal;
 	src: local(''),
-	url("fonts/Franklin\ Gothic\ Heavy\ Regular/Franklin\ Gothic\ Heavy\ Regular.ttf") format("truetype");
+		url('fonts/Franklin\ Gothic\ Heavy\ Regular/Franklin\ Gothic\ Heavy\ Regular.ttf')
+			format('truetype');
 	font-display: swap;
 }
 
@@ -30,32 +30,28 @@
 	/* subscribe module (contact, order?) */
 	--input-placeholder--light: #aaa;
 
-	
 	/* Contact, Subscribe (Order?) */
 	--input-required--valid: rgb(231, 255, 231);
 	--input-required--invalid: rgb(255, 231, 231);
 
-/* Button, Header */
+	/* Button, Header */
 	--transition: all 0.1s ease-out;
-
 
 	--header-height: 2rem;
 	--navbar-height: 4.1rem;
 	--footer-content--width: 1000px;
 
-
 	--card--font-size: clamp(1rem, 5vw, 1.2rem);
 
 	/* page titles */
 	--inset-box-shadow--dark: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-
 }
 
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "PT Sans", sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: 700;
 }
 
@@ -69,12 +65,11 @@ p {
 	line-height: 2;
 }
 
-@media (max-width:960px) {
+@media (max-width: 960px) {
 	p {
 		line-height: 1.8;
 	}
 }
-
 
 /* app only */
 .website-container {
@@ -92,52 +87,50 @@ p {
 	margin-top: var(--header-height); /* sets it below the header */
 }
 
-
 /* flex selectors: */
 
-[class*="flex"] {
+[class*='flex'] {
 	display: flex;
 }
 
-[class*="flex-"][class*="col"] {
+[class*='flex-'][class*='col'] {
 	flex-direction: column;
 }
-[class*="flex-"][class*="row"] {
+[class*='flex-'][class*='row'] {
 	flex-direction: row;
 }
-[class*="flex-"][class*="wrap"] {
+[class*='flex-'][class*='wrap'] {
 	flex-wrap: wrap;
 }
 
-[class*="flex-"][class*="jcenter"] {
+[class*='flex-'][class*='jcenter'] {
 	justify-content: center;
 }
-[class*="flex-"][class*="jevenly"] {
+[class*='flex-'][class*='jevenly'] {
 	justify-content: space-evenly;
 }
-[class*="flex-"][class*="jaround"] {
+[class*='flex-'][class*='jaround'] {
 	justify-content: space-around;
 }
-[class*="flex-"][class*="jbetween"] {
+[class*='flex-'][class*='jbetween'] {
 	justify-content: space-between;
 }
 
-[class*="flex-"][class*="acenter"] {
+[class*='flex-'][class*='acenter'] {
 	align-items: center;
 }
-[class*="flex-"][class*="astretch"] {
+[class*='flex-'][class*='astretch'] {
 	align-items: stretch;
 }
-[class*="flex-"][class*="astart"] {
+[class*='flex-'][class*='astart'] {
 	align-items: flex-start;
 }
-[class*="flex-30"] {
+[class*='flex-30'] {
 	flex: 30%;
 }
-[class*="flex-50"] {
+[class*='flex-50'] {
 	flex: 50%;
 }
-
 
 /* Gaps for flex and grid */
 
@@ -151,11 +144,9 @@ p {
 	gap: 1rem;
 }
 
-
-
 /* Grid styles */
 
-[class*="grid-"] {
+[class*='grid-'] {
 	display: grid;
 	justify-content: center;
 }
@@ -164,34 +155,36 @@ p {
 	grid-row-gap: 8em;
 }
 
-
+/* box-shadow: x y blur spread color */
 
 /* panel shadows, text shadows */
 
 /* Footer, HomepageTitle, PageTitle, WhitePageBackground, MeetTheTeam */
 .panel-shadow--dark {
-	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.3),
-		0 8px 20px 8px rgba(0, 0, 0, 0.19);
+	--panel-shadow-dark-small: 0 0 8px 2px rgba(0, 0, 0, 0.3);
+	--panel-shadow-dark-wide: 0 8px 20px 8px rgba(0, 0, 0, 0.19);
+	box-shadow: var(--panel-shadow-dark-wide), var(--panel-shadow-dark-small);
 }
 /* Navbar, Subscribe, HowToOrder, Services */
 .panel-shadow--light {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-							0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-
-
+/* large screens */
 /* card, homepage title, page title */
 .text-shadow--lg {
-	text-shadow: -3px 3px 8px #000;
+	text-shadow: -3px 3px 10px #000;
 }
 
+/* medium screens */
 @media screen and (max-width: 960px) {
 	/* card, homepage title, page title */
 	.text-shadow--lg {
-		text-shadow: -3px 3px 10px #000;
+		text-shadow: -2px 2px 9px #000;
 	}
 }
+
+/*  small screens */
 @media screen and (max-width: 480px) {
 	/* card, homepage title, page title */
 	.text-shadow--lg {
@@ -217,7 +210,6 @@ p {
 	margin-bottom: 2rem;
 }
 
-
 /* text and card styles */
 
 .text-white {
@@ -227,10 +219,9 @@ p {
 	text-align: center;
 }
 
-
 /* Card Styles */
 
-.card--font-size { 
+.card--font-size {
 	font-size: var(--card--font-size);
 }
 

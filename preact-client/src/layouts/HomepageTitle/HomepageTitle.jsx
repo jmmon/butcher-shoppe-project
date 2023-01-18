@@ -1,18 +1,18 @@
-import { Fade } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
-import "./react-slideshow-image.css";
-import Styles from "./HomepageTitle.module.css";
+import './react-slideshow-image.css';
+import Styles from './HomepageTitle.module.css';
 
-import Button from "components/Button/Button";
-import Images from "./Images.js";
+import Button from 'components/Button/Button';
+import Images from './Images.js';
 
 const properties = {
-	duration: 8000,
-	transitionDuration: 2000,
+	duration: 7000,
+	transitionDuration: 150,
 	infinite: true,
 	arrows: false,
-	easing: "cubic-in",
+	easing: 'cubic-in',
 	// easing: "ease-in",
 	// easing: "linear",
 	// easing: "ease-out",
@@ -20,11 +20,13 @@ const properties = {
 	indicators: (i) => <div className="indicator">{i + 1}</div>,
 };
 
-export default function HomepageTitle({ title = "", subtitle = "", subtext = "" }) {
+export default function HomepageTitle({ title = '', subtitle = '', subtext = '' }) {
+	const subtextSplit = subtext.split(' ');
+	const halfIndex = subtextSplit.length / 2;
+	const firstSubtext = subtextSplit.slice(0, halfIndex).join(' ');
+	const secondSubtext = subtextSplit.slice(halfIndex).join(' ');
 	return (
-		<section
-			className={`${Styles.section} text-center text-white panel-shadow--dark`}
-		>
+		<section className={`${Styles.section} text-center text-white panel-shadow--dark pane`}>
 			<Fade {...properties}>
 				{Images.map((slideImage, index) => (
 					<div
@@ -32,26 +34,20 @@ export default function HomepageTitle({ title = "", subtitle = "", subtext = "" 
 						className={`${Styles.image} `}
 						style={{
 							backgroundImage: `url(${slideImage.url})`,
-							backgroundSize: slideImage?.size ||`cover`,
+							backgroundSize: slideImage?.size || `cover`,
 							backgroundRepeat: `no-repeat`,
-							backgroundPosition: slideImage.position || "50% 50%",
+							backgroundPosition: slideImage.position || '50% 50%',
 						}}
 					></div>
 				))}
 			</Fade>
 
 			<div className={`flex-col-jaround-acenter ${Styles.content_wrapper}`}>
-				<div
-					className={`flex-jcenter-wrap ${Styles.content_container}`}
-				>
-					<h1 className={`${Styles.title} text-shadow--lg`}>
-						{title}
-					</h1>
+				<div className={`flex-jcenter-wrap ${Styles.content_container}`}>
+					<h1 className={`${Styles.title} text-shadow--lg`}>{title}</h1>
 
-					<h2 className={`${Styles.subtitle} ${Styles.text_shadow_sm}`}>
-						{subtitle}
-					</h2>
-					
+					<h2 className={`${Styles.subtitle} ${Styles.text_shadow_sm}`}>{subtitle}</h2>
+
 					<Button
 						className={`${Styles.hero_btns} ${Styles.hero_btn} btn--outline`}
 						url="/services"
@@ -67,7 +63,9 @@ export default function HomepageTitle({ title = "", subtitle = "", subtext = "" 
 					</Button>
 				</div>
 
-				<i className={`${Styles.subtext} flex text-shadow--lg`}>{subtext}</i>
+				<i className={`${Styles.subtext} flex text-shadow--lg`}>
+						<span className={`${Styles.first}`}>{firstSubtext + ' '}</span><span className={`${Styles.second}`}>{secondSubtext}</span>
+				</i>
 			</div>
 		</section>
 	);
