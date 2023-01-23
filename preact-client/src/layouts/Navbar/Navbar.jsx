@@ -1,17 +1,16 @@
-import React  from "react";
-import { Link } from "wouter";
-import Styles from "./Navbar.module.css";
+import React from 'react';
+import { Link } from 'wouter';
+import Styles from './Navbar.module.css';
 
-import LogoComponent from "assets/logo/LogoComponent";
-import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
+import LogoComponent from 'assets/logo/LogoComponent';
+import LinkWithPreload from 'components/LinkWithPreload/LinkWithPreload';
 
 function useOutsideAlerter(ref, handler) {
 	React.useEffect(() => {
 		// alert if clicked on outside of element
 		function handleClickOutside(e) {
 			if (ref.current && !ref.current.contains(e.target)) {
-				// do something?
-				// alert('you clicked outside of me!');
+				// is clicked outside, run the handler
 				handler(e);
 			}
 		}
@@ -20,19 +19,18 @@ function useOutsideAlerter(ref, handler) {
 		return () => {
 			//unbind the listener on cleanup
 			document.removeEventListener('mousedown', handleClickOutside);
-		}
-	}, [ref, handler])
+		};
+	}, [ref, handler]);
 }
 
 function Navbar() {
-	
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 	const handleToggleMenu = (e) => {
 		setIsMenuOpen(!isMenuOpen);
-	}
+	};
 	const handleClose = (e) => {
 		setIsMenuOpen(false);
-	}
+	};
 
 	const wrapperRef = React.useRef(null);
 	useOutsideAlerter(wrapperRef, handleClose);
@@ -40,9 +38,11 @@ function Navbar() {
 	return (
 		<nav className={`flex-jcenter-acenter ${Styles.wrapper} panel-shadow--light`}>
 			<div className={`flex-acenter ${Styles.navbar}`}>
-				<Link href="/" className={`flex-acenter-jcenter ${Styles.home}`}>
-					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}
-					{" "}
+				<Link
+					href="/"
+					className={`flex-acenter-jcenter ${Styles.home}`}
+				>
+					{/* The space below IS NECESSARY for the link to work! Remove it and the link disappears but the logo still shows */}{' '}
 					<LogoComponent
 						className={Styles.logo}
 						styles={Styles}
@@ -50,9 +50,15 @@ function Navbar() {
 					<div className={Styles.logo_bg_ellipse}></div>
 				</Link>
 
-				<div ref={wrapperRef} className={Styles.menu_container}>
+				<div
+					ref={wrapperRef}
+					className={Styles.menu_container}
+				>
 					{/* Hamburger icon*/}
-					<div className={Styles.dropdown_button} onClick={handleToggleMenu}>
+					<div
+						className={Styles.dropdown_button}
+						onClick={handleToggleMenu}
+					>
 						{!isMenuOpen && <i className={`fas fa-bars ${Styles.bars}`} />}
 						{isMenuOpen && <i className={`fa-solid fa-x ${Styles.bars_close}`} />}
 					</div>

@@ -7,6 +7,7 @@ import PageLayout from "layouts/PageLayout/PageLayout";
 import { Helmet } from "react-helmet";
 import CONSTANTS from "utils/CONSTANTS";
 import { ComponentInView } from "utils/ComponentInView";
+import Styles from "./Home.module.css";
 
 export default function Home() {
 	return (
@@ -38,7 +39,7 @@ export default function Home() {
 				/>
 			}
 		>
-			<div className="grid-row-gap-8 padding-2--bot">
+			<div className={`grid-row-gap-8 padding-2--bot ${Styles.container}`}>
 				<Card
 					title="Welcome to The Northport Butcher Shoppe!"
 					paragraphs={[
@@ -62,6 +63,7 @@ export default function Home() {
 					<p>Sorry, no poultry or rabbits!</p>
 				</Card>
 				<hr />
+
 				<ComponentInView marginPx={CONSTANTS.OFFSET.THIRD}>
 					<Card
 						title="How It Works"

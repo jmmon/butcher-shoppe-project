@@ -1,0 +1,9 @@
+.container {
+	grid-row-gap: 6em;
+}
+
+@media screen and (max-width: 480px) {
+	.container {
+		grid-row-gap: 4em;
+	}
+}
