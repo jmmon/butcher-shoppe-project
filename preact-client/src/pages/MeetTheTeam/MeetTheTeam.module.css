@@ -1,3 +1,11 @@
+.container {
+	display: grid;
+	gap: 4em;
+}
+
+
+
+
 /* .team_container {
 	max-width: 92%;
 	margin: 0 auto;
