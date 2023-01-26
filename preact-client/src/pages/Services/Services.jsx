@@ -83,6 +83,7 @@ export default function Services({path, setVisitedRoutes}) {
 						<h2 className={`text-center ${Styles.prices_title}`}>
 							Slaughter Prices
 						</h2>
+						<h3 className={`text-center ${Styles.prices_subtitle}`} >* All prices are Per Animal *</h3>
 
 						<NewPricesGrid PRICES={PRICES} />
 

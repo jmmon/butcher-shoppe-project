@@ -4,7 +4,7 @@ import TelLink from 'components/TelLink/TelLink';
 
 const mainHeader = [
 	{ name: 'Animal', columns: 3, className:"text_left" },
-	{ name: 'Price Per Animal', columns: 6, },
+	{ name: 'Discounts for Multiple Animals', columns: 6, },
 	{ name: 'Take The Guts', columns: 3, className: "text_right"},
 ];
 

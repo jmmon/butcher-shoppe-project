@@ -13,7 +13,12 @@
 	gap: 10px;
 }
 .prices_title {
-	margin: 2rem 0;
+	margin: 4rem 0 0 0;
+}
+
+.prices_subtitle {
+	margin: 1rem 0;
+	color: var(--logo-red);
 }
 
 .prices_extra_margin {
