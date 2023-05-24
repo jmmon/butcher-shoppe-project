@@ -5,8 +5,8 @@ import Card from 'components/Card/Card';
 import HomepageTitle from 'layouts/HomepageTitle/HomepageTitle';
 import PageLayout from 'layouts/PageLayout/PageLayout';
 import { Helmet } from 'react-helmet';
-import CONSTANTS from 'utils/CONSTANTS';
-import { ComponentInView } from 'utils/ComponentInView';
+import {META} from 'utils/CONSTANTS';
+//import { ComponentInView } from 'utils/ComponentInView';
 import Styles from './Home.module.css';
 
 export default function Home() {
@@ -19,8 +19,8 @@ export default function Home() {
             The Butcher Shoppe: Mobile Slaughter Truck | Northport, WA
           </title>
           <meta
-            name='description'
-            content="Serving the tri-county area in northeast Washington. Sorry, we're temporarily closed! Please join our newsletter to know when we will re-open with full service!"
+            name={META.main.name}
+            content={META.main.content}
           />
         </Helmet>
       }
@@ -34,7 +34,7 @@ export default function Home() {
     >
       <div className={`grid-row-gap-8 padding-2--bot ${Styles.container}`}>
         <Card
-          title='Thank you for visiting! We are temporarily closed.'
+          title='Thank You For Visiting! We Are Temporarily Pausing Our Service'
           paragraphs={[
             'We appreciate your support and we look forward to serving you again soon!',
             'Our mission is to serve our friends, neighbors and surrounding community through convenient humane mobile farm slaughter.',

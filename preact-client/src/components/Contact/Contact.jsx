@@ -31,8 +31,8 @@ const Contact = () => {
 
 	const inputHandleChange = (e) => {
 		e.persist();
-		console.log(e, e.target, e.target.name);
-		console.log(e.target.value);
+		//console.log(e, e.target, e.target.name);
+		//console.log(e.target.value);
 		setInput((prevInput) => {
 			return {
 				...prevInput,
@@ -175,8 +175,10 @@ const Contact = () => {
 					value={input.contact__topic}
 				>
 					<option value="general">General Question</option>
-					<option value="pricing">Pricing Question</option>
-					<option value="orders">Orders Question</option>
+          {/*
+          <option value="pricing">Pricing Question</option>
+          <option value="orders">Orders Question</option>
+          */}
 					<option value="support">Website Support</option>
 				</select>
 			</div>

@@ -28,10 +28,13 @@
 .icon {
 	width: 1.3rem;
 	padding: 2px;
-	fill: #fff;
-	stroke: #fff;
+  fill: #fff;
+  /*stroke: #fff;*/
 	transition: var(--transition);
 	margin-right: -0.2rem;
+}
+.newsletter_icon {
+  fill: #ddd;
 }
 
 .link:focus {
@@ -53,6 +56,10 @@
 		margin-right: 0;
 		margin-top: 7px;
 	}
+  .newsletter_icon {
+    /*margin-bottom: 2px;*/
+    padding: 3px;
+  }
 	.text {
 		display: none;
 		max-width: 0;
