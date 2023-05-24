@@ -24,7 +24,7 @@ function Header() {
 					<ChatIcon className={Styles.icon} />
 					<span className={Styles.text}>Contact Us</span>
 				</a>
-				<a className={`flex-acenter ${Styles.link}`} href="#contact">
+				<a className={`flex-acenter ${Styles.link}`} href="#map">
 					<LocationIcon
 						className={`${Styles.icon} ${Styles.location_icon}`}
 					/>

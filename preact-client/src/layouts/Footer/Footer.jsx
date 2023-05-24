@@ -25,7 +25,7 @@ export default function Footer() {
 			className={`flex-col-jcenter panel-shadow--dark gap-4 ${Styles.footer}`}
 		>
 			<section className={`flex-col-jcenter-acenter ${Styles.section}`}>
-				<div
+				<div id="newsletter"
 					className={`flex-wrap-jcenter ${Styles.join_our_newsletter_container} ${Styles.mobile_margin}`}
 				>
 					<h2 className={`${Styles.heading}`}>Join our</h2>
@@ -57,8 +57,11 @@ export default function Footer() {
 				<Subscribe />
 			</section>
 
-			<div id="contact" style={{scrollPaddingTop: "4rem",}}></div>
+      {/*
+      <div id="contact" style={{scrollPaddingTop: "0vh",}}></div>
+      */}
 			<section
+        id="contact"
 				className={`flex-jcenter-acenter-wrap ${Styles.section} gap-1 ${Styles.mobile_margin}`}
 			>
 				<h2 className={`${Styles.heading}`}>Give Us A Call: </h2>
@@ -69,17 +72,17 @@ export default function Footer() {
 					{CONSTANTS.PHONE_NUMBER_STRING}
 				</TelLink>
 			</section>
-
 			
 			<ComponentInView marginPx="0px">
 				<section
-					className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section}`}
+					className={`flex-jcenter-acenter-wrap gap-4 ${Styles.contact_map_container} ${Styles.section} ${Styles.scroll_offset}`}
 				>
 					<FooterModuleContainer title="Contact Us!">
 						<Contact />
 					</FooterModuleContainer>
 
 					<FooterModuleContainer
+            id="map"
 						title="Find Us In Downtown Northport!"
 					>
 						<Map />
@@ -97,29 +100,33 @@ export default function Footer() {
 						<h2 className={`${Styles.heading}`}>The Shoppe</h2>
 						<div className={`flex-col ${Styles.link_items}`}>
 							<LinkScrollUp path="/">Home</LinkScrollUp>
-							<LinkScrollUp path="/meet-the-team">
-								Meet The Team
-							</LinkScrollUp>
-							<LinkScrollUp path="/membership">
-								Membership
-							</LinkScrollUp>
-							<LinkScrollUp path="/faq">FAQ</LinkScrollUp>
+              {/*
+              <LinkScrollUp path="/meet-the-team">
+                Meet The Team
+              </LinkScrollUp>
+              <LinkScrollUp path="/membership">
+                Membership
+              </LinkScrollUp>
+              <LinkScrollUp path="/faq">FAQ</LinkScrollUp>
+              */}
 						</div>
 					</div>
-					<div className={Styles.links_column}>
-						<h2 className={`${Styles.heading}`}>Ordering</h2>
-						<div className={`flex-col ${Styles.link_items}`}>
-							<LinkScrollUp path="/services">
-								Services
-							</LinkScrollUp>
-							<LinkScrollUp path="/how-to-order">
-								How To Order
-							</LinkScrollUp>
-							<LinkScrollUp path="/order">
-								Order Form
-							</LinkScrollUp>
-						</div>
-					</div>
+          {/*
+          <div className={Styles.links_column}>
+            <h2 className={`${Styles.heading}`}>Ordering</h2>
+            <div className={`flex-col ${Styles.link_items}`}>
+              <LinkScrollUp path="/services">
+                Services
+              </LinkScrollUp>
+              <LinkScrollUp path="/how-to-order">
+                How To Order
+              </LinkScrollUp>
+              <LinkScrollUp path="/order">
+                Order Form
+              </LinkScrollUp>
+            </div>
+          </div>
+          */}
 				</div>
 				<div className={`${Styles.links_half} flex-jbetween`}>
 					<div className={Styles.links_column}>

@@ -3,10 +3,11 @@ import Styles from "./FooterModuleContainer.module.css";
 
 export default function FooterModuleContainer({
 	title,
+  id = null,
 	children
 }) {
 	return (
-		<div className={Styles.container}>
+		<div id={id} className={Styles.container}>
 			<h2 className={`text-center ${Styles.heading}`}>
 				{title}
 			</h2>
