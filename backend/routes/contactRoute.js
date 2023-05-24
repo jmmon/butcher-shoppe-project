@@ -71,6 +71,7 @@ router.route("/contact").post((req, res) => {
 			address: contact__userEmail
 		};
 
+		// sends 3 emails
 		Promise.all([
 			// SUPPORT to us
 			noReplyEmailTransporter.sendMail({
@@ -80,7 +81,7 @@ router.route("/contact").post((req, res) => {
 
 				subject: `New Contact Message from ${contact__name} - ${fullTopic} - Contact #${contact__number}`, // subject line
 				text: `Hello, Northport Butcher Shoppe,\n\nYou received a new support message from ${contact__name}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})`, // plain text body
-				html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new mesage from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
+				html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new message from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
 			}),
 			// to us
 			noReplyEmailTransporter.sendMail({
@@ -90,7 +91,7 @@ router.route("/contact").post((req, res) => {
 
 				subject: `New Contact Message from ${contact__name} - ${fullTopic} - Contact #${contact__number}`, // subject line
 				text: `Hello, Northport Butcher Shoppe,\n\nYou received a new message from ${contact__name}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})`, // plain text body
-				html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new mesage from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
+				html: `<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new message from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>`, //html version of the message
 			}),
 			// to them
 			noReplyEmailTransporter.sendMail({
@@ -118,7 +119,7 @@ router.route("/contact").post((req, res) => {
 
 					subject: `ERROR with contact box: "New Contact Message from ${contact__name} - ${fullTopic} - Contact #${contact__number}"`, // subject line
 					text: `Error sending contact email!\nError info:\n${e}\n\nOriginal email message:\n"Hello, Northport Butcher Shoppe,\n\nYou received a new support message from ${contact__name}:\n\n"\n${text}\n"\n\n(Replies get sent to ${contact__name} at ${contact__userEmail})"`, // plain text body
-					html: `<h2>ERROR sending contact email!</h2><br><h3>Error Info:</h3><br><pre><code>${e}</code></pre><br><br><span>Original email message:</span><br>"<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new mesage from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>"`, //html version of the message
+					html: `<h2>ERROR sending contact email!</h2><br><h3>Error Info:</h3><br><pre><code>${e}</code></pre><br><br><span>Original email message:</span><br>"<h1>Hello, Northport Butcher Shoppe,</h1><br><h3>You received a new message from ${contact__name}:</h3><p><i>"</i><br>${text}<br><i>"</i></p><br><i>(Replies get sent to ${contact__name} at ${contact__userEmail})</i>"`, //html version of the message
 				}),
 					res.status(500).send({message: "Mail NOT sent:", error: e});
 			});
