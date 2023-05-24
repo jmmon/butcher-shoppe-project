@@ -22,17 +22,17 @@ function Button({
 		</button>
 	);
 
-	const props = {
+	const wrapperLinkProps = {
 		focusable: url !== "" ? 1 : -1,
 		href: url,
 	}
 
 	return url.includes("#") ? (
-		<a {...props} >
+		<a {...wrapperLinkProps} >
 			{" "}{button}
 		</a>
 	) : (
-		<LinkWithPreload {...props} >
+		<LinkWithPreload {...wrapperLinkProps} >
 			{" "}{button}
 		</LinkWithPreload>
 	);

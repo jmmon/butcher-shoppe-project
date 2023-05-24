@@ -58,14 +58,7 @@ function App() {
 								>
 									<route.component path={route.path} setVisitedRoutes={setVisitedRoutes} />
 								</Route>
-								// <Route 
-								// 	key={index}
-								// 	exact={route.exact}
-								// 	path={route.path}
-								// 	component={route.component}
-								// />
 							))}
-
 						</Switch>
 						<Footer />
 					</Suspense>

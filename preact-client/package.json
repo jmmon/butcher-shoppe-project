@@ -20,7 +20,7 @@
 	"homepage": "https://thenorthportbutchershoppe.com",
 	"scripts": {
 		"analyze": "react-scripts build && source-map-explorer 'build/static/js/*.js'",
-		"start": "nvm use newest && react-scripts start",
+		"start": "nvm use 16.16.0 && react-scripts start",
 		"build": "npm run build-nomap",
 		"build-map": "react-scripts build",
 		"build-nomap": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
