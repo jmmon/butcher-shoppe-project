@@ -2,30 +2,31 @@ import React from 'react';
 
 import WhitePageBackground from 'layouts/WhitePageBackground/WhitePageBackground';
 import { Helmet } from 'react-helmet';
-import { ComponentInView } from 'utils/ComponentInView';
-import CONSTANTS from 'utils/CONSTANTS';
+//import { ComponentInView } from 'utils/ComponentInView';
+//import CONSTANTS from 'utils/CONSTANTS';
+import { META } from 'utils/CONSTANTS';
 
 export default function PageLayout({
   separate = false,
   helmet = null,
-  title = null,
+  title = '',
   children,
   bottomNav = null,
 }) {
   return (
     <>
-      {helmet === null ? (
+      {helmet ? (
+        helmet
+      ) : (
         <Helmet>
           <title>
             The Butcher Shoppe: Mobile Slaughter Truck | Northport, WA
           </title>
           <meta
-            name='description'
-            content="Serving the tri-county area in northeast Washington, The Butcher Shoppe's Mobile Slaughter Truck brings our dispatch service to you! Check out our newsletter!"
+            name={META.main.name}
+            content={META.main.content}
           />
         </Helmet>
-      ) : (
-        helmet
       )}
       <main>
         {title}
@@ -34,10 +35,10 @@ export default function PageLayout({
           {children}
         </WhitePageBackground>
 
-        {bottomNav && (
-          <ComponentInView marginPx={CONSTANTS.OFFSET.SECOND}>
-            {bottomNav}
-          </ComponentInView>
+        {bottomNav !== null && (
+          //<ComponentInView marginPx={CONSTANTS.OFFSET.SECOND}>
+            bottomNav
+          //</ComponentInView>
         )}
       </main>
     </>
