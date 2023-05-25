@@ -1,6 +1,7 @@
 import "./Button.css";
 
-import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
+//import LinkWithPreload from "components/LinkWithPreload/LinkWithPreload";
+import {Link} from "wouter";
 
 function Button({
 	children,
@@ -32,9 +33,9 @@ function Button({
 			{" "}{button}
 		</a>
 	) : (
-		<LinkWithPreload {...wrapperLinkProps} >
+		<Link {...wrapperLinkProps} >
 			{" "}{button}
-		</LinkWithPreload>
+		</Link>
 	);
 }
 
