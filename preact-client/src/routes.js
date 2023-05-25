@@ -1,38 +1,47 @@
-import React, { lazy } from "react";
+//import React, { lazy } from "react";
 import NotFound from "pages/NotFound/NotFound"
 import Home from "pages/Home/Home";
 
-const ReactLazyPreload = (importStatement) => {
-	const Component = lazy(importStatement);
-	Component.preload = importStatement;
-	return Component;
-};
+// regular imports instead for this version
+import Newsletter from "pages/Newsletter/Newsletter";
+import Unsubscribe from "pages/Newsletter/Unsubscribe";
 
-const SubscribeConfirm = ReactLazyPreload(() =>
-	import("pages/Newsletter/Confirm/SubscribeConfirm")
-);
-const UnsubscribeConfirm = ReactLazyPreload(() =>
-	import("pages/Newsletter/Confirm/UnsubscribeConfirm")
-);
+import SubscribeConfirm from "pages/Newsletter/Confirm/SubscribeConfirm";
+import UnsubscribeConfirm from "pages/Newsletter/Confirm/UnsubscribeConfirm";
+
+//const ReactLazyPreload = (importStatement) => {
+	//const Component = lazy(importStatement);
+	//Component.preload = importStatement;
+	//return Component;
+//};
+
+//const SubscribeConfirm = ReactLazyPreload(() =>
+	//import("pages/Newsletter/Confirm/SubscribeConfirm")
+//);
+//const UnsubscribeConfirm = ReactLazyPreload(() =>
+	//import("pages/Newsletter/Confirm/UnsubscribeConfirm")
+//);
 //const Services = ReactLazyPreload(() => import("pages/Services/Services"));
 //const Faq = ReactLazyPreload(() => import("pages/Faq/Faq"));
 //const Order = ReactLazyPreload(() => import("pages/Order/Order"));
 //const HowToOrder = ReactLazyPreload(() =>
 	//import("pages/HowToOrder/HowToOrder")
 //);
-const Newsletter = ReactLazyPreload(() =>
-	import("pages/Newsletter/Newsletter")
-);
-const Unsubscribe = ReactLazyPreload(() =>
-	import("pages/Newsletter/Unsubscribe")
-);
+//const Newsletter = ReactLazyPreload(() =>
+	//import("pages/Newsletter/Newsletter")
+//);
+//const Unsubscribe = ReactLazyPreload(() =>
+	//import("pages/Newsletter/Unsubscribe")
+//);
 //const MeetTheTeam = ReactLazyPreload(() =>
 	//import("pages/MeetTheTeam/MeetTheTeam")
 //);
 //const Membership = ReactLazyPreload(() =>
 	//import("pages/Membership/Membership")
 //);
+
 // index = [1, 10] == routes needing prefetched
+
 const routes = [
 	{ path: "/", exact: true, component: Home }, // not lazy loaded
 
