@@ -7,6 +7,7 @@ import bgImage from "assets/images/image-1-136-cropped-55.jpg";
 
 import Styles from "components/Subscribe/Subscribe.module.css";
 import { Helmet } from "react-helmet";
+import { META } from "utils/CONSTANTS";
 
 const confirmUri =
 	"https://thenorthportbutchershoppe.com/mailman/confirm/newsletter_thenorthportbutchershoppe.com";
@@ -16,7 +17,7 @@ const confirmUri =
 
 const listName = "Newsletter";
 
-export default function Confirm({ isUnsubscribe}) {
+export default function Confirm({ isUnsubscribe }) {
 	const route = isUnsubscribe ? "/newsletter/unsubscribe/confirm/:confirmationId" : "/newsletter/subscribe/confirm/:confirmationId";
   const [, params] = useRoute(route);
 	const confirmationId = params.confirmationId;
@@ -30,9 +31,10 @@ export default function Confirm({ isUnsubscribe}) {
 	const startRedirectTimer = () => {
 		timer = setTimeout(() => {
 			setLocation("/", { replace: true });
-		}, 3000);
+		}, 4000);
 	};
 
+  // cleanup timer on dismount
 	useEffect(() => {
 		return () => {
 			if (timer) clearTimeout(timer);
@@ -41,13 +43,12 @@ export default function Confirm({ isUnsubscribe}) {
 
 	// On load:
 	useEffect(() => {
-		console.log(`${isUnsubscribe ? 'Unsubscribe' : 'Subscribe'} param: ${confirmationId}`);
-
+		//console.log(`${isUnsubscribe ? 'Unsubscribe' : 'Subscribe'} param: ${confirmationId}`);
 		axios
 			.post(confirmUri, confirmData)
 			.then((res) => {
-				console.log("SubscribeConfirm-POST response:", res);
-				console.log({status: res.status, data: res.data});
+				//console.log("SubscribeConfirm-POST response:", res);
+				//console.log({status: res.status, data: res.data});
 
 				if (res.status < 300) {
 					startRedirectTimer();
@@ -55,7 +56,7 @@ export default function Confirm({ isUnsubscribe}) {
 			})
 			.catch((e) => {
 				setError(e);
-				console.log("SubscribeConfirm-POST axios error:", e);
+				//console.log("SubscribeConfirm-POST axios error:", e);
 			});
 	}, []);
 
@@ -67,8 +68,8 @@ export default function Confirm({ isUnsubscribe}) {
 						Our Newsletter | The Butcher Shoppe | Northport, WA
 					</title>
 					<meta
-						name="description"
-						content="Join our twice-monthly newsletter to stay up-to-date on your local Butcher Shoppe news."
+						name={META.newsletter.name}
+						content={META.newsletter.content}
 					/>
 				</Helmet>
 			}
