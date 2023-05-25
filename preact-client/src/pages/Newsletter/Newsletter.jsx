@@ -10,12 +10,16 @@ import WhitePageBackground from 'layouts/WhitePageBackground/WhitePageBackground
 import Card from 'components/Card/Card';
 import PageLayout from 'layouts/PageLayout/PageLayout';
 import { Helmet } from 'react-helmet';
-import { META } from '../../utils/CONSTANTS';
+import { META } from 'utils/CONSTANTS';
 
-export default function NewsletterPage({ path, setVisitedRoutes }) {
-  React.useEffect(() => {
-    setVisitedRoutes((prev) => [...prev, path]);
-  }, []);
+export default function NewsletterPage({ 
+  //path, 
+  //setVisitedRoutes = null 
+}) {
+  //React.useEffect(() => {
+  //if (setVisitedRoutes) 
+    //setVisitedRoutes((prev) => [...prev, path]);
+  //}, []);
 
   return (
     <PageLayout
@@ -38,12 +42,19 @@ export default function NewsletterPage({ path, setVisitedRoutes }) {
       bottomNav={
         <WhitePageBackground separate={true}>
           <div className={`flex-col-acenter ${Styles.unsubscribe_container}`}>
-            <h3>Looking to unsubscribe?</h3>
+            <h3>Looking to Unsubscribe?</h3>
             <Button
               className='btn--outline btn--large'
               url='/newsletter/unsubscribe'
             >
               Click here
+            </Button>
+
+            <Button
+              className='btn--outline btn--large'
+              url='/'
+            >
+              Home
             </Button>
           </div>
         </WhitePageBackground>
@@ -64,7 +75,7 @@ export default function NewsletterPage({ path, setVisitedRoutes }) {
             newsletter so you can be among the first to know when our full
             services will re-open!
           </p>
-          <hr className={Styles.hr}/>
+          <hr className={Styles.hr} />
           <p>
             For our neighbors and our community, we like to keep everyone up to
             date on all things related to The Butcher Shoppe. The best way to

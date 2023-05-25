@@ -7,13 +7,19 @@ import PageTitle from 'layouts/PageTitle/PageTitle';
 import Subscribe from 'components/Subscribe/Subscribe';
 import PageLayout from 'layouts/PageLayout/PageLayout';
 import Card from 'components/Card/Card';
+import WhitePageBackground from 'layouts/WhitePageBackground/WhitePageBackground';
+import Button from 'components/Button/Button';
 import { Helmet } from 'react-helmet';
-import { META } from '../../utils/CONSTANTS';
+import { META } from 'utils/CONSTANTS';
 
-export default function NewsletterPage({ path, setVisitedRoutes }) {
-  React.useEffect(() => {
-    setVisitedRoutes((prev) => [...prev, path]);
-  }, []);
+export default function NewsletterPage({ 
+  //path, 
+  //setVisitedRoutes 
+}) {
+  //React.useEffect(() => {
+  //if (setVisitedRoutes)
+    //setVisitedRoutes((prev) => [...prev, path]);
+  //}, []);
 
   return (
     <PageLayout
@@ -31,6 +37,26 @@ export default function NewsletterPage({ path, setVisitedRoutes }) {
           title='UNSUBSCRIBE'
           bgImage={bgImage}
         />
+      }
+      bottomNav={
+        <WhitePageBackground separate={true}>
+          <div className={`flex-col-acenter ${Styles.unsubscribe_container}`}>
+            <h3>Looking to Subscribe?</h3>
+            <Button
+              className='btn--outline btn--large'
+              url='/newsletter/subscribe'
+            >
+              Click here
+            </Button>
+
+            <Button
+              className='btn--outline btn--large'
+              url='/'
+            >
+              Home
+            </Button>
+          </div>
+        </WhitePageBackground>
       }
     >
       <section>
