@@ -224,7 +224,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<small className={Styles.website_rights}>C 2022</small>
+				<small className={Styles.website_rights}>C {CONSTANTS.COPYRIGHT_YEAR}</small>
 			</section>
 		</footer>
 	);
