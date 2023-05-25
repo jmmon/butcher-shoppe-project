@@ -3,7 +3,6 @@
 .main_link {
 	color: var(--text-dark);
 	text-decoration: none;
-	cursor: pointer;
 	transition: transform 0.1s ease-in-out;
 }
 
